@@ -9,12 +9,12 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
-  "Od 1 kwietnia 2026 fakturę VAT RR wolno wystawić w KSeF, ale nie trzeba. Decyduje rolnik: gdy wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie.";
+  "Faktura RR w KSeF nie jest obowiązkowa: od 1.04.2026 możesz ją tam wystawić, a gdy rolnik wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie.";
 
 export const metadata: Metadata = {
   title: "Faktura VAT RR w KSeF: kiedy trzeba, kiedy papier | Fluxlab",
   description:
-    "Od 1 kwietnia 2026 fakturę VAT RR wolno wystawić w KSeF, ale nie trzeba. Decyduje rolnik: gdy wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie.",
+    "Faktura RR w KSeF nie jest obowiązkowa: od 1.04.2026 możesz ją tam wystawić, a gdy rolnik wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie.",
   openGraph: {
     title: "Faktura VAT RR w KSeF: kiedy trzeba, kiedy papier | Fluxlab",
     description: OPIS,

@@ -1,0 +1,8 @@
+# Z5 30.10.2026 11:50, GSC filtr strony, 28 dni (1-28.10)
+/strefa-wiedzy/faktura-vat-rr-ksef: 0 klik. / 38 wyśw. / poz. 6,1; zapytania widoczne: "faktura rr a ksef" 0/1 poz. 13,0 (reszta zanonimizowana)
+/strefa-wiedzy/proforma-ksef: 0 klik. / 30 wyśw. / poz. 5,7; zapytania widoczne: "czy proformy idą do ksef" 0/1 poz. 1,0 (reszta zanonimizowana)
+Proforma: description zaczyna się od odpowiedzi ("Proformy nie wystawiasz w KSeF..."), pasuje do frazy, bez zmiany.
+RR: description zaczynał się od daty, nie od odpowiedzi, i miał 159 zn. (ponad 155); fraza "faktura rr" bez "VAT".
+Zmiana (tylko RR, title bez zmiany):
+przed: "Od 1 kwietnia 2026 fakturę VAT RR wolno wystawić w KSeF, ale nie trzeba. Decyduje rolnik: gdy wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie." (159)
+po:    "Faktura RR w KSeF nie jest obowiązkowa: od 1.04.2026 możesz ją tam wystawić, a gdy rolnik wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie." (155)
