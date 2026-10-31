@@ -38,6 +38,12 @@ export default function KsefIntegracja() {
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
+          przed: "Biuro rachunkowe, które pobiera faktury KSeF dla wielu klientów, łączy to z OCR i przypomnieniami w ramach",
+          kotwica: "automatyzacji dla biur rachunkowych",
+          href: "/automatyzacja-dla-biur-rachunkowych",
+          po: ".",
+        },
+        {
           przed:
             "Literówka w NIP nabywcy wysyła fakturę do cudzej firmy. Numer sprawdzisz przez",
           kotwica: "sprawdzenie NIP w wykazie VAT",
