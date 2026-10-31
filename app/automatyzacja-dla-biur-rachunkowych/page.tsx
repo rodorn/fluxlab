@@ -10,13 +10,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Automatyzacja podatków dla biur: enova i KSeF | Fluxlab",
+  title: "KSeF dla biura rachunkowego: OCR, Optima, enova | Fluxlab",
   description:
-    "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
+    "Wdrażamy KSeF, OCR faktur, przypomnienia o dokumentach i raporty w biurze rachunkowym na Optimie, Symfonii i enova365. Księgowy zatwierdza, nie przepisuje.",
   openGraph: {
-    title: "Automatyzacja podatków dla biur: enova i KSeF | Fluxlab",
+    title: "KSeF dla biura rachunkowego: OCR, Optima, enova | Fluxlab",
     description:
-      "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
+      "Wdrażamy KSeF, OCR faktur, przypomnienia o dokumentach i raporty w biurze rachunkowym na Optimie, Symfonii i enova365. Księgowy zatwierdza, nie przepisuje.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -376,7 +376,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
             "@type": "Service",
             name: "Automatyzacja dla biur rachunkowych",
             description:
-              "Integracja enova365, Optimy i Symfonii z KSeF i SaldeoSmart, OCR faktur, przypomnienia o brakujących dokumentach i raporty, które robią się same.",
+              "Wdrażamy KSeF, OCR faktur, przypomnienia o dokumentach i raporty w biurze rachunkowym na Optimie, Symfonii i enova365. Księgowy zatwierdza, nie przepisuje.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "PL" },
             serviceType:
