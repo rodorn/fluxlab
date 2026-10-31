@@ -8,14 +8,14 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
-  "W JPK_VAT faktura ma numer KSeF albo oznaczenie: OFF dla awarii KSeF, BFK dla faktury spoza KSeF, DI dla dowodu innego niż faktura, np. paragonu.";
+  "Oznaczenia w JPK_VAT od lutego 2026: numer KSeF albo OFF przy awarii KSeF, BFK dla faktury spoza KSeF, DI dla paragonu i faktury offline bez numeru.";
 
 export const metadata: Metadata = {
-  title: "Numer KSeF, OFF, BFK czy DI w JPK_VAT | Fluxlab",
+  title: "Oznaczenia OFF, BFK i DI w JPK_VAT: które kiedy | Fluxlab",
   description:
-    "W JPK_VAT faktura ma numer KSeF albo oznaczenie: OFF dla awarii KSeF, BFK dla faktury spoza KSeF, DI dla dowodu innego niż faktura, np. paragonu.",
+    "Oznaczenia w JPK_VAT od lutego 2026: numer KSeF albo OFF przy awarii KSeF, BFK dla faktury spoza KSeF, DI dla paragonu i faktury offline bez numeru.",
   openGraph: {
-    title: "Numer KSeF, OFF, BFK czy DI w JPK_VAT | Fluxlab",
+    title: "Oznaczenia OFF, BFK i DI w JPK_VAT: które kiedy | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
