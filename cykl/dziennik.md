@@ -9445,3 +9445,13 @@ Decyzje dla stratega:
 **Dowód:** cykl/z1-frazy-2026-10-31.txt, linia Z1 w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z2 (nie wcześniej niż 08:00), Z3 (10:00, bez zmiany), Z4-Z17 według godzin.
+
+<!-- WYSLANO 2026-10-31 07:10 -->
+
+## 2026-10-31 08:05
+**Kanał:** 2/Google (plan, Z2).
+**Co zrobione:** na /strefa-wiedzy/faktura-wewnetrzna-ksef pytanie FAQ zmienione na „Czy faktury wewnętrzne są obowiązkowe w KSeF?” (krótsze o 3 znaki), pod frazy z poz. 10 w liczbie mnogiej.
+**Ruch:** ostatnia doba 98 odsłon, 48 osób; b2b-email 46, t.co 8, bing 3, google 2, fluxlab 1; social 7 dni: linkedin 3, threads 1.
+**Dowód:** commit 44b1feb4, produkcja 200 z nowym tekstem, IndexNow 2/3, zrzut z telefonu bez błędów konsoli. GSC: „limit dnia”, prośba o indeksowanie nie przeszła.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 od 10:00 (zależny od Z1: „kandydat brak”, więc „bez zmiany”); prośba GSC dla tej strony do powtórzenia, gdy limit się odnowi. Jakość: 4 słowa na /zmiany z cudzych niezacommitowanych wpisów w lib/zmiany.json (Checkout, mta, sts, wlasny).
