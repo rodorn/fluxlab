@@ -58,6 +58,10 @@ const faq = [
     a: "Od 15 000 zł brutto jednorazowej transakcji, niezależnie od liczby przelewów.",
   },
   {
+    q: "Jak sprawdzić firmę przed przelewem?",
+    a: "Wpisz NIP z faktury. Zobaczysz, czy numer jest poprawny, czy firma jest czynnym podatnikiem VAT i ile rachunków zgłosiła do wykazu. Od 15 000 zł brutto porównaj jeszcze numer konta z listą rachunków w wykazie, bo przelew na inne konto odbiera prawo do kosztów i odliczenia VAT.",
+  },
+  {
     q: "Zapłaciliśmy na rachunek spoza wykazu, co teraz?",
     a: "Złóż zawiadomienie ZAW-NR do urzędu skarbowego w ciągu 7 dni od zlecenia przelewu. To wyłącza sankcje, po terminie już się nie da.",
   },
@@ -107,6 +111,21 @@ export default function SprawdzenieNipPage() {
                 </div>
               ))}
             </dl>
+          </div>
+
+          <div className="mt-14 max-w-3xl mx-auto">
+            <h2 className="h2-sekcji">
+              Jak sprawdzić firmę przed przelewem
+            </h2>
+            <p className="mt-3 text-gray-600 dark:text-gray-300">
+              Zanim zapłacisz nowemu dostawcy, wpisz NIP z faktury. Jeśli
+              numer jest poprawny, firma jest czynnym podatnikiem VAT i ma
+              zgłoszone rachunki, faktura nadaje się do odliczenia. Przy
+              fakturze od 15 000 zł brutto sprawdź jeszcze, czy konto
+              jest na liście rachunków w wykazie. Zero rachunków albo wpis
+              sprzed kilku tygodni przy dużej przedpłacie to powód, żeby
+              zadzwonić do firmy przed przelewem.
+            </p>
           </div>
 
           <div className="mt-14 max-w-3xl mx-auto rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-gray-50/60 dark:bg-gray-900/40 p-8">

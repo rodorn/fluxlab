@@ -48,6 +48,12 @@ export default function Page() {
           href: "/panel-zwrotow",
           po: ".",
         },
+        {
+          przed: "Zanim zapłacisz sprzedawcy, którego dane dopiero znalazłeś, zrób darmowe",
+          kotwica: "sprawdzenie firmy przed przelewem po NIP",
+          href: "/sprawdzenie-nip",
+          po: ".",
+        },
       ]}
       checks={[
         {
