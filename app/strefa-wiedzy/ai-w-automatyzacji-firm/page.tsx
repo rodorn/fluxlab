@@ -69,7 +69,12 @@ export default function AiWAutomatyzacjiFirmPage() {
               <Link href="/automatyzacja-leadow-crm" className="text-accent hover:underline">
                 obsłudze leadów i CRM
               </Link>
-              .
+              . Ten sam mechanizm działa na stronie firmy:{" "}
+              <Link href="/asystent-ai-na-stronie" className="text-accent hover:underline">
+                asystent AI na stronie
+              </Link>{" "}
+              odpowiada klientom na podstawie cennika i regulaminu, nie tylko
+              listy FAQ.
             </p>
 
             <h2 className="mt-10 mb-4 h2-sekcji">
