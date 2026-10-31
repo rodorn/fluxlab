@@ -108,6 +108,21 @@ const faq = [
     answer:
       "Zwykle 5 do 10 dni roboczych. Pełny system z eskalacjami i raportem to 3 do 5 tygodni.",
   },
+  {
+    question: "Ile kosztuje automatyzacja follow-upów?",
+    answer:
+      "Diagnoza obecnych sekwencji jest bezpłatna. Pierwsza sekwencja dla jednego etapu transakcji kosztuje od 1 800 zł, pełny system dla wszystkich etapów z eskalacjami i raportem od 3 500 zł.",
+  },
+  {
+    question: "Co się dzieje, gdy klient odpowie w trakcie sekwencji?",
+    answer:
+      "Mail, telefon albo kliknięcie w link wstrzymuje automat. Handlowiec przejmuje rozmowę, a kolejne przypomnienia nie wychodzą.",
+  },
+  {
+    question: "Co z dealem, na który nikt nie reaguje?",
+    answer:
+      "Po 20 dniach bez reakcji deal trafia do nurturingu albo zamyka się jako brak kontaktu. Manager widzi to w raporcie tygodniowym razem z liczbą follow-upów i odpowiedzi.",
+  },
 ];
 
 export default function AutomatyzacjaFollowUp() {
