@@ -9364,6 +9364,7 @@ Decyzje dla stratega:
 - Google spada: tydzień 22-28.10 13 klik. wobec 20 tydzień wcześniej, doba 3 wobec 7. Bing rośnie (3 w dobie).
 - Z18 (31.10 00:48, 0 żądań): 7 z 7 stron z Z6 i Z10 w Google i zeskanowane 30.10 po commitach 28.10 22:44-29.10 04:44: faktura-vat-rr-ksef i kalkulator-podatkowy 12:45, analiza-lokalizacji i dobor-samochodu 12:47, sprawdz-kontrahenta 15:45, automatyzacja-vs-zatrudnienie 15:47, gutschrift-ksef 15:57. Ocena 5.11 ma podstawę. Log cykl/z18-stan-31.log.
 - Z20 (31.10 04:48, 0 żądań): /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef, GSC 7 dni (22-28.10, nadal ten sam okres co Z11): 3 klik. / 126 wyśw. / CTR 2,4% / poz. 3,3. Baza dzienna dla Z2; zmiana title z 30.10 jeszcze poza okresem.
+- Z21 (31.10 05:43): pomiar-kanalow 24 h: ludzie po odsiewie 16 (26 odsłon); z odsyłaczem bing 3, google 2, instagram 1, x/t.co 2, bez odsyłacza 8; raport_ruchu doba 98 odsłon / 43 osoby (-26% wobec średniej 132,9), b2b-email 52 to otwarcia maili; uruchomienia 10 (numer_ksef 4+2 przykład, skan 4, audyt 2), klik_po_wyniku 1, lead_* 0 (7 dni: scena_leada 2); Resend 24 h 0; sesje dziennie spadają od 25.10 (60 → 14 w 30.10). Plan zamknięty.
 
 ## 2026-10-30 22:45
 **Kanał:** pomiar (Z17 planu, bilans doby).
@@ -9420,3 +9421,11 @@ Decyzje dla stratega:
 **Dowód:** linia Z20 w cykl/plan-ruchu.md, dopisek „Z20” pod bilansem Z17 w dzienniku.
 **Dla Pawła:**
 **Zostało otwarte:** Z21 (nie wcześniej niż 05:30), potem „plan zamknięty”.
+
+## 2026-10-31 05:45
+**Kanał:** pomiar (Z21 planu, dane dla stratega).
+**Co zrobione:** dopisano pod bilansem Z17 linijkę z liczbami doby dla stratega i zamknięto plan 30/31.10 (Z1-Z21 wszystkie [x]).
+**Ruch:** raport_ruchu doba 98 odsłon, 43 osoby (-26% wobec średniej 132,9); źródła: b2b-email 52 (otwarcia maili), t.co 8, bing 3, google 2, instagram 1; po odsiewie 16 ludzi; uruchomienia narzędzi 10, lead_* 0.
+**Dowód:** linia Z21 w cykl/plan-ruchu.md, dopisek „Z21” pod bilansem Z17 w cykl/dziennik.md.
+**Dla Pawła:**
+**Zostało otwarte:** nic w planie; nowy plan od stratega o 06:15.
