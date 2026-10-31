@@ -97,7 +97,15 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
                   samofakturowaniu
                 </Link>
                 . Biuro widzi wtedy faktury wystawione i otrzymane za cały
-                okres, w którym firma była w KSeF.
+                okres, w którym firma była w KSeF. Pobieranie faktur klientów z
+                KSeF prosto do programu księgowego robi za biuro nasza{" "}
+                <Link
+                  href="/automatyzacja-dla-biur-rachunkowych"
+                  className="text-accent hover:underline"
+                >
+                  automatyzacja dla biur rachunkowych
+                </Link>
+                .
               </p>
             </section>
             <section>

@@ -108,7 +108,16 @@ export default function OznaczeniaJpkKsefArticle() {
                 >
                   sprawdzenie numeru KSeF
                 </Link>{" "}
-                wyłapie literówkę, zanim plik pójdzie do urzędu.
+                wyłapie literówkę, zanim plik pójdzie do urzędu. Gdy numery
+                KSeF mają trafiać do systemu księgowego same, rozwiązaniem
+                jest{" "}
+                <Link
+                  href="/ksef-integracja"
+                  className="text-accent hover:underline"
+                >
+                  integracja z KSeF
+                </Link>
+                .
               </p>
             </section>
             <section>
