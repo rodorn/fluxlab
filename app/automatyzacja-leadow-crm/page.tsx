@@ -84,6 +84,21 @@ const faq = [
     answer:
       "Pierwszy krok 900, 1 200 albo 1 500 zł, gotowy w 5 dni, płatny z góry. Cała ścieżka od 2 500 zł. Diagnoza jest bezpłatna.",
   },
+  {
+    question: "Od czego zacząć automatyzację CRM?",
+    answer:
+      "Od listy czynności, które handlowcy robią ręcznie każdego dnia: zadania, statusy, follow-upy, uzupełnianie pól, przepisywanie leadów. Pierwsze dwa, trzy scenariusze to zwykle tworzenie leada, przypisanie do osoby, przypomnienie o follow-upie i kontrola obowiązkowych pól.",
+  },
+  {
+    question: "Jak AI ocenia leady w CRM?",
+    answer:
+      "AI czyta zapytanie i nadaje mu ocenę, a handlowiec dostaje gotowe zadanie. Działa to dobrze tylko na danych bez duplikatów i braków, dlatego najpierw porządkujemy pola i źródła. Niepewne sprawy trafiają do człowieka, nie do automatu.",
+  },
+  {
+    question: "Co dostajemy po wdrożeniu?",
+    answer:
+      "Działającą automatyzację przetestowaną na realnych danych, instrukcję i opis działania. Raport pokazuje czas reakcji, status każdego leada i wąskie gardła procesu.",
+  },
 ];
 
 const POWIAZANE_Z_CRM = [
