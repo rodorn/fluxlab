@@ -77,6 +77,21 @@ const faq = [
     answer:
       "Etap minimalny zwykle 2 do 4 dni roboczych. Pełna integracja z routingiem i raportami źródeł 1 do 2 tygodni.",
   },
+  {
+    question: "Ile kosztuje integracja formularza z Pipedrive?",
+    answer:
+      "Etap minimalny (osoba, organizacja, deal, walidacja, zadanie kontaktu, źródło i UTM w polach) to 3 do 6 tys. zł. Etap pełny z deduplikacją, routingiem i raportem źródeł 8 do 15 tys. zł. Stała cena za projekt, płatna w transzach po kamieniach milowych.",
+  },
+  {
+    question: "Jakie dane z formularza trafiają do Pipedrive?",
+    answer:
+      "Imię, firma, telefon, NIP, źródło, kampania i parametry UTM. Dane firmy dociągamy po NIP. W Pipedrive powstaje osoba, organizacja i deal z wypełnionymi polami źródła i powiązaniami między nimi.",
+  },
+  {
+    question: "Co się dzieje, gdy ten sam klient wyśle formularz drugi raz?",
+    answer:
+      "Sprawdzamy e-mail, telefon i NIP. Istniejący kontakt dostaje nowy deal zamiast duplikatu, więc historia rozmów zostaje w jednym miejscu.",
+  },
 ];
 
 const pricing = [
