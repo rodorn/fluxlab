@@ -96,6 +96,22 @@ const faq = [
     answer:
       "Ma. Allegro ma własne API, więc fakturowanie, etykiety, komunikację z klientem i raport marży zautomatyzujemy także bez sklepu.",
   },
+  {
+    question:
+      "Integracja BaseLinkera z Allegro albo sklepem przestała działać. Czy naprawa cudzej automatyzacji jest możliwa?",
+    answer:
+      "Tak, w ramach pogotowia automatyzacji. Diagnozujemy i naprawiamy integracje BaseLinkera, WooCommerce, Allegro, n8n, Make i Zapiera, także po poprzednim wykonawcy. Diagnoza kosztuje 49 zł i odliczamy ją od naprawy, naprawa od 490 zł, stała opieka 299 zł miesięcznie.",
+  },
+  {
+    question: "Czy faktury do zamówień z Allegro mogą wystawiać się same?",
+    answer:
+      "Tak. Opłacone zamówienie tworzy fakturę w Fakturowni, iFirmie lub InFakcie, z NIP-em sprawdzonym w GUS. Klient dostaje PDF, księgowość kopię, a po przyjęciu zwrotu system wystawia korektę.",
+  },
+  {
+    question: "Robicie audyt sklepu pod kątem marży na produktach?",
+    answer:
+      "Tak. Z eksportu sprzedaży z Allegro, BaseLinkera, WooCommerce, Shopify, Shoper lub IdoSell oraz cen zakupu liczymy realny zysk na każdej sztuce po prowizji, zwrocie i wysyłce. Raport dostajesz w 48 godzin, audyt kosztuje 49 zł.",
+  },
 ];
 
 const relatedServices = [
@@ -309,6 +325,17 @@ export default function AutomatyzacjaDlaEcommerce() {
                           </details>
                         ))}
                       </div>
+                      <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
+                        Zepsuta integracja: zobacz{" "}
+                        <Link href="/pogotowie-automatyzacji" className="text-accent hover:underline">
+                          pogotowie automatyzacji
+                        </Link>
+                        . Nie wiesz, co zostaje po prowizji i wysyłce: zobacz{" "}
+                        <Link href="/audyt-marz" className="text-accent hover:underline">
+                          audyt marż sklepu
+                        </Link>
+                        .
+                      </p>
                     </div>
                   </div>
                 ),
