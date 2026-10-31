@@ -55,6 +55,21 @@ const faqs = [
       "Najpierw ustalamy jedną definicję i dopasowujemy rekordy między źródłami, potem automatyzujemy raport. To osobna pozycja, 490 do 1 200 zł.",
   },
   {
+    question: "Jak zautomatyzować raportowanie w firmie?",
+    answer:
+      "Najpierw ustalamy, co liczysz, z jakiego źródła i według jakiej logiki. Potem spinamy CRM, formularze, kampanie i arkusze w jedno źródło prawdy, a raport układa się i wysyła sam o stałej porze. Ręczne sklejanie plików odpada.",
+  },
+  {
+    question: "Gdzie trafia gotowy raport?",
+    answer:
+      "Tam, gdzie go czytasz: mailem co rano do managera, raz w tygodniu do zarządu, do Google Sheets albo panelu w Looker Studio lub Metabase. Alert o stojącej sprawie może przyjść od razu.",
+  },
+  {
+    question: "Czy potrzebujemy narzędzia BI, żeby zautomatyzować raport?",
+    answer:
+      "Nie zawsze. Małej firmie wystarczy arkusz Google Sheets zasilany automatycznie z CRM. Przy wielu źródłach danych polecamy Looker Studio albo Metabase.",
+  },
+  {
     question: "Czy to ma sens przy małym zespole?",
     answer:
       "Tak. Często największą wartość daje stały, poprawny raport wysyłany automatycznie.",
