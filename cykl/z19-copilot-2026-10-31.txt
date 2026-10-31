@@ -1,0 +1,19 @@
+Z19 31.10.2026 02:50, Bing Webmaster Tools > AI Performance (Microsoft Copilots and Partners), fluxlab.pl
+Dane Bing kończą się na 28.10 (poprzednio 26.10, opóźnienie ok. 3 dni).
+
+Cytowania 7 dni (24-28.10): 16   (24-27.10: 0, 28.10: 16, 3 strony)
+Cytowania 30 dni (7-28.10): 65   (wzgl. 49 w Z10 29.10: +16, wszystkie z 28.10)
+28.10 to najlepszy dzień od początku pomiaru (poprzedni rekord 12.10: 10).
+
+Cytowane strony, 30 dni (zmiana wobec Z10):
+17  /strefa-wiedzy/ryczalt-czy-liniowy                      (+9)
+12  /strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026        (0)
+12  /strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie (+4)
+ 9  /automatyzacja-raportowania                             (+3)
+ 9  /strefa-wiedzy/jak-liczyc-zdrowotna-jdg                 (0)
+ 4  /sprawdzenie-nip                                        (0)
+ 2  /kalkulator-podatkowy                                   (0)
+Cytowania 28.10 (z różnicy 30 dni): ryczalt-czy-liniowy 9, jak-zautomatyzowac-raportowanie 4, automatyzacja-raportowania 3 (=16).
+
+Zapytania (Grounding Queries): nadal 0 wierszy w 7 i 30 dniach.
+Nic nie zgłaszano. Wejścia z Copilota/Binga w liczniku: www.bing.com 3 w ostatniej dobie (raport_ruchu.py).

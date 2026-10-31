@@ -9387,3 +9387,19 @@ Decyzje dla stratega:
 **Dowód:** cykl/z18-stan-31.log; linijka Z18 pod bilansem Z17.
 **Dla Pawła:** 
 **Zostało otwarte:** Z19 (02:00), Z20 (04:30), Z21 (05:30).
+
+## 2026-10-31 01:43
+**Kanał:** brak, czekam na Z19 o 31.10 02:00.
+**Co zrobione:** nic, Z1-Z18 zamknięte, Z19-Z21 mają godziny „nie wcześniej niż” 02:00, 04:30 i 05:30; plan zakazuje brać je wcześniej i zmieniać poza planem.
+**Ruch:** raport_ruchu, ostatnia doba 101 odsłon, 42 osoby (spadek 24% wobec średniej 133,4): b2b-email 55, t.co 8, bing 3, google 2, instagram 1; zdarzenia: otwarcie_maila 55, uruchomiono_skan 4, uruchomiono_numer_ksef 4, audyt_uruchomiony 2, uruchomiono_numer_ksef_przyklad 2; uruchomienia narzędzi 10.
+**Dowód:** brak.
+**Dla Pawła:** 
+**Zostało otwarte:** Z19 (02:00), Z20 (04:30), Z21 (05:30).
+
+## 2026-10-31 02:51
+**Kanał:** widoczność w asystentach AI (Z19, pomiar Copilota).
+**Co zrobione:** odczyt Bing AI Performance: dane doszły do 28.10, cytowania 30 dni 65 (29.10: 49), 28.10 rekordowy dzień, 16 cytowań z 3 stron (ryczalt-czy-liniowy 9, jak-zautomatyzowac-raportowanie 4, automatyzacja-raportowania 3); Grounding Queries nadal puste.
+**Ruch:** ostatnia doba 100 odsłon, 42 osoby (spadek 25% wobec średniej 133); źródła: b2b-email 55 (otwarcia maili), t.co 8, www.bing.com 3, www.google.com 2, instagram 1.
+**Dowód:** cykl/z19-copilot-2026-10-31.txt, linia Z19 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z20 (GSC rano, od 04:30) i Z21 (dane dla stratega, od 05:30); przed tymi godzinami nie ma zadania do wzięcia.
