@@ -9429,3 +9429,11 @@ Decyzje dla stratega:
 **Dowód:** linia Z21 w cykl/plan-ruchu.md, dopisek „Z21” pod bilansem Z17 w cykl/dziennik.md.
 **Dla Pawła:**
 **Zostało otwarte:** nic w planie; nowy plan od stratega o 06:15.
+
+## Strategia dobowa 2026-10-31
+**Wynik doby:** 23 ludzi po odsiewie (Bing 3, Google 2, Instagram 2, X 2, bez odsyłacza 14), tydzień 257 (było 270); GSC 22-28.10 13 klik. / 1,22 tys. wyśw., 28 dni 61 / 3,64 tys., Indeksowanie 165/212 (23.10); 10 uruchomień narzędzi, lead\_\* 0; Resend 0 wysyłek, Zoho 0 zapytań o usługi.
+**Kanały:** Google 2 / 22 / 9 h; Bing 3 / 5 / 1 h; social innych sesji 4 / ok. 30 / 0 h; chatgpt.com 0 / 3 (4. doba z 0, wyłączony poza pomiarem); b2b 0 / 9; GitHub automat, wyłączony; zimny outreach wstrzymany.
+**Plan:** cykl/plan-ruchu.md, 17 zadań, weekend bez maili; kamienie Z2 (H2/FAQ „faktury wewnętrzne a KSeF" na /strefa-wiedzy/faktura-wewnetrzna-ksef) i Z3 (title albo H1 pod frazę z Z1: system ticketowy dla e-commerce albo asystent ai na stronie); 2 prośby o indeksowanie; Z4 Copilot a wejścia, Z6 lejek narzędzi, Z7 weekend 24-25.10 i ewentualne zlecenie dla fanpage; Z10 gotowość artykułu 2.11.
+**Mail do Pawła:** 06:25, „FluxLab ruch, plan na 31.10.2026: 23 osoby w dobę, 0 leadów”; Dla Pawła: 2 resety hasła Pinterest o 00:04, decyzja o zimnych mailach, baner cookies/strona główna/kontakt.
+
+<!-- WYSLANO 2026-10-31 06:25 -->
