@@ -8,13 +8,13 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "n8n vs Zapier, kiedy warto iść w self-hosting | Fluxlab",
+  title: "n8n vs Zapier: ile kosztuje n8n i kiedy się opłaca | Fluxlab",
   description:
-    "Porównanie n8n i Zapier w 2026: pricing, krzywa nauki, kontrola danych, skalowalność i kiedy self-hosting realnie się opłaca. Praktyczne kryteria wyboru.",
+    "n8n vs Zapier: n8n na własnym serwerze od ok. 25 zł miesięcznie bez limitu wykonań, Zapier od 19,99 USD za 750 tasków. Kiedy self-hosting opłaca się firmie.",
   openGraph: {
-    title: "n8n vs Zapier, kiedy warto iść w self-hosting | Fluxlab",
+    title: "n8n vs Zapier: ile kosztuje n8n i kiedy się opłaca | Fluxlab",
     description:
-      "Porównanie n8n i Zapier w 2026: pricing, krzywa nauki, kontrola danych, skalowalność i kiedy self-hosting realnie się opłaca. Praktyczne kryteria wyboru.",
+      "n8n vs Zapier: n8n na własnym serwerze od ok. 25 zł miesięcznie bez limitu wykonań, Zapier od 19,99 USD za 750 tasków. Kiedy self-hosting opłaca się firmie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -337,7 +337,7 @@ export default function N8nVsZapierArticle() {
             "@type": "Article",
             headline: "n8n vs Zapier, kiedy warto iść w self-hosting",
             description:
-              "Porównanie n8n i Zapier w 2026: pricing, krzywa nauki, kontrola danych, skalowalność i kiedy self-hosting realnie się opłaca. Praktyczne kryteria wyboru.",
+              "n8n vs Zapier: n8n na własnym serwerze od ok. 25 zł miesięcznie bez limitu wykonań, Zapier od 19,99 USD za 750 tasków. Kiedy self-hosting opłaca się firmie.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",
