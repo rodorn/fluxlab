@@ -9437,3 +9437,11 @@ Decyzje dla stratega:
 **Mail do Pawła:** 06:25, „FluxLab ruch, plan na 31.10.2026: 23 osoby w dobę, 0 leadów”; Dla Pawła: 2 resety hasła Pinterest o 00:04, decyzja o zimnych mailach, baner cookies/strona główna/kontakt.
 
 <!-- WYSLANO 2026-10-31 06:25 -->
+
+## 2026-10-31 06:48
+**Kanał:** Google (Z1 planu, gdzie stoją 2 frazy pod kamień Z3).
+**Co zrobione:** odczytano z GSC strony na 2 frazy: „system ticketowy dla e-commerce" /automatyzacja-dla-ecommerce 0 klik. / 24 wyśw. / poz. 69,6, „asystent ai na stronie" /widocznosc-w-ai 0 / 21 / poz. 21,9; obie poz. > 20, więc kandydat Z3: brak (Z3 o 10:00 wpisze „bez zmiany").
+**Ruch:** raport_ruchu doba 103 odsłony, 50 osób (-22% wobec średniej 132,4); źródła: b2b-email 50 (otwarcia maili), t.co 8, bing 3, instagram 2, google 2; uruchomienia narzędzi 10 (numer_ksef 6, skan 4, audyt 2), klik_po_wyniku 1.
+**Dowód:** cykl/z1-frazy-2026-10-31.txt, linia Z1 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z2 (nie wcześniej niż 08:00), Z3 (10:00, bez zmiany), Z4-Z17 według godzin.

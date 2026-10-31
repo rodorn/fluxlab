@@ -1,0 +1,5 @@
+Z1 31.10 06:45, GSC sc-domain:fluxlab.pl, okres domyślny po otwarciu (wykres: 19.09-28.10.2026), filtr zapytania, zakładka Strony.
+system ticketowy dla e-commerce | https://fluxlab.pl/automatyzacja-dla-ecommerce | 0 klik. | 24 wyśw. | poz. 69,6 | title: "Automatyzacja dla e-commerce, Shopify i Allegro | Fluxlab" | H1: "Automatyzacja dla e-commerce"
+asystent ai na stronie | https://fluxlab.pl/widocznosc-w-ai | 0 klik. | 21 wyśw. | poz. 21,9 | title: "Asystent AI a Twoja strona: czy ChatGPT ją widzi | Fluxlab" | H1: "Czy asystent AI widzi Twoją stronę"
+Uwaga: /asystent-ai-na-stronie nie dostaje wyświetleń na frazę „asystent ai na stronie", Google pokazuje /widocznosc-w-ai.
+kandydat Z3: brak (obie strony poz. > 20: 69,6 i 21,9)
