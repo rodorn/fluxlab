@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
-    q: "Czy faktura wewnętrzna jest w ogóle obowiązkowa?",
+    q: "Czy faktury wewnętrzne są obowiązkowe w KSeF?",
     a: "Nie. Możesz ją sporządzać dla porządku, np. przy nieodpłatnym przekazaniu towaru, ale VAT wykazujesz w ewidencji niezależnie od niej.",
   },
   {
