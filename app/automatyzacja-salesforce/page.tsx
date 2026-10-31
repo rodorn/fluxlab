@@ -5,6 +5,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import Tabs from "@/components/Tabs";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Automatyzacja Salesforce, integracje i rozbudowa | Fluxlab",
@@ -42,6 +43,29 @@ const offer = [
   {
     title: "Apex, Flow i raporty",
     desc: "Walidacje, triggery i dashboardy dla zarządu zamiast ręcznej pracy.",
+  },
+];
+
+const faq = [
+  {
+    question: "Co automatyzujemy w Salesforce?",
+    answer:
+      "Proces sprzedaży: leady, przypisania i follow-upy odpalają się same, z kontrolą wymaganych danych. Integracje przez API z ERP, księgowością i e-commerce. Walidacje, triggery i dashboardy w Apex i Flow zamiast ręcznej pracy.",
+  },
+  {
+    question: "Czy spinacie Salesforce z ERP i księgowością?",
+    answer:
+      "Tak. Łączymy Salesforce z ERP, księgowością i e-commerce przez API i webhooki, w czasie rzeczywistym. Dane wpisane raz trafiają do pozostałych systemów bez kopiowania.",
+  },
+  {
+    question: "Od czego zaczynamy współpracę?",
+    answer:
+      "Od diagnozy procesu. Opisujesz, gdzie gubią się dane i co handlowcy klikają ręcznie. Odpowiadamy, co da największy efekt i w jakiej kolejności to wdrożyć.",
+  },
+  {
+    question: "Czy Salesforce ma sens dla małej firmy?",
+    answer:
+      "Dla zespołu sprzedaży od 1 do 10 osób z klasycznym procesem zwykle lepiej sprawdzi się Pipedrive lub HubSpot. Salesforce wygrywa przy złożonym modelu danych, wielu kanałach i sprzedaży enterprise.",
   },
 ];
 
@@ -101,6 +125,56 @@ export default function AutomatyzacjaSalesforce() {
                 ),
               },
               {
+                label: "FAQ",
+                content: (
+                  <section className="py-10 lg:py-12 max-w-3xl mx-auto">
+                    <h2 className="h2-sekcji mb-8 text-center">Najczęstsze pytania</h2>
+                    <div className="space-y-4">
+                      {faq.map((item) => (
+                        <details
+                          key={item.question}
+                          className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                        >
+                          <summary className="cursor-pointer px-6 py-5 flex items-center justify-between gap-4 list-none">
+                            <span className="font-semibold text-gray-900 dark:text-white">
+                              {item.question}
+                            </span>
+                            <svg
+                              className="flex-shrink-0 transition-transform group-open:rotate-180"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                              fill="none"
+                            >
+                              <path
+                                d="M5 7l5 5 5-5"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </summary>
+                          <p className="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </details>
+                      ))}
+                    </div>
+                    <p className="mt-8 text-sm text-gray-500 dark:text-gray-400 text-center">
+                      Więcej o kosztach i progu opłacalności:{" "}
+                      <Link
+                        href="/strefa-wiedzy/salesforce-dla-malej-firmy"
+                        className="text-accent hover:underline"
+                      >
+                        Salesforce dla małej firmy, czy warto
+                      </Link>
+                      .
+                    </p>
+                  </section>
+                ),
+              },
+              {
                 label: "Diagnoza",
                 content: (
                   <section
@@ -136,6 +210,21 @@ export default function AutomatyzacjaSalesforce() {
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",
             url: "https://fluxlab.pl/automatyzacja-salesforce",
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((q) => ({
+              "@type": "Question",
+              name: q.question,
+              acceptedAnswer: { "@type": "Answer", text: q.answer },
+            })),
           }),
         }}
       />
