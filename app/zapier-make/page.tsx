@@ -62,6 +62,21 @@ const faq = [
     answer:
       "Zapier rozlicza zadania, Make operacje. Przy dużej skali Make bywa wyraźnie tańszy.",
   },
+  {
+    question: "Kiedy zamiast Zapiera albo Make wybrać n8n?",
+    answer:
+      "Gdy wykonań jest dużo albo dane nie mogą opuszczać firmy. n8n na własnym serwerze kosztuje od ok. 25 zł miesięcznie bez limitu wykonań, Zapier od 19,99 USD za 750 tasków. Na początku pomagamy wybrać między wszystkimi trzema.",
+  },
+  {
+    question: "Czy można używać Zapiera i Make jednocześnie?",
+    answer:
+      "Tak, i często to robimy: Zapier do prostych, liniowych automatyzacji z szeroką listą integracji, Make do wieloetapowych procesów operacyjnych z rozgałęzieniami, pętlami i obsługą błędów.",
+  },
+  {
+    question: "Od czego zaczyna się wdrożenie?",
+    answer:
+      "Opisujesz proces, systemy i miesięczny wolumen. Odpowiadamy, czy lepszy będzie Zapier, Make czy n8n, i budujemy workflow dopasowany do tego procesu.",
+  },
 ];
 
 export default function ZapierMake() {
