@@ -99,6 +99,21 @@ const faq = [
     answer:
       "Etap 1 zajmuje od 3 do 5 dni roboczych. Pełne raportowanie z marketingiem i prognozą od 2 do 4 tygodni.",
   },
+  {
+    question: "Jak zautomatyzować raportowanie sprzedaży z Pipedrive?",
+    answer:
+      "Deale, osoby i aktywności pobieramy przez API do Google Sheets albo Postgresa, bez eksportów CSV. Na tej bazie powstaje jeden dashboard pipeline'u, a manager dostaje raport mailem co rano.",
+  },
+  {
+    question: "Jakie dane z Pipedrive trafiają do raportu?",
+    answer:
+      "Deale, osoby, aktywności i custom fields. W drugim etapie łączymy je z marketingiem (UTM, kampanie, koszty), księgowością (faktury) i call center, więc koszt leada i konwersja liczą się w jednym miejscu.",
+  },
+  {
+    question: "Co pokazuje dashboard pipeline'u?",
+    answer:
+      "Liczbę deali, wartość, średni czas i konwersję po etapach. Brak źródła, etapu albo właściciela wywołuje alert, a deal stojący za długo w etapie trafia do managera od razu.",
+  },
 ];
 
 export default function RaportowanieZPipedrive() {
