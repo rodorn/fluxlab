@@ -9363,6 +9363,7 @@ Decyzje dla stratega:
 - Z15: Google ma nowe meta obu zmienionych stron (n8n-cena 30.10 10:45, VAT RR 30.10 12:45); ocena CTR 5-6.11.
 - Google spada: tydzień 22-28.10 13 klik. wobec 20 tydzień wcześniej, doba 3 wobec 7. Bing rośnie (3 w dobie).
 - Z18 (31.10 00:48, 0 żądań): 7 z 7 stron z Z6 i Z10 w Google i zeskanowane 30.10 po commitach 28.10 22:44-29.10 04:44: faktura-vat-rr-ksef i kalkulator-podatkowy 12:45, analiza-lokalizacji i dobor-samochodu 12:47, sprawdz-kontrahenta 15:45, automatyzacja-vs-zatrudnienie 15:47, gutschrift-ksef 15:57. Ocena 5.11 ma podstawę. Log cykl/z18-stan-31.log.
+- Z20 (31.10 04:48, 0 żądań): /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef, GSC 7 dni (22-28.10, nadal ten sam okres co Z11): 3 klik. / 126 wyśw. / CTR 2,4% / poz. 3,3. Baza dzienna dla Z2; zmiana title z 30.10 jeszcze poza okresem.
 
 ## 2026-10-30 22:45
 **Kanał:** pomiar (Z17 planu, bilans doby).
@@ -9403,3 +9404,19 @@ Decyzje dla stratega:
 **Dowód:** cykl/z19-copilot-2026-10-31.txt, linia Z19 w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z20 (GSC rano, od 04:30) i Z21 (dane dla stratega, od 05:30); przed tymi godzinami nie ma zadania do wzięcia.
+
+## 2026-10-31 03:43
+**Kanał:** brak, czekam na Z20 o 31.10 04:30.
+**Co zrobione:** nic, Z1-Z19 zamknięte, Z20 i Z21 mają godziny „nie wcześniej niż” 04:30 i 05:30; plan zakazuje brać je wcześniej i zmieniać poza planem.
+**Ruch:** raport_ruchu, ostatnia doba 100 odsłon, 42 osoby (spadek 25% wobec średniej 132,9): b2b-email 55, t.co 8, bing 3, google 2, instagram 1; zdarzenia: otwarcie_maila 55, uruchomiono_skan 4, uruchomiono_numer_ksef 4, audyt_uruchomiony 2, uruchomiono_numer_ksef_przyklad 2; uruchomienia narzędzi 10.
+**Dowód:** brak.
+**Dla Pawła:** 
+**Zostało otwarte:** Z20 (04:30), Z21 (05:30).
+
+## 2026-10-31 04:50
+**Kanał:** Google (Z20 planu, pomiar GSC rano).
+**Co zrobione:** Z11 zapisał nowy tydzień, więc odczytano bazę dzienną dla Z2: /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef w 7 dni (22-28.10) ma 3 klik. / 126 wyśw. / CTR 2,4% / poz. 3,3; GSC nadal kończy okres na 28.10, zmiana title z 30.10 jeszcze poza danymi.
+**Ruch:** ostatnia doba 101 odsłon, 42 osoby (-24% wobec średniej 132); źródła: b2b-email 56, t.co 8, bing 3, google 2, instagram 1.
+**Dowód:** linia Z20 w cykl/plan-ruchu.md, dopisek „Z20” pod bilansem Z17 w dzienniku.
+**Dla Pawła:**
+**Zostało otwarte:** Z21 (nie wcześniej niż 05:30), potem „plan zamknięty”.
