@@ -52,6 +52,7 @@ export const SEKCJE: Sekcja[] = [
           s("/wdrozenie-n8n-cena", "Wdrożenie n8n"),
           s("/pogotowie-automatyzacji", "Pogotowie automatyzacji"),
           s("/audyt-chatbota", "Audyt chatbota"),
+          s("/asystent-ai-na-stronie", "Asystent AI na stronie"),
           s("/audyt-google-ads", "Audyt Google Ads"),
         ],
       },

@@ -104,6 +104,18 @@ export default function Page() {
           q: "Czego potrzebujecie, żeby zacząć?",
           a: "Adresu strony, cennika, regulaminu i listy pytań, które klienci zadają najczęściej.",
         },
+        {
+          q: "Jak sprawdzić, co asystent AI mówi klientom?",
+          a: "Audytem: zadajemy botowi 150 realnych pytań klienta i porównujemy odpowiedzi z cennikiem i regulaminem. Raport dostajesz w 48 godzin, koszt 69 zł.",
+        },
+        {
+          q: "Co się dzieje, gdy asystent nie zna odpowiedzi?",
+          a: "Przekazuje rozmowę człowiekowi zamiast zgadywać. Ustalamy, kto w firmie odbiera takie rozmowy i jakim kanałem.",
+        },
+        {
+          q: "Na czym działa asystent AI na stronie?",
+          a: "Jako przepływ w n8n, który czyta Twoje dokumenty i wysyła pytanie do modelu językowego. Opieka 190 zł miesięcznie albo zero, jeśli prowadzisz go sam.",
+        },
       ]}
       formId="order_asystent_ai"
       formHeading="Zapytaj o asystenta AI"

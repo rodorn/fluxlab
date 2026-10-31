@@ -79,6 +79,7 @@ const USLUGI_W_STOPCE = [
   "/automatyzacja-dla-biur-rachunkowych",
   "/integracja-crm-z-erp",
   "/automatyzacja-crm-leasing",
+  "/asystent-ai-na-stronie",
   "/wdrozenie-n8n-cena",
 ];
 const NARZEDZIA_W_STOPCE = [
