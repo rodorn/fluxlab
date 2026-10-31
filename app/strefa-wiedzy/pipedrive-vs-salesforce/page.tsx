@@ -9,11 +9,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 export const metadata: Metadata = {
   title: "Pipedrive vs Salesforce, CRM dla MŚP w 2026 | Fluxlab",
   description:
-    "Pipedrive vs Salesforce w 2026: ceny, funkcje, czas wdrożenia i dopasowanie do małej i średniej firmy B2B.",
+    "Pipedrive od ok. 14 USD, Salesforce od 25 USD za użytkownika. Wdrożenie 1 do 2 tygodni albo 3 do 6 miesięcy. Który CRM dla zespołu do 30 osób, który dla dużej.",
   openGraph: {
     title: "Pipedrive vs Salesforce, CRM dla MŚP w 2026 | Fluxlab",
     description:
-      "Pipedrive vs Salesforce w 2026: ceny, funkcje, czas wdrożenia i dopasowanie do małej i średniej firmy B2B. Porównanie bez marketingowego lukru.",
+      "Pipedrive od ok. 14 USD, Salesforce od 25 USD za użytkownika. Wdrożenie 1 do 2 tygodni albo 3 do 6 miesięcy. Który CRM dla zespołu do 30 osób, który dla dużej.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -214,7 +214,7 @@ export default function PipedriveVsSalesforceArticle() {
             "@type": "Article",
             headline: "Pipedrive vs Salesforce, porównanie CRM dla MŚP 2026",
             description:
-              "Pipedrive vs Salesforce w 2026: ceny, funkcje, czas wdrożenia i dopasowanie do małej i średniej firmy B2B.",
+              "Pipedrive od ok. 14 USD, Salesforce od 25 USD za użytkownika. Wdrożenie 1 do 2 tygodni albo 3 do 6 miesięcy. Który CRM dla zespołu do 30 osób, który dla dużej.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",
