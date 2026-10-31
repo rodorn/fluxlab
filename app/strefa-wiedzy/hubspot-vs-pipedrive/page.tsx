@@ -122,7 +122,11 @@ export default function HubspotVsPipedriveArticle() {
               <Link href="/automatyzacja-formularza-do-pipedrive" className="text-accent hover:underline">
                 połączenia formularza z Pipedrive
               </Link>
-              .
+              , a gdy pipeline już działa, od{" "}
+              <Link href="/raportowanie-z-pipedrive" className="text-accent hover:underline">
+                raportowania z Pipedrive
+              </Link>{" "}
+              bez ręcznego Excela.
             </p>
 
             <h2 className={h2}>Pytania</h2>
