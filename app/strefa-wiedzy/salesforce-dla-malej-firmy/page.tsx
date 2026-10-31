@@ -10,11 +10,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "Salesforce dla małej firmy, czy warto | Fluxlab",
   description:
-    "Czy Salesforce ma sens w małej firmie. Realne koszty, czas wdrożenia, alternatywy jak Pipedrive i HubSpot oraz scenariusze, w których się zwraca.",
+    "Starter od 25 USD, Enterprise od ok. 165 USD za użytkownika, dla 10 osób 30 do 50 tys. USD w pierwszym roku. Kiedy Salesforce ma sens, kiedy wygrywa Pipedrive.",
   openGraph: {
     title: "Salesforce dla małej firmy, czy warto | Fluxlab",
     description:
-      "Czy Salesforce ma sens w małej firmie. Realne koszty, czas wdrożenia, alternatywy jak Pipedrive i HubSpot oraz scenariusze, w których się zwraca.",
+      "Starter od 25 USD, Enterprise od ok. 165 USD za użytkownika, dla 10 osób 30 do 50 tys. USD w pierwszym roku. Kiedy Salesforce ma sens, kiedy wygrywa Pipedrive.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -292,7 +292,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
             "@type": "Article",
             headline: "Salesforce dla małej firmy, czy warto",
             description:
-              "Czy Salesforce ma sens w małej firmie. Realne koszty, czas wdrożenia, alternatywy jak Pipedrive i HubSpot oraz scenariusze, w których się zwraca.",
+              "Starter od 25 USD, Enterprise od ok. 165 USD za użytkownika, dla 10 osób 30 do 50 tys. USD w pierwszym roku. Kiedy Salesforce ma sens, kiedy wygrywa Pipedrive.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",
