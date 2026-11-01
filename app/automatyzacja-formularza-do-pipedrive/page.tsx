@@ -63,16 +63,6 @@ const faq = [
       "Nie. Pipedrive ma pełne API i webhooki, więc formularz może rozmawiać z CRM bezpośrednio. Zwykle wystarcza endpoint w n8n albo lekki backend.",
   },
   {
-    question: "Czy nasz formularz się nada?",
-    answer:
-      "Każdy, który potrafi wysłać dane przez HTTP: HubSpot, WPForms, Webflow albo własny w Next.js.",
-  },
-  {
-    question: "Co jeśli Pipedrive API zwróci błąd?",
-    answer:
-      "Lead trafia do kolejki ponowień. Gdy wszystkie próby zawiodą, wysyłamy alert, a dane zostają zapisane do ręcznego wgrania. Żaden lead nie ginie.",
-  },
-  {
     question: "Jak długo trwa wdrożenie?",
     answer:
       "Etap minimalny zwykle 2 do 4 dni roboczych. Pełna integracja z routingiem i raportami źródeł 1 do 2 tygodni.",
@@ -86,11 +76,6 @@ const faq = [
     question: "Jakie dane z formularza trafiają do Pipedrive?",
     answer:
       "Imię, firma, telefon, NIP, źródło, kampania i parametry UTM. Dane firmy dociągamy po NIP. W Pipedrive powstaje osoba, organizacja i deal z wypełnionymi polami źródła i powiązaniami między nimi.",
-  },
-  {
-    question: "Co się dzieje, gdy ten sam klient wyśle formularz drugi raz?",
-    answer:
-      "Sprawdzamy e-mail, telefon i NIP. Istniejący kontakt dostaje nowy deal zamiast duplikatu, więc historia rozmów zostaje w jednym miejscu.",
   },
 ];
 

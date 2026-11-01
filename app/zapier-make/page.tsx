@@ -53,11 +53,6 @@ const faq = [
       "Zapier jest prostszy i ma więcej integracji. Make daje większą kontrolę nad logiką i bywa tańszy przy skali. Wybór zależy od procesu.",
   },
   {
-    question: "Czy możemy przenieść automatyzacje między platformami?",
-    answer:
-      "Tak, ale ręcznie: logikę odtwarza się w nowym narzędziu. Robimy takie migracje.",
-  },
-  {
     question: "Ile kosztuje Zapier vs Make?",
     answer:
       "Zapier rozlicza zadania, Make operacje. Przy dużej skali Make bywa wyraźnie tańszy.",
@@ -66,11 +61,6 @@ const faq = [
     question: "Kiedy zamiast Zapiera albo Make wybrać n8n?",
     answer:
       "Gdy wykonań jest dużo albo dane nie mogą opuszczać firmy. n8n na własnym serwerze kosztuje od ok. 25 zł miesięcznie bez limitu wykonań, Zapier od 19,99 USD za 750 tasków. Na początku pomagamy wybrać między wszystkimi trzema.",
-  },
-  {
-    question: "Czy można używać Zapiera i Make jednocześnie?",
-    answer:
-      "Tak, i często to robimy: Zapier do prostych, liniowych automatyzacji z szeroką listą integracji, Make do wieloetapowych procesów operacyjnych z rozgałęzieniami, pętlami i obsługą błędów.",
   },
   {
     question: "Od czego zaczyna się wdrożenie?",

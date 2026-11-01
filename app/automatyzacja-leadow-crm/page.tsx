@@ -67,14 +67,6 @@ const pricing = [
 
 const faq = [
   {
-    question: "Czy musimy mieć już CRM?",
-    answer: "Nie. Zaczniemy od arkuszy lub maili i dobierzemy prosty CRM.",
-  },
-  {
-    question: "Co jeśli nasze dane to bałagan?",
-    answer: "Porządkujemy minimum: pola, statusy i źródła.",
-  },
-  {
     question: "Z jakimi systemami CRM to działa?",
     answer:
       "Z Pipedrive i każdym CRM-em, który ma API.",
@@ -93,11 +85,6 @@ const faq = [
     question: "Jak AI ocenia leady w CRM?",
     answer:
       "AI czyta zapytanie i nadaje mu ocenę, a handlowiec dostaje gotowe zadanie. Działa to dobrze tylko na danych bez duplikatów i braków, dlatego najpierw porządkujemy pola i źródła. Niepewne sprawy trafiają do człowieka, nie do automatu.",
-  },
-  {
-    question: "Co dostajemy po wdrożeniu?",
-    answer:
-      "Działającą automatyzację przetestowaną na realnych danych, instrukcję i opis działania. Raport pokazuje czas reakcji, status każdego leada i wąskie gardła procesu.",
   },
 ];
 

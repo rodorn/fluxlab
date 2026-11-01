@@ -80,20 +80,9 @@ const faq = [
       "Nie. To, czego HubSpot nie umie sam, np. kanał na Slacku czy projekt w ClickUp, dokładamy przez n8n lub Zapiera.",
   },
   {
-    question:
-      "Mamy 30 klientów na retainerach. Czy raporty da się zautomatyzować dla wszystkich naraz?",
-    answer:
-      "Tak. Budujemy jeden szablon i podstawiamy dane każdego klienta. Dodanie kolejnego klienta to wpis w arkuszu.",
-  },
-  {
     question: "Ile to kosztuje przy agencji do 20 osób?",
     answer:
       "Pojedynczy proces to 1-2 tygodnie pracy, pełne wdrożenie 1-3 miesiące w etapach. Orientacyjną wycenę podajemy po rozmowie.",
-  },
-  {
-    question: "Co z bezpieczeństwem dostępów do kont reklamowych klientów?",
-    answer:
-      "Nie przechowujemy haseł. Integracje działają przez OAuth, a dostęp można cofnąć w każdej chwili.",
   },
   {
     question: "Ile kosztuje automatyczny raport z Google Ads i GA4 dla klienta agencji?",
@@ -104,11 +93,6 @@ const faq = [
     question: "Gdzie klient agencji zobaczy swój raport?",
     answer:
       "Tam, gdzie go czyta: jako PDF mailem co tydzień lub co miesiąc, w panelu Looker Studio albo Metabase, albo jako wiadomość na Slacku. Account manager dopisuje tylko komentarz do wyników.",
-  },
-  {
-    question: "Co się dzieje, gdy klient przekroczy budżet godzin z retainera?",
-    answer:
-      "Czas z rejestru godzin zestawiamy z umową klienta, więc przekroczenie widać od razu, a nie przy fakturowaniu. Pierwszego dnia miesiąca faktura za stałą obsługę i nadgodziny wystawia się sama w Fakturowni lub iFirmie.",
   },
 ];
 

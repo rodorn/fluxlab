@@ -45,11 +45,6 @@ const faqs = [
       "Nie. AI przejmuje powtarzalne analizy, decyzje zostają u ludzi.",
   },
   {
-    question: "Czy AI się myli?",
-    answer:
-      "Tak, dlatego tam, gdzie trzeba, wynik zatwierdza człowiek.",
-  },
-  {
     question: "Czy potrzebujemy własnych danych do treningu?",
     answer:
       "Zwykle nie. Większość zastosowań działa na gotowych modelach.",
@@ -63,11 +58,6 @@ const faqs = [
     question: "Czy asystent AI na stronie może odpowiadać klientom i ile to kosztuje?",
     answer:
       "Tak. Asystent odpowiada z cennika, regulaminu i oferty firmy, a gdy nie zna odpowiedzi, przekazuje rozmowę człowiekowi. Wdrożenie jako przepływ w n8n od 790 zł, rozbudowane 1 500 do 3 500 zł, opieka 190 zł miesięcznie albo zero. Do tego opłata za model językowy zależna od liczby rozmów.",
-  },
-  {
-    question: "Chatbot już działa. Da się sprawdzić, czy nie wprowadza klientów w błąd?",
-    answer:
-      "Tak. W audycie chatbota zadajemy botowi 150 realnych pytań klienta i zderzamy odpowiedzi z cennikiem, regulaminem i zasadami zwrotów. Wyłapujemy halucynacje i obietnice, którymi firma byłaby związana. Raport w 48 godzin, 69 zł.",
   },
 ];
 

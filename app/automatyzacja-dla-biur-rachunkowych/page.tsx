@@ -83,17 +83,6 @@ const faq = [
       "Nie. Optima ma własne API, przez które wprowadzamy dane z OCR i KSeF. Symfonię, Enovę i InsERT obsługujemy tą samą metodą.",
   },
   {
-    question:
-      "Mamy SaldeoSmart, ale tylko częściowo wykorzystany. Da się to lepiej spiąć?",
-    answer:
-      "Tak. Zwykle ktoś ręcznie eksportuje plik z SaldeoSmart i wgrywa go do Optimy. Łączymy te kroki, więc rozpoznana faktura trafia do systemu księgowego sama.",
-  },
-  {
-    question: "Co z tajemnicą zawodową i RODO?",
-    answer:
-      "Dane klientów zostają w Polsce, najczęściej na serwerze biura (n8n na Twojej infrastrukturze). Integracje z KSeF, GUS i białą listą działają na oficjalnych API.",
-  },
-  {
     question: "Czy pobieracie faktury KSeF dla wszystkich klientów biura?",
     answer:
       "Tak. Faktury zakupowe klientów pobieramy z KSeF automatycznie przez API v2 i wprowadzamy do programu księgowego biura (Comarch Optima, Symfonia, Enova, InsERT) tą samą drogą co dokumenty z OCR. Klient nie przesyła już faktur mailem.",
@@ -102,11 +91,6 @@ const faq = [
     question: "Od kiedy biuro musi odbierać faktury klientów w KSeF?",
     answer:
       "Odbierać faktury w KSeF muszą wszyscy od 1 lutego 2026. Do 31 grudnia 2026 nie ma kar za błędy, a od 1 stycznia 2027 numer KSeF trzeba podawać przy płatności, więc pobieranie faktur warto spiąć z księgowością jeszcze w tym roku.",
-  },
-  {
-    question: "Co robi księgowy, gdy faktury z KSeF i OCR wpływają same?",
-    answer:
-      "Zatwierdza. Dane z KSeF i OCR sprawdzamy w GUS i na białej liście VAT, a dokument czeka w programie księgowym na akceptację. Gdy OCR nie poradzi sobie z dokumentem, trafia on do księgowego, a nie ginie.",
   },
   {
     question: "Ile kosztuje wdrożenie automatyzacji w biurze rachunkowym?",

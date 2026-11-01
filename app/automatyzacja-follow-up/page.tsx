@@ -94,11 +94,6 @@ const faq = [
       "Nie, jeśli sekwencja wstrzymuje się po odpowiedzi klienta, używa kontekstu rozmowy i ma najwyżej 3 do 4 kontaktów.",
   },
   {
-    question: "Czy handlowcy nie stracą kontroli nad dealami?",
-    answer:
-      "Nie. Dostają codzienną listę zadań i mogą zatrzymać sekwencję jednym kliknięciem.",
-  },
-  {
     question: "Jakie CRM-y obsługujecie?",
     answer:
       "Najczęściej Pipedrive, HubSpot i Salesforce. Inne łączymy przez n8n, Make albo API.",
@@ -112,16 +107,6 @@ const faq = [
     question: "Ile kosztuje automatyzacja follow-upów?",
     answer:
       "Diagnoza obecnych sekwencji jest bezpłatna. Pierwsza sekwencja dla jednego etapu transakcji kosztuje od 1 800 zł, pełny system dla wszystkich etapów z eskalacjami i raportem od 3 500 zł.",
-  },
-  {
-    question: "Co się dzieje, gdy klient odpowie w trakcie sekwencji?",
-    answer:
-      "Mail, telefon albo kliknięcie w link wstrzymuje automat. Handlowiec przejmuje rozmowę, a kolejne przypomnienia nie wychodzą.",
-  },
-  {
-    question: "Co z dealem, na który nikt nie reaguje?",
-    answer:
-      "Po 20 dniach bez reakcji deal trafia do nurturingu albo zamyka się jako brak kontaktu. Manager widzi to w raporcie tygodniowym razem z liczbą follow-upów i odpowiedzi.",
   },
 ];
 

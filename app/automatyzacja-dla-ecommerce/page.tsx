@@ -91,26 +91,9 @@ const faq = [
       "Tak. Najpierw testujemy na fragmencie ruchu, potem przełączamy. Większe zmiany robimy poza godzinami szczytu.",
   },
   {
-    question:
-      "Sprzedajemy głównie na Allegro. Czy to ma sens bez własnego sklepu?",
-    answer:
-      "Ma. Allegro ma własne API, więc fakturowanie, etykiety, komunikację z klientem i raport marży zautomatyzujemy także bez sklepu.",
-  },
-  {
-    question:
-      "Integracja BaseLinkera z Allegro albo sklepem przestała działać. Czy naprawa cudzej automatyzacji jest możliwa?",
-    answer:
-      "Tak, w ramach pogotowia automatyzacji. Diagnozujemy i naprawiamy integracje BaseLinkera, WooCommerce, Allegro, n8n, Make i Zapiera, także po poprzednim wykonawcy. Diagnoza kosztuje 49 zł i odliczamy ją od naprawy, naprawa od 490 zł, stała opieka 299 zł miesięcznie.",
-  },
-  {
     question: "Czy faktury do zamówień z Allegro mogą wystawiać się same?",
     answer:
       "Tak. Opłacone zamówienie tworzy fakturę w Fakturowni, iFirmie lub InFakcie, z NIP-em sprawdzonym w GUS. Klient dostaje PDF, księgowość kopię, a po przyjęciu zwrotu system wystawia korektę.",
-  },
-  {
-    question: "Robicie audyt sklepu pod kątem marży na produktach?",
-    answer:
-      "Tak. Z eksportu sprzedaży z Allegro, BaseLinkera, WooCommerce, Shopify, Shoper lub IdoSell oraz cen zakupu liczymy realny zysk na każdej sztuce po prowizji, zwrocie i wysyłce. Raport dostajesz w 48 godzin, audyt kosztuje 49 zł.",
   },
 ];
 

@@ -85,16 +85,6 @@ const faq = [
       "Nie zawsze. Małej firmie wystarczy Google Sheets zasilany automatycznie z Pipedrive. Przy wielu źródłach danych polecamy Looker Studio albo Metabase.",
   },
   {
-    question: "Jak często aktualizować dane?",
-    answer:
-      "Dashboard pipeline'u co 15 minut do godziny, prognozę raz dziennie, alerty o stojących dealach od razu przez webhook.",
-  },
-  {
-    question: "Czy raporty przetrwają zmiany w Pipedrive?",
-    answer:
-      "Tak. Mapowanie pól trzymamy w jednym miejscu, a zmiana schematu (nowy etap, nowe pole) wywołuje alert zamiast cichej awarii.",
-  },
-  {
     question: "Ile to trwa?",
     answer:
       "Etap 1 zajmuje od 3 do 5 dni roboczych. Pełne raportowanie z marketingiem i prognozą od 2 do 4 tygodni.",
@@ -108,11 +98,6 @@ const faq = [
     question: "Jakie dane z Pipedrive trafiają do raportu?",
     answer:
       "Deale, osoby, aktywności i custom fields. W drugim etapie łączymy je z marketingiem (UTM, kampanie, koszty), księgowością (faktury) i call center, więc koszt leada i konwersja liczą się w jednym miejscu.",
-  },
-  {
-    question: "Co pokazuje dashboard pipeline'u?",
-    answer:
-      "Liczbę deali, wartość, średni czas i konwersję po etapach. Brak źródła, etapu albo właściciela wywołuje alert, a deal stojący za długo w etapie trafia do managera od razu.",
   },
 ];
 
