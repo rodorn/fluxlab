@@ -81,7 +81,8 @@ export default function Page() {
           kup: "domeny-pilnowanie",
           desc: "Netto. Do 20 domen, sprawdzanie codziennie.",
           features: [
-            "mail tego samego dnia, gdy domena wygasa, zwalnia się albo zmienia status",
+            "mail w ciągu 24 godzin, gdy domena wygasa, zwalnia się albo zmienia status",
+            "dłuższą listę domen doślesz mailem po płatności",
             "rezygnacja w dowolnym dniu, płacisz za dni korzystania",
           ],
         },

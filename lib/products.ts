@@ -164,7 +164,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "wyszukiwanie 29 zł netto, raport do 48 godzin",
       "pilnowanie do 20 domen za 9 zł netto miesięcznie",
-      "alert tego samego dnia, gdy domena się zwalnia",
+      "alert w ciągu 24 godzin, gdy domena się zwalnia",
     ],
   },
   {
