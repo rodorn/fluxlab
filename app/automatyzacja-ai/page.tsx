@@ -40,12 +40,12 @@ const useCases = [
 
 const faqs = [
   {
-    question: "Czy AI zastąpi pracowników?",
+    question: "Co obejmuje automatyzacja AI dla firm?",
     answer:
-      "Nie. AI przejmuje powtarzalne analizy, decyzje zostają u ludzi.",
+      "Sortowanie zapytań, analizę dokumentów, raporty.",
   },
   {
-    question: "Czy potrzebujemy własnych danych do treningu?",
+    question: "Czy automatyzacja AI B2B wymaga danych firmy?",
     answer:
       "Zwykle nie. Większość zastosowań działa na gotowych modelach.",
   },
