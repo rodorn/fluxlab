@@ -7,12 +7,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 
 const OPIS =
-  "Przedsiębiorca z CEIDG może mieć dwa adresy do e-Doręczeń: prywatny i firmowy. To dwie osobne skrzynki, adres prywatny nie zastępuje firmowego.";
+  "Tak, przedsiębiorca z CEIDG może mieć oba adresy do e-Doręczeń. Firmowy jest obowiązkowy od 1 października 2026 i prywatny go nie zastępuje. Gdzie go założyć.";
 
 export const metadata: Metadata = {
   title: "e-Doręczenia: adres prywatny i firmowy w JDG | Fluxlab",
   description:
-    "Przedsiębiorca z CEIDG może mieć dwa adresy do e-Doręczeń: prywatny i firmowy. To dwie osobne skrzynki, adres prywatny nie zastępuje firmowego.",
+    "Tak, przedsiębiorca z CEIDG może mieć oba adresy do e-Doręczeń. Firmowy jest obowiązkowy od 1 października 2026 i prywatny go nie zastępuje. Gdzie go założyć.",
   openGraph: {
     title: "e-Doręczenia w JDG: czy można mieć adres prywatny i firmowy",
     description: OPIS,
