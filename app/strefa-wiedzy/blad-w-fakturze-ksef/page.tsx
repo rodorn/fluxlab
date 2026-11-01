@@ -42,12 +42,12 @@ const faq = [
     a: "Bez limitu. Wystawiasz tyle korekt, ile trzeba, żeby faktura była w końcu prawidłowa.",
   },
   {
-    q: "Klient chce korekty do zera, bo brakuje numeru zamówienia. Musimy?",
-    a: "Nie. Brak danych dodatkowych nie jest pomyłką z ustawy o VAT. Korekta jest potrzebna przy zmianie podstawy lub podatku, zwrocie, rabacie albo błędzie na fakturze.",
+    q: "Kiedy trzeba wystawić korektę w KSeF?",
+    a: "Przy zmianie podstawy lub podatku, zwrocie, rabacie albo błędzie na fakturze. Brak danych dodatkowych, jak numer zamówienia, nie jest pomyłką z ustawy o VAT.",
   },
   {
-    q: "Jedna korekta do kilku faktur?",
-    a: "Można, ale korekta zbiorcza musi wskazać każdą fakturę pierwotną: numer nadany przez ciebie, numer KSeF i datę wystawienia.",
+    q: "Jak wystawić korektę zbiorczą w KSeF?",
+    a: "Korekta zbiorcza musi wskazać każdą fakturę pierwotną: numer nadany przez ciebie, numer KSeF i datę wystawienia.",
   },
 ];
 
