@@ -46,8 +46,8 @@ const faqs = [
       "Raport z jednego źródła to 790 do 1 500 zł. Każde kolejne źródło dokłada 390 do 700 zł, a panel w przeglądarce 900 do 1 800 zł.",
   },
   {
-    question: "Czy można połączyć dane z kilku źródeł?",
-    answer: "Tak, łączymy dane z kilku systemów w jeden raport.",
+    question: "Jak działa raportowanie sprzedaży?",
+    answer: "CRM i arkusze spinamy w jeden raport o stałej porze.",
   },
   {
     question: "Jak zautomatyzować raportowanie w firmie?",
