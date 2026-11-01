@@ -47,6 +47,7 @@ export interface ProductLandingProps {
   lead: string;
   ctaLabel: string;
   ctaNote?: string;
+  bezPrzyciskowHero?: boolean;
   checks: { title: string; desc: ReactNode }[];
   /** Zdania z odnosnikiem do pokrewnej strony, wstawiane pod opisem zakresu. */
   powiazane?: { przed: string; kotwica: string; href: string; po: string }[];
@@ -168,6 +169,7 @@ export default function ProductLanding(p: ProductLandingProps) {
             )}
             {/* Na stronie narzędzia pierwszym krokiem jest narzędzie, na
                 stronie usługi zamówienie, a narzędzie stoi pod cennikiem. */}
+            {!p.bezPrzyciskowHero && (
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <a href={narzedzieNajpierw ? "#narzedzie" : "#zamow"} className="btn-primary">
                 {narzedzieNajpierw ? p.ctaLabel : "Napisz do nas"}
@@ -181,6 +183,7 @@ export default function ProductLanding(p: ProductLandingProps) {
                 </a>
               )}
             </div>
+            )}
           </div>
 
           {narzedzieNajpierw && narzedzie}

@@ -36,7 +36,8 @@ export default function Page() {
       cena=""
       eyebrow="Darmowy audyt techniczny"
       h1="Zobacz, co jest nie tak z Twoją stroną, zanim komukolwiek zapłacisz"
-      lead="Wpisz adres i poczekaj kilkadziesiąt sekund. Dostaniesz listę poprawek w kolejności, z ceną naprawy. Za darmo i bez rejestracji."
+      lead="Wpisz adres, a w minutę dostaniesz listę poprawek z ceną naprawy, za darmo."
+      bezPrzyciskowHero
       ctaLabel="Zrób darmowy audyt"
       ctaNote="Diagnoza nic nie kosztuje"
       powiazane={[
