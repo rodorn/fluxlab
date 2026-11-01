@@ -9742,3 +9742,11 @@ Decyzje dla stratega:
 **Dowód:** `cykl/z5-niezindeksowane-2026-11-01.txt` (40: 24 obrazy/fonty, 12 plików, 4 strony, z czego 3 www z 301), `cykl/z5-indeksowanie-2026-11-01.log` (prośba przesłana 0, limit 0).
 **Dla Pawła:**
 **Zostało otwarte:** Z6 od 13:30; Z9 bez kandydatów z listy Z5, wyjdzie „pominięte: lista pusta”.
+
+## 2026-11-01 13:44
+**Kanał:** pomiar (plan 1.11, Z6).
+**Co zrobione:** pomiar południowy lejków po Z2 i Z4: od 06:30 zero ludzi na stronie, więc kamienie A i B nie mają jeszcze żadnej próby; tor licznika sprawdzony testowym wejściem, działa.
+**Ruch:** doba 49 odsłon, 30 osób (b2b-email 37, google 2, instagram 2, bing 1, b2b 1); po odsiewie 10 sesji, 1 uruchomienie narzędzia.
+**Dowód:** `cykl/z6-pomiar-2026-11-01.txt`; ostatni prawdziwy wiersz w ruch.sqlite 06:23, test POST /api/wizyta → 204 → wiersz 3327 zapisany i usunięty; luka rowid 3323-3326 to 4 wiersze testowe Z4.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (bazy GSC, od 14:30), Z8 (Bing, od 15:30), dalej Z9-Z17 według godzin.
