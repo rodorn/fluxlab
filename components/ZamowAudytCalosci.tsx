@@ -141,8 +141,8 @@ export default function ZamowAudytCalosci({
               </button>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Do zapłaty 12,30 zł brutto (10 zł netto plus 23% VAT), dopiero po
-              otrzymaniu raportu. Gdy strona nie odpowie, nic nie płacisz.
+              Do zapłaty 12,30 zł brutto (10 zł netto plus 23% VAT). Gdy strona
+              nie odpowie, zwracamy całą kwotę.
             </p>
             {stan === "blad" && (
               <p className="text-sm text-red-700 dark:text-red-400">{blad}</p>

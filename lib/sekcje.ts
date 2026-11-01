@@ -28,6 +28,7 @@ export const SEKCJE: Sekcja[] = [
           s("/mail-firmowy", "Mail firmowy"),
           s("/profil-firmy-google", "Prowadzenie wizytówki Google"),
           s("/benchmarking-konkurencji", "Benchmarking konkurencji"),
+          s("/skaner-domen", "Skaner domen"),
         ],
       },
       {

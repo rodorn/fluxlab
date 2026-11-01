@@ -154,6 +154,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Skaner domen",
+    tagline: "Wolne i zwalniane adresy pod Twoje frazy",
+    desc: "Szukamy wolnych domen i adresów, które właśnie wygasają, pod frazy Twojej branży albo nazwę firmy. Możemy też codziennie pilnować do 20 wybranych domen.",
+    price: "od 9 zł/mc",
+    href: "/skaner-domen",
+    grupa: "raporty",
+    cta: "Zobacz skaner domen",
+    bullets: [
+      "wyszukiwanie 29 zł netto, raport do 48 godzin",
+      "pilnowanie do 20 domen za 9 zł netto miesięcznie",
+      "alert tego samego dnia, gdy domena się zwalnia",
+    ],
+  },
+  {
+    category: "www",
     name: "Darmowy audyt techniczny",
     tagline: "Pełny raport od ręki, bez rejestracji",
     desc: "Wpisujesz adres, a automat mierzy szybkość na komputerze i osobno na telefonie, waży każdy plik, sprawdza certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Wynik to kolejność poprawek z uzasadnieniem i cena naprawy przy każdej pozycji.",

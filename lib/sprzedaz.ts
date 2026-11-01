@@ -20,6 +20,8 @@ export const OFERTA: Record<string, Oferta> = {
   "benchmarking-miesiac": { nazwa: "Benchmarking konkurencji raz w miesiącu", netto: 39, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES },
   "benchmarking-tydzien": { nazwa: "Benchmarking konkurencji raz w tygodniu", netto: 49, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES },
   "benchmarking-dzien": { nazwa: "Benchmarking konkurencji codziennie", netto: 69, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES },
+  "domeny-wyszukiwanie": { nazwa: "Skaner domen: wyszukiwanie", netto: 29, miesiecznie: false, strona: "/skaner-domen", pole: "Frazy albo nazwa firmy" },
+  "domeny-pilnowanie": { nazwa: "Skaner domen: pilnowanie do 20 domen", netto: 9, miesiecznie: true, strona: "/skaner-domen", pole: "Domeny do pilnowania, po przecinku" },
   "jezyki-monitoring": { nazwa: "Monitoring wersji językowych", netto: 99, miesiecznie: true, strona: "/kontrola-jezykow", pole: ADRES },
   "ceny-skan": { nazwa: "Skan przecen w sklepie", netto: 49, miesiecznie: false, strona: "/rejestr-cen", pole: "Adres sklepu" },
   "ceny-rejestr": { nazwa: "Rejestr cen", netto: 99, miesiecznie: true, strona: "/rejestr-cen", pole: "Adres sklepu" },
