@@ -9754,7 +9754,7 @@ Decyzje dla stratega:
 ## 2026-11-01 14:52
 **Kanał:** Google (plan 1.11, Z7).
 **Co zrobione:** zapisane bazy GSC z 28 dni dla dwóch kamieni do oceny 8.11; zero zmian treści.
-**Ruch:** doba 49 odsłon, 29 osób, głównie piksel b2b-email (otwarcia maili), 1 uruchomienie narzędzia.
+**Ruch:** doba 49 odsłon, 29 osób; źródła: b2b-email 37 (piksel), google 2, instagram 2, bing 1, b2b 1; 1 uruchomienie narzędzia.
 **Dowód:** `cykl/z7-bazy-2026-11-01.txt`, okres 3.10-30.10: /audyt-strony 1 klik./19 wyśw./poz. 5,5 (12 wyśw. z frazy „fluxlab”), /sprawdzenie-nip 1/21/poz. 12,5 („sprawdzenie nip” 3 wyśw., poz. 25,7).
 **Dla Pawła:**
 **Zostało otwarte:** Z8 (Bing, od 15:30), dalej Z9-Z17 według godzin.
