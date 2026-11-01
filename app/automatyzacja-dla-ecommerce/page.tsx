@@ -85,10 +85,9 @@ const faq = [
       "Jeden proces, np. fakturowanie, to kilka dni pracy i koszt w niskich tysiącach. Pełne spięcie sklepu z 5 do 6 systemami trwa zwykle od 2 do 6 tygodni. Dokładną wycenę dajemy po diagnozie.",
   },
   {
-    question:
-      "Czy automatyzację da się wdrożyć bez przerywania działania sklepu?",
+    question: "Czy sklep potrzebuje systemu ticketowego dla e-commerce?",
     answer:
-      "Tak. Najpierw testujemy na fragmencie ruchu, potem przełączamy. Większe zmiany robimy poza godzinami szczytu.",
+      "Do zwrotów i reklamacji nie. Zgłoszenie z formularza tworzy etykietę zwrotną, informuje magazyn i wystawia korektę.",
   },
   {
     question: "Czy faktury do zamówień z Allegro mogą wystawiać się same?",
