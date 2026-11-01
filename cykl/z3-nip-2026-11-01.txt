@@ -1,0 +1,18 @@
+Z3, 2026-11-01 09:55. Co widzi człowiek po wyniku /sprawdzenie-nip.
+
+Uruchomienie na produkcji: NIP 7123336008 (FluxLab), iPhone 13, playwright. Wynik po ok. 2 s:
+zielona karta „Brak sygnałów ostrzegawczych", PAWEŁ IWANEK, czynny podatnik VAT, 1 rachunek, KRS brak.
+Pod wynikiem: akapit o pełnym raporcie (4 linie na telefonie), formularz „Podaj maila, odeślemy pełny raport" + „Zamawiam pełny raport".
+Na telefonie pole maila zasłania baner ciasteczek (zrzut /tmp/z3/po-wyniku.png).
+Linki w <main> po wyniku: tylko okruszki i „Zobacz pełny raport o kontrahencie, za darmo" -> /sprawdz-kontrahenta, kilka ekranów niżej, poza kartą wyniku.
+Brak linku do usługi, /kontakt ani czujki w karcie wyniku. Zdarzenie klik_po_wyniku: brak (grep: NipCheck.tsx wysyła tylko uruchomiono_skan / uruchomiono_skan_przyklad; formularz maila idzie do /api/contact bez zdarzenia).
+
+Licznik 30 dni, po odsianiu automatyki, salw i skanerów: /sprawdzenie-nip 15 odsłon w 15 sesjach.
+Źródła: www.bing.com 6, bezpośrednio 4, facebook 3, www.google.com 1, pl.search.yahoo.com 1.
+W tych sesjach: uruchomiono_skan 6, uruchomiono_skan_przyklad 2. Dalej poszły 2 sesje (/numer-ksef, /audyt-kurierski), 0 na /kontakt, 0 klik_po_wyniku.
+
+Komponent: components/NipCheck.tsx, użyty w app/sprawdzenie-nip/page.tsx:91 i app/sprawdz-kontrahenta/page.tsx:113 (embargo do 5.11).
+Gotowy wzorzec: components/DalejPoWyniku.tsx (link accent do /kontakt?utm_source=narzedzie&utm_campaign=..., wysyła klik_po_wyniku).
+Zdarzenia z przeglądarki sterowanej skryptem są pomijane w lib/zdarzenie.ts (navigator.webdriver), więc testowe kliknięcie w Z4 trzeba zrobić tak, by przeszło (np. normalna przeglądarka albo sprawdzić żądanie w sieci i zdarzenie fl:zdarzenie).
+
+zmiana Z4: w NipCheck właściwość (np. dalej="sprawdzenie-nip") renderująca DalejPoWyniku pod kartą wyniku tylko na /sprawdzenie-nip; /sprawdz-kontrahenta bez zmian.

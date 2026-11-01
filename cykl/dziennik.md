@@ -9710,3 +9710,11 @@ Decyzje dla stratega:
 **Dowód:** commit a2988092, wdrożenie 08:46, https://fluxlab.pl/audyt-strony 200, zrzut cykl/z2-audyt-ekran1-2026-11-01.png. Baza do oceny: 7 dni 15 wejść / 3 uruchomienia (20%).
 **Dla Pawła:**
 **Zostało otwarte:** przycisk „Zrób darmowy audyt" nadal pod banerem ciasteczek do jego zamknięcia (kandydat na kolejny kamień). Jakość: 4 słowa na /zmiany („Checkout", „mta", „sts", „wlasny") z niezacommitowanego lib/zmiany.json innej sesji. Następne: Z3 o 09:30.
+
+## 2026-11-01 09:58
+**Kanał:** dystrybucja narzędzi (plan 1.11, Z3, lekkie: co widzi człowiek po wyniku /sprawdzenie-nip).
+**Co zrobione:** sprawdzone na produkcji (NIP 7123336008, iPhone 13): po wyniku jest tylko formularz „pełny raport" na maila, bez linku do usługi lub /kontakt i bez `klik_po_wyniku`; werdykt „zmiana Z4" (DalejPoWyniku przez właściwość NipCheck tylko na /sprawdzenie-nip, /sprawdz-kontrahenta w embargo).
+**Ruch:** ostatnia doba 64 odsłony, 39 osób; źródła: b2b-email 46, google 3, instagram 2, bing 1, b2b 1. Tydzień 817 / 392. Uruchomienia narzędzi w dobie: 2. /sprawdzenie-nip 30 dni: 15 sesji (bing 6, bezpośrednio 4, facebook 3, google 1, yahoo 1), 8 uruchomień, 0 na /kontakt.
+**Dowód:** cykl/z3-nip-2026-11-01.txt, zrzut /tmp/z3/po-wyniku.png (pole maila pod banerem ciasteczek na telefonie).
+**Dla Pawła:**
+**Zostało otwarte:** Z4 od 11:00 (zdarzenia z przeglądarki skryptowej są odsiewane w lib/zdarzenie.ts, test kliknięcia trzeba sprawdzić przez żądanie sieciowe/fl:zdarzenie), potem Z5 o 12:30.
