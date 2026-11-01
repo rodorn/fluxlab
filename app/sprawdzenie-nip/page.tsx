@@ -88,7 +88,7 @@ export default function SprawdzenieNipPage() {
 
           <div className="mt-10">
             <NazwaNarzedzia href="/sprawdzenie-nip" />
-            <NipCheck />
+            <NipCheck dalej />
           </div>
 
           <div className="mt-16 max-w-3xl mx-auto">

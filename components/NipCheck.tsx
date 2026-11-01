@@ -46,7 +46,7 @@ const KOLOR: Record<
   },
 };
 
-export default function NipCheck() {
+export default function NipCheck({ dalej = false }: { dalej?: boolean }) {
   const [nip, setNip] = useState("");
   const [stan, setStan] = useState<"idle" | "ladowanie" | "gotowe" | "blad">(
     "idle",
@@ -258,6 +258,18 @@ export default function NipCheck() {
                 </li>
               ))}
             </ul>
+          )}
+
+          {dalej && (
+            <p className="mt-4 text-sm">
+              <a
+                href="/kontakt?utm_source=narzedzie&utm_campaign=sprawdzenie-nip"
+                onClick={() => zglosZdarzenie("klik_po_wyniku")}
+                className="font-semibold text-accent underline underline-offset-2"
+              >
+                Sprawdzaj kontrahentów automatycznie przy każdej fakturze
+              </a>
+            </p>
           )}
 
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
