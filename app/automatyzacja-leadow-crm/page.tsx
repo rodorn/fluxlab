@@ -67,9 +67,9 @@ const pricing = [
 
 const faq = [
   {
-    question: "Z jakimi systemami CRM to działa?",
+    question: "Z czym działa integracja CRM?",
     answer:
-      "Z Pipedrive i każdym CRM-em, który ma API.",
+      "Z Pipedrive, HubSpot i każdym CRM-em z API.",
   },
   {
     question: "Ile to kosztuje?",
