@@ -44,12 +44,12 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
     a: "Oznaczasz ją DI, a gdy dostanie numer KSeF, korygujesz ewidencję i wpisujesz ten numer.",
   },
   {
-    q: "Faktura z awarii KSeF nie ma jeszcze numeru?",
-    a: "Oznaczasz ją OFF. Po nadaniu numeru korekta ewidencji nie jest potrzebna.",
+    q: "Co oznacza symbol OFF w JPK_VAT?",
+    a: "Fakturę z awarii KSeF bez numeru. Po nadaniu numeru korekta nie jest potrzebna.",
   },
   {
-    q: "Faktura od zagranicznego dostawcy?",
-    a: "BFK, bo powstała poza KSeF. Tak samo dokumenty do WNT i importu usług.",
+    q: "Co oznacza BFK w KSeF?",
+    a: "Fakturę spoza KSeF, np. zagraniczną, i dokumenty do WNT i importu usług.",
     linki: [{ fraza: "dokumenty do WNT i importu usług", href: "/strefa-wiedzy/faktura-wewnetrzna-ksef" }],
   },
 ];
