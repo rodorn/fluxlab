@@ -30,6 +30,29 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    question: "Na czym polega automatyzacja AI dla firm?",
+    answer:
+      "Model AI przejmuje czytanie i sortowanie wiadomości oraz dokumentów: klasyfikuje treści, streszcza, porządkuje zgłoszenia, wyciąga dane i przygotowuje robocze odpowiedzi. Ma sens tylko wtedy, gdy przyspiesza konkretny proces i nie obniża jakości.",
+  },
+  {
+    question: "Jak wygląda automatyzacja CRM z AI?",
+    answer:
+      "AI czyta zapytanie, nadaje mu ocenę i rozpoznaje temat, a handlowiec dostaje w CRM gotowe zadanie. Niepewne sprawy trafiają do człowieka. Działa to dobrze tylko na danych bez duplikatów i braków, dlatego najpierw porządkujemy pola i źródła leadów.",
+  },
+  {
+    question: "Czy firma potrzebuje własnych danych do trenowania modelu?",
+    answer:
+      "Zwykle nie. Większość zastosowań działa na gotowych modelach, którym podaje się dokumenty firmy, np. cennik i regulamin. Trening własnego modelu to wyjątek, nie punkt startu.",
+  },
+  {
+    question: "Czy AI może podejmować decyzje za pracowników?",
+    answer:
+      "Nie tam, gdzie błąd dużo kosztuje. Sprawdzony model: AI robi pierwszą analizę, system przekazuje wynik dalej, a człowiek zatwierdza decyzje o wyższym ryzyku. AI się myli, więc powtarzalne analizy idą do modelu, a decyzje zostają u ludzi.",
+  },
+];
+
 export default function AiWAutomatyzacjiFirmPage() {
   return (
     <>
@@ -85,6 +108,23 @@ export default function AiWAutomatyzacjiFirmPage() {
               analizę, system przekazuje wynik dalej, człowiek zatwierdza
               decyzje o wyższym ryzyku.
             </p>
+
+            <h2 className="mt-10 mb-6 h2-sekcji">Najczęstsze pytania</h2>
+            <div className="space-y-4">
+              {faq.map((item) => (
+                <details
+                  key={item.question}
+                  className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                >
+                  <summary className="cursor-pointer px-6 py-5 font-semibold text-gray-900 dark:text-white list-none">
+                    {item.question}
+                  </summary>
+                  <p className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -105,6 +145,22 @@ export default function AiWAutomatyzacjiFirmPage() {
         <CTA naglowek="Chcesz wdrożyć AI tam, gdzie naprawdę da efekt?" />
       </main>
       <Footer />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((q) => ({
+              "@type": "Question",
+              name: q.question,
+              acceptedAnswer: { "@type": "Answer", text: q.answer },
+            })),
+          }),
+        }}
+      />
 
       {/* Article Schema */}
       <script
