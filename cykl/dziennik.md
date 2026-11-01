@@ -9684,3 +9684,11 @@ Decyzje dla stratega:
 **Plan:** 17 zadań (Z1-Z17), kamienie Z2 i Z4, maile 0 (niedziela).
 **Inne sesje:** FL_SEO 1.11 06:17: prośba o przycięcie 8 stron z FAQ 6-7 do 4 (zasada 7.10) do 2.11 12:00.
 **Mail do Pawła:** wysłany 06:30, „FluxLab ruch, plan na 2026-11-01: 16 osób w dobie, 0 leadów"; dla Pawła: budżet Dewelopuj, odpowiedź Joanny Święs, decyzja o zimnym outreachu, reset hasła Pinterest.
+
+## 2026-11-01 06:46
+**Kanał:** dystrybucja narzędzi (plan Z1, diagnoza /audyt-strony).
+**Co zrobione:** ustalone, czemu ludzie nie uruchamiają audytu: na iPhonie pole adresu stoi pod banerem ciasteczek i nie widać go w pierwszym ekranie; zmiana dla Z2 wskazana.
+**Ruch:** ostatnia doba 68 odsłon, 42 osoby (−48% wobec średniej 129,7); źródła: b2b-email 48, www.google.com 3, instagram 2, youtube 1, www.bing.com 1. Uruchomienia narzędzi: 2.
+**Dowód:** cykl/z1-audyt-2026-11-01.txt, zrzut cykl/z1-audyt-ekran1-2026-11-01.png. 25 sesji z /audyt-strony w 7 dni, 21 bez odsyłacza, 20 z jedną odsłoną; uruchomienia 12, z czego 10 to jedna seria Android; iPhone 3 sesje, 0 uruchomień. ?url= nie jest czytany (tylko ?domena=), licznik nie zapisuje parametrów adresu.
+**Dla Pawła:**
+**Zostało otwarte:** Z2 od 08:30: lead /audyt-strony do jednego zdania i usunięcie rzędu przycisków hero, żeby pole weszło nad baner.

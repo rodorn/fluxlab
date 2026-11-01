@@ -1,0 +1,20 @@
+Z1, /audyt-strony, 2026-11-01 06:45 (telefon-test iPhone 390x844, zrzut cykl/z1-audyt-ekran1-2026-11-01.png)
+
+PIERWSZY EKRAN IPHONE'A
+- Nad polem: okruszki, „NARZĘDZIE", H1 w 4 liniach, lead w 4 liniach (34 słowa), rząd przycisków „Zrób darmowy audyt" + „Napisz do nas". Razem ok. 610 px treści nad polem.
+- Pole adresu stoi na ok. 600-640 px, czyli dokładnie pod banerem ciasteczek (505-645 px). Widać tylko drugi przycisk „Zrób darmowy audyt" (pod banerem) i przykłady fluxlab.pl / example.com.
+- Werdykt: pola NIE widać w pierwszym ekranie, dopóki ktoś nie zamknie banera. Na ekranie są dwa identyczne przyciski „Zrób darmowy audyt", pierwszy tylko przewija.
+
+LICZNIK, 7 DNI (25.10-01.11), PO ODSIEWIE raport_ruchu (boty, automatyka, salwy, skanery)
+- Sesje z odsłoną /audyt-strony: 25 (plan zakładał 15; różnica, bo liczone są wszystkie sesje, nie tylko wejścia z zewnątrz).
+- Odsyłacz: brak 21, www.google.com 1, t.co 1, facebook (utm_campaign 211-zwroty-test-30-sekund) 1, m.facebook.com 1. utm_campaign tylko w 1 sesji.
+- Odsłony w sesji: 1 odsłona w 20 z 25; 2-9 odsłon w 5.
+- Wejście bezpośrednio na /audyt-strony: 23 z 25.
+- Uruchomiły audyt: 12 z 25, ale 10 z nich to jedna seria Android Chrome (25.10 10:56-11:03 i 26.10 00:52-02:30, co 2-3 min, każda 1 odsłona), wygląda na jedną osobę lub test. Poza serią: 3 uruchomienia z 15 sesji (Google 25.10, bezpośrednie 30.10 z klik_po_wyniku, t.co 30.10).
+- Telefon: 15 z 25. iPhone 3 sesje, 0 uruchomień; Facebook Android 2 sesje, 0 uruchomień. To zgodne z polem schowanym pod banerem.
+- ?url= / ?domena=: licznik zapisuje tylko ścieżkę (usePathname w components/LicznikWizyt.tsx:68), parametrów adresu nie widać; nie da się stwierdzić, czy wejście miało ?url=.
+
+KOD
+- app/audyt-strony/page.tsx + components/AudytCheck.tsx:495 czytają tylko ?domena= (z pola na stronie głównej, components/PoleAudytu.tsx) i od razu uruchamiają badanie. ?url= NIE jest czytany.
+
+zmiana Z2: na /audyt-strony skrócić lead do jednego zdania i usunąć rząd przycisków hero („Zrób darmowy audyt" przewijający + „Napisz do nas"), żeby pole adresu weszło nad baner ciasteczek w pierwszym ekranie iPhone'a (cel: pole powyżej 500 px).
