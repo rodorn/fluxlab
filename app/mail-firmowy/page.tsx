@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Mail firmowy we własnej domenie: koszt i test | Fluxlab",
   description:
-    "Ile kosztuje mail firmowy w Google Workspace, Microsoft 365 i Zoho, które trzy wpisy w DNS decydują o spamie i jak sprawdzić swoją domenę w 10 sekund.",
+    "Ile kosztuje poczta firmowa w Google Workspace, Microsoft 365 i Zoho, które trzy wpisy w DNS decydują o spamie i jak sprawdzić swoją domenę w 10 sekund.",
   alternates: { canonical: "/mail-firmowy" },
   openGraph: {
     title: "Mail firmowy we własnej domenie: koszt i test | Fluxlab",
@@ -34,9 +34,9 @@ const faqItems = [
       "Zoho Mail ma darmowy plan do 5 osób, ale bez IMAP, więc tylko w przeglądarce i aplikacji Zoho. Domenę i tak trzeba opłacić.",
   },
   {
-    question: "Czy adres w Gmailu wystarczy do firmy?",
+    question: "Czym poczta firmowa różni się od Gmaila?",
     answer:
-      "Działa, ale nie da się go zabezpieczyć rekordami SPF, DKIM i DMARC, bo domena nie należy do ciebie.",
+      "Działa w twojej domenie, więc chronią ją SPF, DKIM i DMARC. W Gmailu domena nie jest twoja.",
   },
   {
     question: "Dlaczego nasze maile trafiają do spamu?",
