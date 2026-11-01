@@ -1,0 +1,9 @@
+Z7 bazy GSC, filtr strony (page=!), 28 dni, odczyt 1.11.2026 14:50. Okres 3.10-30.10.2026 (koniec okresu 30.10).
+
+/audyt-strony: klik. 1, wyśw. 19, CTR 5,3%, poz. 5,5
+  zapytania (widoczne 3): fluxlab 1/12 poz. 4,5; "pipedrive" 0/1 poz. 9,0; audyt strony darmowy 0/1 poz. 25,0
+
+/sprawdzenie-nip: klik. 1, wyśw. 21, CTR 4,8%, poz. 12,5
+  zapytania (5): sprawdzenie nip 0/3 poz. 25,7; sprawdź status vat 0/1 poz. 4,0; sprawdz nip vat 0/1 poz. 8,0; sprawdzenie nip vat 0/1 poz. 10,0; weryfikacja nip 0/1 poz. 33,0
+
+Baza do oceny 8.11. Bez zmian treści.
