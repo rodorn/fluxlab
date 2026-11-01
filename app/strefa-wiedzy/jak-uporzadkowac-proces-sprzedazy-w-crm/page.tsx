@@ -30,6 +30,29 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    question: "Ile etapów powinien mieć proces sprzedaży w CRM?",
+    answer:
+      "Lepiej mniej etapów, ale każdy z jasnym warunkiem wejścia, obowiązkowymi danymi, kolejnym ruchem i osobą odpowiedzialną. Jeśli nie wiadomo, po czym poznać przejście z etapu A do B, proces jest uznaniowy i raporty z niego nic nie mówią.",
+  },
+  {
+    question: "Co zrobić najpierw: uporządkować dane w CRM czy automatyzować?",
+    answer:
+      "Najpierw pola obowiązkowe i proste reguły, bo dopiero wtedy raportowanie ma sens. Automatyzacja wchodzi później: tworzy zadania, przypomina o follow-upie i pilnuje braków w danych.",
+  },
+  {
+    question: "Jak uporządkowany proces w CRM pomaga w follow-upie?",
+    answer:
+      "Zmiana etapu, np. „wysłana oferta”, uruchamia sekwencję. Po 2, 5 i 10 dniach handlowiec dostaje zadanie z szablonem i kontekstem rozmowy. Mail lub telefon klienta pauzuje automat, a po 20 dniach bez reakcji transakcja trafia do dalszej opieki marketingowej albo zamyka się jako „brak kontaktu”.",
+  },
+  {
+    question: "Jak sprawdzić, czy proces sprzedaży w CRM działa?",
+    answer:
+      "Po raportach: liczba follow-upów i odpowiedzi, miejsca, gdzie sekwencja się zacina, oraz transakcje z brakującymi danymi. Jeśli te liczby nie są dostępne jednym kliknięciem, proces albo dane wymagają poprawy.",
+  },
+];
+
 export default function JakUporzadkowacProcesSprzedazyArticle() {
   return (
     <>
@@ -83,6 +106,31 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
                 tworzy zadania, przypomina o follow-upie i pilnuje braków.
               </p>
             </section>
+            <section>
+              <h2 className="mb-6 h2-sekcji">Najczęstsze pytania</h2>
+              <div className="space-y-4">
+                {faq.map((item) => (
+                  <details
+                    key={item.question}
+                    className="group bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
+                  >
+                    <summary className="cursor-pointer px-6 py-5 font-semibold text-gray-900 dark:text-white list-none">
+                      {item.question}
+                    </summary>
+                    <p className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+              <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+                Gdy etapy są opisane, kolejnym krokiem jest zwykle{" "}
+                <Link href="/automatyzacja-follow-up" className="text-accent hover:underline">
+                  automatyzacja follow-upu
+                </Link>
+                , czyli sekwencja zadań po wysłaniu oferty.
+              </p>
+            </section>
           </div>
 
           {/* Prev / Next */}
@@ -93,6 +141,22 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
         <CTA naglowek="Chcesz uporządkować proces przed automatyzacją?" />
       </main>
       <Footer />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((q) => ({
+              "@type": "Question",
+              name: q.question,
+              acceptedAnswer: { "@type": "Answer", text: q.answer },
+            })),
+          }),
+        }}
+      />
 
       {/* Article Schema */}
       <script
