@@ -9776,3 +9776,11 @@ Decyzje dla stratega:
 **Dowód:** linia Z9 w `cykl/z5-indeksowanie-2026-11-01.log` (16:43), Z9 oznaczone w `cykl/plan-ruchu.md`.
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (od 17:30), Z11 (od 18:30), dalej Z12-Z17 według godzin.
+
+## 2026-11-01 17:47
+**Kanał:** treść (plan 1.11, Z10: gotowość artykułu na 2.11).
+**Co zrobione:** szkic „Faktury kosztowe z KSeF do programu księgowego” gotowy do publikacji 2.11: adres /strefa-wiedzy/faktury-kosztowe-z-ksef wolny (404), brak konfliktu z FL_SEO (od 31.10 nic o fakturach kosztowych, w app/ tylko dwie wzmianki z 21.10 i wcześniej), title 46 zn. (56 z sufiksem), description 138 zn.
+**Ruch:** doba 45 odsłon, 33 osoby; źródła: b2b-email 31 (piksel), b2b 4, instagram 1, bing 1, google 1; uruchomienia narzędzi 1.
+**Dowód:** sekcja „Kontrola Z10, 1.11.2026 17:46” w `cykl/artykul-2026-11-02-szkic.md`, Z10 oznaczone w `cykl/plan-ruchu.md`.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (od 18:30), Z12 (od 19:30), Z13-Z17 według godzin.
