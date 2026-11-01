@@ -39,14 +39,14 @@ export default function N8nVsZapierArticle() {
         "Wersja Community Edition jest bezpłatna do użytku wewnętrznego na własnym serwerze. Płatne są n8n.cloud (od ok. 24 EUR/mies.) i Enterprise Edition (SSO, role, log audytowy).",
     },
     {
-      question: "Ile kosztuje utrzymanie n8n self-hosted?",
+      question: "Ile kosztuje n8n?",
       answer:
-        "Serwer to ok. 5-20 USD/mies. Pierwsze wdrożenie zajmuje 4-8 godzin, utrzymanie 1-3 godziny miesięcznie. U zewnętrznego wykonawcy to zwykle 200-500 zł miesięcznie.",
+        "Community Edition na własnym serwerze: ok. 25 zł/mies. za VPS, bez limitu wykonań. n8n.cloud od ok. 24 EUR/mies. Utrzymanie u wykonawcy zwykle 200-500 zł/mies.",
     },
     {
-      question: "Czy n8n ma tyle integracji co Zapier?",
+      question: "Ile kosztuje Zapier?",
       answer:
-        "Nie: ok. 500 wobec ok. 6 000. Moduły HTTP Request i Code pozwalają jednak podłączyć dowolne API, a popularne systemy (HubSpot, Pipedrive, Slack, Google, Microsoft) są w obu narzędziach.",
+        "Plan Professional 19,99 USD/mies. za 750 tasków, Team 69 USD za 2 000. Przy 50 000 tasków miesięcznie to ok. 600-800 USD/mies.",
     },
     {
       question: "Czy łatwo migrować z Zapiera do n8n?",
