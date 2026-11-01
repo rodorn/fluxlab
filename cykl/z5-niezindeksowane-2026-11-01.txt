@@ -1,0 +1,47 @@
+# GSC Indeksowanie → Strony, odczyt 2026-11-01 12:45, raport „Ostatnia aktualizacja: 23.10.2026” (bez zmian), lista z odczytu 27.10 (cykl/gsc-niezindeksowane-2026-10-27.txt)
+# „Strona zeskanowana, ale jeszcze nie zindeksowana”: 40
+# typ:      24 obraz/font
+# typ:      12 plik do pobrania
+# typ:       4 strona
+# odsiew: pliki PDF/CSV/MD, obrazy i fonty, adresy www i mta-sts (301 na fluxlab.pl), parametry; zgłoszone od 18.10: /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca (z19-indeksowanie-27.log, prośba przesłana)
+# kandydaci po odsiewie: 0
+https://fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca | zeskanowana | 24 paź 2026 | strona | tak | 
+https://fluxlab.pl/pobierz/checklista-ksef-2027.pdf | zeskanowana | 24 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/pobierz/poradnik-seo-mala-firma.pdf | zeskanowana | 24 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/_next/static/media/fc0a7394b875fa43-s.p.614a1c00.woff2 | zeskanowana | 24 paź 2026 | obraz/font | nie | 
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-braki.csv | zeskanowana | 24 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/og?t=Od kiedy Twoja firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu | zeskanowana | 24 paź 2026 | obraz/font | nie | 
+https://mta-sts.fluxlab.pl/_next/static/media/fc0a7394b875fa43-s.p.614a1c00.woff2 | zeskanowana | 24 paź 2026 | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/og?t=Kontakt%20%7C%20Fluxlab | zeskanowana | 24 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/_next/static/media/f06bf9da926bae75.p.c68a79fb.woff2 | zeskanowana | 23 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/_next/static/media/c7f47671e39f7787.p.088ba3ed.woff2 | zeskanowana | 23 paź 2026 | obraz/font | nie | 
+https://mta-sts.fluxlab.pl/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2 | zeskanowana | 23 paź 2026 | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/_next/static/media/c7f47671e39f7787.p.088ba3ed.woff2 | zeskanowana |  | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/szablony/checklista-przed-startem-strony.md | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-tresc.csv | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-dostepnosc.csv | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-polaczenie.csv | zeskanowana | 23 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/szablony/checklista-przed-startem-strony.md | zeskanowana | 22 paź 2026 | plik do pobrania | nie | 
+https://mta-sts.fluxlab.pl/_next/static/media/f06bf9da926bae75.p.c68a79fb.woff2 | zeskanowana | 22 paź 2026 | obraz/font | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/szablony/checklista-ksef-dla-malej-firmy.md | zeskanowana | 22 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://mta-sts.fluxlab.pl/szablony/brief-strony-internetowej.md | zeskanowana | 21 paź 2026 | plik do pobrania | nie | mta-sts, dziś 301 na fluxlab.pl
+https://fluxlab.pl/szablony/brief-strony-internetowej.md | zeskanowana | 21 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/szablony/checklista-ksef-dla-malej-firmy.md | zeskanowana | 21 paź 2026 | plik do pobrania | nie | 
+https://fluxlab.pl/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2 | zeskanowana | 21 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-integracja/opengraph-image?8fe74f49c02a6642 | zeskanowana | 21 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/numer-ksef/opengraph-image?be747acd0cb50fb0 | zeskanowana | 9 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-2027/opengraph-image | zeskanowana | 9 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-2027/opengraph-image?2b0ea57f5d2015ac | zeskanowana | 6 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/e-doreczenia-integracja/opengraph-image?88f8e01096332793 | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/opengraph-image?62095b685b2e73e7 | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/ksef-integracja/opengraph-image?ed5e971932c8da61 | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/photos/Factory.avif | zeskanowana | 3 paź 2026 | obraz/font | nie | 
+https://fluxlab.pl/opengraph-image?9f82fff65c01486e | zeskanowana | 26 wrz 2026 | obraz/font | nie | 
+https://www.fluxlab.pl/strefa-wiedzy/ai-w-automatyzacji-firm | zeskanowana | 10 wrz 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/zatrudnic-czy-zautomatyzowac | zeskanowana | 24 sie 2026 | strona | nie | www, przekierowanie na fluxlab.pl
+https://fluxlab.pl/opengraph-image | zeskanowana | 9 sie 2026 | obraz/font | nie | 
+https://fluxlab.pl/opengraph-image?2b3ec801eabf6d0 | zeskanowana | 9 sie 2026 | obraz/font | nie | 
+https://www.fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie | zeskanowana | 21 lip 2026 | strona | nie | www, przekierowanie na fluxlab.pl, odpowiednik w sitemap
+https://www.fluxlab.pl/photos/digital_eye.avif | zeskanowana | 25 maj 2026 | obraz/font | nie | www, przekierowanie na fluxlab.pl
+https://www.fluxlab.pl/_next/static/media/797e433ab948586e-s.p.479bea2b.woff2 | zeskanowana | 15 maj 2026 | obraz/font | nie | www, przekierowanie na fluxlab.pl
+https://www.fluxlab.pl/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2 | zeskanowana | 15 maj 2026 | obraz/font | nie | www, przekierowanie na fluxlab.pl

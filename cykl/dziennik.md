@@ -9734,3 +9734,11 @@ Decyzje dla stratega:
 **Dowód:** commit 9e1e5387; https://fluxlab.pl/sprawdzenie-nip 200; zrzut /tmp/z4/po-wyniku.png; testowy klik dotarł do licznika i został usunięty.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (indeksowanie, partia 1), Z6 o 13:30 (pomiar klik_po_wyniku od Z4). jakosc.mjs zgłasza 4 słowa w /zmiany (Checkout, mta, sts, wlasny) z cudzych wpisów w lib/zmiany.json.
+
+## 2026-11-01 12:45
+**Kanał:** Google (indeksowanie), plan 1.11 Z5.
+**Co zrobione:** lista „zeskanowana, nie zindeksowana” z raportu Strony (nadal 23.10) po odsiewie pusta, więc 0 żądań indeksowania; jedyna strona HTML z sitemap na liście (/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca, zgłoszona 27.10) jest już w Google.
+**Ruch:** doba 54 odsłony, 33 osoby; źródła: b2b-email 42 (piksel, nie ludzie), www.google.com 2, instagram 2, www.bing.com 1, b2b 1.
+**Dowód:** `cykl/z5-niezindeksowane-2026-11-01.txt` (40: 24 obrazy/fonty, 12 plików, 4 strony, z czego 3 www z 301), `cykl/z5-indeksowanie-2026-11-01.log` (prośba przesłana 0, limit 0).
+**Dla Pawła:**
+**Zostało otwarte:** Z6 od 13:30; Z9 bez kandydatów z listy Z5, wyjdzie „pominięte: lista pusta”.
