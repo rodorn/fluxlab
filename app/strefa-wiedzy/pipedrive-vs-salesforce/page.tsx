@@ -44,8 +44,8 @@ const Check = () => (
 
 const faq = [
   {
-    q: "Czy Salesforce jest po prostu lepszy niż Pipedrive?",
-    a: "Nie. Daje więcej możliwości, ale w małej firmie to zwykle więcej kosztów i utrzymania bez realnej korzyści.",
+    q: "Pipedrive czy Salesforce: co wybrać dla małej firmy?",
+    a: "Zwykle Pipedrive. Salesforce daje więcej możliwości, ale w małej firmie to głównie więcej kosztów.",
   },
   {
     q: "Ile realnie kosztuje Salesforce dla 10 osób?",
