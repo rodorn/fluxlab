@@ -37,9 +37,9 @@ const faq = [
       "Model AI przejmuje czytanie i sortowanie wiadomości oraz dokumentów: klasyfikuje treści, streszcza, porządkuje zgłoszenia, wyciąga dane i przygotowuje robocze odpowiedzi. Ma sens tylko wtedy, gdy przyspiesza konkretny proces i nie obniża jakości.",
   },
   {
-    question: "Jak wygląda automatyzacja CRM z AI?",
+    question: "Jakie automatyzacje AI dla firm wdraża się najpierw?",
     answer:
-      "AI czyta zapytanie, nadaje mu ocenę i rozpoznaje temat, a handlowiec dostaje w CRM gotowe zadanie. Niepewne sprawy trafiają do człowieka. Działa to dobrze tylko na danych bez duplikatów i braków, dlatego najpierw porządkujemy pola i źródła leadów.",
+      "Sortowanie zapytań, streszczenia dokumentów, porządkowanie zgłoszeń i robocze odpowiedzi w obsłudze leadów. W firmach B2B efekt to krótszy czas reakcji i mniej ręcznej pracy w CRM.",
   },
   {
     question: "Czy firma potrzebuje własnych danych do trenowania modelu?",
