@@ -54,6 +54,21 @@ const faqs = [
     answer:
       "Zwykle nie. Większość zastosowań działa na gotowych modelach.",
   },
+  {
+    question: "Jak działa automatyzacja CRM z AI?",
+    answer:
+      "AI czyta zapytanie, nadaje mu ocenę i rozpoznaje temat, a handlowiec dostaje w CRM gotowe zadanie. Niepewne sprawy trafiają do człowieka, nie do automatu. Działa to dobrze tylko na danych bez duplikatów i braków, dlatego najpierw porządkujemy pola i źródła leadów.",
+  },
+  {
+    question: "Czy asystent AI na stronie może odpowiadać klientom i ile to kosztuje?",
+    answer:
+      "Tak. Asystent odpowiada z cennika, regulaminu i oferty firmy, a gdy nie zna odpowiedzi, przekazuje rozmowę człowiekowi. Wdrożenie jako przepływ w n8n od 790 zł, rozbudowane 1 500 do 3 500 zł, opieka 190 zł miesięcznie albo zero. Do tego opłata za model językowy zależna od liczby rozmów.",
+  },
+  {
+    question: "Chatbot już działa. Da się sprawdzić, czy nie wprowadza klientów w błąd?",
+    answer:
+      "Tak. W audycie chatbota zadajemy botowi 150 realnych pytań klienta i zderzamy odpowiedzi z cennikiem, regulaminem i zasadami zwrotów. Wyłapujemy halucynacje i obietnice, którymi firma byłaby związana. Raport w 48 godzin, 69 zł.",
+  },
 ];
 
 export default function AutomatyzacjaAI() {
@@ -160,6 +175,23 @@ export default function AutomatyzacjaAI() {
                           </details>
                         ))}
                       </div>
+                      <p className="mt-8 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Zobacz też{" "}
+                        <Link
+                          href="/automatyzacja-leadow-crm"
+                          className="text-accent hover:underline"
+                        >
+                          automatyzację CRM z AI
+                        </Link>{" "}
+                        i{" "}
+                        <Link
+                          href="/asystent-ai-na-stronie"
+                          className="text-accent hover:underline"
+                        >
+                          asystenta AI na stronie
+                        </Link>
+                        .
+                      </p>
                     </div>
                   </div>
                 ),
