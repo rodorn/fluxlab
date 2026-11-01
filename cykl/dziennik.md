@@ -9692,3 +9692,21 @@ Decyzje dla stratega:
 **Dowód:** cykl/z1-audyt-2026-11-01.txt, zrzut cykl/z1-audyt-ekran1-2026-11-01.png. 25 sesji z /audyt-strony w 7 dni, 21 bez odsyłacza, 20 z jedną odsłoną; uruchomienia 12, z czego 10 to jedna seria Android; iPhone 3 sesje, 0 uruchomień. ?url= nie jest czytany (tylko ?domena=), licznik nie zapisuje parametrów adresu.
 **Dla Pawła:**
 **Zostało otwarte:** Z2 od 08:30: lead /audyt-strony do jednego zdania i usunięcie rzędu przycisków hero, żeby pole weszło nad baner.
+
+<!-- WYSLANO 2026-11-01 07:04 -->
+
+## 2026-11-01 07:43
+**Kanał:** brak (czekam na plan).
+**Co zrobione:** nic, czekam na Z2 o 08:30; Z1 zamknięte wcześniej, następne otwarte zadania mają późniejsze godziny.
+**Ruch:** raport_ruchu: doba 67 odsłon / 41 osób (b2b-email 48, google 3, instagram 2, youtube 1, bing 1), tydzień 829 / 401, uruchomienia narzędzi 2.
+**Dowód:** brak (bez zmian).
+**Dla Pawła:**
+**Zostało otwarte:** Z2 (/audyt-strony: lead 1 zdanie, bez rzędu przycisków hero, pole w 1. ekranie telefonu) od 08:30, potem Z3-Z17 wg godzin.
+
+## 2026-11-01 08:48
+**Kanał:** dystrybucja narzędzi (plan 1.11, Z2, kamień A: /audyt-strony).
+**Co zrobione:** na /audyt-strony lead skrócony do jednego zdania i usunięty rząd przycisków hero, więc pole adresu stoi w pierwszym ekranie iPhone'a nad banerem ciasteczek (ok. 465-510 px, wcześniej 600-640 px pod banerem).
+**Ruch:** ostatnia doba 66 odsłon, 41 osób; źródła: b2b-email 47, google 3, instagram 2, youtube 1, bing 1. Uruchomienia narzędzi w dobie: 2.
+**Dowód:** commit a2988092, wdrożenie 08:46, https://fluxlab.pl/audyt-strony 200, zrzut cykl/z2-audyt-ekran1-2026-11-01.png. Baza do oceny: 7 dni 15 wejść / 3 uruchomienia (20%).
+**Dla Pawła:**
+**Zostało otwarte:** przycisk „Zrób darmowy audyt" nadal pod banerem ciasteczek do jego zamknięcia (kandydat na kolejny kamień, Enter w polu działa). Jakość: 4 słowa na /zmiany („Checkout", „mta", „sts", „wlasny") z niezacommitowanego lib/zmiany.json innej sesji. Następne: Z3 o 09:30.
