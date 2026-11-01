@@ -82,6 +82,21 @@ const faq = [
     answer:
       "Średni czas do pierwszego kontaktu, odsetek leadów obsłużonych w terminie i rozkład w ciągu doby. Często problem dotyczy tylko kilku godzin.",
   },
+  {
+    question: "Ile kosztuje i jak długo trwa skrócenie czasu reakcji na leada?",
+    answer:
+      "Wariant podstawowy, czyli jedno źródło leadów, powiadomienia, auto-odpowiedź, termin z licznikiem i raport, to 4 000 do 8 000 zł i 3 do 5 dni wdrożenia. Wariant pełny z kilkoma źródłami, routingiem, eskalacjami i obsługą po godzinach to 10 000 do 20 000 zł i 2 do 4 tygodni. Cena za projekt jest stała, wycenę podajemy po 30-minutowej rozmowie.",
+  },
+  {
+    question: "Co się dzieje, gdy handlowiec nie zareaguje na leada w terminie?",
+    answer:
+      "Lead ma zadanie w CRM z terminem 5 minut. Brak reakcji przekazuje go automatycznie drugiej osobie albo managerowi, a raport pokazuje odsetek leadów obsłużonych w terminie per handlowiec.",
+  },
+  {
+    question: "Z jakich źródeł leady trafiają do automatyzacji?",
+    answer:
+      "Formularz na stronie, reklama, e-mail i czat wpadają do jednej warstwy automatyzacji w sekundę. System odrzuca duplikaty i przypisuje leada handlowcowi według regionu, produktu i obciążenia.",
+  },
 ];
 
 const h2 = "h2-sekcji mt-4 mb-6";
