@@ -9709,4 +9709,4 @@ Decyzje dla stratega:
 **Ruch:** ostatnia doba 66 odsłon, 41 osób; źródła: b2b-email 47, google 3, instagram 2, youtube 1, bing 1. Uruchomienia narzędzi w dobie: 2.
 **Dowód:** commit a2988092, wdrożenie 08:46, https://fluxlab.pl/audyt-strony 200, zrzut cykl/z2-audyt-ekran1-2026-11-01.png. Baza do oceny: 7 dni 15 wejść / 3 uruchomienia (20%).
 **Dla Pawła:**
-**Zostało otwarte:** przycisk „Zrób darmowy audyt" nadal pod banerem ciasteczek do jego zamknięcia (kandydat na kolejny kamień, Enter w polu działa). Jakość: 4 słowa na /zmiany („Checkout", „mta", „sts", „wlasny") z niezacommitowanego lib/zmiany.json innej sesji. Następne: Z3 o 09:30.
+**Zostało otwarte:** przycisk „Zrób darmowy audyt" nadal pod banerem ciasteczek do jego zamknięcia (kandydat na kolejny kamień). Jakość: 4 słowa na /zmiany („Checkout", „mta", „sts", „wlasny") z niezacommitowanego lib/zmiany.json innej sesji. Następne: Z3 o 09:30.
