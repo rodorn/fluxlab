@@ -44,7 +44,8 @@ export default function ZamowAudytCalosci({
         return;
       }
       zglosZdarzenie(`audyt_calosci_zamowienie_${miejsce}`);
-      setStan("ok");
+      if (dane.url) window.location.href = dane.url;
+      else setStan("ok");
     } catch {
       setBlad("Nie udało się połączyć. Spróbuj za chwilę.");
       setStan("blad");
@@ -65,8 +66,8 @@ export default function ZamowAudytCalosci({
             Przyjęliśmy zamówienie
           </p>
           <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-            Raport przyjdzie na {email} w ciągu kilku minut. Dane do przelewu są
-            na końcu wiadomości. Jeżeli nie dotrze, zajrzyj do spamu.
+            Raport przyjdzie na {email} w ciągu kilku minut. Jeżeli nie dotrze,
+            zajrzyj do spamu.
           </p>
         </div>
       ) : (
@@ -75,7 +76,8 @@ export default function ZamowAudytCalosci({
             Audyt całej strony: wszystkie podstrony, 10 zł netto
           </h3>
           <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-            Raport mailem, płacisz przelewem po otrzymaniu. Sprawdzamy każdą
+            Płacisz kartą albo BLIK-iem, raport przychodzi mailem kilka minut
+            po płatności. Sprawdzamy każdą
             podstronę (do 200): błędy, przekierowania, tytuły, opisy, nagłówki,
             obrazy bez opisu i martwe linki.
           </p>
@@ -135,7 +137,7 @@ export default function ZamowAudytCalosci({
                 disabled={stan === "wysylamy"}
                 className="btn-primary disabled:opacity-50"
               >
-                {stan === "wysylamy" ? "Przyjmujemy..." : "Zamawiam"}
+                {stan === "wysylamy" ? "Przechodzimy do płatności..." : "Zamawiam i płacę 12,30 zł"}
               </button>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400">

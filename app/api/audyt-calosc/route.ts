@@ -10,6 +10,8 @@ import {
   zbadajCalosc,
 } from "@/lib/audyt-calosc";
 import { wyslij } from "@/lib/audyt-wyslij";
+import { originDozwolony } from "@/lib/limit-ip";
+import { stripe } from "@/lib/stripe";
 import { adresZgloszen, ladunekZgloszenia } from "@/lib/zgloszenie-kolektor";
 
 export const runtime = "nodejs";
@@ -22,21 +24,10 @@ export const maxDuration = 300;
 const DO_WLASCICIELA = process.env.AUDYT_KOPIA_DO ?? "skiwojtner@gmail.com";
 const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const GODZINA = 3_600_000;
+const PRODUKT = "audyt-calosc";
 
-/**
- * Limit w pamięci instancji: ten sam e-mail albo domena raz na godzinę, a z
- * jednego adresu IP pięć zamówień na godzinę. Pamięć instancji nie jest
- * wspólna, dlatego właściwy limit e-maila i domeny trzyma kolektor na VPS
- * (odmawia zapisu drugiego zamówienia w ciągu godziny). Ten tutaj działa,
- * gdy kolektor nie odpowiada.
- */
-const ostatnie = new Map<string, number>();
+/** Z jednego adresu IP pięć prób zamówienia na godzinę (pamięć instancji). */
 const zIp = new Map<string, { ile: number; od: number }>();
-
-function swieze(klucz: string): boolean {
-  const t = ostatnie.get(klucz);
-  return t !== undefined && Date.now() - t < GODZINA;
-}
 
 function nipPoprawny(nip: string): boolean {
   if (!/^\d{10}$/.test(nip)) return false;
@@ -45,7 +36,7 @@ function nipPoprawny(nip: string): boolean {
   return suma % 11 === Number(nip[9]);
 }
 
-/** Zapis zamówienia w kolektorze. 429 znaczy: to samo zamówienie w ciągu godziny. */
+/** Zapis opłaconego zamówienia w kolektorze (trafia do CRM jako lead). */
 async function zapiszZamowienie(pola: {
   email: string;
   domena: string;
@@ -58,17 +49,16 @@ async function zapiszZamowienie(pola: {
     const odp = await fetch(adresZgloszen(), {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Sekret": sekret },
-      body: JSON.stringify({
-        ...ladunekZgloszenia({
+      body: JSON.stringify(
+        ladunekZgloszenia({
           email: pola.email,
           firma: pola.domena,
           rodzaj_problemu: "audyt_calosci",
-          skala: "10 zł netto",
-          opis: `Zamówienie audytu całej strony ${pola.domena}.${pola.nip ? ` NIP do faktury: ${pola.nip}.` : ""}`,
+          skala: "10 zł netto, opłacone kartą",
+          opis: `Opłacony audyt całej strony ${pola.domena}.${pola.nip ? ` NIP do faktury: ${pola.nip}.` : ""}`,
           landing_page: pola.zrodlo,
         }),
-        raz_na_godzine: true,
-      }),
+      ),
       signal: AbortSignal.timeout(4000),
     });
     return odp.status;
@@ -76,6 +66,89 @@ async function zapiszZamowienie(pola: {
     console.error("[audyt-calosc] kolektor nie odpowiedział", e);
     return null;
   }
+}
+
+/**
+ * Po powrocie z płatności: sprawdza w Stripe, że sesja jest opłacona, oznacza
+ * płatność (żeby odświeżenie strony nie wysłało raportu drugi raz) i bada
+ * stronę. Gdy strona nie odpowiada, zwraca pieniądze.
+ */
+async function poPlatnosci(sesjaId: string) {
+  const sesja = await stripe(
+    `checkout/sessions/${encodeURIComponent(sesjaId)}?expand[]=payment_intent`,
+  );
+  const m = sesja.metadata ?? {};
+  const pi = sesja.payment_intent;
+  if (m.produkt !== PRODUKT || sesja.payment_status !== "paid" || !pi?.id)
+    return NextResponse.json(
+      { error: "Nie widzimy opłaconego zamówienia." },
+      { status: 400 },
+    );
+  const email: string = m.email || sesja.customer_details?.email || "";
+  if (pi.metadata?.raport)
+    return NextResponse.json({ ok: true, email, juz: true });
+  await stripe(
+    `payment_intents/${pi.id}`,
+    new URLSearchParams({ "metadata[raport]": "w_toku" }),
+  );
+
+  const domena: string = m.domena;
+  const nip: string = m.nip ?? "";
+  const test = m.zrodlo === "test";
+  after(async () => {
+    const zapis = test
+      ? null
+      : await zapiszZamowienie({ email, domena, nip, zrodlo: m.strona ?? "" });
+    const wynik = await zbadajCalosc(domena);
+    const d = daneliczbowe(wynik);
+    const zwrot = !wynik.osiagalna || d.sprawdzone === 0;
+    if (zwrot)
+      await stripe(
+        "refunds",
+        new URLSearchParams({ payment_intent: pi.id }),
+      ).catch((e) => console.error("[audyt-calosc] zwrot", pi.id, e));
+    await stripe(
+      `payment_intents/${pi.id}`,
+      new URLSearchParams({ "metadata[raport]": zwrot ? "zwrot" : "wyslany" }),
+    ).catch(() => null);
+    const opcje = { nip: nip || undefined };
+    const html = raportHtml(wynik, opcje);
+    const tekst = raportTekst(wynik, opcje);
+    const temat =
+      d.sprawdzone > 0
+        ? `Audyt całej strony ${domena}: ${d.sprawdzone} podstron, ${d.problemow} do poprawy`
+        : `Audyt całej strony ${domena}: strona nie odpowiedziała`;
+
+    const naglowek = `<div style="background:#111827;color:#f9fafb;padding:12px 16px;font-family:monospace;font-size:13px;margin-bottom:18px">
+      ${test ? "TEST · " : ""}OPŁACONE 12,30 zł brutto${zwrot ? " · ZWROT (strona nie odpowiedziała)" : ""} · klient: ${email}<br>NIP: ${nip || "brak"} · zapis w kolektorze: ${zapis ?? "brak"} · płatność: ${pi.id}<br>
+      podstron: ${d.sprawdzone} · czas: ${wynik.czasS} s · źródło: ${m.strona || "nieznane"}
+    </div>`;
+    const htmlKopia = raportHtml(wynik, { ...opcje, naglowek });
+
+    const katalog = process.env.AUDYT_CALOSC_KATALOG;
+    if (katalog) {
+      await mkdir(katalog, { recursive: true });
+      await writeFile(path.join(katalog, `${domena}.html`), html);
+      await writeFile(path.join(katalog, `${domena}-kopia.html`), htmlKopia);
+      await writeFile(
+        path.join(katalog, `${domena}.json`),
+        JSON.stringify(wynik, null, 1),
+      );
+    }
+
+    const doKlienta = await wyslij(email, temat, html, tekst);
+    await wyslij(
+      DO_WLASCICIELA,
+      `[audyt całości${test ? ", test" : ""}] ${domena} · ${d.sprawdzone} podstron · ${email}${zwrot ? " · ZWROT" : ""}${doKlienta ? "" : " · KLIENT NIE DOSTAŁ"}`,
+      htmlKopia,
+      `Klient: ${email}\nNIP: ${nip || "brak"}\nPłatność: ${pi.id}\n\n${tekst}`,
+    );
+    console.log(
+      `[audyt-calosc] ${domena}: ${d.sprawdzone} podstron, ${d.problemow} problemów, ${wynik.czasS} s, zwrot: ${zwrot}, mail do klienta: ${doKlienta}`,
+    );
+  });
+
+  return NextResponse.json({ ok: true, email });
 }
 
 export async function POST(request: Request) {
@@ -87,6 +160,24 @@ export async function POST(request: Request) {
       { error: "Nieprawidłowe zapytanie." },
       { status: 400 },
     );
+  }
+
+  if (!originDozwolony(request.headers.get("origin")))
+    return NextResponse.json({ error: "origin" }, { status: 403 });
+
+  if (typeof body.sesja === "string" && body.sesja.startsWith("cs_")) {
+    try {
+      return await poPlatnosci(body.sesja);
+    } catch (e) {
+      console.error("[audyt-calosc] po płatności", e);
+      return NextResponse.json(
+        {
+          error:
+            "Nie udało się potwierdzić płatności. Napisz na pawel@fluxlab.pl, a wyślemy raport ręcznie.",
+        },
+        { status: 502 },
+      );
+    }
   }
 
   // Pole-pułapka: człowiek go nie widzi, bot wypełnia. Udajemy sukces.
@@ -134,59 +225,43 @@ export async function POST(request: Request) {
     );
   }
 
-  const zaCzesto = NextResponse.json(
-    {
-      error:
-        "Audyt dla tego adresu e-mail albo tej strony zamówiono w ciągu ostatniej godziny. Kolejny możesz zamówić za godzinę.",
-    },
-    { status: 429 },
-  );
-  if (swieze(`e:${email}`) || swieze(`d:${domena}`)) return zaCzesto;
-
-  const zrodlo = request.headers.get("referer") ?? "";
-  const zapis = await zapiszZamowienie({ email, domena, nip, zrodlo });
-  if (zapis === 429) return zaCzesto;
-  ostatnie.set(`e:${email}`, teraz);
-  ostatnie.set(`d:${domena}`, teraz);
-
-  after(async () => {
-    const wynik = await zbadajCalosc(domena);
-    const d = daneliczbowe(wynik);
-    const html = raportHtml(wynik, { nip: nip || undefined });
-    const tekst = raportTekst(wynik, { nip: nip || undefined });
-    const temat =
-      d.sprawdzone > 0
-        ? `Audyt całej strony ${domena}: ${d.sprawdzone} podstron, ${d.problemow} do poprawy`
-        : `Audyt całej strony ${domena}: strona nie odpowiedziała`;
-
-    const naglowek = `<div style="background:#111827;color:#f9fafb;padding:12px 16px;font-family:monospace;font-size:13px;margin-bottom:18px">
-      ZAMÓWIENIE 10 zł netto · klient: ${email}<br>NIP: ${nip || "brak"} · zapis w kolektorze: ${zapis ?? "brak"}<br>
-      podstron: ${d.sprawdzone} · czas: ${wynik.czasS} s · źródło: ${zrodlo || "nieznane"}
-    </div>`;
-    const htmlKopia = raportHtml(wynik, { nip: nip || undefined, naglowek });
-
-    const katalog = process.env.AUDYT_CALOSC_KATALOG;
-    if (katalog) {
-      await mkdir(katalog, { recursive: true });
-      await writeFile(path.join(katalog, `${domena}.html`), html);
-      await writeFile(path.join(katalog, `${domena}-kopia.html`), htmlKopia);
-      await writeFile(
-        path.join(katalog, `${domena}.json`),
-        JSON.stringify(wynik, null, 1),
-      );
-    }
-
-    const doKlienta = await wyslij(email, temat, html, tekst);
-    await wyslij(
-      DO_WLASCICIELA,
-      `[audyt całości] ${domena} · ${d.sprawdzone} podstron · ${email}${doKlienta ? "" : " · KLIENT NIE DOSTAŁ"}`,
-      htmlKopia,
-      `Klient: ${email}\nNIP: ${nip || "brak"}\n\n${tekst}`,
-    );
-    console.log(
-      `[audyt-calosc] ${domena}: ${d.sprawdzone} podstron, ${d.problemow} problemów, ${wynik.czasS} s, mail do klienta: ${doKlienta}`,
-    );
+  const p = new URLSearchParams({
+    mode: "payment",
+    locale: "pl",
+    customer_email: email,
+    "line_items[0][quantity]": "1",
+    "line_items[0][tax_rates][0]": process.env.STRIPE_TXR_VAT!,
+    "line_items[0][price_data][currency]": "pln",
+    "line_items[0][price_data][unit_amount]": "1000",
+    "line_items[0][price_data][tax_behavior]": "exclusive",
+    "line_items[0][price_data][product_data][name]": `Audyt całej strony ${domena}`,
+    success_url:
+      "https://fluxlab.pl/audyt-strony/oplacone?sesja={CHECKOUT_SESSION_ID}",
+    cancel_url: "https://fluxlab.pl/audyt-strony#audyt-calosci",
   });
-
-  return NextResponse.json({ ok: true });
+  const meta = {
+    produkt: PRODUKT,
+    zrodlo: body.zrodlo === "test" ? "test" : "strona",
+    domena,
+    email,
+    nip,
+    strona: (request.headers.get("referer") ?? "").slice(0, 400),
+  };
+  for (const [k, v] of Object.entries(meta)) {
+    p.set(`metadata[${k}]`, v);
+    p.set(`payment_intent_data[metadata][${k}]`, v);
+  }
+  try {
+    const sesja = await stripe("checkout/sessions", p);
+    return NextResponse.json({ url: sesja.url });
+  } catch (e) {
+    console.error("[audyt-calosc] checkout", domena, e);
+    return NextResponse.json(
+      {
+        error:
+          "Płatność chwilowo niedostępna. Spróbuj za chwilę albo napisz na pawel@fluxlab.pl.",
+      },
+      { status: 502 },
+    );
+  }
 }

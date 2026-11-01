@@ -84,7 +84,7 @@ export default function Page() {
         {
           name: "Audyt całej strony",
           price: "10 zł",
-          desc: "Wszystkie podstrony, raport mailem, płacisz po otrzymaniu.",
+          desc: "Wszystkie podstrony, płatność kartą albo BLIK-iem, raport mailem po kilku minutach.",
           features: [
             "do 200 podstron z mapy witryny",
             "błędy 404, tytuły, opisy i nagłówki",

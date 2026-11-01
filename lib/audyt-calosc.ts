@@ -1161,10 +1161,6 @@ export const PLATNOSC = {
   netto: "10,00 zł",
   vat: "2,30 zł",
   brutto: "12,30 zł",
-  odbiorca: "Paweł Iwanek (FluxLab)",
-  adres: "ul. Żołnierska 10/36, 20-801 Lublin",
-  nip: "7123336008",
-  rachunek: "97 1950 0001 2006 0021 4419 0001",
 };
 
 function esc(t: string): string {
@@ -1239,7 +1235,7 @@ export function raportHtml(
 
   if (!w.osiagalna || d.sprawdzone === 0) {
     tresc += p(
-      "Twoja strona nie odpowiedziała na nasze zapytania, więc nie mamy czego ocenić. Za taki audyt nic nie płacisz. Sprawdź adres i odpisz na tę wiadomość, a zbadamy ją jeszcze raz.",
+      `Twoja strona nie odpowiedziała na nasze zapytania, więc nie mamy czego ocenić. Za taki audyt nic nie płacisz: zwróciliśmy ${PLATNOSC.brutto} na kartę, z której przyszła płatność. Sprawdź adres i odpisz na tę wiadomość, a zbadamy ją jeszcze raz.`,
     );
   } else {
     tresc += `<table style="border-collapse:collapse;width:100%;margin:14px 0"><tr>
@@ -1289,17 +1285,12 @@ export function raportHtml(
 
   if (w.osiagalna && d.sprawdzone > 0) {
     tresc += h2("Płatność");
-    tresc += `<table style="border-collapse:collapse;font-size:14px;color:#111827">
-      <tr><td style="padding:3px 14px 3px 0;color:#6b7280">Kwota</td><td><strong>${PLATNOSC.brutto} brutto</strong> (${PLATNOSC.netto} netto + 23% VAT ${PLATNOSC.vat})</td></tr>
-      <tr><td style="padding:3px 14px 3px 0;color:#6b7280">Odbiorca</td><td>${esc(PLATNOSC.odbiorca)}, ${esc(PLATNOSC.adres)}</td></tr>
-      <tr><td style="padding:3px 14px 3px 0;color:#6b7280">NIP</td><td>${PLATNOSC.nip}</td></tr>
-      <tr><td style="padding:3px 14px 3px 0;color:#6b7280">Rachunek</td><td><strong>${PLATNOSC.rachunek}</strong></td></tr>
-      <tr><td style="padding:3px 14px 3px 0;color:#6b7280">Tytuł</td><td>Audyt ${esc(w.domena)}</td></tr>
-    </table>`;
     tresc += p(
-      opcje.nip
-        ? `Fakturę VAT wystawimy na NIP ${esc(opcje.nip)} po otrzymaniu wpłaty.`
-        : "Potrzebujesz faktury na firmę? Odpisz z numerem NIP.",
+      `Opłacone kartą: ${PLATNOSC.brutto} brutto (${PLATNOSC.netto} netto + 23% VAT ${PLATNOSC.vat}). ${
+        opcje.nip
+          ? `Fakturę VAT na NIP ${esc(opcje.nip)} wyślemy w ciągu 1 dnia roboczego.`
+          : "Potrzebujesz faktury na firmę? Odpisz z numerem NIP."
+      }`,
     );
   }
   tresc += `<p style="margin:26px 0 0;font-size:13px;color:#6b7280">FluxLab, <a href="https://fluxlab.pl" style="color:#4f46e5">fluxlab.pl</a></p>`;
@@ -1315,7 +1306,7 @@ export function raportTekst(
   const l: string[] = [`Audyt całej strony ${w.domena}`, ""];
   if (!w.osiagalna || d.sprawdzone === 0) {
     l.push(
-      "Twoja strona nie odpowiedziała, więc nie mamy czego ocenić. Za taki audyt nic nie płacisz.",
+      `Twoja strona nie odpowiedziała, więc nie mamy czego ocenić. Za taki audyt nic nie płacisz: zwróciliśmy ${PLATNOSC.brutto} na kartę.`,
     );
   } else {
     l.push(
@@ -1342,13 +1333,9 @@ export function raportTekst(
   if (w.osiagalna && d.sprawdzone > 0) {
     l.push(
       "Płatność",
-      `Kwota: ${PLATNOSC.brutto} brutto (${PLATNOSC.netto} netto + 23% VAT)`,
-      `Odbiorca: ${PLATNOSC.odbiorca}, ${PLATNOSC.adres}`,
-      `NIP: ${PLATNOSC.nip}`,
-      `Rachunek: ${PLATNOSC.rachunek}`,
-      `Tytuł: Audyt ${w.domena}`,
+      `Opłacone kartą: ${PLATNOSC.brutto} brutto (${PLATNOSC.netto} netto + 23% VAT).`,
       opcje.nip
-        ? `Fakturę wystawimy na NIP ${opcje.nip}.`
+        ? `Fakturę VAT na NIP ${opcje.nip} wyślemy w ciągu 1 dnia roboczego.`
         : "Faktura na firmę: odpisz z numerem NIP.",
     );
   }
