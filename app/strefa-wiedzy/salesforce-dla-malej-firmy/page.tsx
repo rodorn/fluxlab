@@ -223,10 +223,10 @@ export default function SalesforceDlaMalejFirmyArticle() {
                       <div className="space-y-6">
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Czy Salesforce Starter Suite to dobry wybór dla małej firmy?
+                            Ile kosztuje Salesforce dla małej firmy?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Bywa sensowny, ale w tej klasie zwykle wygrywa Pipedrive albo HubSpot. Starter ma sens, gdy planujesz przejście na wyższy plan Salesforce w ciągu roku lub dwóch.
+                            Starter od 25 USD, Pro ok. 80 USD, Enterprise ok. 165 USD za użytkownika miesięcznie. Dla 10 osób Enterprise z wdrożeniem to 30 do 50 tys. USD w pierwszym roku.
                           </p>
                         </div>
                         <div>
@@ -239,10 +239,10 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            Czy Salesforce zwraca się szybciej niż Pipedrive?
+                            Salesforce dla małej firmy: czy warto?
                           </h3>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            W małej firmie bardzo rzadko. W prostym B2B Pipedrive zwraca się szybciej i taniej.
+                            Zwykle nie. Przy zespole do 10 osób i prostym procesie Pipedrive zwraca się szybciej i taniej.
                           </p>
                         </div>
                         <div>
@@ -317,10 +317,10 @@ export default function SalesforceDlaMalejFirmyArticle() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "Czy Salesforce Starter Suite to dobry wybór dla małej firmy?",
+                name: "Ile kosztuje Salesforce dla małej firmy?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Bywa sensowny, ale w tej klasie zwykle wygrywa Pipedrive albo HubSpot. Starter ma sens, gdy planujesz przejście na wyższy plan Salesforce w ciągu roku lub dwóch.",
+                  text: "Starter od 25 USD, Pro ok. 80 USD, Enterprise ok. 165 USD za użytkownika miesięcznie. Dla 10 osób Enterprise z wdrożeniem to 30 do 50 tys. USD w pierwszym roku.",
                 },
               },
               {
@@ -333,10 +333,10 @@ export default function SalesforceDlaMalejFirmyArticle() {
               },
               {
                 "@type": "Question",
-                name: "Czy Salesforce zwraca się szybciej niż Pipedrive?",
+                name: "Salesforce dla małej firmy: czy warto?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "W małej firmie bardzo rzadko. W prostym B2B Pipedrive zwraca się szybciej i taniej.",
+                  text: "Zwykle nie. Przy zespole do 10 osób i prostym procesie Pipedrive zwraca się szybciej i taniej.",
                 },
               },
               {
