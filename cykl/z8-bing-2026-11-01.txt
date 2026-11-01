@@ -1,0 +1,85 @@
+Z8 Bing Webmaster, Search Performance (Web), 30 D, stan 2026-11-01 15:50, dane do 29.10
+Suma: 9 klik., 296 wyśw., CTR 3,04%. Najwięcej wyśw.: 26.10 (48) i 29.10 (84).
+
+STRONY (10): adres | wyśw. | klik. | CTR | poz.
+https://fluxlab.pl/sprawdzenie-nip | 231 | 4 | 1.73% | 7.70
+https://fluxlab.pl/kalkulator-podatkowy | 15 | 1 | 6.67% | 8.73
+https://fluxlab.pl/ | 6 | 4 | 66.67% | 1.00
+https://fluxlab.pl/produkty | 6 | 0 | 0.00% | 2.17
+https://fluxlab.pl/strefa-wiedzy/skala-czy-liniowy-jdg | 4 | 0 | 0.00% | 7.25
+https://fluxlab.pl/kalkulator-kosztow | 3 | 0 | 0.00% | 7.67
+https://fluxlab.pl/dobor-samochodu | 2 | 0 | 0.00% | 3.00
+https://fluxlab.pl/automatyzacja-follow-up | 2 | 0 | 0.00% | 8.50
+https://fluxlab.pl/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie | 1 | 0 | 0.00% | 8.00
+https://fluxlab.pl/rejestr-cen | 1 | 0 | 0.00% | 5.00
+
+ZAPYTANIA (66 widocznych, razem 101 wyśw./9 klik.; 48 z 66 zawiera 'nip'): zapytanie | wyśw. | klik. | CTR | poz.
+fluxlab | 17 | 4 | 23.53% | 3.71
+nip 8761349335 | 3 | 0 | 0.00% | 10.00
+nip 6571416369 czy jest prywatna | 3 | 0 | 0.00% | 5.00
+sprawdź status nip | 3 | 0 | 0.00% | 10.00
+548240496 czyj to nip | 3 | 0 | 0.00% | 7.00
+skala jdg przychody i koszty | 2 | 0 | 0.00% | 7.50
+czy ten nip 7792496717 jest płatnikiem vat | 2 | 0 | 0.00% | 6.00
+6252234456 nip co to za firma | 2 | 0 | 0.00% | 9.50
+jdj skala podatkowa a odliczenie kosztow | 2 | 0 | 0.00% | 5.00
+co to za nip 7772425097 | 2 | 0 | 0.00% | 10.00
+czy to jest nip firmy dr. stefan gloyer atu 63122729 | 2 | 0 | 0.00% | 8.00
+5512209438 nip co to za | 2 | 0 | 0.00% | 6.00
+nip 5782553559 | 2 | 0 | 0.00% | 10.00
+nip 74410937773 czy jest platnikiem vat | 2 | 0 | 0.00% | 7.00
+7792479357 co to za nip | 2 | 0 | 0.00% | 5.00
+sprawdź firmę nip 626-30-69-311 | 2 | 0 | 0.00% | 8.00
+kalkulator podatku dla jdg | 1 | 1 | 100.00% | 17.00
+nip 887 151 31 76 podatnik vat | 1 | 1 | 100.00% | 7.00
+ile kosztuje ropa do auta za 67 lat | 1 | 0 | 0.00% | 6.00
+prosimy o sprawdzenie sytuacji nr nip panstwa firmy 71 7745740 spam | 1 | 0 | 0.00% | 6.00
+je-za opole nip 7541357303 czy jest podatnikiem vat | 1 | 0 | 0.00% | 7.00
+cena najniższa z 30 dni grafika | 1 | 0 | 0.00% | 5.00
+adres firmy sprzatającej do ktorej należy ten nip 543649504 | 1 | 0 | 0.00% | 8.00
+który autobu | 1 | 0 | 0.00% | 4.00
+nip firmy 821-24743-79 | 1 | 0 | 0.00% | 7.00
+7191569742 co ta za nip | 1 | 1 | 100.00% | 7.00
+yurii maslovskyi nip firmy klienta: 9452296475 adres: macieja słomczyńskiego 2 54 , 31-234 kraków | 1 | 0 | 0.00% | 8.00
+kalkulator zusu i podatku jdg | 1 | 0 | 0.00% | 10.00
+6292115781 czyj to nip | 1 | 0 | 0.00% | 7.00
+5882467517 jakiej firmy to nip | 1 | 0 | 0.00% | 9.00
+spawrdzenie nip vat | 1 | 0 | 0.00% | 7.00
+dane do faktury firmy z nip 5262735337 | 1 | 0 | 0.00% | 7.00
+sprawdż sttaus nip | 1 | 0 | 0.00% | 6.00
+nip nabywcy: 876-20-49-144 | 1 | 0 | 0.00% | 6.00
+polska jdg 2026 składki zus podatek liniowy ryczałt skala stawki | 1 | 0 | 0.00% | 5.00
+w przypadkudochodu jdg 2026 80 tys zlo ile mozna zyskac zwrotu generujac koszt 80000 | 1 | 0 | 0.00% | 10.00
+4. raportowanie i zarządzanie#R##N#automatyczne raporty, które można edytować i dostosować do własnych potrzeb (excel, pdf, csv).#R##N#grupy pojazdów z dostępem do indywidualnych raportów, dopasowanych do potrzeb danego oddziału.#R##N#czytelne dashboardy ze wszystkimi potrzebnymi danymi.#R##N#powiadomienia i alerty z centralki, m.in. o błędach w pojeździe (niski poziom oleju, płynu chłodzącego, stan akumulatora).#R##N#funkcja kalendarza ("mały tms"): można wprowadzić daty i przebiegi dla ważności prawa jazdy, przeglądu rejestracyjnego, wymiany oleju itd.#R##N#dostęp do api platformy, co umożliwia integrację z innymi systemami. | 1 | 0 | 0.00% | 8.00
+953-24-95-691 nip co to za firma | 1 | 0 | 0.00% | 10.00
+czy jest ktywnym płatnikiem nip 7581387658 | 1 | 0 | 0.00% | 5.00
+czy nip 7740001454 jest czynnym podatnikem vat | 1 | 0 | 0.00% | 10.00
+czy ten nip jest aktywnym podatnikiem | 1 | 0 | 0.00% | 9.00
+nip7521216131 | 1 | 0 | 0.00% | 9.00
+kalkulator podatkowy jfg | 1 | 0 | 0.00% | 7.00
+sprawdzanie nip | 1 | 0 | 0.00% | 7.00
+andritz kyminlinnantie 6, 48600 kotka potrzebuje nip tej firmy | 1 | 0 | 0.00% | 5.00
+jakiej firmy nie ma w che) mie | 1 | 0 | 0.00% | 7.00
+sprawdzenie powiazań firmy za darmo jpk vat | 1 | 0 | 0.00% | 5.00
+zus kalkulator podatku jdg skala | 1 | 0 | 0.00% | 5.00
+jdg ryczałt zus metoda uproszczoa wyliczenia podstawy | 1 | 0 | 0.00% | 3.00
+czy to jest nip fr85 353 861 909 | 1 | 0 | 0.00% | 8.00
+poprzednie dane tej firmy nip 5253057978 | 1 | 0 | 0.00% | 5.00
+prosimy o sprawdzenie sytuacji nr nip panstwa firmy 71 7745740 | 1 | 0 | 0.00% | 10.00
+czyj to nip / odpowiednik nr nip t06ss0054c | 1 | 0 | 0.00% | 9.00
+sprawdzanie statusu w vat nip stragnik pl justyna | 1 | 0 | 0.00% | 9.00
+jakiej firmy to nip 5472236238 | 1 | 0 | 0.00% | 7.00
+{"result":{"subject":{"nip":"5261933940","statusvat":"czynny","requesteddate":"27-10-2026","responsedatetime":"28-10-2026 12:26:10","requestid":"sd4sf-994jbba"}}} | 1 | 0 | 0.00% | 6.00
+ai ile na liczniku samochodu 12lat 271416km | 1 | 0 | 0.00% | 10.00
+jaki numer nip firmy disphol | 1 | 1 | 100.00% | 5.00
+nip 6492321114 jaka to firma | 1 | 0 | 0.00% | 9.00
+9191735733 nip dane do faktury | 1 | 0 | 0.00% | 9.00
+sprawdź nip firmy za darmo | 1 | 0 | 0.00% | 10.00
+{"result":{"subject":{"nip":"5261933940","statusvat":"czynny","requesteddate":"27-10-2026","responsedatetime":"28-10-2026 10:25:35","requestid":"qdvbr-994imln"}}} | 1 | 0 | 0.00% | 5.00
+6152074527 nip | 1 | 0 | 0.00% | 5.00
+nip nip#N#7123473691 | 1 | 0 | 0.00% | 4.00
+7182143624 nip czy podlega vat | 1 | 1 | 100.00% | 3.00
+jaki jest status firmy 5542997357 | 1 | 0 | 0.00% | 8.00
+
+Kliknięcia: fluxlab 4 (strona główna), kalkulator podatku dla jdg 1 (/kalkulator-podatkowy, poz. 17), 4 zapytania z konkretnym NIP-em (/sprawdzenie-nip, poz. 3-7).
+Werdykt: /sprawdzenie-nip ma 231 z 296 wyśw. Bing (78%) przy poz. 7,7 i CTR 1,7%; fraza to nie jedno hasło, tylko wzorzec '<NIP> co to za firma / czyj to nip / czy płatnik VAT' (48 wariantów). Kandydat na kamień 2.11: title/description /sprawdzenie-nip pod 'co to za firma po NIP, czy płatnik VAT' (CTR 1,7% przy poz. 7,7). /kalkulator-podatkowy: 15 wyśw., poz. 8,7, za mało na kamień.

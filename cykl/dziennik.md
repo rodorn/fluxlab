@@ -9758,3 +9758,13 @@ Decyzje dla stratega:
 **Dowód:** `cykl/z7-bazy-2026-11-01.txt`, okres 3.10-30.10: /audyt-strony 1 klik./19 wyśw./poz. 5,5 (12 wyśw. z frazy „fluxlab”), /sprawdzenie-nip 1/21/poz. 12,5 („sprawdzenie nip” 3 wyśw., poz. 25,7).
 **Dla Pawła:**
 **Zostało otwarte:** Z8 (Bing, od 15:30), dalej Z9-Z17 według godzin.
+
+<!-- WYSLANO 2026-11-01 15:11 -->
+
+## 2026-11-01 15:55
+**Kanał:** wyszukiwarka (plan Z8: Bing Search Performance).
+**Co zrobione:** odczyt Bing Webmaster, Search Performance 30 D: 9 klik., 296 wyśw.; /sprawdzenie-nip ma 231 wyśw. (78%), 4 klik., poz. 7,7, CTR 1,7%, a 48 z 66 widocznych zapytań to wzorzec „<NIP> co to za firma / czy płatnik VAT”, czyli kandydat na kamień 2.11 (title i description /sprawdzenie-nip).
+**Ruch:** doba 59 odsłon, 37 osób; źródła: b2b-email 43 (piksel), b2b 4, google 2, instagram 2, bing 1; uruchomienia narzędzi 1.
+**Dowód:** `cykl/z8-bing-2026-11-01.txt`, Z8 oznaczone w `cykl/plan-ruchu.md`.
+**Dla Pawła:**
+**Zostało otwarte:** Z9 (od 16:30), Z10-Z17 według godzin.
