@@ -9726,3 +9726,11 @@ Decyzje dla stratega:
 **Dowód:** brak.
 **Dla Pawła:**
 **Zostało otwarte:** Z4 (krok po wyniku /sprawdzenie-nip, od 11:00), Z5-Z17 według godzin w planie.
+
+## 2026-11-01 12:10
+**Kanał:** 1, dystrybucja narzędzi (plan 1.11 Z4, kamień B).
+**Co zrobione:** pod wynikiem /sprawdzenie-nip jest teraz link „Sprawdzaj kontrahentów automatycznie przy każdej fakturze" do /kontakt (utm_campaign=sprawdzenie-nip), wysyła klik_po_wyniku; /sprawdz-kontrahenta (embargo) bez zmian.
+**Ruch:** ostatnia doba 58 odsłon, 34 osoby; źródła: b2b-email 46, google 2, instagram 2, bing 1, b2b 1; uruchomienia narzędzi 1.
+**Dowód:** commit 9e1e5387; https://fluxlab.pl/sprawdzenie-nip 200; zrzut /tmp/z4/po-wyniku.png; testowy klik dotarł do licznika i został usunięty.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (indeksowanie, partia 1), Z6 o 13:30 (pomiar klik_po_wyniku od Z4). jakosc.mjs zgłasza 4 słowa w /zmiany (Checkout, mta, sts, wlasny) z cudzych wpisów w lib/zmiany.json.
