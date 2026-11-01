@@ -37,7 +37,7 @@ const faq = [
       "Lepiej mniej etapów, ale każdy z jasnym warunkiem wejścia, obowiązkowymi danymi, kolejnym ruchem i osobą odpowiedzialną. Jeśli nie wiadomo, po czym poznać przejście z etapu A do B, proces jest uznaniowy i raporty z niego nic nie mówią.",
   },
   {
-    question: "Co zrobić najpierw: uporządkować dane w CRM czy automatyzować?",
+    question: "Od czego zacząć automatyzację procesów sprzedażowych w CRM?",
     answer:
       "Najpierw pola obowiązkowe i proste reguły, bo dopiero wtedy raportowanie ma sens. Automatyzacja wchodzi później: tworzy zadania, przypomina o follow-upie i pilnuje braków w danych.",
   },
