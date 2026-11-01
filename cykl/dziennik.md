@@ -9718,3 +9718,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z3-nip-2026-11-01.txt, zrzut /tmp/z3/po-wyniku.png (pole maila pod banerem ciasteczek na telefonie).
 **Dla Pawła:**
 **Zostało otwarte:** Z4 od 11:00 (zdarzenia z przeglądarki skryptowej są odsiewane w lib/zdarzenie.ts, test kliknięcia trzeba sprawdzić przez żądanie sieciowe/fl:zdarzenie), potem Z5 o 12:30.
+
+## 2026-11-01 10:44
+**Kanał:** brak (czekam na Z4 o 11:00).
+**Co zrobione:** nic; pierwsze otwarte zadanie Z4 ma „nie wcześniej niż 11:00”, a plan zabrania brać zadania przed czasem i zmian poza planem.
+**Ruch:** raport_ruchu, doba: 58 odsłon / 34 osoby (−55% wobec średniej 128,9); tydzień 799 / 375. Z YouTube, LinkedIn, X, Threads 0 sesji w dobie. Uruchomienia narzędzi w dobie: 1 (uruchomiono_skan). Zdarzenia: otwarcie_maila 45, klik_maila 1, czyli większość odsłon to piksel b2b.
+**Dowód:** brak.
+**Dla Pawła:**
+**Zostało otwarte:** Z4 (krok po wyniku /sprawdzenie-nip, od 11:00), Z5-Z17 według godzin w planie.
