@@ -95,6 +95,21 @@ const faq = [
     answer:
       "Nie przechowujemy haseł. Integracje działają przez OAuth, a dostęp można cofnąć w każdej chwili.",
   },
+  {
+    question: "Ile kosztuje automatyczny raport z Google Ads i GA4 dla klienta agencji?",
+    answer:
+      "Raport z jednego źródła to 790 do 1 500 zł. Każde kolejne źródło, np. Meta Ads, dokłada 390 do 700 zł, a panel w przeglądarce 900 do 1 800 zł. Jeden szablon obsługuje wszystkich klientów, więc kolejny klient nie podnosi ceny.",
+  },
+  {
+    question: "Gdzie klient agencji zobaczy swój raport?",
+    answer:
+      "Tam, gdzie go czyta: jako PDF mailem co tydzień lub co miesiąc, w panelu Looker Studio albo Metabase, albo jako wiadomość na Slacku. Account manager dopisuje tylko komentarz do wyników.",
+  },
+  {
+    question: "Co się dzieje, gdy klient przekroczy budżet godzin z retainera?",
+    answer:
+      "Czas z rejestru godzin zestawiamy z umową klienta, więc przekroczenie widać od razu, a nie przy fakturowaniu. Pierwszego dnia miesiąca faktura za stałą obsługę i nadgodziny wystawia się sama w Fakturowni lub iFirmie.",
+  },
 ];
 
 const related = [
