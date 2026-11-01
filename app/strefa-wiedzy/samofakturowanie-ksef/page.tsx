@@ -34,12 +34,12 @@ export const metadata: Metadata = {
 
 const faq = [
   {
-    q: "Kto nadaje uprawnienie?",
-    a: "Sprzedawca, w Aplikacji Podatnika KSeF albo przez API, na NIP nabywcy. Nabywca sam go sobie nie nada.",
+    q: "Kto nadaje uprawnienie do samofakturowania w KSeF?",
+    a: "Sprzedawca, w Aplikacji Podatnika KSeF albo przez API, na NIP nabywcy.",
   },
   {
-    q: "KSeF odrzuca fakturę z błędem uprawnień?",
-    a: "Sprawdź, czy uprawnienie nadano na właściwy NIP i czy sprzedawca go nie odebrał. Faktura bez numeru KSeF nie jest wystawiona.",
+    q: "Jak oznaczyć samofakturowanie w pliku KSeF?",
+    a: "Oznaczeniem P_17 w pliku faktury. Bez nadanego uprawnienia KSeF odrzuci fakturę, a bez numeru nie jest ona wystawiona.",
   },
   {
     q: "Kto widzi taką fakturę?",
