@@ -37,9 +37,9 @@ const faqItems = [
       "Na start często tak. Workflow, raporty i marketing automation wymagają płatnych planów, których koszt rośnie szybko.",
   },
   {
-    question: "Co kosztuje więcej długoterminowo?",
+    question: "Pipedrive czy HubSpot, co wyjdzie taniej dla małej firmy?",
     answer:
-      "Zwykle HubSpot, gdy korzystasz z Marketing Hub i Sales Hub Professional. Pipedrive rośnie liniowo z liczbą użytkowników.",
+      "Długoterminowo zwykle HubSpot z Marketing Hub i Sales Hub Professional. Pipedrive rośnie liniowo z liczbą użytkowników.",
   },
   {
     question: "Czy łatwo zmigrować z HubSpota do Pipedrive?",
