@@ -123,6 +123,7 @@ export default function KsefIntegracja() {
         {
           q: "Mamy program księgowy, który obsługuje KSeF. Po co nam integracja?",
           a: "Najpewniej po nic i tak powiemy. Integracja ma sens, gdy faktury powstają poza programem księgowym, np. w sklepie albo CRM, albo gdy faktury kosztowe trzeba pobierać ręcznie.",
+          linki: [{ fraza: "faktury kosztowe trzeba pobierać ręcznie", href: "/strefa-wiedzy/faktury-kosztowe-z-ksef" }],
         },
         {
           q: "Zdążymy przed 1 stycznia 2027?",

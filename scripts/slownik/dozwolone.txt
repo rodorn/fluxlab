@@ -243,3 +243,7 @@ tiltu
 Payments
 Stripe
 ticketowego
+Checkout
+mta
+sts
+wlasny

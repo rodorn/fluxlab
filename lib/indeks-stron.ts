@@ -483,6 +483,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "W KSeF zaliczka to faktura zaliczkowa, a rozliczenie to faktura rozliczeniowa z numerami KSeF zaliczek. Gdy zaliczki pokryły całość, ostatnia zamyka sprzedaż."
   },
   {
+    "url": "/strefa-wiedzy/faktury-kosztowe-z-ksef",
+    "tytul": "Faktury kosztowe z KSeF do programu księgowego",
+    "opis": "KSeF nie powiadamia o nowych fakturach zakupowych. Sprawdź, jak program ma je pobierać sam, jakie uprawnienie nadać i jakie limity ma API."
+  },
+  {
     "url": "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura",
     "tytul": "Faktury z KSeF po zmianie biura rachunkowego",
     "opis": "Biuro, które przejmuje firmę bez dokumentów, pobierze faktury z 2026 z KSeF. Wystarczy, że firma nada mu uprawnienie do przeglądania faktur."

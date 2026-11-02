@@ -431,6 +431,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/faktury-kosztowe-z-ksef",
+        title: "Faktury kosztowe z KSeF",
+        description: "KSeF nie powiadamia o fakturach, program musi pobierać je sam.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/faktura-gdy-ksef-nie-dziala",
         title: "Faktura, gdy KSeF nie działa",
         description:
