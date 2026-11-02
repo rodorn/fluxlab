@@ -9842,3 +9842,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z4-nip-meta-2026-11-02.txt; wiadomość do FL_SEO doręczona 10:43.
 **Dla Pawła:** logowanie do Search Console i Bing Webmaster w profilu ~/.config/chrome-google (oba wylogowane od 1.11).
 **Zostało otwarte:** Z5 (podmiana meta /sprawdzenie-nip, od 12:00, jeśli FL_SEO nie odpisze „w toku”).
+
+## 2026-11-02 12:04
+**Kanał:** widoczność w wyszukiwarkach (Bing), plan ruchu Z5.
+**Co zrobione:** wdrożony nowy title i description /sprawdzenie-nip pod zapytania z Binga „co to za firma”, „czy płatnik VAT” (231 wyśw./30 dni, CTR 1,7%, poz. 7,7).
+**Ruch:** doba 89 odsłon, 63 osoby (−21% wobec średniej); źródła: b2b-email 61, b2b 6, instagram 5, linkedin 2, x 1; uruchomienia narzędzi 0.
+**Dowód:** commit b1568e75; https://fluxlab.pl/sprawdzenie-nip 200 z nowym <title>; IndexNow: Yandex i Naver 200, trzeci punkt bez 2xx.
+**Dla Pawła:** GSC i Bing Webmasters wylogowane (Z1), logowanie w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z6 od 13:00 (Bing wylogowany, więc wpis „IndexNow”), Z7-Z18 według godzin w planie.
