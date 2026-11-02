@@ -1,0 +1,13 @@
+Z4 2.11 plan ruchu: meta /sprawdzenie-nip pod zapytania z Binga (231 wyśw./30 D, CTR 1,7%, poz. 7,7; wzorzec <NIP> co to za firma / czy płatnik VAT)
+Commity app/sprawdzenie-nip 7 dni: 9e1e5387 (1.11 Z4 link pod wynikiem), dbf71522 (1.11 FAQ 4), 248bbb9e (31.10)
+
+OBECNE (produkcja 2.11 10:45)
+title: Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab
+description: Co to za NIP i czy firma jest płatnikiem VAT? W 10 s nazwa firmy, status VAT z wykazu Ministerstwa Finansów i rachunki, bez logowania.
+og:description: Darmowe sprawdzenie NIP w wykazie Ministerstwa Finansów. Status VAT, data rejestracji i liczba zgłoszonych rachunków.
+
+NOWE
+title wariant 1 (54 zn.): Czyj to NIP? Nazwa firmy i status VAT w 10 s | Fluxlab
+title wariant 2 (55 zn.): NIP: co to za firma i czy płatnik VAT, w 10 s | Fluxlab
+description (138 zn.): Wpisz NIP i sprawdź, co to za firma i czy jest czynny podatnik VAT: nazwa, data rejestracji i rachunki z wykazu MF, w 10 s, bez logowania.
+Uwaga: wynik nie pokazuje adresu firmy (NipCheck.tsx), więc opis go nie obiecuje.

@@ -9800,3 +9800,45 @@ Decyzje dla stratega:
 - Search Console wylogowany (profil chrome-google, myaccount też „Zaloguj się"); logowanie zlecone Pawłowi mailem.
 - Zoho: Walter Stopka „tak, proszę o kosztorys" (wątek FL_marketing, odpisane 1.11 14:54). Resend 24 h: 6 testów audytu innej sesji.
 - Nowy plan: 18 zadań, kamienie Z2 (artykuł /strefa-wiedzy/faktury-kosztowe-z-ksef) i Z5 (title i description /sprawdzenie-nip pod Binga: 231 wyśw., CTR 1,7%). Mail do Pawła wysłany 06:35 (msgid 179359694529…@fluxlab.pl).
+
+## 2026-11-02 06:46
+**Kanał:** pomiar (plan Z1).
+**Co zrobione:** Z1: timer enabled, GSC nie (strona „Zaloguj się”), Bing nie (przekierowanie na /webmasters/about, „Sign In”); bez logowania. Następne zadanie Z2 nie wcześniej niż 07:30, więc czekam na Z2.
+**Ruch:** 69 odsłon / 49 osób w dobie; b2b-email 47, b2b 6, instagram 2, x 1, www.fluxlab.pl 1; uruchomienia narzędzi 0.
+**Dowód:** cykl/plan-ruchu.md, linia Z1 [x].
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), oba wylogowane.
+**Zostało otwarte:** Z2 (artykuł faktury-kosztowe-z-ksef) od 07:30, Z3-Z18 według godzin.
+
+<!-- WYSLANO 2026-11-02 07:04 -->
+
+## 2026-11-02 07:50
+**Kanał:** 2 i 3 (widoczność w asystentach AI, KSeF jako magnes), zadanie Z2 z planu stratega.
+**Co zrobione:** opublikowany artykuł z kalendarza na 02.11 /strefa-wiedzy/faktury-kosztowe-z-ksef (KSeF nie wysyła powiadomień, uprawnienie do przeglądania faktur i token, limity API), z linkiem z FAQ /ksef-integracja.
+**Ruch:** doba 76 odsłon, 54 osoby (−36% wobec średniej 118,3); tydzień 697 odsłon, 365 osób. Źródła: b2b-email 51, b2b 6, instagram 5, x 1, www.fluxlab.pl 1. Uruchomienia narzędzi 0.
+**Dowód:** commit 2d748c31; https://fluxlab.pl/strefa-wiedzy/faktury-kosztowe-z-ksef 200, w sitemap.xml; IndexNow Yandex 200, Naver 200 (wspólny 403, znany); telefon-test 0 błędów. Przy okazji do scripts/slownik/dozwolone.txt dopisane Checkout, mta, sts, wlasny (z /zmiany, generowanej z commitów; nazwa i slugi, nie literówki), bo jakosc.mjs bez tego nie dawał OK.
+**Dla Pawła:** 
+**Zostało otwarte:** Z3 i dalsze według planu (Z5 opis /sprawdzenie-nip nie wcześniej niż 12:00). GSC i Bing wylogowane (Z1), więc żądanie indeksowania nowego adresu w GSC niewykonane.
+
+## 2026-11-02 08:45
+**Kanał:** brak, plan stratega (wszystkie otwarte zadania mają bramkę czasową).
+**Co zrobione:** nic nie poszło w świat, bo pierwsze otwarte zadanie Z3 ma bramkę „nie wcześniej niż 09:30”, a kolejne zaczynają się od 10:30; sprawdzone tylko warunki Z3: artykuł /strefa-wiedzy/faktury-kosztowe-z-ksef 200 i 1× w sitemap.xml.
+**Ruch:** doba 78 odsłon, 56 osób (−34% wobec średniej 117,9); tydzień 685 odsłon, 361 osób. Źródła: b2b-email 53, b2b 6, instagram 5, x 1, www.fluxlab.pl 1. Uruchomienia narzędzi 0.
+**Dowód:** curl sitemap.xml | grep -c faktury-kosztowe-z-ksef = 1; HTTP 200.
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), od Z1 oba wylogowane.
+**Zostało otwarte:** Z3 od 09:30 (przy wylogowanym GSC tylko wpis „wylogowany” i sitemap 1), Z4 od 10:30, Z5 od 12:00, dalej według planu.
+
+## 2026-11-02 09:45
+**Kanał:** wyszukiwarka (plan ruchu Z3, indeksowanie artykułu).
+**Co zrobione:** prośba o indeksowanie nie poszła, bo GSC jest wylogowany od rana (Z1); artykuł faktury-kosztowe-z-ksef jest w sitemap.xml (1×), zgłoszony już przez IndexNow w Z2.
+**Ruch:** ostatnia doba 82 odsłony, 59 osób; źródła: b2b-email 54, b2b 6, instagram 5, LinkedIn 2, X 1; uruchomienia narzędzi 0.
+**Dowód:** `curl -s https://fluxlab.pl/sitemap.xml | grep -c faktury-kosztowe-z-ksef` = 1.
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/), bez tego Z3, Z6, Z13, Z16, Z17 idą w wariancie „wylogowany”.
+**Zostało otwarte:** Z4 od 10:30 (przygotowanie opisu /sprawdzenie-nip), Z5 od 12:00.
+
+## 2026-11-02 10:45
+**Kanał:** widoczność w wyszukiwarkach (Bing), plan ruchu Z4.
+**Co zrobione:** przygotowane nowe title i description /sprawdzenie-nip pod zapytania z Binga „<NIP> co to za firma / czy płatnik VAT”, FL_SEO uprzedzony o zmianie meta o 12:00.
+**Ruch:** raport_ruchu doba 87 odsłon / 63 osoby (−24% wobec średniej 114), tydzień 677 / 361; najczęściej / (12), maile /mail/* (7); LinkedIn 1, X 1, YouTube 0, Threads 0; narzędzia 0 uruchomień; zdarzenia głównie piksel otwarcia maila (57).
+**Dowód:** cykl/z4-nip-meta-2026-11-02.txt; wiadomość do FL_SEO doręczona 10:43.
+**Dla Pawła:** logowanie do Search Console i Bing Webmaster w profilu ~/.config/chrome-google (oba wylogowane od 1.11).
+**Zostało otwarte:** Z5 (podmiana meta /sprawdzenie-nip, od 12:00, jeśli FL_SEO nie odpisze „w toku”).
