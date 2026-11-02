@@ -9978,3 +9978,13 @@ Decyzje dla stratega:
 **Dowód:** wpis „Bilans planu 2026-11-02/11-03” wyżej; cykl/plan-ruchu.md Z15.
 **Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); oba wylogowane od rana 2.11.
 **Zostało otwarte:** Z16 (3.11 01:00), Z17 (04:00), Z18 (05:30).
+
+<!-- WYSLANO 2026-11-02 23:15 -->
+
+## 2026-11-02 23:55
+**Kanał:** widoczność w asystentach AI (zadania Z16-Z18 planu czekają na godziny po północy, więc najlepsza rzecz z kanałów).
+**Co zrobione:** nowy artykuł /strefa-wiedzy/faktury-kosztowe-z-ksef dopisany do llms.txt (był na stronie od 2.11, w llms.txt go brakowało).
+**Ruch:** raport_ruchu, ostatnia doba 84 odsłony, 56 osób (-20% wobec średniej 104); źródła: b2b-email 48 (piksel otwarcia), Instagram 4, DuckDuckGo 4, LinkedIn 2, Bing 2; uruchomienia narzędzi 5.
+**Dowód:** commit 76712ee1, https://fluxlab.pl/llms.txt zawiera adres artykułu (sprawdzone po 160 s); IndexNow: brak nowych adresów stron.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228) i Bing Webmaster (https://www.bing.com/webmasters/); oba wylogowane od 2.11 06:45.
+**Zostało otwarte:** Z16 (3.11 01:00), Z17 (04:00), Z18 (05:30).
