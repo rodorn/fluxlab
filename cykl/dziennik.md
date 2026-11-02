@@ -9850,3 +9850,27 @@ Decyzje dla stratega:
 **Dowód:** commit b1568e75; https://fluxlab.pl/sprawdzenie-nip 200 z nowym <title>; IndexNow: Yandex i Naver 200, trzeci punkt bez 2xx.
 **Dla Pawła:** GSC i Bing Webmasters wylogowane (Z1), logowanie w profilu ~/.config/chrome-google.
 **Zostało otwarte:** Z6 od 13:00 (Bing wylogowany, więc wpis „IndexNow”), Z7-Z18 według godzin w planie.
+
+## 2026-11-02 12:43
+**Kanał:** brak, plan ruchu bez dostępnego zadania.
+**Co zrobione:** czekam na Z6 o 13:00 (Z1-Z5 zamknięte).
+**Ruch:** doba 92 odsłony, 65 osób (−18% wobec średniej 112,6); najczęściej / (14), maile /mail/*; LinkedIn 1, X 1, YouTube 0, Threads 0; uruchomienia narzędzi 0.
+**Dowód:** brak zmian.
+**Dla Pawła:** GSC i Bing Webmasters wylogowane w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z6 od 13:00, Z7-Z18 według godzin w planie.
+
+## 2026-11-02 13:44
+**Kanał:** widoczność w wyszukiwarkach (Bing), plan ruchu Z6.
+**Co zrobione:** Z6 zamknięte bez URL Submission, bo Bing Webmasters wylogowany (Z1); oba adresy (/sprawdzenie-nip, /strefa-wiedzy/faktury-kosztowe-z-ksef) poszły do Binga przez IndexNow w Z2 i Z5.
+**Ruch:** doba 99 odsłon, 68 osób (−12% wobec średniej 112,0); źródła: b2b-email 68, b2b 6, instagram 5, linkedin 2, x 1; uruchomienia narzędzi 0.
+**Dowód:** plan-ruchu.md Z6 [x]; IndexNow Yandex 200, Naver 200 (wspólny 403, znany).
+**Dla Pawła:** GSC i Bing Webmasters wylogowane w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z7 od 14:00, Z8-Z18 według godzin w planie.
+
+## 2026-11-02 14:45
+**Kanał:** pomiar (plan ruchu Z7, lejek dnia).
+**Co zrobione:** lejek od 06:30 zapisany w cykl/z7-pomiar-2026-11-02.txt; pierwsze uruchomienie /sprawdzenie-nip z Binga (14:11) dwie godziny po zmianie meta z Z5.
+**Ruch:** raport_ruchu doba 106 odsłon / 74 osoby (w tym piksele maili); po odsiewie od 06:30 13 ludzi: instagram 3, facebook 3, bez odsyłacza 2, linkedin 1, DuckDuckGo 1, Bing 1, Google 1, fluxlab.pl 1. Nowy artykuł faktury-kosztowe-z-ksef 0 wejść, /audyt-strony 0.
+**Dowód:** cykl/z7-pomiar-2026-11-02.txt, linia Z7 w cykl/plan-ruchu.md. Timer fluxlab-strona enabled.
+**Dla Pawła:** logowanie do Search Console i Bing Webmaster w profilu ~/.config/chrome-google (dalej wylogowane).
+**Zostało otwarte:** Z8 od 15:00 (lejek b2b), Z9 od 16:00.
