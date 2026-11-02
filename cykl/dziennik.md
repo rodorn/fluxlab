@@ -9914,3 +9914,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z12-pomiar-2026-11-02.txt; plan-ruchu.md Z12 i Z13 [x]; GSC 19:50 pokazuje ekran „Zaloguj się”.
 **Dla Pawła:** zaloguj się do Search Console w profilu ~/.config/chrome-google (Chrome na porcie 9228, https://search.google.com/search-console) i do https://www.bing.com/webmasters/ ; bez tego Z16 i Z17 nie dadzą danych.
 **Zostało otwarte:** Z14 (od 20:30, na plikach z 31.10 i Bing z 1.11), Z15 (od 22:30), Z16-Z18 (3.11).
+
+## 2026-11-02 20:52
+**Kanał:** Google/Bing (Z14 planu, kandydat dla stratega 3.11).
+**Co zrobione:** wybrany kandydat na kamień 3.11: /strefa-wiedzy/numeracja-faktur-ksef-2027 (0 klik. / 68 wyśw. / poz. 6,8 w 7 dniach, wyświetlenia rosną od 20 do 68 od 20.10, 0 kliknięć); dane z 31.10, bo GSC wylogowany.
+**Ruch:** doba 80 odsłon / 54 osoby, z czego b2b-email 51 (piksel otwarć, nie ludzie); ludzie z odsyłaczem: instagram 5, duckduckgo.com 3, linkedin 2, facebook 2; uruchomienia narzędzi 3.
+**Dowód:** cykl/z14-kandydat-2026-11-02.txt; Z14 oznaczone w cykl/plan-ruchu.md.
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228) i Bing Webmaster; bez tego Z16-Z17 i frazy kandydata są niedostępne.
+**Zostało otwarte:** Z15 bilans (od 22:30), Z16-Z18 (3.11 od 01:00).

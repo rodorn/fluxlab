@@ -1,0 +1,14 @@
+# Z14 2.11.2026 20:50, kandydat na kamień 3.11
+kandydat: https://fluxlab.pl/strefa-wiedzy/numeracja-faktur-ksef-2027 (0 klik. / 68 wyśw. / poz. 6,8 w 7 dniach 23-29.10)
+Źródło: gsc-strony-2026-10-31.txt (Z13 2.11 bez danych, GSC wylogowany) i z8-bing-2026-11-01.txt.
+Filtr poz. <= 8, >= 20 wyśw., <= 1 klik.: 8 stron w GSC, 0 nowych w Bing (Bing: /sprawdzenie-nip 231/4/7,7 ma 4 klik. i embargo; reszta < 20 wyśw.).
+Odpadły: /numer-ksef 1/56/8,0 i /ksef-2027 1/37/5,8 (cudza niezacommitowana zmiana og:image), /pobierz/checklista-forma-opodatkowania-2027.pdf (PDF), /strefa-wiedzy/faktura-wewnetrzna-ksef 0/43/4,7 (embargo do 7.11), /strefa-wiedzy/automatyzacja-vs-zatrudnienie 0/23/2,3 (embargo do 5.11), /strefa-wiedzy/faktura-vat-rr-ksef 0/20/7,5 (embargo do 6.11).
+Zostały 2: numeracja-faktur-ksef-2027 0/68/6,8 i proforma-ksef 0/29/6,0 (kandydat Z13 31.10, bez zmiany od 21.10; mniej wyświetleń).
+Kandydat bez zmian w app/ od 18.10 (3ee728c3); poza embargiem planu 2.11 (31.10 był pod embargiem).
+Trend wyśw. 7 dni (pliki GSC): 20.10: 20, 23.10: 21, 25.10: 34, 28.10: 42, 29.10: 51, 30.10: 67, 31.10: 68; kliknięć 0 we wszystkich pomiarach, poz. 6,5-7,1.
+Zapytania: w gsc-zapytania-2026-10-31.txt brak widocznej frazy z „numeracja”; Bing: strona poza top 10. Frazy trzeba wziąć filtrem page=!<url> po zalogowaniu GSC.
+Produkcja (curl 2.11 20:50):
+  title: "Numeracja faktur w KSeF 2027, błąd 440 | Fluxlab"
+  description: "KSeF odrzuca fakturę z błędem 440, gdy ten sam sprzedawca wysłał już taki numer. Numeracja bez roku w numerze zacznie się powtarzać w 2027."
+  H1: "Numeracja faktur w KSeF w 2027: błąd 440 „Duplikat faktury”"
+Uwaga dla stratega: rosnące wyświetlenia przy 0 klik. przez 2 tygodnie; title zaczyna od „Numeracja faktur w KSeF 2027”, description od kodu błędu. Bez widocznych fraz zmiana title/description to hipoteza; pierwszy krok: frazy strony z GSC po zalogowaniu.
