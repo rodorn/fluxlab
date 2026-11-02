@@ -4,9 +4,11 @@ export type Oferta = {
   miesiecznie: boolean;
   strona: string;
   pole?: string;
+  pole2?: string;
 };
 
 const ADRES = "Adres strony";
+const KONKURENCI = "Konkurenci: adresy po przecinku (opcjonalnie)";
 
 export const OFERTA: Record<string, Oferta> = {
   "wlamanie-diagnoza": { nazwa: "Diagnoza strony po włamaniu", netto: 49, miesiecznie: false, strona: "/strona-po-wlamaniu", pole: ADRES },
@@ -17,9 +19,9 @@ export const OFERTA: Record<string, Oferta> = {
   "marze-audyt": { nazwa: "Audyt marż", netto: 49, miesiecznie: false, strona: "/audyt-marz" },
   "marze-rachunek": { nazwa: "Comiesięczny rachunek marż", netto: 149, miesiecznie: true, strona: "/audyt-marz" },
   "wizytowka-prowadzenie": { nazwa: "Prowadzenie profilu firmy w Google", netto: 349, miesiecznie: true, strona: "/profil-firmy-google", pole: "Nazwa firmy lub link do wizytówki" },
-  "benchmarking-miesiac": { nazwa: "Benchmarking konkurencji raz w miesiącu", netto: 39, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES },
-  "benchmarking-tydzien": { nazwa: "Benchmarking konkurencji raz w tygodniu", netto: 49, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES },
-  "benchmarking-dzien": { nazwa: "Benchmarking konkurencji codziennie", netto: 69, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES },
+  "benchmarking-miesiac": { nazwa: "Benchmarking konkurencji raz w miesiącu", netto: 39, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES, pole2: KONKURENCI },
+  "benchmarking-tydzien": { nazwa: "Benchmarking konkurencji raz w tygodniu", netto: 49, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES, pole2: KONKURENCI },
+  "benchmarking-dzien": { nazwa: "Benchmarking konkurencji codziennie", netto: 69, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES, pole2: KONKURENCI },
   "domeny-wyszukiwanie": { nazwa: "Skaner domen: wyszukiwanie", netto: 29, miesiecznie: false, strona: "/skaner-domen", pole: "Frazy albo nazwa firmy" },
   "domeny-pilnowanie": { nazwa: "Skaner domen: pilnowanie do 20 domen", netto: 9, miesiecznie: true, strona: "/skaner-domen", pole: "Domeny do pilnowania, po przecinku" },
   "jezyki-monitoring": { nazwa: "Monitoring wersji językowych", netto: 99, miesiecznie: true, strona: "/kontrola-jezykow", pole: ADRES },

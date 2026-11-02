@@ -50,11 +50,11 @@ export default function Page() {
       checks={[
         {
           title: "Ceny i nowe usługi",
-          desc: "Zmiany w cennikach, promocje i usługi, które pojawiły się albo zniknęły.",
+          desc: "Zmiany w cennikach i usługach, a obok Twoje ceny na tle mediany konkurencji w każdej kategorii.",
         },
         {
           title: "Social media i strony",
-          desc: "Nowe posty i ich zasięg, a obok szybkość stron konkurencji na telefonie i komputerze.",
+          desc: "Profile konkurencji w social mediach, nowe i zaktualizowane podstrony z linkami oraz szybkość stron na telefonie i komputerze.",
         },
         {
           title: "Wnioski z opinii Google",
@@ -97,7 +97,7 @@ export default function Page() {
       faq={[
         {
           q: "Których konkurentów obserwujecie?",
-          a: "Tych, których wskażesz. Listę ustalamy przed startem i możesz ją zmienić w każdym miesiącu.",
+          a: "Tych, których wpiszesz przy zamówieniu. Jeśli zostawisz to pole puste, dobieramy do 6 firm o podobnej ofercie. Listę zmienisz w każdej chwili, odpisując na raport.",
         },
         {
           q: "Skąd bierzecie dane?",
@@ -105,7 +105,7 @@ export default function Page() {
         },
         {
           q: "Jak wygląda raport?",
-          a: "Krótki mail z najważniejszymi zmianami i wnioskami, a pod nim szczegóły dla chętnych.",
+          a: "Mail z najważniejszymi zmianami i wnioskami, a w załączniku pełny raport PDF: ceny z cytatami ze stron, pozycja Twoich cen, opinie Google, nowe treści konkurencji i szybkość stron.",
         },
         {
           q: "Czy da się zmienić częstotliwość?",

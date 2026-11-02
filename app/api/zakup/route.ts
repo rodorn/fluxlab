@@ -38,6 +38,14 @@ export async function POST(req: Request) {
     p.set("custom_fields[0][label][type]", "custom");
     p.set("custom_fields[0][label][custom]", o.pole);
   }
+  if (o.pole2) {
+    p.set("custom_fields[1][key]", "konkurenci");
+    p.set("custom_fields[1][type]", "text");
+    p.set("custom_fields[1][optional]", "true");
+    p.set("custom_fields[1][text][maximum_length]", "255");
+    p.set("custom_fields[1][label][type]", "custom");
+    p.set("custom_fields[1][label][custom]", o.pole2);
+  }
   const meta = { produkt: id, zrodlo: "strona" };
   const cel = o.miesiecznie ? "subscription_data" : "payment_intent_data";
   for (const [k, v] of Object.entries(meta)) {
