@@ -9930,3 +9930,51 @@ Decyzje dla stratega:
 **Dowód:** raport_ruchu.py 21:43; plan-ruchu.md bez zmian.
 **Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228) i https://www.bing.com/webmasters/ ; bez tego Z16-Z17 nie dadzą danych.
 **Zostało otwarte:** Z15 bilans (od 22:30), Z16-Z18 (3.11).
+
+## Bilans planu 2026-11-02/11-03 (Z15, 2.11 22:50)
+
+Kanały, ludzie po odsiewie (`pomiar-kanalow.py`, 24 h do 22:43; razem 18, z odsyłaczem 12, bez 6; tydzień 146):
+
+| Kanał | 24 h | doba wcześniej |
+|---|---|---|
+| Google | 2 | 0 |
+| Bing | 2 | 0 |
+| DuckDuckGo | 3 | b.d. |
+| social (Instagram 2, LinkedIn 1, Facebook 1) | 4 | 3 |
+| AI (chatgpt.com) | 0 | 0 |
+| b2b | 0 | 2 |
+| narzędzia, uruchomienia (raport_ruchu) | 4 | 0 |
+| lead\_\* | 0 | 0 |
+
+raport_ruchu: 78 odsłon, 53 osoby (-25% wobec średniej 104), z czego 45 to piksel `otwarcie_maila`; uruchomienia: skan /sprawdzenie-nip 4 (4 sesje), klik_po_wyniku 0; pobranie e-booka KSeF 1; wyjścia do grupy KSeF 1 (Facebook).
+
+| Zadanie | Stan | Co przyprowadziło |
+|---|---|---|
+| Z1 timer i konta | x | timer enabled, GSC i Bing wylogowane |
+| Z2 artykuł /strefa-wiedzy/faktury-kosztowe-z-ksef (2d748c31) | x | 0 wejść w 15 h; niezgłoszony w GSC (wylogowany) |
+| Z3 indeksowanie | x | GSC wylogowany, sitemap 1× |
+| Z4, Z5 title i description /sprawdzenie-nip (b1568e75) | x | od 12:03: 5 sesji na stronie, 4 uruchomienia w dobie (doba wcześniej 0); za wcześnie, by przypisać zmianie opisu |
+| Z6 Bing | x | wylogowany, IndexNow 2xx (Yandex, Naver) |
+| Z7, Z12 lejek dnia | x | 13 + 8 ludzi, /audyt-strony 0/0 |
+| Z8 lejek b2b | x | 15 z 16 sesji po 1 odsłonie /, 0 na /kontakt; wniosek doręczony FL_marketing |
+| Z9, Z10 kontrola artykułu | x | linki 7/7 200, telefon OK, bez poprawek |
+| Z11 poczta | x | Resend 6, nasz outreach 0 |
+| Z13 GSC 7 dni | x | wylogowany, bez plików |
+| Z14 kandydat | x | /strefa-wiedzy/numeracja-faktur-ksef-2027 (0 klik./68 wyśw./poz. 6,8) |
+| Z15 | x | ten bilans |
+| Z16-Z18 | [ ] | po północy |
+
+Decyzje dla stratega:
+- Z2: artykuł wdrożony, 0 wejść; bez GSC nie da się poprosić o indeksowanie, efekt mierzalny dopiero po zalogowaniu.
+- Z5: /sprawdzenie-nip po nowym opisie 4 uruchomienia w dobie wobec 0 dzień wcześniej, ale klik_po_wyniku 0; wynik zmiany opisu ocenić po 7 dniach w Bingu (CTR był 1,7%).
+- Z8: maile b2b prowadzą na /, gdzie 15 z 16 osób kończy po 1 odsłonie; link w mailu powinien prowadzić na stronę o problemie z maila (decyzja FL_marketing).
+- Z14: kandydat numeracja-faktur-ksef-2027, wyświetlenia rosną 20 → 68 w 7 dni przy 0 klik.; frazy strony niewidoczne bez GSC.
+- GSC i Bing wylogowane od 2.11 06:45 (Z1); blokuje Z3, Z13, Z16, Z17 i każdy pomiar fraz. Zalogowanie to zadanie dla Pawła.
+
+## 2026-11-02 22:50
+**Kanał:** pomiar (Z15 planu).
+**Co zrobione:** bilans planu 2.11 w dzienniku z tabelą kanałów, tabelą zadań i pięcioma decyzjami dla stratega.
+**Ruch:** raport_ruchu, ostatnia doba 78 odsłon, 53 osoby; po odsiewie 18 ludzi: bez odsyłacza 6, DuckDuckGo 3, Instagram 2, Bing 2, Google 2, LinkedIn 1, Facebook 1, fluxlab.pl 1.
+**Dowód:** wpis „Bilans planu 2026-11-02/11-03” wyżej; cykl/plan-ruchu.md Z15.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); oba wylogowane od rana 2.11.
+**Zostało otwarte:** Z16 (3.11 01:00), Z17 (04:00), Z18 (05:30).
