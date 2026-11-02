@@ -1,0 +1,16 @@
+Z8 b2b, 7 dni do 2.11 15:50, sesje z utm_source=b2b (kampania b2b-firmy), surowe z bazy licznika.
+
+Sesje: 16 surowych (dwie pary w 1 s z Chrome/Windows 1.11 13:58 i 19:15 UTC to najpewniej skanery linków; po odsiewie raportu 12).
+Strona wejścia: / w 16 z 16.
+Odsłony: 15 sesji po 1 odsłonie, 1 sesja 2 odsłony (Safari iOS 28.10 18:57 UTC: / -> /wlasny-crm po 17 s).
+Czas w sesji: 0 s w 15 sesjach, 17 s w jednej.
+/kontakt, /audyt-strony, /strony-www: 0 sesji.
+Zdarzenia w tych sesjach: brak (żadnego uruchomienia narzędzia, formularza, lead_*).
+Urządzenia: Chrome Windows 9, Edge Windows 2, Safari iOS 2, Firefox 2, Chrome Android 1.
+
+Odpowiedzi w Zoho na maile outreachu, 7 dni (nadawca, temat; treści nie czytane):
+- 2.11 14:22 biuro@icefery.pl, „Automatyzacja”
+- 1.11 14:36 walterstopka@hotmail.com, „Re: Strona Walter Stopka Luthier na telefonie”
+- 31.10 21:31 kasia@kasiasbridal.com, „Re: Strona Kasia's Bridal na telefonie”
+
+Wniosek: 15 z 16 sesji z maili b2b kończy się po 1 odsłonie strony głównej, 0 przejść na /kontakt, /audyt-strony, /strony-www; klik z maila ląduje na /, a nie na stronie o problemie z maila.
