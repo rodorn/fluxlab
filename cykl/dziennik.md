@@ -9784,3 +9784,19 @@ Decyzje dla stratega:
 **Dowód:** sekcja „Kontrola Z10, 1.11.2026 17:46” w `cykl/artykul-2026-11-02-szkic.md`, Z10 oznaczone w `cykl/plan-ruchu.md`.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (od 18:30), Z12 (od 19:30), Z13-Z17 według godzin.
+
+## 2026-11-01 18:47
+**Kanał:** pomiar (plan Z11).
+**Co zrobione:** wieczorny pomiar lejka po kamieniach Z2 i Z4 zapisany w cykl/z11-pomiar-2026-11-01.txt; Z12-Z17 mają okna od 19:30, więc w tym przebiegu nie było innego otwartego zadania do wzięcia.
+**Ruch:** ostatnia doba 45 odsłon, 33 osoby (raport_ruchu, w tym 33 b2b-email); po odsiewie 9 sesji: bez odsyłacza 4, b2b 2, google 1, fluxlab.pl 1, x 1. Od 13:30 ludzie 2 (b2b, x), oba na stronie głównej.
+**Dowód:** cykl/z11-pomiar-2026-11-01.txt; /audyt-strony od 08:46 0 wejść i 0 uruchomień (baza 20% nieporównywalna, 0/0); /sprawdzenie-nip od 11:44 0 uruchomień.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (19:30, GSC 7 dni), Z13 (20:30), Z14 (22:30 bilans), Z15-Z17 w nocy 2.11.
+
+## Strategia dobowa 2026-11-02
+
+- 06:15-06:35, strateg (Fable). Doba: 10 osób po odsiewie (było 16), Google 0, Bing 0, narzędzia 0 uruchomień, lead\_\* 0; tydzień 147 (było 187). raport_ruchu 69 odsłon / 49 osób (47 to piksel b2b-email).
+- Plan 1.11: 11 z 17 [x]. Z12-Z17 przepadły: po restarcie 1.11 19:13 `fluxlab-strona.timer` był „disabled" i nie wstał (strażnik timerów go nie ma na liście). Naprawa: `systemctl --user enable --now fluxlab-strona.timer`, stan enabled, następny przebieg 06:43.
+- Search Console wylogowany (profil chrome-google, myaccount też „Zaloguj się"); logowanie zlecone Pawłowi mailem.
+- Zoho: Walter Stopka „tak, proszę o kosztorys" (wątek FL_marketing, odpisane 1.11 14:54). Resend 24 h: 6 testów audytu innej sesji.
+- Nowy plan: 18 zadań, kamienie Z2 (artykuł /strefa-wiedzy/faktury-kosztowe-z-ksef) i Z5 (title i description /sprawdzenie-nip pod Binga: 231 wyśw., CTR 1,7%). Mail do Pawła wysłany 06:35 (msgid 179359694529…@fluxlab.pl).
