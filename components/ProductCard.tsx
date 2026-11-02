@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/lib/products";
+import DoKoszyka from "@/components/DoKoszyka";
 
 /**
  * Kafelek pojedynczej pozycji katalogu. Wyjety z `ProductGrid`, bo ten sam
@@ -97,6 +98,10 @@ export default function ProductCard({
       >
         {p.cta}
       </Link>
+      <DoKoszyka
+        pozycja={{ id: p.href, nazwa: p.name, cena: p.price, href: p.href, rodzaj: "usluga" }}
+        className="mt-2 w-full"
+      />
     </div>
   );
 }

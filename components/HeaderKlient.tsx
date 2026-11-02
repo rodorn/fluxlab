@@ -6,6 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 import ZnakFl from "./ZnakFl";
 import Wyszukiwarka from "./Wyszukiwarka";
 import MenuDesktop from "./MenuDesktop";
+import LicznikKoszyka from "./LicznikKoszyka";
 import type { LinkMenu, PozycjaMenu } from "@/lib/menu";
 
 /** Na telefonie w kategorii pokazujemy tylko 5 linków, po kolei z każdej
@@ -177,6 +178,7 @@ export default function HeaderKlient({
             <kbd className="text-[11px] font-sans">Ctrl K</kbd>
           </button>
           <ThemeToggle />
+          <LicznikKoszyka />
           <Link href="/kontakt" className="btn-primary">
             Zamów wycenę
           </Link>
@@ -194,6 +196,7 @@ export default function HeaderKlient({
             {IKONA_LUPY}
           </button>
           <ThemeToggle />
+          <LicznikKoszyka />
           <button
             type="button"
             onClick={() => setOpen(!open)}

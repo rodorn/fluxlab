@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ABONAMENTY } from "@/lib/abonamenty";
+import DoKoszyka from "@/components/DoKoszyka";
 
 export default function Abonamenty() {
   return (
@@ -41,23 +42,31 @@ export default function Abonamenty() {
                 </p>
                 <ul className="mt-2 divide-y divide-gray-100 text-sm dark:divide-white/5">
                   {a.dodatki.map((d) => (
-                    <li key={d.nazwa}>
+                    <li key={d.nazwa} className="flex items-center gap-3">
                       <Link
                         href={d.href}
-                        className="flex items-baseline justify-between gap-3 py-2 text-gray-700 hover:text-accent dark:text-gray-300"
+                        className="flex flex-1 items-baseline justify-between gap-3 py-2 text-gray-700 hover:text-accent dark:text-gray-300"
                       >
                         <span>{d.nazwa}</span>
                         <span className="shrink-0 font-semibold">{d.cena}</span>
                       </Link>
+                      <DoKoszyka
+                        maly
+                        pozycja={{ id: `${a.id}:${d.nazwa}`, nazwa: d.nazwa, cena: d.cena, href: d.href, rodzaj: "dodatek" }}
+                      />
                     </li>
                   ))}
                 </ul>
               </>
             )}
-            <div className="mt-auto pt-5">
+            <div className="mt-auto flex flex-col gap-2 pt-5">
               <Link href={a.href} className="btn-primary w-full">
                 Szczegóły
               </Link>
+              <DoKoszyka
+                pozycja={{ id: a.id, nazwa: a.nazwa, cena: a.miesiecznie, href: a.href, rodzaj: "abonament" }}
+                className="w-full"
+              />
             </div>
           </li>
         ))}
