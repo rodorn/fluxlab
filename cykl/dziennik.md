@@ -9922,3 +9922,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z14-kandydat-2026-11-02.txt; Z14 oznaczone w cykl/plan-ruchu.md.
 **Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228) i Bing Webmaster; bez tego Z16-Z17 i frazy kandydata są niedostępne.
 **Zostało otwarte:** Z15 bilans (od 22:30), Z16-Z18 (3.11 od 01:00).
+
+## 2026-11-02 21:43
+**Kanał:** brak, czekam na okno Z15 (od 22:30).
+**Co zrobione:** nic nie poszło w świat; jedyne otwarte zadania planu (Z15 od 22:30, Z16-Z18 od 3.11 01:00) mają termin „nie wcześniej niż”, którego jeszcze nie ma.
+**Ruch:** doba 77 odsłon / 52 osoby (−27% wobec średniej 104,9); źródła: b2b-email 44 (piksel otwarć), instagram 4, duckduckgo.com 3, com.linkedin.android 2, www.bing.com 2; uruchomienia narzędzi 4; tydzień 642 odsłony / 342 osoby (+53%).
+**Dowód:** raport_ruchu.py 21:43; plan-ruchu.md bez zmian.
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228) i https://www.bing.com/webmasters/ ; bez tego Z16-Z17 nie dadzą danych.
+**Zostało otwarte:** Z15 bilans (od 22:30), Z16-Z18 (3.11).
