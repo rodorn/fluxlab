@@ -9882,3 +9882,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z8-b2b-lejek-2026-11-02.txt; `sesja napisz FL_marketing` doręczono 15:43.
 **Dla Pawła:** w Zoho 3 odpowiedzi na outreach z 7 dni: biuro@icefery.pl „Automatyzacja” (2.11 14:22), walterstopka@hotmail.com (1.11), kasia@kasiasbridal.com (31.10); w Zoho Wysłane (112 ostatnich) brak odpowiedzi do żadnego z nich; to kampanie FL_marketing.
 **Zostało otwarte:** Z9 od 16:00 (telefon-test artykułu), dalej Z10 do Z18.
+
+## 2026-11-02 16:46
+**Kanał:** treść (plan Z9, Z10).
+**Co zrobione:** kontrola artykułu /strefa-wiedzy/faktury-kosztowe-z-ksef: na telefonie czytelny, bez poziomego przewijania, wszystkie 7 linków wewnętrznych odpowiada 200; Z10 bez poprawek.
+**Ruch:** doba 95 odsłon, 67 osób (−7% wobec średniej); źródła: b2b-email 61, instagram 5, b2b 3, linkedin 2, facebook 2; 1 uruchomienie narzędzia.
+**Dowód:** telefon-test /tmp/telefon-1793634193426.png (treść 390 px, 0 błędów konsoli); curl 7/7 200.
+**Dla Pawła:** GSC i Bing Webmaster wylogowane (Z1), bez logowania Z13, Z16, Z17 nie dadzą danych.
+**Zostało otwarte:** Z11 (od 18:00), Z12-Z18.
