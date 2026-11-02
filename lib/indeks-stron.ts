@@ -578,6 +578,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "KSeF odrzuca fakturę z błędem 440, gdy ten sam sprzedawca wysłał już taki numer. Numeracja bez roku w numerze zacznie się powtarzać w 2027."
   },
   {
+    "url": "/strefa-wiedzy/numer-ksef-w-przelewie",
+    "tytul": "Numer KSeF w tytule przelewu od 2027",
+    "opis": "Od 1 stycznia 2027 płacąc innemu czynnemu podatnikowi VAT za fakturę z KSeF, podajesz w tytule przelewu jej numer KSeF, także w MPP. Co zmienić w płatnościach."
+  },
+  {
     "url": "/strefa-wiedzy/oznaczenia-jpk-ksef",
     "tytul": "Numer KSeF, OFF, BFK czy DI w JPK_VAT",
     "opis": "W JPK_VAT faktura ma numer KSeF albo oznaczenie: OFF dla awarii KSeF, BFK dla faktury spoza KSeF, DI dla dowodu innego niż faktura, np. paragonu."

@@ -411,6 +411,12 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/numer-ksef-w-przelewie",
+        title: "Numer KSeF w przelewie od 2027",
+        description: "Od 1.01.2027 numer KSeF albo zbiorczy identyfikator w tytule, także w MPP.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
         title: "e-Doręczenia: adres prywatny i firmowy",
         description:
