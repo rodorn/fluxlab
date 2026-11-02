@@ -9890,3 +9890,11 @@ Decyzje dla stratega:
 **Dowód:** telefon-test /tmp/telefon-1793634193426.png (treść 390 px, 0 błędów konsoli); curl 7/7 200.
 **Dla Pawła:** GSC i Bing Webmaster wylogowane (Z1), bez logowania Z13, Z16, Z17 nie dadzą danych.
 **Zostało otwarte:** Z11 (od 18:00), Z12-Z18.
+
+## 2026-11-02 18:06
+**Kanał:** pomiar (plan Z11).
+**Co zrobione:** odczyt poczty i wysyłek z 24 h: nasz outreach 0, Resend 6 (5 delivered, 1 bounced na pawel.iwanek@berry-fs.pl, spoza list outreachu); Zoho INBOX 7, wszystkie w wątkach innych sesji, 0 nowych zapytań o usługę.
+**Ruch:** doba 103 odsłony, 67 osób (+2% wobec średniej 100,6); źródła: b2b-email 62, instagram 5, b2b 3, duckduckgo.com 3, com.linkedin.android 2; uruchomienia narzędzi 3; najczęściej /, /sprawdzenie-nip (7).
+**Dowód:** plan-ruchu.md Z11; Zoho: icefery „Automatyzacja” odpisane 17:50 i HAJS METRICS odpisane 13:14 (Wysłane), vetolayer „Make.com / n8n Contractor Work” to wątek FL_reddit (bez płatnej pracy przez 1-2 miesiące, nie lead), polextravel to autoodpowiedź na kampanię polonia z usa 3.
+**Dla Pawła:** GSC i Bing Webmaster nadal wylogowane (Z1), bez logowania Z16 i Z17 nie dadzą danych.
+**Zostało otwarte:** Z12 (od 19:00), Z13-Z18 według godzin.
