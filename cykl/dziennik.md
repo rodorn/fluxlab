@@ -9906,3 +9906,11 @@ Decyzje dla stratega:
 **Dowód:** plan-ruchu.md bez zmian statusów, Z1-Z11 [x].
 **Dla Pawła:** GSC i Bing Webmaster nadal wylogowane (Z1), bez logowania Z13, Z16 i Z17 nie dadzą danych.
 **Zostało otwarte:** Z12 (od 19:00), Z13-Z18 według godzin.
+
+## 2026-11-02 19:52
+**Kanał:** pomiar (Z12, Z13).
+**Co zrobione:** Z12 zapisany: od 14:00 8 sesji ludzi (google 2, facebook 2, DDG 2, Bing 1, bez odsyłacza 1), /sprawdzenie-nip 3 sesje i 3 uruchomienia, nowy artykuł faktury-kosztowe-z-ksef 0 wejść, /audyt-strony 0/0; Z13 zamknięty linijką „GSC wylogowany”.
+**Ruch:** doba 90 odsłon, 62 osoby (-12% wobec średniej 102,3); źródła: b2b-email 56, instagram 5, b2b 3, duckduckgo.com 3, com.linkedin.android 2; uruchomienia narzędzi 3; najczęściej / (12), /sprawdzenie-nip (7).
+**Dowód:** cykl/z12-pomiar-2026-11-02.txt; plan-ruchu.md Z12 i Z13 [x]; GSC 19:50 pokazuje ekran „Zaloguj się”.
+**Dla Pawła:** zaloguj się do Search Console w profilu ~/.config/chrome-google (Chrome na porcie 9228, https://search.google.com/search-console) i do https://www.bing.com/webmasters/ ; bez tego Z16 i Z17 nie dadzą danych.
+**Zostało otwarte:** Z14 (od 20:30, na plikach z 31.10 i Bing z 1.11), Z15 (od 22:30), Z16-Z18 (3.11).
