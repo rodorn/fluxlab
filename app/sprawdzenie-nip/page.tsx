@@ -8,14 +8,14 @@ import NipCheck from "@/components/NipCheck";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
-  title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
+  title: "Czyj to NIP? Nazwa firmy i status VAT w 10 s | Fluxlab",
   description:
-    "Co to za NIP i czy firma jest płatnikiem VAT? W 10 s nazwa firmy, status VAT z wykazu Ministerstwa Finansów i rachunki, bez logowania.",
+    "Wpisz NIP i sprawdź, co to za firma i czy jest czynny podatnik VAT: nazwa, data rejestracji i rachunki z wykazu MF, w 10 s, bez logowania.",
   alternates: { canonical: "/sprawdzenie-nip" },
   openGraph: {
-    title: "Sprawdzenie NIP w 10 s: status VAT, bez logowania | Fluxlab",
+    title: "Czyj to NIP? Nazwa firmy i status VAT w 10 s | Fluxlab",
     description:
-      "Darmowe sprawdzenie NIP w wykazie Ministerstwa Finansów. Status VAT, data rejestracji i liczba zgłoszonych rachunków.",
+      "Wpisz NIP i sprawdź, co to za firma i czy jest czynny podatnik VAT: nazwa, data rejestracji i rachunki z wykazu MF, w 10 s, bez logowania.",
     locale: "pl_PL",
     type: "website",
     images: [
