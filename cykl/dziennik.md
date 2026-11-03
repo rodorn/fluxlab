@@ -9972,6 +9972,7 @@ Decyzje dla stratega:
 - GSC i Bing wylogowane od 2.11 06:45 (Z1); blokuje Z3, Z13, Z16, Z17 i każdy pomiar fraz. Zalogowanie to zadanie dla Pawła.
 - Z16 (3.11 01:45): GSC wylogowany (przekierowanie na /search-console/about), raport Strony i Mapy witryn niedostępny, 0 żądań.
 - Z17 (3.11 04:45): GSC nadal wylogowany (karta przekierowana na /search-console/about), więc licznik: /strefa-wiedzy/faktury-kosztowe-z-ksef 0 wejść od publikacji 2.11 07:46, /sprawdzenie-nip 11 wierszy 2.11 (6 sesji) (wyłącznie przeglądarki ludzi z duckduckgo, bing, google). Pobrań przez Googlebota i Bingbota niemierzalne: kolektor zapisuje tylko wejścia z uruchomionym skryptem, w bazie 0 wierszy z „bot” w przeglądarce, strona stoi na Vercelu bez dostępu do logów serwera. 0 żądań do GSC.
+- Z18 (3.11 05:45): 24 h ludzie po odsiewie 23 (28 odsłon), z odsyłaczem: duckduckgo.com 4, instagram 3, www.google.com 3, www.bing.com 2, linkedin 1, m.facebook.com 1, x 1, scriblihelp.com 1, bez odsyłacza 6; raport_ruchu 89 odsłon / 59 osób (z pikselem maili); uruchomienia 5 (wszystkie uruchomiono_skan /sprawdzenie-nip), klik_po_wyniku 0, lead_* 0; /strefa-wiedzy/faktury-kosztowe-z-ksef 0 wejść, /sprawdzenie-nip 6 odsłon + 5 skanów. Plan zamknięty.
 
 ## 2026-11-02 22:50
 **Kanał:** pomiar (Z15 planu).
@@ -10030,3 +10031,12 @@ Decyzje dla stratega:
 **Dowód:** linijka Z17 pod „Bilans planu 2026-11-02/11-03”; cykl/plan-ruchu.md Z17.
 **Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45, bez tego Z17 nie zmierzy indeksowania.
 **Zostało otwarte:** Z18 (3.11 05:30).
+
+
+## 2026-11-03 05:45
+**Kanał:** pomiar (Z18 planu, ostatnie zadanie).
+**Co zrobione:** liczby dla stratega dopisane pod bilansem Z15; plan 2026-11-02 zamknięty. Nic nie poszło w świat.
+**Ruch:** raport_ruchu, ostatnia doba 89 odsłon, 59 osób (-10% wobec średniej 99,1); po odsiewie 23 osoby, źródła: duckduckgo.com 4, instagram 3, www.google.com 3, www.bing.com 2, bez odsyłacza 6; uruchomienia 5 (/sprawdzenie-nip), lead 0, klik_po_wyniku 0, nowy artykuł 0 wejść.
+**Dowód:** linijka Z18 pod „Bilans planu 2026-11-02/11-03”; cykl/plan-ruchu.md Z18.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45.
+**Zostało otwarte:** nic, plan zamknięty; nowy plan stratega o 06:15.
