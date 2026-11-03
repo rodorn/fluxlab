@@ -10046,3 +10046,11 @@ Decyzje dla stratega:
 **Pomiar doby (do 06:16):** ludzie po odsiewie 22 (doba wcześniej 10), tydzień 138; z odsyłaczem DDG 4, Instagram 3, Google 3, Bing 2, social 3; uruchomienia 5 (/sprawdzenie-nip), w 7 dni 22; klik_po_wyniku 0, lead 0; artykuł faktury-kosztowe-z-ksef 0 wejść. Resend 24 h 2 (raporty do Wojtka), nasz outreach 0; Zoho 0 nowych zapytań o usługę. GSC 06:20 wylogowany (accounts.google.com), Bing wylogowany, timer enabled.
 **Plan:** 17 zadań, 1 kamień (Z3: title i description /strefa-wiedzy/numeracja-faktur-ksef-2027, 68 wyśw./7 dni, poz. 6,8, 0 klik.); hamulec budżetu „alarm”, rytm „zwolnij”. Bez outreachu i bez artykułu (poszedł 2.11).
 **Mail do Pawła:** wysłany 06:31 na iwanekpawel55@gmail.com, temat „FluxLab ruch, plan na 2026-11-03: 22 osoby w dobie, 5 uruchomień narzędzi”; dla Pawła: logowanie GSC i Binga, decyzja o outreachu.
+
+## 2026-11-03 06:46
+**Kanał:** pomiar (plan 3.11, Z1).
+**Co zrobione:** Z1: timer enabled, GSC nie (przekierowanie na accounts.google.com „Zaloguj się”), Bing nie (/webmasters/about „Sign In”). Czekam na Z2 o 08:00.
+**Ruch:** doba 90 odsłon / 60 osób (−9% wobec średniej 99,1), tydzień 632 / 336. Źródła: b2b-email 52, instagram 5, duckduckgo 4, google 3, linkedin 2. Narzędzia: 5 uruchomień (uruchomiono_skan 5).
+**Dowód:** cykl/plan-ruchu.md linia Z1.
+**Dla Pawła:** zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228); GSC wylogowany trzecią dobę, Bing od 2.11.
+**Zostało otwarte:** Z2 (08:00), Z3 kamień numeracja-faktur-ksef-2027 (10:00) i dalsze zadania planu.
