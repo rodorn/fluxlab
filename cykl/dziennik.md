@@ -10104,3 +10104,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z5-narzedzia-lejek-2026-11-03.txt.
 **Dla Pawła:** Search Console i Bing Webmaster wylogowane (profil ~/.config/chrome-google, port 9228).
 **Zostało otwarte:** Z3 po sprawdzeniu budżetu od 13:45, Z6 od 13:00 (Bing wylogowany, linijka), dalej Z7-Z17.
+
+## 2026-11-03 13:45
+**Kanał:** pomiar (Z6).
+**Co zrobione:** Z6 zamknięte linijką „Bing wylogowany”; Z3 nadal wstrzymane (`budzet`: rytm wstrzymaj, 100% tygodnia, prognoza 112%, kamieni 0, reset za 18 h).
+**Ruch:** ostatnia doba 116 odsłon, 69 osób (+21% do średniej); źródła: b2b-email 54, google 14, b2b 8, bing 3, duckduckgo 3, X 1; uruchomienia narzędzi 7.
+**Dowód:** cykl/plan-ruchu.md (Z6 [x]).
+**Dla Pawła:** Search Console i Bing Webmaster wylogowane (profil ~/.config/chrome-google, port 9228).
+**Zostało otwarte:** Z3 po sprawdzeniu budżetu od 16:45, Z7 od 14:00, dalej Z8-Z17.
