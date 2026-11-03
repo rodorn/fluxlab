@@ -70,7 +70,7 @@ const faq = [
   {
     question: "Ile kosztuje integracja formularza z Pipedrive?",
     answer:
-      "Etap minimalny (osoba, organizacja, deal, walidacja, zadanie kontaktu, źródło i UTM w polach) to 3 do 6 tys. zł. Etap pełny z deduplikacją, routingiem i raportem źródeł 8 do 15 tys. zł. Stała cena za projekt, płatna w transzach po kamieniach milowych.",
+      "Etap minimalny (osoba, organizacja, deal, walidacja, zadanie kontaktu, źródło i UTM w polach) to 3 do 6 tys. zł. Etap pełny z deduplikacją, routingiem i raportem źródeł 8 do 15 tys. zł. Stała cena za projekt, pierwsze zlecenie przez Useme, kolejne fakturą przed startem.",
   },
   {
     question: "Jakie dane z formularza trafiają do Pipedrive?",
@@ -218,7 +218,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
           <section className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 max-w-3xl mx-auto">
             <h2 className={h2}>Ile to kosztuje</h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-              Stała cena za projekt, płatna w transzach po kamieniach milowych.
+              Stała cena za projekt, pierwsze zlecenie przez Useme, kolejne fakturą przed startem.
               Widełki potwierdzamy po krótkim audycie.
             </p>
             <div className="overflow-x-auto rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60">

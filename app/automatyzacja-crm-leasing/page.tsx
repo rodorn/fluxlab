@@ -286,7 +286,7 @@ export default function AutomatyzacjaCrmLeasing() {
                         Ile kosztuje wdrożenie
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                        Stała cena, kamienie milowe, płatność po odbiorze etapu.
+                        Stała cena, kamienie milowe, pierwsze zlecenie przez Useme.
                         Zaczynamy od jednej pętli, której efekt da się zmierzyć.
                       </p>
                       <div className="grid md:grid-cols-2 gap-6 mb-8">

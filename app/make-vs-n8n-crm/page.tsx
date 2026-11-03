@@ -367,7 +367,7 @@ export default function MakeVsN8nCrm() {
                         >
                           Stała cena za etap
                         </Link>
-                        , płatność po odbiorze. Cena zależy od
+                        , pierwsze zlecenie przez Useme. Cena zależy od
                         zakresu, nie od wyboru narzędzia.
                       </p>
                       <div className="grid md:grid-cols-2 gap-6 mb-8">

@@ -334,7 +334,7 @@ export default function RaportowanieZPipedrive() {
                         Ile to kosztuje
                       </h2>
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                        Stała cena za projekt, płatna w transzach. Widełki
+                        Stała cena za projekt, pierwsze zlecenie przez Useme. Widełki
                         potwierdzamy po krótkim audycie.
                       </p>
                       <div className="overflow-x-auto rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800/60">

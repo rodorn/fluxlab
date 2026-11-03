@@ -183,7 +183,7 @@ export default function ZakresWyceny({ wycena }: { wycena: Wycena }) {
             {zl(min)} do {zl(max)}
           </strong>
           <span className="block text-sm text-gray-500 dark:text-gray-400">
-            Płatne raz, po odbiorze. Nie ma tu abonamentu ani opłaty za dostęp
+            Płatne raz: przez Useme albo fakturą przed startem. Nie ma tu abonamentu ani opłaty za dostęp
             do czegokolwiek.
           </span>
         </p>

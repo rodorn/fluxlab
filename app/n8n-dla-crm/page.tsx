@@ -298,7 +298,7 @@ export default function N8nDlaCrm() {
                         Ile to kosztuje
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                        Stała cena, kamienie milowe, płatność po odbiorze etapu.
+                        Stała cena, kamienie milowe, pierwsze zlecenie przez Useme.
                         Zaczynamy od pętli, której efekt widać po dwóch
                         tygodniach.
                       </p>

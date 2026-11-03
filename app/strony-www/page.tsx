@@ -33,7 +33,7 @@ const pricing = [
   {
     title: "Naprawa i poprawki",
     price: "150 / 290 / 490 zł",
-    description: "Jedna rzecz: szybkość, formularz, certyfikat albo błąd. Płacisz po sprawdzeniu efektu.",
+    description: "Jedna rzecz: szybkość, formularz, certyfikat albo błąd. Przez Useme płacisz dopiero po sprawdzeniu efektu.",
   },
   {
     title: "Strona w tydzień",

@@ -47,7 +47,7 @@ const whatYouGet = [
   },
   {
     title: "Płatność za efekt",
-    description: "Stała cena projektowa, transze po kamieniach milowych.",
+    description: "Stała cena projektowa, pierwsze zlecenie przez Useme.",
   },
 ];
 

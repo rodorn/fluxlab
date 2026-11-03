@@ -19,7 +19,7 @@ const NAJCZESCIEJ = ["/audyt-strony", "/e-doreczenia-integracja", "/strony-www",
 
 const ZASADY = [
   ["Stała cena", "Nie liczymy godzin. Przed startem dostajesz jedną kwotę za całość."],
-  ["Płatność po odbiorze", "Za każdy etap płacisz dopiero, gdy go odbierzesz."],
+  ["Useme, potem faktura", "Pierwsze zlecenie przez Useme, pieniądze dostajemy po Twoim odbiorze. Kolejne fakturą przed startem."],
   ["Bez ukrytych kosztów", "Licencje, serwery i abonamenty ustalamy przed startem."],
   ["30 dni poprawek", "Błędy po naszej stronie poprawiamy po wdrożeniu bez opłat."],
 ];

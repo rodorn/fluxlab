@@ -60,7 +60,7 @@ const steps = [
     title: "Wdrożenie",
     duration: "od 2 dni do 3 tygodni, zależnie od zakresu",
     description:
-      "Pracujemy w krótkich iteracjach, z postępem co kilka dni. Płacisz transzami po odbiorze etapów.",
+      "Pracujemy w krótkich iteracjach, z postępem co kilka dni. Pierwsze zlecenie rozliczamy przez Useme, kolejne fakturą przed startem.",
     deliverables: [
       "Środowisko testowe przed produkcją",
       "Dokumentacja każdej automatyzacji",
@@ -88,9 +88,9 @@ const pricingPrinciples = [
       "Nie rozliczamy się za godziny. Po audycie dostajesz jedną kwotę za całość.",
   },
   {
-    title: "Transze po odbiorze",
+    title: "Useme, potem faktura",
     description:
-      "Za każdy etap płacisz dopiero po jego odbiorze. Bez płatności z góry.",
+      "Pierwsze zlecenie przez Useme: pieniądze trafiają do nas dopiero po Twoim odbiorze. Kolejne na fakturę płatną przed startem, bez zaliczek i rat.",
   },
   {
     title: "Bez ukrytych kosztów",

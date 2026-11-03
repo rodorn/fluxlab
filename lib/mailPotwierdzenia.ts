@@ -15,7 +15,7 @@ export function zdanieKontaktu(
   telefon: string,
 ): string {
   return pref === "meet" && termin
-    ? `Prosisz o spotkanie na Google Meet ${termin}. Potwierdzimy termin zaproszeniem z linkiem do rozmowy, a jeśli ta godzina będzie zajęta, zaproponujemy najbliższą wolną.`
+    ? `Prosisz o spotkanie na Google Meet ${termin}. Zaproszenie z linkiem do rozmowy przyjdzie z adresu pawel@fluxlab.pl, zwykle w kilka minut. Potwierdź je proszę w kalendarzu. Jeśli ta godzina okaże się zajęta, zaproponujemy najbliższą wolną.`
     : pref === "phone" && telefon
       ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, tego samego dnia.`
       : "Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.";
