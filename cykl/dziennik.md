@@ -10040,3 +10040,9 @@ Decyzje dla stratega:
 **Dowód:** linijka Z18 pod „Bilans planu 2026-11-02/11-03”; cykl/plan-ruchu.md Z18.
 **Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45.
 **Zostało otwarte:** nic, plan zamknięty; nowy plan stratega o 06:15.
+
+
+## Strategia dobowa 2026-11-03
+**Pomiar doby (do 06:16):** ludzie po odsiewie 22 (doba wcześniej 10), tydzień 138; z odsyłaczem DDG 4, Instagram 3, Google 3, Bing 2, social 3; uruchomienia 5 (/sprawdzenie-nip), w 7 dni 22; klik_po_wyniku 0, lead 0; artykuł faktury-kosztowe-z-ksef 0 wejść. Resend 24 h 2 (raporty do Wojtka), nasz outreach 0; Zoho 0 nowych zapytań o usługę. GSC 06:20 wylogowany (accounts.google.com), Bing wylogowany, timer enabled.
+**Plan:** 17 zadań, 1 kamień (Z3: title i description /strefa-wiedzy/numeracja-faktur-ksef-2027, 68 wyśw./7 dni, poz. 6,8, 0 klik.); hamulec budżetu „alarm”, rytm „zwolnij”. Bez outreachu i bez artykułu (poszedł 2.11).
+**Mail do Pawła:** wysłany 06:31 na iwanekpawel55@gmail.com, temat „FluxLab ruch, plan na 2026-11-03: 22 osoby w dobie, 5 uruchomień narzędzi”; dla Pawła: logowanie GSC i Binga, decyzja o outreachu.
