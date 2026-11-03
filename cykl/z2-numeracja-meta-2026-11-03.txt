@@ -1,0 +1,13 @@
+Z2 3.11 08:50, https://fluxlab.pl/strefa-wiedzy/numeracja-faktur-ksef-2027
+Obecne (produkcja, 200):
+ title: Numeracja faktur w KSeF 2027, błąd 440 | Fluxlab
+ description: KSeF odrzuca fakturę z błędem 440, gdy ten sam sprzedawca wysłał już taki numer. Numeracja bez roku w numerze zacznie się powtarzać w 2027.
+ og:title: Numeracja faktur w KSeF w 2027: błąd 440 Duplikat faktury
+ H1: Numeracja faktur w KSeF w 2027: błąd 440 „Duplikat faktury”
+git log 7 dni: brak zmian pliku (ostatnia 18.10, 3ee728c3)
+Frazy GSC 28 dni: GSC wylogowany (Z1 06:45)
+Warianty title:
+ 1 (56 zn.): Numeracja faktur w KSeF od 2027: jak numerować | Fluxlab
+ 2 (53 zn.): Numeracja faktur KSeF: jak numerować w 2027 | Fluxlab
+Description (136 zn.): Dopisz rok do wzoru numeru faktury przed styczniem 2027, np. 1/01/2027. Numer bez roku powtórzy się, a KSeF odrzuci duplikat błędem 440.
+Wiadomość do FL_SEO: wysłana 3.11 (sesja napisz), termin odpowiedzi 09:45

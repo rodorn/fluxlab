@@ -10054,3 +10054,21 @@ Decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md linia Z1.
 **Dla Pawła:** zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228); GSC wylogowany trzecią dobę, Bing od 2.11.
 **Zostało otwarte:** Z2 (08:00), Z3 kamień numeracja-faktur-ksef-2027 (10:00) i dalsze zadania planu.
+
+<!-- WYSLANO 2026-11-03 07:04 -->
+
+## 2026-11-03 07:45
+**Kanał:** brak (czekam na Z2 o 08:00).
+**Co zrobione:** nic, żadne otwarte zadanie planu 3.11 nie jest jeszcze dostępne godzinowo (Z2 od 08:00, Z3 od 10:00); plan zakazuje zmian poza nim.
+**Ruch:** raport_ruchu, ostatnia doba 98 odsłon, 64 osoby (-2% wobec średniej 99,6); źródła: b2b-email 57, b2b 8, duckduckgo.com 4, www.google.com 3, com.linkedin.android 2; /sprawdzenie-nip 11 odsłon, uruchomienia narzędzi 5.
+**Dowód:** brak.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45 (potwierdzone w Z1 3.11 06:45), blokują Z2 (frazy), Z4, Z6, Z12, Z15, Z16.
+**Zostało otwarte:** Z2 (08:00), Z3 (10:00), Z4–Z14 według godzin w planie.
+
+## 2026-11-03 08:50
+**Kanał:** 2 (Google, przygotowanie kamienia Z2).
+**Co zrobione:** Z2: obecne meta /strefa-wiedzy/numeracja-faktur-ksef-2027 spisane, dwa warianty title i nowy description gotowe dla Z3, FL_SEO uprzedzony o zmianie o 10:00.
+**Ruch:** doba 97 odsłon, 63 osoby; źródła: b2b-email 56, b2b 8, duckduckgo.com 4, www.google.com 3, com.linkedin.android 2; narzędzia 5 uruchomień.
+**Dowód:** cykl/z2-numeracja-meta-2026-11-03.txt; `sesja napisz FL_SEO` doręczono 08:43; plik strony bez zmian od 18.10.
+**Dla Pawła:** GSC i Bing wylogowane (Z1): https://search.google.com/search-console i https://www.bing.com/webmasters/ w profilu ~/.config/chrome-google, zalogować.
+**Zostało otwarte:** Z3 od 10:00 (podmiana title/description, jeśli FL_SEO nie odpisze „w toku” do 09:45), dalej Z4-Z17 według godzin.
