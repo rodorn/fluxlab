@@ -10080,3 +10080,11 @@ Decyzje dla stratega:
 **Dowód:** brak (pusta godzina według planu).
 **Dla Pawła:** Search Console i Bing Webmaster wylogowane (profil ~/.config/chrome-google, port 9228).
 **Zostało otwarte:** Z3 od 10:00, potem Z4-Z17.
+
+## 2026-11-03 10:45
+**Kanał:** żaden (Z3 odłożone przez budżet).
+**Co zrobione:** nic nie poszło w świat; Z3 (title i description /strefa-wiedzy/numeracja-faktur-ksef-2027) wstrzymane, bo `budzet` podaje rytm „wstrzymaj”, kamieni 0, hamulec alarm (prognoza 114% tygodnia, reset za 21 h). Z4 dopiero od 11:00 i po Z3.
+**Ruch:** raport_ruchu, ostatnia doba: uruchomienia narzędzi 5; zdarzenia: otwarcie_maila 55 (piksel), klik_maila 6, uruchomiono_skan 5, pobranie 1, lead_landing 1.
+**Dowód:** adnotacja przy Z3 w cykl/plan-ruchu.md.
+**Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane (profil ~/.config/chrome-google, port 9228).
+**Zostało otwarte:** Z3 po ponownym sprawdzeniu budżetu (od 13:45), potem Z4-Z17.
