@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { ViewTransition } from "react";
 import { Fraunces, Instrument_Sans } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import PomiarFormularzy from "@/components/PomiarFormularzy";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import TloKursora from "@/components/TloKursora";
 import TytulKarty from "@/components/TytulKarty";
@@ -228,6 +229,7 @@ export default function RootLayout({
         />
         <TloKursora />
         <GoogleAnalytics />
+        <PomiarFormularzy />
         <ZgodaCookies />
         <CiszaPrzyPrzewijaniu />
         <ViewTransition default="vt-page">{children}</ViewTransition>

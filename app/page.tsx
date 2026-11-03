@@ -156,12 +156,15 @@ export default function Home() {
               href="#kontakt"
               className="btn-primary btn-lg w-full sm:w-60"
             >
-              Zamów wycenę
+              Bezpłatna wycena
             </a>
             <a href="#handlowiec" className="btn-secondary btn-lg w-full sm:w-60">
               Dobierz usługi
             </a>
           </div>
+          <p className="animate-fade-up-1 mt-3 text-sm text-gray-600 dark:text-white/60">
+            0 zł, cena i termin tego samego dnia roboczego
+          </p>
           <HeroNic />
         </section>
 

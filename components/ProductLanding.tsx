@@ -11,6 +11,7 @@ import { kotwica } from "@/lib/kotwica";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import FaqOtwieracz from "@/components/FaqOtwieracz";
 import KupOnline from "@/components/KupOnline";
+import DlaZakupow from "@/components/DlaZakupow";
 
 export interface Tier {
   name: string;
@@ -328,6 +329,8 @@ export default function ProductLanding(p: ProductLandingProps) {
             </div>
           )}
           </details>
+
+          <DlaZakupow className="mt-16" />
 
           <div className="mt-16 mx-auto max-w-3xl">
             <h2 className="h2-sekcji text-center">Pytania i odpowiedzi</h2>

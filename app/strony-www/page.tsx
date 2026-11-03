@@ -13,6 +13,7 @@ import WyscigStron from "@/components/WyscigStron";
 import MakietaStrony from "@/components/MakietaStrony";
 import TasmaEtapow from "@/components/TasmaEtapow";
 import TabelaCennika from "@/components/TabelaCennika";
+import DlaZakupow from "@/components/DlaZakupow";
 
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -219,6 +220,8 @@ export default function StronyWww() {
                     </div>
                   </div>
         </section>
+
+        <DlaZakupow className="container-wide pb-12" />
 
         <section
           id="kontakt"

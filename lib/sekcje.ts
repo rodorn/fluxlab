@@ -251,6 +251,7 @@ export const SEKCJE: Sekcja[] = [
           s("/realizacje", "Realizacje"),
           s("/case-study", "Modelowe przepływy"),
           s("/jak-pracuje", "Jak pracujemy"),
+          s("/dla-zespolu", "FluxLab w skrócie"),
           s("/jak-zbudowana", "Jak zbudowana jest ta strona"),
           s("/zmiany", "Ostatnie zmiany na stronie"),
           s("/pilotaz", "Program pilotażowy"),

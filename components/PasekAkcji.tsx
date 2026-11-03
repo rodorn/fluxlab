@@ -55,7 +55,7 @@ export default function PasekAkcji() {
         tabIndex={widoczny ? 0 : -1}
         className="btn-primary btn-lg w-full"
       >
-        Zamów wycenę
+        Bezpłatna wycena
       </a>
     </div>
   );

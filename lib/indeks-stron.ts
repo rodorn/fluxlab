@@ -113,6 +113,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Krok po kroku jak wygląda współpraca: bezpłatna konsultacja, audyt, wdrożenie i wsparcie. Stała cena projektowa, konkretne efekty, realistyczne terminy."
   },
   {
+    "url": "/dla-zespolu",
+    "tytul": "FluxLab w skrócie: do przesłania w firmie",
+    "opis": "Dla szefa, księgowości i działu zakupów: co robimy, ile kosztuje, jak wygląda współpraca, co gdy coś pójdzie nie tak, dane firmy. Do zapisania jako PDF."
+  },
+  {
     "url": "/pilotaz",
     "tytul": "3 miejsca na publiczne case study, 50% ceny",
     "opis": "3 firmy B2B otrzymają wdrożenie automatyzacji za 50 procent ceny w zamian za zgodę na publiczne case study. Publikujemy tylko to, co zaakceptujesz."

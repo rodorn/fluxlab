@@ -180,7 +180,7 @@ export default function HeaderKlient({
           <ThemeToggle />
           <LicznikKoszyka />
           <Link href="/kontakt" className="btn-primary">
-            Zamów wycenę
+            Bezpłatna wycena
           </Link>
         </div>
 
@@ -276,7 +276,7 @@ export default function HeaderKlient({
               onClick={zamknij}
               className="btn-primary mt-4"
             >
-              Zamów wycenę
+              Bezpłatna wycena
             </Link>
           </nav>
         </div>

@@ -498,6 +498,7 @@ export default function LandingForm({
 
       <form
         ref={formRef}
+        data-pomiar="wlasny"
         noValidate
         onSubmit={handleSubmit}
         onInput={(e) => {

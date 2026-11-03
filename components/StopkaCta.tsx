@@ -22,7 +22,7 @@ export default function StopkaCta() {
           href="/kontakt"
           className="mt-8 inline-flex items-center justify-center rounded-2xl bg-white px-8 py-3.5 text-base font-semibold tracking-tight text-indigo-700 transition-transform hover:-translate-y-0.5"
         >
-          Zamów wycenę
+          Bezpłatna wycena
         </Link>
       </div>
     </section>

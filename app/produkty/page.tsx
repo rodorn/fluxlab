@@ -8,6 +8,8 @@ import KatalogProduktow from "@/components/KatalogProduktow";
 import ZaZlotowke from "@/components/ZaZlotowke";
 import WycenaAI from "@/components/WycenaAI";
 import Abonamenty from "@/components/Abonamenty";
+import DlaZakupow from "@/components/DlaZakupow";
+import FaqSekcja from "@/components/FaqSekcja";
 import { CENNIK as PRODUCTS, PRODUCTS as PRODUCTS_ALL, cenaWejscia } from "@/lib/products";
 
 // Kolejność z licznika ruchu (sesje na stronie produktu, 20.09–24.10.2026).
@@ -55,6 +57,14 @@ export const metadata: Metadata = {
     ],
   },
 };
+
+const PYTANIA_PRODUKTY = [
+  { q: "Ile kosztują usługi?", a: "Ceny netto są przy każdej pozycji: naprawa strony od 150 zł, strona do 5 podstron 2 900 zł, pierwszy krok automatyzacji od 900 zł, własny CRM od 499 zł miesięcznie. Cena nie zmienia się po starcie." },
+  { q: "Jak zamówić kilka usług naraz?", a: "Dodaj je do koszyka i wyślij jedno zapytanie. Cenę i termin potwierdzamy tego samego dnia roboczego." },
+  { q: "Ile trwa realizacja?", a: "Strona do 5 podstron powstaje w tydzień, pierwszy krok automatyzacji w 5 dni, większość wdrożeń kończy się w 2–3 tygodnie. Termin jest w ofercie." },
+  { q: "Jak wygląda płatność?", a: "Pierwsze zlecenie przez Useme. Kolejne na fakturę VAT płatną przed startem, usługi miesięczne na początku miesiąca. Bez zaliczek." },
+  { q: "Czy mogę zrezygnować z CRM?", a: "Tak, w dowolnym dniu. Płacisz za dni korzystania." },
+];
 
 export default function ProduktyPage() {
   return (
@@ -156,6 +166,8 @@ export default function ProduktyPage() {
           </div>
 
         </section>
+        <DlaZakupow className="container-wide pb-12" />
+        <FaqSekcja pytania={PYTANIA_PRODUKTY} sciezka="/produkty" className="container-wide pb-14" />
         <CTA
           naglowek="Potrzebujesz czegoś szytego pod Twój proces?"
           opis={

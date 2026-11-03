@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
 import LiveDiagnosis from "@/components/LiveDiagnosis";
+import FaqSekcja from "@/components/FaqSekcja";
 
 export const metadata: Metadata = {
   title: "Kontakt | Fluxlab",
@@ -20,6 +21,12 @@ export const metadata: Metadata = {
   },
 };
 
+const PYTANIA_KONTAKT = [
+  { q: "Co się dzieje po wysłaniu formularza?", a: "Od razu dostajesz potwierdzenie mailem. Tego samego dnia roboczego odpisujemy, czy widzimy sens współpracy, jaki byłby pierwszy krok, ile kosztuje i ile trwa." },
+  { q: "Czy wycena jest płatna?", a: "Nie, wycena kosztuje 0 zł i do niczego nie zobowiązuje." },
+  { q: "Czy możemy porozmawiać na żywo?", a: "Tak. W formularzu wybierz Google Meet i godzinę, zaproszenie z linkiem przyjdzie mailem. Możesz też wybrać telefon, wtedy dzwonimy w godzinach pracy tego samego dnia." },
+];
+
 export default function KontaktPage() {
   return (
     <>
@@ -31,6 +38,7 @@ export default function KontaktPage() {
         <div className="pt-8 lg:pt-12">
           <LiveDiagnosis />
         </div>
+        <FaqSekcja pytania={PYTANIA_KONTAKT} sciezka="/kontakt" className="container-wide py-14" />
       </main>
       <Footer />
     </>
