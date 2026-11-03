@@ -9971,6 +9971,7 @@ Decyzje dla stratega:
 - Z14: kandydat numeracja-faktur-ksef-2027, wyświetlenia rosną 20 → 68 w 7 dni przy 0 klik.; frazy strony niewidoczne bez GSC.
 - GSC i Bing wylogowane od 2.11 06:45 (Z1); blokuje Z3, Z13, Z16, Z17 i każdy pomiar fraz. Zalogowanie to zadanie dla Pawła.
 - Z16 (3.11 01:45): GSC wylogowany (przekierowanie na /search-console/about), raport Strony i Mapy witryn niedostępny, 0 żądań.
+- Z17 (3.11 04:45): GSC nadal wylogowany (karta przekierowana na /search-console/about), więc licznik: /strefa-wiedzy/faktury-kosztowe-z-ksef 0 wejść od publikacji 2.11 07:46, /sprawdzenie-nip 11 wierszy 2.11 (6 sesji) (wyłącznie przeglądarki ludzi z duckduckgo, bing, google). Pobrań przez Googlebota i Bingbota niemierzalne: kolektor zapisuje tylko wejścia z uruchomionym skryptem, w bazie 0 wierszy z „bot” w przeglądarce, strona stoi na Vercelu bez dostępu do logów serwera. 0 żądań do GSC.
 
 ## 2026-11-02 22:50
 **Kanał:** pomiar (Z15 planu).
@@ -10005,3 +10006,27 @@ Decyzje dla stratega:
 **Dowód:** linijka Z16 pod „Bilans planu 2026-11-02/11-03”; cykl/plan-ruchu.md Z16.
 **Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45, blokują Z17.
 **Zostało otwarte:** Z17 (3.11 04:00), Z18 (05:30).
+
+## 2026-11-03 02:45
+**Kanał:** brak (czekam na Z17 o 04:00).
+**Co zrobione:** nic, żadne zadanie planu nie jest jeszcze dostępne godzinowo; plan zakazuje zmian poza nim.
+**Ruch:** raport_ruchu, ostatnia doba 85 odsłon, 57 osób (-16% wobec średniej 100,9); źródła: b2b-email 46 (piksel), instagram 5, duckduckgo.com 4, www.google.com 3, com.linkedin.android 2; /sprawdzenie-nip 11 odsłon, uruchomienia narzędzi 5.
+**Dowód:** brak.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45, blokują Z17.
+**Zostało otwarte:** Z17 (3.11 04:00), Z18 (05:30).
+
+## 2026-11-03 03:45
+**Kanał:** brak (czekam na Z17 o 04:00).
+**Co zrobione:** nic, żadne zadanie planu nie jest jeszcze dostępne godzinowo; plan zakazuje zmian poza nim.
+**Ruch:** raport_ruchu, ostatnia doba 85 odsłon, 57 osób (-16% wobec średniej 100,7); źródła: b2b-email 46 (piksel), instagram 5, duckduckgo.com 4, www.google.com 3, com.linkedin.android 2; /sprawdzenie-nip 11 odsłon, uruchomienia narzędzi 5.
+**Dowód:** brak.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45, blokują Z17.
+**Zostało otwarte:** Z17 (3.11 04:00), Z18 (05:30).
+
+## 2026-11-03 04:45
+**Kanał:** pomiar (Z17 planu).
+**Co zrobione:** GSC nadal wylogowany, więc stan nowego artykułu z licznika: faktury-kosztowe-z-ksef 0 wejść od publikacji, pobrań przez Googlebota i Bingbota nie da się zmierzyć; linijka pod bilansem Z15. Nic nie poszło w świat.
+**Ruch:** raport_ruchu, ostatnia doba 85 odsłon, 57 osób (-16% wobec średniej 100,7); źródła: b2b-email 46 (piksel), instagram 5, duckduckgo.com 4, www.google.com 3, com.linkedin.android 2; /sprawdzenie-nip 11 odsłon, uruchomienia narzędzi 5.
+**Dowód:** linijka Z17 pod „Bilans planu 2026-11-02/11-03”; cykl/plan-ruchu.md Z17.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45, bez tego Z17 nie zmierzy indeksowania.
+**Zostało otwarte:** Z18 (3.11 05:30).
