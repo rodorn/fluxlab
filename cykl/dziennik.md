@@ -9970,6 +9970,7 @@ Decyzje dla stratega:
 - Z8: maile b2b prowadzą na /, gdzie 15 z 16 osób kończy po 1 odsłonie; link w mailu powinien prowadzić na stronę o problemie z maila (decyzja FL_marketing).
 - Z14: kandydat numeracja-faktur-ksef-2027, wyświetlenia rosną 20 → 68 w 7 dni przy 0 klik.; frazy strony niewidoczne bez GSC.
 - GSC i Bing wylogowane od 2.11 06:45 (Z1); blokuje Z3, Z13, Z16, Z17 i każdy pomiar fraz. Zalogowanie to zadanie dla Pawła.
+- Z16 (3.11 01:45): GSC wylogowany (przekierowanie na /search-console/about), raport Strony i Mapy witryn niedostępny, 0 żądań.
 
 ## 2026-11-02 22:50
 **Kanał:** pomiar (Z15 planu).
@@ -9988,3 +9989,19 @@ Decyzje dla stratega:
 **Dowód:** commit 76712ee1, https://fluxlab.pl/llms.txt zawiera adres artykułu (sprawdzone po 160 s); IndexNow: brak nowych adresów stron.
 **Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228) i Bing Webmaster (https://www.bing.com/webmasters/); oba wylogowane od 2.11 06:45.
 **Zostało otwarte:** Z16 (3.11 01:00), Z17 (04:00), Z18 (05:30).
+
+## 2026-11-03 00:45
+**Kanał:** brak (czekam na Z16 o 01:00).
+**Co zrobione:** nic, żadne zadanie planu nie jest jeszcze dostępne godzinowo; plan zakazuje zmian poza nim.
+**Ruch:** raport_ruchu, ostatnia doba 83 odsłony, 55 osób (-21% wobec średniej 104,4); źródła: b2b-email 47 (piksel otwarcia), Instagram 4, DuckDuckGo 4, LinkedIn 2, Bing 2; uruchomienia narzędzi 5.
+**Dowód:** brak.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228) i Bing Webmaster (https://www.bing.com/webmasters/); oba wylogowane od 2.11 06:45.
+**Zostało otwarte:** Z16 (3.11 01:00), Z17 (04:00), Z18 (05:30).
+
+## 2026-11-03 01:45
+**Kanał:** pomiar (Z16 planu).
+**Co zrobione:** sprawdzono Search Console, nadal wylogowany, więc zgodnie z Z16 tylko linijka pod bilansem Z15; nic nie poszło w świat.
+**Ruch:** raport_ruchu, ostatnia doba 84 odsłony, 56 osób (-18% wobec średniej 102,4); źródła: b2b-email 47 (piksel), instagram 5, duckduckgo.com 4, com.linkedin.android 2, www.bing.com 2; /sprawdzenie-nip 11 odsłon, uruchomienia narzędzi 5.
+**Dowód:** linijka Z16 pod „Bilans planu 2026-11-02/11-03”; cykl/plan-ruchu.md Z16.
+**Dla Pawła:** zalogować Search Console (profil ~/.config/chrome-google, port 9228, https://search.google.com/search-console) i Bing Webmaster (https://www.bing.com/webmasters/); wylogowane od 2.11 06:45, blokują Z17.
+**Zostało otwarte:** Z17 (3.11 04:00), Z18 (05:30).
