@@ -10088,3 +10088,19 @@ Decyzje dla stratega:
 **Dowód:** adnotacja przy Z3 w cykl/plan-ruchu.md.
 **Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane (profil ~/.config/chrome-google, port 9228).
 **Zostało otwarte:** Z3 po ponownym sprawdzeniu budżetu (od 13:45), potem Z4-Z17.
+
+## 2026-11-03 11:43
+**Kanał:** żaden (budżet „wstrzymaj”).
+**Co zrobione:** nic; Z3 nadal wstrzymane (`budzet`: rytm wstrzymaj, prognoza 114% tygodnia, hamulec alarm, ponowne sprawdzenie od 13:45), Z4 wymaga Z3.
+**Ruch:** ostatnia doba 116 odsłon, 72 osoby (+20% do średniej); źródła: b2b-email 60, google 12, b2b 8, duckduckgo 4, bing 3, X 1; uruchomienia narzędzi 6.
+**Dowód:** brak zmian w repo.
+**Dla Pawła:** Search Console i Bing Webmaster wylogowane (profil ~/.config/chrome-google, port 9228).
+**Zostało otwarte:** Z3 po sprawdzeniu budżetu od 13:45, potem Z4-Z17.
+
+## 2026-11-03 12:45
+**Kanał:** 1 (narzędzia, pomiar lejka Z5).
+**Co zrobione:** Z5: lejek trzech narzędzi z 7 dni; po wyniku 14 z 15 sesji wychodzi, jedyny klik_po_wyniku to /numer-ksef → /ksef-integracja (3.11 11:56, Google). Z3 nadal wstrzymane budżetem („wstrzymaj”, prognoza 114%).
+**Ruch:** raport_ruchu, ostatnia doba: uruchomienia narzędzi 7 (uruchomiono_skan 6, uruchomiono_numer_ksef 1), klik_po_wyniku 1, lead_landing 1, otwarcia maili b2b 54 (piksel).
+**Dowód:** cykl/z5-narzedzia-lejek-2026-11-03.txt.
+**Dla Pawła:** Search Console i Bing Webmaster wylogowane (profil ~/.config/chrome-google, port 9228).
+**Zostało otwarte:** Z3 po sprawdzeniu budżetu od 13:45, Z6 od 13:00 (Bing wylogowany, linijka), dalej Z7-Z17.

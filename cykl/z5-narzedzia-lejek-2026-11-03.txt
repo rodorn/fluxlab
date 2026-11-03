@@ -1,0 +1,24 @@
+Z5 lejek narzędzi, 7 dni do 3.11 12:45 (raport_ruchu.pobierz po odsiewie botów, automatyki, salw i skanerów)
+
+== /sprawdzenie-nip
+30.10 08:38 | www.bing.com | 0 Edge/Windows | uruch. 1 | po wyniku: wyjście | 24 s | odsłon 1
+30.10 13:35 | www.bing.com | 0 Edge/Windows | uruch. 1 | po wyniku: wyjście | 8 s | odsłon 1
+31.10 18:08 | www.bing.com | 0 Edge/Windows | uruch. 1 | po wyniku: wyjście | 15 s | odsłon 1
+02.11 14:11 | www.bing.com | 0 Edge/Windows | uruch. 1 | po wyniku: wyjście | 10 s | odsłon 1
+02.11 16:58 | duckduckgo.com | 0 Chrome/Linux | uruch. 1 | po wyniku: wyjście | 11 s | odsłon 1
+02.11 16:58 | duckduckgo.com | 0 Chrome/Linux | uruch. 1 | po wyniku: wyjście | 16 s | odsłon 1
+02.11 21:37 | www.bing.com | 0 Edge/Windows | uruch. 1 | po wyniku: wyjście | 4 s | odsłon 1
+02.11 23:25 | duckduckgo.com | 1 Chrome/Android | uruch. 1 | po wyniku: wyjście | 31 s | odsłon 1
+03.11 11:22 | www.bing.com | 0 Edge/Windows | uruch. 1 | po wyniku: wyjście | 7 s | odsłon 1
+== /numer-ksef
+27.10 21:16 | www.google.com | 1 Chrome/Android | uruch. 1 | po wyniku: wyjście | 9 s | odsłon 1
+30.10 23:30 | www.google.com | 1 Chrome/Android | uruch. 6 | po wyniku: wyjście | 231 s | odsłon 1
+03.11 11:56 | www.google.com | 0 Firefox/Windows | uruch. 1 | po wyniku: klik_po_wyniku -> /ksef-integracja | 66 s | odsłon 3
+== /kalkulator-podatkowy
+28.10 08:53 | bez odsyłacza | 0 Chrome/macOS | uruch. 3 | po wyniku: wyjście | 3303 s | odsłon 3
+29.10 15:37 | www.google.com | 0 Firefox/Windows | uruch. 1 | po wyniku: wyjście | 54 s | odsłon 1
+31.10 10:15 | bez odsyłacza | 0 Chrome/macOS | uruch. 1 | po wyniku: wyjście | 504 s | odsłon 1
+
+Uwagi: 6 z 9 sesji /sprawdzenie-nip to Edge/Windows z bing.com, 1 odsłona, 4-24 s od wejścia do wyjścia; wzór pasuje do podglądu Binga, nie do człowieka (do sprawdzenia po IP/UA, nie odsiewam). Dwie sesje DDG Chrome/Linux 2.11 16:58 w tej samej minucie, możliwa jedna osoba. Drugie uruchomienie: 2 sesje (numer-ksef 6x, kalkulator 3x), na /sprawdzenie-nip żadna. Jedyny klik_po_wyniku: /numer-ksef 3.11 11:56, Google, Firefox/Windows, przejście na /ksef-integracja.
+
+najczęstszy krok po wyniku: wyjście (14 z 15 sesji; 1 klik_po_wyniku na /ksef-integracja z /numer-ksef)
