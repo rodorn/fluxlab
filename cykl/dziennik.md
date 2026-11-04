@@ -10118,3 +10118,11 @@ Decyzje dla stratega:
 **Plan 3.11:** 4 z 17 [x] (Z1, Z2, Z5, Z6). Od ok. 14:00 cykl kończył się „You've hit your weekly limit" (przebieg.log), limit wrócił 4.11 08:00. GSC i Bing wylogowane czwartą dobę (sprawdzone 08:17).
 **Plan:** 19 zadań, 2 kamienie: Z3 meta /strefa-wiedzy/numeracja-faktur-ksef-2027 (przeniesiony, 68 wyśw./7 dni, poz. 6,8, 0 klik.), Z7 meta /strefa-wiedzy/proforma-ksef (29 wyśw./7 dni, poz. 6,0, 0 klik.). Pomiar: lejek /e-doreczenia-integracja (Z6), kto wchodzi z Google na / (Z11). Budżet: rytm „utrzymaj", 0% tygodnia. Bez outreachu, bez artykułu (następny 9.11).
 **Mail do Pawła:** wysłany 08:20 na iwanekpawel55@gmail.com, temat „FluxLab ruch, plan na 2026-11-04: 44 osoby w dobie, w tym 14 z Google”; dla Pawła: logowanie GSC i Binga, decyzja o outreachu, oferta prokonsumencki.pl.
+
+## 2026-11-04 09:01
+**Kanał:** pomiar i przygotowanie kamienia Google (Z1, Z2 z planu 4.11).
+**Co zrobione:** Z1: timer enabled, rytm utrzymaj, GSC wylogowany, Bing wylogowany; Z2: plik numeracja-faktur-ksef-2027 bez zmian od 2 dni, produkcyjny title „Numeracja faktur w KSeF 2027, błąd 440 | Fluxlab”, zapowiedź zmiany meta doręczona do FL_SEO o 09:00.
+**Ruch:** ostatnia doba 164 odsłony, 113 osób; źródła: b2b-email 89, www.google.com 24, m.facebook.com 4, chatgpt.com 1, www.bing.com 1. Uruchomienia narzędzi 3, lead_landing 1, klik_po_wyniku 1.
+**Dowód:** cykl/plan-ruchu.md linie Z1 i Z2; `sesja napisz` „Doręczono do FL_SEO (09:00)”.
+**Dla Pawła:** zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), wylogowane piątą dobę: https://search.google.com/search-console i https://www.bing.com/webmasters/
+**Zostało otwarte:** Z3 (meta numeracja-faktur-ksef-2027) od 10:00, jeśli FL_SEO nie odpisze „w toku” do 09:50; dalej Z4 od 11:00.
