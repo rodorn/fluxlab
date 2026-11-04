@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Prowadzenie wizytówki Google, 349 zł/mies. | Fluxlab",
+  title: "Opieka nad wizytówką Google, 349 zł/mies. | Fluxlab",
   description:
     "Prowadzimy Twój Profil Firmy w Google: uporządkowany wpis, cotygodniowe posty, odpowiedzi na opinie i pomiar telefonów z Map. 349 zł netto miesięcznie.",
   alternates: { canonical: "/profil-firmy-google" },
   openGraph: {
-    title: "Prowadzenie wizytówki Google, 349 zł/mies. | Fluxlab",
+    title: "Opieka nad wizytówką Google, 349 zł/mies. | Fluxlab",
     description:
       "Uporządkowany Profil Firmy w Google, posty co tydzień, odpowiedzi na opinie i pomiar telefonów z Map.",
     locale: "pl_PL",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Fluxlab, prowadzenie wizytówki Google",
+        alt: "Fluxlab, opieka nad wizytówką Google",
       },
     ],
   },
@@ -27,11 +27,11 @@ export default function Page() {
   return (
     <ProductLanding
       slug="profil-firmy-google"
-      breadcrumb="Prowadzenie wizytówki Google"
+      breadcrumb="Opieka nad wizytówką Google"
       eyebrow="Profil Firmy w Google"
       h1="Prowadzimy Twoją wizytówkę w Google, żeby klienci z Map dzwonili do Ciebie"
       lead="Klient szuka usługi w okolicy, widzi trzy firmy na mapie i dzwoni do tej, która ma zdjęcia, świeże posty i odpowiedzi na opinie. Dbamy o to co tydzień, a Ty widzisz, ile telefonów i wejść przyszło z Map."
-      ctaLabel="Zamów prowadzenie"
+      ctaLabel="Zamów opiekę"
       ctaNote="349 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
         {
@@ -104,13 +104,13 @@ export default function Page() {
         },
       ]}
       formId="order_profil_google"
-      formHeading="Zamów prowadzenie wizytówki"
+      formHeading="Zamów opiekę nad wizytówką"
       formIntro="Podaj nazwę firmy albo link do wizytówki. Odeślemy, co poprawimy na start."
       submitLabel="Zamawiam prowadzenie"
       microCopy="Dostęp do wizytówki jest potrzebny dopiero na start prac."
       serviceName="Prowadzenie Profilu Firmy w Google"
-      serviceDesc="Prowadzenie wizytówki Google (Profil Firmy w Google): uporządkowany wpis, cotygodniowe posty, odpowiedzi na opinie i miesięczny pomiar telefonów oraz wejść z Map. 349 zł netto miesięcznie."
-      serviceType="Prowadzenie wizytówki Google"
+      serviceDesc="Opieka nad wizytówką Google (Profil Firmy w Google): uporządkowany wpis, cotygodniowe posty, odpowiedzi na opinie i miesięczny pomiar telefonów oraz wejść z Map. 349 zł netto miesięcznie."
+      serviceType="Opieka nad wizytówką Google"
     />
   );
 }

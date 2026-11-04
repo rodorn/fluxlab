@@ -42,7 +42,7 @@ export default function Page() {
         },
         {
           przed: "Opinie i Mapy też warto poprawić u siebie. Zobacz",
-          kotwica: "prowadzenie wizytówki Google",
+          kotwica: "opiekę nad wizytówką Google",
           href: "/profil-firmy-google",
           po: ".",
         },
