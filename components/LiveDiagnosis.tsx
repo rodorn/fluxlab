@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { event as gaEvent } from "@/lib/gtag";
+import SkadWiesz from "@/components/SkadWiesz";
 
 interface AutomationStep {
   title: string;
@@ -62,6 +63,7 @@ const LOADING_PHASES = [
 
 export default function LiveDiagnosis() {
   const [email, setEmail] = useState("");
+  const [skad, setSkad] = useState("");
   const [leadStan, setLeadStan] = useState<"idle" | "wysylamy" | "ok" | "blad">(
     "idle",
   );
@@ -147,6 +149,7 @@ export default function LiveDiagnosis() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
+          skad,
           company: result.processName,
           problemType: PILLAR_LABELS[result.pillar],
           problemScale: result.timeSavedHours
@@ -439,6 +442,15 @@ export default function LiveDiagnosis() {
                           ? "Wysyłamy..."
                           : "Zamawiam bezpłatną diagnozę"}
                       </button>
+                    </div>
+                    <div className="mt-3">
+                      <SkadWiesz
+                        id="diagnoza-skad"
+                        value={skad}
+                        onChange={setSkad}
+                        etykieta="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                        pole="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"
+                      />
                     </div>
                     {leadStan === "blad" && (
                       <p className="mt-2 text-sm text-red-700 dark:text-red-400">

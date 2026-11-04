@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import SkadWiesz from "@/components/SkadWiesz";
 import { useState } from "react";
 import { usun, useKoszyk, type PozycjaKoszyka } from "@/lib/koszyk";
 import { OFERTA } from "@/lib/sprzedaz";
@@ -18,6 +19,7 @@ export default function KoszykWidok() {
   const [email, setEmail] = useState("");
   const [firma, setFirma] = useState("");
   const [uwagi, setUwagi] = useState("");
+  const [skad, setSkad] = useState("");
   const [pulapka, setPulapka] = useState("");
   const [stan, setStan] = useState<"" | "wysylamy" | "wyslane">("");
   const [blad, setBlad] = useState("");
@@ -62,6 +64,7 @@ export default function KoszykWidok() {
         body: JSON.stringify({
           email,
           company: firma,
+          skad,
           website: pulapka,
           problemType: "Koszyk usług",
           problemScale: `Pozycji do wyceny: ${reszta.length}`,
@@ -245,6 +248,15 @@ export default function KoszykWidok() {
                   className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-gray-900 focus:border-accent focus:outline-none dark:border-white/15 dark:bg-gray-900 dark:text-white"
                 />
               </label>
+              <div className="mt-4">
+                <SkadWiesz
+                  id="koszyk-skad"
+                  value={skad}
+                  onChange={setSkad}
+                  etykieta="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                  pole="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-gray-900 focus:border-accent focus:outline-none dark:border-white/15 dark:bg-gray-900 dark:text-white"
+                />
+              </div>
               <label className="mt-4 block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Uwagi
                 <textarea
