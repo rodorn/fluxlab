@@ -1,3 +1,5 @@
+import { zl } from "@/lib/wycena";
+
 export type Oferta = {
   nazwa: string;
   netto: number;
@@ -39,4 +41,39 @@ export const OFERTA: Record<string, Oferta> = {
   "n8n-przeplyw": { nazwa: "Wdrożenie pojedynczego przepływu n8n", netto: 790, miesiecznie: false, strona: "/wdrozenie-n8n-cena" },
   "n8n-opieka": { nazwa: "Opieka nad n8n", netto: 190, miesiecznie: true, strona: "/wdrozenie-n8n-cena" },
   "asystent-audyt": { nazwa: "Audyt asystenta AI", netto: 69, miesiecznie: false, strona: "/asystent-ai-na-stronie", pole: ADRES },
+  "opieka-300": { nazwa: "Opieka nad stroną: 2 poprawki na kwartał, monitoring", netto: 300, miesiecznie: true, strona: "/strony-www", pole: ADRES },
+  "opieka-600": { nazwa: "Opieka nad stroną: 5 poprawek na kwartał, opinie w Google", netto: 600, miesiecznie: true, strona: "/strony-www", pole: ADRES },
+  "opieka-1280": { nazwa: "Opieka nad stroną: 10 poprawek na kwartał, post co tydzień", netto: 1280, miesiecznie: true, strona: "/strony-www", pole: ADRES },
 };
+
+export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
+
+const OFERTY_POZYCJI: Record<string, string[]> = {
+  strona: ["opieka-300", "opieka-600", "opieka-1280"],
+};
+
+const PYTANIA: Record<string, string> = {
+  "/benchmarking-konkurencji": "Jak często raport?",
+  "/strony-www": "Jaki zakres opieki?",
+};
+
+export type Wariant = { oferta?: string; etykieta: string; cena: string };
+
+/** Warianty pozycji koszyka: oferty ze stałą ceną do zapłaty online
+ *  i wycena, gdy cena wejścia z cennika nie odpowiada żadnej z nich. */
+export function warianty(p: { id: string; nazwa: string; cena: string; href: string }) {
+  const ids =
+    OFERTY_POZYCJI[p.id] ??
+    Object.keys(OFERTA).filter((k) => OFERTA[k].strona === p.href && !k.startsWith("opieka-"));
+  const wejscie = Number(p.cena.replace(/(\d)\s(?=\d)/g, "$1").match(/\d+/)?.[0] ?? NaN);
+  const lista: Wariant[] = ids.map((k) => {
+    const o = OFERTA[k];
+    const reszta = o.nazwa.toLocaleLowerCase("pl").startsWith(p.nazwa.toLocaleLowerCase("pl"))
+      ? o.nazwa.slice(p.nazwa.length).replace(/^[\s:,]+/, "")
+      : "";
+    return { oferta: k, etykieta: reszta ? reszta[0].toLocaleUpperCase("pl") + reszta.slice(1) : o.nazwa, cena: cenaOferty(o) };
+  });
+  if (lista.length && !ids.some((k) => OFERTA[k].netto === wejscie))
+    lista.unshift({ etykieta: `${p.nazwa}: zakres do wyceny`, cena: p.cena });
+  return { pytanie: PYTANIA[p.href] ?? "Który wariant?", lista };
+}

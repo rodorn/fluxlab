@@ -8,6 +8,10 @@ export type PozycjaKoszyka = {
   cena: string;
   href: string;
   rodzaj: "abonament" | "dodatek" | "usluga";
+  /** Klucz z `OFERTA`: pozycja ze stałą ceną, płatna online. */
+  oferta?: string;
+  /** Id przycisku, z którego wybrano wariant. */
+  grupa?: string;
 };
 
 const KLUCZ = "fl-koszyk";
@@ -56,16 +60,24 @@ export function useKoszyk() {
 const nazwa = (s: string) => s.toLocaleLowerCase("pl").replace(/\s+/g, " ").trim();
 
 export function wKoszyku(lista: PozycjaKoszyka[], p: PozycjaKoszyka) {
-  return lista.some((x) => x.id === p.id || nazwa(x.nazwa) === nazwa(p.nazwa));
+  return lista.some((x) => pasuje(x, p));
 }
+
+const pasuje = (x: PozycjaKoszyka, p: PozycjaKoszyka) =>
+  x.id === p.id || x.grupa === p.id || nazwa(x.nazwa) === nazwa(p.nazwa) || (!!p.oferta && x.oferta === p.oferta);
 
 export function przelacz(p: PozycjaKoszyka) {
   const lista = czytaj();
-  zapisz(
-    wKoszyku(lista, p)
-      ? lista.filter((x) => x.id !== p.id && nazwa(x.nazwa) !== nazwa(p.nazwa))
-      : [...lista, p],
-  );
+  zapisz(wKoszyku(lista, p) ? lista.filter((x) => !pasuje(x, p)) : [...lista, p]);
+}
+
+export function dodaj(p: PozycjaKoszyka) {
+  const lista = czytaj();
+  if (!wKoszyku(lista, p)) zapisz([...lista, p]);
+}
+
+export function usunOplacone() {
+  zapisz(czytaj().filter((x) => !x.oferta));
 }
 
 export function usun(id: string) {

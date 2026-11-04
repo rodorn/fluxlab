@@ -1,7 +1,7 @@
 const PUNKTY = [
   [
     "Płatność",
-    "Pierwsze zlecenie przez Useme. Kolejne na fakturę VAT płatną przed startem, usługi miesięczne na początku miesiąca. Bez zaliczek.",
+    "Pierwsze zlecenie przez Useme. Kolejne na fakturę VAT płatną przed startem, usługi miesięczne na początku miesiąca. Bez zaliczek. Usługi ze stałą ceną można też opłacić online w koszyku.",
   ],
   [
     "Umowa i zakres",

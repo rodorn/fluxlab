@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimacjaWyslania from "@/components/AnimacjaWyslania";
+import CzyscOplacone from "@/components/CzyscOplacone";
 import { OFERTA } from "@/lib/sprzedaz";
 
 export const metadata: Metadata = {
@@ -17,7 +18,8 @@ export default async function ZakupDziekujemy({
 }: {
   searchParams: Promise<{ p?: string }>;
 }) {
-  const o = OFERTA[(await searchParams).p ?? ""];
+  const p = (await searchParams).p ?? "";
+  const o = OFERTA[p];
   return (
     <>
       <Header />
@@ -29,6 +31,7 @@ export default async function ZakupDziekujemy({
                 <AnimacjaWyslania />
               </div>
               <h1 className="h1-strony mb-4">Dziękujemy, płatność przyjęta</h1>
+              {p === "koszyk" && <CzyscOplacone />}
               {o && <p className="mb-3 font-semibold text-gray-900 dark:text-white">{o.nazwa}</p>}
               <p className="text-gray-600 dark:text-gray-300">
                 Fakturę VAT wyślemy w ciągu 1 dnia roboczego na adres e-mail podany przy płatności. W tym samym czasie

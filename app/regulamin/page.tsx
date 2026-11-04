@@ -48,7 +48,7 @@ export default function Regulamin() {
               Regulamin
             </h1>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Ostatnia aktualizacja: 4 kwietnia 2026
+              Ostatnia aktualizacja: 4 listopada 2026
             </p>
           </div>
         </section>
@@ -131,7 +131,7 @@ export default function Regulamin() {
                           <li>
                             Zakup online jest przeznaczony dla firm. Ceny na
                             stronach są cenami netto, do których doliczany jest
-                            VAT 23%. Kwotę brutto pokazuje strona płatności.
+                            VAT 23%. Kwotę brutto pokazuje strona płatności. Kilka usług z koszyka można opłacić jedną płatnością: usługi jednorazowe są wtedy płatne razem z pierwszym miesiącem abonamentu.
                           </li>
                           <li>
                             Płatności obsługuje Stripe Payments Europe Ltd.
