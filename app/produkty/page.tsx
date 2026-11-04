@@ -24,6 +24,13 @@ const ZASADY = [
   ["30 dni poprawek", "Błędy po naszej stronie poprawiamy po wdrożeniu bez opłat."],
 ];
 
+const POZA_CENA = [
+  ["Licencje narzędzi", "Pipedrive, Make, n8n w chmurze czy Microsoft 365 opłacasz u dostawcy, na swoje konto. Kwotę podajemy w ofercie."],
+  ["Koszty API i serwera", "Zapytania do modeli AI, hosting, wysyłka SMS. Rozliczasz je z dostawcą, szacunek miesięczny jest w ofercie."],
+  ["Zmiany zakresu", "Nowe funkcje dodane po akceptacji oferty wyceniamy osobno, zanim zaczniemy pracę."],
+  ["Opieka po 30 dniach", "Późniejsze zmiany robimy jednorazowo albo w abonamencie, np. opieka nad stroną od 300 zł/mies."],
+];
+
 const ZASADY_AUDYTU = [
   ["Audyt strony 0 zł", "Raport od ręki, bez konta: telefon i komputer, wyszukiwarka, AI, poczta."],
   ["Cała strona 10 zł", "Do 200 podstron, raport mailem, płacisz po otrzymaniu."],
@@ -139,10 +146,11 @@ export default function ProduktyPage() {
         </section>
 
         <section className="container-wide pb-12" aria-label="Zasady">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               ["Zasady wyceny", ZASADY],
               ["Zasady audytu", ZASADY_AUDYTU],
+              ["Czego nie ma w cenie", POZA_CENA],
             ].map(([tytul, lista]) => (
               <div key={tytul as string} className="rounded-2xl bg-gray-50 p-6 dark:bg-white/5">
                 <h2 className="text-lg font-bold text-gray-900 dark:text-white">{tytul as string}</h2>
