@@ -200,6 +200,22 @@ export async function POST(req: Request) {
     landing_page: str(body.landing_page, MAX_UTM),
     referrer: str(body.referrer, MAX_UTM),
   };
+  if (!utm.utm_source) {
+    const ciastko = /(?:^|;\s*)fl_zrodlo=([^;]+)/.exec(
+      req.headers.get("cookie") ?? "",
+    );
+    try {
+      const z = ciastko ? JSON.parse(decodeURIComponent(ciastko[1])) : null;
+      if (z) {
+        utm.utm_source = str(z.utm_source, MAX_UTM);
+        utm.utm_medium = str(z.utm_medium, MAX_UTM);
+        utm.utm_campaign = str(z.utm_campaign, MAX_UTM);
+        utm.landing_page = utm.landing_page || str(z.landing_page, MAX_UTM);
+      }
+    } catch {
+      /* uszkodzone ciasteczko: zgloszenie bez atrybucji */
+    }
+  }
 
   // Rekord w kolektorze powstaje w chwili zdarzenia, przed mailem. Awaria
   // kolektora nie blokuje maila (blad tylko w konsoli), a awaria maila nie

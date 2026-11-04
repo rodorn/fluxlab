@@ -269,7 +269,7 @@ const nextConfig: NextConfig = {
       {
         source: "/hajs",
         destination:
-          "/?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
+          "/kalkulator-podatkowy?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
         permanent: false,
       },
       {

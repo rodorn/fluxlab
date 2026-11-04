@@ -46,6 +46,16 @@ export function zapamietajZrodlo(): void {
   if (typeof window === "undefined") return;
   const teraz = zAdresu();
   if (!teraz.utm_source || !teraz.utm_medium) return;
+  // Kopia w ciasteczku dla formularzy, ktore nie wysylaja utm w tresci
+  // (narzedzia, koszyk): /api/contact czyta ja, gdy body nie ma zrodla.
+  document.cookie = `${KLUCZ}=${encodeURIComponent(
+    JSON.stringify({
+      utm_source: teraz.utm_source,
+      utm_medium: teraz.utm_medium,
+      utm_campaign: teraz.utm_campaign,
+      landing_page: teraz.landing_page,
+    }),
+  )}; path=/; max-age=${WAZNOSC_MS / 1000}; samesite=lax`;
   try {
     localStorage.setItem(KLUCZ, JSON.stringify({ ...teraz, czas: Date.now() }));
   } catch {

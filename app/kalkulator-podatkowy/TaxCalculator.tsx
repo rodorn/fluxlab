@@ -5,6 +5,7 @@ import Image from "next/image";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import BramkaEmail from "@/components/BramkaEmail";
+import { zapamietajZrodlo } from "@/lib/zrodlo";
 
 /* ═══════════════════════════════════════════════════
    STAŁE PODATKOWE 2026
@@ -1215,6 +1216,9 @@ function ResultCard({
    ═══════════════════════════════════════════════════ */
 
 export default function TaxCalculator() {
+  // Wejscie z linku partnera (/hajs): zrodlo zapisane od razu, zanim widz
+  // przejdzie dalej i utm zniknie z adresu.
+  useEffect(() => zapamietajZrodlo(), []);
   useEffect(() => {
     gaEvent("calculator_viewed", { calculator: "tax" });
   }, []);
