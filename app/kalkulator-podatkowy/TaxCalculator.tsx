@@ -558,7 +558,11 @@ function pln(v: number): string {
 }
 
 function pct(v: number): string {
-  return (v * 100).toFixed(1) + "%";
+  return (v * 100).toFixed(1).replace(".", ",") + "%";
+}
+
+function pc(v: number): string {
+  return String(v).replace(".", ",");
 }
 
 /* ═══════════════════════════════════════════════════
@@ -879,7 +883,7 @@ function DonutChart({
             <span className="text-gray-600 dark:text-gray-400 tabular-nums ml-auto flex-shrink-0">
               {activeIdx === i
                 ? pln(Math.round(p.value / d))
-                : `${p.pct.toFixed(1)}%`}
+                : `${p.pct.toFixed(1).replace(".", ",")}%`}
             </span>
           </div>
         ))}
@@ -1759,8 +1763,8 @@ export default function TaxCalculator() {
                                   value={o.isNajem ? "najem" : o.rate}
                                 >
                                   {o.isNajem
-                                    ? `${NAJEM_RATE_LOW}/${NAJEM_RATE_HIGH}%`
-                                    : `${o.rate}%`}{" "}
+                                    ? `${pc(NAJEM_RATE_LOW)}/${pc(NAJEM_RATE_HIGH)}%`
+                                    : `${pc(o.rate)}%`}{" "}
                                   – {o.desc}
                                 </option>
                               ))}
@@ -1773,8 +1777,8 @@ export default function TaxCalculator() {
                             {src.isNajem && src.amount > 0 && (
                               <span className="block mt-1 text-gray-600 dark:text-gray-400 font-medium">
                                 {src.amount * 12 <= NAJEM_THRESHOLD
-                                  ? `Cały przychód ({pln(src.amount * 12)}/rok) objęty stawką ${NAJEM_RATE_LOW}%.`
-                                  : `${pln(NAJEM_THRESHOLD)} × ${NAJEM_RATE_LOW}% + ${pln(src.amount * 12 - NAJEM_THRESHOLD)} × ${NAJEM_RATE_HIGH}%`}
+                                  ? `Cały przychód (${pln(src.amount * 12)}/rok) objęty stawką ${pc(NAJEM_RATE_LOW)}%.`
+                                  : `${pln(NAJEM_THRESHOLD)} × ${pc(NAJEM_RATE_LOW)}% + ${pln(src.amount * 12 - NAJEM_THRESHOLD)} × ${pc(NAJEM_RATE_HIGH)}%`}
                               </span>
                             )}
                           </p>
@@ -2468,7 +2472,7 @@ export default function TaxCalculator() {
                 dochodu
               </div>
               <div>
-                <strong>Zdrowotna (liniowy):</strong> {HEALTH_RATE_LINEAR * 100}
+                <strong>Zdrowotna (liniowy):</strong> {pc(Math.round(HEALTH_RATE_LINEAR * 1000) / 10)}
                 % dochodu
               </div>
               <div>
@@ -2482,8 +2486,8 @@ export default function TaxCalculator() {
                 {CAR_VAT_MIXED * 100}% VAT
               </div>
               <div>
-                <strong>Najem ryczałt:</strong> {NAJEM_RATE_LOW}% do{" "}
-                {pln(NAJEM_THRESHOLD)}, {NAJEM_RATE_HIGH}% powyżej
+                <strong>Najem ryczałt:</strong> {pc(NAJEM_RATE_LOW)}% do{" "}
+                {pln(NAJEM_THRESHOLD)}, {pc(NAJEM_RATE_HIGH)}% powyżej
               </div>
               <div>
                 <strong>Zwolnienie VAT:</strong> do {pln(VAT_EXEMPT_LIMIT)}{" "}
