@@ -10,11 +10,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "CRM dla firm leasingowych i brokerów leasingu | Fluxlab",
   description:
-    "CRM dla firm leasingowych przypisze lead po regionie, uzupełni dane po NIP z CEIDG i KRS, przygotuje wniosek do leasingodawcy i policzy prowizję.",
+    "CRM dla firm leasingowych: lead do brokera, dane po NIP z CEIDG i KRS, scoring BIK/KRD za zgodą klienta, wniosek do leasingodawcy, prowizja.",
   openGraph: {
     title: "CRM dla firm leasingowych i brokerów leasingu | Fluxlab",
     description:
-      "CRM dla firm leasingowych przypisze lead po regionie, uzupełni dane po NIP z CEIDG i KRS, przygotuje wniosek do leasingodawcy i policzy prowizję.",
+      "CRM dla firm leasingowych: lead do brokera, dane po NIP z CEIDG i KRS, scoring BIK/KRD za zgodą klienta, wniosek do leasingodawcy, prowizja.",
     locale: "pl_PL",
     type: "article",
     images: [
