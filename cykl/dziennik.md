@@ -10158,3 +10158,11 @@ Decyzje dla stratega:
 **Dowód:** cykl/z6-edoreczenia-lejek-2026-11-04.txt, Z6 w plan-ruchu.md oznaczone [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (meta proforma-ksef) od 13:00, dalej Z8 od 14:00.
+
+## 2026-11-04 13:48
+**Kanał:** Google (plan ruchu Z7, kamień 2).
+**Co zrobione:** Z7: title i description /strefa-wiedzy/proforma-ksef zmienione na wariant 1 z Z5 („Czy proforma idzie do KSeF? Nie, oto dlaczego”), treść, H1 i FAQ bez zmian; wdrożone i zgłoszone.
+**Ruch:** ostatnia doba 191 odsłon, 126 osób; źródła: b2b-email 115, www.google.com 14, hajsmetrics 11, m.facebook.com 4, x 2.
+**Dowód:** commit c890be05; https://fluxlab.pl/strefa-wiedzy/proforma-ksef 200 z nowym `<title>` i description; IndexNow Yandex 200, Naver 200 (wspólny 403). FL_SEO nie odpisał „w toku”, plik bez zmian od 21.10. Build, SPOJNOSC OK, JAKOSC OK.
+**Dla Pawła:** 
+**Zostało otwarte:** Z8 od 14:00 (lejek dnia), dalej Z9-Z19 według godzin.
