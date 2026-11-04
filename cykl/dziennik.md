@@ -10126,3 +10126,19 @@ Decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md linie Z1 i Z2; `sesja napisz` „Doręczono do FL_SEO (09:00)”.
 **Dla Pawła:** zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), wylogowane piątą dobę: https://search.google.com/search-console i https://www.bing.com/webmasters/
 **Zostało otwarte:** Z3 (meta numeracja-faktur-ksef-2027) od 10:00, jeśli FL_SEO nie odpisze „w toku” do 09:50; dalej Z4 od 11:00.
+
+## 2026-11-04 09:44
+**Kanał:** żaden (czekam na Z3 o 10:00).
+**Co zrobione:** nic; w planie 4.11 Z1 i Z2 są [x], następne Z3 (meta numeracja-faktur-ksef-2027) ma warunek „nie wcześniej niż 10:00”.
+**Ruch:** ostatnia doba 163 odsłony, 115 osób (+76% do średniej 92,9); źródła: b2b-email 100, www.google.com 19, m.facebook.com 4, www.bing.com 1, narzedzie 1. Uruchomienia narzędzi 3 (numer_ksef 2, skan 1), klik_po_wyniku 1, pobranie 1.
+**Dowód:** brak zmian w repo.
+**Dla Pawła:** zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/
+**Zostało otwarte:** Z3 od 10:00 (jeśli FL_SEO nie odpisał „w toku”), Z4 od 11:00, Z5 od 11:30.
+
+## 2026-11-04 10:50
+**Kanał:** 2/Google (kamień 1 planu: Z3, meta numeracja-faktur-ksef-2027).
+**Co zrobione:** Z3: title i description /strefa-wiedzy/numeracja-faktur-ksef-2027 zmienione na „Numeracja faktur w KSeF od 2027: jak numerować | Fluxlab” i opis z rokiem w numerze (wariant 1 z Z2), bez zmian treści, H1 i FAQ; FL_SEO nie odpisał do 09:50, plik bez zmian od 18.10.
+**Ruch:** raport_ruchu, ostatnia doba: 169 odsłon, 118 osób (z tego b2b-email 103 to piksel otwarć); źródła: www.google.com 18, m.facebook.com 4, www.bing.com 1, narzedzie 1, X 1 sesja; uruchomienia narzędzi 3 (numer_ksef 2, skan 1), klik_po_wyniku 1, lejek 7 dni: 0 form_start, 1 zapytanie.
+**Dowód:** commit 31480c79; produkcja 200, `<title>` i `<meta name="description">` nowe (po ok. 3 min od pusha); IndexNow: Yandex 202, Naver 200, wspólny 403 (znany). Push przez HTTPS z tokenem gh, bo `git push` po SSH dostawał „Permission denied (publickey)”, choć `ssh -T git@github.com` przechodził tym samym kluczem.
+**Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane (Z1 08:46), profil ~/.config/chrome-google, port 9228.
+**Zostało otwarte:** Z4 od 11:00 (sitemap; GSC wylogowany, więc tylko linijka), Z5 i dalej według planu.
