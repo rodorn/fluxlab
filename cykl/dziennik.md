@@ -10150,3 +10150,11 @@ Decyzje dla stratega:
 **Dowód:** `curl sitemap.xml | grep -c` = 2; GSC przekierował na search-console/about; cykl/z5-proforma-meta-2026-11-04.txt; „Doręczono do FL_SEO (11:43)”.
 **Dla Pawła:** zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/
 **Zostało otwarte:** Z6 od 12:00 (lejek /e-doreczenia-integracja), Z7 od 13:00 (meta proforma-ksef, jeśli FL_SEO nie odpisze „w toku” do 12:50).
+
+## 2026-11-04 12:50
+**Kanał:** pomiar (plan Z6).
+**Co zrobione:** lejek /e-doreczenia-integracja z 30 dni: 38 sesji, 1 lead (3.11 09:19, Google, wejście na /, potem /e-doreczenia-integracja i /dziekuje); 20 sesji z maili, 5 z Google, 1 z chatgpt.com, form_start 0 (mierzony od 3.11).
+**Ruch:** doba 187 odsłon, 126 osób; źródła: b2b-email 113, www.google.com 14, hajsmetrics 10, m.facebook.com 4, x 2.
+**Dowód:** cykl/z6-edoreczenia-lejek-2026-11-04.txt, Z6 w plan-ruchu.md oznaczone [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (meta proforma-ksef) od 13:00, dalej Z8 od 14:00.
