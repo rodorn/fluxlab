@@ -10112,3 +10112,9 @@ Decyzje dla stratega:
 **Dowód:** cykl/plan-ruchu.md (Z6 [x]).
 **Dla Pawła:** Search Console i Bing Webmaster wylogowane (profil ~/.config/chrome-google, port 9228).
 **Zostało otwarte:** Z3 po sprawdzeniu budżetu od 16:45, Z7 od 14:00, dalej Z8-Z17.
+
+## Strategia dobowa 2026-11-04
+**Wynik doby:** 44 osoby po odsiewie (doba wcześniej 22), tydzień 164. Google 14 (8 na /, 6 na strony KSeF i e-Doręczeń), Bing 1, chatgpt.com 1, Facebook 1, bez odsyłacza 27. Lead 1 (3.11 09:20, Google → /e-doreczenia-integracja). Narzędzia 3 uruchomienia, outreach 0, Resend 2 (spoza wysyłek).
+**Plan 3.11:** 4 z 17 [x] (Z1, Z2, Z5, Z6). Od ok. 14:00 cykl kończył się „You've hit your weekly limit" (przebieg.log), limit wrócił 4.11 08:00. GSC i Bing wylogowane czwartą dobę (sprawdzone 08:17).
+**Plan:** 19 zadań, 2 kamienie: Z3 meta /strefa-wiedzy/numeracja-faktur-ksef-2027 (przeniesiony, 68 wyśw./7 dni, poz. 6,8, 0 klik.), Z7 meta /strefa-wiedzy/proforma-ksef (29 wyśw./7 dni, poz. 6,0, 0 klik.). Pomiar: lejek /e-doreczenia-integracja (Z6), kto wchodzi z Google na / (Z11). Budżet: rytm „utrzymaj", 0% tygodnia. Bez outreachu, bez artykułu (następny 9.11).
+**Mail do Pawła:** wysłany 08:20 na iwanekpawel55@gmail.com, temat „FluxLab ruch, plan na 2026-11-04: 44 osoby w dobie, w tym 14 z Google”; dla Pawła: logowanie GSC i Binga, decyzja o outreachu, oferta prokonsumencki.pl.
