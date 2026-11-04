@@ -50,6 +50,11 @@ const faq = [
     answer:
       "Tak. Większość scenariuszy odtworzymy w n8n i przy okazji uprościmy.",
   },
+  {
+    question: "Ile to kosztuje?",
+    answer:
+      "Pierwszy krok, czyli jeden etap procesu: 900, 1 200 albo 1 500 zł netto, gotowe w 5 dni. Diagnoza przed wyceną: 0 zł.",
+  },
 ];
 
 export default function N8nPage() {
