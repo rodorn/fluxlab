@@ -268,8 +268,9 @@ const nextConfig: NextConfig = {
       // utm_medium sprawia, ze zrodlo zostaje zapamietane do formularza.
       {
         source: "/hajs",
+        missing: [{ type: "query", key: "utm_source" }],
         destination:
-          "/kalkulator-podatkowy?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
+          "/hajs?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
         permanent: false,
       },
       {
