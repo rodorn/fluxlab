@@ -484,10 +484,7 @@ function calculate(p: {
       ikzeContribution: ikze,
       ikzeTaxSavings: ikzeSav,
       privateSavings: privSav,
-      effectiveRate:
-        annRevBrutto - annBizCostsBrutto > 0
-          ? totalWithVat / (annRevBrutto - annBizCostsBrutto)
-          : 0,
+      effectiveRate: annRev - annBizCosts > 0 ? burden / (annRev - annBizCosts) : 0,
       // ── Debug ──
       dbgAnnBizCosts: annBizCosts,
       dbgAnnPrivCosts: annPrivCosts,
@@ -1153,7 +1150,7 @@ function ResultCard({
           <span className="text-sm text-gray-600 dark:text-gray-400">{sfx}</span>
         </div>
         <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-          Efektywna stawka: {pct(result.effectiveRate)}
+          Efektywna stawka (bez VAT): {pct(result.effectiveRate)}
         </p>
       </div>
 
