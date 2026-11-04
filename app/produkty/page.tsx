@@ -146,7 +146,7 @@ const PYTANIA_PRODUKTY = [
   },
   {
     q: "Jak zamówić kilka usług naraz?",
-    a: "Dodaj je do koszyka i wyślij jedno zapytanie. Cenę i termin potwierdzamy tego samego dnia roboczego.",
+    a: "Dodaj je do koszyka i wyślij jedno zapytanie. Cenę i termin potwierdzamy w 1 dzień roboczy.",
   },
   {
     q: "Ile trwa realizacja?",

@@ -85,7 +85,7 @@ const OFERTA = [
 
 const KROKI = [
   ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu albo mail."],
-  ["Dostajesz cenę i termin", "Na spotkaniu albo w mailu, tego samego dnia."],
+  ["Dostajesz cenę i termin", "Na spotkaniu albo w mailu, w 1 dzień roboczy."],
   [
     "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach",
     "Płacisz za efekt, nie za godziny.",
@@ -121,19 +121,19 @@ const KROKI_KONTAKTU = {
   ],
   phone: [
     ["Zostawiasz numer", "Dwa zdania i numer telefonu."],
-    ["Oddzwaniamy tego samego dnia", "W rozmowie dostajesz cenę i termin."],
+    ["Oddzwaniamy w 1 dzień roboczy", "W rozmowie dostajesz cenę i termin."],
     KROKI[2],
   ],
   email: [
     ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu."],
-    ["Dostajesz cenę i termin", "W mailu, tego samego dnia."],
+    ["Dostajesz cenę i termin", "W mailu, w 1 dzień roboczy."],
     KROKI[2],
   ],
 };
 
 const ZASADA = [
   ["Cena z góry", "Znasz kwotę przed startem, bez rozliczania godzin."],
-  ["Termin w ofercie", "Cenę i termin dostajesz tego samego dnia."],
+  ["Termin w ofercie", "Cenę i termin dostajesz w 1 dzień roboczy."],
   [
     "Odbierasz działające",
     "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach.",
@@ -188,7 +188,7 @@ export default function Home() {
             </a>
           </div>
           <p className="animate-fade-up-1 mt-3 text-sm text-gray-600 dark:text-white/60">
-            0 zł, cena i termin tego samego dnia roboczego
+            0 zł, cena i termin w 1 dzień roboczy
           </p>
           <HeroNic />
         </section>
@@ -477,7 +477,7 @@ export default function Home() {
               <LandingForm
                 formId="home"
                 heading="Napisz, czego potrzebujesz"
-                intro="Odpiszemy z ceną i terminem, tego samego dnia."
+                intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
                 submitLabel="Wyślij i sprawdź cenę"
               />
             </RevealOnScroll>

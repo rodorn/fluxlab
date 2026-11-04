@@ -371,7 +371,7 @@ export default function HttpsCheck() {
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                 Mamy zgłoszenie razem z wynikiem tego sprawdzenia. Odpiszemy na{" "}
-                {email}, tego samego dnia.
+                {email}, w 1 dzień roboczy.
               </p>
             ) : (
               <form onSubmit={zamowNaprawe} className="mt-4">

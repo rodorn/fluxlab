@@ -92,7 +92,7 @@ export default function KoszykWidok() {
       <p className="text-lg font-semibold text-gray-900 dark:text-white">Zapytanie wysłane</p>
       <p className="mt-2 text-gray-700 dark:text-gray-300">
         Wycenę {wyslane.length === 1 ? "wybranej pozycji" : `${wyslane.length} wybranych pozycji`} wyślemy na {email}.
-        Cenę i termin potwierdzamy tego samego dnia roboczego.
+        Cenę i termin potwierdzamy w 1 dzień roboczy.
       </p>
     </div>
   );

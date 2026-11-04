@@ -34,7 +34,7 @@ export default function Page() {
       h1="Przecena bez informacji o cenie z 30 dni to ryzyko, którego nie widać z panelu"
       lead="Wtyczka liczy cenę minimalną z własnej bazy, która bywa czyszczona albo nadpisana importem. Sprawdzamy każdą przecenę z zewnątrz, tak jak zobaczy ją kontrola."
       ctaLabel="Sprawdź nasz sklep"
-      ctaNote="Wynik tego samego dnia"
+      ctaNote="Wynik w 1 dzień roboczy"
       checks={[
         {
           title: "Każda przecena, nie próbka",

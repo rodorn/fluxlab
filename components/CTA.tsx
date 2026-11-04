@@ -50,7 +50,7 @@ function CTAFormularz() {
           formId="kontakt"
           h1
           heading="Napisz, czego potrzebujesz"
-          intro="Odpiszemy z ceną i terminem, tego samego dnia."
+          intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
         />
       </div>
     </section>

@@ -32,7 +32,7 @@ export default function Page() {
       h1="Asystent AI na stronie"
       lead="Odpowiada klientom z Twojego cennika, regulaminu i oferty, także na pytania, których nie ma w FAQ. Wdrażamy go i sprawdzamy, co mówi."
       ctaLabel="Zapytaj o asystenta"
-      ctaNote="Odpisujemy tego samego dnia"
+      ctaNote="Odpisujemy w 1 dzień roboczy"
       checks={[
         {
           title: "Co to jest",
@@ -109,7 +109,7 @@ export default function Page() {
       formHeading="Zapytaj o asystenta AI"
       formIntro="Podaj adres strony i napisz, o co najczęściej pytają klienci."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpisujemy tego samego dnia. Ustalenia prowadzimy mailowo."
+      microCopy="Odpisujemy w 1 dzień roboczy. Ustalenia prowadzimy mailowo."
       serviceName="Asystent AI na stronie"
       serviceDesc="Wdrożenie asystenta AI odpowiadającego z cennika, regulaminu i oferty firmy jako przepływ w n8n. Od 790 zł, opieka 190 zł miesięcznie."
       serviceType="Wdrożenie asystenta AI"

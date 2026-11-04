@@ -31,7 +31,7 @@ const OFERTA = [
 
 const KROKI = [
   ["Zgłoszenie", "Formularz na fluxlab.pl albo mail na pawel@fluxlab.pl. Wystarczy opis problemu w kilku zdaniach."],
-  ["Wycena", "Cenę i termin dostajesz tego samego dnia roboczego, na piśmie. Wycena jest bezpłatna."],
+  ["Wycena", "Cenę i termin dostajesz w 1 dzień roboczy, na piśmie. Wycena jest bezpłatna."],
   ["Realizacja", "Termin z oferty, postęp co kilka dni. Cena się nie zmienia, nie rozliczamy godzin."],
   ["Odbiór i wsparcie", "Sprawdzasz efekt na swoich danych. Przez 30 dni po odbiorze poprawki są bezpłatne, potem opcjonalny serwis z reakcją w 24 h."],
 ];

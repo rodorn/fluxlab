@@ -57,7 +57,7 @@ const pricing = [
     features: [
       "status VAT i numer konta w wykazie",
       "werdykt zielony, żółty albo czerwony",
-      "odpowiedź na maila tego samego dnia",
+      "odpowiedź na maila w 1 dzień roboczy",
     ],
     featured: false,
   },
@@ -228,7 +228,7 @@ export default function SprawdzKontrahentaPage() {
               heading="Zamów sprawdzenie kontrahenta"
               intro="Podaj NIP firmy, numer konta i adres strony. Napisz, czy chcesz szybki check czy pełny raport. Oba są darmowe."
               submitLabel="Wyślij firmę do sprawdzenia"
-              microCopy="Odpowiedź tego samego dnia. Bez opłat."
+              microCopy="Odpowiedź w 1 dzień roboczy. Bez opłat."
             />
           </div>
         </section>

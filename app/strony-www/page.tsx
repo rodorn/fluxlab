@@ -111,7 +111,7 @@ export default function StronyWww() {
                   Napisz do nas
                 </a>
                 <span className="text-sm text-gray-600 dark:text-gray-400">
-                  Odpisujemy tego samego dnia, z ceną i terminem.
+                  Odpisujemy w 1 dzień roboczy, z ceną i terminem.
                 </span>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function StronyWww() {
           <LandingForm
             formId="diagnosis_web"
             heading="Napisz, jakiej strony potrzebujesz"
-            intro="Odpiszemy z ceną i terminem, tego samego dnia."
+            intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
             submitLabel="Wyślij i sprawdź cenę"
           />
         </section>

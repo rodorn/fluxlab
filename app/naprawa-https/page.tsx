@@ -34,7 +34,7 @@ export default function Page() {
       h1="Twoja strona działa, tylko nikt jej nie widzi"
       lead="Wpisz swój adres z https ręcznie, nie z zakładki. Jeśli widzisz ostrzeżenie przeglądarki, widzi je każdy klient z Google i prawie nikt nie klika dalej."
       ctaLabel="Sprawdź naszą stronę"
-      ctaNote="Diagnoza tego samego dnia"
+      ctaNote="Diagnoza w 1 dzień roboczy"
       powiazane={[
         {
           przed: "Strona przekierowuje na obce serwisy? To zwykle włamanie, zobacz",

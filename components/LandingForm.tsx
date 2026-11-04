@@ -43,7 +43,7 @@ const PODPOWIEDZI = [
   "Nie wiem, doradźcie", // głos klienta
 ];
 
-const ZAPEWNIENIA = ["Bez zobowiązań", "Cena i termin w odpowiedzi", "Odpisujemy tego samego dnia"];
+const ZAPEWNIENIA = ["Bez zobowiązań", "Cena i termin w odpowiedzi", "Odpisujemy w 1 dzień roboczy"];
 
 // Ostatni krok mówi to, co klient wybrał w pierwszym: zaproszenie, telefon albo mail.
 const KONIEC: Record<Kontakt, { krok: string; pytanie: string; wyslij?: string; zapewnienia: string[] }> = {
@@ -57,7 +57,7 @@ const KONIEC: Record<Kontakt, { krok: string; pytanie: string; wyslij?: string; 
     krok: "Gdzie potwierdzić",
     pytanie: "Gdzie potwierdzić rozmowę?",
     wyslij: "Zamów telefon",
-    zapewnienia: ["Bez zobowiązań", "Oddzwaniamy tego samego dnia", "Cena w rozmowie"],
+    zapewnienia: ["Bez zobowiązań", "Oddzwaniamy w 1 dzień roboczy", "Cena w rozmowie"],
   },
   email: { krok: "Gdzie odpisać", pytanie: "Gdzie odpisać?", zapewnienia: ZAPEWNIENIA },
 };

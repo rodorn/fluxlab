@@ -12,7 +12,9 @@ export const metadata: Metadata = {
   openGraph: {
     title:
       "Od kiedy KSeF obowiązuje Twoją firmę? Sprawdzenie w dwóch kliknięciach",
-    images: ["/og?t=Od%20kiedy%20KSeF%20obowi%C4%85zuje%20Twoj%C4%85%20firm%C4%99%3F%20Sprawdzenie%20w%20dw%C3%B3ch%20klikni%C4%99ciach"],
+    images: [
+      "/og?t=Od%20kiedy%20KSeF%20obowi%C4%85zuje%20Twoj%C4%85%20firm%C4%99%3F%20Sprawdzenie%20w%20dw%C3%B3ch%20klikni%C4%99ciach",
+    ],
     description:
       "Wybierasz rodzaj sprzedaży i sposób wystawiania faktur, a wynik pokazuje termin, liczbę dni do 1 stycznia 2027 i co zrobić przy Twoim programie. Bez rejestracji.",
     locale: "pl_PL",
@@ -38,7 +40,8 @@ export default function KsefIntegracja() {
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
-          przed: "Biuro rachunkowe, które pobiera faktury KSeF dla wielu klientów, łączy to z OCR i przypomnieniami w ramach",
+          przed:
+            "Biuro rachunkowe, które pobiera faktury KSeF dla wielu klientów, łączy to z OCR i przypomnieniami w ramach",
           kotwica: "automatyzacji dla biur rachunkowych",
           href: "/automatyzacja-dla-biur-rachunkowych",
           po: ".",
@@ -51,7 +54,8 @@ export default function KsefIntegracja() {
           po: ".",
         },
         {
-          przed: "Jednoosobowe firmy, które przy okazji KSeF liczą na nowo koszty, porównują formy opodatkowania w",
+          przed:
+            "Jednoosobowe firmy, które przy okazji KSeF liczą na nowo koszty, porównują formy opodatkowania w",
           kotwica: "kalkulatorze JDG 2026 (ryczałt, liniowy, skala z ZUS)",
           href: "/kalkulator-podatkowy",
           po: ".",
@@ -61,6 +65,10 @@ export default function KsefIntegracja() {
         {
           title: "Kod klienta API jest publiczny",
           desc: "Klient KSeF API v2 z wysyłką faktur FA(3) i pobieraniem UPO leży na github.com/rodorn/fluxlab-ksef-integracja. Działa w trybie demo, więc ocenisz go przed rozmową z nami.",
+        },
+        {
+          title: "Sprawdzone na własnej firmie",
+          desc: "2 listopada 2026 FluxLab wystawił w KSeF 3 faktury z tego samego mechanizmu: wszystkie przyjęte, z numerem KSeF i UPO przy dokumencie. 25 października wysłał z niego JPK_V7K za III kwartał, każdy plik z UPO Ministerstwa Finansów. Przy kontroli i przy płatności dowody masz więc w jednym miejscu, zamiast szukać ich w skrzynce.",
         },
         {
           title: "Numer KSeF i UPO zapisane przy dokumencie",
@@ -123,7 +131,12 @@ export default function KsefIntegracja() {
         {
           q: "Mamy program księgowy, który obsługuje KSeF. Po co nam integracja?",
           a: "Najpewniej po nic i tak powiemy. Integracja ma sens, gdy faktury powstają poza programem księgowym, np. w sklepie albo CRM, albo gdy faktury kosztowe trzeba pobierać ręcznie.",
-          linki: [{ fraza: "faktury kosztowe trzeba pobierać ręcznie", href: "/strefa-wiedzy/faktury-kosztowe-z-ksef" }],
+          linki: [
+            {
+              fraza: "faktury kosztowe trzeba pobierać ręcznie",
+              href: "/strefa-wiedzy/faktury-kosztowe-z-ksef",
+            },
+          ],
         },
         {
           q: "Zdążymy przed 1 stycznia 2027?",

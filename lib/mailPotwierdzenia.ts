@@ -38,7 +38,7 @@ export function zdanieKontaktu(
   return pref === "meet" && termin
     ? `Prosisz o spotkanie na Google Meet ${termin}. Zaproszenie z linkiem do rozmowy przyjdzie z adresu pawel@fluxlab.pl, zwykle w kilka minut. Potwierdź je proszę w kalendarzu. Jeśli ta godzina okaże się zajęta, zaproponujemy najbliższą wolną.`
     : pref === "phone" && telefon
-      ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, tego samego dnia.`
+      ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, w 1 dzień roboczy.`
       : "Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.";
 }
 
