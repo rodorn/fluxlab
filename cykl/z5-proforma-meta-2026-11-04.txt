@@ -1,0 +1,14 @@
+Z5 4.11 11:50, https://fluxlab.pl/strefa-wiedzy/proforma-ksef
+Obecne (produkcja, 200):
+ title: Proforma a KSeF: czy wystawiać ją w KSeF | Fluxlab
+ description: Proformy nie wystawiasz w KSeF, bo w rozumieniu ustawy o VAT nie jest fakturą. Wysyłasz ją PDF-em jak dotąd, a fakturę wystawiasz w KSeF po zapłacie.
+ og:title: Proforma a KSeF: czy wystawiać ją w KSeF | Fluxlab
+ H1: Proforma a KSeF: czy wystawiać ją w systemie
+git log 7 dni: brak zmian pliku (ostatnia 21.10, 943bcbf8)
+GSC 31.10 (28 dni): 0 klik. / 29 wyśw. / poz. 6,0
+Warianty title:
+ 1 (55 zn.): Czy proforma idzie do KSeF? Nie, oto dlaczego | Fluxlab
+ 2 (53 zn.): Proforma a KSeF: czy proforma idzie do KSeF | Fluxlab
+Description (129 zn.): Proforma nie idzie do KSeF, także po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.
+ (fakty z treści: lead "zostaje poza KSeF także po 2027", sekcje "Dlaczego poza KSeF", "Jak ją wysyłać")
+Wiadomość do FL_SEO: doręczona 4.11 11:43 (sesja napisz), termin odpowiedzi 12:50

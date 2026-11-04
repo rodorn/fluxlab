@@ -10142,3 +10142,11 @@ Decyzje dla stratega:
 **Dowód:** commit 31480c79; produkcja 200, `<title>` i `<meta name="description">` nowe (po ok. 3 min od pusha); IndexNow: Yandex 202, Naver 200, wspólny 403 (znany). Push przez HTTPS z tokenem gh, bo `git push` po SSH dostawał „Permission denied (publickey)”, choć `ssh -T git@github.com` przechodził tym samym kluczem.
 **Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane (Z1 08:46), profil ~/.config/chrome-google, port 9228.
 **Zostało otwarte:** Z4 od 11:00 (sitemap; GSC wylogowany, więc tylko linijka), Z5 i dalej według planu.
+
+## 2026-11-04 11:50
+**Kanał:** 2/Google (Z4 indeksowanie, Z5 przygotowanie kamienia 2 z planu 4.11).
+**Co zrobione:** Z4: sitemap ma oba adresy (faktury-kosztowe-z-ksef, numeracja-faktur-ksef-2027), prośby o indeksowanie nie poszły, bo GSC wylogowany; Z5: obecne meta /strefa-wiedzy/proforma-ksef spisane, 2 warianty title (55 i 53 zn.) i description 129 zn. w cykl/z5-proforma-meta-2026-11-04.txt, zapowiedź zmiany doręczona do FL_SEO 11:43.
+**Ruch:** ostatnia doba 180 odsłon, 118 osób (b2b-email 112 to piksel otwarć); źródła: www.google.com 16, m.facebook.com 4, x 2, narzedzie 1; uruchomienia narzędzi 2 (numer_ksef), klik_po_wyniku 1, pobranie 1.
+**Dowód:** `curl sitemap.xml | grep -c` = 2; GSC przekierował na search-console/about; cykl/z5-proforma-meta-2026-11-04.txt; „Doręczono do FL_SEO (11:43)”.
+**Dla Pawła:** zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/
+**Zostało otwarte:** Z6 od 12:00 (lejek /e-doreczenia-integracja), Z7 od 13:00 (meta proforma-ksef, jeśli FL_SEO nie odpisze „w toku” do 12:50).
