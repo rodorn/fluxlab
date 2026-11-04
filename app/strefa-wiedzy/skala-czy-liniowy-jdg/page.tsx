@@ -120,7 +120,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                               [
                                 "Składka zdrowotna",
                                 "9% dochodu, bez odliczenia",
-                                "4,9% dochodu (min. 432,54 zł/mc od lutego 2026), odliczenie do 14 100 zł rocznie",
+                                "4,9% dochodu (min. 432,54 zł/mies. od lutego 2026), odliczenie do 14 100 zł rocznie",
                               ],
                               ["Rozliczenie z małżonkiem", "tak", "nie"],
                             ].map(([k, a, b]) => (

@@ -98,7 +98,7 @@ export default function Page() {
         },
         {
           name: "Pilnowanie wykazu",
-          price: "od 120 zł/mc",
+          price: "od 120 zł/mies.",
           desc: "Wykaz zmienia się codziennie.",
           features: [
             "codzienne sprawdzanie statusu VAT",

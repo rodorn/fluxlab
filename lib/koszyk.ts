@@ -53,9 +53,19 @@ export function useKoszyk() {
   return useSyncExternalStore(subskrybuj, czytaj, () => PUSTY);
 }
 
+const nazwa = (s: string) => s.toLocaleLowerCase("pl").replace(/\s+/g, " ").trim();
+
+export function wKoszyku(lista: PozycjaKoszyka[], p: PozycjaKoszyka) {
+  return lista.some((x) => x.id === p.id || nazwa(x.nazwa) === nazwa(p.nazwa));
+}
+
 export function przelacz(p: PozycjaKoszyka) {
   const lista = czytaj();
-  zapisz(lista.some((x) => x.id === p.id) ? lista.filter((x) => x.id !== p.id) : [...lista, p]);
+  zapisz(
+    wKoszyku(lista, p)
+      ? lista.filter((x) => x.id !== p.id && nazwa(x.nazwa) !== nazwa(p.nazwa))
+      : [...lista, p],
+  );
 }
 
 export function usun(id: string) {

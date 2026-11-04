@@ -59,7 +59,7 @@ export default function KoszykWidok() {
       <div className="mt-10 max-w-2xl rounded-2xl border border-accent/30 bg-accent/5 p-6">
         <p className="text-lg font-semibold text-gray-900 dark:text-white">Zapytanie wysłane</p>
         <p className="mt-2 text-gray-700 dark:text-gray-300">
-          Wycenę {wyslane.length === 1 ? "wybranej pozycji" : `${wyslane.length} wybranych pozycji`} wyślemy na {email}. Potwierdzenie przyjęcia zgłoszenia jest już w Twojej skrzynce.
+          Wycenę {wyslane.length === 1 ? "wybranej pozycji" : `${wyslane.length} wybranych pozycji`} wyślemy na {email}. Cenę i termin potwierdzamy tego samego dnia roboczego.
         </p>
       </div>
     );

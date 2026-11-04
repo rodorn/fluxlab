@@ -77,7 +77,7 @@ export default function Page() {
         },
         {
           name: "Rejestr cen",
-          price: "99 zł/mc",
+          price: "99 zł/mies.",
           kup: "ceny-rejestr",
           desc: "Codzienny zapis cen jako dowód.",
           features: [

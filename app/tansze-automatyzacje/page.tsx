@@ -74,7 +74,7 @@ export default function Page() {
         },
         {
           name: "Utrzymanie",
-          price: "od 200 zł/mc",
+          price: "od 200 zł/mies.",
           desc: "Żeby działało bez Twojego udziału.",
           features: [
             "aktualizacje i kopie zapasowe",

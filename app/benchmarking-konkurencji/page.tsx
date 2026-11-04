@@ -64,7 +64,7 @@ export default function Page() {
       pricing={[
         {
           name: "Raz w miesiącu",
-          price: "39 zł/mc",
+          price: "39 zł/mies.",
           kup: "benchmarking-miesiac",
           desc: "Netto. Pełny przegląd na początek miesiąca.",
           features: [
@@ -74,7 +74,7 @@ export default function Page() {
         },
         {
           name: "Raz w tygodniu",
-          price: "49 zł/mc",
+          price: "49 zł/mies.",
           kup: "benchmarking-tydzien",
           desc: "Netto. Raport w każdy poniedziałek.",
           features: [
@@ -85,7 +85,7 @@ export default function Page() {
         },
         {
           name: "Codziennie",
-          price: "69 zł/mc",
+          price: "69 zł/mies.",
           kup: "benchmarking-dzien",
           desc: "Netto. Wiadomość tylko wtedy, gdy coś się zmieniło.",
           features: [

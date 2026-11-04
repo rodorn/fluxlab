@@ -68,7 +68,7 @@ export default function Page() {
         },
         {
           name: "Comiesięczny rachunek",
-          price: "149 zł/mc",
+          price: "149 zł/mies.",
           kup: "marze-rachunek",
           desc: "Ten sam rachunek co miesiąc.",
           features: [

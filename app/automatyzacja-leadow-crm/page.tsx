@@ -255,6 +255,7 @@ export default function AutomatyzacjaLeadowCRM() {
               },
               {
                 label: "Jak to działa",
+                kotwica: "cennik",
                 content: (
                   <section className="py-10 lg:py-12">
                     <div className="max-w-4xl mx-auto">

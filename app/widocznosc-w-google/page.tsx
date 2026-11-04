@@ -86,7 +86,7 @@ export default function Page() {
         },
         {
           name: "Monitoring",
-          price: "39 zł/mc",
+          price: "39 zł/mies.",
           kup: "google-monitoring",
           desc: "Żeby nie wróciła niezauważona.",
           features: [

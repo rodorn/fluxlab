@@ -1,6 +1,6 @@
 "use client";
 
-import { przelacz, useKoszyk, type PozycjaKoszyka } from "@/lib/koszyk";
+import { przelacz, useKoszyk, wKoszyku, type PozycjaKoszyka } from "@/lib/koszyk";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 const PLUS = (
@@ -23,7 +23,7 @@ export default function DoKoszyka({
   maly?: boolean;
   className?: string;
 }) {
-  const jest = useKoszyk().some((x) => x.id === pozycja.id);
+  const jest = wKoszyku(useKoszyk(), pozycja);
   function klik() {
     if (!jest) zglosZdarzenie("koszyk_dodaj");
     przelacz(pozycja);

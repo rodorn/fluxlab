@@ -33,7 +33,7 @@ const ZASADY_AUDYTU = [
 
 const DO_KALKULATORA = PRODUCTS.flatMap((p) => {
   const cena = cenaWejscia(p.price);
-  return cena && !/\/mc/.test(p.price) ? [{ nazwa: p.name, href: p.href, cena }] : [];
+  return cena && !/\/mies\./.test(p.price) ? [{ nazwa: p.name, href: p.href, cena }] : [];
 });
 
 export const metadata: Metadata = {

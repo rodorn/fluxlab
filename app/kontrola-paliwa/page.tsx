@@ -91,7 +91,7 @@ export default function Page() {
         },
         {
           name: "Monitoring",
-          price: "149 zł/mc",
+          price: "149 zł/mies.",
           kup: "paliwo-monitoring",
           desc: "Chcesz wiedzieć na bieżąco, nie po roku.",
           features: [

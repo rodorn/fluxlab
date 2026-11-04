@@ -68,7 +68,7 @@ export default function Page() {
         },
         {
           name: "Audyt z regresją",
-          price: "199 zł/mc",
+          price: "199 zł/mies.",
           kup: "chatbot-regresja",
           desc: "Testy co miesiąc, po każdej zmianie modelu.",
           features: [

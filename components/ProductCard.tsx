@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Product } from "@/lib/products";
+import { cenaWejscia, type Product } from "@/lib/products";
 import DoKoszyka from "@/components/DoKoszyka";
 
 /**
@@ -16,6 +16,7 @@ export default function ProductCard({
   p: Product;
   krotko?: boolean;
 }) {
+  const darmowy = cenaWejscia(p.price) === 0;
   return (
     <div
       data-vt-karta
@@ -96,12 +97,14 @@ export default function ProductCard({
         href={p.href}
         className="btn-primary mt-4 w-full text-center"
       >
-        {p.cta}
+        {darmowy ? "Sprawdź za darmo" : p.cta}
       </Link>
-      <DoKoszyka
-        pozycja={{ id: p.href, nazwa: p.name, cena: p.price, href: p.href, rodzaj: "usluga" }}
-        className="mt-2 w-full"
-      />
+      {!darmowy && (
+        <DoKoszyka
+          pozycja={{ id: `${p.href}|${p.name}`, nazwa: p.name, cena: p.price, href: p.href, rodzaj: "usluga" }}
+          className="mt-2 w-full"
+        />
+      )}
     </div>
   );
 }

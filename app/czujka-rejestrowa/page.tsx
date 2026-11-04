@@ -78,7 +78,7 @@ export default function Page() {
         },
         {
           name: "Codzienne pilnowanie",
-          price: "od 99 zł/mc",
+          price: "od 99 zł/mies.",
           desc: "Lista do 500 podmiotów.",
           features: [
             "sprawdzanie każdego nowego wydania",

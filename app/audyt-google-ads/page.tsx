@@ -137,11 +137,11 @@ export default function AudytGoogleAdsPage() {
                     Analizowane konto (dane demo)
                   </p>
                   <p className="font-semibold text-gray-900 dark:text-white">
-                    Budżet 9 000 zł/mc, 30 dni, 214 fraz
+                    Budżet 9 000 zł/mies., 30 dni, 214 fraz
                   </p>
                 </div>
                 <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                  Do odzyskania ok. 2 340 zł/mc
+                  Do odzyskania ok. 2 340 zł/mies.
                 </span>
               </div>
               <dl className="mt-4 grid gap-4 sm:grid-cols-3">
@@ -265,7 +265,7 @@ export default function AudytGoogleAdsPage() {
               heading="Zamów mini-audyt Google Ads"
               intro="Napisz, jaki masz miesięczny budżet i od kiedy działają kampanie. Potem ustalimy dostęp albo eksport raportu."
               submitLabel="Zamawiam mini-audyt za 69 zł"
-              microCopy="Odpowiedź tego samego dnia. Zwrot całej kwoty przy odzysku poniżej 500 zł/mc."
+              microCopy="Odpowiedź tego samego dnia. Zwrot całej kwoty przy odzysku poniżej 500 zł/mies."
             />
           </section>
         </div>
@@ -280,7 +280,7 @@ export default function AudytGoogleAdsPage() {
             "@type": "Service",
             name: "Audyt zmarnowanego budżetu Google Ads",
             description:
-              "Mini-audyt raportu wyszukiwanych haseł Google Ads: wyliczenie budżetu przepalanego na frazy bez konwersji, gotowa lista wykluczeń i plan naprawy konta. 69 zł z gwarancją zwrotu przy odzysku poniżej 500 zł/mc.",
+              "Mini-audyt raportu wyszukiwanych haseł Google Ads: wyliczenie budżetu przepalanego na frazy bez konwersji, gotowa lista wykluczeń i plan naprawy konta. 69 zł z gwarancją zwrotu przy odzysku poniżej 500 zł/mies.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Audyt kampanii Google Ads",

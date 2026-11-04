@@ -36,9 +36,10 @@ const kwoty = (text) =>
 // Zapisy ceny, ktore rozumie `cenaWejscia` z lib/products.ts. Nowy format
 // wpadlby po cichu do zlego przedzialu na filtrze /produkty.
 const ZNANA_CENA =
-  /^(od\s)?\d[\d\s]*\szł(\/mc)?$|^diagnoza\s\d+\szł$|^sprawdzenie za darmo$|^wycena po diagnozie$/;
+  /^(od\s)?\d[\d\s]*\szł(\/mies\.)?$|^diagnoza\s\d+\szł$|^sprawdzenie za darmo$|^wycena po diagnozie$/;
 for (const c of catalog) {
-  const page = `app${c.href}/page.tsx`;
+  const adres = c.href.split("#")[0];
+  const page = `app${adres}/page.tsx`;
   if (!exists(page)) {
     add("brak-strony", `${c.name} wskazuje na ${c.href}, a strony nie ma`);
     continue;
@@ -47,7 +48,7 @@ for (const c of catalog) {
   // wyklucza eksport metadanych. Wtedy ceny szukamy takze w sasiednich plikach
   // tego katalogu, inaczej rozdzielenie strony wyglada jak znikniecie ceny.
   let body = read(page);
-  const katalog = path.join(ROOT, `app${c.href}`);
+  const katalog = path.join(ROOT, `app${adres}`);
   if (fs.existsSync(katalog)) {
     for (const f of fs.readdirSync(katalog)) {
       if (f !== "page.tsx" && /\.tsx?$/.test(f)) {
@@ -793,7 +794,10 @@ if (sankcjeDaty.size > 1) {
       );
     }
   };
-  for (const c of catalog) sprawdz("lib/products.ts", c.href, c.name);
+  // Adres z kotwica to osobna pozycja cennika na stronie uslugi (naprawa
+  // obok budowy strony), wiec ma wlasna nazwe.
+  for (const c of catalog)
+    if (!c.href.includes("#")) sprawdz("lib/products.ts", c.href, c.name);
   for (const wpis of narzedzia.split(/\n  \{\n/).slice(1)) {
     const href = wpis.match(/\n    href: "([^"]+)"/)?.[1];
     const title = wpis.match(/^    title: "([^"]+)"/)?.[1];

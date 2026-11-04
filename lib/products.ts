@@ -110,8 +110,8 @@ export const PRODUCTS: Product[] = [
     category: "www",
     name: "Strony internetowe",
     tagline: "Nowa strona albo poprawki w obecnej",
-    desc: "Naprawy 150, 290 albo 490 zł, strona w tydzień 2 900 zł, strona firmowa z CMS 5 900 zł, opieka od 300 zł/mies. Formularz trafia prosto do CRM albo skrzynki.",
-    price: "od 150 zł",
+    desc: "Strona w tydzień 2 900 zł, strona firmowa z CMS 5 900 zł, opieka od 300 zł/mies. Formularz trafia prosto do CRM albo skrzynki.",
+    price: "od 2 900 zł",
     href: "/strony-www",
     grupa: "budowa",
     cta: "Zobacz ofertę stron",
@@ -124,47 +124,47 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
-    name: "Prowadzenie wizytówki Google",
-    tagline: "Klienci z Map dzwonią do Ciebie, nie do sąsiada",
-    desc: "Prowadzimy Profil Firmy w Google: uporządkowany wpis, post co tydzień, odpowiedzi na opinie i co miesiąc liczba telefonów i wejść z Map.",
-    price: "349 zł/mc",
-    href: "/profil-firmy-google",
-    grupa: "wdrozenia",
-    cta: "Zobacz prowadzenie wizytówki",
+    name: "Naprawa strony",
+    tagline: "Poprawki w obecnej stronie bez budowy od nowa",
+    desc: "Trzy stałe kwoty: 150, 290 albo 490 zł netto. Płacisz po sprawdzeniu efektu.",
+    price: "od 150 zł",
+    href: "/strony-www#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz ceny napraw",
     bullets: [
-      "uporządkowanie wpisu na start w cenie",
-      "post co tydzień i odpowiedzi na opinie",
-      "rezygnacja z miesiąca na miesiąc",
+      "nowa podstrona w obecnym stylu strony",
+      "naprawa wyrównań na komórce i desktopie",
+      "płatność po sprawdzeniu efektu",
     ],
   },
   {
     category: "www",
-    name: "Benchmarking konkurencji",
-    tagline: "Co zmienia konkurencja, w jednym raporcie",
-    desc: "Ceny, nowe usługi, social media, szybkość stron i wnioski z opinii Google firm, z którymi walczysz o klientów. Raport codziennie, co tydzień albo co miesiąc.",
-    price: "od 39 zł/mc",
-    href: "/benchmarking-konkurencji",
-    grupa: "raporty",
-    cta: "Zobacz benchmarking",
-    bullets: [
-      "raz w miesiącu 39 zł, raz w tygodniu 49 zł, codziennie 69 zł netto",
-      "konkurenci z Twojej listy",
-      "rezygnacja z miesiąca na miesiąc",
-    ],
-  },
-  {
-    category: "www",
-    name: "Skaner domen",
+    name: "Raport o domenie",
     tagline: "Wolne i zwalniane adresy pod Twoje frazy",
-    desc: "Szukamy wolnych domen i adresów, które właśnie wygasają, pod frazy Twojej branży albo nazwę firmy. Możemy też codziennie pilnować do 20 wybranych domen.",
-    price: "od 9 zł/mc",
-    href: "/skaner-domen",
+    desc: "Netto, jednorazowo. Szukamy wolnych domen i adresów, które właśnie wygasają, pod frazy Twojej branży albo nazwę firmy. Raport mailem do 48 godzin.",
+    price: "od 29 zł",
+    href: "/skaner-domen#cennik",
     grupa: "raporty",
-    cta: "Zobacz skaner domen",
+    cta: "Zobacz raport o domenie",
     bullets: [
-      "wyszukiwanie 29 zł netto, raport do 48 godzin",
-      "pilnowanie do 20 domen za 9 zł netto miesięcznie",
-      "alert w ciągu 24 godzin, gdy domena się zwalnia",
+      "frazy branży albo nazwa firmy",
+      "wolne i wygasające domeny z historią",
+      "nasza propozycja, który adres wybrać",
+    ],
+  },
+  {
+    category: "www",
+    name: "Monitoring domen",
+    tagline: "Alert, gdy wybrana domena się zwalnia",
+    desc: "Netto. Do 20 domen, sprawdzanie codziennie.",
+    price: "od 9 zł/mies.",
+    href: "/skaner-domen#cennik",
+    grupa: "raporty",
+    cta: "Zobacz monitoring domen",
+    bullets: [
+      "mail w ciągu 24 godzin, gdy domena wygasa, zwalnia się albo zmienia status",
+      "dłuższą listę domen doślesz mailem po płatności",
+      "rezygnacja w dowolnym dniu, płacisz za dni korzystania",
     ],
   },
   {
@@ -229,7 +229,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "kalkulator oszczędności od ręki na stronie",
       "te same scenariusze, Twój serwer",
-      "utrzymanie od 200 zł/mc",
+      "utrzymanie od 200 zł/mies.",
     ],
   },
   {
@@ -297,6 +297,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "automatyzacja",
+    name: "Pierwszy krok automatyzacji",
+    tagline: "Jeden etap procesu w 5 dni",
+    desc: "Automatyzujemy jeden etap, który dziś zjada najwięcej czasu: przepisywanie leadów, przypomnienia albo raport. Trzy stałe kwoty: 900, 1 200 albo 1 500 zł netto.",
+    price: "od 900 zł",
+    href: "/automatyzacja-leadow-crm#cennik",
+    grupa: "wdrozenia",
+    cta: "Zobacz automatyzację leadów",
+    bullets: [
+      "diagnoza procesu przed wyceną za 0 zł",
+      "900, 1 200 albo 1 500 zł netto",
+      "gotowe w 5 dni",
+    ],
+  },
+  {
+    category: "automatyzacja",
     name: "Wdrożenie n8n",
     tagline: "Ile to kosztuje, rozbite na pozycje",
     desc: "Licencja, serwer, praca i opieka jako cztery osobne liczby zamiast jednej ceny z zapytania ofertowego. Stawiamy n8n na Twoim serwerze, budujemy przepływy i przekazujemy wszystko razem z dostępami, więc nic nie zostaje zamknięte u nas.",
@@ -308,7 +323,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "licencja n8n na własnym serwerze: 0 zł",
       "komplet startowy z trzema przepływami: 2 400 zł",
-      "opieka 190 zł/mc, rezygnacja z miesiąca na miesiąc",
+      "opieka 190 zł/mies., rezygnacja z miesiąca na miesiąc",
     ],
   },
   {
@@ -337,7 +352,7 @@ export const PRODUCTS: Product[] = [
     grupa: "naprawy",
     cta: "Zamawiam mini-audyt",
     bullets: [
-      "zwrot, jeśli znajdziemy mniej niż 500 zł/mc do odzyskania",
+      "zwrot, jeśli znajdziemy mniej niż 500 zł/mies. do odzyskania",
       "gotowa lista wykluczających słów kluczowych",
       "plan naprawy konta krok po kroku",
     ],
@@ -420,7 +435,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "lista polskich fragmentów z cytatem i adresem",
       "brakujące znaczniki wersji językowych",
-      "monitoring nowych podstron od 99 zł/mc",
+      "monitoring nowych podstron od 99 zł/mies.",
     ],
   },
   {
@@ -436,7 +451,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "sprawdzenie w wykazie podatników za darmo",
       "gotowa stopka i znacznik do wklejenia",
-      "pilnowanie wykazu od 120 zł/mc",
+      "pilnowanie wykazu od 120 zł/mies.",
     ],
   },
   {
@@ -452,7 +467,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "sprawdzenie mapy i robots.txt za darmo",
       "przegląd wszystkich adresów, nie próbki",
-      "pilnowanie od 99 zł/mc",
+      "pilnowanie od 99 zł/mies.",
     ],
   },
   {
@@ -484,7 +499,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "sprawdzenie abonenta i terminu za darmo",
       "przeniesienie domeny na Twoją firmę",
-      "pilnowanie terminu od 49 zł/mc",
+      "pilnowanie terminu od 49 zł/mies.",
     ],
   },
   {
@@ -500,7 +515,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "sprawdzenie od ręki, za darmo",
       "wskazanie dokładnego miejsca blokady",
-      "monitoring, żeby nie wróciła, od 39 zł/mc",
+      "monitoring, żeby nie wróciła, od 39 zł/mies.",
     ],
   },
   {
@@ -516,7 +531,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "diagnoza przyczyny, nie ogólnik o certyfikacie",
       "naprawa zwykle w jeden dzień roboczy",
-      "pilnowanie ważności certyfikatu od 39 zł/mc",
+      "pilnowanie ważności certyfikatu od 39 zł/mies.",
     ],
   },
   {
@@ -572,7 +587,7 @@ export const PRODUCTS: Product[] = [
     name: "Dłużnik znika z rejestru",
     tagline: "Trzy miesiące od obwieszczenia i spółki nie ma",
     desc: "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki bez likwidacji, publikuje obwieszczenie w Monitorze Sądowym i daje trzy miesiące na sprzeciw. Potem podmiot znika z rejestru razem z Twoją należnością. Zawiadomienia nikt nie wysyła, więc pilnujemy tego za ciebie.",
-    price: "od 99 zł/mc",
+    price: "od 99 zł/mies.",
     href: "/czujka-rejestrowa",
     grupa: "raporty",
     cta: "Sprawdź kontrahenta",

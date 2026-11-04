@@ -86,7 +86,7 @@ export default function Page() {
         },
         {
           name: "Pilnowanie ważności",
-          price: "39 zł/mc",
+          price: "39 zł/mies.",
           kup: "https-pilnowanie",
           desc: "Żeby to się nie powtórzyło.",
           features: [

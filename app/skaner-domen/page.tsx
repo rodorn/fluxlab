@@ -64,7 +64,7 @@ export default function Page() {
       ]}
       pricing={[
         {
-          name: "Wyszukiwanie",
+          name: "Raport o domenie",
           price: "29 zł",
           kup: "domeny-wyszukiwanie",
           desc: "Netto, jednorazowo. Raport mailem do 48 godzin.",
@@ -76,8 +76,8 @@ export default function Page() {
           featured: true,
         },
         {
-          name: "Pilnowanie",
-          price: "9 zł/mc",
+          name: "Monitoring domen",
+          price: "9 zł/mies.",
           kup: "domeny-pilnowanie",
           desc: "Netto. Do 20 domen, sprawdzanie codziennie.",
           features: [

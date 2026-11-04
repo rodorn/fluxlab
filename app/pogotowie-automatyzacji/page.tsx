@@ -76,7 +76,7 @@ export default function Page() {
         },
         {
           name: "Opieka",
-          price: "299 zł/mc",
+          price: "299 zł/mies.",
           kup: "pogotowie-opieka",
           desc: "O awarii nie dowiadujesz się od klienta.",
           features: [

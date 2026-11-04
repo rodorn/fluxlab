@@ -73,7 +73,7 @@ export default function Page() {
         },
         {
           name: "Prowadzenie",
-          price: "349 zł/mc",
+          price: "349 zł/mies.",
           kup: "wizytowka-prowadzenie",
           desc: "Netto, bez opłaty na start.",
           features: [

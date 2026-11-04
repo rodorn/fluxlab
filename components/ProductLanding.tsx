@@ -189,7 +189,7 @@ export default function ProductLanding(p: ProductLandingProps) {
 
           {narzedzieNajpierw && narzedzie}
 
-          <div className="mt-16">
+          <div id="cennik" className="mt-16 scroll-mt-20">
             <h2 className="h2-sekcji text-center">Cennik</h2>
             <div
               className={`mt-8 grid gap-6 md:grid-cols-2 ${p.pricing.length === 3 ? "lg:grid-cols-3" : ""}`}
