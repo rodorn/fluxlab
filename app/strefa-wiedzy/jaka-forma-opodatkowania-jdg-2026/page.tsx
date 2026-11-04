@@ -262,7 +262,7 @@ export default function JakaFormaOpodatkowaniaJdgArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026" />
           </div>
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, czy faktury i KSeF w Twojej JDG mogą obsługiwać się same" />
       </main>
       <Footer />
 

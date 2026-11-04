@@ -240,7 +240,7 @@ export default function Page() {
           }}
         />
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy ktoś może podszyć się pod Twój salon" />
       <Footer />
     </>
   );

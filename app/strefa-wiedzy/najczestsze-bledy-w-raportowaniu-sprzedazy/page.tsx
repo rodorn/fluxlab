@@ -100,7 +100,7 @@ export default function BledyRaportowanieArticle() {
               </Link>
             </p>
 
-            <CTA />
+            <CTA naglowek="Sprawdź, czy Twój raport sprzedaży może składać się sam" />
           </div>
         </div>
       </main>

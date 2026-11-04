@@ -285,7 +285,7 @@ export default function N8nVsZapierArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/n8n-vs-zapier" />
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, ile zaoszczędzisz po przejściu z Zapiera na n8n" />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

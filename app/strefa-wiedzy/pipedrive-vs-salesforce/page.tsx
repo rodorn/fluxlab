@@ -201,7 +201,7 @@ export default function PipedriveVsSalesforceArticle() {
             </Link>
           </p>
 
-          <CTA />
+          <CTA naglowek="Sprawdź, który CRM pasuje do Twojego zespołu" />
         </article>
       </main>
       <Footer />

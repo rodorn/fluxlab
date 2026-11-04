@@ -260,7 +260,7 @@ export default function MakeVsN8nArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/make-vs-n8n" />
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, czy do Twojego procesu lepiej pasuje Make, czy n8n" />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

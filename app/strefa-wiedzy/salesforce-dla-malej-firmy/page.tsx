@@ -273,7 +273,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
                         </Link>
                       </p>
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, czy mała firma potrzebuje dużego CRM" />
                     </div>
                   </div>
                 ),

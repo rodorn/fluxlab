@@ -161,7 +161,7 @@ export default function SprawdzenieNipPage() {
           </div>
         </section>
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy weryfikacja kontrahentów może dziać się sama" />
 
       <script
         type="application/ld+json"

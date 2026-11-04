@@ -417,7 +417,7 @@ export default function N8nDlaCrm() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, które kroki w Twoim CRM może przejąć n8n" />
       </main>
       <Footer />
 

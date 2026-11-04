@@ -246,7 +246,7 @@ export default function MaileSpamArticle() {
           }}
         />
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czemu Twoje maile trafiają do spamu" />
       <Footer />
     </>
   );

@@ -325,7 +325,7 @@ export default function KalkulatorPodatkowyPage() {
           />
         </div>
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy księgowe kroki w Twojej firmie mogą dziać się same" />
 
       <script
         type="application/ld+json"

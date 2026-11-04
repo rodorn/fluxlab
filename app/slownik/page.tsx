@@ -55,7 +55,7 @@ export default function SlownikPage() {
             <SlownikLista />
           </div>
         </section>
-        <CTA />
+        <CTA naglowek="Sprawdź, które z tych pojęć dotyczą Twojej firmy" />
       </main>
 
       <script

@@ -275,7 +275,7 @@ export default function SkalaCzyLiniowyJdgArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/skala-czy-liniowy-jdg" />
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, czy rozliczenia w Twojej JDG mogą zajmować mniej czasu" />
 
                       <div className="grid md:grid-cols-2 gap-8 mt-12">
                         <div>

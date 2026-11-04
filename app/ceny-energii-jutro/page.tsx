@@ -232,7 +232,7 @@ export default async function Page() {
           </ul>
         </div>
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy ceny energii mogą same sterować pracą w Twojej firmie" />
       <Footer />
     </>
   );

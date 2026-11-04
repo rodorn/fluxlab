@@ -267,7 +267,7 @@ export default function Narzedzia() {
             })}
           </div>
         </div>
-        <CTA />
+        <CTA naglowek="Nie ma tu Twojego problemu? Opisz go, wycenimy rozwiązanie" />
       </main>
       <Footer />
     </>

@@ -94,6 +94,24 @@ const KROKI = [
 
 const MANIFEST = KROKI[2][1];
 
+const SEGMENTY = [
+  [
+    "/automatyzacja-dla-biur-rachunkowych",
+    "Biura rachunkowe i JDG",
+    "KSeF, faktury i przypomnienia bez ręcznego przepisywania.",
+  ],
+  [
+    "/wlasny-crm",
+    "Mała firma ze sprzedażą",
+    "Każde zapytanie w CRM i telefon do klienta w 15 minut.",
+  ],
+  [
+    "/integracja-crm-z-erp",
+    "Zespół z ERP",
+    "CRM i ERP z tymi samymi danymi, bez eksportów do Excela.",
+  ],
+] as const;
+
 // Kroki pod formularzem opowiadają drogę dla formy kontaktu wybranej w pierwszym kroku.
 const KROKI_KONTAKTU = {
   meet: [
@@ -129,7 +147,11 @@ const WYNIKI = [
 ];
 
 export default function Home() {
-  preload("/fonts/fraunces-hero.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
+  preload("/fonts/fraunces-hero.woff2", {
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  });
   return (
     <>
       <Header />
@@ -158,7 +180,10 @@ export default function Home() {
             >
               Bezpłatna wycena
             </a>
-            <a href="#handlowiec" className="btn-secondary btn-lg w-full sm:w-60">
+            <a
+              href="#handlowiec"
+              className="btn-secondary btn-lg w-full sm:w-60"
+            >
               Dobierz usługi
             </a>
           </div>
@@ -265,6 +290,34 @@ export default function Home() {
             płatna przed startem prac, a przy usługach miesięcznych na początku
             miesiąca. Bez zaliczek.
           </RevealOnScroll>
+          <nav
+            aria-labelledby="segmenty"
+            className="mx-auto mt-10 max-w-4xl border-t border-gray-200 pt-6 dark:border-white/10"
+          >
+            <p
+              id="segmenty"
+              className="text-center text-xs font-medium uppercase tracking-widest text-gray-500 dark:text-white/50"
+            >
+              Najczęściej pracujemy z
+            </p>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+              {SEGMENTY.map(([href, tytul, opis]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="block h-full rounded-xl border border-gray-200 p-4 transition-colors hover:border-accent dark:border-white/10"
+                  >
+                    <span className="block font-semibold text-gray-900 dark:text-white">
+                      {tytul}
+                    </span>
+                    <span className="mt-1 block text-sm text-gray-600 dark:text-white/60">
+                      {opis}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </section>
 
         <section
@@ -428,7 +481,10 @@ export default function Home() {
                 submitLabel="Wyślij i sprawdź cenę"
               />
             </RevealOnScroll>
-            <KrokiSticky kroki={KROKI_KONTAKTU.meet} warianty={KROKI_KONTAKTU} />
+            <KrokiSticky
+              kroki={KROKI_KONTAKTU.meet}
+              warianty={KROKI_KONTAKTU}
+            />
           </div>
         </section>
       </main>

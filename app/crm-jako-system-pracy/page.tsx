@@ -525,7 +525,7 @@ export default function CrmJakoSystemPracy() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, co w Twoim CRM może dziać się bez klikania" />
 
       </main>
       <Footer />

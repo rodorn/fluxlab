@@ -280,7 +280,7 @@ export default function DoborSamochoduPage() {
           />
         </div>
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy dobór oferty dla Twoich klientów da się zautomatyzować" />
 
       {/* FAQPage Schema */}
       <script

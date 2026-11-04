@@ -236,7 +236,7 @@ export default function PodszywanieEmailArticle() {
           }}
         />
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy ktoś może wysłać mail w imieniu Twojej firmy" />
       <Footer />
     </>
   );

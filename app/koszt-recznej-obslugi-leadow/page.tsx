@@ -356,7 +356,7 @@ export default function KosztRecznejObslugiLeadow() {
             </div>
           </section>
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, ile godzin w tygodniu odda Ci automatyczna obsługa leadów" />
       </main>
       <Footer />
 

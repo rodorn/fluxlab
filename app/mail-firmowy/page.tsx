@@ -158,7 +158,7 @@ export default function MailFirmowy() {
           ))}
         </div>
 
-        <CTA />
+        <CTA naglowek="Sprawdź, czy Twoja poczta firmowa jest ustawiona bez błędów" />
       </main>
       <Footer />
 

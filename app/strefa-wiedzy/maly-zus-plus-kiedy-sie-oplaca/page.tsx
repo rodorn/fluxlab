@@ -238,7 +238,7 @@ export default function MalyZusPlusArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca" />
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, czy rozliczenia w Twojej JDG mogą zajmować mniej czasu" />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

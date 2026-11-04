@@ -265,7 +265,7 @@ export default function RyczaltCzyLiniowyArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/ryczalt-czy-liniowy" />
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, czy faktury w Twojej JDG mogą wystawiać się same" />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

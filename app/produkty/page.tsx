@@ -10,46 +10,111 @@ import WycenaAI from "@/components/WycenaAI";
 import Abonamenty from "@/components/Abonamenty";
 import DlaZakupow from "@/components/DlaZakupow";
 import FaqSekcja from "@/components/FaqSekcja";
-import { CENNIK as PRODUCTS, PRODUCTS as PRODUCTS_ALL, cenaWejscia } from "@/lib/products";
+import {
+  CENNIK as PRODUCTS,
+  PRODUCTS as PRODUCTS_ALL,
+  cenaWejscia,
+} from "@/lib/products";
 
 // Kolejność z licznika ruchu (sesje na stronie produktu, 20.09–24.10.2026).
-const NAJCZESCIEJ = ["/audyt-strony", "/e-doreczenia-integracja", "/strony-www", "/audyt-kurierski"]
+const NAJCZESCIEJ = [
+  "/audyt-strony",
+  "/e-doreczenia-integracja",
+  "/strony-www",
+  "/audyt-kurierski",
+]
   .map((h) => PRODUCTS_ALL.find((p) => p.href === h))
   .filter((p) => p !== undefined);
 
 const ZASADY = [
-  ["Stała cena", "Nie liczymy godzin. Przed startem dostajesz jedną kwotę za całość."],
-  ["Useme, potem faktura", "Pierwsze zlecenie przez Useme, pieniądze dostajemy po Twoim odbiorze. Kolejne fakturą przed startem."],
-  ["Bez ukrytych kosztów", "Licencje, serwery i abonamenty ustalamy przed startem."],
-  ["30 dni poprawek", "Błędy po naszej stronie poprawiamy po wdrożeniu bez opłat."],
-  ["Co jest w cenie", "Testy na Twoich danych, dokumentacja, krótkie szkolenie zespołu i instrukcja na wypadek awarii."],
+  [
+    "Stała cena",
+    "Nie liczymy godzin. Przed startem dostajesz jedną kwotę za całość.",
+  ],
+  [
+    "Useme, potem faktura",
+    "Pierwsze zlecenie przez Useme, pieniądze dostajemy po Twoim odbiorze. Kolejne fakturą przed startem.",
+  ],
+  [
+    "Bez ukrytych kosztów",
+    "Licencje, serwery i abonamenty ustalamy przed startem.",
+  ],
+  [
+    "30 dni poprawek",
+    "Błędy po naszej stronie poprawiamy po wdrożeniu bez opłat.",
+  ],
+  [
+    "Co jest w cenie",
+    "Testy na Twoich danych, dokumentacja, krótkie szkolenie zespołu i instrukcja na wypadek awarii.",
+  ],
 ];
 
 const POZA_CENA = [
-  ["Licencje narzędzi", "Pipedrive, Make, n8n w chmurze czy Microsoft 365 opłacasz u dostawcy, na swoje konto. Kwotę podajemy w ofercie."],
-  ["Koszty API i serwera", "Zapytania do modeli AI, hosting, wysyłka SMS. Rozliczasz je z dostawcą, szacunek miesięczny jest w ofercie."],
-  ["Zmiany zakresu", "Nowe funkcje dodane po akceptacji oferty wyceniamy osobno, zanim zaczniemy pracę. Podstawa wyceny: 200 zł netto za godzinę."],
-  ["Opieka po 30 dniach", "Późniejsze zmiany robimy jednorazowo albo w abonamencie, np. opieka nad stroną od 300 zł/mies."],
+  [
+    "Licencje narzędzi",
+    "Pipedrive, Make, n8n w chmurze czy Microsoft 365 opłacasz u dostawcy, na swoje konto. Kwotę podajemy w ofercie.",
+  ],
+  [
+    "Koszty API i serwera",
+    "Zapytania do modeli AI, hosting, wysyłka SMS. Rozliczasz je z dostawcą, szacunek miesięczny jest w ofercie.",
+  ],
+  [
+    "Zmiany zakresu",
+    "Nowe funkcje dodane po akceptacji oferty wyceniamy osobno, zanim zaczniemy pracę. Podstawa wyceny: 200 zł netto za godzinę.",
+  ],
+  [
+    "Opieka po 30 dniach",
+    "Późniejsze zmiany robimy jednorazowo albo w abonamencie, np. opieka nad stroną od 300 zł/mies.",
+  ],
 ];
 
 const ZASADY_AUDYTU = [
-  ["Audyt strony 0 zł", "Raport od ręki, bez konta: telefon i komputer, wyszukiwarka, AI, poczta."],
-  ["Cała strona 10 zł", "Do 200 podstron, raport mailem, płacisz po otrzymaniu."],
-  ["Cena naprawy w raporcie", "Przy każdym problemie koszt usunięcia. Wycena wiąże 30 dni."],
-  ["Audyt procesu odliczamy", "Koszt audytu procesu odejmujemy od wdrożenia, jeśli idziemy dalej."],
-  ["Czasem to nie narzędzie", "Jeśli problem leży w procesie, a nie w systemie, piszemy to w raporcie zamiast proponować wdrożenie."],
+  [
+    "Audyt strony 0 zł",
+    "Raport od ręki, bez konta: telefon i komputer, wyszukiwarka, AI, poczta.",
+  ],
+  [
+    "Cała strona 10 zł",
+    "Do 200 podstron, raport mailem, płacisz po otrzymaniu.",
+  ],
+  [
+    "Cena naprawy w raporcie",
+    "Przy każdym problemie koszt usunięcia. Wycena wiąże 30 dni.",
+  ],
+  [
+    "Audyt procesu odliczamy",
+    "Koszt audytu procesu odejmujemy od wdrożenia, jeśli idziemy dalej.",
+  ],
+  [
+    "Czasem to nie narzędzie",
+    "Jeśli problem leży w procesie, a nie w systemie, piszemy to w raporcie zamiast proponować wdrożenie.",
+  ],
 ];
 
 const GWARANCJA = [
-  ["Poprawki na nasz koszt", "Przez 30 dni po odbiorze poprawiamy bez opłat wszystko, co nie działa tak, jak opisaliśmy w ofercie."],
-  ["Założenia na piśmie", "W ofercie wypisujemy, od czego zależy wynik, np. dostęp do API Twojego systemu. Jeśli założenie się nie sprawdzi, mówimy o tym, zanim pójdziemy dalej."],
-  ["Płacisz po odbiorze", "Pierwsze zlecenie idzie przez Useme: pieniądze trafiają do nas dopiero, gdy zaakceptujesz pracę. Osobna umowa nie jest potrzebna."],
-  ["Rezygnacja z dnia na dzień", "Abonament kończysz w dowolnym dniu. Za niewykorzystane dni oddajemy pieniądze w ciągu 7 dni."],
+  [
+    "Poprawki na nasz koszt",
+    "Przez 30 dni po odbiorze poprawiamy bez opłat wszystko, co nie działa tak, jak opisaliśmy w ofercie.",
+  ],
+  [
+    "Założenia na piśmie",
+    "W ofercie wypisujemy, od czego zależy wynik, np. dostęp do API Twojego systemu. Jeśli założenie się nie sprawdzi, mówimy o tym, zanim pójdziemy dalej.",
+  ],
+  [
+    "Płacisz po odbiorze",
+    "Pierwsze zlecenie idzie przez Useme: pieniądze trafiają do nas dopiero, gdy zaakceptujesz pracę. Osobna umowa nie jest potrzebna.",
+  ],
+  [
+    "Rezygnacja z dnia na dzień",
+    "Abonament kończysz w dowolnym dniu. Za niewykorzystane dni oddajemy pieniądze w ciągu 7 dni.",
+  ],
 ];
 
 const DO_KALKULATORA = PRODUCTS.flatMap((p) => {
   const cena = cenaWejscia(p.price);
-  return cena && !/\/mies\./.test(p.price) ? [{ nazwa: p.name, href: p.href, cena }] : [];
+  return cena && !/\/mies\./.test(p.price)
+    ? [{ nazwa: p.name, href: p.href, cena }]
+    : [];
 });
 
 export const metadata: Metadata = {
@@ -75,11 +140,26 @@ export const metadata: Metadata = {
 };
 
 const PYTANIA_PRODUKTY = [
-  { q: "Ile kosztują usługi?", a: "Ceny netto są przy każdej pozycji: naprawa strony od 150 zł, strona do 5 podstron 2 900 zł, pierwszy krok automatyzacji od 900 zł, własny CRM od 499 zł miesięcznie. Cena nie zmienia się po starcie." },
-  { q: "Jak zamówić kilka usług naraz?", a: "Dodaj je do koszyka i wyślij jedno zapytanie. Cenę i termin potwierdzamy tego samego dnia roboczego." },
-  { q: "Ile trwa realizacja?", a: "Strona do 5 podstron powstaje w tydzień, pierwszy krok automatyzacji w 5 dni, większość wdrożeń kończy się w 2–3 tygodnie. Termin jest w ofercie." },
-  { q: "Jak wygląda płatność?", a: "Pierwsze zlecenie przez Useme. Kolejne na fakturę VAT płatną przed startem, usługi miesięczne na początku miesiąca. Bez zaliczek." },
-  { q: "Czy mogę zrezygnować z CRM?", a: "Tak, w dowolnym dniu. Płacisz za dni korzystania." },
+  {
+    q: "Ile kosztują usługi?",
+    a: "Ceny netto są przy każdej pozycji: naprawa strony od 150 zł, strona do 5 podstron 2 900 zł, pierwszy krok automatyzacji od 900 zł, własny CRM od 499 zł miesięcznie. Cena nie zmienia się po starcie.",
+  },
+  {
+    q: "Jak zamówić kilka usług naraz?",
+    a: "Dodaj je do koszyka i wyślij jedno zapytanie. Cenę i termin potwierdzamy tego samego dnia roboczego.",
+  },
+  {
+    q: "Ile trwa realizacja?",
+    a: "Strona do 5 podstron powstaje w tydzień, pierwszy krok automatyzacji w 5 dni, większość wdrożeń kończy się w 2–3 tygodnie. Termin jest w ofercie.",
+  },
+  {
+    q: "Jak wygląda płatność?",
+    a: "Pierwsze zlecenie przez Useme. Kolejne na fakturę VAT płatną przed startem, usługi miesięczne na początku miesiąca. Bez zaliczek.",
+  },
+  {
+    q: "Czy mogę zrezygnować z CRM?",
+    a: "Tak, w dowolnym dniu. Płacisz za dni korzystania.",
+  },
 ];
 
 export default function ProduktyPage() {
@@ -87,20 +167,15 @@ export default function ProduktyPage() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs
-          href="/produkty"
-          items={[{ label: "Cennik" }]}
-        />
+        <Breadcrumbs href="/produkty" items={[{ label: "Cennik" }]} />
         <section className="pt-6 pb-10 lg:pb-12">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
               <p className="section-label mb-3">Cennik</p>
-              <h1 className="h1-strony">
-                Usługi ze stałą ceną
-              </h1>
+              <h1 className="h1-strony">Usługi ze stałą ceną</h1>
               <p className="hero-lead">
-                Na górze usługi w abonamencie, niżej prace jednorazowe.
-                Każda pozycja ma podaną kwotę wejścia i konkretny efekt.
+                Na górze usługi w abonamencie, niżej prace jednorazowe. Każda
+                pozycja ma podaną kwotę wejścia i konkretny efekt.
               </p>
               <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
                 Darmowe sprawdzenia i kalkulatory są w dziale{" "}
@@ -116,24 +191,35 @@ export default function ProduktyPage() {
           </div>
         </section>
 
-        <section className="container-wide pb-10" aria-labelledby="jeden-proces">
+        <section
+          className="container-wide pb-10"
+          aria-labelledby="jeden-proces"
+        >
           <div className="mx-auto max-w-4xl rounded-2xl border border-accent/40 bg-gray-50 p-6 dark:bg-white/5 md:p-8">
             <p className="section-label mb-2">Najlepszy start</p>
             <div className="flex flex-wrap items-baseline justify-between gap-3">
-              <h2 id="jeden-proces" className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
+              <h2
+                id="jeden-proces"
+                className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl"
+              >
                 Jeden proces, który boli najbardziej
               </h2>
-              <p className="text-lg font-bold text-accent">900 / 1 200 / 1 500 zł netto, 5 dni</p>
+              <p className="text-lg font-bold text-accent">
+                900 / 1 200 / 1 500 zł netto, 5 dni
+              </p>
             </div>
             <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
-              Wybierasz jeden etap, który dziś zjada najwięcej czasu: przepisywanie leadów, przypomnienia
-              albo raport. Diagnoza przed wyceną kosztuje 0 zł, cena jest stała, a po 5 dniach roboczych
+              Wybierasz jeden etap, który dziś zjada najwięcej czasu:
+              przepisywanie leadów, przypomnienia albo raport. Diagnoza przed
+              wyceną kosztuje 0 zł, cena jest stała, a po 5 dniach roboczych
               etap działa sam.
             </p>
             <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
-              <span className="font-semibold text-gray-900 dark:text-white">Co potem:</span> kolejne etapy
-              tego samego procesu dokładamy osobno, każdy z ceną podaną z góry. Nic nie musisz zamawiać
-              od razu.
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Co potem:
+              </span>{" "}
+              kolejne etapy tego samego procesu dokładamy osobno, każdy z ceną
+              podaną z góry. Nic nie musisz zamawiać od razu.
             </p>
             <Link
               href="/automatyzacja-leadow-crm#cennik"
@@ -144,17 +230,53 @@ export default function ProduktyPage() {
           </div>
         </section>
 
+        <section className="container-wide pb-10" aria-labelledby="budzet-2026">
+          <div className="mx-auto max-w-4xl rounded-2xl bg-gray-50 p-6 dark:bg-white/5 md:p-8">
+            <p className="section-label mb-2">Do końca roku</p>
+            <h2
+              id="budzet-2026"
+              className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl"
+            >
+              Zostaje budżet na 2026?
+            </h2>
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+              Od 1 stycznia 2027 przez KSeF muszą przechodzić także faktury z
+              kas i drobna sprzedaż do 10 tys. zł miesięcznie. Integrację z KSeF
+              (od 1 900 zł netto) albo pierwszy proces (od 900 zł) zamawiasz w
+              grudniu i płacisz przed startem pracy, więc koszt zostaje w
+              budżecie 2026. Start ustalamy razem, także na styczeń.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/ksef-integracja" className="btn-primary inline-flex">
+                Integracja z KSeF
+              </Link>
+              <Link
+                href="/kontakt"
+                className="text-sm font-semibold text-accent hover:underline self-center"
+              >
+                Zapytaj o termin startu
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <Abonamenty />
 
         <section className="container-wide pb-10" aria-label="Wycena przez AI">
           <WycenaAI />
           <p className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
             Wolisz porozmawiać?{" "}
-            <Link href="/kontakt?forma=meet&utm_source=produkty" className="font-semibold text-accent hover:underline">
+            <Link
+              href="/kontakt?forma=meet&utm_source=produkty"
+              className="font-semibold text-accent hover:underline"
+            >
               Umów 30 minut w Google Meet
             </Link>{" "}
             albo napisz na{" "}
-            <a href="mailto:pawel@fluxlab.pl" className="font-semibold text-accent hover:underline">
+            <a
+              href="mailto:pawel@fluxlab.pl"
+              className="font-semibold text-accent hover:underline"
+            >
               pawel@fluxlab.pl
             </a>
             , co chcesz zrobić.
@@ -173,9 +295,18 @@ export default function ProduktyPage() {
                   data-vt-karta
                   className="flex h-full flex-col rounded-2xl border border-gray-200 p-5 transition-colors hover:border-accent dark:border-white/10"
                 >
-                  <span data-vt-tytul className="text-sm font-semibold text-gray-900 dark:text-white">{p.name}</span>
-                  <span className="mt-1 flex-1 text-sm text-gray-600 dark:text-gray-400">{p.tagline}</span>
-                  <span className="mt-4 text-lg font-bold text-accent">{p.price}</span>
+                  <span
+                    data-vt-tytul
+                    className="text-sm font-semibold text-gray-900 dark:text-white"
+                  >
+                    {p.name}
+                  </span>
+                  <span className="mt-1 flex-1 text-sm text-gray-600 dark:text-gray-400">
+                    {p.tagline}
+                  </span>
+                  <span className="mt-4 text-lg font-bold text-accent">
+                    {p.price}
+                  </span>
                 </Link>
               </li>
             ))}
@@ -190,13 +321,22 @@ export default function ProduktyPage() {
               ["Czego nie ma w cenie", POZA_CENA],
               ["Gdy coś pójdzie nie tak", GWARANCJA],
             ].map(([tytul, lista]) => (
-              <div key={tytul as string} className="rounded-2xl bg-gray-50 p-6 dark:bg-white/5">
-                <h2 className="text-lg font-bold text-gray-900 dark:text-white">{tytul as string}</h2>
+              <div
+                key={tytul as string}
+                className="rounded-2xl bg-gray-50 p-6 dark:bg-white/5"
+              >
+                <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                  {tytul as string}
+                </h2>
                 <dl className="mt-4 space-y-3">
                   {(lista as string[][]).map(([t, o]) => (
                     <div key={t}>
-                      <dt className="text-sm font-semibold text-gray-900 dark:text-white">{t}</dt>
-                      <dd className="text-sm text-gray-600 dark:text-gray-400">{o}</dd>
+                      <dt className="text-sm font-semibold text-gray-900 dark:text-white">
+                        {t}
+                      </dt>
+                      <dd className="text-sm text-gray-600 dark:text-gray-400">
+                        {o}
+                      </dd>
                     </div>
                   ))}
                 </dl>
@@ -213,10 +353,13 @@ export default function ProduktyPage() {
           <div className="mt-8 lg:mt-12">
             <KatalogProduktow />
           </div>
-
         </section>
         <DlaZakupow className="container-wide pb-12" />
-        <FaqSekcja pytania={PYTANIA_PRODUKTY} sciezka="/produkty" className="container-wide pb-14" />
+        <FaqSekcja
+          pytania={PYTANIA_PRODUKTY}
+          sciezka="/produkty"
+          className="container-wide pb-14"
+        />
         <CTA
           naglowek="Potrzebujesz czegoś szytego pod Twój proces?"
           opis={

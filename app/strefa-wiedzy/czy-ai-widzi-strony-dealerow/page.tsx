@@ -265,7 +265,7 @@ export default function Page() {
             }),
           }}
         />
-        <CTA />
+        <CTA naglowek="Sprawdź, czy wyszukiwarki AI widzą Twoją ofertę" />
       </main>
       <Footer />
     </>

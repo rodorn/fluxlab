@@ -368,7 +368,7 @@ export default function JakPracuje() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Opisz proces, a wrócimy z ceną i terminem" />
       </main>
       <Footer />
 

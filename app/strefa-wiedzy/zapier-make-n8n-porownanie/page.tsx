@@ -305,7 +305,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/zapier-make-n8n-porownanie" />
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, które narzędzie pasuje do Twojego procesu" />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

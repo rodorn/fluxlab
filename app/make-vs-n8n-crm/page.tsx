@@ -489,7 +489,7 @@ export default function MakeVsN8nCrm() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, które narzędzie lepiej połączy Twój CRM z resztą" />
       </main>
       <Footer />
 

@@ -488,7 +488,7 @@ export default function RaportowanieZPipedrive() {
           />
         </div>
 
-        <CTA />
+        <CTA naglowek="Sprawdź, czy raport z Pipedrive może przychodzić sam" />
 
         <div className="pb-8">
           <Breadcrumbs

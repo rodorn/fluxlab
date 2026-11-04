@@ -67,7 +67,7 @@ export default function Szablony() {
             </div>
           </div>
         </section>
-        <CTA />
+        <CTA naglowek="Sprawdź, czy szablon wystarczy, czy proces wymaga wdrożenia" />
       </main>
       <Footer />
     </>

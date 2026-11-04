@@ -240,7 +240,7 @@ export default function KalkulatorKosztowPage() {
           />
         </div>
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, ile kosztuje automatyzacja tego procesu" />
 
       {/* FAQPage Schema */}
       <script

@@ -155,7 +155,7 @@ export default async function Page() {
           </div>
         </div>
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy dane kontrahentów z KRS mogą aktualizować się same" />
 
       <script
         type="application/ld+json"

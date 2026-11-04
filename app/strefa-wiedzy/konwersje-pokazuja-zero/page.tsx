@@ -192,7 +192,7 @@ export default function Page() {
           }}
         />
       </main>
-      <CTA />
+      <CTA naglowek="Sprawdź, czemu Twoje konwersje nie liczą się poprawnie" />
       <Footer />
     </>
   );

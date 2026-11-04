@@ -290,7 +290,7 @@ export default function RealizacjePage() {
             ))}
           </div>
         </section>
-        <CTA />
+        <CTA naglowek="Sprawdź, jak podobne wdrożenie wyglądałoby w Twojej firmie" />
       </main>
       <Footer />
     </>

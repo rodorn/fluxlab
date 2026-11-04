@@ -357,7 +357,7 @@ export default function VatWJdgArticle() {
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <PrevNextArticle currentHref="/strefa-wiedzy/vat-w-jdg-kiedy-warto" />
 
-                      <CTA />
+                      <CTA naglowek="Sprawdź, czy faktury VAT i KSeF mogą obsługiwać się same" />
 
                       <div className="mt-12">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

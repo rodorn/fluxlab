@@ -266,7 +266,7 @@ export default function Page() {
             }),
           }}
         />
-        <CTA />
+        <CTA naglowek="Sprawdź, czy dane Twojego obiektu w rejestrach są poprawne" />
       </main>
       <Footer />
     </>

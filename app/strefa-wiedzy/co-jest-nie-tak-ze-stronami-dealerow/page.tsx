@@ -253,7 +253,7 @@ export default function Page() {
             }),
           }}
         />
-        <CTA />
+        <CTA naglowek="Sprawdź, co poprawić na stronie Twojego salonu" />
       </main>
       <Footer />
     </>

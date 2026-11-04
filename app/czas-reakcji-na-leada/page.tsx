@@ -278,7 +278,7 @@ export default function CzasReakcjiNaLeada() {
             </p>
           </section>
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, jak skrócić odpowiedź na zapytanie do kilku minut" />
 
       </main>
       <Footer />
