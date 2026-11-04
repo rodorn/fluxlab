@@ -231,7 +231,7 @@ export default function StronyWww() {
             formId="diagnosis_web"
             heading="Napisz, jakiej strony potrzebujesz"
             intro="Odpiszemy z ceną i terminem, tego samego dnia."
-            submitLabel="Wyślij i poproś o cenę"
+            submitLabel="Wyślij i sprawdź cenę"
           />
         </section>
       </main>

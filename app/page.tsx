@@ -425,7 +425,7 @@ export default function Home() {
                 formId="home"
                 heading="Napisz, czego potrzebujesz"
                 intro="Odpiszemy z ceną i terminem, tego samego dnia."
-                submitLabel="Wyślij i poproś o cenę"
+                submitLabel="Wyślij i sprawdź cenę"
               />
             </RevealOnScroll>
             <KrokiSticky kroki={KROKI_KONTAKTU.meet} warianty={KROKI_KONTAKTU} />

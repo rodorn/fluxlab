@@ -117,7 +117,7 @@ export default function Page() {
       formId="order_naprawa_https"
       formHeading="Sprawdź swoją stronę"
       formIntro="Podaj adres strony. Odeślemy przyczynę ostrzeżenia albo potwierdzimy, że wszystko jest w porządku."
-      submitLabel="Poproś o diagnozę"
+      submitLabel="Zamów diagnozę"
       microCopy="Diagnoza tylko na publicznych danych serwera, bez logowania."
       serviceName="Diagnoza i naprawa warstwy HTTPS strony firmowej"
       serviceDesc="Ustalenie przyczyny ostrzeżenia przeglądarki i naprawa: certyfikat wystawiony na właściwą domenę, przekierowania, warianty adresu, zasoby ładowane bez szyfrowania. Od 190 zł."

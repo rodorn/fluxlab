@@ -133,7 +133,7 @@ export default function KsefIntegracja() {
       formId="ksef"
       formHeading="Napisz, w czym dziś wystawiasz faktury"
       formIntro="Nazwa programu i liczba faktur miesięcznie wystarczą. Odpiszemy, czy integracja ma sens."
-      submitLabel="Wyślij opis i poproś o cenę"
+      submitLabel="Wyślij opis i sprawdź cenę"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Ci wygodniej."
       serviceName="Integracja z KSeF"
       serviceDesc="Spięcie systemu sprzedażowego, ERP albo programu księgowego z Krajowym Systemem e-Faktur: wysyłka faktur w schemacie FA(3) przez API v2, zapis numeru KSeF i UPO, pobieranie faktur kosztowych."

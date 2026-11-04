@@ -140,7 +140,7 @@ export default function CaseStudy() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, jak taki przepływ wyglądałby w Twojej firmie" />
       </main>
       <Footer />
     </>

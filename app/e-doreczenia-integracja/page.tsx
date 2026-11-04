@@ -151,7 +151,7 @@ export default function EDoreczeniaIntegracja() {
       formId="edoreczenia"
       formHeading="Napisz, z jakiego systemu korzystasz"
       formIntro="Nazwa systemu i liczba pism miesięcznie wystarczą. Odpiszemy, czy integracja ma sens, czy panel wystarczy."
-      submitLabel="Wyślij opis i poproś o cenę"
+      submitLabel="Wyślij opis i sprawdź cenę"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak ci wygodniej."
       serviceName="Integracja z e-Doręczeniami"
       serviceDesc="Spięcie skrzynki do doręczeń elektronicznych z systemem obiegu dokumentów, CRM albo inną aplikacją: odbiór pism, pobieranie dowodów doręczenia, wysyłka z załącznikami."

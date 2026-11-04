@@ -54,7 +54,7 @@ const KONIEC: Record<Kontakt, { krok: string; pytanie: string; wyslij?: string; 
   phone: {
     krok: "Gdzie potwierdzić",
     pytanie: "Gdzie potwierdzić rozmowę?",
-    wyslij: "Poproś o telefon",
+    wyslij: "Zamów telefon",
     zapewnienia: ["Bez zobowiązań", "Oddzwaniamy tego samego dnia", "Cena w rozmowie"],
   },
   email: { krok: "Gdzie odpisać", pytanie: "Gdzie odpisać?", zapewnienia: ZAPEWNIENIA },

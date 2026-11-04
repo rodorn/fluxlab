@@ -840,7 +840,7 @@ export default function WirtualnyHandlowiec() {
                   disabled={!uslugi.length}
                   className="btn-primary mt-4 w-full disabled:opacity-60"
                 >
-                  Poproś o telefon
+                  Zamów telefon
                 </button>
                 <button
                   type="button"

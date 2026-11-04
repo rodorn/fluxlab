@@ -17,7 +17,7 @@ interface CTAProps {
  */
 export default function CTA({
   naglowek = "Nie wiesz, od czego zacząć?",
-  opis = "Bezpłatna diagnoza procesu, bez zobowiązań.",
+  opis = "Opisujesz proces w krótkim formularzu. Tego samego dnia odpisujemy, co da się zautomatyzować, za ile i w jakim terminie. Bez zobowiązań.",
   etykieta = "Bezpłatna diagnoza",
   href = "/kontakt",
 }: CTAProps = {}) {
