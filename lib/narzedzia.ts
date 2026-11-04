@@ -101,6 +101,15 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "9 sygnałów, że czas na automatyzację",
+    pytanie: "Czy automatyzacja się u Ciebie zwróci?",
+    description:
+      "Dziewięć zdań o ręcznej pracy w firmie. Zaznacz pasujące, a pokażemy, czy warto automatyzować i od którego procesu zacząć.",
+    href: "/sygnaly-automatyzacji",
+    ikona: "moneta",
+    badge: "Nowość",
+  },
+  {
     title: "Tańsze automatyzacje",
     pytanie: "Ile naprawdę płacisz za Zapiera i Make?",
     description:

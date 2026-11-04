@@ -158,6 +158,16 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Dopłata paliwowa sięga prawie połowy ceny bazowej i zmienia się co dwa tygodnie. Sprawdź jedną pozycję od ręki, a potem całą fakturę. Od 290 zł."
   },
   {
+    "url": "/sygnaly-automatyzacji",
+    "tytul": "9 sygnałów, że czas na automatyzację",
+    "opis": "Dziewięć pytań o ręczną pracę w firmie. Zaznacz, co Cię dotyczy, a dostaniesz ocenę, czy automatyzacja się zwróci i od czego zacząć. Bez maila i rejestracji."
+  },
+  {
+    "url": "/porownanie",
+    "tytul": "FluxLab, gotowy SaaS, Zapier, etat czy Excel?",
+    "opis": "Pięć sposobów na powtarzalną pracę w firmie: koszt w 1. roku, czas do startu, własność, utrzymanie, KSeF. Także tam, gdzie FluxLab wypada słabiej."
+  },
+  {
     "url": "/tansze-automatyzacje",
     "tytul": "Tańsze automatyzacje, koniec opłat za kroki",
     "opis": "Zapier i Make liczą każdy krok osobno, więc pięć kroków razy tysiąc uruchomień to pięć tysięcy zadań. Policz oszczędność i przenieś to na swój serwer."

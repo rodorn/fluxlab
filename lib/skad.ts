@@ -19,3 +19,13 @@ export function skadZBody(v: string) {
   const t = v.replace(/[|\r\n]+/g, " ").trim();
   return t.startsWith(INNE) && t.length > INNE.length ? t.slice(0, 80) : "";
 }
+
+export const POWOD = [
+  "termin KSeF",
+  "za dużo ręcznej pracy",
+  "zmiana systemu",
+  "polecenie",
+  "inny powód",
+];
+
+export const powodZBody = (v: string) => (POWOD.includes(v) ? v : "");

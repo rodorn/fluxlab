@@ -155,6 +155,11 @@ const SYTUACJE: Sytuacja[] = [
       "Najpierw policzmy, ile to kosztuje, a potem sprawdźmy, gdzie w procesie jest największa luka.",
     wskazania: [
       {
+        href: "/sygnaly-automatyzacji",
+        powod:
+          "Dziewięć zdań do zaznaczenia i ocena, czy automatyzacja się zwróci, zanim zaczniesz cokolwiek liczyć.",
+      },
+      {
         href: "/koszt-recznej-obslugi-leadow",
         powod:
           "Przepisywanie leadów, zakładanie tematów w CRM i ręczne raporty, przeliczone na koszt miesięczny w złotych.",

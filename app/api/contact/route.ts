@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { skadZBody } from "@/lib/skad";
+import { powodZBody, skadZBody } from "@/lib/skad";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { ladunekZgloszenia, wyslijZgloszenie } from "@/lib/zgloszenie-kolektor";
@@ -26,7 +26,7 @@ function str(v: unknown, max: number): string {
   return v.trim().slice(0, max);
 }
 
-import { potwierdzenieHtml, zdanieKontaktu } from "@/lib/mailPotwierdzenia";
+import { potwierdzenieHtml, terminOdpowiedzi, zdanieKontaktu } from "@/lib/mailPotwierdzenia";
 import { terminWolny } from "@/lib/terminy";
 import { PROBLEM_TYPE_LABELS, PROBLEM_SCALE_LABELS } from "@/lib/form-options";
 
@@ -78,7 +78,7 @@ function potwierdzenie(pref: string, termin: string, telefon: string) {
   const kontakt = zdanieKontaktu(pref, termin, telefon);
   return `Cześć,
 
-dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, tego samego dnia.
+dzięki za opis procesu. Przejrzymy zgłoszenie i odpiszemy ${terminOdpowiedzi()} z informacją, czy widzimy potencjał na automatyzację i jaki byłby sensowny pierwszy krok.
 
 Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.
 
@@ -169,6 +169,7 @@ export async function POST(req: Request) {
   const problemScale = str(body.problemScale, MAX_VALUE);
   const message = str(body.message, MAX_MESSAGE);
   const skad = skadZBody(str(body.skad, 80));
+  const powod = powodZBody(str(body.powod, 40));
   const contactPref = str(body.contactPref, MAX_VALUE) || "email";
   const telefon = str(body.phone, 40);
   const termin = str(body.termin, 20);
@@ -233,6 +234,7 @@ export async function POST(req: Request) {
         telefon && `Telefon: ${telefon}`,
         termin && `Termin Meet: ${termin}`,
         skad && `Skąd o nas wie: ${skad}`,
+        powod && `Powód kontaktu teraz: ${powod}`,
         message,
       ]
         .filter(Boolean)
@@ -257,6 +259,7 @@ export async function POST(req: Request) {
     `Skala: ${problemScaleLabel}`,
     `Preferowany kontakt: ${contactPrefLabel}`,
     `Skąd o nas wie: ${skad || "-"}`,
+    `Powód kontaktu teraz: ${powod || "-"}`,
     telefon ? `Telefon: ${telefon}` : "",
     termin ? `Termin Meet: ${termin}` : "",
     termin ? `Dodaj do kalendarza: ${linkKalendarza(termin, email, company)}` : "",

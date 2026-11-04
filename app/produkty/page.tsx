@@ -22,12 +22,13 @@ const ZASADY = [
   ["Useme, potem faktura", "Pierwsze zlecenie przez Useme, pieniądze dostajemy po Twoim odbiorze. Kolejne fakturą przed startem."],
   ["Bez ukrytych kosztów", "Licencje, serwery i abonamenty ustalamy przed startem."],
   ["30 dni poprawek", "Błędy po naszej stronie poprawiamy po wdrożeniu bez opłat."],
+  ["Co jest w cenie", "Testy na Twoich danych, dokumentacja, krótkie szkolenie zespołu i instrukcja na wypadek awarii."],
 ];
 
 const POZA_CENA = [
   ["Licencje narzędzi", "Pipedrive, Make, n8n w chmurze czy Microsoft 365 opłacasz u dostawcy, na swoje konto. Kwotę podajemy w ofercie."],
   ["Koszty API i serwera", "Zapytania do modeli AI, hosting, wysyłka SMS. Rozliczasz je z dostawcą, szacunek miesięczny jest w ofercie."],
-  ["Zmiany zakresu", "Nowe funkcje dodane po akceptacji oferty wyceniamy osobno, zanim zaczniemy pracę."],
+  ["Zmiany zakresu", "Nowe funkcje dodane po akceptacji oferty wyceniamy osobno, zanim zaczniemy pracę. Podstawa wyceny: 200 zł netto za godzinę."],
   ["Opieka po 30 dniach", "Późniejsze zmiany robimy jednorazowo albo w abonamencie, np. opieka nad stroną od 300 zł/mies."],
 ];
 
@@ -36,6 +37,14 @@ const ZASADY_AUDYTU = [
   ["Cała strona 10 zł", "Do 200 podstron, raport mailem, płacisz po otrzymaniu."],
   ["Cena naprawy w raporcie", "Przy każdym problemie koszt usunięcia. Wycena wiąże 30 dni."],
   ["Audyt procesu odliczamy", "Koszt audytu procesu odejmujemy od wdrożenia, jeśli idziemy dalej."],
+  ["Czasem to nie narzędzie", "Jeśli problem leży w procesie, a nie w systemie, piszemy to w raporcie zamiast proponować wdrożenie."],
+];
+
+const GWARANCJA = [
+  ["Poprawki na nasz koszt", "Przez 30 dni po odbiorze poprawiamy bez opłat wszystko, co nie działa tak, jak opisaliśmy w ofercie."],
+  ["Założenia na piśmie", "W ofercie wypisujemy, od czego zależy wynik, np. dostęp do API Twojego systemu. Jeśli założenie się nie sprawdzi, mówimy o tym, zanim pójdziemy dalej."],
+  ["Płacisz po odbiorze", "Pierwsze zlecenie idzie przez Useme: pieniądze trafiają do nas dopiero, gdy zaakceptujesz pracę. Osobna umowa nie jest potrzebna."],
+  ["Rezygnacja z dnia na dzień", "Abonament kończysz w dowolnym dniu. Za niewykorzystane dni oddajemy pieniądze w ciągu 7 dni."],
 ];
 
 const DO_KALKULATORA = PRODUCTS.flatMap((p) => {
@@ -107,6 +116,34 @@ export default function ProduktyPage() {
           </div>
         </section>
 
+        <section className="container-wide pb-10" aria-labelledby="jeden-proces">
+          <div className="mx-auto max-w-4xl rounded-2xl border border-accent/40 bg-gray-50 p-6 dark:bg-white/5 md:p-8">
+            <p className="section-label mb-2">Najlepszy start</p>
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <h2 id="jeden-proces" className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
+                Jeden proces, który boli najbardziej
+              </h2>
+              <p className="text-lg font-bold text-accent">900 / 1 200 / 1 500 zł netto, 5 dni</p>
+            </div>
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+              Wybierasz jeden etap, który dziś zjada najwięcej czasu: przepisywanie leadów, przypomnienia
+              albo raport. Diagnoza przed wyceną kosztuje 0 zł, cena jest stała, a po 5 dniach roboczych
+              etap działa sam.
+            </p>
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+              <span className="font-semibold text-gray-900 dark:text-white">Co potem:</span> kolejne etapy
+              tego samego procesu dokładamy osobno, każdy z ceną podaną z góry. Nic nie musisz zamawiać
+              od razu.
+            </p>
+            <Link
+              href="/automatyzacja-leadow-crm#cennik"
+              className="btn-primary mt-5 inline-flex"
+            >
+              Zobacz, co wchodzi w każdy wariant
+            </Link>
+          </div>
+        </section>
+
         <Abonamenty />
 
         <section className="container-wide pb-10" aria-label="Wycena przez AI">
@@ -146,11 +183,12 @@ export default function ProduktyPage() {
         </section>
 
         <section className="container-wide pb-12" aria-label="Zasady">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {[
               ["Zasady wyceny", ZASADY],
               ["Zasady audytu", ZASADY_AUDYTU],
               ["Czego nie ma w cenie", POZA_CENA],
+              ["Gdy coś pójdzie nie tak", GWARANCJA],
             ].map(([tytul, lista]) => (
               <div key={tytul as string} className="rounded-2xl bg-gray-50 p-6 dark:bg-white/5">
                 <h2 className="text-lg font-bold text-gray-900 dark:text-white">{tytul as string}</h2>
@@ -165,6 +203,9 @@ export default function ProduktyPage() {
               </div>
             ))}
           </div>
+          <p className="mt-4 text-center text-xs text-gray-500 dark:text-gray-400">
+            Ceny netto. Cennik aktualny na 5 listopada 2026.
+          </p>
         </section>
 
         <section className="container-wide pb-14 md:pb-20">

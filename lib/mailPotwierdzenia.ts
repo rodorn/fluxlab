@@ -1,5 +1,26 @@
 const AKCENT = "#4f46e5";
 
+// Konkretny termin odpowiedzi zamiast ogólnego „tego samego dnia”, liczony
+// w czasie warszawskim: dzień roboczy do 16:00 to dziś do 18:00, później
+// albo w weekend następny dzień roboczy do 12:00.
+export function terminOdpowiedzi(teraz: Date = new Date()): string {
+  const czesci = Object.fromEntries(
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Warsaw",
+      weekday: "short",
+      hour: "2-digit",
+      hourCycle: "h23",
+    })
+      .formatToParts(teraz)
+      .map((c) => [c.type, c.value]),
+  );
+  const dni = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const dzien = dni.indexOf(czesci.weekday);
+  if (dzien < 5 && Number(czesci.hour) < 16) return "dziś do 18:00";
+  if (dzien < 4) return "jutro do 12:00";
+  return "w poniedziałek do 12:00";
+}
+
 export function esc(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -66,7 +87,7 @@ ${przycisk}
 <tr><td style="padding:24px 32px;border-top:4px solid ${AKCENT};border-bottom:1px solid #e5e7eb;font-family:${font};font-size:22px;line-height:28px;font-weight:bold;color:#111827;">Flux<span style="color:${AKCENT};">Lab</span></td></tr>
 <tr><td style="padding:28px 32px 12px 32px;">
 <p style="${p}">Cześć,</p>
-<p style="${p}">dzięki za opis procesu. Przejrzymy zgłoszenie i wrócimy z informacją, czy widzimy potencjał na automatyzację oraz jaki byłby sensowny pierwszy krok, tego samego dnia.</p>
+<p style="${p}">dzięki za opis procesu. Przejrzymy zgłoszenie i odpiszemy ${terminOdpowiedzi()} z informacją, czy widzimy potencjał na automatyzację i jaki byłby sensowny pierwszy krok.</p>
 <p style="${p}">Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.</p>
 ${blok}
 <p style="${p}">Paweł</p>

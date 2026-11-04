@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import DlaZakupow from "@/components/DlaZakupow";
 import ZapiszPdf from "@/components/ZapiszPdf";
+import WyslijKoledze from "@/components/WyslijKoledze";
 import UzasadnienieZakupu from "@/components/UzasadnienieZakupu";
 
 export const metadata: Metadata = {
@@ -68,8 +69,9 @@ export default function DlaZespoluPage() {
             <p className="hero-lead">
               Automatyzacje, strony internetowe i CRM dla firm B2B. Stała cena podana z góry, termin w ofercie.
             </p>
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
               <ZapiszPdf />
+              <WyslijKoledze />
             </div>
 
             <h2 className="mt-12 text-lg font-bold text-gray-900 dark:text-white">Co robimy i ile to kosztuje</h2>

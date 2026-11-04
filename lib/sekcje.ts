@@ -129,6 +129,8 @@ export const SEKCJE: Sekcja[] = [
       {
         nazwa: "Koszt automatyzacji",
         strony: [
+          s("/sygnaly-automatyzacji", "9 sygnałów, że czas na automatyzację"),
+          s("/porownanie", "FluxLab, SaaS, Zapier, etat czy Excel"),
           s("/tansze-automatyzacje", "Tańsze automatyzacje"),
           s("/koszt-recznej-obslugi-leadow", "Koszt ręcznej obsługi leadów"),
           s("/audyt-crm", "Audyt CRM"),

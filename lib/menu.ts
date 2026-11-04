@@ -157,6 +157,8 @@ export const MENU: PozycjaMenu[] = [
       {
         tytul: "Koszty i audyty",
         linki: [
+          l("/sygnaly-automatyzacji"),
+          l("/porownanie"),
           l("/tansze-automatyzacje"),
           l("/koszt-recznej-obslugi-leadow"),
           l("/audyt-crm"),
@@ -304,6 +306,8 @@ export const OPIS_MENU: Record<string, string> = {
   "/numer-ksef": "Sprawdź numer faktury w KSeF",
   "/e-doreczenia-integracja": "Skrzynka e-Doręczeń w Twoim systemie",
   "/szablony": "Brief i checklisty do pobrania",
+  "/sygnaly-automatyzacji": "Czy automatyzacja się zwróci",
+  "/porownanie": "FluxLab, SaaS, Zapier, etat czy Excel",
   "/tansze-automatyzacje": "Ile przepłacasz za Zapiera",
   "/koszt-recznej-obslugi-leadow": "Ile kosztuje ręczna praca",
   "/audyt-crm": "Czy CRM pomaga, czy przeszkadza",
