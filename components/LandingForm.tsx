@@ -437,7 +437,7 @@ export default function LandingForm({
       website:
         (form.elements.namedItem("website") as HTMLInputElement | null)
           ?.value ?? "",
-      skad: (form.elements.namedItem("skad") as HTMLSelectElement | null)?.value ?? "",
+      skad: (form.elements.namedItem("skad") as HTMLInputElement | null)?.value ?? "",
       ...utm,
     };
     try {

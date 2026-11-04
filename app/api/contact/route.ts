@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { SKAD } from "@/lib/skad";
+import { skadZBody } from "@/lib/skad";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { ladunekZgloszenia, wyslijZgloszenie } from "@/lib/zgloszenie-kolektor";
@@ -168,7 +168,7 @@ export async function POST(req: Request) {
   const problemType = str(body.problemType, MAX_VALUE);
   const problemScale = str(body.problemScale, MAX_VALUE);
   const message = str(body.message, MAX_MESSAGE);
-  const skad = SKAD.includes(str(body.skad, 40)) ? str(body.skad, 40) : "";
+  const skad = skadZBody(str(body.skad, 80));
   const contactPref = str(body.contactPref, MAX_VALUE) || "email";
   const telefon = str(body.phone, 40);
   const termin = str(body.termin, 20);

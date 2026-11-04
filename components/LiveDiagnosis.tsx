@@ -446,7 +446,6 @@ export default function LiveDiagnosis() {
                     <div className="mt-3">
                       <SkadWiesz
                         id="diagnoza-skad"
-                        value={skad}
                         onChange={setSkad}
                         etykieta="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                         pole="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent"

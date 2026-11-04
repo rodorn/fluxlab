@@ -251,7 +251,6 @@ export default function KoszykWidok() {
               <div className="mt-4">
                 <SkadWiesz
                   id="koszyk-skad"
-                  value={skad}
                   onChange={setSkad}
                   etykieta="block text-sm font-medium text-gray-700 dark:text-gray-300"
                   pole="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-gray-900 focus:border-accent focus:outline-none dark:border-white/15 dark:bg-gray-900 dark:text-white"
