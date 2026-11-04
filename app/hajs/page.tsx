@@ -10,10 +10,11 @@ import TaxCalculator from "@/app/kalkulator-podatkowy/TaxCalculator";
 // utm, dzieki czemu zrodlo trafia do licznika i do formularza. Strona jest
 // poza indeksem: ten sam kalkulator stoi na /kalkulator-podatkowy.
 export const metadata: Metadata = {
-  title: "Dla widzów HAJS METRICS: kalkulator JDG i automatyzacja warsztatu | Fluxlab",
+  title: "Kalkulator JDG dla widzów HAJS METRICS | Fluxlab",
   description:
     "Policz, ile zostaje w warsztacie na ryczałcie, liniowym i skali w 2026. Do tego: co w warsztacie da się zautomatyzować i za ile.",
   robots: { index: false, follow: true },
+  alternates: { canonical: "/hajs" },
 };
 
 const DLA_WARSZTATU = [
