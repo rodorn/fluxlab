@@ -8,13 +8,13 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Jak zautomatyzować raportowanie w firmie | Fluxlab",
+  title: "Automatyzacja raportowania w firmie | Fluxlab",
   description:
-    "Automatyzacja raportowania krok po kroku: definicje, dane z CRM, kampanii i arkuszy w jednym źródle. Raport sprzedaży bez ręcznego sklejania.",
+    "Jak zautomatyzować raportowanie w firmie: dane z CRM, kampanii i arkuszy w jednym źródle, raport sprzedaży bez ręcznego sklejania.",
   openGraph: {
-    title: "Jak zautomatyzować raportowanie w firmie | Fluxlab",
+    title: "Automatyzacja raportowania w firmie | Fluxlab",
     description:
-      "Automatyzacja raportowania krok po kroku: definicje, dane z CRM, kampanii i arkuszy w jednym źródle. Raport sprzedaży bez ręcznego sklejania.",
+      "Jak zautomatyzować raportowanie w firmie: dane z CRM, kampanii i arkuszy w jednym źródle, raport sprzedaży bez ręcznego sklejania.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -351,7 +351,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             "@type": "Article",
             headline: "Jak zautomatyzować raportowanie w firmie",
             description:
-              "Automatyzacja raportowania krok po kroku: definicje, dane z CRM, kampanii i arkuszy w jednym źródle. Raport sprzedaży bez ręcznego sklejania.",
+              "Jak zautomatyzować raportowanie w firmie: dane z CRM, kampanii i arkuszy w jednym źródle, raport sprzedaży bez ręcznego sklejania.",
             datePublished: "2026-03-30",
             author: {
               "@type": "Organization",
