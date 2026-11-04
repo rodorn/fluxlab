@@ -185,6 +185,9 @@ export default function MakeVsN8nArticle() {
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
+                        Kiedy żadne z nich: gdy proces powtarza się rzadziej niż raz w tygodniu, gdy gotowy program ma tę funkcję wbudowaną albo gdy reguł jest tyle, że lepszy będzie dedykowany kod.
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Pełny obraz:{" "}
                         <Link
                           href="/strefa-wiedzy/zapier-make-n8n-porownanie"

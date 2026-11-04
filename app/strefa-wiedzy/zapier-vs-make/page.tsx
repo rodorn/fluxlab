@@ -258,6 +258,9 @@ export default function ZapierVsMakeArticle() {
                       <li>wolumen przekracza 5 000 operacji miesięcznie</li>
                       <li>potrzebujesz obsługi błędów i danych w UE</li>
                     </ul>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                      Kiedy żadne z nich: gdy proces powtarza się rzadziej niż raz w tygodniu, gdy gotowy program ma tę funkcję wbudowaną albo gdy reguł jest tyle, że lepszy będzie dedykowany kod.
+                    </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-10">
                       Hybryda też ma sens: Zapier do prostych integracji
                       działowych, Make do procesów sprzedaży. Zanim wybierzesz,
