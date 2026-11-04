@@ -120,6 +120,29 @@ const faq = [
   },
 ];
 
+const DLA_KOGO = [
+  {
+    tytul: "Pasujemy, gdy",
+    tak: true,
+    punkty: [
+      "firma ma od kilku do kilkudziesięciu osób i ktoś codziennie przepisuje dane między systemami",
+      "masz jeden konkretny proces do naprawy i chcesz znać cenę i termin przed startem",
+      "używasz gotowych narzędzi (CRM, program księgowy, KSeF, arkusze) i chcesz, żeby wymieniały dane same",
+      "chcesz, żeby kod, dostępy i dokumentacja zostały u ciebie po zakończeniu",
+    ],
+  },
+  {
+    tytul: "Nie jesteśmy dobrym wyborem, gdy",
+    tak: false,
+    punkty: [
+      "proces co tydzień wygląda inaczej: najpierw trzeba go spisać, automatyzacja przyjdzie później",
+      "potrzebujesz dyżuru 24/7 z gwarancją reakcji w nocy i w święta",
+      "szukasz wdrożenia dużego systemu ERP od zera dla setek użytkowników",
+      "chcesz prowadzenia kampanii reklamowych, grafiki albo profili w mediach społecznościowych",
+    ],
+  },
+];
+
 type Step = (typeof steps)[number];
 
 function renderStep(step: Step) {
@@ -227,6 +250,44 @@ export default function JakPracuje() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-4xl mx-auto space-y-6">
                       {steps.map(renderStep)}
+                    </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Dla kogo",
+                content: (
+                  <div className="py-6 lg:py-8">
+                    <div className="max-w-4xl mx-auto">
+                      <div className="text-center mb-8">
+                        <h2 className="h2-sekcji mb-3">Dla kogo jesteśmy, a dla kogo nie</h2>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          Lepiej wiedzieć to przed rozmową niż po pierwszej fakturze.
+                        </p>
+                      </div>
+                      <div className="grid gap-6 md:grid-cols-2">
+                        {DLA_KOGO.map((kol) => (
+                          <div
+                            key={kol.tytul}
+                            className="rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60"
+                          >
+                            <h3 className="font-semibold text-gray-900 dark:text-white">{kol.tytul}</h3>
+                            <ul className="mt-4 space-y-3">
+                              {kol.punkty.map((pkt) => (
+                                <li key={pkt} className="flex gap-2.5 text-sm text-gray-600 dark:text-gray-400">
+                                  <span
+                                    aria-hidden="true"
+                                    className={`mt-0.5 shrink-0 font-semibold ${kol.tak ? "text-accent" : "text-gray-400"}`}
+                                  >
+                                    {kol.tak ? "✓" : "×"}
+                                  </span>
+                                  {pkt}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ),
