@@ -145,9 +145,11 @@ export default function Regulamin() {
                           </li>
                           <li>
                             Abonament jest opłacany z góry za każdy miesiąc i
-                            odnawia się automatycznie. Można go wypowiedzieć w
-                            dowolnym momencie, pisząc na pawel@fluxlab.pl.
-                            Abonament działa do końca opłaconego miesiąca.
+                            odnawia się automatycznie. Można z niego zrezygnować
+                            w dowolnym dniu, z dnia na dzień, jednym mailem na
+                            pawel@fluxlab.pl. Abonament kończy się w dniu
+                            rezygnacji, a za niewykorzystane dni opłaconego
+                            miesiąca Usługodawca zwraca pieniądze w ciągu 7 dni.
                           </li>
                           <li>
                             Jeśli Usługodawca nie może wykonać kupionej usługi,

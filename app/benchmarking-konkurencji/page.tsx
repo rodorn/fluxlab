@@ -109,7 +109,7 @@ export default function Page() {
         },
         {
           q: "Czy da się zmienić częstotliwość?",
-          a: "Tak, z miesiąca na miesiąc, bez opłat za zmianę.",
+          a: "Tak, w dowolnym dniu i bez opłat za zmianę. Z raportów możesz też zrezygnować z dnia na dzień, a za niewykorzystane dni zwracamy pieniądze.",
         },
       ]}
       formId="order_benchmarking"

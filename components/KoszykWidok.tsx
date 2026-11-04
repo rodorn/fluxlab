@@ -182,7 +182,7 @@ export default function KoszykWidok() {
               </dl>
               <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
                 Kwoty netto, do zapłaty doliczamy 23% VAT. Fakturę VAT wysyłamy w ciągu 1 dnia roboczego.
-                {suma(true) > 0 && " Abonament wypowiadasz w dowolnym momencie, działa do końca opłaconego miesiąca."}
+                {suma(true) > 0 && " Z abonamentu rezygnujesz w dowolnym dniu, a za niewykorzystane dni zwracamy pieniądze."}
               </p>
               <label className="mt-4 flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
                 <input

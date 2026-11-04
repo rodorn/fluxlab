@@ -323,7 +323,7 @@ export const PRODUCTS: Product[] = [
     bullets: [
       "licencja n8n na własnym serwerze: 0 zł",
       "komplet startowy z trzema przepływami: 2 400 zł",
-      "opieka 190 zł/mies., rezygnacja z miesiąca na miesiąc",
+      "opieka 190 zł/mies., rezygnacja w dowolnym dniu",
     ],
   },
   {
