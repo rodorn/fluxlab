@@ -40,6 +40,7 @@ const PODPOWIEDZI = [
   "Automatyzacja",
   "Połączenie z CRM",
   "Raporty",
+  "Nie wiem, doradźcie", // głos klienta
 ];
 
 const ZAPEWNIENIA = ["Bez zobowiązań", "Cena i termin w odpowiedzi", "Odpisujemy tego samego dnia"];
@@ -558,8 +559,11 @@ export default function LandingForm({
             htmlFor="message"
             className="block text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
           >
-            Z czym możemy pomóc?
+            Co dziś nie działa albo zabiera za dużo czasu?
           </label>
+          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            Pytamy o sytuację, nie o specyfikację. Z opisu od razu ocenimy cenę i termin.
+          </p>
           <div className="mt-3 mb-4 flex flex-wrap gap-2">
             {PODPOWIEDZI.map((p) => (
               <button
@@ -663,8 +667,12 @@ export default function LandingForm({
               type="email"
               required
               placeholder="np. pawel@firma.pl"
+              aria-describedby="email-po-co"
               className={inputClass}
             />
+            <p id="email-po-co" className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+              Tu wyślemy cenę i termin. Bez newslettera.
+            </p>
           </div>
           <div>
             <label
