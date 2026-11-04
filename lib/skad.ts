@@ -16,5 +16,6 @@ export const INNE = "inne: ";
 
 export function skadZBody(v: string) {
   if (SKAD.includes(v)) return v;
-  return v.startsWith(INNE) && v.length > INNE.length ? v.slice(0, 80) : "";
+  const t = v.replace(/[|\r\n]+/g, " ").trim();
+  return t.startsWith(INNE) && t.length > INNE.length ? t.slice(0, 80) : "";
 }
