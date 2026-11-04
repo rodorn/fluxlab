@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import DlaZakupow from "@/components/DlaZakupow";
 import ZapiszPdf from "@/components/ZapiszPdf";
+import UzasadnienieZakupu from "@/components/UzasadnienieZakupu";
 
 export const metadata: Metadata = {
   title: "FluxLab w skrócie: do przesłania w firmie | Fluxlab",
@@ -74,6 +75,8 @@ export default function DlaZespoluPage() {
             <h2 className="mt-12 text-lg font-bold text-gray-900 dark:text-white">Co robimy i ile to kosztuje</h2>
             <Lista wiersze={OFERTA} />
             <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">Ceny netto, doliczamy 23% VAT. Pełny cennik: fluxlab.pl/produkty.</p>
+
+            <UzasadnienieZakupu />
 
             <h2 className="mt-12 text-lg font-bold text-gray-900 dark:text-white">Jak wygląda współpraca</h2>
             <ol className="mt-4 grid gap-4 sm:grid-cols-2">
