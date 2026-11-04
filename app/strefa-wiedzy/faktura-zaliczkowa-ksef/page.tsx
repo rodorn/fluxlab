@@ -50,6 +50,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Ile zaliczek zmieści jedna faktura rozliczeniowa?",
     a: "Struktura FA(3) przyjmuje do 100 faktur zaliczkowych w jednej fakturze rozliczeniowej.",
+    linki: [{ fraza: "Struktura FA(3)", href: "/ksef-integracja" }],
   },
 ];
 

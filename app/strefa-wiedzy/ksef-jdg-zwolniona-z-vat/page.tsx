@@ -46,6 +46,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy zamiast faktury wolno wystawić rachunek?",
     a: "Nie. Sprzedaż zwolnioną z VAT dokumentuje się fakturą, a gdy nabywcą jest firma, ta faktura idzie przez KSeF.",
+    linki: [{ fraza: "ta faktura idzie przez KSeF", href: "/ksef-integracja" }],
   },
   {
     q: "Czy KSeF sprawdza zwolnienie z VAT?",

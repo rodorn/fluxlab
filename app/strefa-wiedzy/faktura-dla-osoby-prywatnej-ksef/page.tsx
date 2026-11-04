@@ -41,6 +41,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Klient prowadzi JDG, ale kupuje prywatnie?",
     a: "Według Ministerstwa Finansów to w istocie sprzedaż konsumencka, więc KSeF jest dobrowolny. Zakup na firmę, z jej NIP na fakturze, idzie już przez KSeF.",
+    linki: [{ fraza: "idzie już przez KSeF", href: "/ksef-integracja" }],
   },
   {
     q: "Jak konsument dostanie fakturę wystawioną w KSeF?",

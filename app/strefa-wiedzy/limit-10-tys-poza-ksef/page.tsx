@@ -46,6 +46,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy limit dotyczy też faktur kosztowych?",
     a: "Nie. Faktury od dostawców odbierasz w KSeF od 1 lutego 2026, niezależnie od limitu.",
+    linki: [{ fraza: "odbierasz w KSeF", href: "/ksef-integracja" }],
   },
   {
     q: "Co się zmienia 1 stycznia 2027?",

@@ -41,6 +41,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy paragon z NIP do 450 zł nadal jest fakturą?",
     a: "Do 31 grudnia 2026 tak, jako faktura uproszczona poza KSeF. Od 2027 faktury dla firm idą przez KSeF.",
+    linki: [{ fraza: "faktury dla firm idą przez KSeF", href: "/ksef-integracja" }],
   },
   {
     q: "Firma prosi o fakturę do paragonu bez NIP. Co zrobić?",
