@@ -108,7 +108,13 @@ export default function DataWystawieniaFakturyKsefArticle() {
             <section>
               <h2 className="mb-4 h2-sekcji">Odliczenie u nabywcy</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Nabywca patrzy na inną datę:{" "}
+                <Link
+                  href="/strefa-wiedzy/faktury-kosztowe-z-ksef"
+                  className="text-accent hover:underline"
+                >
+                  Nabywca
+                </Link>{" "}
+                patrzy na inną datę:{" "}
                 <Link
                   href="/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef"
                   className="text-accent hover:underline"
