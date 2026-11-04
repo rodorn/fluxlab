@@ -8,14 +8,14 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
-  "Proformy nie wystawiasz w KSeF, bo w rozumieniu ustawy o VAT nie jest fakturą. Wysyłasz ją PDF-em jak dotąd, a fakturę wystawiasz w KSeF po zapłacie.";
+  "Proforma nie idzie do KSeF, także po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.";
 
 export const metadata: Metadata = {
-  title: "Proforma a KSeF: czy wystawiać ją w KSeF | Fluxlab",
+  title: "Czy proforma idzie do KSeF? Nie, oto dlaczego | Fluxlab",
   description:
-    "Proformy nie wystawiasz w KSeF, bo w rozumieniu ustawy o VAT nie jest fakturą. Wysyłasz ją PDF-em jak dotąd, a fakturę wystawiasz w KSeF po zapłacie.",
+    "Proforma nie idzie do KSeF, także po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.",
   openGraph: {
-    title: "Proforma a KSeF: czy wystawiać ją w KSeF | Fluxlab",
+    title: "Czy proforma idzie do KSeF? Nie, oto dlaczego | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
