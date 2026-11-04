@@ -217,7 +217,7 @@ export default function AudytCRMPage() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, które kroki w Twoim CRM da się oddać automatom" />
 
       </main>
 

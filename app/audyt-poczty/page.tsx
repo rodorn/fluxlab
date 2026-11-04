@@ -110,7 +110,7 @@ export default function Page() {
           }}
         />
       </AudytPocztyKlient>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy ktoś może wysłać mail w imieniu Twojej firmy" />
       <Footer />
     </>
   );

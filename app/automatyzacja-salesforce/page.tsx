@@ -193,7 +193,7 @@ export default function AutomatyzacjaSalesforce() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, co w Twoim Salesforce da się zautomatyzować bez dużego wdrożenia" />
       </main>
 
       {/* Service Schema */}

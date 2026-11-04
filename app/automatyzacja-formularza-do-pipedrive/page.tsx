@@ -315,7 +315,7 @@ export default function AutomatyzacjaFormularzaDoPipedrive() {
           </section>
         </div>
 
-        <CTA />
+        <CTA naglowek="Sprawdź, czy Twój formularz może zakładać leady w Pipedrive sam" />
 
         <div className="pb-8">
           <Breadcrumbs

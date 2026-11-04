@@ -350,7 +350,7 @@ export default function AutomatyzacjaFollowUp() {
             </ul>
           </section>
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, czy Twoje follow-upy mogą wychodzić bez pamiętania o nich" />
 
       </main>
       <Footer />

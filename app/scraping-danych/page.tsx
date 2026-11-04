@@ -277,7 +277,7 @@ export default function ScrapingDanychPage() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy Twoje dane da się pobierać automatycznie" />
       </main>
 
       {/* Service Schema */}

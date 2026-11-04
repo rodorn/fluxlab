@@ -401,7 +401,7 @@ export default function AutomatyzacjaCrmLeasing() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, ile wniosków leasingowych może prowadzić CRM bez przepisywania" />
 
       </main>
       <Footer />

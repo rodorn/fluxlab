@@ -178,7 +178,7 @@ export default function N8nPage() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy n8n pasuje do procesów w Twojej firmie" />
       </main>
 
       {/* Service Schema */}

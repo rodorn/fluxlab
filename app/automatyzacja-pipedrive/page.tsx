@@ -148,7 +148,7 @@ export default function AutomatyzacjaPipedrive() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, co w Twoim Pipedrive wciąż robi się ręcznie" />
       </main>
 
       {/* Service Schema */}

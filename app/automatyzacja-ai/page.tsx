@@ -204,7 +204,7 @@ export default function AutomatyzacjaAI() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, gdzie AI w Twojej firmie da wynik, a gdzie tylko koszt" />
       </main>
 
       {/* Service Schema */}

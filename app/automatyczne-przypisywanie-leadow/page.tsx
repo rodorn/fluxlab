@@ -447,7 +447,7 @@ export default function AutomatycznePrzypisywanieLeadow() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, czy leady w Twoim CRM mogą trafiać do handlowców same" />
 
       </main>
       <Footer />

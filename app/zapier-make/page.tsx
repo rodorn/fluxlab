@@ -183,7 +183,7 @@ export default function ZapierMake() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, które narzędzie lepiej obsłuży Twój proces" />
       </main>
 
       {/* Service Schema */}

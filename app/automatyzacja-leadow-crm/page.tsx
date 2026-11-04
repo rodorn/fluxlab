@@ -372,7 +372,7 @@ export default function AutomatyzacjaLeadowCRM() {
             ]}
           />
         </div>
-        <CTA />
+        <CTA naglowek="Sprawdź, czy Twoje leady mogą dostać odpowiedź w minutę" />
       </main>
       <Footer />
 

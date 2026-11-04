@@ -194,7 +194,7 @@ export default function IntegracjeApi() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy Twoje systemy mogą wymieniać dane bez przepisywania" />
       </main>
 
       {/* Service Schema */}

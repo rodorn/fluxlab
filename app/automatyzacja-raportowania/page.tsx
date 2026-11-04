@@ -189,7 +189,7 @@ export default function AutomatyzacjaRaportowania() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA naglowek="Sprawdź, czy Twój raport może składać się sam" />
       </main>
 
       {/* Service Schema */}
