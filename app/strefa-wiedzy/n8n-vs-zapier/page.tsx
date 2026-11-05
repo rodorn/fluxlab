@@ -205,13 +205,16 @@ export default function N8nVsZapierArticle() {
                         <li>Masz kilka prostych automatyzacji i liczy się szybki start</li>
                         <li>Nie musisz trzymać danych w UE ani łączyć systemów wewnętrznych</li>
                       </ul>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">
+                        Kiedy żadne z nich: gdy proces powtarza się rzadziej niż raz w tygodniu, gdy gotowy program ma tę funkcję wbudowaną albo gdy reguł jest tyle, że lepszy będzie dedykowany kod.
+                      </p>
 
                       <h2 className="h2-sekcji mb-6 mt-12">
                         Najczęstszy układ: hybryda
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier lub Make do prostych automatyzacji działowych, n8n
-                        do leadów, synchronizacji CRM z ERP i raportów sprzedaży.
+                        Zapier lub Make do prostych automatyzacji w działach, n8n
+                        do leadów, CRM z ERP i raportów.
                         Narzędzie wybieramy dopiero po rozpisaniu procesu, od
                         tego zaczyna się{" "}
                         <Link
