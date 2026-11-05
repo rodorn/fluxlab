@@ -47,6 +47,11 @@ const sourceTypes = [
 
 const faq = [
   {
+    question: "Ile kosztuje scraping danych?",
+    answer:
+      "Jednorazowy zbiór z jednego źródła od 49 zł, wynik w XLSX lub CSV. Odświeżanie cykliczne od 99 zł miesięcznie. Źródło trudne wyceniamy po sprawdzeniu, czy da się je zebrać legalnie i stabilnie.",
+  },
+  {
     question: "Czy scraping jest legalny?",
     answer:
       "Publiczne strony zgodnie z regulaminem i robots.txt, tak. Treści za logowaniem albo płatne, nie. Gdy widzimy ryzyko, mówimy wprost.",
