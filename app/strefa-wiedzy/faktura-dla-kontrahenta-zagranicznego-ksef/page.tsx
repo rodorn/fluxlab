@@ -51,6 +51,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy są faktury dla zagranicy, których nie wystawia się w KSeF?",
     a: "Tak, faktury rozliczane w procedurach OSS i IOSS. Firma zagraniczna bez siedziby i stałego miejsca prowadzenia działalności w Polsce też nie ma obowiązku KSeF.",
+    linki: [{ fraza: "obowiązku KSeF", href: "/ksef-integracja" }],
   },
 ];
 
