@@ -10305,3 +10305,45 @@ Decyzje dla stratega:
 **Decyzja:** budżet „wstrzymaj” (prognoza 197%), więc plan 18 zadań lekkich, 0 zmian treści, 0 kamieni. Kandydat zapier-vs-make przesunięty do 7.11 (zmiana FL_SEO ce57983d 4.11). Embargo /e-doreczenia-integracja do 12.11.
 **Mail:** „FluxLab ruch, plan na 5.11: 62 osoby, 15 z HAJS METRICS” wysłany 06:31 na iwanekpawel55@gmail.com.
 **Dla Pawła:** logowanie GSC i Bing (profil ~/.config/chrome-google), decyzja o budżecie FL_rolki i fluxlab-meta, zimny outreach.
+
+## 2026-11-05 06:44
+**Kanał:** brak (wykonawca planu, czekam).
+**Co zrobione:** nic, pierwsze otwarte zadanie Z1 ma warunek „nie wcześniej niż 07:00”; plan zabrania brać zadania przed godziną i zmian treści. Czekam na Z1 o 07:00.
+**Ruch:** ostatnia doba 273 odsłony, 113 osób; źródła: b2b-email 97, google.com 33, hajsmetrics 23, t.co 14, x 5; uruchomienia narzędzi 14.
+**Dowód:** cykl/plan-ruchu.md (5.11 06:17), Z1 do Z18 otwarte.
+**Dla Pawła:** bez zmian: logowanie GSC i Bing w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z1 (07:00), Z2 (08:00), dalej wg planu.
+
+<!-- WYSLANO 2026-11-05 07:04 -->
+
+## 2026-11-05 08:50
+**Kanał:** pomiar (wykonawca planu: Z1, Z2).
+**Co zrobione:** Z1: timer fluxlab-strona enabled i active, rytm budżetu „wstrzymaj” (prognoza 182%), GSC nie (przekierowanie na logowanie Google), Bing nie (strona about, Sign In). Z2: lejek HAJS METRICS 7 dni zapisany i przekazany FL_hajs: 15 ludzi (wszyscy od 4.11, plus 4 sesje salwy odsiane), kalkulator uruchomiony w 3 sesjach, 0 klik_po_wyniku, 0 form_start, 0 leadów, 14 z 15 z komputera.
+**Ruch:** ostatnia doba 235 odsłon, 87 osób; źródła: b2b-email 66, google.com 32, hajsmetrics 23, t.co 14, x 5; uruchomienia narzędzi 14; form_start 4.
+**Dowód:** cykl/z2-hajs-lejek-2026-11-05.txt; `sesja napisz FL_hajs` doręczono 08:44; plan Z1 i Z2 oznaczone [x].
+**Dla Pawła:** bez zmian: logowanie GSC i Bing w profilu ~/.config/chrome-google (port 9228).
+**Zostało otwarte:** Z3 (09:00, zwroty Zoho), dalej wg planu.
+
+## 2026-11-05 10:52
+**Kanał:** mail i Google, pomiar (wykonawca planu: Z3, Z4).
+**Co zrobione:** Z3: 6 zwrotów rozpoznane, 2 prawdziwe z b2b-firmy (info@emerytwusa.com, office@wozniakgutters.com, 421 Host not reachable) zgłoszone FL_marketing do wykluczenia, 4 to testy zaproszeń na example.com. Z4: wejścia z wyszukiwarek bez strony głównej, 14 dni 52 sesje na 26 stronach, 7 dni 32; lider /sprawdzenie-nip 11 (wszystkie z ostatnich 7 dni, Bing i DuckDuckGo).
+**Ruch:** ostatnia doba 232 odsłony, 91 osób; źródła: b2b-email 57, google.com 32, hajsmetrics 24, t.co 14, x 4.
+**Dowód:** cykl/z3-zwroty-2026-11-05.txt, cykl/z4-wejscia-wyszukiwarki-2026-11-05.txt; `sesja napisz FL_marketing` doręczono 10:44; Z3 i Z4 oznaczone [x].
+**Dla Pawła:** bez zmian: logowanie GSC i Bing w profilu ~/.config/chrome-google (port 9228).
+**Zostało otwarte:** Z5 (11:00, stan kamieni na produkcji), dalej wg planu.
+
+## 2026-11-05 12:45
+**Kanał:** pomiar (plan Z5, Z6; rytm „wstrzymaj", 161% prognozy).
+**Co zrobione:** Z5: /strefa-wiedzy/numeracja-faktur-ksef-2027 i /strefa-wiedzy/proforma-ksef dają 200, mają title i meta description, obie w sitemap.xml. Z6: lejek 07:00-12:45 po odsiewie: 19 ludzi, 22 odsłony (bez odsyłacza 16, hajsmetrics 3, YouTube 1), wejścia głównie na / (13); form_start 0, lead_* 0, uruchomień narzędzi 0; piksel otwarć maili b2b 79.
+**Ruch:** raport_ruchu doba 270 odsłon / 110 osób; źródła b2b-email 107, google 31, hajsmetrics 16, t.co 13, x 3; uruchomienia 14.
+**Dowód:** cykl/plan-ruchu.md Z5, Z6 [x].
+**Dla Pawła:** GSC i Bing nadal wylogowane (bez zmian od 1.11).
+**Zostało otwarte:** Z7 od 13:00, Z8 od 14:00.
+
+## 2026-11-05 14:55
+**Kanał:** pomiar (plan stratega Z7, Z8).
+**Co zrobione:** Z7: porzucone formularze 7 dni, 3 sesje z form_start bez leada, każda na innej stronie (/audyt-strony z X, /wdrozenie-n8n-cena z Google, /koszyk na telefonie bez odsyłacza), 3-6 min od wejścia; porzucenia nie skupiają się na jednej stronie. Z8: Resend 24 h 0 maili (ostatni 3.11 08:20, delivered); Zoho od 5.11 00:00: 0 nowych zapytań od obcych (bounce info@emerytwusa.com 14:06, pomoc Profilu Firmy Google 10:56, HAJS METRICS z listy wykluczeń, raport własny).
+**Ruch:** ostatnia doba 296 odsłon, 127 osób (+154% wobec średniej 116,7); źródła: b2b-email 134 (piksel, nie ludzie), google 33, hajsmetrics 15, t.co 12, x 3; YouTube 2, X 2, Threads 1 sesja; uruchomienia narzędzi 12; lejek 7 dni: 474 sesje, 3 form_start, 1 lead.
+**Dowód:** cykl/z7-porzucone-formularze-2026-11-05.txt; plan-ruchu.md Z7 i Z8 [x].
+**Dla Pawła:** Zoho 10:56: odpowiedź pomocy Profilu Firmy Google ([5-4331000041528]) czeka na przeczytanie.
+**Zostało otwarte:** Z9 od 16:00, Z10 od 17:00, Z11 od 18:00.

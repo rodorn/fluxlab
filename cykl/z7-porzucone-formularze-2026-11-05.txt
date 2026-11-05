@@ -1,0 +1,7 @@
+Z7 porzucone formularze, 7 dni do 2026-11-05 14:50 (licznik po filtrach botów/automatyki/salw)
+474 sesji, porzuceń 3 leadów 1
+04.11 14:54 | sesja 1tk6rpb8 | strona form_start: /audyt-strony | źródło: x | 363 s od wejścia | ostatnia odsłona: /dla-zespolu (15:05) | odsłon 15 | macOS 
+04.11 20:51 | sesja benow3iw | strona form_start: /wdrozenie-n8n-cena | źródło: www.google.com | 191 s od wejścia | ostatnia odsłona: /kalkulator-podatkowy (21:49) | odsłon 4 | Windows 
+05.11 01:28 | sesja i3ond91v | strona form_start: /koszyk | źródło: brak | 192 s od wejścia | ostatnia odsłona: /sprawdzenie-nip (01:33) | odsłon 13 | Android telefon
+
+Wniosek: porzucenia NIE skupiają się na jednej stronie: 3 różne formularze (/audyt-strony z X, /wdrozenie-n8n-cena z Google, /koszyk na telefonie bez odsyłacza), każde po 3-6 min od wejścia, sesje szły dalej po stronie.
