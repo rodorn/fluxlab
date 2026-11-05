@@ -1,0 +1,7 @@
+Z11 embargo 5.11 18:44, sesje ludzi po odsiewie (pomiar-kanalow), okno 7 dni przed i po commicie; 'po' niepełne, gdy zmiana młodsza niż 7 dni
+/wdrozenie-n8n-cena | zmiana 2026-11-04 ed01945a | przed 7 dni: 1 | po 0.8 dni: 0 | źródła po: -
+/n8n | zmiana 2026-11-05 02de8dc8 | przed 7 dni: 0 | po 0.8 dni: 0 | źródła po: -
+/make-vs-n8n-crm | zmiana 2026-11-04 026d06c5 | przed 7 dni: 1 | po 0.8 dni: 0 | źródła po: -
+/kalkulator-podatkowy | zmiana 2026-11-04 026d06c5 | przed 7 dni: 25 | po 0.8 dni: 4 | źródła po: (bez odsyłacza) 2, hajsmetrics 2, duckduckgo.com 1
+/strefa-wiedzy/gutschrift-ksef | zmiana 2026-10-29 a1adaac8 | przed 7 dni: 1 | po 7.0 dni: 2 | źródła po: www.google.com 2
+/strefa-wiedzy/automatyzacja-vs-zatrudnienie | zmiana 2026-10-29 7c9ec9ac | przed 7 dni: 1 | po 7.0 dni: 0 | źródła po: -

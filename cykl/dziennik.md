@@ -10347,3 +10347,19 @@ Decyzje dla stratega:
 **Dowód:** cykl/z7-porzucone-formularze-2026-11-05.txt; plan-ruchu.md Z7 i Z8 [x].
 **Dla Pawła:** Zoho 10:56: odpowiedź pomocy Profilu Firmy Google ([5-4331000041528]) czeka na przeczytanie.
 **Zostało otwarte:** Z9 od 16:00, Z10 od 17:00, Z11 od 18:00.
+
+## 2026-11-05 16:50
+**Kanał:** pomiar (plan stratega Z9).
+**Co zrobione:** Z9: lejek 12:00-16:00, 12 ludzi / 13 odsłon (bez odsyłacza 6, google 2, mail 2, hajsmetrics 1, duckduckgo 1), strony: / 8, /e-doreczenia-integracja 2, /hajs, /kalkulator-podatkowy, /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef po 1; form_start 0, lead_* 0, uruchomienia narzędzi 0, otwarcia maili b2b 59.
+**Ruch:** 24 h wg pomiar-kanalow: 57 ludzi, 101 odsłon (bez odsyłacza 36, google 11, hajsmetrics 10, YouTube 2, mail 2, x 1, instagram 1, duckduckgo 1); raport_ruchu 7 dni: b2b-email 141 (piksel), google 23, hajsmetrics 16, YouTube 2, mail 2.
+**Dowód:** cykl/plan-ruchu.md Z9 [x].
+**Dla Pawła:** GSC i Bing nadal wylogowane (stan z Z1); odpowiedź pomocy Profilu Firmy Google w Zoho z 10:56 czeka.
+**Zostało otwarte:** Z10 od 17:00, Z11 od 18:00, Z12 od 19:00, Z13 od 20:00.
+
+## 2026-11-05 18:45
+**Kanał:** pomiar (Z10, Z11 planu 5.11).
+**Co zrobione:** Z10: GSC wylogowany, bez żądań indeksowania. Z11: porównanie 7 dni przed i po ostatniej zmianie dla 6 stron w cykl/z11-embargo-2026-11-05.txt; gutschrift-ksef 1→2 sesje (obie z Google), automatyzacja-vs-zatrudnienie 1→0, cztery pozostałe zmieniane znów 4-5.11, więc okno „po” ma 0,8 dnia.
+**Ruch:** raport_ruchu doba: 274 odsłony / 128 osób (b2b-email 143, Google 23, hajsmetrics 14, YouTube 2, mail 2); 12 uruchomień narzędzi, form_start 4.
+**Dowód:** cykl/z11-embargo-2026-11-05.txt, plan-ruchu.md Z10 i Z11 [x].
+**Dla Pawła:** logowanie GSC i Bing w profilu ~/.config/chrome-google (port 9228), bez zmian od 1.11.
+**Zostało otwarte:** Z12 Bing o 19:00, Z13 o 20:00.
