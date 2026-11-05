@@ -53,7 +53,7 @@ const DANE = [
   { k: "REGON", v: "366862577" },
   { k: "VAT", v: "czynny podatnik, rachunek w wykazie Ministerstwa Finansów" },
   { k: "Adres", v: "ul. Żołnierska 10/36, 20-801 Lublin" },
-  { k: "Kontakt", v: "pawel@fluxlab.pl, 667 767 474" },
+  { k: "Kontakt", v: "pawel@fluxlab.pl, tel. 665 466 565 (Wojtek)" },
 ];
 
 export default function ONasPage() {

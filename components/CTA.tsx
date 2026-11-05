@@ -52,6 +52,12 @@ function CTAFormularz() {
           heading="Napisz, czego potrzebujesz"
           intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
         />
+        <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-gray-600 dark:text-gray-400">
+          Wolisz zadzwonić? Wojtek odbiera w godzinach pracy:{" "}
+          <a href="tel:+48665466565" className="font-semibold text-accent hover:underline">
+            665 466 565
+          </a>
+        </p>
       </div>
     </section>
   );

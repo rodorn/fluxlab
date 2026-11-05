@@ -158,6 +158,10 @@ export default function Footer() {
             </a>
             <span aria-hidden="true" className="hidden sm:inline">·</span>
             <KopiujMail adres="pawel@fluxlab.pl" className="hover:text-accent transition-colors" />
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <a href="tel:+48665466565" className="hover:text-accent transition-colors">
+              tel. 665 466 565
+            </a>
             <span className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:basis-full sm:gap-x-2">
             {PROFILE.map(([nazwa, href], i) => (
               <span key={nazwa} className="contents">
