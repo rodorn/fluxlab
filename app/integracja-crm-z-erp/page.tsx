@@ -107,14 +107,6 @@ export default function IntegracjaCrmZErp() {
       ]}
       faq={[
         {
-          q: "Co daje integracja ERP z CRM?",
-          a: "Kontrahent i dokument sprzedaży trafiają do ERP bez przepisywania. Handlowiec widzi w CRM ceny, stany i status płatności.",
-        },
-        {
-          q: "Czy warto integrować CRM z ERP?",
-          a: "Tak, jeśli ktoś dziś przepisuje dane między systemami. Sens oceniamy na bezpłatnym rozpoznaniu.",
-        },
-        {
           q: "Kto wdraża integrację CRM z ERP?",
           a: "My: rozpoznanie, wdrożenie i przekazanie kodu z dokumentacją. Jeden kierunek trwa zwykle dwa do trzech tygodni.",
         },
@@ -129,10 +121,6 @@ export default function IntegracjaCrmZErp() {
         {
           q: "Jak dane z ERP trafiają do CRM?",
           a: "Ceny, stany magazynowe i status płatności pobieramy z ERP przez jego interfejs albo z eksportu plików i zapisujemy w polach CRM. Odświeżanie co kilkanaście minut, handlowiec nic nie klika.",
-        },
-        {
-          q: "Z jakimi systemami to robicie?",
-          a: "Najczęściej Pipedrive i HubSpot. Od strony ERP liczy się, czy system ma interfejs, czy tylko pliki.",
         },
       ]}
       formId="integracja_erp"
