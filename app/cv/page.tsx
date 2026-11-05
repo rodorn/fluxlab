@@ -23,6 +23,7 @@ const EXPERIENCE = [
   {
     period: "10.2026, obecnie",
     company: "Carmore (Stermedia)",
+    url: "https://www.carmore.pl",
     role: "Technology & Offering Lead",
     points: [
       "Odpowiedzialność za technologię, automatyzację backoffice i rozwój oferty firmy leasingowej; raportowanie do COO",
@@ -34,6 +35,7 @@ const EXPERIENCE = [
   {
     period: "09.2026, obecnie",
     company: "2cW sp. z o.o.",
+    url: "https://2cw.pl",
     role: "Inżynier AI / backend (B2B)",
     points: [
       "Asystent helpdesku oparty na LLM (Python, FastAPI, OpenAI API) dla systemu obsługi zgłoszeń, od projektu po wdrożenie w Dockerze",
@@ -43,6 +45,7 @@ const EXPERIENCE = [
   {
     period: "2025, obecnie",
     company: "FluxLab",
+    url: "https://fluxlab.pl",
     role: "Założyciel",
     points: [
       "Fluxdesk: panel do prowadzenia wielu równoległych sesji agentów Claude Code z jednego okna (stan, koszty, kolejka decyzji, aplikacja mobilna)",
@@ -53,6 +56,7 @@ const EXPERIENCE = [
   {
     period: "04.2025, 10.2026",
     company: "Stermedia",
+    url: "https://stermedia.ai",
     role: "Software Engineer / Automation Engineer (Python)",
     points: [
       "Narzędzia backendowe w Pythonie wspierające procesy sprzedażowe i operacyjne Carmore",
@@ -64,6 +68,7 @@ const EXPERIENCE = [
   {
     period: "02.2022, 04.2025",
     company: "Carmore",
+    url: "https://www.carmore.pl",
     role: "Integration & Automation Specialist",
     points: [
       "Automatyzacja procesów sprzedażowych i operacyjnych (Zapier, Pipedrive, CloudTalk, Callpage, Supabase, Cloudinary)",
@@ -75,6 +80,7 @@ const EXPERIENCE = [
   {
     period: "07.2020, 02.2022",
     company: "Carberry",
+    url: "https://carberry.pl",
     role: "Automation / Software Engineer",
     points: [
       "Wewnętrzne narzędzia automatyzujące procesy operacyjne i sprzedażowe",
@@ -335,7 +341,14 @@ export default function CVPage() {
                     {job.period}
                   </p>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                    {job.company}
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent underline decoration-gray-300 dark:decoration-gray-700 underline-offset-4 transition-colors"
+                    >
+                      {job.company}
+                    </a>
                   </h3>
                   <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">
                     {job.role}
