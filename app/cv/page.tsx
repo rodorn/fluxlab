@@ -207,7 +207,7 @@ const CONTACT = [
   { label: "667 767 474", href: "tel:+48667767474" },
   { label: "fluxlab.pl", href: "https://fluxlab.pl" },
   { label: "gitlab.com/PawelIwanek", href: "https://gitlab.com/PawelIwanek" },
-  { label: "github.com/rodorn", href: "https://github.com/rodorn" },
+  { label: "github.com/rodorn: 32 własne repo", href: "https://github.com/rodorn" },
 ];
 
 function SectionTitle({ children }: { children: string }) {
