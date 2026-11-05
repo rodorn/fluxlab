@@ -44,6 +44,11 @@ const steps = [
 
 const faq = [
   {
+    question: "Ile kosztuje audyt Google Ads?",
+    answer:
+      "69 zł za mini-audyt, wynik w 3 dni robocze. Gdy do odzyskania wyjdzie mniej niż 500 zł miesięcznie, zwracamy całą kwotę.",
+  },
+  {
     question: "Czy musisz mieć dostęp do naszego konta Google Ads?",
     answer:
       "Wystarczy dostęp tylko do odczytu albo eksport raportu haseł z 30 do 90 dni.",
