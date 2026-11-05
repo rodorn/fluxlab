@@ -5,43 +5,71 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import CountUp from "@/components/CountUp";
 
 export const metadata: Metadata = {
-  title: "Paweł Iwanek, Software Engineer / Automation Engineer",
+  title: "Paweł Iwanek, Technology & Offering Lead / Inżynier aplikacji AI",
   description:
-    "Interaktywne CV. Software Engineer z kilkuletnim doświadczeniem w Pythonie, automatyzacji procesów i przetwarzaniu danych.",
+    "Interaktywne CV. Technology & Offering Lead w Carmore, inżynier automatyzacji i aplikacji AI (Python, LLM, integracje systemów), założyciel FluxLab.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/cv" },
 };
 
 const STATS = [
-  { value: "5+", label: "lat doświadczenia" },
-  { value: "3", label: "firmy" },
-  { value: "3", label: "kluczowe projekty" },
+  { value: "6+", label: "lat doświadczenia" },
+  { value: "4", label: "firmy" },
+  { value: "6", label: "kluczowe projekty" },
   { value: "30000+", label: "rekordów w zbudowanej bazie" },
 ];
 
 const EXPERIENCE = [
   {
-    period: "04.2025, obecnie",
+    period: "10.2026, obecnie",
+    company: "Carmore (Stermedia)",
+    role: "Technology & Offering Lead",
+    points: [
+      "Odpowiedzialność za technologię, automatyzację backoffice i rozwój oferty firmy leasingowej; raportowanie do COO",
+      "Integracje CRM (Pipedrive), telefonii (CloudTalk), formularzy i baz danych (Supabase); scrapery zasilające bazę pojazdów",
+      "Raporty sprzedażowe i kosztowe na danych GA4 i hurtowni SQL; agenci AI w obsłudze ofert, skrzynek i raportów dziennych",
+      "Współpraca z software housem i partnerami SEM/SEO; koordynacja działu ofert",
+    ],
+  },
+  {
+    period: "09.2026, obecnie",
+    company: "2cW sp. z o.o.",
+    role: "Inżynier AI / backend (B2B)",
+    points: [
+      "Asystent helpdesku oparty na LLM (Python, FastAPI, OpenAI API) dla systemu obsługi zgłoszeń, od projektu po wdrożenie w Dockerze",
+      "Rozwój systemu WMS (NestJS, TypeScript) dla centrum logistycznego: proces pakowania, statusy, testy na stage przed wysyłką",
+    ],
+  },
+  {
+    period: "2025, obecnie",
+    company: "FluxLab",
+    role: "Założyciel",
+    points: [
+      "Fluxdesk: panel do prowadzenia wielu równoległych sesji agentów Claude Code z jednego okna (stan, koszty, kolejka decyzji, aplikacja mobilna)",
+      "FluxCRM: CRM z agentem, który sam zakłada leady ze skrzynek i portali, odpowiada klientom i liczy ważoną wartość lejka",
+      "Wdrożenia dla klientów: automatyzacje, integracje, strony, system prowizji dla pośredników finansowych",
+    ],
+  },
+  {
+    period: "04.2025, 10.2026",
     company: "Stermedia",
     role: "Software Engineer / Automation Engineer (Python)",
     points: [
-      "Projektowanie i implementacja narzędzi backendowych w Pythonie wspierających procesy sprzedażowe i operacyjne",
-      "Budowa i utrzymanie integracji systemów przez REST API i webhooki, w tym CRM Pipedrive",
-      "Projektowanie i utrzymanie pipeline'ów przetwarzania danych: scraping, walidacja, normalizacja, synchronizacja",
-      "Tworzenie narzędzi raportowych i skryptów analitycznych skracających czas raportowania",
-      "Refaktoryzacja i stabilizacja rozwiązań produkcyjnych",
+      "Narzędzia backendowe w Pythonie wspierające procesy sprzedażowe i operacyjne Carmore",
+      "Integracje systemów przez REST API i webhooki, w tym CRM Pipedrive",
+      "Pipeline'y przetwarzania danych: scraping, walidacja, normalizacja, synchronizacja",
+      "Narzędzia raportowe i skrypty analityczne skracające czas raportowania",
     ],
   },
   {
     period: "02.2022, 04.2025",
     company: "Carmore",
-    role: "Software Engineer / Automation Engineer (Python)",
+    role: "Integration & Automation Specialist",
     points: [
-      "Automatyzacja procesów sprzedażowych i operacyjnych z wykorzystaniem Pythona",
-      "Rozwój i utrzymanie integracji między CRM, systemami ofertowymi i narzędziami komunikacyjnymi",
-      "Implementacja skryptów do masowego przetwarzania, walidacji i aktualizacji danych",
+      "Automatyzacja procesów sprzedażowych i operacyjnych (Zapier, Pipedrive, CloudTalk, Callpage, Supabase, Cloudinary)",
+      "Integracje między CRM, systemami ofertowymi i narzędziami komunikacyjnymi",
+      "Skrypty do masowego przetwarzania, walidacji i aktualizacji danych; koszt pozyskania sprzedaży z korektą luk atrybucji",
       "Rozwiązywanie problemów produkcyjnych w krytycznych procesach biznesowych",
-      "Udział w projektowaniu rozwiązań technicznych wspierających rozwój produktu",
     ],
   },
   {
@@ -49,7 +77,7 @@ const EXPERIENCE = [
     company: "Carberry",
     role: "Automation / Software Engineer",
     points: [
-      "Tworzenie wewnętrznych narzędzi automatyzujących procesy operacyjne i sprzedażowe",
+      "Wewnętrzne narzędzia automatyzujące procesy operacyjne i sprzedażowe",
       "Integracje systemów oraz skrypty do przetwarzania danych",
       "Samodzielna realizacja zadań end-to-end w środowisku startupowym",
     ],
@@ -58,110 +86,86 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
-    name: "System scrapowania i selekcji ofert (Otomoto)",
-    desc: "System scrapujący oferty, przetwarzanie i analiza kilkunastu tysięcy ofert dziennie, ocena atrakcyjności, synchronizacja danych i generowanie zadań dla zespołu.",
-    tech: [
-      "beautifulsoup4",
-      "playwright",
-      "selenium",
-      "httpx",
-      "openpyxl",
-      "requests",
-      "pydantic",
-      "tqdm",
-    ],
+    name: "Asystent helpdesku oparty na LLM (2cW)",
+    desc: "Agent odpowiadający na zgłoszenia użytkowników systemu, z narzędziami do odczytu stanu i bazą wiedzy; FastAPI, OpenAI API, wdrożenie w Dockerze.",
+    tech: ["fastapi", "openai", "docker", "pydantic", "pytest"],
   },
   {
-    name: "System anonimizacji zdjęć ofertowych (Photo Anonymizer)",
-    desc: "Wykrywanie pojazdów, tablic rejestracyjnych i reklam; blurring i inpainting przy użyciu YOLO oraz segment-anything.",
-    tech: [
-      "opencv",
-      "Pillow",
-      "cloudinary",
-      "torch",
-      "segment-anything",
-      "diffusers",
-      "ultralytics",
-      "transformers",
-      "easyocr",
-    ],
+    name: "Fluxdesk, orkiestracja agentów Claude Code",
+    desc: "Panel do prowadzenia kilkudziesięciu równoległych sesji agentów z jednego okna: stan, koszty, kolejka decyzji, kalendarz, aplikacja mobilna. Mój główny sposób pracy od 2026.",
+    tech: ["Next.js", "TypeScript", "Node.js", "Claude Code", "Kotlin"],
+  },
+  {
+    name: "FluxCRM, CRM z agentem obsługi leadów",
+    desc: "Agent zakłada leady ze skrzynek i portali, klasyfikuje wiadomości, odpowiada w języku klienta, liczy ważoną wartość lejka; produkcja od 2026.",
+    tech: ["python", "sqlite", "openai", "fastapi", "playwright"],
+  },
+  {
+    name: "edoreczenia-klient (open source, MIT)",
+    desc: "Biblioteka Python do API e-Doręczeń UA 5.0 z pełnym zestawem testów; podstawa oferty integracji e-Doręczeń dla instytucji finansowej.",
+    tech: ["python", "httpx", "pydantic", "pytest"],
+  },
+  {
+    name: "System scrapowania i selekcji ofert (Otomoto)",
+    desc: "System scrapujący oferty, przetwarzanie i analiza kilkunastu tysięcy ofert dziennie, ocena atrakcyjności, synchronizacja danych i generowanie zadań dla zespołu.",
+    tech: ["beautifulsoup4", "playwright", "httpx", "pydantic", "openpyxl"],
   },
   {
     name: "Baza danych wersji modeli samochodów",
     desc: "Budowa kompletnej bazy na podstawie danych z internetu (30000+ rekordów): pobieranie, normalizacja i walidacja danych, LLM function calling, edycje bulk SQL.",
-    tech: [
-      "fastapi",
-      "supabase",
-      "openai",
-      "numpy",
-      "pandas",
-      "openpyxl",
-      "httpx",
-      "pytest",
-    ],
+    tech: ["fastapi", "supabase", "openai", "pandas", "pytest"],
   },
 ];
 
 const SKILLS = [
   {
-    category: "Web Frameworks & Servers",
-    items: ["fastapi", "uvicorn", "flask", "websockets"],
-  },
-  {
-    category: "Bazy danych & ORM",
-    items: ["SQL", "supabase", "PostgreSQL", "SQLAlchemy", "MongoDB"],
-  },
-  {
-    category: "AI / Machine Learning",
+    category: "AI / LLM",
     items: [
-      "torch",
-      "transformers",
-      "ultralytics",
-      "easyocr",
-      "segment-anything",
+      "OpenAI API",
+      "Claude Code (agenci z narzędziami)",
+      "prompt engineering",
+      "RAG i embeddingi",
+      "orkiestracja wielu agentów",
+      "ewaluacja odpowiedzi",
       "langchain",
       "langgraph",
-      "tensorflow",
-      "scikit",
     ],
   },
   {
-    category: "Data Science & Analiza",
-    items: ["numpy", "pandas", "openpyxl"],
+    category: "Backend",
+    items: ["Python", "fastapi", "NestJS", "Node.js", "pydantic", "pytest"],
   },
   {
-    category: "Web Scraping",
-    items: [
-      "beautifulsoup4",
-      "lxml",
-      "playwright",
-      "selenium",
-      "aiohttp",
-      "requests",
-      "httpx",
-      "urllib3",
-      "tqdm",
-    ],
+    category: "Bazy danych",
+    items: ["SQL", "PostgreSQL", "supabase", "SQLite", "SQLAlchemy"],
   },
   {
-    category: "Walidacja & Konfiguracja",
-    items: ["pydantic", "python-dotenv", "easydict", "pytest", "black"],
+    category: "Dane i scraping",
+    items: ["pandas", "numpy", "playwright", "beautifulsoup4", "httpx", "ETL"],
+  },
+  {
+    category: "Integracje",
+    items: ["REST", "GraphQL", "webhooki", "Zapier", "Make", "n8n", "Pipedrive", "HubSpot", "CloudTalk"],
+  },
+  {
+    category: "Computer vision",
+    items: ["torch", "ultralytics", "opencv", "easyocr", "segment-anything"],
   },
   {
     category: "Frontend",
-    items: ["React", "TypeScript", "Next.js", "Tailwind", "Vite"],
+    items: ["React", "TypeScript", "Next.js", "Tailwind"],
   },
 ];
 
 const STACK = [
-  "JetBrains IDE",
+  "Claude Code i Fluxdesk",
   "Linux (Arch)",
-  "Claude Code (+speckit)",
-  "Neovim (podstawy)",
   "Docker",
+  "systemd",
+  "GitLab CI",
+  "Vercel",
   "Git",
-  "GitLab",
-  "GitHub",
+  "Neovim",
 ];
 
 const LANGUAGES = [
@@ -173,7 +177,7 @@ const TRAINING = [
   { name: "AI_devs 2", date: "08.2024" },
   { name: "AI_devs 3", date: "03.2025" },
   { name: "Boot.dev", date: "09.2025" },
-  { name: "AI_devs 4", date: "03.2026" },
+  { name: "AI_devs 4, ukończony", date: "2026" },
 ];
 
 const INTERESTS = [
@@ -193,11 +197,11 @@ const INTERESTS = [
 
 const CONTACT = [
   { label: "Warszawa", href: null },
-  { label: "iwanekpawel55@gmail.com", href: "mailto:iwanekpawel55@gmail.com" },
+  { label: "pawel@fluxlab.pl", href: "mailto:pawel@fluxlab.pl" },
   { label: "667 767 474", href: "tel:+48667767474" },
   { label: "fluxlab.pl", href: "https://fluxlab.pl" },
   { label: "gitlab.com/PawelIwanek", href: "https://gitlab.com/PawelIwanek" },
-  { label: "carcost.netlify.app", href: "https://carcost.netlify.app" },
+  { label: "github.com/rodorn/edoreczenia-klient", href: "https://github.com/rodorn/edoreczenia-klient" },
 ];
 
 function SectionTitle({ children }: { children: string }) {
@@ -246,19 +250,18 @@ export default function CVPage() {
 
             <div>
               <p className="section-label mb-3 animate-fade-up-1">
-                Software Engineer · Automation Engineer
+                Technology &amp; Offering Lead · Inżynier aplikacji AI
               </p>
               <h1 className="display-xl text-gray-900 dark:text-white mb-5 animate-fade-up-2">
                 Paweł Iwanek
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mb-7 animate-fade-up-3">
-                Software Engineer z kilkuletnim doświadczeniem w projektowaniu,
-                wdrażaniu i utrzymaniu systemów backendowych w Pythonie.
-                Specjalizuję się w automatyzacji procesów biznesowych,
-                przetwarzaniu danych na dużą skalę oraz integracjach systemów
-                zewnętrznych. Chętnie sięgam po algorytmy, metody numeryczne i
-                rozwiązania oparte na matematyce tam, gdzie złożoność problemu
-                tego wymaga.
+                Od sześciu lat buduję automatyzacje i integracje dla firm, od dwóch lat
+                aplikacje oparte na modelach językowych: asystenta helpdesku,
+                agentów obsługujących leady i skrzynki, orkiestrację wielu agentów
+                AI w codziennej pracy. Od października 2026 prowadzę technologię i
+                ofertę w Carmore. Rozmawiam z klientem o procesie, projektuję
+                rozwiązanie i dowożę działający system.
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-2 animate-fade-up-4">
                 {CONTACT.map((c) =>
