@@ -29,6 +29,11 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
+    question: "Ile kosztuje mail firmowy?",
+    answer:
+      "Google Workspace Business Starter 31,50 zł, Microsoft 365 Business Basic 6,07 €, a Zoho Mail Lite 0,90 € netto miesięcznie za osobę przy umowie rocznej. Do tego opłata za domenę.",
+  },
+  {
     question: "Czy da się mieć mail firmowy za darmo?",
     answer:
       "Zoho Mail ma darmowy plan do 5 osób, ale bez IMAP, więc tylko w przeglądarce i aplikacji Zoho. Domenę i tak trzeba opłacić.",
