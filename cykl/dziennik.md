@@ -10166,3 +10166,142 @@ Decyzje dla stratega:
 **Dowód:** commit c890be05; https://fluxlab.pl/strefa-wiedzy/proforma-ksef 200 z nowym `<title>` i description; IndexNow Yandex 200, Naver 200 (wspólny 403). FL_SEO nie odpisał „w toku”, plik bez zmian od 21.10. Build, SPOJNOSC OK, JAKOSC OK.
 **Dla Pawła:** 
 **Zostało otwarte:** Z8 od 14:00 (lejek dnia), dalej Z9-Z19 według godzin.
+
+## 2026-11-04 14:47
+**Kanał:** pomiar (plan ruchu Z8, lejek dnia).
+**Co zrobione:** Z8: od 08:30 51 sesji po odsiewie, z czego 22 to same otwarcia maili b2b; na stronę weszło 29 osób (bez odsyłacza 14, hajsmetrics 11, t.co 2, x 1, Google 1). Oba dzisiejsze kamienie (numeracja-faktur-ksef-2027, proforma-ksef) 0 wejść, /e-doreczenia-integracja 1 z Google o 11:09, lead_* 0.
+**Ruch:** ostatnia doba 198 odsłon, 127 osób; źródła: b2b-email 119, www.google.com 12, hajsmetrics 12, m.facebook.com 4, x 2.
+**Dowód:** cykl/z8-pomiar-2026-11-04.txt, Z8 w plan-ruchu.md oznaczone [x].
+**Dla Pawła:** 
+**Zostało otwarte:** Z9 od 15:00 (kontrola obu kamieni), dalej Z10-Z19 według godzin.
+
+## 2026-11-04 16:02
+**Kanał:** Google (wykonawca planu, Z9 i Z10).
+**Co zrobione:** Z9: meta obu kamieni na produkcji poprawne (200, nowe title/description/og:title, canonical bez zmian, lastmod bez zmian: numeracja 18.10, proforma 21.10). Z10: propozycja dwóch linków do /strefa-wiedzy/faktury-kosztowe-z-ksef wysłana do FL_SEO (data-wystawienia-faktury-ksef, faktura-gdy-ksef-nie-dziala), bez zmian w kodzie.
+**Ruch:** doba 231 odsłon, 126 osób; źródła: b2b-email 116 (otwarcia maili, nie ludzie), google 22, t.co 14, hajsmetrics 12, m.facebook.com 4.
+**Dowód:** cykl/plan-ruchu.md Z9, Z10; wiadomość `sesja napisz FL_SEO` 16:00 (w skrzynce, dojdzie po turze Pawła).
+**Dla Pawła:**
+**Zostało otwarte:** Z11 od 17:00, Z12 od 18:00, Z13 od 19:00, Z14 od 19:30 (GSC wylogowany), Z15 od 20:30, Z16 od 22:30, Z17-Z19 5.11.
+
+## 2026-11-04 17:05
+**Kanał:** pomiar (plan Z11, Google).
+**Co zrobione:** rozpisano 14 sesji z Google z wejściem na / z 7 dni: 9 z 14 przegląda dalej (3× /e-doreczenia-integracja, 1 lead 3.11), 5 kończy na jednej odsłonie, wejście zawsze na /, czyli to wyszukiwanie marki po mailach b2b, nie nowe frazy usługowe.
+**Ruch:** doba 232 odsłony, 126 osób; źródła: b2b-email 118, www.google.com 21, t.co 14, hajsmetrics 12, m.facebook.com 4; uruchomienia narzędzi 3, form_start 1.
+**Dowód:** cykl/z11-google-glowna-2026-11-04.txt
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (od 18:00), Z13 (19:00), Z14 (19:30), Z15 (20:30), Z16 (22:30), Z17-Z19 w nocy 5.11.
+
+## 2026-11-04 17:43
+**Kanał:** brak (wykonawca planu).
+**Co zrobione:** nic, czekam na Z12 o 18:00; wszystkie otwarte zadania (Z12-Z19) mają warunek godziny, który jeszcze nie minął, a plan zakazuje zmian poza nim.
+**Ruch:** doba 229 odsłon, 124 osoby (b2b-email 116, google 20, t.co 14, hajsmetrics 12, m.facebook.com 4); tydzień 837 / 429; uruchomienia narzędzi 3.
+**Dowód:** brak.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (18:00), Z13 (19:00), Z14 (19:30), Z15 (20:30), Z16 (22:30), Z17-Z19 (5.11).
+
+## 2026-11-04 18:44
+**Kanał:** pomiar (Z12, poczta i wysyłki).
+**Co zrobione:** Z12: przegląd Resend i Zoho z 24 h; nowych zapytań o usługę 0, więc bez wiadomości do FL_marketing.
+**Ruch:** ostatnia doba 232 odsłony, 125 osób; źródła: b2b-email 116, google 20, hajsmetrics 14, t.co 14, m.facebook.com 4; uruchomienia narzędzi 3.
+**Dowód:** Resend 24 h 0 wysłanych; Zoho INBOX 22, Spam 0. Ludzie: XTB (Witos, Wróbel, sesja FL_XTB), FINREAL Jagielska ×2 (FL_finreal), HAJS METRICS ×2 (FL_hajs). 2 zwroty z outreachu USA (sentinelfamilyinsurance.com, wozniakgutters.com, FL_outreachUSA), 4 zwroty testowe fluxlab-test@example.com, reszta automaty i reklamy. Linia Z12 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (od 19:00), Z14 (19:30), Z15 (20:30), Z16 (22:30), Z17-Z19 w nocy 5.11.
+
+## 2026-11-04 19:45
+**Kanał:** pomiar (Z13, Z14 planu stratega).
+**Co zrobione:** Z13: pomiar wieczorny od 14:00 zapisany; Z14: GSC nadal wylogowany, nowych danych z Search Console brak.
+**Ruch:** ostatnia doba 249 odsłon, 129 osób (raport_ruchu); po odsiewie 62 sesje: bez odsyłacza 39, Google 11, hajsmetrics 10, t.co 3, x 2, m.facebook.com 1. Od 14:00: 21 sesji, Google 6, e-doreczenia-integracja 2 wejścia z Google, lead_* 0, form_start 1 (/audyt-strony).
+**Dowód:** cykl/z13-pomiar-2026-11-04.txt; GSC: przekierowanie na accounts.google.com/v3/signin/identifier.
+**Dla Pawła:** zaloguj profil ~/.config/chrome-google (port 9228) do Search Console i Bing Webmasters; bez tego Z17 i Z18 jutro też skończą się linijką.
+**Zostało otwarte:** Z15 od 20:30 (na danych GSC z 31.10), Z16 od 22:30, Z17-Z19 5.11.
+
+## 2026-11-04 20:48
+**Kanał:** Google (Z15, lekkie: kandydat dla stratega 5.11).
+**Co zrobione:** wybrany kandydat meta na 5.11: przy ścisłych kryteriach wszystkie 8 stron odpada (embargo, PDF), po poluzowaniu zostaje /strefa-wiedzy/zapier-vs-make (0 klik., 17 wyśw., poz. 6,2 w GSC 23-29.10), z produkcyjnym title, description i H1.
+**Ruch:** ostatnia doba 260 odsłon, 131 osób (+168% wobec średniej 97); źródła: b2b-email 116 (piksel, nie ludzie), www.google.com 31, hajsmetrics 18, t.co 14, m.facebook.com 4; X 4 sesje; uruchomienia narzędzi 8.
+**Dowód:** cykl/z15-kandydat-2026-11-04.txt.
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster (wylogowane czwartą dobę), bez tego nie widać fraz kandydata.
+**Zostało otwarte:** Z16 bilans od 22:30, Z17-Z19 w nocy.
+
+## 2026-11-04 22:50
+**Kanał:** pomiar (Z16, bilans planu).
+**Co zrobione:** Bilans planu 2026-11-04/11-05 poniżej.
+**Ruch:** raport_ruchu: 270 odsłon, 132 osoby (z otwarciami maili). Po odsiewie pomiar-kanalow: 66 sesji ludzi, 124 odsłony; bez odsyłacza 41, hajsmetrics 14, Google 12, t.co 3, x 2, YouTube 1.
+**Dowód:** cykl/plan-ruchu.md Z16; `python3 cykl/pomiar-kanalow.py` 22:43.
+**Dla Pawła:** GSC i Bing wylogowane od rana (Z1), bez tego Z17 i Z18 tylko z licznika: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console i https://www.bing.com/webmasters/ .
+**Zostało otwarte:** Z17 od 5.11 01:00, Z18 od 04:00, Z19 od 05:30.
+
+### Bilans planu 2026-11-04/11-05
+
+| Kanał, 24 h | 3.11 | 4.11 |
+|---|---|---|
+| Google | 14 | 12 |
+| Bing | 1 | 0 |
+| DDG | 0 | 0 |
+| chatgpt | 1 | 0 |
+| social (t.co, x, YouTube) | 1 | 6 |
+| b2b | 0 | 0 |
+| hajsmetrics (partner) | 0 | 14 |
+| leady | 1 | 0 (form_start 2: /audyt-strony, /wdrozenie-n8n-cena) |
+| uruchomienia | 3 | 12 (kalkulator podatkowy 11, audyt 1) |
+
+| Zad. | Stan | Wynik |
+|---|---|---|
+| Z1 | x | timer enabled, rytm utrzymaj, GSC nie, Bing nie |
+| Z2 | x | FL_SEO powiadomione, stary title zapisany |
+| Z3 | x | meta numeracja-faktur-ksef-2027, 31480c79, IndexNow |
+| Z4 | x | sitemap 2, GSC wylogowany |
+| Z5 | x | z5-proforma-meta, FL_SEO powiadomione |
+| Z6 | x | /e-doreczenia-integracja 30 dni: 38 sesji, 1 lead (Google, 3.11) |
+| Z7 | x | meta proforma-ksef, c890be05, IndexNow |
+| Z8 | x | lejek 08:30-14:00: 29 wizyt, kamienie 0 |
+| Z9 | x | meta obu kamieni poprawne na produkcji |
+| Z10 | x | propozycja 2 linków do faktury-kosztowe-z-ksef dla FL_SEO |
+| Z11 | x | Google na /: 14 sesji, wzorzec marki po mailu b2b |
+| Z12 | x | Resend 0, Zoho bez nowych zapytań |
+| Z13 | x | lejek 14:00-19:45: 21 sesji, kamienie 0 |
+| Z14 | x | GSC wylogowany, plików nie ma |
+| Z15 | x | kandydat /strefa-wiedzy/zapier-vs-make (17 wyśw., poz. 6,2) |
+| Z16 | x | ten wpis |
+| Z17-Z19 | otwarte | od 5.11 01:00 / 04:00 / 05:30 |
+
+Decyzje dla stratega:
+- Z3 i Z7: wdrożone (31480c79, c890be05), wejścia ludzi w 24 h: numeracja-faktur-ksef-2027 0, proforma-ksef 0. Za wcześnie na ocenę, Google nie przeskanował (GSC wylogowany, brak daty skanu).
+- Z6: /e-doreczenia-integracja to jedyna strona z leadem z wyszukiwarki; dziś 3 sesje z Google + 1 bez odsyłacza, bez leada.
+- Z11: wzrost Google to wyszukiwania marki po mailach b2b (zawsze wejście na /), nie nowe frazy.
+- Z15: kandydat na następny kamień /strefa-wiedzy/zapier-vs-make.
+- Z10: FL_SEO wykonało jeden z dwóch linków, commit 0cf2f8f2 (z data-wystawienia-faktury-ksef); link z faktura-gdy-ksef-nie-dziala nie wszedł, odpowiedzi tekstem brak.
+- Logowanie: GSC nie, Bing nie (cały dzień), więc Z17 i Z18 pójdą wariantem z licznika.
+- Z17 (5.11 02:45): GSC nadal wylogowany (accounts.google.com, „Zaloguj się”), raport Strony i Mapy witryn nieodczytany; ostatnie znane dane 23.10, 165/212.
+- Z18 (5.11 04:50): GSC wylogowany, wariant z licznika; wejścia ludzi od 2.11: numeracja-faktur-ksef-2027 0, proforma-ksef 0, faktury-kosztowe-z-ksef 0.
+
+## 2026-11-05 00:43
+**Kanał:** brak (żadne zadanie planu niedostępne).
+**Co zrobione:** czekam na Z17 o 01:00 (Z18 04:00, Z19 05:30); zgodnie z planem nic poza wpisem.
+**Ruch:** ostatnia doba 269 odsłon, 131 osób (+170% wobec średniej 99,6); tydzień 817 odsłon, 419 osób. Najczęściej: / (48), /kalkulator-podatkowy (45), /mail/1f87aca121 (11), /mail/144429db12 (10), /audyt-strony (10). X 4 sesje, YouTube 1, LinkedIn 0, Threads 0. Uruchomienia narzędzi 12.
+**Dowód:** raport_ruchu.py 00:43; źródła: b2b-email (114), www.google.com (33), hajsmetrics (22), t.co (14), x (5).
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (od 01:00), Z18 (od 04:00), Z19 (od 05:30).
+
+## 2026-11-05 02:45
+**Kanał:** Google (Z17, pomiar).
+**Co zrobione:** Z17: GSC wylogowany (przekierowanie na accounts.google.com), więc zgodnie z planem tylko linijka pod bilansem Z16, bez żądań.
+**Ruch:** ostatnia doba 295 odsłon, 131 osób (+197% wobec średniej 99,3). Najczęściej: / (51), /kalkulator-podatkowy (45), /produkty (23), /mail/1f87aca121 (11), /mail/144429db12 (10). X 4 sesje, YouTube 1, LinkedIn 0, Threads 0. Uruchomienia narzędzi 14.
+**Dowód:** raport_ruchu.py 02:43; źródła: b2b-email (113), www.google.com (33), hajsmetrics (23), t.co (14), x (5). Linijka Z17 w sekcji „Bilans planu 2026-11-04/11-05”.
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228), https://search.google.com/search-console, oraz Bing Webmaster https://www.bing.com/webmasters/ ; bez tego Z18 i pomiary indeksowania idą wariantem z licznika.
+**Zostało otwarte:** Z18 (od 04:00), Z19 (od 05:30).
+
+## 2026-11-05 04:50
+**Kanał:** Google (Z18, pomiar).
+**Co zrobione:** Z18: GSC wylogowany, więc wariant z licznika: od 2.11 zero wejść ludzi na numeracja-faktur-ksef-2027, proforma-ksef i faktury-kosztowe-z-ksef; linijka pod bilansem Z16.
+**Ruch:** ostatnia doba 294 odsłony, 130 osób (+195% wobec średniej 99,6); źródła: b2b-email 113, www.google.com 33, hajsmetrics 23, t.co 14, x 5. Uruchomienia narzędzi 14.
+**Dowód:** raport_ruchu.py 04:43; linijka Z18 w cykl/plan-ruchu.md i w sekcji „Bilans planu 2026-11-04/11-05”; zapytanie do ruch.sqlite 04:50.
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228), https://search.google.com/search-console, oraz Bing Webmaster https://www.bing.com/webmasters/
+**Zostało otwarte:** Z19 (od 05:30).
+
+## Strategia dobowa 2026-11-05
+**Wynik doby (do 06:15):** 62 osoby po odsiewie (44), tydzień 187. HAJS METRICS 15 (17 sesji na /kalkulator-podatkowy, 9 z uruchomieniem), Google 13, X/t.co 5, YouTube 1, Bing 0. Leady 0, form_start 4. Resend 24 h 0, Zoho 0 zapytań od obcych, 6 zwrotów z wysyłek innej sesji.
+**Kanały:** HAJS najlepszy (prowadzi FL_hajs, nie dotykamy); Google: kamienie Z3/Z7 z 4.11 0 wejść, bez GSC nie da się sprawdzić skanu; Bing 3 doby 0 i wylogowany: 0 h; zimny outreach nadal wyłączony.
+**Decyzja:** budżet „wstrzymaj” (prognoza 197%), więc plan 18 zadań lekkich, 0 zmian treści, 0 kamieni. Kandydat zapier-vs-make przesunięty do 7.11 (zmiana FL_SEO ce57983d 4.11). Embargo /e-doreczenia-integracja do 12.11.
+**Mail:** „FluxLab ruch, plan na 5.11: 62 osoby, 15 z HAJS METRICS” wysłany 06:31 na iwanekpawel55@gmail.com.
+**Dla Pawła:** logowanie GSC i Bing (profil ~/.config/chrome-google), decyzja o budżecie FL_rolki i fluxlab-meta, zimny outreach.
