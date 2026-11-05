@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const STATS = [
   { value: "6+", label: "lat doświadczenia" },
-  { value: "4", label: "firmy" },
+  { value: "32", label: "własne repo na GitHubie" },
   { value: "6", label: "kluczowe projekty" },
   { value: "30000+", label: "rekordów w zbudowanej bazie" },
 ];
