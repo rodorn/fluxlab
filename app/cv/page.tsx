@@ -5,7 +5,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import CountUp from "@/components/CountUp";
 
 export const metadata: Metadata = {
-  title: "Paweł Iwanek, Technology & Offering Lead / Inżynier aplikacji AI",
+  title: "Paweł Iwanek, Technology & Offering Lead, inżynier AI",
   description:
     "Interaktywne CV. Technology & Offering Lead w Carmore, inżynier automatyzacji i aplikacji AI (Python, LLM, integracje systemów), założyciel FluxLab.",
   robots: { index: false, follow: false },
