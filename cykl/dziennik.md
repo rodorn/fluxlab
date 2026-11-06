@@ -10459,3 +10459,29 @@ Decyzje dla stratega:
 **Kanały:** pomiar 13 h 5.11 dał 0 wejść: dziś 6 h. Budżet „utrzymaj” (36%, prognoza 92%): 3 kamienie (Z3 link biura rachunkowe do /e-doreczenia-integracja, Z9 meta kandydata z Z2, Z15 meta kiedy-odliczyc-vat po embargu) z IndexNow. Zimny outreach nadal wyłączony: karta decyzji f755c6e1 (termin 13.11).
 **Plan:** 18 zadań, cykl/plan-ruchu.md. Z18 z planu 5.11 zastąpiony tym wpisem.
 **Mail:** „FluxLab ruch, plan na 6.11: 44 osoby w dobie, 208 w tygodniu” wysłany 06:22 na iwanekpawel55@gmail.com.
+
+## 2026-11-06 06:43
+**Kanał:** brak (plan stratega 6.11 obecny, 06:19).
+**Co zrobione:** nic, czekam na Z1 o 07:00; żadne zadanie planu nie ma jeszcze minionej godziny startu.
+**Ruch:** ostatnia doba 204 odsłony, 109 osób (+74% wobec średniej 117,6); tydzień 943 odsłony, 465 osób. Źródła: b2b-email 139, hajsmetrics 6, google.com 2, duckduckgo.com 2, mail 2. YouTube 1 sesja, Threads 1, LinkedIn 0, X 0. Uruchomienia narzędzi: 1.
+**Dowód:** brak.
+**Dla Pawła:**
+**Zostało otwarte:** Z1–Z18 z cykl/plan-ruchu.md, pierwsze Z1 o 07:00.
+
+<!-- WYSLANO 2026-11-06 07:04 -->
+
+## 2026-11-06 08:58
+**Kanał:** pomiar oraz Google (plan ruchu 6.11, Z1 i Z2).
+**Co zrobione:** Z1 stan: timer fluxlab-strona enabled, budżet „utrzymaj” (prognoza 91%), GSC wylogowany, Bing Webmaster wylogowany; Z2 wybrany kandydat na kamień Z9: /strefa-wiedzy/gutschrift-ksef z propozycją title i description pod pytanie „czy Gutschrift trafia do KSeF”.
+**Ruch:** raport_ruchu doba 204 odsłony / 109 osób (138 to piksel b2b-email), źródła: b2b-email 138, hajsmetrics 6, google 4, duckduckgo 2, m.facebook 2; po odsiewie (pomiar-kanalow) 42 ludzi, z odsyłaczem 12: hajsmetrics 4, google 4, duckduckgo 2, mail 2, youtube 1, bing 1.
+**Dowód:** cykl/z2-kandydat-2026-11-06.txt; wejścia z wyszukiwarek 14/7 dni: gutschrift-ksef 3/1, zdrowotna-jdg 2/0, faktura-vat-rr 1/1.
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), szósta doba wylogowania: https://search.google.com/search-console i https://www.bing.com/webmasters/home
+**Zostało otwarte:** Z3 (link e-Doręczeń, od 09:00), dalej Z4-Z18 według godzin.
+
+## 2026-11-06 11:07
+**Kanał:** Google i Bing (plan Z3) oraz narzędzia (plan Z4).
+**Co zrobione:** link „adres do e-Doręczeń” na /automatyzacja-dla-biur-rachunkowych prowadzi teraz wprost do /e-doreczenia-integracja (jedyna strona z leadem z wyszukiwarki); lejek koszyka rozpisany po sesjach.
+**Ruch:** ostatnia doba 186 odsłon, 98 osób (+55% wobec średniej 120); źródła: b2b-email 126, hajsmetrics 4, google 4, m.facebook.com 3, duckduckgo 2, threads 1; uruchomienia narzędzi 1.
+**Dowód:** commit 0a5d1faf, produkcja `href="/e-doreczenia-integracja">adres do e-Doręczeń`; IndexNow Yandex 200, Naver 200, wspólny 403; cykl/z4-koszyk-2026-11-06.txt: 12 dodań = 2 sesje z jednego Firefoksa na Androidzie bez odsyłacza, 1 doszła do płatności, wycieku 11 z 12 nie ma.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (mail, od 11:00), dalej Z6-Z18 wg godzin; indexnow.mjs bez argumentu nie widzi zmian, bo lastmod tej strony w mapie się nie zmienia, przy kamieniach Z9/Z15 zgłaszać adres ręcznie.

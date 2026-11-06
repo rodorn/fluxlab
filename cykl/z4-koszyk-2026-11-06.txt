@@ -1,0 +1,8 @@
+Z4 lejek koszyka, licznik 7 dni (30.10-6.11), po odsiewie botów, automatyki, salw i skanerów
+12 zdarzeń koszyk_dodaj = 2 sesje, nie 12 osób
+1) 04.11 19:26, telefon, Firefox Android, bez odsyłacza: /produkty x2, 3 dodania w 12 s, bez wejścia na /koszyk, koniec na /produkty
+2) 05.11 01:28, telefon, Firefox Android, bez odsyłacza: / > /produkty > /ksef-integracja > /automatyzacja-leadow-crm > /strony-www,
+   9 dodań, /koszyk 01:31:04, form_start 01:31:27, koszyk_platnosc 01:31:29, potem /produkty, /, /sprawdzenie-nip (skan)
+Lejek po sesjach: dodanie 2 > /koszyk 1 > form_start 1 > płatność 1
+Obie sesje: ten sam telefon (Firefox Android), bez źródła, w odstępie 6 h, wzorzec testu (seria kliknięć co 1-2 s)
+WNIOSEK: nie ma wycieku 11 z 12; to 2 sesje, prawdopodobnie jedna osoba testująca, a jedyna, która weszła do /koszyk, doszła do płatności. Odpada przed wejściem na /koszyk (sesja 1). Do planu 10.11: koszyk_dodaj liczyć po sesjach, nie zdarzeniach; zmian w /produkty nie robić na podstawie tych danych.
