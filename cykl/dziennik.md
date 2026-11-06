@@ -10485,3 +10485,4 @@ Decyzje dla stratega:
 **Dowód:** commit 0a5d1faf, produkcja `href="/e-doreczenia-integracja">adres do e-Doręczeń`; IndexNow Yandex 200, Naver 200, wspólny 403; cykl/z4-koszyk-2026-11-06.txt: 12 dodań = 2 sesje z jednego Firefoksa na Androidzie bez odsyłacza, 1 doszła do płatności, wycieku 11 z 12 nie ma.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (mail, od 11:00), dalej Z6-Z18 wg godzin; indexnow.mjs bez argumentu nie widzi zmian, bo lastmod tej strony w mapie się nie zmienia, przy kamieniach Z9/Z15 zgłaszać adres ręcznie.
+Z5 11:15: Resend od 6.11 00:00 0 maili; Zoho 4 wiadomości (GBP support, aftermarket.pl potwierdzenie rejestracji, raport social, FINREAL), nowych zapytań od obcych 0. Następne: Z6 od 12:00.
