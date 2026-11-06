@@ -283,6 +283,32 @@ function przytnij(t: string, n = 120): string {
   return t.length > n ? t.slice(0, n - 3).trimEnd() + "..." : t;
 }
 
+/** Widżety opinii (Trustindex, Elfsight, Google Reviews): teksty klientów z
+ *  imionami małą literą, których firma nie pisała, więc nie sprawdzamy w nich pisowni. */
+const WIDZET_OPINII =
+  /<(div|section|ul|aside)\b[^>]*\b(?:class|id)\s*=\s*["'][^"']*(?:trustindex|ti-widget|ti-review|elfsight-app|wprevpro|wp-google-reviews|grw-|review-widget|testimonial)[^"']*["'][^>]*>/i;
+
+function bezOpinii(html: string): string {
+  let wynik = html;
+  for (let i = 0; i < 50; i++) {
+    const m = WIDZET_OPINII.exec(wynik);
+    if (!m) break;
+    const znacznik = new RegExp(`<(/?)${m[1]}\\b[^>]*>`, "gi");
+    znacznik.lastIndex = m.index + m[0].length;
+    let glebokosc = 1;
+    let koniec = wynik.length;
+    for (let t = znacznik.exec(wynik); t; t = znacznik.exec(wynik)) {
+      glebokosc += t[1] ? -1 : 1;
+      if (!glebokosc) {
+        koniec = t.index + t[0].length;
+        break;
+      }
+    }
+    wynik = wynik.slice(0, m.index) + " " + wynik.slice(koniec);
+  }
+  return wynik;
+}
+
 export function analizujJezyk(html: string): AnalizaJezyka {
   const lang =
     html
@@ -357,7 +383,7 @@ export function analizujJezyk(html: string): AnalizaJezyka {
     obce,
     meta,
     trojki: trojkiSlow(tekst),
-    tekst: tekst.slice(0, 40_000),
+    tekst: tekstStrony(bezOpinii(html)).slice(0, 40_000),
     blokow: bloki.length,
   };
 }

@@ -835,7 +835,7 @@ export async function zbadajCalosc(
           polaczCechy(cechy),
           `na żadnej z ${cechy.length} ${odmien(cechy.length, "sprawdzonej podstrony", "sprawdzonych podstron", "sprawdzonych podstron")}`,
         ),
-        ...(await sprawdzAkcje(polaczCechy(cechy).akcje)),
+        ...(await sprawdzAkcje(polaczCechy(cechy))),
       ]
     : [];
   wynik.domenowe = [

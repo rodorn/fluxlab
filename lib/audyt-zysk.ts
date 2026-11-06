@@ -70,6 +70,7 @@ const ZYSKI: Record<string, string> = {
   brak_emaila: "Klient jednym kliknięciem pisze do Ciebie, więc więcej osób dociera do zapytania.",
   brak_nip: "Klient widzi, że to prawdziwa firma, więc łatwiej mu zaufać i złożyć zamówienie.",
   brak_formularza: "Klient może zostawić zapytanie o każdej porze, więc zbierasz kontakty także poza godzinami pracy.",
+  wyszukiwarka_404: "Klient znajduje ofertę, której szuka, zamiast strony błędu, więc nie odchodzi do konkurencji.",
   formularz_404: "Zapytania od klientów naprawdę do Ciebie docierają, więc przestajesz tracić kontakty, których nie widzisz.",
   sklep_bez_regulaminu: "Klient wie, na jakich zasadach kupuje, a Ty unikasz kary i sporów o zwroty.",
   brak_omnibus: "Promocje spełniają przepisy, więc unikasz kary od UOKiK i reklamacji klientów.",

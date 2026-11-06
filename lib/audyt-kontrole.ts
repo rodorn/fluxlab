@@ -221,6 +221,16 @@ export const KATALOG_E: Record<string, OpisKontroli> = {
     dostep: KOD,
     zakres: "witryna",
   },
+  wyszukiwarka_404: {
+    tytul: "Wyszukiwarka na stronie prowadzi do strony błędu",
+    skutek:
+      "Klient szuka terminu albo produktu, trafia na błąd 404 i nie widzi oferty, choć ona jest, więc szuka u konkurencji.",
+    waga: "wazne",
+    obszar: "zapytania",
+    koszt: 200,
+    dostep: KOD,
+    zakres: "witryna",
+  },
   formularz_404: {
     tytul: "Formularz wysyła dane pod adres, który nie istnieje",
     skutek:
@@ -1134,6 +1144,8 @@ export type Cechy = {
   telefon: boolean;
   email: boolean;
   nip: boolean;
+  /** Firma spoza Polski (adres z kodem stanu USA albo ceny w dolarach, bez polskiego kodu pocztowego): NIP jej nie dotyczy. */
+  zagraniczna: boolean;
   formularz: boolean;
   sklep: boolean;
   regulamin: boolean;
@@ -1143,6 +1155,8 @@ export type Cechy = {
   zgoda: boolean;
   /** Adresy, pod które wysyłają formularze (tylko w obrębie domeny). */
   akcje: string[];
+  /** To samo dla wyszukiwarek i filtrów (method=get albo bez pola kontaktu). */
+  wyszukiwarki: string[];
 };
 
 const SLEDZENIE: [string, RegExp][] = [
@@ -1189,14 +1203,19 @@ export function cechyStrony(html: string, adres: string): Cechy {
     (m) => /<textarea\b/i.test(m[2]) || (POLE_KONTAKTU.test(m[2]) && widocznePola(m[2]) >= 2),
   );
   const akcje: string[] = [];
+  const wyszukiwarki: string[] = [];
   for (const m of formularze) {
     const a = m[1].match(/\baction\s*=\s*["']([^"']*)["']/i)?.[1];
+    const cel =
+      /\bmethod\s*=\s*["']?get\b/i.test(m[1]) || !(/<textarea\b/i.test(m[2]) || POLE_KONTAKTU.test(m[2]))
+        ? wyszukiwarki
+        : akcje;
     if (!a || a.startsWith("#") || /^(javascript|mailto):/i.test(a)) continue;
     try {
       const u = new URL(dekoduj(a), adres);
       if (u.hostname.replace(/^www\./, "") === host && /^https?:$/.test(u.protocol)) {
         u.hash = "";
-        if (!akcje.includes(u.toString())) akcje.push(u.toString());
+        if (!cel.includes(u.toString())) cel.push(u.toString());
       }
     } catch {
       /* zły adres */
@@ -1207,6 +1226,8 @@ export function cechyStrony(html: string, adres: string): Cechy {
     telefon: linki.some((t) => /^tel:/i.test(t.atr.get("href") ?? "")),
     email: linki.some((t) => /^mailto:/i.test(t.atr.get("href") ?? "")),
     nip: /\bNIP\b[\s:.-]*(PL)?\s*\d{3}[-\s]?\d{2,3}[-\s]?\d{2}[-\s]?\d{2,3}/i.test(tekst),
+    zagraniczna:
+      !/\b\d{2}-\d{3}\b/.test(tekst) && (/\b[A-Z]{2},? \d{5}(-\d{4})?\b/.test(tekst) || /\bUSD\b|\$\s?\d/.test(tekst)),
     formularz: kontaktowe.length > 0,
     // Sam napis „woocommerce” to za mało: zostawiają go też wtyczki na
     // stronach bez sprzedaży. Liczy się przycisk albo cena produktu.
@@ -1221,6 +1242,7 @@ export function cechyStrony(html: string, adres: string): Cechy {
     sledzenie: SLEDZENIE.filter(([, re]) => re.test(html)).map(([n]) => n),
     zgoda: ZGODA.test(html) || (/cookie|ciasteczk/i.test(tekst) && /akceptuj|zgadzam|zgod[aęy]|odrzu[cć]/i.test(tekst)),
     akcje,
+    wyszukiwarki,
   };
 }
 
@@ -1231,6 +1253,7 @@ export function polaczCechy(lista: Cechy[]): Cechy {
     telefon: lub("telefon"),
     email: lub("email"),
     nip: lub("nip"),
+    zagraniczna: lub("zagraniczna"),
     formularz: lub("formularz"),
     sklep: lub("sklep"),
     regulamin: lub("regulamin"),
@@ -1240,6 +1263,7 @@ export function polaczCechy(lista: Cechy[]): Cechy {
     // zgoda musi być tam, gdzie jest śledzenie: wystarczy, że jest na stronach ze skryptami
     zgoda: lista.filter((c) => c.sledzenie.length).every((c) => c.zgoda),
     akcje: [...new Set(lista.flatMap((c) => c.akcje))].sort(),
+    wyszukiwarki: [...new Set(lista.flatMap((c) => c.wyszukiwarki))].sort(),
   };
 }
 
@@ -1254,7 +1278,7 @@ export function kontroleWitryny(c: Cechy, gdzie: string): Znalezisko[] {
     });
   if (!c.telefon) z.push({ klucz: "brak_telefonu", szczegol: `Brak linku tel: ${gdzie}.` });
   if (!c.email) z.push({ klucz: "brak_emaila", szczegol: `Brak linku mailto: ${gdzie}.` });
-  if (!c.nip) z.push({ klucz: "brak_nip", szczegol: `Nie znaleźliśmy numeru NIP ${gdzie}.` });
+  if (!c.nip && !c.zagraniczna) z.push({ klucz: "brak_nip", szczegol: `Nie znaleźliśmy numeru NIP ${gdzie}.` });
   if (!c.formularz) z.push({ klucz: "brak_formularza", szczegol: `Nie znaleźliśmy formularza kontaktowego ${gdzie}.` });
   if (c.sklep && !c.regulamin) z.push({ klucz: "sklep_bez_regulaminu", szczegol: `Strona wygląda na sklep, a nie znaleźliśmy linku do regulaminu ${gdzie}.` });
   if (c.przecena && !c.omnibus)
@@ -1262,16 +1286,25 @@ export function kontroleWitryny(c: Cechy, gdzie: string): Znalezisko[] {
   return z;
 }
 
-/** Formularze wysyłające pod adres 404 albo 410. */
-export async function sprawdzAkcje(akcje: string[]): Promise<Znalezisko[]> {
+async function martweAdresy(adresy: string[]): Promise<string[]> {
   const wyniki = await Promise.all(
-    akcje.slice(0, 20).map(async (a) => {
+    adresy.slice(0, 20).map(async (a) => {
       const o = await zapytaj(a, { maxZnakow: 1_000 });
       return o && (o.status === 404 || o.status === 410) ? `${a} (kod ${o.status})` : null;
     }),
   );
-  const zle = wyniki.filter(Boolean) as string[];
-  return zle.length ? [{ klucz: "formularz_404", szczegol: `Formularz wysyła na: ${lista(zle, 3)}.` }] : [];
+  return wyniki.filter(Boolean) as string[];
+}
+
+/** Formularze i wyszukiwarki wysyłające pod adres 404 albo 410. */
+export async function sprawdzAkcje(c: Pick<Cechy, "akcje" | "wyszukiwarki">): Promise<Znalezisko[]> {
+  const [zle, zleWyszukiwarki] = await Promise.all([martweAdresy(c.akcje), martweAdresy(c.wyszukiwarki)]);
+  return [
+    ...(zle.length ? [{ klucz: "formularz_404", szczegol: `Formularz kontaktowy wysyła na: ${lista(zle, 3)}.` }] : []),
+    ...(zleWyszukiwarki.length
+      ? [{ klucz: "wyszukiwarka_404", szczegol: `Formularz wyszukiwania wysyła na: ${lista(zleWyszukiwarki, 3)}.` }]
+      : []),
+  ];
 }
 
 /* ------------------------------------------------------------------ */
@@ -1492,7 +1525,7 @@ export async function kontroleGlownej(html: string, adres: string): Promise<Znal
   return [
     ...kontroleStrony(html, adres),
     ...kontroleWitryny(cechy, "na stronie głównej"),
-    ...(await sprawdzAkcje(cechy.akcje)),
+    ...(await sprawdzAkcje(cechy)),
   ];
 }
 

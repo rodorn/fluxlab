@@ -97,6 +97,10 @@ export async function sprawdzSlowa(
   }
 }
 
+function bezOgonkow(s: string): string {
+  return s.normalize("NFD").replace(/\p{M}/gu, "").replace(/ł/g, "l");
+}
+
 /** Zdanie (najwyżej ok. 150 znaków) z danym słowem. */
 function zdanie(tekst: string, slowo: string): string {
   const m = new RegExp(`(?<![\\p{L}])${slowo}(?![\\p{L}])`, "u").exec(tekst);
@@ -183,9 +187,24 @@ export async function znajdzLiterowki(
     if ((rdzenie.get(slowo) ?? []).some((r) => odpowiedz.rdzenieEn.has(r))) continue;
     // Podpowiedź ze spacją albo łącznikiem („face book”) to rozbicie nazwy,
     // a nie poprawka literówki.
-    const podpowiedz = info.podpowiedzi.find(
+    // Najpewniejsza poprawka to brakujący znak diakrytyczny („chinskiego →
+    // chińskiego”, „duza → duża”). Inną zmianę jednej litery bierzemy tylko
+    // w środku słowa: zmiana pierwszej litery („kasia → jasia”) albo ucięcie
+    // końcówki („siemieniuk → siemieniu”) to zwykle imię, nazwisko albo odmiana.
+    // Słownik zna to słowo z wielkiej litery („Kasia”, „Siemieniuk”): to imię
+    // albo nazwisko zapisane małą literą, nie literówka.
+    if (info.podpowiedzi.includes(slowo[0].toUpperCase() + slowo.slice(1))) continue;
+    const malePodpowiedzi = info.podpowiedzi.filter(
       (p) => /^\p{Ll}+$/u.test(p) && odleglosc(slowo, p) === 1,
     );
+    const podpowiedz =
+      malePodpowiedzi.find((p) => bezOgonkow(p) === bezOgonkow(slowo)) ??
+      malePodpowiedzi.find(
+        (p) =>
+          p[0] === slowo[0] &&
+          !p.startsWith(slowo) &&
+          !slowo.startsWith(p),
+      );
     if (!podpowiedz) continue;
     for (const adres of gdzie.get(slowo) ?? []) {
       const tekst = strony.find((s) => s.adres === adres)?.tekst ?? "";
