@@ -8,14 +8,14 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
-  "Gutschrift bez umowy o samofakturowanie nie jest fakturą. Fakturę za usługę wystawiasz w KSeF, a korygujesz ją tylko wtedy, gdy zmieniła się cena.";
+  "Czy Gutschrift trafia do KSeF? Bez umowy o samofakturowanie to nie faktura: fakturę za usługę wystawiasz w KSeF sam, korektę tylko przy zmianie ceny.";
 
 export const metadata: Metadata = {
-  title: "Gutschrift od klienta z Niemiec a KSeF | Fluxlab",
+  title: "Czy Gutschrift z Niemiec trafia do KSeF? | Fluxlab",
   description:
-    "Gutschrift bez umowy o samofakturowanie nie jest fakturą. Fakturę za usługę wystawiasz w KSeF, a korygujesz ją tylko wtedy, gdy zmieniła się cena.",
+    "Czy Gutschrift trafia do KSeF? Bez umowy o samofakturowanie to nie faktura: fakturę za usługę wystawiasz w KSeF sam, korektę tylko przy zmianie ceny.",
   openGraph: {
-    title: "Gutschrift od klienta z Niemiec a KSeF | Fluxlab",
+    title: "Czy Gutschrift z Niemiec trafia do KSeF? | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
