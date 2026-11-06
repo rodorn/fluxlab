@@ -10363,3 +10363,99 @@ Decyzje dla stratega:
 **Dowód:** cykl/z11-embargo-2026-11-05.txt, plan-ruchu.md Z10 i Z11 [x].
 **Dla Pawła:** logowanie GSC i Bing w profilu ~/.config/chrome-google (port 9228), bez zmian od 1.11.
 **Zostało otwarte:** Z12 Bing o 19:00, Z13 o 20:00.
+
+## 2026-11-05 20:45
+**Kanał:** pomiar (Z12, Z13 planu 5.11).
+**Co zrobione:** Z12: Bing wylogowany, logowanie przez AuthorizeGoogle nie przechodzi, bo konto Google w profilu 9228 też jest wylogowane; zgłoszeń i odczytu AI Performance brak. Z13: lejek 16:00-20:00 po odsiewie, 5 ludzi / 5 odsłon (bez odsyłacza 3, hajsmetrics 1, bing 1), wejścia / 2, /sprawdzenie-nip 2, /kalkulator-podatkowy 1; form_start 1 na /sprawdzenie-nip, lead_* 0, 1 skan NIP, otwarcia maili b2b 10.
+**Ruch:** raport_ruchu doba: 250 odsłon / 122 osoby (b2b-email 143, google 10, hajsmetrics 10, YouTube 2, mail 2); pomiar-kanalow 24 h: 53 ludzi, 85 odsłon (bez odsyłacza 36, hajsmetrics 7, google 6, YouTube 2, mail 2, x, instagram, duckduckgo, bing po 1).
+**Dowód:** cykl/plan-ruchu.md Z12 i Z13 [x].
+**Dla Pawła:** zalogować konto Google w profilu ~/.config/chrome-google (port 9228); to odblokuje GSC i Bing (Bing loguje się przez https://www.bing.com/webmaster/login/AuthorizeGoogle). Stan bez zmian od 1.11.
+**Zostało otwarte:** Z14 od 21:00, Z15 od 22:30, Z16-Z18 w nocy 6.11.
+
+<!-- WYSLANO 2026-11-05 21:15 -->
+
+## 2026-11-05 22:55
+**Kanał:** Google (Z14) i pomiar (Z15).
+**Co zrobione:** Z14: kandydat na kamień 6.11 to /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef (5 sesji z Google w 14 dni, GSC 31.10: 2 klik. / 103 wyśw. / poz. 3,5), propozycja title i description w pliku, bez wdrożenia. Z15: bilans doby poniżej.
+**Ruch:** 46 ludzi / 74 odsłony w 24 h: bez odsyłacza 32, hajsmetrics 6, google 4, mail 2, instagram 1, youtube 1, duckduckgo 1, bing 1.
+**Dowód:** cykl/z14-kandydat-2026-11-05.txt; Z14 i Z15 oznaczone [x] w planie.
+**Dla Pawła:** GSC i Bing wylogowane przez całą dobę (profil ~/.config/chrome-google, port 9228): zalogować Google, Bing wejdzie przez AuthorizeGoogle.
+**Zostało otwarte:** Z16 (od 6.11 01:00), Z17 (04:00), Z18 (05:30).
+
+### Bilans planu 2026-11-05/11-06
+| kanał (24 h) | 4/5.11 | 5/6.11 |
+|---|---|---|
+| HAJS (hajsmetrics) | 15 | 6 |
+| Google | 13 | 4 |
+| Bing | 0 | 1 |
+| DDG | 0 | 1 |
+| chatgpt | 0 | 0 |
+| social (instagram, youtube, x, fb) | 6 | 2 |
+| b2b | 0 | 0 |
+| leady (lead_*, Resend) | 0 | 0 |
+| form_start | 4 | 3 |
+| uruchomienia narzędzi | 14 | 4 (kalkulator 2, skan NIP 2) |
+
+Doba ludzi 46 po odsiewie (7 dni: 206). Zdarzenia z 24 h: 142 otwarcia maili b2b, 9 koszyk_dodaj i 1 koszyk_platnosc w jednej sesji 01:28-01:33 (Firefox Android, bez odsyłacza, potem skan NIP; ta sama sesja, którą Z7 opisał jako porzucony /koszyk, najpewniej test własny, nie lead). Resend 0 maili.
+
+| zadanie | wynik |
+|---|---|
+| Z1 | zrobione |
+| Z2 | zrobione |
+| Z3 | zrobione |
+| Z4 | zrobione |
+| Z5 | zrobione |
+| Z6 | zrobione |
+| Z7 | zrobione |
+| Z8 | zrobione |
+| Z9 | zrobione |
+| Z10 | wylogowany |
+| Z11 | zrobione |
+| Z12 | wylogowany |
+| Z13 | zrobione |
+| Z14 | zrobione |
+| Z15 | zrobione |
+| Z16-Z18 | czekają (6.11) |
+
+Decyzje dla stratega:
+- Z2: HAJS 15 ludzi od 4.11, 3 sesje z uruchomieniem kalkulatora, 0 klik_po_wyniku, 0 form_start, 0 leadów; w tej dobie spadek do 6. Partner daje ruch, nie daje zapytań.
+- Z7: 3 porzucone formularze na 3 różnych stronach (/audyt-strony z X, /wdrozenie-n8n-cena z Google, /koszyk telefon, prawdopodobnie test), brak wspólnej przyczyny do poprawy.
+- Z11: zmiany 4-5.11 mają 0,8 dnia okna, za wcześnie na ocenę; gutschrift-ksef 1→2 (Google), automatyzacja-vs-zatrudnienie 1→0. Ocena 4.11 nie wcześniej niż 11.11.
+- Z14: kamień 6.11 = title i description /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef (poz. 3,5 przy CTR 1,9%); frazy do potwierdzenia po zalogowaniu GSC.
+- FL_hajs (08:44): potwierdza liczby (15 sesji, 3 uruchomienia, 0 leadów, 1181 wyświetleń YT, CTR 1,27%), plik użyje w raporcie 11.11.
+- FL_marketing (10:44): oba zwroty 421 były już w kontaktowani.txt, oznaczone, przypomnienia do nich nie pójdą; kampanie b2b i fale USA Polonia stoją.
+- Logowanie: GSC nie (cała doba), Bing nie (zależny od Google). Zadania GSC w planie 6.11 bez sensu, dopóki Paweł nie zaloguje.
+- Z16 (6.11 02:45): GSC wylogowany (accounts.google.com/v3/signin/identifier), raportu Strony i Map witryn nie da się odczytać; ostatnie znane 23.10: 165/212.
+- Z17 (6.11 04:45): ludzie po odsiewie od 2.11: numeracja-faktur-ksef-2027 0, proforma-ksef 0, faktury-kosztowe-z-ksef 0 (0 także w 14 dniach), /e-doreczenia-integracja 7 sesji / 11 odsłon (Google 3, mail 2, bez odsyłacza 2, chatgpt.com 1; 3-5.11).
+
+## 2026-11-06 00:43
+**Kanał:** brak (czekam na Z18 o 6.11 05:30).
+**Co zrobione:** nic, jedyne otwarte zadanie planu (Z18, pomiar) ma warunek „nie wcześniej niż 6.11 05:30”, plan zakazuje innych zmian.
+**Ruch:** ostatnia doba 233 odsłony, 115 osób; źródła: b2b-email 142, hajsmetrics 6, www.google.com 2, duckduckgo.com 2, mail 2; YouTube 1 sesja, Threads 1; uruchomienia narzędzi 3.
+**Dowód:** brak.
+**Dla Pawła:** 
+**Zostało otwarte:** Z18 od 05:30.
+
+## 2026-11-06 02:45
+**Kanał:** Google (Z16, pomiar).
+**Co zrobione:** Z16 zamknięte jako [!]: Search Console nadal wylogowany, raportu indeksowania nie da się odczytać; linijka pod bilansem Z15.
+**Ruch:** ostatnia doba 233 odsłony, 115 osób; źródła: b2b-email 142, hajsmetrics 6, www.google.com 2, duckduckgo.com 2; YouTube 1 sesja, Threads 1; uruchomienia narzędzi 1.
+**Dowód:** karta GSC przekierowana na accounts.google.com/v3/signin/identifier (02:44).
+**Dla Pawła:** zalogować Google w profilu ~/.config/chrome-google (port 9228), bez tego stoją wszystkie zadania GSC i Bing.
+**Zostało otwarte:** Z17 od 04:00, Z18 od 05:30.
+
+## 2026-11-06 04:45
+**Kanał:** pomiar (Z17).
+**Co zrobione:** Z17 zamknięte: trzy kamienie KSeF w strefie wiedzy mają 0 wejść ludzi od 2.11, /e-doreczenia-integracja 7 sesji; linijka pod bilansem Z15.
+**Ruch:** ostatnia doba 205 odsłon, 110 osób; YouTube 1 sesja, Threads 1, X 0, LinkedIn 0; uruchomienia narzędzi 1; lejek 7 dni 465 sesji, 4 form_start, 2 zapytania.
+**Dowód:** odczyt licznika na VPS filtrem z pomiar-kanalow.py (odsiew par, serii, salw, /grupa-ksef).
+**Dla Pawła:** zalogować Google w profilu ~/.config/chrome-google (port 9228), bez tego stoją zadania GSC i Bing.
+**Zostało otwarte:** Z18 od 05:30.
+
+<!-- WYSLANO 2026-11-06 05:09 -->
+
+## Strategia dobowa 2026-11-06
+**Wynik doby (do 06:15):** 44 osoby po odsiewie (62), tydzień 208. Z odsyłaczem: HAJS METRICS 4, Google 2, DDG 2, mail 2, Instagram 1, YouTube 1, Bing 1. Zgłoszenie 1 (5.11 22:02, polecenie, Meet 6.11 13:00), nie z kanału. Resend 24 h 2 (potwierdzenie i MEET), Zoho 0 zapytań od obcych. GSC i Bing wylogowane szósty dzień (06:20 accounts.google.com signin).
+**Kanały:** pomiar 13 h 5.11 dał 0 wejść: dziś 6 h. Budżet „utrzymaj” (36%, prognoza 92%): 3 kamienie (Z3 link biura rachunkowe do /e-doreczenia-integracja, Z9 meta kandydata z Z2, Z15 meta kiedy-odliczyc-vat po embargu) z IndexNow. Zimny outreach nadal wyłączony: karta decyzji f755c6e1 (termin 13.11).
+**Plan:** 18 zadań, cykl/plan-ruchu.md. Z18 z planu 5.11 zastąpiony tym wpisem.
+**Mail:** „FluxLab ruch, plan na 6.11: 44 osoby w dobie, 208 w tygodniu” wysłany 06:22 na iwanekpawel55@gmail.com.
