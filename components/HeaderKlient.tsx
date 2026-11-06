@@ -27,6 +27,22 @@ const najwazniejsze = (p: PozycjaMenu): LinkMenu[] => {
   return wynik;
 };
 
+const IKONA_TELEFONU = (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 20 20"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M6.6 2.5H4.2a1.7 1.7 0 0 0-1.7 1.9c.9 7.1 6 12.2 13.1 13.1a1.7 1.7 0 0 0 1.9-1.7v-2.4l-3.4-1.4-1.6 1.6a10.6 10.6 0 0 1-4.6-4.6l1.6-1.6L8 3.9z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 const IKONA_LUPY = (
   <svg
@@ -179,6 +195,13 @@ export default function HeaderKlient({
           </button>
           <ThemeToggle />
           <LicznikKoszyka />
+          <a
+            href="tel:+48665466565"
+            className="flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-gray-700 transition-colors hover:text-accent dark:text-gray-200"
+          >
+            {IKONA_TELEFONU}
+            665 466 565
+          </a>
           <Link href="/kontakt" className="btn-primary">
             Bezpłatna wycena
           </Link>
@@ -186,6 +209,13 @@ export default function HeaderKlient({
 
         {/* Mobile */}
         <div className="xl:hidden flex items-center gap-1">
+          <a
+            href="tel:+48665466565"
+            aria-label="Zadzwoń: 665 466 565"
+            className="p-2 text-gray-700 dark:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg"
+          >
+            {IKONA_TELEFONU}
+          </a>
           <button
             type="button"
             onClick={() => setSzukaj(true)}
