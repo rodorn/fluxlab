@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import obsluga from "@/lib/wideo/automatyzacja-obslugi-klienta.json";
+import edoreczenia from "@/lib/wideo/e-doreczenia-w-firmie.json";
 
 type Wideo = {
   slug: string;
@@ -18,6 +19,7 @@ type Wideo = {
 
 const WIDEO: Record<string, Wideo> = {
   [obsluga.slug]: obsluga as Wideo,
+  [edoreczenia.slug]: edoreczenia as Wideo,
 };
 
 const POWIAZANE: Record<string, { href: string; nazwa: string }[]> = {
@@ -31,6 +33,16 @@ const POWIAZANE: Record<string, { href: string; nazwa: string }[]> = {
       nazwa: "Automatyzacja procesów w firmie",
     },
     { href: "/automatyzacja-follow-up", nazwa: "Automatyzacja follow-upów" },
+  ],
+  "e-doreczenia-w-firmie": [
+    {
+      href: "/e-doreczenia-integracja",
+      nazwa: "Sprawdź, czy spółka ma adres do e-Doręczeń",
+    },
+    {
+      href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
+      nazwa: "Adres do e-Doręczeń: prywatny a firmowy",
+    },
   ],
 };
 
