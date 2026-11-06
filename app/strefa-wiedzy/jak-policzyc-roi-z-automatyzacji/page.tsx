@@ -164,6 +164,14 @@ export default function RoiAutomatyzacjiArticle() {
             <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
               <li>
                 <Link
+                  href="/automatyzacja-procesow-biznesowych"
+                  className="text-accent hover:underline"
+                >
+                  Automatyzacja procesów biznesowych
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie"
                   className="text-accent hover:underline"
                 >
