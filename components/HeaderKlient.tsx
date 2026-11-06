@@ -197,10 +197,11 @@ export default function HeaderKlient({
           <LicznikKoszyka />
           <a
             href="tel:+48665466565"
+            aria-label="Zadzwoń: 665 466 565"
             className="flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-gray-700 transition-colors hover:text-accent dark:text-gray-200"
           >
             {IKONA_TELEFONU}
-            665 466 565
+            <span className="hidden min-[1400px]:inline">665 466 565</span>
           </a>
           <Link href="/kontakt" className="btn-primary">
             Bezpłatna wycena
