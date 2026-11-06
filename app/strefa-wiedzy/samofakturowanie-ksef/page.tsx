@@ -82,7 +82,14 @@ export default function SamofakturowanieKsefArticle() {
                   >
                     Umowa o samofakturowanie
                   </Link>{" "}
-                  i procedura akceptacji faktur przez sprzedawcę, jak przed KSeF.
+                  i procedura akceptacji faktur przez sprzedawcę, jak przed{" "}
+                  <Link
+                    href="/ksef-integracja"
+                    className="text-accent hover:underline"
+                  >
+                    obowiązkowym KSeF
+                  </Link>
+                  .
                 </li>
                 <li>
                   Uprawnienie do samofakturowania nadane nabywcy przez
