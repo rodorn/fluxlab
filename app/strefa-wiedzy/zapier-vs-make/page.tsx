@@ -8,11 +8,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Zapier vs Make, co wybrać do automatyzacji w 2026 | Fluxlab",
+  title: "Zapier cennik 2026 i porównanie z Make: co wybrać | Fluxlab",
   description:
     "Zapier cennik 2026: Free 100 tasków, Professional od ok. 19,99 USD, Team od 69 USD miesięcznie. Porównanie z Make i koszt przy 100 leadach dziennie.",
   openGraph: {
-    title: "Zapier vs Make, co wybrać do automatyzacji w 2026 | Fluxlab",
+    title: "Zapier cennik 2026 i porównanie z Make: co wybrać | Fluxlab",
     description:
       "Zapier cennik 2026: Free 100 tasków, Professional od ok. 19,99 USD, Team od 69 USD miesięcznie. Porównanie z Make i koszt przy 100 leadach dziennie.",
     locale: "pl_PL",
