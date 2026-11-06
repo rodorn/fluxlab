@@ -97,7 +97,14 @@ export default function BladWFakturzeKsefArticle() {
             <section>
               <h2 className="mb-4 h2-sekcji">Nabywca nie poprawi sam</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                W KSeF nie ma noty korygującej. Nabywca, który widzi błąd, prosi
+                W{" "}
+                <Link
+                  href="/ksef-integracja"
+                  className="text-accent hover:underline"
+                >
+                  obowiązkowym KSeF
+                </Link>{" "}
+                nie ma noty korygującej. Nabywca, który widzi błąd, prosi
                 sprzedawcę o korektę.
               </p>
             </section>
