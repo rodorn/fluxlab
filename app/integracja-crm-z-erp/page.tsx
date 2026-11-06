@@ -108,15 +108,15 @@ export default function IntegracjaCrmZErp() {
       faq={[
         {
           q: "Kto wdraża integrację CRM z ERP?",
-          a: "My: rozpoznanie, wdrożenie i przekazanie kodu z dokumentacją. Jeden kierunek trwa zwykle dwa do trzech tygodni.",
+          a: "My: rozpoznanie, wdrożenie i przekazanie kodu z dokumentacją. Jeden kierunek trwa zwykle dwa do trzech tygodni, oba kierunki do sześciu.",
         },
         {
           q: "Ile kosztuje integracja ERP z CRM?",
           a: "Rozpoznanie jest bezpłatne. Jeden kierunek, z CRM do ERP, kosztuje 1 900 zł. Synchronizacja w obie strony, ze stanami i cenami wracającymi do CRM, 3 500 zł.",
         },
         {
-          q: "Ile trwa integracja ERP z CRM?",
-          a: "Jeden kierunek trwa zwykle dwa do trzech tygodni od przekazania dostępów. Oba kierunki do sześciu tygodni. Najwięcej czasu zajmuje lista kontrahentów bez dopasowania po NIP.",
+          q: "Czy integracja CRM z ERP opłaca się w małej firmie?",
+          a: "Tak, jeśli ktoś w firmie przepisuje zamówienia, kontrahentów albo faktury między CRM a ERP choćby kilka godzin w tygodniu. Jeden kierunek za 1 900 zł zwraca się wtedy w kilka miesięcy, a znikają literówki w NIP i kwotach. Przy kilku zamówieniach w miesiącu wystarczy ręczny eksport.",
         },
         {
           q: "Jak dane z ERP trafiają do CRM?",
