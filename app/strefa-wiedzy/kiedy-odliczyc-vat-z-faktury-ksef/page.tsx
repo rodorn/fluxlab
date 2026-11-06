@@ -8,14 +8,14 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
-  "Liczy się dzień nadania numeru KSeF, nie data wystawienia. Ten dzień jest w samym numerze: wklej go w darmowe sprawdzenie i zobacz miesiąc odliczenia.";
+  "Prawo do odliczenia VAT z faktury KSeF powstaje w dniu nadania numeru KSeF, nie wystawienia. Wklej numer i zobacz miesiąc odliczenia, bez logowania.";
 
 export const metadata: Metadata = {
-  title: "Kiedy odliczyć VAT z faktury KSeF? Data w numerze | Fluxlab",
+  title: "Odliczenie VAT z faktury KSeF: w którym miesiącu? | Fluxlab",
   description:
-    "Liczy się dzień nadania numeru KSeF, nie data wystawienia. Ten dzień jest w samym numerze: wklej go w darmowe sprawdzenie i zobacz miesiąc odliczenia.",
+    "Prawo do odliczenia VAT z faktury KSeF powstaje w dniu nadania numeru KSeF, nie wystawienia. Wklej numer i zobacz miesiąc odliczenia, bez logowania.",
   openGraph: {
-    title: "Kiedy odliczyć VAT z faktury KSeF? Data w numerze | Fluxlab",
+    title: "Odliczenie VAT z faktury KSeF: w którym miesiącu? | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
