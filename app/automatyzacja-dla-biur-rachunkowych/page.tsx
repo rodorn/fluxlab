@@ -189,7 +189,7 @@ export default function AutomatyzacjaDlaBiurRachunkowych() {
             <p className="mb-4 text-gray-600 dark:text-gray-300">
               Sprawdź, czy spółka klienta ma{" "}
               <Link
-                href="/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy"
+                href="/e-doreczenia-integracja"
                 className="text-accent hover:underline"
               >
                 adres do e-Doręczeń
