@@ -10486,3 +10486,127 @@ Decyzje dla stratega:
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (mail, od 11:00), dalej Z6-Z18 wg godzin; indexnow.mjs bez argumentu nie widzi zmian, bo lastmod tej strony w mapie się nie zmienia, przy kamieniach Z9/Z15 zgłaszać adres ręcznie.
 Z5 11:15: Resend od 6.11 00:00 0 maili; Zoho 4 wiadomości (GBP support, aftermarket.pl potwierdzenie rejestracji, raport social, FINREAL), nowych zapytań od obcych 0. Następne: Z6 od 12:00.
+
+## 2026-11-06 12:44
+**Kanał:** pomiar (plan ruchu 6.11, Z6).
+**Co zrobione:** lejek 06:30-12:00 policzony po odsiewie; nic nie poszło w świat, kolejne zadania (Z7 od 13:00, Z8 od 14:00) mają późniejszą godzinę startu.
+**Ruch:** raport_ruchu doba 148 odsłon, 77 osób (+15% wobec średniej 128,9); źródła: b2b-email 66, google 24, hajsmetrics 3, m.facebook 3, duckduckgo 2; Threads 1, YouTube 0, LinkedIn 0, X 0; uruchomienia narzędzi 4. Po odsiewie (pomiar-kanalow) 24 h: 40 ludzi, z odsyłaczem google 11, hajsmetrics 2, duckduckgo 2, mail 2, bing 1, facebook 1.
+**Dowód:** Z6 06:30-12:00: 16 sesji, 20 odsłon (4 piksel b2b, ludzi 12): google 6, bez odsyłacza 3, facebook 3; wejścia / 8, /kalkulator-podatkowy 3; form_start 0, lead_* 0, uruchomienia 2 (kalkulator podatkowy).
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/home
+**Zostało otwarte:** Z7 (IndexNow, od 13:00), Z8 (/sprawdzenie-nip, od 14:00), dalej Z9-Z18 wg godzin.
+
+## 2026-11-06 14:58
+**Kanał:** dystrybucja narzędzi i Bing (plan ruchu 6.11, Z7 i Z8).
+**Co zrobione:** Z7: IndexNow nie miał nic do zgłoszenia (brak zmienionych adresów od ostatniego zgłoszenia); Z8: rozbiór /sprawdzenie-nip z 14 dni i propozycja tekstu po wyniku na 9.11, bez wdrożenia.
+**Ruch:** raport_ruchu doba 140 odsłon, 56 osób (+5% wobec średniej 133,1); źródła: google 38, b2b-email 32, mail 2, hajsmetrics 2, m.facebook 2; /sprawdzenie-nip 8 odsłon w dobie.
+**Dowód:** cykl/z8-nip-2026-11-06.txt: 15 sesji ludzi (Bing 8, DDG 4, bez odsyłacza 2, Google 1), skan 12, form_start 3, wysłane 0, klik_po_wyniku 0, mediana 10 s, 13 z 15 wychodzi po wyniku. Propozycja: akapit przy wyniku ZIELONY w components/NipCheck.tsx 230→150 znaków, z konkretem „konto z faktury vs wykaz od 15 000 zł”.
+**Dla Pawła:**
+**Zostało otwarte:** Z9 (kamień 2, od 15:00), Z10 od 17:00, dalej wg godzin. O 14:45 /tmp (tmpfs 12 GB) był pełny przez testy pytest sesji fluxcrm; ta sesja sama posprzątała, po chwili 7% zajęte.
+
+<!-- WYSLANO 2026-11-06 15:09 -->
+
+## 2026-11-06 17:02
+**Kanał:** Google i Bing (plan ruchu 6.11, Z9) oraz pomiar (Z10).
+**Co zrobione:** Z9: /strefa-wiedzy/gutschrift-ksef dostała title „Czy Gutschrift z Niemiec trafia do KSeF? | Fluxlab” i description zaczynający się od pytania (treść i H1 bez zmian), wdrożone i zgłoszone do IndexNow; Z10: lejek 12:00-17:00 policzony.
+**Ruch:** raport_ruchu doba 121 odsłon, 47 osób (-10% wobec średniej 134,4); po odsiewie (pomiar-kanalow) 24 h: 33 ludzi, google 10, bez odsyłacza 19, bing 1, duckduckgo 1, hajsmetrics 1, facebook 1.
+**Dowód:** commit 3a696980; curl produkcji: `<title>Czy Gutschrift z Niemiec trafia do KSeF? | Fluxlab`; IndexNow Yandex 202, Naver 200, wspólny 403 (znany). Z10 12:00-17:00: 12 sesji, 47 odsłon (bez odsyłacza 6, google 4, youtube 1, threads 1); form_start 2 (/sprawdzenie-nip, zdrowotna JDG), zapis_email 1 (zdrowotna JDG), lead_* 0, uruchomienia narzędzi 5.
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/home
+**Zostało otwarte:** Z11 (GSC, od 17:30), Z12 (efekt FL_SEO, od 18:00), Z13 (lejek, od 21:00), Z14 (bilans, od 22:30), Z15-Z18 od 7.11.
+
+## 2026-11-06 18:45
+**Kanał:** Google (Z11 logowanie GSC, Z12 efekt zmian FL_SEO).
+**Co zrobione:** Z11: GSC nadal wylogowany, indeksowanie i Skuteczność niewykonalne; Z12: zmierzony efekt 9 zmian FL_SEO z 1.11, sesje ludzi z wyszukiwarek przed 0 → po 1 (okno ok. 5 dni), wynik wysłany sesji FL_SEO.
+**Ruch:** ostatnia doba 128 odsłon, 50 osób (−5% wobec średniej); tydzień 981 odsłon, 463 osoby. Źródła (raport): www.google.com 43, b2b-email 15, m.facebook.com 3, facebook 2, duckduckgo.com 1.
+**Dowód:** karta GSC z resource_id fluxlab.pl przekierowana na search.google.com/search-console/about (18:43); plik cykl/z12-fl-seo-efekt-2026-11-06.txt; `sesja napisz FL_SEO` doręczone 18:44.
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/home
+**Zostało otwarte:** Z13 (lejek, od 21:00), Z14 (bilans, od 22:30), Z15-Z18 od 7.11.
+
+## 2026-11-06 20:45
+**Kanał:** brak (czekam na Z13 o 21:00).
+**Co zrobione:** nic, wszystkie otwarte zadania planu 6.11 mają późniejszą godzinę startu (Z13 21:00, Z14 22:30, Z15-Z18 od 7.11).
+**Ruch:** raport_ruchu doba 124 odsłony, 51 osób (−8% wobec średniej 135); źródła: www.google.com 44, b2b-email 16, m.facebook.com 3, facebook 2, duckduckgo.com 1; Threads 1, YouTube 1; uruchomienia narzędzi 7.
+**Dowód:** brak (pomiar).
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/home
+**Zostało otwarte:** Z13 (od 21:00), Z14 (od 22:30), Z15-Z18 od 7.11.
+
+### Bilans planu 2026-11-06/11-07
+| kanał (24 h, po odsiewie) | 5/6.11 | 6/7.11 (22:43) |
+|---|---|---|
+| HAJS (hajsmetrics) | 4 | 1 |
+| Google | 2 | 13 |
+| DDG | 2 | 1 |
+| Bing | 1 | 0 |
+| Instagram | 1 | 1 |
+| YouTube | 1 | 1 |
+| Threads, Facebook | 0 | 1, 3 |
+| mail (sesje z utm mail/b2b) | 2 | 0 (Resend 4 delivered, 16 otwarć maili) |
+| leady | 1 z polecenia | 1 (to samo lead_landing z 5.11 23:02, jeszcze w oknie 24 h); nowych 0 |
+| form_start | 1 | 4 (/sprawdzenie-nip, zdrowotna JDG, /widocznosc-w-ai, /audyt-poczty), zapis_email 1 |
+| uruchomienia narzędzi | 1 | 10 (kalkulator podatkowy 6, skan NIP 3, sygnały 1) |
+
+Doba ludzi 36 po odsiewie (7 dni: 226). raport_ruchu: Ostatnia doba: 138 odsłon, 52 osoby.
+
+| zadanie | wynik |
+|---|---|
+| Z1 | zrobione |
+| Z2 | zrobione |
+| Z3 | zrobione |
+| Z4 | zrobione |
+| Z5 | zrobione |
+| Z6 | zrobione |
+| Z7 | puste |
+| Z8 | zrobione |
+| Z9 | zrobione |
+| Z10 | zrobione |
+| Z11 | wylogowany |
+| Z12 | zrobione |
+| Z13 | zrobione |
+| Z14 | zrobione |
+| Z15-Z18 | czekają (7.11) |
+
+Decyzje dla stratega:
+- Z4: wycieku w koszyku nie ma; 12 koszyk_dodaj to 2 sesje jednego Firefoksa na Androidzie, płatność 1. Liczyć po sesjach, bez zmian /produkty z tego powodu.
+- Z8: /sprawdzenie-nip ma 15 sesji ludzi w 14 dni (Bing 8, DDG 4), skan 12, wysłane 0, 13 z 15 wychodzi po wyniku; propozycja w cykl/z8-nip-2026-11-06.txt do wdrożenia po embargu 9.11.
+- Z12: zmiany FL_SEO z 1.11 (9 stron) dały 0 → 1 sesję z wyszukiwarek w ok. 5 dni, za wcześnie na wniosek.
+- GSC i Bing Webmaster wylogowane cały dzień (Z1 08:45, Z11 18:43); bez zalogowania przez Pawła indeksowanie i Skuteczność odpadają z planu.
+- Kamień Z3 wdrożony 11:05 (0a5d1faf); od tej pory /e-doreczenia-integracja 1 sesja (12:00, bez odsyłacza), przejść z /automatyzacja-dla-biur-rachunkowych 0. Kamień Z9 wdrożony 16:47 (3a696980), efekt do oceny w Z17.
+- Z17 (7.11 04:47): sesje ludzi po odsiewie od zmiany vs to samo okno 7 dni wcześniej: /automatyzacja-dla-biur-rachunkowych 0 vs 0 (18 h, przejść na /e-doreczenia-integracja 0), /strefa-wiedzy/gutschrift-ksef 0 vs 0 (12 h), /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef 0 vs 0 (4 h); ostatnie wejścia ludzi: 26.10, 3.11, 5.11. Okno za krótkie na wniosek, ocena kamieni po 7 dniach (13-14.11).
+
+## 2026-11-06 22:55
+**Kanał:** pomiar (plan ruchu 6.11, Z13 i Z14).
+**Co zrobione:** policzony lejek 17:00-21:00 (Z13) i spisany bilans planu 6.11/7.11 z decyzjami dla stratega (Z14); nic nie poszło w świat, plan na dziś dopuszczał tylko pomiar.
+**Ruch:** Ostatnia doba: 138 odsłon, 52 osoby; po odsiewie 24 h 36 ludzi: google 13, bez odsyłacza 17, facebook 3, duckduckgo 1, hajsmetrics 1, youtube 1, threads 1, instagram 1.
+**Dowód:** linijki Z13 i Z14 w cykl/plan-ruchu.md; sekcja „Bilans planu 2026-11-06/11-07” wyżej; pomiar-kanalow.py 22:43.
+**Dla Pawła:** zalogowanie Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console i https://www.bing.com/webmasters/home
+**Zostało otwarte:** Z15 (kamień 3, od 7.11 00:00), Z16 (od 01:00), Z17 (od 04:00), Z18 (od 05:30).
+
+## 2026-11-07 00:46
+**Kanał:** 2 (widoczność w wyszukiwarkach i asystentach AI), plan ruchu Z15.
+**Co zrobione:** wdrożony kamień 3: nowy title i description /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef pod pytanie o miesiąc odliczenia (treść i H1 bez zmian).
+**Ruch:** doba 140 odsłon, 50 osób (+4% wobec średniej); tydzień 987 odsłon, 472 osoby. Źródła doby: www.google.com 50, b2b-email 16, m.facebook.com 3, facebook 3, hajsmetrics 1. Uruchomienia narzędzi 10, form_start 4; lejek 7 dni 472 → 6 → 2.
+**Dowód:** commit 4b571ddd; curl produkcji: title „Odliczenie VAT z faktury KSeF: w którym miesiącu? | Fluxlab”, description zgodny (148 zn.); IndexNow: wspólny 403, Yandex 200, Naver 200. Build, spojnosc, jakosc OK.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (telefon, od 01:00), Z17 (od 04:00), Z18 (od 05:30). Niezacommitowane zmiany innej sesji w app/ksef-2027 i app/numer-ksef (obrazy OG) zostawione nietknięte.
+<!-- WYSLANO 2026-11-07 02:10 -->
+
+## 2026-11-07 02:45
+**Kanał:** kontrola kamieni planu (Z16), bez publikacji.
+**Co zrobione:** Z16: test telefonu obu kamieni; link z /automatyzacja-dla-biur-rachunkowych prowadzi na /e-doreczenia-integracja, strona /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef bez rozjechanego układu (390 px, 0 błędów konsoli). Zrzuty: /tmp/telefon-1794015797218.png, /tmp/telefon-1794015801301.png.
+**Ruch:** doba 144 odsłony, 56 osób (+6% wobec średniej); źródła: google 52, b2b-email 16, m.facebook.com 3, facebook 3, b2b 2; tydzień 993 odsłony, 477 osób.
+**Dowód:** linia Z16 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (od 04:00), Z18 (od 05:30); innych otwartych zadań brak.
+
+## 2026-11-07 04:48
+**Kanał:** pomiar kamieni planu (Z17), bez publikacji.
+**Co zrobione:** Z17: zmierzono sesje ludzi na trzech stronach z kamieni Z3, Z9, Z15 od wdrożenia; wszędzie 0, tak samo jak w tym samym oknie tydzień wcześniej, okna 4-18 h są za krótkie na wniosek.
+**Ruch:** doba 145 odsłon, 57 osób (+7% wobec średniej 135,6); najczęściej /, /narzedzia, /kalkulator-podatkowy, /strefa-wiedzy/blad-w-fakturze-ksef; uruchomienia narzędzi 11; YouTube 1, Threads 1.
+**Dowód:** linijka Z17 pod bilansem Z14 w cykl/dziennik.md i w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (od 05:30), potem „plan zamknięty”.
+
+## Strategia dobowa 2026-11-07
+**Wynik doby (do 06:15):** 42 osoby po odsiewie (44), tydzień 227 (208). Google 15 (doba wcześniej 2): / 9, /narzedzia 4, /kalkulator-podatkowy 2. Facebook 4, b2b 2, Instagram 1, Threads 1, HAJS 0 (16 w tygodniu). Leady 0, uruchomienia 11. Resend 2 (nie outreach), Zoho 0 od obcych, 4 odbicia b2b (FL_marketing). GSC i Bing wylogowane siódmą dobę.
+**Kanały:** pomiar trzecią dobę bez ludzi: z 9 do 6 zadań. 3 kamienie po 8.11 00:00 (reguła 3 dni po 026d06c5): meta faktura-wewnetrzna-ksef (43 wyśw., poz. 4,7, 0 klik.), meta wdrozenie-n8n-cena (57 wyśw., poz. 8,7), /narzedzia wg pomiaru Z5. IndexNow zaległych zmian, szkic artykułu 9.11 (BAE), jeden temat dla fluxlab-meta.
+**Plan:** 18 zadań, cykl/plan-ruchu.md. Z18 z planu 6.11 zastąpiony tym wpisem.
+**Mail:** „FluxLab ruch, plan na 7.11: Google 15 osób w dobie (było 2)” wysłany 06:21 na iwanekpawel55@gmail.com.
