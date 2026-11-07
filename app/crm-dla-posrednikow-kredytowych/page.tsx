@@ -8,12 +8,12 @@ import LandingForm from "@/components/LandingForm";
 
 const TYTUL = "Demo FluxCRM dla pośrednika kredytowego | Fluxlab";
 const OPIS =
-  "Umów 30 minut demo FluxCRM dla pośrednika kredytowego: sprawa od zapytania do uruchomienia, dokumenty z brakami, wnioski w bankach, zgody RODO i prowizje.";
+  "Demo FluxCRM dla pośrednika kredytowego: sprawa od zapytania do uruchomienia, orientacyjna zdolność, dokumenty z brakami, wnioski do banków i prowizje.";
 
 export const metadata: Metadata = {
   title: "Demo FluxCRM dla pośrednika kredytowego | Fluxlab",
   description:
-    "Umów 30 minut demo FluxCRM dla pośrednika kredytowego: sprawa od zapytania do uruchomienia, dokumenty z brakami, wnioski w bankach, zgody RODO i prowizje.",
+    "Demo FluxCRM dla pośrednika kredytowego: sprawa od zapytania do uruchomienia, orientacyjna zdolność, dokumenty z brakami, wnioski do banków i prowizje.",
   openGraph: {
     title: TYTUL,
     description: OPIS,
@@ -44,7 +44,11 @@ const punkty = [
   },
   {
     tytul: "Zgody RODO i rejestr czynności",
-    opis: "Zgody klienta, rejestr czynności przetwarzania i umowa powierzenia są w systemie. CRM nie ocenia zdolności kredytowej, to zostaje po stronie doradcy i banku.",
+    opis: "Zgody klienta, rejestr czynności przetwarzania i umowa powierzenia są w systemie.",
+  },
+  {
+    tytul: "Orientacyjna zdolność kredytowa",
+    opis: "CRM liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania (DSTI, bufor na wzrost stóp) i pokazuje, czy wnioskowana kwota się mieści. To szacunek dla doradcy, decyzję podejmuje bank.",
   },
   {
     tytul: "Szkice AI, aplikacja na telefon, prowizje",
@@ -76,9 +80,9 @@ const faq = [
       "Tak. Import z arkusza albo eksportu z dotychczasowego systemu jest częścią wdrożenia, a szkolenie robimy na Twoich sprawach.",
   },
   {
-    question: "Czy CRM sam ocenia zdolność kredytową?",
+    question: "Czy CRM liczy zdolność kredytową?",
     answer:
-      "Nie. FluxCRM porządkuje sprawy, dokumenty i komunikację. Ocena zdolności zostaje po stronie doradcy i banku.",
+      "Tak, orientacyjnie. FluxCRM liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania (DSTI, bufor na wzrost stóp) i pokazuje, czy wnioskowana kwota się mieści. To szacunek dla doradcy, ostateczną decyzję podejmuje bank.",
   },
 ];
 
@@ -116,7 +120,7 @@ export default function CrmPosrednicyPage() {
             {punkty.map((p) => (
               <div
                 key={p.tytul}
-                className="rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60"
+                className="rounded-2xl border border-gray-100 bg-white p-6 dark:border-gray-700 dark:bg-gray-800/60 sm:odd:last:col-span-2"
               >
                 <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
                   {p.tytul}
