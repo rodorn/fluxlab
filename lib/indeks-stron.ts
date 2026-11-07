@@ -408,6 +408,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Make vs n8n w roli warstwy automatyzacji nad CRM. Pięć typowych problemów, jak rozwiązuje je każde z narzędzi, i kiedy wybrać które."
   },
   {
+    "url": "/crm-dla-posrednikow-kredytowych",
+    "tytul": "Demo FluxCRM dla pośrednika kredytowego",
+    "opis": "Umów 30 minut demo FluxCRM: sprawa kredytowa od zapytania do uruchomienia, dokumenty z brakami, wnioski w bankach, zgody RODO i prowizje."
+  },
+  {
     "url": "/automatyzacja-crm-leasing",
     "tytul": "CRM dla firm leasingowych i brokerów leasingu",
     "opis": "CRM dla firm leasingowych przypisze lead po regionie, uzupełni dane po NIP z CEIDG i KRS, przygotuje wniosek do leasingodawcy i policzy prowizję."

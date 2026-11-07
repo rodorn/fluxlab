@@ -41,6 +41,9 @@ const CONTACT_PREF_LABELS: Record<string, string> = {
 // odbiorcy. Wczesniejszy domyslny nadawca z piaskownicy pozwalal pisac
 // wylacznie do wlasciciela konta, przez co realny klient nie dostawal
 // potwierdzenia. Zmienne srodowiskowe nadal nadpisuja te wartosci.
+const DO_PAWLA = "iwanekpawel55@gmail.com";
+const KOPIA_DO = process.env.AUDYT_KOPIA_DO ?? "skiwojtner@gmail.com";
+
 const FROM_FORMULARZ =
   process.env.RESEND_FROM_FORMULARZ ?? "Formularz Fluxlab <formularz@fluxlab.pl>";
 // Sciezka awaryjna. Piaskownica Resend wysyla wylacznie do wlasciciela konta,
@@ -273,10 +276,13 @@ export async function POST(req: Request) {
     .join("\n");
 
   const subjectCompany = company ? ` (${company})` : "";
+  // Zgłoszenie testowe (adres z +test w domenie fluxlab.pl) idzie tylko do
+  // Wojtka, żeby testy formularza nie trafiały do skrzynki Pawła.
+  const testowe = /\+test@fluxlab\.pl$/i.test(email);
 
   const { error } = await resendKlient().emails.send({
     from: FROM_FORMULARZ,
-    to: "iwanekpawel55@gmail.com",
+    to: testowe ? [KOPIA_DO] : [DO_PAWLA, KOPIA_DO],
     replyTo: email,
     subject: `${
       contactPref === "meet" && termin
@@ -337,10 +343,10 @@ export async function POST(req: Request) {
 
 
     // Alert do siebie. Ten adres zawsze dziala, bo jest wlascicielem konta.
-    await resendKlient().emails
+    if (!testowe) await resendKlient().emails
       .send({
         from: FROM_FORMULARZ,
-        to: "iwanekpawel55@gmail.com",
+        to: DO_PAWLA,
         replyTo: email,
         subject: `ODPISZ RĘCZNIE: klient nie dostał potwierdzenia (${email})`,
         text: `Zgłoszenie z formularza dotarło, ale automatyczne potwierdzenie do klienta NIE zostało wysłane.

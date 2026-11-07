@@ -75,6 +75,7 @@ export const SEKCJE: Sekcja[] = [
           s("/automatyzacja-dla-biur-rachunkowych", "Automatyzacja dla biur rachunkowych"),
           s("/automatyzacja-dla-agencji-marketingowych", "Automatyzacja dla agencji marketingowych"),
           s("/automatyzacja-crm-leasing", "CRM dla firm leasingowych"),
+          s("/crm-dla-posrednikow-kredytowych", "CRM dla pośredników kredytowych"),
         ],
       },
     ],

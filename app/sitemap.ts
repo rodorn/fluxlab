@@ -460,6 +460,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/crm-dla-posrednikow-kredytowych`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/audyt-crm`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

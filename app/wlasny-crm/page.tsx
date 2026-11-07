@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ProductLanding from "@/components/ProductLanding";
 import KalkulatorLeadow from "@/components/KalkulatorLeadow";
 import KonfiguratorCrm from "@/components/KonfiguratorCrm";
@@ -46,7 +47,16 @@ export default function WlasnyCrm() {
         },
         {
           title: "Cała historia w jednej karcie",
-          desc: "Rozmowy, SMS, maile i dokumenty klienta w jednym miejscu, także kilka wniosków w jednej sprawie.",
+          desc: (
+            <>
+              Rozmowy, SMS, maile i dokumenty klienta w jednym miejscu, także
+              kilka wniosków w jednej sprawie. Pośrednik kredytowy?{" "}
+              <Link href="/crm-dla-posrednikow-kredytowych" className="text-accent hover:underline">
+                Umów demo
+              </Link>
+              .
+            </>
+          ),
         },
         {
           title: "System i dane są Twoje",
