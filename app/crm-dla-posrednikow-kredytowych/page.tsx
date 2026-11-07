@@ -48,7 +48,7 @@ const punkty = [
   },
   {
     tytul: "Orientacyjna zdolność kredytowa",
-    opis: "CRM liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania (DSTI, bufor na wzrost stóp) i pokazuje, czy wnioskowana kwota się mieści. To szacunek dla doradcy, decyzję podejmuje bank.",
+    opis: "CRM liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania (DSTI, bufor na wzrost stóp) i pokazuje, czy wnioskowana kwota się mieści. To szacunek bez BIK i scoringu banku, decyzję podejmuje bank.",
   },
   {
     tytul: "Szkice AI, aplikacja na telefon, prowizje",
@@ -82,7 +82,7 @@ const faq = [
   {
     question: "Czy CRM liczy zdolność kredytową?",
     answer:
-      "Tak, orientacyjnie. FluxCRM liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania (DSTI, bufor na wzrost stóp) i pokazuje, czy wnioskowana kwota się mieści. To szacunek dla doradcy, ostateczną decyzję podejmuje bank.",
+      "Tak, orientacyjnie. FluxCRM liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania (DSTI, bufor na wzrost stóp) i pokazuje, czy wnioskowana kwota się mieści. Porównuje też oferty z bazy warunków banków, którą prowadzisz. To szacunek bez BIK i scoringu banku, decyzję podejmuje bank.",
   },
 ];
 
