@@ -179,6 +179,7 @@ export const SEKCJE: Sekcja[] = [
           s("/materialy", "Materiały do pobrania"),
           s("/wideo/automatyzacja-obslugi-klienta", "Wideo: automatyzacja obsługi klienta"),
           s("/wideo/e-doreczenia-w-firmie", "Wideo: e-Doręczenia w firmie"),
+          s("/wideo/ksef-2027-przewodnik", "Wideo: KSeF 2027 w małej firmie"),
           s("/strefa-wiedzy/kategoria/[slug]", "Kategoria artykułów"),
           s("/strefa-wiedzy/ai-w-automatyzacji-firm", "AI w automatyzacji firm"),
           s("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "Automatyzacja CRM z AI, od czego zacząć"),

@@ -1,0 +1,118 @@
+{
+ "slug": "ksef-2027-przewodnik",
+ "tytul": "KSeF od 2027 w małej firmie: limit 10 tys. zł, kary, logowanie, biuro i awarie",
+ "youtubeId": "ETtKIJ8E4e4",
+ "dlugosc": 592,
+ "opis": "Kogo od 1 stycznia 2027 obejmie KSeF, kiedy kończy się limit 10 tys. zł, ile wynoszą kary, jak zalogować się jako JDG, dostęp dla biura rachunkowego, klient prywatny, praca gdy KSeF nie działa, kod QR i numer KSeF w przelewie.",
+ "rozdzialy": [
+  {
+   "tytul": "Wstęp",
+   "od": 0,
+   "akapity": [
+    "Wystawiasz faktury w jednoosobowej albo małej firmie? Od pierwszego stycznia 2027 roku KSeF obejmie także tych, którzy dziś korzystają z limitu dziesięciu tysięcy złotych. W tym filmie przejdziemy po kolei przez wszystko, co właściciel firmy powinien ogarnąć przed końcem roku.",
+    "Najpierw krótko, czym jest e-faktura i kogo dotyczy KSeF. Potem limit i kiedy przestaje działać. Kary i nowa ustawa. Logowanie do KSeF jako JDG. Dostęp dla biura rachunkowego. Faktura dla klienta prywatnego. Praca, gdy KSeF nie działa. Kod QR na wydruku. Numer KSeF w przelewie. I na koniec lista rzeczy do zrobienia przed końcem roku.",
+    "Wszystkie fakty pochodzą z serwisu KSeF Ministerstwa Finansów, z ustawy o VAT i z dokumentów Sejmu. Źródło każdej liczby zobaczysz na ekranie. To nie jest porada podatkowa, więc szczegóły swojej sytuacji sprawdź z księgowym."
+   ]
+  },
+  {
+   "tytul": "Czym jest e-faktura",
+   "od": 55,
+   "akapity": [
+    "Zacznijmy od podstaw. E-faktura to plik XML zgodny ze wzorem, przesłany do KSeF. System nadaje jej unikalny numer. Odbiorca z numerem NIP znajdzie ją w KSeF, a system przechowuje ją przez dziesięć lat. Takiej faktury nie wysyłasz mailem i nie drukujesz, poza wyjątkami z ustawy.",
+    "Dwie rzeczy, które zmieniają codzienną pracę. Odbiorca nie musi akceptować faktury. Faktura jest otrzymana w chwili, gdy KSeF nada jej numer. A korekt do jednej faktury możesz wystawić tyle, ile potrzeba, bez limitu."
+   ]
+  },
+  {
+   "tytul": "Kogo dotyczy KSeF",
+   "od": 87,
+   "akapity": [
+    "Kogo to dotyczy? Forma prawna nie ma znaczenia. Co do zasady każdy podatnik, czynny i zwolniony z VAT, który ma obowiązek wystawić fakturę, wystawia ją w KSeF. Spółka, jednoosobowa firma, wszystko jedno.",
+    "Dotyczy to nawet osoby prywatnej, która wynajmuje firmie lokal i nie jest zarejestrowana do VAT. Dla ustawy o VAT taka osoba prowadzi działalność gospodarczą. Do końca 2026 roku może jednak wystawiać faktury poza KSeF, jeśli zmieści się w miesięcznym limicie, o którym za chwilę.",
+    "W praktyce oznacza to, że jeśli wystawiasz choć jedną fakturę innej firmie, KSeF prędzej czy później Cię obejmie. Pytanie nie brzmi czy, tylko od kiedy."
+   ]
+  },
+  {
+   "tytul": "Limit 10 tys. zł kończy się 31 grudnia",
+   "od": 129,
+   "akapity": [
+    "Teraz limit. Obowiązek wystawiania w KSeF działa od 2026 roku: największe firmy od lutego, pozostałe od pierwszego kwietnia. Limit to wyjątek przejściowy. Do trzydziestego pierwszego grudnia 2026 roku możesz wystawiać faktury poza KSeF, na papierze albo w PDF, jeśli suma brutto takich faktur w miesiącu nie przekracza 10 000 zł.",
+    "Przykład z serwisu ministerstwa. Kwiaciarka wystawia trzy faktury w miesiącu, każdą na kwotę od 1 500 do 2 500 zł. Do końca 2026 roku może je wystawiać poza KSeF. Od pierwszego stycznia 2027 roku już nie.",
+    "Co się dzieje, gdy go przekroczysz? Fakturę, którą przekroczyłeś limit, wystawiasz już w KSeF. Tak samo wszystkie kolejne. Słabszy następny miesiąc niczego nie zmienia, do KSeF już nie wracasz poza system.",
+    "Co wliczasz do limitu? Tylko faktury, które musiałbyś wystawić w KSeF. Faktur dla konsumentów, faktur z kasy fiskalnej i paragonów z NIP do 450 zł nie wliczasz. Fakturę przypisujesz do miesiąca według daty wystawienia, a nie daty sprzedaży.",
+    "Paragony z NIP do 450 zł i faktury z kasy fiskalnej działają poza KSeF też tylko do końca 2026 roku. Od pierwszego stycznia 2027 roku limit znika i KSeF obowiązuje także tych, którzy dziś z niego korzystają. Pamiętaj też o drugiej stronie: odbierać faktury w KSeF musi każda firma już od pierwszego lutego 2026 roku."
+   ]
+  },
+  {
+   "tytul": "Kary: ile i od kiedy",
+   "od": 225,
+   "akapity": [
+    "Teraz kary. Za fakturę wystawioną poza KSeF wbrew obowiązkowi naczelnik urzędu skarbowego może nałożyć karę do 100% VAT z tej faktury. Gdy faktura jest bez VAT, kara może wynieść do 18,7% kwoty należności.",
+    "Według obecnych przepisów kary mają wejść w życie pierwszego stycznia 2027 roku.",
+    "Dwudziestego października 2026 roku rząd skierował do Sejmu zmiany, druk numer 3245. Szóstego listopada Sejm uchwalił je bez poprawek. Ustawa zakłada, że kary zaczną obowiązywać od pierwszego stycznia 2028 roku. Obowiązek wystawiania faktur w KSeF zostaje. Według uzasadnienia urząd najpierw przypomni o obowiązku, a potem może sprawdzić rzetelność rozliczeń VAT. Teraz ustawą zajmie się Senat, a potem prezydent, więc może się jeszcze zmienić."
+   ]
+  },
+  {
+   "tytul": "Jak JDG wchodzi do KSeF",
+   "od": 280,
+   "akapity": [
+    "Jak w praktyce wejść do KSeF, gdy prowadzisz jednoosobową firmę i jesteś podatnikiem VAT? Dobra wiadomość: niczego nie musisz zgłaszać. Uprawnienia właścicielskie masz automatycznie, bez wniosków.",
+    "Logujesz się Podpisem Zaufanym albo kwalifikowanym podpisem elektronicznym. Sam numer PESEL nie wystarczy. Spółka loguje się pieczęcią kwalifikowaną albo składa zawiadomienie, w którym wskazuje osobę.",
+    "Nie potrzebujesz też płatnego programu. Ministerstwo Finansów daje bezpłatnie trzy narzędzia: Aplikację Podatnika KSeF, Aplikację Mobilną KSeF i e-mikrofirmę w e-Urzędzie Skarbowym. E-mikrofirma ma jeszcze jedną zaletę: faktury z KSeF trafiają z niej prosto do ewidencji VAT, bez ręcznego przepisywania.",
+    "Do logowania służy też certyfikat KSeF. Jednoosobowa firma dostaje go na swój NIP. Token rozporządzenie dopuszcza tylko do końca 2026 roku. Ministerstwo zapowiedziało, że token zostanie, ale na dwudziestego pierwszego października zmiany w rozporządzeniu nie ogłoszono. Certyfikat przyda się też w pracy offline, o czym za chwilę."
+   ]
+  },
+  {
+   "tytul": "Uprawnienia dla biura rachunkowego",
+   "od": 345,
+   "akapity": [
+    "Faktury wystawia albo księguje Ci biuro rachunkowe? Wtedy w KSeF musisz mu dać uprawnienie. Nadajesz je całemu biuru, a nie każdemu pracownikowi osobno. Możesz też zaznaczyć, że biuro samo wskaże swoich ludzi.",
+    "Uprawnienie nadajesz w Aplikacji Podatnika KSeF albo w programie zintegrowanym z KSeF. Do wyboru są trzy rodzaje: wystawianie faktur, przeglądanie faktur i zarządzanie uprawnieniami.",
+    "Biuro przydaje się też wtedy, gdy nie korzystasz z internetu. Internet jest do KSeF niezbędny, a ministerstwo wskazuje wprost jedną z opcji: nadać uprawnienie do wystawiania faktur innej osobie, na przykład pracownikowi biura rachunkowego.",
+    "I jedna rzecz, o której łatwo zapomnieć. KSeF nie wysyła powiadomień o nowych fakturach. Ty albo biuro musicie je sprawdzać w programie lub w aplikacji."
+   ]
+  },
+  {
+   "tytul": "Klient prywatny i zagraniczny",
+   "od": 395,
+   "akapity": [
+    "Sprzedajesz osobom prywatnym? Faktury dla konsumentów w KSeF są dobrowolne. Tak samo faktura dla przedsiębiorcy, który kupuje coś na prywatny użytek.",
+    "Jeśli taką fakturę wystawisz w KSeF, konsument i tak jej tam nie odbierze. Musicie się umówić, jak ją dostanie, na przykład jako PDF mailem.",
+    "Podobnie z klientem spoza Unii Europejskiej. Fakturę wystawiasz w KSeF, a potem przekazujesz ją w ustalony sposób, na przykład jako PDF. Taka faktura ma kod QR z numerem KSeF, po którym łatwo ją sprawdzić."
+   ]
+  },
+  {
+   "tytul": "Gdy KSeF nie działa",
+   "od": 427,
+   "akapity": [
+    "Co, jeśli nie masz internetu albo KSeF nie działa? Fakturę i tak wystawisz. Są na to trzy tryby offline. Pierwszy to offline24: wystawiasz fakturę bez połączenia i dosyłasz ją do KSeF najpóźniej następnego dnia roboczego.",
+    "Drugi to prace serwisowe Ministerstwa Finansów. Wtedy dosyłasz fakturę najpóźniej dzień po zakończeniu przerwy. Trzeci to awaria ogłoszona w Biuletynie Informacji Publicznej ministerstwa. Na dosłanie masz wtedy siedem dni roboczych od jej końca. Jest jeszcze czwarty przypadek: awaria całkowita ogłoszona w mediach. Wtedy wystawiasz faktury poza systemem i nie dosyłasz ich do KSeF.",
+    "Jeśli fakturę offline dajesz nabywcy poza KSeF, oznaczasz ją dwoma kodami, a do drugiego kodu potrzebny jest wcześniej pobrany certyfikat KSeF. Pobierz go zawczasu, a nie w dniu awarii.",
+    "W praktyce zasada jest prosta: w trybach offline24, offline i awaryjnym faktura musi ostatecznie trafić do KSeF. Ustal więc w firmie, kto pilnuje dosyłania faktur wystawionych offline."
+   ]
+  },
+  {
+   "tytul": "Kod QR na wydruku faktury",
+   "od": 489,
+   "akapity": [
+    "Na koniec wydruki. Faktura z KSeF, którą przekazujesz poza systemem, na papierze albo w PDF, ma kod QR, a pod nim numer KSeF. Ten kod pozwala sprawdzić, czy faktura jest w KSeF, a po wpisaniu dodatkowych danych pobrać ją z systemu.",
+    "Faktura offline, której jeszcze nie dosłałeś, ma dwa kody: OFFLINE i CERTYFIKAT. Po dosłaniu do KSeF wystarcza jeden kod, tak jak przy zwykłej fakturze online."
+   ]
+  },
+  {
+   "tytul": "Numer KSeF w przelewie",
+   "od": 515,
+   "akapity": [
+    "Zmiana dotyczy też płatności. Od pierwszego stycznia 2027 roku, gdy jesteś czynnym podatnikiem VAT i płacisz przelewem fakturę innego czynnego podatnika, w tytule przelewu podajesz numer KSeF faktury. Za kilka faktur naraz podajesz identyfikator zbiorczy z KSeF. To samo dotyczy przelewów w podzielonej płatności.",
+    "I jeszcze jedno: KSeF nie sprawdza, czy kontrahent jest w wykazie podatników VAT. Ministerstwo na dziś nie planuje takiej funkcji. Dlatego numer rachunku i status kontrahenta przed przelewem warto sprawdzać samemu."
+   ]
+  },
+  {
+   "tytul": "Lista na koniec roku",
+   "od": 549,
+   "akapity": [
+    "Podsumujmy, co zrobić przed końcem roku. Sprawdź, czy umiesz zalogować się do KSeF Podpisem Zaufanym. Daj uprawnienie biuru rachunkowemu, jeśli z nim pracujesz. Ustal, kto i jak często sprawdza faktury przychodzące. Pobierz certyfikat KSeF na wypadek pracy offline. I zdecyduj, czy wystawiasz w bezpłatnej aplikacji ministerstwa, czy w swoim programie.",
+    "Numer KSeF swojej faktury sprawdzisz za darmo na fluxlab.pl, a tam też kontrahenta przed przelewem. Linki są w opisie. Pozostałe tematy znajdziesz w serii krótkich filmów KSeF 2027 w 60 sekund. To nie jest porada podatkowa, szczegóły swojej sytuacji omów z księgowym."
+   ]
+  }
+ ]
+}

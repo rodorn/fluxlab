@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import obsluga from "@/lib/wideo/automatyzacja-obslugi-klienta.json";
 import edoreczenia from "@/lib/wideo/e-doreczenia-w-firmie.json";
+import ksef2027 from "@/lib/wideo/ksef-2027-przewodnik.json";
 
 type Wideo = {
   slug: string;
@@ -20,6 +21,7 @@ type Wideo = {
 const WIDEO: Record<string, Wideo> = {
   [obsluga.slug]: obsluga as Wideo,
   [edoreczenia.slug]: edoreczenia as Wideo,
+  [ksef2027.slug]: ksef2027 as Wideo,
 };
 
 const POWIAZANE: Record<string, { href: string; nazwa: string }[]> = {
@@ -42,6 +44,14 @@ const POWIAZANE: Record<string, { href: string; nazwa: string }[]> = {
     {
       href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
       nazwa: "Adres do e-Doręczeń: prywatny a firmowy",
+    },
+  ],
+  "ksef-2027-przewodnik": [
+    { href: "/ksef-2027", nazwa: "KSeF 2027 dla małej firmy" },
+    { href: "/numer-ksef", nazwa: "Sprawdź numer KSeF faktury" },
+    {
+      href: "/sprawdz-kontrahenta",
+      nazwa: "Sprawdź kontrahenta przed przelewem",
     },
   ],
 };
