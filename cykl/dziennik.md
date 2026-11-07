@@ -10628,3 +10628,36 @@ Decyzje dla stratega:
 **Dowód:** cykl/z2-indexnow-2026-11-07.txt, linie Z1 i Z2 w cykl/plan-ruchu.md.
 **Dla Pawła:** Search Console wylogowany w profilu ~/.config/chrome-google (adres https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl przekierowuje na stronę „Rozpocznij"). Trzeba zalogować prywatne konto Google w tym profilu Chrome; bez tego kamienie Z13-Z15 i pomiary GSC idą tylko na starych plikach.
 **Zostało otwarte:** Z3 (od 09:00), Z4 (od 10:00), dalej Z5-Z18.
+
+## 2026-11-07 11:02
+**Kanał:** Google (przygotowanie kamieni Z13, Z14, Z15).
+**Co zrobione:** Z3 i Z4: gotowe propozycje title i description dla /strefa-wiedzy/faktura-wewnetrzna-ksef (pytanie z wyszukiwarki i odpowiedź „Nie” w pierwszym zdaniu) oraz /wdrozenie-n8n-cena („Wdrożenie n8n” na początku, cena 790 zł z page.tsx). Z5: z Google 3 z 5 wejść na /narzedzia wychodzi bez kliknięcia, więc kamień Z15 to kolejność kafelków: /kalkulator-podatkowy (16 uruchomień w 7 dni) i /sprawdzenie-nip (10) na górę.
+**Ruch:** doba 140 odsłon, 55 osób (+5% wobec średniej 133,4); źródła: www.google.com 50, b2b-email 13, instagram 4, facebook 3, b2b 2; najczęściej /, /narzedzia, /kalkulator-podatkowy; uruchomienia narzędzi 11.
+**Dowód:** cykl/z3-kandydat-2026-11-07.txt, cykl/z4-kandydat-2026-11-07.txt, cykl/z5-narzedzia-2026-11-07.txt, linie Z3-Z5 w cykl/plan-ruchu.md.
+**Dla Pawła:** Search Console nadal wylogowany (bez zmian od wpisu 08:52).
+**Zostało otwarte:** Z6 (od 12:00): „było / będzie” dla kolejności kafelków; kolejność bierze się z lib/sekcje.ts (wspólne z menu), więc najprościej w app/narzedzia/page.tsx wyjąć oba narzędzia przed grupy jako pierwszy rząd bez nowego nagłówka i usunąć je z ich grup. Dalej Z7-Z18.
+
+## 2026-11-07 12:48
+**Kanał:** Google (plan ruchu 7.11, Z6: przygotowanie kamienia Z15).
+**Co zrobione:** dokładne „było / będzie” dla /narzedzia według wariantu z Z5 (kolejność kafelków): grupy „Dla osób prywatnych” i „Firma i rejestry” na początek, /kalkulator-podatkowy i /sprawdzenie-nip jako pierwsze kafle, zmiana tylko w app/narzedzia/page.tsx, zero nowych słów; wdrożenie w Z15 (8.11 02:00).
+**Ruch:** ostatnia doba 195 odsłon, 118 osób (+42% wobec średniej 137); źródła: b2b-email 94, www.google.com 31, instagram 4, facebook 3, b2b 2; YouTube 1, Threads 1. Najczęściej: / 19, /narzedzia 14, /strefa-wiedzy/blad-w-fakturze-ksef 8.
+**Dowód:** cykl/z5-narzedzia-2026-11-07.txt, sekcja „BYŁO / BĘDZIE”; Z6 oznaczone [x] w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** Z7 (temat dla fluxlab-meta) od 13:00, dalej Z8-Z18 według godzin.
+
+## 2026-11-07 15:02
+**Kanał:** plan stratega (Z7 Facebook przez fanpage, Z8 pomiar Google, Z9 indeksowanie).
+**Co zrobione:** temat „W którym miesiącu odliczyć VAT z faktury z KSeF” z linkiem utm_campaign=strefa-wiedzy poszedł do sesji fanpage'a; pomiar skoku Google 2 → 15 i kontrola mapy witryny zapisane w plikach.
+**Ruch:** doba 206 odsłon, 136 osób (+48% do średniej 7 dni); tydzień 1110 odsłon, 562 osoby. Źródła: b2b-email 136, www.google.com 15, instagram 4, facebook 3, b2b 2; 7 dni: threads 2, linkedin 1, X 6 sesji. Uruchomienia narzędzi: 5. Lejek 7 dni: 6 form_start, 2 zapytania.
+**Dowód:** Z7 `sesja napisz FL_meta` → „Doręczono do FL_meta (14:43)”, treść: temat do jednego posta w ich rytmie, link https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef?utm_source=facebook&utm_campaign=strefa-wiedzy, pominąć przy dublu (ich komentarz z tym linkiem 27.10). Z8 cykl/z8-google-2026-11-07.txt: 9 z 15 wejść z Google na /, wszystkie w 3 h po poście FB/IG (08:17 = 3 min po karuzeli 08:14), 6 na /narzedzia i /kalkulator-podatkowy; wniosek: marka po postach, ale publikacje co 1-1,5 h, więc test godzinowy słabo rozróżnia. Z9 cykl/z9-mapa-2026-11-07.txt: mapa 160 adresów, poza nią 9 stron i wszystkie noindex, kodów ≠200 w mapie 0.
+**Dla Pawła:** logowanie Search Console w profilu ~/.config/chrome-google (port 9228), bez tego nie da się potwierdzić zapytań brandowych z Z8.
+**Zostało otwarte:** Z10 (źródła szkicu 9.11, od 16:00), Z11 (tekst szkicu, od 17:00), Z12 bilans dnia (od 22:00), Z13-Z18 od 8.11 00:00.
+<!-- WYSLANO 2026-11-07 15:11 -->
+
+## 2026-11-07 16:55
+**Kanał:** 2 (widoczność, treść pod artykuł z kalendarza 9.11), zadanie Z10 planu.
+**Co zrobione:** do szkicu wpisu 9.11 „Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń” dopisana sekcja źródeł: 4 strony gov.pl i biznes.gov.pl sprawdzone dziś, F1-F5 nadal zgodne, 6 nowych faktów (CEIDG/KRS ujawnia adres, firmy nie szukają adresów obywateli, wyszukiwarka urzędów aktualizowana w dni robocze, format adresu).
+**Ruch:** ostatnia doba 220 odsłon, 138 osób (+58% wobec średniej); źródła: b2b-email 149, google 15, instagram 4, facebook 3, b2b 2. Uruchomienia narzędzi: 5.
+**Dowód:** cykl/artykul-2026-11-09-szkic.md, sekcja „Źródła (Z10 planu 7.11)”.
+**Dla Pawła:** 
+**Zostało otwarte:** Z11 (od 17:00, tekst szkicu z F10), Z12 bilans o 22:00, kamienie Z13-Z15 od 8.11 00:00.
