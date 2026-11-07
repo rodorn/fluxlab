@@ -46,6 +46,8 @@ export interface ProductLandingProps {
   typ?: "narzedzie" | "usluga";
   h1: string;
   lead: string;
+  /** Krótki odnośnik pod opisem w nagłówku, widoczny bez rozwijania sekcji. */
+  podLeadem?: ReactNode;
   ctaLabel: string;
   ctaNote?: string;
   bezPrzyciskowHero?: boolean;
@@ -163,6 +165,9 @@ export default function ProductLanding(p: ProductLandingProps) {
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
               {p.lead}
             </p>
+            {p.podLeadem && (
+              <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">{p.podLeadem}</p>
+            )}
             {(p.cena ?? cenaOd(p.pricing)) && (
               <p className="mt-4 text-base font-semibold text-gray-900 dark:text-white">
                 {p.cena ?? cenaOd(p.pricing)}

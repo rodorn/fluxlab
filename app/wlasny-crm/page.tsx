@@ -39,6 +39,14 @@ export default function WlasnyCrm() {
       eyebrow="FluxCRM"
       h1="Własny CRM dla Twojej firmy"
       lead="Lead z formularza, telefonu i poczty trafia sam do opiekuna, z zadaniem „zadzwoń w 15 minut”. Aplikacja na komputerze i telefonie każdego handlowca, uruchomienie w trzy tygodnie."
+      podLeadem={
+        <>
+          Pośrednik kredytowy?{" "}
+          <Link href="/crm-dla-posrednikow-kredytowych" className="font-semibold text-accent hover:underline">
+            Umów 30 minut demo FluxCRM
+          </Link>
+        </>
+      }
       ctaLabel="Policz, ile kosztują cię gubione leady"
       checks={[
         {
@@ -47,16 +55,7 @@ export default function WlasnyCrm() {
         },
         {
           title: "Cała historia w jednej karcie",
-          desc: (
-            <>
-              Rozmowy, SMS, maile i dokumenty klienta w jednym miejscu, także
-              kilka wniosków w jednej sprawie. Pośrednik kredytowy?{" "}
-              <Link href="/crm-dla-posrednikow-kredytowych" className="text-accent hover:underline">
-                Umów demo
-              </Link>
-              .
-            </>
-          ),
+          desc: "Rozmowy, SMS, maile i dokumenty klienta w jednym miejscu, także kilka wniosków w jednej sprawie.",
         },
         {
           title: "System i dane są Twoje",
