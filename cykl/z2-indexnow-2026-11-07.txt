@@ -1,0 +1,47 @@
+Z2 plan ruchu 7.11, 2026-11-07 08:44
+Zmienione page.tsx od 3.11: 111 ścieżek (bez /cv, /api, /mail, tras dynamicznych), w mapie 106; zgłoszono 40 ostatnio zmienionych:
+/strefa-wiedzy/zapier-vs-make
+/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef
+/strefa-wiedzy/gutschrift-ksef
+/automatyzacja-dla-biur-rachunkowych
+/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji
+/automatyzacja-leadow-crm
+/integracja-crm-z-erp
+/strefa-wiedzy/blad-w-fakturze-ksef
+/strefa-wiedzy/samofakturowanie-ksef
+/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef
+/strefa-wiedzy/n8n-vs-zapier
+/audyt-google-ads
+/scraping-danych
+/n8n
+/widocznosc-w-ai
+/wdrozenie-n8n-cena
+/strony-www
+/sprawdz-kontrahenta
+/rejestr-cen
+/produkty
+/naprawa-https
+/landing-z-platnoscia
+/ksef-integracja
+/kontakt
+/import-radar
+/dla-zespolu
+/automatyczne-przypisywanie-leadow
+/audyt-strony
+/asystent-ai-na-stronie
+/
+/automatyzacja-procesow-biznesowych
+/szablony
+/strefa-wiedzy/zapier-make-n8n-porownanie
+/strefa-wiedzy/vat-w-jdg-kiedy-warto
+/strefa-wiedzy/skala-czy-liniowy-jdg
+/strefa-wiedzy/salesforce-dla-malej-firmy
+/strefa-wiedzy/ryczalt-czy-liniowy
+/strefa-wiedzy/podszywanie-sie-pod-firmowy-email
+/strefa-wiedzy/podszywanie-pod-salony-samochodowe
+/strefa-wiedzy/pipedrive-vs-salesforce
+
+Kody (lista 40): IndexNow wspólny 403 UserForbiddedToAccessSite (znany), Yandex 200, Naver 200
+
+Bez argumentów (zmiany z mapy):
+Brak adresow zmienionych od ostatniego zgloszenia, nic nie wysylam.

@@ -10610,3 +10610,21 @@ Decyzje dla stratega:
 **Kanały:** pomiar trzecią dobę bez ludzi: z 9 do 6 zadań. 3 kamienie po 8.11 00:00 (reguła 3 dni po 026d06c5): meta faktura-wewnetrzna-ksef (43 wyśw., poz. 4,7, 0 klik.), meta wdrozenie-n8n-cena (57 wyśw., poz. 8,7), /narzedzia wg pomiaru Z5. IndexNow zaległych zmian, szkic artykułu 9.11 (BAE), jeden temat dla fluxlab-meta.
 **Plan:** 18 zadań, cykl/plan-ruchu.md. Z18 z planu 6.11 zastąpiony tym wpisem.
 **Mail:** „FluxLab ruch, plan na 7.11: Google 15 osób w dobie (było 2)” wysłany 06:21 na iwanekpawel55@gmail.com.
+
+## 2026-11-07 06:44
+**Kanał:** brak (czekam na Z1 o 07:00).
+**Co zrobione:** nic, żadne zadanie planu 7.11 nie jest jeszcze dostępne; pierwsze, Z1, nie wcześniej niż 07:00.
+**Ruch:** doba 145 odsłon, 57 osób (surowo przed odsiewem stratega); źródła: www.google.com 52, b2b-email 16, m.facebook.com 3, facebook 3, b2b 2, YouTube 1, Threads 1. Uruchomienia narzędzi 11.
+**Dowód:** brak.
+**Dla Pawła:**
+**Zostało otwarte:** Z1-Z18 według cykl/plan-ruchu.md, od Z1 o 07:00.
+
+<!-- WYSLANO 2026-11-07 07:04 -->
+
+## 2026-11-07 08:52
+**Kanał:** kontrola (Z1) i IndexNow dla Binga (Z2).
+**Co zrobione:** Z1: timer fluxlab-strona enabled, budżet „utrzymaj" (prognoza 102%, hamulec napięcie), GSC zalogowany: nie. Z2: zgłoszono do IndexNow 40 ostatnio zmienionych stron z 106 zmienionych od 3.11; Yandex 200, Naver 200, wspólny 403 (znany); z mapy brak nowych zmian.
+**Ruch:** doba 139 odsłon, 53 osoby (+4% wobec średniej 133,6); źródła: www.google.com 50, b2b-email 14, m.facebook.com 2, facebook 2, b2b 2, YouTube 1; najczęściej /, /narzedzia, /kalkulator-podatkowy.
+**Dowód:** cykl/z2-indexnow-2026-11-07.txt, linie Z1 i Z2 w cykl/plan-ruchu.md.
+**Dla Pawła:** Search Console wylogowany w profilu ~/.config/chrome-google (adres https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl przekierowuje na stronę „Rozpocznij"). Trzeba zalogować prywatne konto Google w tym profilu Chrome; bez tego kamienie Z13-Z15 i pomiary GSC idą tylko na starych plikach.
+**Zostało otwarte:** Z3 (od 09:00), Z4 (od 10:00), dalej Z5-Z18.
