@@ -8,11 +8,11 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
-  title: "Make vs n8n, porównanie dla firm MŚP | Fluxlab",
+  title: "n8n vs Make 2026: ceny i co wybrać w firmie | Fluxlab",
   description:
     "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
   openGraph: {
-    title: "Make vs n8n, porównanie dla firm MŚP | Fluxlab",
+    title: "n8n vs Make 2026: ceny i co wybrać w firmie | Fluxlab",
     description:
       "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
     locale: "pl_PL",
