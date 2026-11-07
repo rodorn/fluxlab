@@ -4,12 +4,12 @@ import ProductLanding from "@/components/ProductLanding";
 import AiCheck from "@/components/AiCheck";
 
 export const metadata: Metadata = {
-  title: "Asystent AI a Twoja strona: czy ChatGPT ją widzi | Fluxlab",
+  title: "Widoczność w ChatGPT: czy AI poleci Twoją firmę | Fluxlab",
   description:
     "Asystent AI poleci Twoją firmę tylko, gdy przeczyta stronę. Sprawdzamy za darmo 7 rzeczy, od których to zależy: dostęp robotów, treść, dane, llms.txt.",
   alternates: { canonical: "/widocznosc-w-ai" },
   openGraph: {
-    title: "Asystent AI a Twoja strona: czy ChatGPT ją widzi | Fluxlab",
+    title: "Widoczność w ChatGPT: czy AI poleci Twoją firmę | Fluxlab",
     description:
       "Klient pyta asystenta zamiast wpisywać frazę. Sprawdź, czy Twoja strona może w takiej odpowiedzi wystąpić.",
     locale: "pl_PL",
