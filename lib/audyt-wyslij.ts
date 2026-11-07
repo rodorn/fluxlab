@@ -66,6 +66,9 @@ async function przezSmtp(
 ): Promise<boolean> {
   const { SMTP_HOST, SMTP_USER, SMTP_PASS } = process.env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) return false;
+  const nadawca = process.env.SMTP_FROM ?? SMTP_USER;
+  // Polecenie Pawła 7.11: do Wojtka nic automatycznie z pawel@fluxlab.pl.
+  if (to === DO_WLASCICIELA && /pawel@fluxlab\.pl/i.test(nadawca)) return false;
   try {
     const transport = nodemailer.createTransport({
       host: SMTP_HOST,
@@ -74,7 +77,7 @@ async function przezSmtp(
       auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
     await transport.sendMail({
-      from: process.env.SMTP_FROM ?? SMTP_USER,
+      from: nadawca,
       to,
       replyTo: ODPOWIEDZ_NA,
       subject: temat,
