@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import PobierzPdf from "@/components/PobierzPdf";
 
 export const metadata: Metadata = {
   title: "Materiały PDF: checklisty i poradniki dla JDG | Fluxlab",
@@ -116,13 +117,7 @@ export default async function MaterialyPage() {
                     PDF{m.stron ? `, ${m.stron} ${m.stron === 1 ? "strona" : m.stron < 5 ? "strony" : "stron"}` : ""}, {m.kb >= 1024 ? `${(m.kb / 1024).toFixed(1).replace(".", ",")} MB` : `${m.kb} kB`}
                     {n > 0 && <>, {n} {odmianaPobran(n)}</>}
                   </p>
-                  <a
-                    href={`/pobierz/${m.plik}`}
-                    download
-                    className="btn-primary mt-4 self-start"
-                  >
-                    Pobierz PDF
-                  </a>
+                  <PobierzPdf plik={m.plik} />
                 </li>
               );
             })}

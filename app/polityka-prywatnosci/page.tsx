@@ -150,6 +150,28 @@ export default function PolitykaPrywatnosci() {
                           wskazówka i nie da się jej powiązać z Tobą.
                         </p>
                       </section>
+                        <section id="pobranie" className="scroll-mt-24">
+                          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                            Porady na e-mail po pobraniu materiału
+                          </h2>
+                          <p>
+                            Materiały PDF ze strony /materialy pobierasz bez podawania
+                            adresu. Po pobraniu możesz dobrowolnie wpisać e-mail i
+                            zaznaczyć zgodę. Wtedy zapisujemy: adres e-mail, nazwę
+                            pobranego pliku, datę, treść zgody i stronę, z której
+                            przyszło zgłoszenie.
+                          </p>
+                          <p className="mt-2">
+                            Cel: wysłanie trzech maili z poradami do pobranego
+                            materiału i piątkowego newslettera FluxLab. Podstawa: Twoja
+                            zgoda (art. 6 ust. 1 lit. a RODO). Zgodę wycofujesz w każdej
+                            chwili jednym kliknięciem w link „Wypisz mnie” w każdej
+                            wiadomości albo pisząc na pawel@fluxlab.pl. Maile wysyłamy
+                            przez skrzynkę Zoho (pawel@fluxlab.pl), zapis zgody leży na
+                            serwerze w OVH (Polska). Po wycofaniu zapis zgody z datą
+                            wycofania przechowujemy do 3 lat jako dowód.
+                          </p>
+                        </section>
 
                       {/* 3 */}
                       <section>
