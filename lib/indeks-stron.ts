@@ -130,7 +130,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/realizacje",
     "tytul": "Realizacje: wdrożenia i ich efekty",
-    "opis": "Wdrożenia Fluxlab opisane problemem i wynikiem: wybór aut z tysięcy ogłoszeń, wniosek leasingowy z CRM, zdjęcia bez danych dealera, baza 30 000 wersji aut."
+    "opis": "Strona finreal.pl w 12 dni: audyt 45 → 97, strona główna 6,4 raza lżejsza. Do tego wdrożenia w leasingu aut i liczby z testów FluxCRM."
   },
   {
     "url": "/produkty",

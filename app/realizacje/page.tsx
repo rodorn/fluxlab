@@ -6,11 +6,13 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CTA from "@/components/CTA";
 import { WDROZENIA } from "@/lib/wdrozenia";
 import RealizacjaFinreal from "@/components/RealizacjaFinreal";
+import RealizacjaFinrealSzczegoly from "@/components/RealizacjaFinrealSzczegoly";
+import JakPracujemyLiczby from "@/components/JakPracujemyLiczby";
 
 export const metadata: Metadata = {
   title: "Realizacje: wdrożenia i ich efekty | Fluxlab",
   description:
-    "Wdrożenia Fluxlab opisane problemem i wynikiem: wybór aut z tysięcy ogłoszeń, wniosek leasingowy z CRM, zdjęcia bez danych dealera, baza 30 000 wersji aut.",
+    "Strona finreal.pl w 12 dni: audyt 45 → 97, strona główna 6,4 raza lżejsza. Do tego wdrożenia w leasingu aut i liczby z testów FluxCRM.",
   alternates: { canonical: "/realizacje" },
   openGraph: {
     title: "Realizacje: wdrożenia i ich efekty | Fluxlab",
@@ -169,9 +171,10 @@ export default function RealizacjePage() {
           </div>
 
           <RealizacjaFinreal />
+          <RealizacjaFinrealSzczegoly />
 
           <div className="mt-16 grid gap-5 md:grid-cols-2">
-            {WDROZENIA.map((w) => (
+            {WDROZENIA.slice(1).map((w) => (
               <article
                 key={w.tytul}
                 className="flex flex-col rounded-2xl border border-gray-200/80 bg-white/60 p-6 dark:border-gray-800/80 dark:bg-gray-900/40"
@@ -208,6 +211,8 @@ export default function RealizacjePage() {
               </article>
             ))}
           </div>
+
+          <JakPracujemyLiczby />
 
           <div className="mx-auto mt-20 max-w-3xl text-center">
             <h2 className="h2-sekcji">Otwarty kod, dla programistów</h2>

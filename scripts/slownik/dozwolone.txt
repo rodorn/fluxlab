@@ -261,3 +261,6 @@ sqlite
 stage
 systemd
 mObywatel
+figmie
+gclid
+sanity
