@@ -13,6 +13,18 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
+const NAJCZESCIEJ = ["/kalkulator-podatkowy", "/sprawdzenie-nip"];
+const pierwsze = (lista: Narzedzie[]) =>
+  [...lista].sort(
+    (a, b) =>
+      Number(NAJCZESCIEJ.includes(b.href)) - Number(NAJCZESCIEJ.includes(a.href)),
+  );
+const GRUPY_KOLEJNOSC = [
+  "Dla osób prywatnych",
+  "Firma i rejestry",
+  ...GRUPY_NARZEDZI.filter((g) => g !== "Dla osób prywatnych" && g !== "Firma i rejestry"),
+];
+
 export const metadata: Metadata = {
   title: "Narzędzia: kalkulatory, audyty i decyzje | Fluxlab",
   description:
@@ -248,8 +260,8 @@ export default function Narzedzia() {
             <div className="max-sm:[&_div.flex-wrap]:flex-nowrap max-sm:[&_div.flex-wrap]:overflow-x-auto max-sm:[&_button]:shrink-0 max-sm:[&_button]:whitespace-nowrap">
               <WyborNarzedzia />
             </div>
-            {GRUPY_NARZEDZI.map((grupa) => {
-              const wGrupie = narzedziaGrupy(grupa);
+            {GRUPY_KOLEJNOSC.map((grupa) => {
+              const wGrupie = pierwsze(narzedziaGrupy(grupa));
               if (!wGrupie.length) return null;
               return (
                 <section key={grupa} className="mt-12 first:mt-10">
