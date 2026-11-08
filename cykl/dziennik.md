@@ -10747,3 +10747,20 @@ Wniosek: doba ludzi bez zmian (37 vs 36), spadek Google 13 → 8 i zero form_sta
 **Trzy najważniejsze na dziś:** Z2 kamień /sprawdzenie-nip (konkretny powód do zostawienia maila po zielonym wyniku; 12 skanów, 0 zapytań w 14 dni), Z3 IndexNow dla Z2 i 6 stron innych sesji, Z12 artykuł z kalendarza 9.11 „Czy firma ma adres do e-Doręczeń” (9.11 po 00:30, kontrola szkicu w Z6).
 **Plan:** 16 zadań, cykl/plan-ruchu.md. Z18 z planu 7.11 zastąpiony tym wpisem.
 **Dla Pawła:** zalogowanie do Search Console i Bing Webmaster w profilu chrome-google (port 9228, https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl i https://www.bing.com/webmasters), ok. 5 minut; wylogowane od 8 dób, bez tego nie ma zapytań, żądań indeksowania ani oceny kamieni. Decyzja o zimnym outreachu, karta f755c6e1 (termin 13.11), ok. 3 minuty.
+
+## 2026-11-08 06:44
+**Kanał:** żaden, czekam na Z1 o 07:00 (plan 8.11 z 06:19, pierwsze zadanie z warunkiem godziny).
+**Co zrobione:** nic, żadne zadanie planu nie jest jeszcze dostępne.
+**Ruch:** doba 229 odsłon, 139 osób (przed odsiewem ludzi strategii); źródła: b2b-email 181, google 8, instagram 3, facebook 3+2. Uruchomienia narzędzi 2. Tydzień 575 osób, 6 form_start, 2 wysłane.
+**Dowód:** brak.
+**Dla Pawła:** 
+**Zostało otwarte:** Z1-Z16 z cykl/plan-ruchu.md, Z1 od 07:00, Z2 od 08:00.
+<!-- WYSLANO 2026-11-08 07:04 -->
+
+## 2026-11-08 08:58
+**Kanał:** Bing i DuckDuckGo (kamień 1 /sprawdzenie-nip), plus kontrola stanu (plan 8.11 Z1, Z2).
+**Co zrobione:** po zielonym wyniku sprawdzenia NIP zamiast ogólnego opisu raportu stoi konkretny powód do zostawienia maila: konto z faktury przy płatności od 15 000 zł (150 zn. zamiast 230).
+**Ruch:** doba 236 odsłon, 141 osób (+68% wobec średniej 140,4); źródła: b2b-email 182, www.google.com 10, facebook 4+2, instagram 3. Uruchomienia narzędzi 2. Z1: timer fluxlab-strona enabled, budżet „zwolnij” (hamulec alarm, prognoza 115%), GSC zalogowany: nie.
+**Dowód:** commit b92d17a7; zdanie „Płacisz od 15 000” w https://fluxlab.pl/_next/static/chunks/ee356f246a6d7a11.js ładowanym przez /sprawdzenie-nip; build, SPOJNOSC OK, JAKOSC OK; skanu na produkcji nie uruchamiano.
+**Dla Pawła:** zalogowanie do Search Console w profilu chrome-google (port 9228), https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl, nadal przekierowuje na stronę „about”.
+**Zostało otwarte:** Z3 IndexNow (od 09:00), dalej Z4-Z16 wg cykl/plan-ruchu.md.
