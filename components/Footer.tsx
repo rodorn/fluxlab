@@ -96,6 +96,7 @@ const PROFILE = [
   ["Instagram", "https://www.instagram.com/fluxlab.pl/"],
   ["X", "https://x.com/PaweIwanek"],
   ["LinkedIn", "https://www.linkedin.com/company/fluxlab-pl"],
+  ["Zleca.pl", "https://zleca.pl/wykonawca/fluxlab-strony-internetowe-i-automatyzacja-1790016801"],
 ] as const;
 
 export default function Footer() {
