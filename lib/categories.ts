@@ -482,7 +482,7 @@ export const categories: Category[] = [
     name: "Wideo",
     slug: "wideo",
     description:
-      "Filmy FluxLab w formie artykułów: KSeF 2027, e-Doręczenia, automatyzacja obsługi i statystyki ofert. Film i pełny tekst na jednej stronie.",
+      "Filmy FluxLab w formie artykułów: KSeF 2027, e-Doręczenia, automatyzacja obsługi, statystyki ofert i CRM dla pośrednika. Film i pełny tekst na jednej stronie.",
     articles: [
       {
         href: "/strefa-wiedzy/ksef-2027-w-malej-firmie",
@@ -510,6 +510,13 @@ export const categories: Category[] = [
         title: "Otwarcie maila a przeczytanie oferty",
         description:
           "20 otwarć maila z ofertą i 0 wejść na stronę oferty w 4 tygodnie. Sprawdź, czemu otwarcie to słaby sygnał i kiedy zadzwonić do klienta.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/crm-dla-posrednika-kredytowego-jedna-sprawa",
+        title: "CRM dla pośrednika kredytowego",
+        description:
+          "CRM dla pośrednika kredytowego: jak wygląda jedna sprawa hipoteczna od formularza po prowizję. Przykład z 25 sprawami i 168 tys. zł prowizji.",
         bezOkladki: true,
       },
     ],

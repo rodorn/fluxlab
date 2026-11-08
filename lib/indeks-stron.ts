@@ -776,5 +776,10 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "url": "/strefa-wiedzy/kategoria/wideo",
     "tytul": "Wideo, Strefa wiedzy",
     "opis": "Filmy FluxLab jako artykuły: KSeF 2027, e-Doręczenia, automatyzacja obsługi klienta i statystyki ofert."
+  },
+  {
+    "url": "/strefa-wiedzy/crm-dla-posrednika-kredytowego-jedna-sprawa",
+    "tytul": "CRM dla pośrednika kredytowego: jedna sprawa",
+    "opis": "CRM dla pośrednika kredytowego: jak wygląda jedna sprawa hipoteczna od formularza po prowizję. Przykład z 25 sprawami i 168 tys. zł prowizji."
   }
 ];

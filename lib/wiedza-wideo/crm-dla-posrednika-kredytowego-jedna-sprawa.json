@@ -1,0 +1,129 @@
+{
+  "slug": "crm-dla-posrednika-kredytowego-jedna-sprawa",
+  "tytulStrony": "CRM dla pośrednika kredytowego: jedna sprawa",
+  "h1": "CRM dla pośrednika kredytowego: jedna sprawa od formularza do prowizji",
+  "tytulKrotki": "CRM dla pośrednika kredytowego",
+  "opis": "CRM dla pośrednika kredytowego: jak wygląda jedna sprawa hipoteczna od formularza po prowizję. Przykład z 25 sprawami i 168 tys. zł prowizji.",
+  "lead": "Prowadzisz biuro pośrednika kredytowego i zapytania masz w telefonie, mailu i na kartce? Zobaczysz, jak jedna sprawa przechodzi przez biuro, które ma wszystko w jednym miejscu: od formularza, przez zdolność i dokumenty, po prowizję.",
+  "youtubeId": "Mo8oKvKPpGI",
+  "dlugosc": 158,
+  "opublikowano": "2026-11-08T01:08:10-08:00",
+  "sekcje": [
+    {
+      "h2": "Jak prowadzić sprawy kredytowe, gdy zapytania leżą w telefonie, mailu i na kartce",
+      "od": 0,
+      "akapity": [
+        "W biurze pośrednika kredytowego sprawa często przepada z prostego powodu: klient za długo czekał na odpowiedź. Jedno zapytanie leży w telefonie, drugie w mailu, trzecie zapisane jest na kartce.",
+        "Od formularza do decyzji banku mijają tygodnie, kilkanaście dokumentów i kilka banków. Klient, który czeka za długo, pisze do kolejnego pośrednika.",
+        "Program dla doradcy kredytowego ma więc jedno zadanie: trzymać całą sprawę w jednym miejscu, od pierwszej wiadomości do prowizji. Poniżej zobaczysz, jak wygląda jedna sprawa hipoteczna w takim CRM-ie, krok po kroku.",
+        "Jeśli ten opis brzmi znajomo, problem nie leży w ilości pracy, tylko w tym, że informacje są rozrzucone. Doradca szuka numeru telefonu w jednym miejscu, dokumentu w drugim, a terminu w głowie. Każda taka przerwa wydłuża czas, w którym klient czeka.",
+        "Dobrze zaprojektowany CRM nie zastępuje doradcy. Zbiera sprawy w jednym widoku, podpowiada kolejny krok i pilnuje terminów, a decyzje zostawia Tobie."
+      ]
+    },
+    {
+      "h2": "Gdzie zbierać zapytania od klientów z formularza, Messengera, WhatsAppa i SMS",
+      "od": 25,
+      "akapity": [
+        "Klientka wysyła wieczorem formularz: hipoteka na 540 tys. zł, mieszkanie w Lublinie. Sprawa od razu pojawia się na tablicy, z kwotą i celem kredytu.",
+        "Tak samo trafiają do niej wiadomości z Messengera, WhatsAppa, maile i SMS-y. Nie przepisujesz niczego z telefonu do arkusza.",
+        "Rano otwierasz listę „Teraz”. Pokazuje, kto czeka najdłużej, a kolor oznacza sprawy najpilniejsze. Przy nowej sprawie system podpowiada pierwszy krok: odpowiedzieć i umówić rozmowę.",
+        "Sprawa ma etapy: analiza, dokumenty, wnioski w bankach, decyzja, uruchomienie. Widzisz, co utknęło i u kogo.",
+        "Zbieranie wszystkich kanałów w jednym miejscu ma praktyczny skutek: nikt w biurze nie pyta, gdzie jest wiadomość od klienta. Każda trafia do sprawy, a sprawa ma kwotę, cel i etap.",
+        "Lista „Teraz” porządkuje dzień. Zamiast przeglądać skrzynkę, telefon i notatki, zaczynasz od spraw, które czekają najdłużej."
+      ],
+      "lista": [
+        "tablica ze sprawami, kwotą i celem",
+        "lista „Teraz” z kolejnością według czasu oczekiwania",
+        "kolor przy sprawach najpilniejszych",
+        "podpowiedź pierwszego kroku"
+      ]
+    },
+    {
+      "h2": "Jak szybko odpowiadać klientowi i nie tracić informacji z rozmowy",
+      "od": 51,
+      "akapity": [
+        "Asystent AI w kilka sekund pisze odpowiedź na podstawie zapytania i szablonów biura. Doradca czyta tekst, poprawia go i zatwierdza. Do klienta wychodzi tylko zatwierdzona wiadomość.",
+        "Dzięki temu nowe zapytanie dostaje odpowiedź w kilka minut, a Ty nie piszesz każdej wiadomości od zera.",
+        "Rozmowa z klientem trafia do karty sprawy razem z nagraniem i streszczeniem. Dochód, wkład własny i termin dokumentów zapisują się same, więc nie musisz ich wpisywać po rozmowie.",
+        "Agent AI ocenia też samą rozmowę. Wiesz, co poprawić następnym razem.",
+        "Szablony biura sprawiają, że odpowiedzi są spójne, a Ty zachowujesz kontrolę nad tym, co widzi klient. Asystent AI skraca przygotowanie tekstu, ale ostatnie słowo należy do doradcy.",
+        "Zapisane automatycznie dane z rozmowy oznaczają, że po spotkaniu lub telefonie nie wracasz do notatek. Karta sprawy ma od razu dochód, wkład własny i termin dokumentów."
+      ]
+    },
+    {
+      "h2": "Jak sprawdzić zdolność kredytową klienta już pierwszego dnia",
+      "od": 74,
+      "akapity": [
+        "CRM liczy zdolność od razu, gdy w karcie są dane. Pierwszego dnia wiesz, czy 540 tys. zł jest realne. Zestawienie dla klientki powstaje jednym kliknięciem.",
+        "Program liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania. Uwzględnia wskaźnik DSTI i bufor na wzrost stóp. Pokazuje też, czy wnioskowana kwota się mieści.",
+        "To jest szacunek orientacyjny, bez BIK i scoringu banku. Decyzję podejmuje bank. Oferty CRM porównuje tylko na podstawie bazy warunków banków, którą prowadzisz Ty.",
+        "Wczesna wiedza o zdolności oszczędza czas obu stron. Jeśli kwota z formularza się nie mieści, rozmawiasz o tym pierwszego dnia, a nie po zebraniu wszystkich dokumentów.",
+        "Pamiętaj, że wynik służy do rozmowy z klientem i planowania. Ostateczną ocenę zdolności robi bank."
+      ]
+    },
+    {
+      "h2": "Jak pilnować dokumentów i wniosków do kilku banków w jednej sprawie",
+      "od": 84,
+      "akapity": [
+        "Lista dokumentów do hipoteki jest gotowa od razu. Jeden SMS prosi klienta o resztę dokumentów, a każdy dosłany dokument odhacza się na liście. CRM pokazuje, czego jeszcze brakuje.",
+        "Wnioski do kilku banków prowadzisz w jednej sprawie. Dla każdego widzisz: gdzie wniosek poszedł, kiedy i z jaką odpowiedzią.",
+        "Przypomnienia pilnują terminów, więc nie trzymasz ich w głowie ani na kartce.",
+        "Takie prowadzenie dokumentów zmienia rozmowę z klientem. Zamiast pytać, co jeszcze brakuje, wysyłasz jeden SMS, a CRM sam pokazuje, które dokumenty już dotarły.",
+        "Przy kilku bankach w jednej sprawie najłatwiej o pomyłkę w terminach i odpowiedziach. Dlatego każdy wniosek ma w karcie swoje miejsce."
+      ]
+    },
+    {
+      "h2": "Od decyzji banku do prowizji: co dzieje się z umową i historią sprawy",
+      "od": 100,
+      "akapity": [
+        "Gdy bank wyda decyzję pozytywną, wysyłasz klientce SMS. Umowa jest podpisywana na telefonie.",
+        "Potem sprawa przechodzi do prowizji. Cała historia sprawy zostaje w jednej karcie. Prowizje liczą się same.",
+        "Zgody klienta, rejestr czynności przetwarzania i umowa powierzenia są w systemie. Dane klientów są na serwerze w Unii Europejskiej."
+      ]
+    },
+    {
+      "h2": "CRM dla biura z kilkoma doradcami i przejście z Excela",
+      "od": 109,
+      "akapity": [
+        "Gdy biuro ma kilku doradców, właściciel widzi, kto ile spraw prowadzi. Ma też grafik zespołu i poranny raport przygotowany przez agentów AI. Widać koszt zapytania z każdej kampanii, więc wiadomo, gdzie dokładać budżet.",
+        "Doradca u klienta ma wszystko w telefonie. Mówi: „Przypomnij jutro o zaświadczeniu o dochodach”, a zadanie pojawia się w sprawie.",
+        "Przejście jest proste. Klientów przenosi się z Excela albo innego CRM-u. Role, kopie zapasowe i integracje działają od pierwszego dnia, a szkolenie odbywa się na Twoich sprawach.",
+        "W biurze pokazanym w filmie dało to 168 tys. zł prognozowanej prowizji z 25 spraw.",
+        "Dla właściciela biura te same dane są podstawą zarządzania. Wie, kto prowadzi ile spraw, i może wyrównać obciążenie zespołu.",
+        "Koszt zapytania z każdej kampanii pokazuje, które źródło klientów się opłaca. Dzięki temu decyzję o budżecie podejmujesz na liczbach."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Jaki program wybrać dla doradcy kredytowego?",
+      "a": "Taki, który trzyma sprawę w jednym miejscu: zapytanie, rozmowy, dokumenty, wnioski do banków i prowizję. Przy wyborze sprawdź, czy zbiera wiadomości z kilku kanałów i pilnuje terminów."
+    },
+    {
+      "q": "Czy CRM sam liczy zdolność kredytową?",
+      "a": "Tak, orientacyjnie. FluxCRM liczy maksymalną ratę i kwotę kredytu z dochodu, zobowiązań i kosztów utrzymania. To szacunek bez BIK i scoringu banku, a decyzję podejmuje bank."
+    },
+    {
+      "q": "Czy AI wysyła wiadomości do klientów bez wiedzy doradcy?",
+      "a": "Nie. Asystent AI przygotowuje szkic odpowiedzi na podstawie zapytania i szablonów biura. Doradca go czyta, poprawia i zatwierdza, a do klienta wychodzi tylko zatwierdzona wiadomość."
+    },
+    {
+      "q": "Jak przenieść klientów z Excela do CRM?",
+      "a": "Import z arkusza albo z eksportu z dotychczasowego systemu jest częścią wdrożenia. Role, kopie zapasowe i integracje działają od pierwszego dnia."
+    },
+    {
+      "q": "Jak pilnować, czego brakuje w dokumentach klienta?",
+      "a": "CRM tworzy listę dokumentów do hipoteki i prosi klienta jednym SMS-em o resztę. Każdy dosłany dokument odhacza się na liście, więc widzisz braki w sprawie."
+    },
+    {
+      "q": "Czy dane klientów w CRM są bezpieczne?",
+      "a": "Instancja działa na serwerze w Unii Europejskiej, a przetwarzanie danych jest objęte umową powierzenia. Zgody klientów i rejestr czynności przetwarzania są w systemie."
+    }
+  ],
+  "cta": {
+    "naglowek": "Chcesz zobaczyć taką sprawę w swoim biurze?",
+    "opis": "Pokażemy FluxCRM na przykładowej sprawie kredytowej w 30 minut i powiemy, co da się przenieść z Twoich dotychczasowych danych.",
+    "etykieta": "Umów demo",
+    "href": "/crm-dla-posrednikow-kredytowych"
+  }
+}

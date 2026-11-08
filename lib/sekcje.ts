@@ -181,6 +181,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/e-doreczenia-w-firmie", "Wideo: e-Doręczenia w firmie: obowiązek i 14 dni"),
           s("/strefa-wiedzy/automatyzacja-obslugi-klienta", "Wideo: Automatyzacja obsługi klienta"),
           s("/strefa-wiedzy/otwarcie-maila-z-oferta", "Wideo: Otwarcie maila a przeczytanie oferty"),
+          s("/strefa-wiedzy/crm-dla-posrednika-kredytowego-jedna-sprawa", "Wideo: CRM dla pośrednika kredytowego"),
           s("/strefa-wiedzy/kategoria/[slug]", "Kategoria artykułów"),
           s("/strefa-wiedzy/ai-w-automatyzacji-firm", "AI w automatyzacji firm"),
           s("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "Automatyzacja CRM z AI, od czego zacząć"),
