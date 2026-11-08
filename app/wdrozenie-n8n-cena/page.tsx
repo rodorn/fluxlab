@@ -3,9 +3,9 @@ import ProductLanding from "@/components/ProductLanding";
 import KalkulatorAutomatyzacji from "@/components/KalkulatorAutomatyzacji";
 
 export const metadata: Metadata = {
-  title: "Ile kosztuje n8n? Wdrożenie i cena | Fluxlab",
+  title: "Wdrożenie n8n: ile kosztuje, od 790 zł | Fluxlab",
   description:
-    "Ile kosztuje n8n: licencja 0 zł, serwer 30 do 90 zł miesięcznie, praca od 790 zł za przepływ, opieka 190 zł. Policz w kalkulatorze.",
+    "Wdrożenie n8n: licencja 0 zł, serwer 30 do 90 zł miesięcznie, praca od 790 zł za przepływ, opieka 190 zł miesięcznie. Policz koszt w kalkulatorze.",
   alternates: { canonical: "/wdrozenie-n8n-cena" },
   openGraph: {
     title: "Ile kosztuje n8n? Wdrożenie i cena | Fluxlab",
