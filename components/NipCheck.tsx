@@ -275,7 +275,7 @@ export default function NipCheck({ dalej = false }: { dalej?: boolean }) {
           <div className="mt-5 border-t border-gray-200/70 dark:border-gray-700/70 pt-4">
             <p className="text-sm text-gray-700 dark:text-gray-300">
               {wynik.verdict === "ZIELONY"
-                ? "To szybki sprawdzian z jednego rejestru. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz najważniejsze: sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."
+                ? "Płacisz od 15 000 zł? Sprawdź też, czy konto z faktury jest w wykazie, bo przelew na inne odbiera koszt i VAT. Podaj maila, odeślemy to z odpisem KRS."
                 : "Zanim cokolwiek przelejesz, warto sprawdzić resztę. Pełny raport dokłada odpis KRS (likwidacja, zaległości, wykreślenie), wiek domeny oraz sprawdzenie, czy numer konta, na który masz zapłacić, rzeczywiście należy do tej firmy."}
             </p>
 
