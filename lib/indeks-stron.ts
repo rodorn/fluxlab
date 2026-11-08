@@ -781,5 +781,10 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "url": "/strefa-wiedzy/crm-dla-posrednika-kredytowego-jedna-sprawa",
     "tytul": "CRM dla pośrednika kredytowego: jedna sprawa",
     "opis": "CRM dla pośrednika kredytowego: jak wygląda jedna sprawa hipoteczna od formularza po prowizję. Przykład z 25 sprawami i 168 tys. zł prowizji."
+  },
+  {
+    "url": "/strefa-wiedzy/n8n-zapier-czy-wlasny-serwer",
+    "tytul": "n8n na własnym serwerze czy Zapier: koszt i RODO",
+    "opis": "n8n na własnym serwerze, n8n cloud czy Zapier? Porównanie kosztu przy 1 tys., 10 tys. i 100 tys. operacji, limity, RODO i prosta reguła wyboru."
   }
 ];

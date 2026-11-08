@@ -1,0 +1,151 @@
+{
+  "slug": "n8n-zapier-czy-wlasny-serwer",
+  "tytulStrony": "n8n na własnym serwerze czy Zapier: koszt i RODO",
+  "h1": "n8n na własnym serwerze, w chmurze czy Zapier: koszt przy 1-100 tys. operacji",
+  "tytulKrotki": "n8n na serwerze czy Zapier: koszt",
+  "opis": "n8n na własnym serwerze, n8n cloud czy Zapier? Porównanie kosztu przy 1 tys., 10 tys. i 100 tys. operacji, limity, RODO i prosta reguła wyboru.",
+  "lead": "Rachunek za automatyzację potrafi rosnąć razem z liczbą klientów. Dowiesz się, ile kosztuje Zapier, n8n w chmurze i n8n na własnym serwerze przy 1 tys., 10 tys. i 100 tys. operacji miesięcznie oraz którą drogę wybrać w małej firmie.",
+  "youtubeId": "zndcF5fESmg",
+  "dlugosc": 354,
+  "opublikowano": "2026-11-08T08:37:52-08:00",
+  "frazy": [
+    "n8n na własnym serwerze",
+    "n8n self-hosted czy chmura",
+    "n8n cloud cena",
+    "Zapier czy n8n RODO",
+    "koszt Zapier przy dużej liczbie zadań",
+    "ile kosztuje Zapier Professional",
+    "n8n Community darmowa wersja",
+    "automatyzacja w biurze pośrednika kredytowego"
+  ],
+  "sekcje": [
+    {
+      "h2": "Zapier, n8n czy własny serwer: od czego zacząć",
+      "od": 0,
+      "akapity": [
+        "Wybierasz narzędzie do automatyzacji i widzisz trzy drogi: Zapier, n8n albo własny serwer ze skryptami. Ważne, żeby od początku wiedzieć, jak rośnie rachunek, gdy przybywa klientów i zapytań.",
+        "Ceny w tym artykule pochodzą z oficjalnych cenników Zapiera i n8n, stan na 8 listopada 2026, przy płatności rocznej. Kwoty są w walucie cennika: Zapier w dolarach, n8n w euro, obie netto.",
+        "Na końcu dostaniesz prostą regułę wyboru dla małej firmy i dla biura pośrednika kredytowego. Najpierw jednak trzeba zrozumieć, jak każda z dróg liczy to, za co płacisz, bo od tego zależy cały rachunek."
+      ]
+    },
+    {
+      "h2": "Trzy drogi: chmura Zapiera, n8n w chmurze i n8n na własnym serwerze",
+      "od": 53,
+      "akapity": [
+        "Każda droga ma inny model. Zapier to gotowa usługa w chmurze: zakładasz konto, łączysz aplikacje i pierwsza automatyzacja działa po kwadransie.",
+        "n8n to platforma z otwartym kodem. Możesz ją wynająć w chmurze od twórców albo postawić na własnym serwerze. Własny serwer ze skryptami to kolejka zadań i baza, które programista pisze pod Twój proces.",
+        "W praktyce różnica sprowadza się do jednego pytania: za co płacisz? Za każdą operację, za pakiet uruchomień czy za serwer i czas człowieka?",
+        "W Zapierze płacisz za każdą operację, więc rachunek rośnie razem z ruchem. W n8n płacisz za pakiet uruchomień, a przy własnym serwerze za infrastrukturę i pracę człowieka, który ją prowadzi."
+      ]
+    },
+    {
+      "h2": "Co liczy Zapier, a co n8n: zadania kontra wykonania",
+      "od": 85,
+      "akapity": [
+        "Tu jest pułapka, w którą wpada większość firm. Zapier liczy zadania: każdy udany krok akcji to jedno zadanie. Wyzwalacz, filtry i formatowanie są darmowe. n8n liczy wykonania: jedno uruchomienie całego procesu to jedno wykonanie, obojętnie ile ma kroków.",
+        "Przykład: zapytanie z formularza trafia do CRM, klient dostaje maila, doradca SMS, a w kalendarzu powstaje zadanie. To cztery kroki akcji. W Zapierze 1 tys. takich zapytań to 4 tys. zadań. W n8n to wciąż 1 tys. wykonań.",
+        "Dlatego przy procesach z wieloma krokami różnica w rachunku rośnie szybciej, niż wynika z samych cenników.",
+        "Przy porównaniu cen zawsze policz, ile kroków ma Twój proces. Taki sam proces w Zapierze zużywa tyle zadań, ile ma udanych kroków akcji, a w n8n zawsze jedno wykonanie na uruchomienie.",
+        "Zapier nie liczy wyzwalacza, filtrów i formatowania, więc nie wszystkie elementy procesu zwiększają rachunek. Liczą się udane kroki akcji, czyli te, które coś robią w innej aplikacji."
+      ]
+    },
+    {
+      "h2": "Koszt Zapier przy dużej liczbie zadań i cena n8n w chmurze",
+      "od": 120,
+      "akapity": [
+        "Żeby porównanie było uczciwe, operację liczymy jako jeden krok. To wariant najkorzystniejszy dla Zapiera.",
+        "Poniższe kwoty dotyczą jednego kroku na operację. Jeśli Twój proces ma więcej kroków, w Zapierze zapłacisz za większy pakiet zadań, a w n8n liczba wykonań się nie zmieni.",
+        "Własny serwer ma inny rachunek. Mały serwer w chmurze w Unii kosztuje kilka euro miesięcznie i spokojnie obsłuży takie wolumeny. Prawdziwy koszt to godziny programisty: wdrożenie, aktualizacje, kopie zapasowe i reakcja na awarie."
+      ],
+      "lista": [
+        "1 tys. operacji miesięcznie: Zapier Professional w pakiecie 1,5 tys. zadań kosztuje 39 dolarów. n8n Starter z 2,5 tys. wykonań kosztuje 20 euro.",
+        "10 tys. operacji miesięcznie: Zapier Professional kosztuje 129 dolarów. n8n Pro z 10 tys. wykonań kosztuje 50 euro.",
+        "100 tys. operacji miesięcznie: Zapier Professional kosztuje 489 dolarów miesięcznie. W chmurze n8n najwyższy pakiet z ceną to 10 tys. wykonań. Plan Business ma 40 tys. wykonań za 667 euro i działa na Twoim serwerze.",
+        "Na poziomie 100 tys. operacji najtańsza jest darmowa wersja Community na własnym serwerze albo własny kod."
+      ]
+    },
+    {
+      "h2": "Limity Zapiera i n8n: częstotliwość sprawdzania i długość uruchomienia",
+      "od": 188,
+      "akapity": [
+        "Zanim wybierzesz, sprawdź limity. W Zapierze darmowy plan sprawdza nowe dane co 15 minut, Professional co 2 minuty, a Team co minutę.",
+        "Gdy zadania się skończą, nowe uruchomienia czekają do nowego okresu albo płacisz za nadwyżkę. W planie rocznym stawka za nadwyżkę jest o jedną czwartą wyższa od bazowej.",
+        "W n8n plan Starter przyjmuje 5 uruchomień naraz, a jedno może trwać do 5 minut. Plan Pro przyjmuje ich więcej i pozwala na 40 minut.",
+        "Częstotliwość sprawdzania ma znaczenie, gdy klient czeka na reakcję.",
+        "Długość uruchomienia ma znaczenie przy procesach, które przetwarzają dużo danych naraz. Jeśli jedno uruchomienie ma trwać dłużej niż limit planu, wybierz wyższy plan albo własny serwer."
+      ]
+    },
+    {
+      "h2": "Zapier czy n8n a RODO: gdzie płyną dane klientów",
+      "od": 216,
+      "akapity": [
+        "Przy danych klientów liczy się to, gdzie one płyną. Zapier to firma z USA, więc dane klienta przechodzą przez jej serwery. Potrzebujesz umowy powierzenia z zapisem o transferze poza Unię.",
+        "n8n w chmurze trzyma dane w Unii, na serwerach we Frankfurcie. Na własnym serwerze sam wybierasz kraj i sam odpowiadasz za zabezpieczenia.",
+        "Dobra praktyka dla każdej drogi: przez automatyzację przesyłaj tylko identyfikator sprawy, a dane wrażliwe, na przykład dochody klienta, zostaw w systemie źródłowym. To wskazówka, a szczegóły swojej sytuacji sprawdź z prawnikiem.",
+        "W praktyce oznacza to różne obowiązki. W chmurze n8n pilnujesz umowy z dostawcą i zakresu przesyłanych danych. Na własnym serwerze dochodzą jeszcze zabezpieczenia, za które odpowiadasz sam."
+      ]
+    },
+    {
+      "h2": "n8n self-hosted czy chmura: kto utrzymuje całość",
+      "od": 252,
+      "akapity": [
+        "Utrzymanie to koszt, który łatwo przeoczyć. W Zapierze i w chmurze n8n serwerem zajmuje się dostawca, a Ty pilnujesz tylko swoich procesów.",
+        "To główna różnica między chmurą a własnym serwerem. Cena pakietu w chmurze obejmuje opiekę nad infrastrukturą, a na własnym serwerze tę opiekę kupujesz osobno, w godzinach pracy człowieka.",
+        "n8n na własnym serwerze wymaga aktualizacji, kopii bazy, certyfikatu i monitoringu. Własny kod wymaga tego samego i dodatkowo programisty, który zna ten kod.",
+        "Dlatego własny serwer opłaca się wtedy, gdy masz wsparcie techniczne: własnego informatyka albo zewnętrznego wykonawcę. Bez niego aktualizacje, kopie i awarie spadają na Ciebie."
+      ]
+    },
+    {
+      "h2": "Automatyzacja w biurze pośrednika kredytowego: przykład z liczbami",
+      "od": 272,
+      "akapity": [
+        "Weźmy biuro pośrednika kredytowego. Zapytanie z formularza lub portalu trafia do CRM, klient dostaje potwierdzenie, doradca SMS, a po 2 dniach ciszy system przypomina o kontakcie. To cztery kroki na jedno zapytanie.",
+        "Przy 200 zapytaniach miesięcznie Zapier liczy 800 zadań, a n8n 200 wykonań.",
+        "Taki wolumen jest niewielki, ale proces ma kilka kroków, więc różnica w liczbie jednostek rozliczeniowych jest już widoczna. Gdy zapytań przybywa, różnica rośnie razem z nimi.",
+        "Dla takiego biura rozsądny start to n8n w chmurze albo n8n na serwerze w Unii, utrzymywane przez kogoś z zewnątrz. Dane kredytowe zostają w Unii, a koszt narzędzia stoi w miejscu, gdy zapytań przybywa."
+      ]
+    },
+    {
+      "h2": "Kiedy n8n na własnym serwerze: reguła wyboru",
+      "od": 307,
+      "akapity": [
+        "Wybór sprowadza się do czterech prostych reguł.",
+        "Zacznij od wolumenu, liczby kroków w procesie i tego, gdzie mają zostać dane klientów. Potem sprawdź, kto będzie utrzymywał rozwiązanie. Te cztery rzeczy rozstrzygają, która droga będzie dla Ciebie najtańsza i najbezpieczniejsza."
+      ],
+      "lista": [
+        "Zapier wybierz, gdy masz kilka prostych automatyzacji, mały wolumen i chcesz ruszyć dziś.",
+        "n8n w chmurze wybierz, gdy procesy mają wiele kroków albo dane mają zostać w Unii.",
+        "n8n na własnym serwerze wybierz przy dziesiątkach tysięcy operacji i wsparciu technicznym.",
+        "Własny kod zostaw na proces, który jest sercem firmy i ma reguły zbyt złożone na bloczki."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Czy n8n na własnym serwerze jest darmowy?",
+      "a": "Darmowa jest wersja Community uruchamiana na własnym serwerze. Płacisz jednak za sam serwer, który w chmurze w Unii kosztuje kilka euro miesięcznie, oraz za czas programisty: wdrożenie, aktualizacje, kopie zapasowe i reakcję na awarie."
+    },
+    {
+      "q": "Ile kosztuje Zapier przy 10 tysiącach operacji miesięcznie?",
+      "a": "Zapier Professional kosztuje wtedy 129 dolarów miesięcznie przy płatności rocznej, według cennika z 8 listopada 2026. Liczymy tu jeden krok na operację. Przy procesach z kilkoma krokami zadań jest proporcjonalnie więcej."
+    },
+    {
+      "q": "Gdzie n8n w chmurze trzyma dane?",
+      "a": "Według informacji twórców n8n w chmurze trzyma dane w Unii, na serwerach we Frankfurcie. Przy własnym serwerze sam wybierasz kraj i sam odpowiadasz za zabezpieczenia."
+    },
+    {
+      "q": "Czy Zapier jest zgodny z RODO?",
+      "a": "Zapier to firma z USA, więc dane klienta przechodzą przez jej serwery. Potrzebujesz umowy powierzenia z zapisem o transferze poza Unię. Szczegóły swojej sytuacji sprawdź z prawnikiem."
+    },
+    {
+      "q": "Czym różni się zadanie w Zapierze od wykonania w n8n?",
+      "a": "Zapier liczy każdy udany krok akcji jako jedno zadanie, a wyzwalacz, filtry i formatowanie są darmowe. n8n liczy całe uruchomienie procesu jako jedno wykonanie, bez względu na liczbę kroków."
+    }
+  ],
+  "cta": {
+    "naglowek": "Przenieść automatyzacje z Zapiera do n8n?",
+    "opis": "FluxLab wdraża n8n na Twoim serwerze albo w chmurze i przenosi gotowe scenariusze z Zapiera. Pierwszy etap kosztuje 900, 1200 albo 1500 zł netto i jest gotowy w 5 dni, a diagnoza przed wyceną jest za darmo.",
+    "etykieta": "Zobacz ofertę n8n",
+    "href": "/n8n"
+  }
+}
