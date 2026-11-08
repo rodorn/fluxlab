@@ -424,6 +424,13 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen",
+        title: "Czy firma ma adres do e-Doręczeń",
+        description:
+          "Adres firmy jest we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce gov.pl.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura",
         title: "Faktury z KSeF po zmianie biura",
         description:

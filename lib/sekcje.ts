@@ -196,6 +196,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/hubspot-vs-pipedrive", "HubSpot vs Pipedrive"),
           s("/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto", "Integracje API, kiedy warto"),
           s("/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy", "e-Doręczenia: adres prywatny i firmowy"),
+          s("/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen", "Czy firma ma adres do e-Doręczeń"),
           s("/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura", "Faktury z KSeF po zmianie biura"),
           s("/strefa-wiedzy/faktury-kosztowe-z-ksef", "Faktury kosztowe z KSeF"),
           s("/strefa-wiedzy/faktura-gdy-ksef-nie-dziala", "Faktura, gdy KSeF nie działa"),

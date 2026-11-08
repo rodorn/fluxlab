@@ -483,6 +483,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Przedsiębiorca z CEIDG może mieć dwa adresy do e-Doręczeń: prywatny i firmowy. To dwie osobne skrzynki, adres prywatny nie zastępuje firmowego."
   },
   {
+    "url": "/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen",
+    "tytul": "Czy firma ma adres do e-Doręczeń? Jak to sprawdzić",
+    "opis": "Adres firmy znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma, i czego sprawdzić się nie da."
+  },
+  {
     "url": "/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef",
     "tytul": "Faktura dla kontrahenta zagranicznego w KSeF",
     "opis": "Fakturę dla firmy zagranicznej wystawiasz w KSeF jak każdą inną, a klientowi wysyłasz ją mailem jako PDF z kodem QR. Klient nie zakłada konta w KSeF."
