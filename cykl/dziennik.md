@@ -10732,3 +10732,11 @@ Wniosek: doba ludzi bez zmian (37 vs 36), spadek Google 13 → 8 i zero form_sta
 **Dowód:** commity d4103ef3 i 0a252be4; curl https://fluxlab.pl/wdrozenie-n8n-cena daje nowy title, https://fluxlab.pl/narzedzia ma 1. h2 „Dla osób prywatnych” z /kalkulator-podatkowy i 2. h2 „Firma i rejestry” z /sprawdzenie-nip; IndexNow Yandex 200, Naver 200, wspólny 403. Bramki: build OK, SPOJNOSC OK, JAKOSC OK (168 stron).
 **Dla Pawła:** logowanie do Search Console w profilu chrome-google (wylogowany od Z1), bez niego brak żądań indeksowania.
 **Zostało otwarte:** Z16 telefon-test trzech stron (od 03:00), Z17 baza kamieni (od 04:00), Z18 pomiar (od 05:30).
+
+## 2026-11-08 04:50
+**Kanał:** Google, kontrola i pomiar kamieni (plan 7.11 Z16, Z17).
+**Co zrobione:** sprawdzone trzy kamienie Z13-Z15 na telefonie (390/390 px, układ cały, nowa kolejność /narzedzia) i zapisana baza wejść z wyszukiwarek 14 dni przed sześcioma kamieniami; ocena 13-15.11.
+**Ruch:** doba 229 odsłon, 139 osób; źródła b2b-email 181, www.google.com 8, instagram 3, facebook 3, www.facebook.com 2; z telefonu 19.
+**Dowód:** /tmp/z16-*.png, cykl/z17-baza-kamieni-2026-11-08.txt (gutschrift 3, kiedy-odliczyc-vat 5, narzedzia 5, faktura-wewnetrzna 1, n8n 1, biura 0).
+**Dla Pawła:** zalogowanie Search Console w profilu chrome-google (port 9228), wylogowany od 8 dób.
+**Zostało otwarte:** Z18 od 05:30. Budżet: rytm „zwolnij”, prognoza 115%.

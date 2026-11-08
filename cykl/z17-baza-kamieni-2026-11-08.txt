@@ -1,0 +1,12 @@
+Z17 plan 7.11: punkt odniesienia kamieni, 8.11 04:5x
+Ludzie po odsiewie (pomiar-kanalow.py: bez_botow, pary, serie), strona wejścia = pierwsza odsłona sesji.
+Wyszukiwarki: google, bing, duckduckgo, yandex, ecosia, yahoo, brave, qwant, seznam, startpage.
+Ocena po 7 dniach: 13-15.11 (te same reguły, okno 7 dni po wdrożeniu vs 14 dni przed / 2).
+
+najstarszy wiersz: 2026-10-20 06:21:10+02:00
+/automatyzacja-dla-biur-rachunkowych | wdrożenie 2026-11-06 10:43 (0a5d1faf) | wyszukiwarki 14 dni przed: 0 {} | wszystkie wejścia 14 dni przed: 2 | po wdrożeniu dotąd: 0 (wyszuk. 0)
+/strefa-wiedzy/gutschrift-ksef | wdrożenie 2026-11-06 16:44 (3a696980) | wyszukiwarki 14 dni przed: 3 {'www.google.com': 3} | wszystkie wejścia 14 dni przed: 3 | po wdrożeniu dotąd: 0 (wyszuk. 0)
+/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef | wdrożenie 2026-11-07 00:44 (4b571ddd) | wyszukiwarki 14 dni przed: 5 {'www.google.com': 5} | wszystkie wejścia 14 dni przed: 7 | po wdrożeniu dotąd: 0 (wyszuk. 0)
+/strefa-wiedzy/faktura-wewnetrzna-ksef | wdrożenie 2026-11-08 00:44 (b759bd93) | wyszukiwarki 14 dni przed: 1 {'www.google.com': 1} | wszystkie wejścia 14 dni przed: 1 | po wdrożeniu dotąd: 0 (wyszuk. 0)
+/wdrozenie-n8n-cena | wdrożenie 2026-11-08 02:44 (d4103ef3) | wyszukiwarki 14 dni przed: 1 {'www.google.com': 1} | wszystkie wejścia 14 dni przed: 1 | po wdrożeniu dotąd: 0 (wyszuk. 0)
+/narzedzia | wdrożenie 2026-11-08 02:44 (0a252be4) | wyszukiwarki 14 dni przed: 5 {'www.google.com': 5} | wszystkie wejścia 14 dni przed: 8 | po wdrożeniu dotąd: 0 (wyszuk. 0)
