@@ -296,6 +296,11 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        source: "/cennik",
+        destination: "/produkty",
+        statusCode: 301,
+      },
+      {
         source: "/automatyzacja-leadow",
         destination: "/automatyzacja-leadow-crm",
         statusCode: 301,
