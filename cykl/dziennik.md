@@ -10740,3 +10740,10 @@ Wniosek: doba ludzi bez zmian (37 vs 36), spadek Google 13 → 8 i zero form_sta
 **Dowód:** /tmp/z16-*.png, cykl/z17-baza-kamieni-2026-11-08.txt (gutschrift 3, kiedy-odliczyc-vat 5, narzedzia 5, faktura-wewnetrzna 1, n8n 1, biura 0).
 **Dla Pawła:** zalogowanie Search Console w profilu chrome-google (port 9228), wylogowany od 8 dób.
 **Zostało otwarte:** Z18 od 05:30. Budżet: rytm „zwolnij”, prognoza 115%.
+
+## Strategia dobowa 2026-11-08
+**Wynik doby (do 06:15):** 31 osób po odsiewie (42), tydzień 241 (227). Google 7 (doba wcześniej 15): / 5, /kalkulator-podatkowy 1, /automatyzacja-leadow-crm 1. Instagram 3, YouTube 2, HAJS 1 (18 w tygodniu), Facebook 1. Bing+DDG 10 w tygodniu, wszystkie na /sprawdzenie-nip. Leady 0 (7 dni: 6 form_start, 2 wysłane), uruchomienia 2. Resend 2 (nie outreach), Zoho 0 od ludzi, 2 odbicia (FL_marketing). Kamienie 7.11 (Z13-Z15): 0 wejść od wdrożenia, ocena 13-15.11. GSC i Bing wylogowane ósmą dobę.
+**Kanały:** pomiar czwartą dobę bez ludzi, budżet „zwolnij” (prognoza 113%): 2 zmiany treści zamiast 3, pomiary tylko do oceny zmian, godziny 18-22 i 3-5:30 puste.
+**Trzy najważniejsze na dziś:** Z2 kamień /sprawdzenie-nip (konkretny powód do zostawienia maila po zielonym wyniku; 12 skanów, 0 zapytań w 14 dni), Z3 IndexNow dla Z2 i 6 stron innych sesji, Z12 artykuł z kalendarza 9.11 „Czy firma ma adres do e-Doręczeń” (9.11 po 00:30, kontrola szkicu w Z6).
+**Plan:** 16 zadań, cykl/plan-ruchu.md. Z18 z planu 7.11 zastąpiony tym wpisem.
+**Dla Pawła:** zalogowanie do Search Console i Bing Webmaster w profilu chrome-google (port 9228, https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl i https://www.bing.com/webmasters), ok. 5 minut; wylogowane od 8 dób, bez tego nie ma zapytań, żądań indeksowania ani oceny kamieni. Decyzja o zimnym outreachu, karta f755c6e1 (termin 13.11), ok. 3 minuty.
