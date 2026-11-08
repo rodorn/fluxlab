@@ -183,6 +183,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/otwarcie-maila-z-oferta", "Wideo: Otwarcie maila a przeczytanie oferty"),
           s("/strefa-wiedzy/crm-dla-posrednika-kredytowego-jedna-sprawa", "Wideo: CRM dla pośrednika kredytowego"),
           s("/strefa-wiedzy/n8n-zapier-czy-wlasny-serwer", "Wideo: n8n na serwerze czy Zapier"),
+          s("/strefa-wiedzy/crm-dla-malej-firmy-excel-gotowy-czy-wlasny", "Wideo: CRM dla małej firmy"),
           s("/strefa-wiedzy/kategoria/[slug]", "Kategoria artykułów"),
           s("/strefa-wiedzy/ai-w-automatyzacji-firm", "AI w automatyzacji firm"),
           s("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "Automatyzacja CRM z AI, od czego zacząć"),

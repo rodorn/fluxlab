@@ -526,6 +526,13 @@ export const categories: Category[] = [
           "n8n na własnym serwerze, n8n cloud czy Zapier? Porównanie kosztu przy 1 tys., 10 tys. i 100 tys. operacji, limity, RODO i prosta reguła wyboru.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/crm-dla-malej-firmy-excel-gotowy-czy-wlasny",
+        title: "CRM dla małej firmy: Excel czy własny",
+        description:
+          "CRM dla małej firmy: kiedy wystarczy Excel albo darmowy CRM, a kiedy czas na własny. Trzy sygnały i oferta od 499 zł netto z 3 kontami.",
+        bezOkladki: true,
+      },
     ],
   },
 ];

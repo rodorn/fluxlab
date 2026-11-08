@@ -786,5 +786,10 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "url": "/strefa-wiedzy/n8n-zapier-czy-wlasny-serwer",
     "tytul": "n8n na własnym serwerze czy Zapier: koszt i RODO",
     "opis": "n8n na własnym serwerze, n8n cloud czy Zapier? Porównanie kosztu przy 1 tys., 10 tys. i 100 tys. operacji, limity, RODO i prosta reguła wyboru."
+  },
+  {
+    "url": "/strefa-wiedzy/crm-dla-malej-firmy-excel-gotowy-czy-wlasny",
+    "tytul": "CRM dla małej firmy: Excel, gotowy czy własny?",
+    "opis": "CRM dla małej firmy: kiedy wystarczy Excel albo darmowy CRM, a kiedy czas na własny. Trzy sygnały i oferta od 499 zł netto z 3 kontami."
   }
 ];
