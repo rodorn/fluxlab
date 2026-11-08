@@ -10661,3 +10661,74 @@ Decyzje dla stratega:
 **Dowód:** cykl/artykul-2026-11-09-szkic.md, sekcja „Źródła (Z10 planu 7.11)”.
 **Dla Pawła:** 
 **Zostało otwarte:** Z11 (od 17:00, tekst szkicu z F10), Z12 bilans o 22:00, kamienie Z13-Z15 od 8.11 00:00.
+
+## 2026-11-07 18:52
+**Kanał:** 2 (treść pod wyszukiwarki i asystentów AI), zadanie Z11 planu 7.11.
+**Co zrobione:** szkic artykułu na 9.11 „Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń” jest kompletny do publikacji: meta, H1, 4 krótkie sekcje, FAQ 4, kategoria, linki i link przychodzący, każdy fakt z odnośnikiem do źródła gov.pl/biznes.gov.pl z Z10.
+**Ruch:** ostatnia doba 230 odsłon, 140 osób (+64% wobec średniej 140,1); tydzień 1124 odsłony, 565 osób. Źródła: b2b-email 165, google 15, instagram 3, facebook 2, b2b 2. Uruchomienia narzędzi: 6.
+**Dowód:** cykl/artykul-2026-11-09-szkic.md, sekcja „Wersja do publikacji (Z11 planu 7.11, 18:50)”; Z11 oznaczone [x] w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (bilans dnia) od 22:00; Z13-Z18 od 8.11 00:00. Publikacja artykułu w planie 9.11.
+
+## 2026-11-07 20:44
+**Kanał:** brak, czekam na Z12 o 22:00 (plan: 18:00-21:59 celowo puste, hamulec budżetu).
+**Co zrobione:** nic; żadne otwarte zadanie planu 7.11 nie ma jeszcze minionej godziny startu.
+**Ruch:** ostatnia doba 241 odsłon, 143 osoby (+71% wobec średniej 140,7); tydzień 1133 odsłony, 568 osób. Źródła: b2b-email 171, www.google.com 14, instagram 3, facebook 2, b2b 2. Uruchomienia narzędzi: 6. Lejek 7 dni: 6 form_start, 2 zapytania.
+**Dowód:** brak.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (bilans dnia) od 22:00; Z13-Z18 od 8.11 00:00.
+
+### Bilans planu 2026-11-07/11-08
+| kanał (24 h, po odsiewie) | 6/7.11 | 7/8.11 (22:43) |
+|---|---|---|
+| ludzie | 36 | 37 |
+| Google | 13 | 8 |
+| bez odsyłacza | b.d. | 22 |
+| Facebook | 3 | 2 (utm 296-powod-przegranej-w-crm, 297-jpk-st-kr; `strefa-wiedzy` z Z7: 0) |
+| Instagram | 1 | 3 |
+| HAJS (hajsmetrics) | 1 | 1 |
+| b2b (sesje z utm) | 0 | 2 (Zoho: 2 odbicia mailer-daemon) |
+| DDG, Bing, YouTube, Threads | 1, 0, 1, 1 | 0, 0, 0, 0 |
+| uruchomienia narzędzi | 10 | 4 (kalkulator podatkowy 4) + 1 pobranie checklisty KSeF 2027 |
+| form_start | 4 | 0 |
+| lead_* | 0 nowych | 0 |
+
+7 dni: ludzie 240, lejek 572 sesji → 6 form_start → 2 zapytania. raport_ruchu: doba 234 odsłony, 144 osoby (173 to otwarcia maili b2b-email). Resend 24 h: 2 delivered.
+
+| zadanie | wynik |
+|---|---|
+| Z1 | [!] GSC wylogowany w profilu chrome-google |
+| Z2 | zrobione (IndexNow zaległych zmian) |
+| Z3, Z4 | zrobione (kandydaci title/description do Z13, Z14) |
+| Z5, Z6 | zrobione (wariant kolejności kafelków /narzedzia do Z15) |
+| Z7 | zrobione (temat do FL_meta), w dobie 0 wejść z `utm_campaign=strefa-wiedzy`, post jeszcze nie wyszedł albo bez kliknięć |
+| Z8 | zrobione (Google na / to marka po postach FB/IG) |
+| Z9 | zrobione (mapa 160 adresów, 0 błędów) |
+| Z10, Z11 | zrobione (szkic artykułu 9.11 ze źródłami i wersją do publikacji) |
+
+Wniosek: doba ludzi bez zmian (37 vs 36), spadek Google 13 → 8 i zero form_start; kamienie Z13-Z15 wchodzą od 8.11, ich ocena dopiero po bazie Z17.
+
+## 2026-11-07 22:50
+**Kanał:** pomiar (plan ruchu Z12).
+**Co zrobione:** bilans dnia 7.11 w tabeli wyżej; nic nie poszło w świat, Z13-Z18 mają start od 8.11.
+**Ruch:** raport_ruchu: doba 234 odsłony, 144 osoby (+64%), tydzień 1140 / 572; źródła b2b-email 173, www.google.com 14, facebook 4, instagram 3, b2b 2. Po odsiewie 37 ludzi, uruchomienia 4, form_start 0, leady 0.
+**Dowód:** linijka Z12 w cykl/plan-ruchu.md; pomiar-kanalow.py 22:43.
+**Dla Pawła:** zalogowanie Search Console w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console
+**Zostało otwarte:** Z13-Z15 (kamienie, od 8.11 00:00), Z16 (od 03:00), Z17 (od 04:00), Z18 (od 05:30).
+<!-- WYSLANO 2026-11-08 00:15 -->
+
+## 2026-11-08 00:47
+**Kanał:** wyszukiwarka (plan ruchu 7.11, Z13).
+**Co zrobione:** /strefa-wiedzy/faktura-wewnetrzna-ksef ma nowy title „Czy fakturę wewnętrzną wysyła się do KSeF? | Fluxlab” i description odpowiadający wprost na pytanie (43 wyświetlenia, pozycja 4,7, CTR 0%); H1 i treść bez zmian.
+**Ruch:** ostatnia doba 232 odsłony, 143 osoby (+65% do średniej); tydzień 576 osób; najczęściej / (22), /kalkulator-podatkowy (6); YouTube, LinkedIn, X, Threads po 0 w dobie; uruchomienia narzędzi 3.
+**Dowód:** commit b759bd93; curl produkcji pokazuje nowy title i description; IndexNow Yandex 200, Naver 200, wspólny 403 (znany).
+**Dla Pawła:** Search Console wylogowany w profilu chrome-google (port 9228), bez tego nie ma żądań indeksowania: zalogować się na https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl
+**Zostało otwarte:** Z14 (meta /wdrozenie-n8n-cena, od 01:00), Z15 (/narzedzia, od 02:00), Z16-Z18.
+
+## 2026-11-08 02:46
+**Kanał:** Google (kamienie Z14 i Z15 planu 7.11).
+**Co zrobione:** wdrożony nowy title i description /wdrozenie-n8n-cena pod „wdrożenie n8n” oraz nowa kolejność grup na /narzedzia (kalkulator podatkowy i sprawdzenie NIP na górze, tekst bez zmian).
+**Ruch:** ostatnia doba 229 odsłon, 140 osób (+61% wobec średniej 141,9); źródła: b2b-email 180, www.google.com 8, instagram 3, facebook 3+2; YouTube 2 sesje; uruchomienia narzędzi 2.
+**Dowód:** commity d4103ef3 i 0a252be4; curl https://fluxlab.pl/wdrozenie-n8n-cena daje nowy title, https://fluxlab.pl/narzedzia ma 1. h2 „Dla osób prywatnych” z /kalkulator-podatkowy i 2. h2 „Firma i rejestry” z /sprawdzenie-nip; IndexNow Yandex 200, Naver 200, wspólny 403. Bramki: build OK, SPOJNOSC OK, JAKOSC OK (168 stron).
+**Dla Pawła:** logowanie do Search Console w profilu chrome-google (wylogowany od Z1), bez niego brak żądań indeksowania.
+**Zostało otwarte:** Z16 telefon-test trzech stron (od 03:00), Z17 baza kamieni (od 04:00), Z18 pomiar (od 05:30).
