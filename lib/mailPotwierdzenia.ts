@@ -30,6 +30,18 @@ export function esc(s: string): string {
     .replace(/'/g, "&#39;");
 }
 
+export function akapityPotwierdzenia(polecenie: boolean): string[] {
+  return polecenie
+    ? [
+        `dzięki za polecenie. Odezwiemy się do poleconej osoby ${terminOdpowiedzi()} i powiemy, że kontakt jest od Ciebie.`,
+        "Po pierwszej rozmowie napiszemy Ci, jak poszło.",
+      ]
+    : [
+        `dzięki za opis procesu. Przejrzymy zgłoszenie i odpiszemy ${terminOdpowiedzi()} z informacją, czy widzimy potencjał na automatyzację i jaki byłby sensowny pierwszy krok.`,
+        "Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.",
+      ];
+}
+
 export function zdanieKontaktu(
   pref: string,
   termin: string,
@@ -47,6 +59,7 @@ export function potwierdzenieHtml(
   termin: string,
   telefon: string,
   linkKalendarza: string,
+  polecenie = false,
 ): string {
   const font = "Arial,Helvetica,sans-serif";
   const p = `margin:0 0 16px 0;font-family:${font};font-size:15px;line-height:24px;color:#1f2937;`;
@@ -87,8 +100,7 @@ ${przycisk}
 <tr><td style="padding:24px 32px;border-top:4px solid ${AKCENT};border-bottom:1px solid #e5e7eb;font-family:${font};font-size:22px;line-height:28px;font-weight:bold;color:#111827;">Flux<span style="color:${AKCENT};">Lab</span></td></tr>
 <tr><td style="padding:28px 32px 12px 32px;">
 <p style="${p}">Cześć,</p>
-<p style="${p}">dzięki za opis procesu. Przejrzymy zgłoszenie i odpiszemy ${terminOdpowiedzi()} z informacją, czy widzimy potencjał na automatyzację i jaki byłby sensowny pierwszy krok.</p>
-<p style="${p}">Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.</p>
+${akapityPotwierdzenia(polecenie).map((a) => `<p style="${p}">${esc(a)}</p>`).join("\n")}
 ${blok}
 <p style="${p}">Paweł</p>
 </td></tr>

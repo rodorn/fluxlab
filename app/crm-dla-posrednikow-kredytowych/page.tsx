@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzPolecenia from "@/components/FormularzPolecenia";
 
 const TYTUL = "Demo FluxCRM dla pośrednika kredytowego | Fluxlab";
 const OPIS =
@@ -158,6 +159,20 @@ export default function CrmPosrednicyPage() {
               intro="Wybierz termin. Pokażemy CRM na przykładowej sprawie kredytowej i odpowiemy na pytania."
               submitLabel="Umów demo"
             />
+          </div>
+        </section>
+
+        <section id="polecenie" className="container-wide scroll-mt-20 pb-16">
+          <div className="max-w-3xl mx-auto rounded-2xl border border-gray-200 p-6 sm:p-8 dark:border-gray-700">
+            <h2 className="h2-sekcji mb-4">Polecasz klienta?</h2>
+            <p className="mb-6 text-gray-600 dark:text-gray-300">
+              Paweł buduje CRM i automatyzacje dla pośredników, a sprzedaż
+              zostawia tym, którym klienci ufają. Jeśli znasz biuro, które
+              prowadzi sprawy w arkuszu albo w skrzynce mailowej, zgłoś je niżej.
+              Odezwiemy się do tej osoby, powiemy, że kontakt jest od Ciebie, i
+              napiszemy Ci, jak poszła rozmowa.
+            </p>
+            <FormularzPolecenia />
           </div>
         </section>
 

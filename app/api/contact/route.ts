@@ -26,7 +26,7 @@ function str(v: unknown, max: number): string {
   return v.trim().slice(0, max);
 }
 
-import { potwierdzenieHtml, terminOdpowiedzi, zdanieKontaktu } from "@/lib/mailPotwierdzenia";
+import { akapityPotwierdzenia, potwierdzenieHtml, zdanieKontaktu } from "@/lib/mailPotwierdzenia";
 import { terminWolny } from "@/lib/terminy";
 import { PROBLEM_TYPE_LABELS, PROBLEM_SCALE_LABELS } from "@/lib/form-options";
 
@@ -74,16 +74,16 @@ async function wyslijPrzezSmtp(
   await transport.sendMail({ from: SMTP_FROM, to, subject, text, html });
 }
 
+const POLECENIE = "polecenie_crm_posrednik";
+
 const FROM_PAWEL =
   process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <pawel@fluxlab.pl>";
 
-function potwierdzenie(pref: string, termin: string, telefon: string) {
+function potwierdzenie(pref: string, termin: string, telefon: string, polecenie: boolean) {
   const kontakt = zdanieKontaktu(pref, termin, telefon);
   return `Cześć,
 
-dzięki za opis procesu. Przejrzymy zgłoszenie i odpiszemy ${terminOdpowiedzi()} z informacją, czy widzimy potencjał na automatyzację i jaki byłby sensowny pierwszy krok.
-
-Jeśli widzimy dopasowanie, odpiszemy z konkretną propozycją zakresu i wyceną. Jeśli proces wygląda na zbyt mały albo nieopłacalny do automatyzacji na tym etapie, napiszemy to wprost, i uzasadnimy dlaczego.
+${akapityPotwierdzenia(polecenie).join("\n\n")}
 
 ${kontakt}
 
@@ -246,7 +246,10 @@ export async function POST(req: Request) {
     }),
   );
 
-  const problemTypeLabel = PROBLEM_TYPE_LABELS[problemType] ?? problemType;
+  const polecenie = problemType === POLECENIE;
+  const problemTypeLabel = polecenie
+    ? "Polecenie klienta, CRM dla pośredników"
+    : (PROBLEM_TYPE_LABELS[problemType] ?? problemType);
   const problemScaleLabel = PROBLEM_SCALE_LABELS[problemScale] ?? problemScale;
   const contactPrefLabel = CONTACT_PREF_LABELS[contactPref] ?? contactPref;
 
@@ -290,7 +293,7 @@ export async function POST(req: Request) {
         : contactPref === "phone" && telefon
           ? `ZADZWOŃ ${telefon}: `
           : ""
-    }Nowa diagnoza: ${problemTypeLabel}${subjectCompany}`,
+    }${polecenie ? "Nowe polecenie" : "Nowa diagnoza"}: ${problemTypeLabel}${subjectCompany}`,
     text,
   });
 
@@ -311,13 +314,14 @@ export async function POST(req: Request) {
     termin,
     telefon,
     termin ? linkKalendarza(termin, email, company) : "",
+    polecenie,
   );
   try {
     const { error: replyError } = await resendKlient().emails.send({
       from: FROM_PAWEL,
       to: email,
       subject: "Dostaliśmy zgłoszenie, Fluxlab",
-      text: potwierdzenie(contactPref, termin, telefon),
+      text: potwierdzenie(contactPref, termin, telefon, polecenie),
       html: htmlPotwierdzenia,
     });
 
@@ -333,7 +337,7 @@ export async function POST(req: Request) {
       await wyslijPrzezSmtp(
         email,
         "Dostaliśmy zgłoszenie, Fluxlab",
-        potwierdzenie(contactPref, termin, telefon),
+        potwierdzenie(contactPref, termin, telefon, polecenie),
         htmlPotwierdzenia,
       );
       return NextResponse.json({ ok: true });
