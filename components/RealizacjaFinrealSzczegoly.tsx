@@ -2,6 +2,7 @@ const KARTA =
   "rounded-2xl border border-gray-200/80 bg-white/60 p-6 dark:border-gray-800/80 dark:bg-gray-900/40";
 const ZRODLO = "mt-3 text-xs text-gray-500 dark:text-gray-400";
 const KOMORKA = "py-2.5 pr-3 align-top";
+const LICZBA = "whitespace-nowrap tabular-nums";
 
 const GLOWNA: [string, string, string][] = [
   ["Wynik audytu FluxLab", "45/100", "97/100"],
@@ -13,10 +14,10 @@ const GLOWNA: [string, string, string][] = [
 ];
 
 const PODSTRONY: [string, string, string, string][] = [
-  ["Blog", "75 → 95", "11,4 → 2,9 s", "8,3 → 0,8 MB"],
-  ["Kredyt konsolidacyjny", "84 → 97", "4,0 → 2,6 s", "1,8 → 0,7 MB"],
-  ["Strona główna", "85 → 96", "4,4 → 2,7 s", "0,5 → 0,7 MB"],
-  ["Zespół", "92 → 96", "3,4 → 2,7 s", "0,9 → 0,8 MB"],
+  ["Blog", "75 → 95", "11,4 → 2,9", "8,3 → 0,8"],
+  ["Kredyt konsolidacyjny", "84 → 97", "4,0 → 2,6", "1,8 → 0,7"],
+  ["Strona główna", "85 → 96", "4,4 → 2,7", "0,5 → 0,7"],
+  ["Zespół", "92 → 96", "3,4 → 2,7", "0,9 → 0,8"],
 ];
 
 const ZAKRES: {
@@ -106,14 +107,14 @@ export default function RealizacjaFinrealSzczegoly() {
                   </td>
                   <td
                     className={
-                      KOMORKA + " tabular-nums text-gray-500 dark:text-gray-400"
+                      KOMORKA + " " + LICZBA + " text-gray-500 dark:text-gray-400"
                     }
                   >
                     {p}
                   </td>
                   <td
                     className={
-                      KOMORKA + " tabular-nums font-semibold text-accent"
+                      KOMORKA + " " + LICZBA + " font-semibold text-accent"
                     }
                   >
                     {o}
@@ -132,13 +133,13 @@ export default function RealizacjaFinrealSzczegoly() {
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Podstrony na telefonie
           </h3>
-          <table className="mt-4 w-full text-sm">
+          <table className="mt-4 w-full text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-gray-200 text-left text-gray-500 dark:border-gray-800 dark:text-gray-400">
                 <th className={KOMORKA + " font-medium"}>Podstrona</th>
                 <th className={KOMORKA + " font-medium"}>Wynik</th>
-                <th className={KOMORKA + " font-medium"}>Treść widoczna</th>
-                <th className={KOMORKA + " font-medium"}>Waga</th>
+                <th className={KOMORKA + " font-medium"}>Treść widoczna, s</th>
+                <th className={KOMORKA + " font-medium"}>Waga, MB</th>
               </tr>
             </thead>
             <tbody>
@@ -150,9 +151,9 @@ export default function RealizacjaFinrealSzczegoly() {
                   <td className={KOMORKA + " text-gray-700 dark:text-gray-300"}>
                     {n}
                   </td>
-                  <td className={KOMORKA + " tabular-nums"}>{w}</td>
-                  <td className={KOMORKA + " tabular-nums"}>{t}</td>
-                  <td className={KOMORKA + " tabular-nums"}>{m}</td>
+                  <td className={KOMORKA + " " + LICZBA}>{w}</td>
+                  <td className={KOMORKA + " " + LICZBA}>{t}</td>
+                  <td className={KOMORKA + " " + LICZBA}>{m}</td>
                 </tr>
               ))}
             </tbody>
