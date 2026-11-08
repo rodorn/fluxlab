@@ -369,7 +369,7 @@ export function zlozRaportHtml(
   </div>
 
   <div style="padding:18px 28px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:12px;color:#6b7280;line-height:1.6">
-    Fluxlab, Paweł Iwanek · <a href="${BAZA}" style="color:#4f46e5">fluxlab.pl</a> · pawel@fluxlab.pl<br>
+    Fluxlab, Paweł Iwanek · <a href="${BAZA}" style="color:#4f46e5">fluxlab.pl</a> · pawel@fluxlab.pl · <a href="https://www.youtube.com/channel/UC2SCC43QCFkncFMNK1AxXfA" style="color:#4f46e5">YouTube</a><br>
     ${
       dlaWlasciciela
         ? "Kopia wewnętrzna raportu wygenerowanego przez odwiedzającego."

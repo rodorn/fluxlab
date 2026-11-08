@@ -90,6 +90,7 @@ ${kontakt}
 Paweł
 Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B
 fluxlab.pl
+Filmy: https://www.youtube.com/channel/UC2SCC43QCFkncFMNK1AxXfA
 `;
 }
 

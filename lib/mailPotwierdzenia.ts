@@ -106,7 +106,7 @@ ${blok}
 </td></tr>
 <tr><td style="padding:16px 32px 24px 32px;border-top:1px solid #e5e7eb;font-family:${font};font-size:12px;line-height:20px;color:#6b7280;">
 Fluxlab, automatyzacja leadów, CRM i raportowania dla firm B2B<br>
-<a href="mailto:pawel@fluxlab.pl" style="color:${AKCENT};text-decoration:none;">pawel@fluxlab.pl</a> | <a href="https://fluxlab.pl" style="color:${AKCENT};text-decoration:none;">fluxlab.pl</a>
+<a href="mailto:pawel@fluxlab.pl" style="color:${AKCENT};text-decoration:none;">pawel@fluxlab.pl</a> | <a href="https://fluxlab.pl" style="color:${AKCENT};text-decoration:none;">fluxlab.pl</a> | <a href="https://www.youtube.com/channel/UC2SCC43QCFkncFMNK1AxXfA" style="color:${AKCENT};text-decoration:none;">YouTube</a>
 </td></tr>
 </table></td></tr></table>
 </body></html>`;
