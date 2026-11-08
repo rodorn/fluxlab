@@ -478,6 +478,42 @@ export const categories: Category[] = [
       },
     ],
   },
+  {
+    name: "Wideo",
+    slug: "wideo",
+    description:
+      "Filmy FluxLab w formie artykułów: KSeF 2027, e-Doręczenia, automatyzacja obsługi i statystyki ofert. Film i pełny tekst na jednej stronie.",
+    articles: [
+      {
+        href: "/strefa-wiedzy/ksef-2027-w-malej-firmie",
+        title: "KSeF w małej firmie od 2027",
+        description:
+          "KSeF dla JDG od 1 stycznia 2027: koniec limitu 10 tys. zł, kary do 100% VAT, logowanie, biuro rachunkowe i praca offline. Lista na koniec roku.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/e-doreczenia-w-firmie",
+        title: "e-Doręczenia w firmie: obowiązek i 14 dni",
+        description:
+          "e-Doręczenia dla firm: kto musi mieć adres (JDG od 1 października 2026), jak założyć skrzynkę, zasada 14 dni i dostęp dla biura rachunkowego.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/automatyzacja-obslugi-klienta",
+        title: "Automatyzacja obsługi klienta",
+        description:
+          "Jak zautomatyzować obsługę klienta w małej firmie, nie psując relacji: 5 kroków, czego nie automatyzować i plan wdrożenia na 30 dni.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/otwarcie-maila-z-oferta",
+        title: "Otwarcie maila a przeczytanie oferty",
+        description:
+          "20 otwarć maila z ofertą i 0 wejść na stronę oferty w 4 tygodnie. Sprawdź, czemu otwarcie to słaby sygnał i kiedy zadzwonić do klienta.",
+        bezOkladki: true,
+      },
+    ],
+  },
 ];
 
 export function getCategoryBySlug(slug: string): Category | undefined {

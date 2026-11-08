@@ -751,5 +751,30 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "url": "/strefa-wiedzy/kategoria/jdg-i-podatki",
     "tytul": "JDG i podatki, Strefa wiedzy",
     "opis": "Formy opodatkowania JDG, składka zdrowotna, mały ZUS Plus i VAT, porównania i kalkulacje na 2026 rok."
+  },
+  {
+    "url": "/strefa-wiedzy/ksef-2027-w-malej-firmie",
+    "tytul": "KSeF dla JDG od 2027: limit, kary, logowanie",
+    "opis": "KSeF dla JDG od 1 stycznia 2027: koniec limitu 10 tys. zł, kary do 100% VAT, logowanie, biuro rachunkowe i praca offline. Lista na koniec roku."
+  },
+  {
+    "url": "/strefa-wiedzy/e-doreczenia-w-firmie",
+    "tytul": "e-Doręczenia dla firm: obowiązek i 14 dni na odbiór",
+    "opis": "e-Doręczenia dla firm: kto musi mieć adres (JDG od 1 października 2026), jak założyć skrzynkę, zasada 14 dni i dostęp dla biura rachunkowego."
+  },
+  {
+    "url": "/strefa-wiedzy/automatyzacja-obslugi-klienta",
+    "tytul": "Automatyzacja obsługi klienta w małej firmie",
+    "opis": "Jak zautomatyzować obsługę klienta w małej firmie, nie psując relacji: 5 kroków, czego nie automatyzować i plan wdrożenia na 30 dni."
+  },
+  {
+    "url": "/strefa-wiedzy/otwarcie-maila-z-oferta",
+    "tytul": "Otwarcie maila z ofertą: co naprawdę mówi log",
+    "opis": "20 otwarć maila z ofertą i 0 wejść na stronę oferty w 4 tygodnie. Sprawdź, czemu otwarcie to słaby sygnał i kiedy zadzwonić do klienta."
+  },
+  {
+    "url": "/strefa-wiedzy/kategoria/wideo",
+    "tytul": "Wideo, Strefa wiedzy",
+    "opis": "Filmy FluxLab jako artykuły: KSeF 2027, e-Doręczenia, automatyzacja obsługi klienta i statystyki ofert."
   }
 ];

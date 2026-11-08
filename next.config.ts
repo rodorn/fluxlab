@@ -273,6 +273,28 @@ const nextConfig: NextConfig = {
           "/hajs?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
         permanent: false,
       },
+      // Filmy maja teraz pelne artykuly w strefie wiedzy (kategoria Wideo);
+      // stare strony z surowa transkrypcja dublowalyby te sama tresc.
+      {
+        source: "/wideo/automatyzacja-obslugi-klienta",
+        destination: "/strefa-wiedzy/automatyzacja-obslugi-klienta",
+        statusCode: 301,
+      },
+      {
+        source: "/wideo/e-doreczenia-w-firmie",
+        destination: "/strefa-wiedzy/e-doreczenia-w-firmie",
+        statusCode: 301,
+      },
+      {
+        source: "/wideo/ksef-2027-przewodnik",
+        destination: "/strefa-wiedzy/ksef-2027-w-malej-firmie",
+        statusCode: 301,
+      },
+      {
+        source: "/wideo",
+        destination: "/strefa-wiedzy/kategoria/wideo",
+        statusCode: 301,
+      },
       {
         source: "/automatyzacja-leadow",
         destination: "/automatyzacja-leadow-crm",

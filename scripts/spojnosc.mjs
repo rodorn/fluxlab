@@ -341,7 +341,7 @@ for (const plik of walk("app").filter(
   (f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f),
 )) {
   const src = read(plik);
-  if (src.includes("<ProductLanding")) continue;
+  if (src.includes("<ProductLanding") || src.includes("<ArtykulWideo")) continue;
   if (!src.includes("<Header")) add("rama", `${plik}: brak <Header />`);
   if (!src.includes("<Footer")) add("rama", `${plik}: brak <Footer />`);
   if (src.includes("<footer"))

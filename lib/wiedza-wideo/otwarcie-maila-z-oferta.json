@@ -1,0 +1,115 @@
+{
+  "slug": "otwarcie-maila-z-oferta",
+  "tytulStrony": "Otwarcie maila z ofertą: co naprawdę mówi log",
+  "h1": "Otwarcie maila z ofertą to nie przeczytanie: 20 otwarć, 0 wejść na ofertę",
+  "tytulKrotki": "Otwarcie maila a przeczytanie oferty",
+  "opis": "20 otwarć maila z ofertą i 0 wejść na stronę oferty w 4 tygodnie. Sprawdź, czemu otwarcie to słaby sygnał i kiedy zadzwonić do klienta.",
+  "lead": "Wysyłasz ofertę mailem i widzisz w statystykach kilkanaście otwarć. Z tego tekstu dowiesz się, dlaczego to jeszcze nie znaczy, że klient ją czytał, i po czym poznać, że warto zadzwonić.",
+  "youtubeId": "4n2g38Ht6vo",
+  "dlugosc": 66,
+  "opublikowano": "2026-11-07T14:55:13-08:00",
+  "sekcje": [
+    {
+      "h2": "Otwarcie maila a przeczytanie: co pokazał nasz log",
+      "od": 0,
+      "akapity": [
+        "Klient otworzył maila z ofertą 20 razy. Na samą ofertę nie wszedł ani razu. To nie jest przykład wymyślony na potrzeby tekstu, tylko zapis z serwera ofert z ostatnich 4 tygodni.",
+        "Gdybyś patrzył wyłącznie na licznik otwarć maila, wyglądałoby to na gorący temat: klient wraca do wiadomości raz po raz. Log wejść na stronę oferty pokazuje coś zupełnie innego. Nikt tej oferty nie oglądał.",
+        "Różnica między tymi dwoma liczbami to cała lekcja. Otwarcie maila jest zdarzeniem technicznym. Wejście na ofertę jest czymś, co zrobił człowiek."
+      ]
+    },
+    {
+      "h2": "Śledzenie otwarć maila: dlaczego to słaby sygnał",
+      "od": 8,
+      "akapity": [
+        "Otwarcie maila zwykle mierzy się małym obrazkiem śledzącym, który jest ukryty w treści wiadomości. Gdy poczta pobierze ten obrazek, statystyka zapisuje „otwarcie”. Problem w tym, że obrazek nie zawsze pobiera człowiek.",
+        "Gmail pobiera obrazki z maili przez własny serwer pośredniczący i zapisuje je w pamięci podręcznej. Dla nadawcy każde pobranie wygląda jak otwarcie, choć nie musi za nim stać ktoś, kto właśnie czyta Twoją wiadomość.",
+        "Apple Mail z włączoną ochroną prywatności poczty (dostępną od iOS 15) idzie dalej: pobiera obrazki z wyprzedzeniem, nawet gdy człowiek maila w ogóle nie otworzył. Jeśli Twój klient korzysta z poczty Apple, licznik może rosnąć bez jego udziału.",
+        "Dlatego 20 otwarć to w dużej części nie człowiek. Otwarcie nie jest bezwartościowe, bo daje wskazówkę, że wiadomość dotarła. Traktuj je jednak jako sygnał słaby, a nie dowód zainteresowania."
+      ]
+    },
+    {
+      "h2": "Czy klient otworzył ofertę: sygnał mocny to wejście na stronę",
+      "od": 18,
+      "akapity": [
+        "Mocny sygnał to wejście na stronę oferty i to, co klient na niej robi. Wejście wymaga kliknięcia w link, a więc świadomej decyzji. Nie da się go zrobić za klienta przez serwer pośredniczący ani przez wczytywanie obrazków z wyprzedzeniem.",
+        "Samo wejście to dopiero początek. Ważniejsze są działania na stronie: czy klient przewija ofertę, wraca do niej, zmienia pozycje, sprawdza cenę. Takie ślady mówią o zamiarze znacznie więcej niż licznik w programie pocztowym.",
+        "Żeby to widzieć, oferta musi być miejscem, które da się obserwować, a nie plikiem wysłanym w załączniku. O tym piszemy niżej."
+      ],
+      "lista": [
+        "otwarcie maila: sygnał słaby, bo może je zrobić serwer, a nie człowiek",
+        "wejście na stronę oferty: sygnał mocny, bo wymaga kliknięcia",
+        "działania na stronie oferty: sygnał najmocniejszy, bo pokazują, co klienta interesuje"
+      ]
+    },
+    {
+      "h2": "Co zdradza zmiana konfiguracji ceny w ofercie",
+      "od": 22,
+      "akapity": [
+        "Weźmy klienta A, którego nie wymieniamy z nazwy. Zmieniał konfigurację ceny 4 razy. Zaczął od 43 680 zł, podniósł wartość do 45 460 zł, zszedł do 37 660 zł i wrócił do 42 560 zł.",
+        "Z samej sekwencji widać, które pozycje są dla niego ważne, a z których gotów jest zrezygnować. Widać też, gdzie mniej więcej leży jego budżet: między 37 660 a 45 460 zł, z powrotem blisko 42 560 zł.",
+        "Taka wiedza przydaje się w rozmowie. Zamiast pytać ogólnie, czy oferta się podoba, możesz zapytać o konkretne pozycje, które klient dodawał i usuwał. Żadnej takiej informacji nie da licznik otwarć maila."
+      ]
+    },
+    {
+      "h2": "Kiedy zadzwonić po wysłaniu oferty",
+      "od": 47,
+      "akapity": [
+        "W tej samej historii logi pokazały jeszcze jedną rzecz. Po 20 października klient nie wchodził już na stronę oferty. Mail z ofertą otwierał się jednak nadal, jeszcze w listopadzie.",
+        "Możesz to czytać dwojako. Ktoś kto patrzy tylko na otwarcia, uzna, że klient wciąż się zastanawia. Ktoś kto patrzy na wejścia, widzi, że aktywna praca z ofertą skończyła się dawno, a późniejsze otwarcia mogą być echem poczty.",
+        "Dla nas to moment na telefon, nie na kolejny mail. Klient zajmował się ofertą, zmieniał ceny, a potem ucichł. Kolejna wiadomość trafi w ten sam kanał, który już nie przynosi reakcji. Rozmowa pozwala dowiedzieć się, co stoi na przeszkodzie: cena, termin czy brak decyzji po stronie klienta."
+      ],
+      "lista": [
+        "wejścia na ofertę i zmiany w konfiguracji: klient pracuje nad decyzją, daj mu chwilę",
+        "wejścia ustały, a mail nadal się otwiera: czas na telefon, nie na kolejny mail",
+        "same otwarcia maila bez wejść na ofertę: nie wyciągaj z nich wniosku o zainteresowaniu"
+      ]
+    },
+    {
+      "h2": "Oferta online zamiast PDF: co zyskujesz",
+      "od": 54,
+      "akapity": [
+        "Dlatego nasze oferty to strony z konfiguratorem ceny i logiem wejść, a nie plik w załączniku. Plik PDF przesłany mailem możesz tylko wysłać. Nie dowiesz się, czy ktoś go otworzył, ile razy do niego wracał ani co w nim sprawdzał.",
+        "Strona oferty działa inaczej. Klient klika w link, a Ty widzisz wejście. Gdy zmienia konfigurację ceny, zostaje po tym ślad. Dzięki temu wiesz, na jakim etapie jest klient, i możesz zadzwonić wtedy, kiedy rozmowa ma sens.",
+        "Nie musisz zgadywać na podstawie liczby otwarć, której połowa może pochodzić z serwerów pocztowych. Masz zapis tego, co klient faktycznie zrobił."
+      ]
+    },
+    {
+      "h2": "Jak czytać statystyki oferty w praktyce",
+      "od": 10,
+      "akapity": [
+        "Jeśli wysyłasz oferty mailem i mierzysz je licznikiem otwarć, zacznij od jednej zmiany nawyku. Nie traktuj samego otwarcia jako dowodu, że klient przeczytał ofertę. Zapytaj, czy jest za nim wejście na stronę oferty.",
+        "Drugie pytanie dotyczy tego, co klient zrobił po wejściu. Wielokrotne zmiany konfiguracji świadczą o poważnym rozważaniu zakupu. Brak jakichkolwiek wejść, mimo wielu otwarć maila, każe zachować ostrożność z wnioskami.",
+        "Trzecie pytanie dotyczy czasu. Gdy ostatnie wejście na ofertę jest dawne, a mail wciąż się otwiera, nie czekaj na sygnał z poczty. Zadzwoń."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Czy otwarcie maila oznacza, że klient przeczytał ofertę?",
+      "a": "Nie. Otwarcie liczy się wtedy, gdy poczta pobierze obrazek śledzący, a robi to także serwer Gmaila czy Apple. W naszym logu było 20 otwarć i 0 wejść na ofertę. Otwarcie to sygnał słaby."
+    },
+    {
+      "q": "Dlaczego statystyki pokazują otwarcia, skoro nikt nie czytał maila?",
+      "a": "Gmail pobiera obrazki przez własny serwer pośredniczący i zapisuje je w pamięci podręcznej. Apple Mail z ochroną prywatności (od iOS 15) pobiera je z wyprzedzeniem, nawet gdy człowiek maila nie otworzył. Dla nadawcy wygląda to jak otwarcie."
+    },
+    {
+      "q": "Po czym poznać, że klient naprawdę interesuje się ofertą?",
+      "a": "Po wejściu na stronę oferty i działaniach na niej. Klient A zmieniał konfigurację ceny 4 razy: od 43 680 zł przez 45 460 zł i 37 660 zł do 42 560 zł. To mówi o jego zainteresowaniu i budżecie więcej niż liczba otwarć."
+    },
+    {
+      "q": "Kiedy zadzwonić do klienta po wysłaniu oferty?",
+      "a": "Gdy wejścia na ofertę ustały, a mail wciąż się otwiera. W naszym przykładzie po 20 października nie było już wejść na stronę, a mail otwierał się jeszcze w listopadzie. To moment na telefon, nie na kolejny mail."
+    },
+    {
+      "q": "Czy lepiej wysłać ofertę jako PDF, czy jako stronę online?",
+      "a": "Strona online daje log wejść i ślad działań klienta, na przykład zmian konfiguracji ceny. W pliku w załączniku nie zobaczysz, czy i jak klient z nim pracował. Dlatego u nas oferta to strona z konfiguratorem ceny."
+    }
+  ],
+  "cta": {
+    "naglowek": "Chcesz wiedzieć, kiedy zadzwonić po wysłaniu oferty?",
+    "opis": "Zobacz, jak automatyzacja follow-upu opiera się na wejściach na ofertę i działaniach klienta, a nie na licznikach otwarć maila.",
+    "etykieta": "Zobacz follow-up",
+    "href": "/automatyzacja-follow-up"
+  }
+}
