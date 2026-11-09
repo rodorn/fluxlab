@@ -240,6 +240,19 @@ const SYTUACJE: Sytuacja[] = [
       },
     ],
   },
+  {
+    klucz: "skladki",
+    etykieta: "Chcemy wiedzieć, ile zapłacimy ZUS",
+    odpowiedz:
+      "Składki zależą od etapu działalności i formy opodatkowania, a zdrowotna od dochodu.",
+    wskazania: [
+      {
+        href: "/narzedzia/kalkulator-zus",
+        powod:
+          "Duży ZUS, preferencyjny, Mały ZUS Plus i ulga na start na 2026 i 2027, ze składką zdrowotną dla skali, liniowego i ryczałtu.",
+      },
+    ],
+  },
 ];
 
 const TYTULY = new Map(businessTools.map((n) => [n.href, n.title]));

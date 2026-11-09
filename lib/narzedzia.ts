@@ -172,6 +172,13 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Kalkulator ZUS 2026 i 2027",
+    description:
+      "Składki społeczne i zdrowotna dla dużego ZUS, preferencyjnego, Małego ZUS Plus i ulgi na start, miesięcznie i rocznie. Każda stawka z linkiem do aktu.",
+    href: "/narzedzia/kalkulator-zus",
+    ikona: "kalkulator",
+  },
+  {
     title: "Audyt poczty firmowej",
     description:
       "Sprawdzamy SPF, DKIM i DMARC, czyli czy ktoś może wysyłać maile w Twoim imieniu i czemu Twoje wiadomości trafiają do spamu.",

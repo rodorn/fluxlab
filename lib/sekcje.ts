@@ -119,6 +119,10 @@ export const SEKCJE: Sekcja[] = [
         ],
       },
       {
+        nazwa: "Podatki i ZUS",
+        strony: [s("/narzedzia/kalkulator-zus", "Kalkulator ZUS 2026 i 2027")],
+      },
+      {
         nazwa: "KSeF i e-Doręczenia",
         strony: [
           s("/ksef-integracja", "Integracja z KSeF"),

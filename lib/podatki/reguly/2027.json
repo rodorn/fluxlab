@@ -1,0 +1,278 @@
+{
+ "rok": 2027,
+ "wygenerowano": "2026-11-09",
+ "minimalne": {
+  "v": 4950,
+  "zrodlo": "https://eli.gov.pl/eli/DU/2026/1213/ogl",
+  "akt": "Rozporządzenie RM w sprawie minimalnego wynagrodzenia za pracę w 2027 r., § 1",
+  "stan": "2026-11-09",
+  "szacunek": false
+ },
+ "przecietne": {
+  "v": 10033,
+  "zrodlo": "https://eli.gov.pl/eli/MP/2026/1098/ogl",
+  "akt": "Obwieszczenie MRPiPS: prognozowane przeciętne wynagrodzenie 2027 i 30-krotność",
+  "stan": "2026-11-09",
+  "szacunek": false,
+  "uwagi": "prognozowane przeciętne wynagrodzenie; podstawa pełnego ZUS = 60% (art. 18 ust. 8 SUS)"
+ },
+ "przecietneQ4": {
+  "v": 9829.19,
+  "zrodlo": "https://stat.gov.pl/sygnalne/komunikaty-i-obwieszczenia/",
+  "akt": "Komunikat Prezesa GUS za IV kw. 2026 (M.P.)",
+  "stan": "2026-11-09",
+  "szacunek": true,
+  "uwagi": "GUS IV kw. 2026 ogłasza ok. 20–22.01.2027; szacunek = 9228,64 × wzrost prognozy przeciętnego wynagrodzenia (10033/9420)"
+ },
+ "emerytalna": {
+  "v": 0.1952,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 22 ust. 1",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "rentowa": {
+  "v": 0.08,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 22 ust. 1",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "chorobowa": {
+  "v": 0.0245,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 22 ust. 1",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "wypadkowa": {
+  "v": 0.0167,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20021991673",
+  "akt": "Ustawa o ubezpieczeniu społecznym z tytułu wypadków przy pracy i chorób zawodowych, art. 28 ust. 3 (stawka dla płatnika do 9 ubezpieczonych)",
+  "stan": "2026-11-09",
+  "szacunek": false,
+  "uwagi": "płatnik do 9 ubezpieczonych"
+ },
+ "funduszPracy": {
+  "v": 0.0245,
+  "zrodlo": "https://isap.sejm.gov.pl/",
+  "akt": "Ustawa o rynku pracy i służbach zatrudnienia (Fundusz Pracy) oraz ustawa o FGŚP (Fundusz Solidarnościowy), FP 2,45% łącznie z FS; nie opłaca się przy podstawie preferencyjnej i przez pierwsze 24 mies. (ulga dla nowych firm)",
+  "stan": "2026-11-09",
+  "szacunek": false,
+  "uwagi": "FP z FS łącznie; nie przy podstawie preferencyjnej"
+ },
+ "zdrowotnaSkala": {
+  "v": 0.09,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20042102135",
+  "akt": "Ustawa z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych, art. 79 ust. 1",
+  "stan": "2026-08-03",
+  "szacunek": false
+ },
+ "zdrowotnaLiniowy": {
+  "v": 0.049,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20042102135",
+  "akt": "Ustawa z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych, art. 79a ust. 1",
+  "stan": "2026-08-03",
+  "szacunek": false
+ },
+ "zdrowotnaRyczalt": {
+  "v": 0.09,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20042102135",
+  "akt": "Ustawa z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych, art. 79 ust. 1, art. 81 ust. 2e",
+  "stan": "2026-08-03",
+  "szacunek": false
+ },
+ "minPodstawaZdrowotnej": {
+  "v": 1,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20042102135",
+  "akt": "Ustawa z dnia 27 sierpnia 2004 r. o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych, art. 81 ust. 2d",
+  "stan": "2026-08-03",
+  "szacunek": false,
+  "uwagi": "ułamek minimalnego wynagrodzenia od 1.02.2027; w styczniu 2027 minimum z poprzedniego roku składkowego (432,54 zł)"
+ },
+ "limitOdliczeniaZdrowotnejLiniowy": {
+  "v": 15100,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa o PIT, art. 30c ust. 2b–2c (waloryzacja)",
+  "stan": "2026-11-09",
+  "szacunek": true,
+  "uwagi": "14 100 × 300 990 / 282 600, zaokr. do 100 zł w górę; obwieszczenie MF do 31.12.2026"
+ },
+ "odliczenieZdrowotnejRyczalt": {
+  "v": 0.5,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981440930",
+  "akt": "Ustawa z dnia 20 listopada 1998 r. o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne., art. 11 ust. 1a",
+  "stan": "2026-08-26",
+  "szacunek": false
+ },
+ "kwotaWolna": {
+  "v": 30000,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 27 ust. 1",
+  "stan": "2026-09-16",
+  "szacunek": false,
+  "uwagi": "efektywna, wynika z kwoty zmniejszającej 3600 zł"
+ },
+ "kwotaZmniejszajaca": {
+  "v": 3600,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 27 ust. 1",
+  "stan": "2026-09-16",
+  "szacunek": false
+ },
+ "progSkali": {
+  "v": 120000,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 27 ust. 1",
+  "stan": "2026-09-16",
+  "szacunek": false
+ },
+ "stawka1": {
+  "v": 0.12,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 27 ust. 1",
+  "stan": "2026-09-16",
+  "szacunek": false
+ },
+ "stawka2": {
+  "v": 0.32,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 27 ust. 1",
+  "stan": "2026-09-16",
+  "szacunek": false
+ },
+ "liniowy": {
+  "v": 0.19,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 30c ust. 1",
+  "stan": "2026-09-16",
+  "szacunek": false
+ },
+ "daninaProg": {
+  "v": 1000000,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 30h ust. 2",
+  "stan": "2026-09-16",
+  "szacunek": false
+ },
+ "danina": {
+  "v": 0.04,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 30h ust. 1",
+  "stan": "2026-09-16",
+  "szacunek": false
+ },
+ "ryczaltStawki": {
+  "v": [
+   {
+    "stawka": 0.17,
+    "przyklady": "wolne zawody (lekarz, prawnik, doradca podatkowy), usługi z art. 12 ust. 1 pkt 1"
+   },
+   {
+    "stawka": 0.15,
+    "przyklady": "usługi prawne i rachunkowo-księgowe poza wolnymi zawodami (PKWiU 69), doradztwo w zarządzaniu, badanie rynku, fotografia, tłumaczenia (art. 12 ust. 1 pkt 2)"
+   },
+   {
+    "stawka": 0.14,
+    "przyklady": "opieka zdrowotna, architekci, inżynierowie, projektowanie specjalistyczne (pkt 2a)"
+   },
+   {
+    "stawka": 0.12,
+    "przyklady": "IT: programowanie, doradztwo informatyczne, oprogramowanie (pkt 2b)"
+   },
+   {
+    "stawka": 0.1,
+    "przyklady": "kupno i sprzedaż nieruchomości na własny rachunek (pkt 3)"
+   },
+   {
+    "stawka": 0.085,
+    "przyklady": "pozostałe usługi, gastronomia z alkoholem >1,5%, najem do 100 000 zł (pkt 4–5)"
+   },
+   {
+    "stawka": 0.055,
+    "przyklady": "produkcja, roboty budowlane (pkt 6)"
+   },
+   {
+    "stawka": 0.03,
+    "przyklady": "handel, gastronomia bez alkoholu powyżej 1,5% (pkt 7)"
+   },
+   {
+    "stawka": 0.02,
+    "przyklady": "sprzedaż produktów roślinnych i zwierzęcych z własnej uprawy/hodowli, nieprzetworzonych (pkt 8, art. 6 ust. 1d)"
+   }
+  ],
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981440930",
+  "akt": "Ustawa z dnia 20 listopada 1998 r. o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne., art. 12 ust. 1",
+  "stan": "2026-08-26",
+  "szacunek": false,
+  "uwagi": "najem: 12,5% od nadwyżki ponad 100 000 zł; pełny katalog w art. 12 ust. 1"
+ },
+ "malyZusPlusLimitPrzychodu": {
+  "v": 120000,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 18c ust. 1",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "kosztyUzyskaniaPracownik": {
+  "v": 250,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 22 ust. 2 pkt 1",
+  "stan": "2026-09-16",
+  "szacunek": false,
+  "uwagi": "miesięcznie, maks. 3000 zł rocznie"
+ },
+ "kosztyUzyskaniaPracownikZamiejscowy": {
+  "v": 300,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19910800350",
+  "akt": "Ustawa z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych., art. 22 ust. 2 pkt 3",
+  "stan": "2026-09-16",
+  "szacunek": false,
+  "uwagi": "miesięcznie, maks. 3600 zł rocznie"
+ },
+ "pracownikEmerytalna": {
+  "v": 0.0976,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 16 ust. 1 (równe części 19,52%)",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "pracownikRentowa": {
+  "v": 0.015,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 16 ust. 1b",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "pracownikChorobowa": {
+  "v": 0.0245,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 16 ust. 2 (finansuje ubezpieczony)",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "pracodawcaEmerytalna": {
+  "v": 0.0976,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 16 ust. 1",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "pracodawcaRentowa": {
+  "v": 0.065,
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19981370887",
+  "akt": "Ustawa z dnia 13 października 1998 r. o systemie ubezpieczeń społecznych., art. 16 ust. 1b",
+  "stan": "2026-10-16",
+  "szacunek": false
+ },
+ "_warianty_3293": {
+  "progSkali": 130000,
+  "prog2": 150000,
+  "stawka2": 0.24,
+  "stawka3": 0.32,
+  "danina": 0.05,
+  "limitRyczaltuEUR": 250000,
+  "status": "czeka na podpis Prezydenta (termin ok. 27.11.2026)",
+  "zrodlo": "https://api.sejm.gov.pl/sejm/term10/processes/3293"
+ }
+}
