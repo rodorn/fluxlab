@@ -61,6 +61,7 @@ export type WynikJdg = {
   podatek: number;
   danina: number;
   zaliczki: number[];
+  doplataZwrot: number;
   naReke: number;
   naRekeMies: number;
   obciazenie: number;
@@ -127,7 +128,7 @@ export function liczJdg(d: DaneJdg): WynikJdg {
     podatek = Math.max(0, zl(zl(podstawa) * (d.stawkaRyczaltu / 100)));
   }
 
-  const zaliczki = zaliczkiMiesieczne(d, podstawa, podatek);
+  const zaliczki = zaliczkiMiesieczne(d, podstawa);
   const naReke = gr(
     d.przychodRoczny -
       d.kosztyRoczne -
@@ -145,6 +146,7 @@ export function liczJdg(d: DaneJdg): WynikJdg {
     podatek,
     danina: dan,
     zaliczki,
+    doplataZwrot: podatek - zaliczki.reduce((a, b) => a + b, 0),
     naReke,
     naRekeMies: gr(naReke / 12),
     obciazenie: gr(spoleczne + zdrowotnaRok + podatek + dan),
@@ -152,19 +154,14 @@ export function liczJdg(d: DaneJdg): WynikJdg {
   };
 }
 
-function zaliczkiMiesieczne(
-  d: DaneJdg,
-  podstawaRok: number,
-  podatekRok: number,
-): number[] {
+function zaliczkiMiesieczne(d: DaneJdg, podstawaRok: number): number[] {
   const wynik: number[] = [];
   let zaplacone = 0;
   for (let m = 1; m <= 12; m++) {
     const narastajaco = (podstawaRok * m) / 12;
     let nalezny: number;
-    if (d.forma === "skala" && !d.wspolneZMalzonkiem)
+    if (d.forma === "skala")
       nalezny = podatekSkala(d.rok, narastajaco, d.skala);
-    else if (d.forma === "skala") nalezny = Math.round((podatekRok * m) / 12);
     else if (d.forma === "liniowy")
       nalezny = zl(zl(narastajaco) * stawki(d.rok).liniowy.v);
     else nalezny = zl(zl(narastajaco) * (d.stawkaRyczaltu / 100));

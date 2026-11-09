@@ -179,6 +179,13 @@ export const businessTools: Narzedzie[] = [
     ikona: "kalkulator",
   },
   {
+    title: "Kalkulator PIT 2026 i 2027",
+    description:
+      "Podatek z działalności i z etatu: skala, liniowy, ryczałt, zaliczki, zeznanie roczne, wspólne rozliczenie i kwota na rękę.",
+    href: "/narzedzia/kalkulator-pit",
+    ikona: "kalkulator",
+  },
+  {
     title: "Audyt poczty firmowej",
     description:
       "Sprawdzamy SPF, DKIM i DMARC, czyli czy ktoś może wysyłać maile w Twoim imieniu i czemu Twoje wiadomości trafiają do spamu.",

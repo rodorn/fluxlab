@@ -298,6 +298,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Przy każdej obniżce sklep ma podać najniższą cenę z 30 dni. Sprawdzamy każdą przecenioną pozycję z zewnątrz i pokazujemy te bez tej informacji. Od 49 zł."
   },
   {
+    "url": "/narzedzia/kalkulator-pit",
+    "tytul": "Kalkulator PIT 2026 i 2027: JDG i etat, na rękę",
+    "opis": "Podatek z działalności (skala, liniowy, ryczałt) i z etatu: zaliczki miesięczne, zeznanie roczne, wspólne rozliczenie z małżonkiem i kwota na rękę."
+  },
+  {
     "url": "/narzedzia/kalkulator-zus",
     "tytul": "Kalkulator ZUS 2026 i 2027 dla JDG: składki i zdrowotna",
     "opis": "Duży ZUS, preferencyjny, Mały ZUS Plus i ulga na start ze składką zdrowotną dla skali, liniowego i ryczałtu. Miesięcznie i rocznie, każda stawka z linkiem do aktu."

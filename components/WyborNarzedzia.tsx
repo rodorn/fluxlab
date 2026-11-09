@@ -242,7 +242,7 @@ const SYTUACJE: Sytuacja[] = [
   },
   {
     klucz: "skladki",
-    etykieta: "Chcemy wiedzieć, ile zapłacimy ZUS",
+    etykieta: "Chcemy wiedzieć, ile zapłacimy ZUS i podatku",
     odpowiedz:
       "Składki zależą od etapu działalności i formy opodatkowania, a zdrowotna od dochodu.",
     wskazania: [
@@ -250,6 +250,11 @@ const SYTUACJE: Sytuacja[] = [
         href: "/narzedzia/kalkulator-zus",
         powod:
           "Duży ZUS, preferencyjny, Mały ZUS Plus i ulga na start na 2026 i 2027, ze składką zdrowotną dla skali, liniowego i ryczałtu.",
+      },
+      {
+        href: "/narzedzia/kalkulator-pit",
+        powod:
+          "Podatek i kwota na rękę z działalności albo etatu, z zaliczkami miesiąc po miesiącu.",
       },
     ],
   },
