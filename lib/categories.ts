@@ -537,7 +537,7 @@ export const categories: Category[] = [
         href: "/strefa-wiedzy/crm-dla-malej-firmy-excel-gotowy-czy-wlasny",
         title: "CRM dla małej firmy: Excel czy własny",
         description:
-          "CRM dla małej firmy: kiedy wystarczy Excel albo darmowy CRM, a kiedy czas na własny. Trzy sygnały i oferta od 499 zł netto z 3 kontami.",
+          "CRM dla małej firmy: arkusz, gotowy CRM czy własny? Czas startu, koszt przez trzy lata, plusy i minusy oraz trzy pytania, które rozstrzygają wybór.",
         bezOkladki: true,
       },
       {

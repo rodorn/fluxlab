@@ -1,13 +1,13 @@
 {
   "slug": "crm-dla-malej-firmy-excel-gotowy-czy-wlasny",
   "tytulStrony": "CRM dla małej firmy: Excel, gotowy czy własny?",
-  "h1": "CRM dla małej firmy: Excel, gotowy czy własny? 3 sygnały zmiany",
+  "h1": "CRM dla małej firmy: Excel, gotowy czy własny? Rachunek trzech lat",
   "tytulKrotki": "CRM dla małej firmy: Excel czy własny",
-  "opis": "CRM dla małej firmy: kiedy wystarczy Excel albo darmowy CRM, a kiedy czas na własny. Trzy sygnały i oferta od 499 zł netto z 3 kontami.",
-  "lead": "Prowadzisz małą firmę i klientów trzymasz w arkuszu, poczcie i telefonie. Dowiesz się, po czym poznasz, że Excel jako CRM przestaje wystarczać, kiedy lepszy będzie gotowy, często darmowy lub tani CRM i kiedy własny system zaczyna się opłacać.",
-  "youtubeId": "veeNeSMYagQ",
-  "dlugosc": 99,
-  "opublikowano": "2026-11-08T13:22:44-08:00",
+  "opis": "CRM dla małej firmy: arkusz, gotowy CRM czy własny? Czas startu, koszt przez trzy lata, plusy i minusy oraz trzy pytania, które rozstrzygają wybór.",
+  "lead": "Zapytania przychodzą telefonem, formularzem, mailem i z Facebooka, a wyceny gubią się w szkicach. Na przykładzie firmy remontowej zobaczysz trzy drogi: arkusz, gotowy CRM w abonamencie i własny system, porównane w tym samym porządku, oraz trzy pytania, które przyłożysz do swojej firmy.",
+  "youtubeId": "WlgV9kO0Odc",
+  "dlugosc": 623,
+  "opublikowano": "2026-11-08T18:42:08-08:00",
   "frazy": [
     "CRM dla małej firmy",
     "Excel jako CRM",
@@ -20,75 +20,93 @@
   ],
   "sekcje": [
     {
-      "h2": "Excel jako CRM: kiedy przestaje wystarczać",
+      "h2": "Zgubiona wycena i trzy różne rady",
       "od": 0,
       "akapity": [
-        "Excel jako CRM działa, dopóki firma jest mała. Dane klientów lądują w arkuszu, kilku skrzynkach pocztowych i na karteczkach przy monitorze. Taki układ to też system, tylko od czasu do czasu gubi klienta.",
-        "Wybór wygląda tak: zostajesz przy arkuszu, bierzesz gotowy CRM albo budujesz własny. Poniżej znajdziesz trzy sygnały, że czas na zmianę, oraz uczciwą odpowiedź, kiedy własny system wcale nie jest potrzebny."
+        "Tomek prowadzi firmę remontową: dwie ekipy, łazienki i kuchnie. Zapytania przychodzą telefonem w trakcie skuwania płytek, formularzem ze strony, wiadomością na Facebooku i mailem z portalu z ogłoszeniami. Klientka z Ursynowa zadzwoniła drugi raz po tygodniu, bo jej wycena leżała w szkicach maila. Łazienkę robiła już inna firma.",
+        "Tomek potrzebuje CRM, czyli jednego miejsca na klientów i zapytania, i słyszy trzy rady: arkusz w Excelu, gotowy CRM w abonamencie albo własny system pod firmę. Każdą drogę sprawdzamy tak samo: jak powstaje, ile trwa start, ile kosztuje przez trzy lata, co jest mocną, a co słabą stroną."
       ]
     },
     {
-      "h2": "Dane klienta w trzech miejscach",
-      "od": 17,
+      "h2": "Zanim wybierzesz narzędzie: co CRM ma robić",
+      "od": 60,
       "akapity": [
-        "Pierwszy sygnał: informacje o jednym kliencie leżą w kilku miejscach. Numer telefonu masz w telefonie, ofertę w poczcie, a notatkę z rozmowy w arkuszu.",
-        "Żeby przygotować się do rozmowy, musisz zajrzeć w trzy miejsca. To znak, że czas pomyśleć o własnym CRM."
+        "Tomek z Anią, która prowadzi biuro, zapisują na kartce, czego potrzebują. Ta kartka jest miarą, którą przykłada się do każdej z trzech dróg."
+      ],
+      "lista": [
+        "Każde zapytanie, skądkolwiek przyjdzie, ląduje w jednym miejscu.",
+        "Po wysłaniu wyceny system sam przypomina o telefonie do klienta po trzech dniach.",
+        "Brygadzista widzi na telefonie adres, zakres prac i zdjęcia od klienta.",
+        "Dziś z systemu korzystają cztery osoby, za rok dojdzie trzecia ekipa i wyceny całych mieszkań z etapami i zaliczkami."
       ]
     },
     {
-      "h2": "Ręczne przepisywanie leadów i zapytań",
-      "od": 24,
+      "h2": "Droga 1: Excel albo Arkusze Google jako CRM",
+      "od": 125,
       "akapity": [
-        "Drugi sygnał: ciągle przepisujesz to samo. Lead z formularza kopiujesz do arkusza, potem do maila, a potem jeszcze raz, bo dane wkleiły się w złą kolumnę.",
-        "Każde przepisanie to kilka minut pracy i okazja do pomyłki w numerze telefonu albo adresie. Przy kilku leadach dziennie te minuty składają się na godziny w miesiącu."
+        "Ania zakłada tabelę z kolumnami: data, klient, telefon, źródło, zakres prac, kwota wyceny, status i data następnego telefonu. Start zajmuje jeden wieczór, a koszt w pieniądzach jest najniższy, bo arkusz zwykle jest już w pakiecie biurowym. Rośnie za to koszt w czasie: każde zapytanie ktoś musi ręcznie przepisać.",
+        "Plus to swoboda i znajomy ekran: nowa kolumna w minutę, filtr na wyceny z tygodnia, szkolenie w kwadrans. Minus wychodzi przy ruchu. Arkusz czeka, aż ktoś go otworzy, przypomnienie zależy od pamięci, dwie osoby nadpisują sobie zmiany, a brygadzista na telefonie widzi maleńką tabelkę. U Tomka arkusz działa przez dwa miesiące, do wiosennego sezonu na łazienki."
       ]
     },
     {
-      "h2": "Abonament CRM rośnie z każdą osobą w zespole",
-      "od": 34,
+      "h2": "Droga 2: gotowy CRM w abonamencie",
+      "od": 222,
       "akapity": [
-        "Trzeci sygnał dotyczy kosztów. W wielu gotowych narzędziach płacisz za każdą osobę. Zatrudniasz handlowca i od razu dostajesz wyższy rachunek, zanim zrobi pierwszą sprzedaż.",
-        "Koszt narzędzia rośnie wtedy szybciej niż sprzedaż. Dlatego przy wyborze CRM sprawdź nie tylko cenę na start, ale też rachunek przy zespole dwa razy większym."
+        "Ania zakłada konto w popularnym systemie, dostaje gotowy lejek sprzedaży, podpina formularz i skrzynkę, zaprasza zespół. Start trwa zwykle od kilku dni do dwóch tygodni, koszt startu jest mały, a wiele systemów ma okres próbny.",
+        "Plus to gotowość: przypomnienie po trzech dniach w kilku kliknięciach, aplikacja na telefon, historia rozmów, raport skuteczności wycen, serwery i kopie po stronie dostawcy. Koszt przez trzy lata rośnie z zespołem, bo płacisz za każdą osobę co miesiąc, a za automatyzacje często wyższy pakiet.",
+        "Minus to dopasowanie i dane. System zna sprzedaż, a firma remontowa żyje etapami budowy: skucie, hydraulika, płytki, odbiór. Eksport klientów do pliku zwykle jest, ale historia, automatyzacje i układ zostają u dostawcy."
       ]
     },
     {
-      "h2": "Kiedy wystarczy gotowy CRM, także darmowy",
-      "od": 43,
+      "h2": "Droga 3: własny CRM pod proces firmy",
+      "od": 350,
       "akapity": [
-        "Gotowy CRM wystarczy, gdy pracujesz sam albo w dwie osoby, a proces jest prosty: zapytanie, oferta, umowa. Wtedy weź gotowe narzędzie i zacznij od niego.",
-        "Wiele gotowych narzędzi ma darmowy albo tani plan. Na start to często lepszy wybór niż własny system.",
-        "Własny CRM ma sens dopiero wtedy, gdy gotowy zaczyna Ci przeszkadzać, czyli gdy widzisz u siebie sygnały opisane wyżej."
+        "Tomek rozpisuje z wykonawcą proces: zapytanie z czterech źródeł, wycena, przypomnienie, zlecenie, etapy budowy, odbiór. U typowego wykonawcy start trwa zwykle od czterech do ośmiu tygodni, a koszt startu jest najwyższy. Potem płacisz zwykle za hosting i opiekę, a liczba osób przestaje wpływać na rachunek.",
+        "Plus to dopasowanie i własność: zapytania z Facebooka, formularza i portalu wpadają na jedną listę, brygadzista otwiera jutrzejsze zlecenie ze zdjęciami, Ania widzi etap każdej budowy, a dane i kod należą do firmy.",
+        "Minus to odpowiedzialność. Ktoś musi dbać o aktualizacje, kopie i bezpieczeństwo, a większe zmiany idą przez programistę. Dlatego w umowie potrzebne są dwa zapisy: kod na koncie firmy i dokumentacja."
       ]
     },
     {
-      "h2": "Własny CRM pod Twój proces i ile kosztuje",
-      "od": 65,
+      "h2": "Rachunek trzech lat i co wybrał Tomek",
+      "od": 460,
       "akapity": [
-        "Własny CRM układa się pod Twój proces, a nie odwrotnie. Lead z formularza, telefonu i poczty trafia sam do opiekuna. Klient, dokumenty i terminy są w jednym miejscu, także w telefonie.",
+        "Arkusz to prawie zero w pieniądzach i dużo czasu zespołu. Gotowy CRM to mały start i abonament rosnący z każdą osobą. Własny to duży start i równa opieka potem. Konkretne kwoty sprawdź w aktualnych cennikach, bo zmieniają się co roku. Liczy się suma trzech lat razem z czasem ludzi.",
+        "Tomek wybiera gotowy CRM: cztery etapy, przypomnienie po trzech dniach i formularz podpięty na stałe. Raz na kwartał eksportuje klientów i zlecenia do pliku na dysk firmy i zapisuje w kalendarzu przegląd za rok. Gdy dochodzi trzecia ekipa i wyceny z etapami, zamawia własny system, a dane z eksportów przechodzą razem z historią klientów.",
+        "Gdyby pracował sam, z kilkoma zapytaniami w tygodniu, wystarczyłby jeden arkusz z kolumną „zadzwonić dnia”, otwierany codziennie rano."
+      ]
+    },
+    {
+      "h2": "Trzy pytania przed wyborem CRM",
+      "od": 541,
+      "akapity": [
+        "Którąkolwiek drogę wybierzesz, od pierwszego dnia ustaw jedno miejsce na wszystkie zapytania i regularny eksport danych do pliku, który należy do Ciebie. Wtedy każdą zmianę narzędzia zrobisz spokojnie."
+      ],
+      "lista": [
+        "Ile osób będzie korzystać z CRM za rok? Jedna lub dwie przy kilku zapytaniach w tygodniu: arkusz z codziennym przeglądem.",
+        "Czy praca wygląda jak sprzedaż: zapytanie, oferta, zamknięcie? Tak: gotowy CRM pasuje od pierwszego dnia. Etapy realizacji i zlecenia w terenie: policz godziny obchodzenia lejka.",
+        "Czyje mają być dane i ile osób dojdzie w trzy lata? Zespół rośnie, a dane mają zostać w firmie: policz własny system na trzy lata obok abonamentu."
+      ]
+    },
+    {
+      "h2": "Własny CRM w FluxLab",
+      "od": 601,
+      "akapity": [
         "W FluxLab pierwszą działającą wersję własnego CRM (FluxCRM) uruchamiamy w 3 tygodnie, a pełne wdrożenie trwa 4⁠–⁠8 tygodni. Wdrożenie kosztuje 1 zł, a abonament zaczyna się od 499 zł miesięcznie netto za 3 konta. Każde kolejne konto to 99 zł miesięcznie. Serwer stoi w Unii, a kopie zapasowe i aktualizacje są w cenie abonamentu."
-      ]
-    },
-    {
-      "h2": "Jaki CRM wybrać: podsumowanie",
-      "od": 77,
-      "akapity": [
-        "Trzy sygnały to: dane w trzech miejscach, ręczne przepisywanie i rachunek, który rośnie razem z zespołem.",
-        "Jeden sygnał to sprawa do obserwacji. Dwa albo trzy naraz oznaczają, że czas na własny CRM ułożony pod Twój proces. Jeśli nie widzisz u siebie żadnego, zostań przy prostym narzędziu, a karteczkę z monitora możesz wreszcie wyrzucić."
       ]
     }
   ],
   "faq": [
     {
       "q": "Czy Excel może być CRM-em?",
-      "a": "Tak, Excel jako CRM działa, dopóki firma jest mała. Problem zaczyna się, gdy dane klienta leżą w kilku miejscach, a Ty ręcznie przepisujesz leady z formularza do arkusza i maila."
+      "a": "Tak, przy jednej lub dwóch osobach i kilku zapytaniach w tygodniu, jeśli arkusz jest jeden i otwierasz go codziennie. Przy większym ruchu brakuje przypomnień, a zespół nadpisuje sobie zmiany."
     },
     {
-      "q": "Czy darmowy CRM wystarczy małej firmie?",
-      "a": "Często tak. Gdy pracujesz sam albo w dwie osoby, a proces jest prosty (zapytanie, oferta, umowa), gotowe narzędzie z darmowym lub tanim planem to na start zwykle lepszy wybór niż własny system."
+      "q": "Ile kosztuje gotowy CRM przez trzy lata?",
+      "a": "Start jest mały, ale abonament płacisz za każdą osobę co miesiąc, a automatyzacje często wymagają wyższego pakietu. Rachunek rośnie razem z zespołem."
     },
     {
       "q": "Kiedy opłaca się własny CRM?",
-      "a": "Gdy gotowy CRM zaczyna Ci przeszkadzać. Jeden z trzech sygnałów to sprawa do obserwacji, a dwa albo trzy naraz oznaczają, że czas na system ułożony pod Twój proces."
+      "a": "Gdy zespół rośnie, praca składa się z etapów realizacji zamiast prostej sprzedaży, a dane mają zostać w firmie. Policz wtedy własny system na trzy lata obok abonamentu."
     },
     {
       "q": "Ile kosztuje własny CRM w FluxLab?",
