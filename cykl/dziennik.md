@@ -10886,3 +10886,28 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Dla Pawła:**
 - Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), dziewiąta doba bez danych z Google: https://search.google.com/search-console, 3 min.
 - Decyzja o zimnym outreachu, karta f755c6e1, termin 13.11: https://biuro.fluxlab.pl/decyzje/, 5 min (liczby z Z6 dziś po 12:00).
+
+## 2026-11-09 06:44
+**Kanał:** brak, czekam na Z1 o 07:00 (plan 9.11 ma 16 otwartych zadań, żadne nie jest jeszcze dostępne).
+**Co zrobione:** nic, plan zabrania brać zadanie przed jego godziną.
+**Ruch:** ostatnia doba 233 odsłony, 133 osoby (+42% wobec średniej 163,7); źródła: b2b-email 172, m.facebook.com 6, facebook.com 6, google.com 5, youtube 4.
+**Dowód:** brak.
+**Dla Pawła:**
+**Zostało otwarte:** Z1 od 07:00, Z2 od 08:00, Z3 od 09:00.
+<!-- WYSLANO 2026-11-09 07:04 -->
+
+## 2026-11-09 08:45
+**Kanał:** pomiar (Z1 z planu 9.11).
+**Co zrobione:** Z1: timer fluxlab-strona.timer enabled i active; budżet: rytm wstrzymaj, prognoza 144% tygodnia przy celu 98%, hamulec krytyczny, reset za 48 h; GSC zalogowany: nie (przekierowanie na /search-console/about).
+**Ruch:** doba 259 odsłon, 152 osoby (z mailami /mail/… i pobraniami); YouTube 5 sesji (/crm-dla-posrednikow-kredytowych 5), Threads 1, LinkedIn 0, X 0; checklista KSeF 2027 pobrana 6 razy.
+**Dowód:** cykl/plan-ruchu.md, linia Z1 oznaczona [x].
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl
+**Zostało otwarte:** kolejne zadania planu wg godzin (Z7 od 13:00, Z8 od 14:00).
+
+## 2026-11-09 10:45
+**Kanał:** Bing i IndexNow (plan Z2).
+**Co zrobione:** zgłoszono przez IndexNow 15 stron zmienionych 8.11 bez zgłoszenia w commicie (4 artykuły z filmów, 4 przeniesione /strefa-wiedzy z /wideo, 3 kalkulatory, /wlasny-crm, /realizacje, /crm-dla-posrednikow-kredytowych, /e-doreczenia-integracja).
+**Ruch:** raport_ruchu doba: 297 odsłon, 177 osób (232 odsłony to piksel b2b-email); facebook 13, google 5, youtube 4 sesje, threads 1; uruchomienia narzędzi 1.
+**Dowód:** Yandex 200 success, Naver 200, wspólny punkt 403 (Bing nie zna domeny); wszystkie 15 adresów 200 przed zgłoszeniem.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (useme, od 09:00), Z4 (Facebook, od 10:00), dalej według planu.
