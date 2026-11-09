@@ -10764,3 +10764,125 @@ Wniosek: doba ludzi bez zmian (37 vs 36), spadek Google 13 → 8 i zero form_sta
 **Dowód:** commit b92d17a7; zdanie „Płacisz od 15 000” w https://fluxlab.pl/_next/static/chunks/ee356f246a6d7a11.js ładowanym przez /sprawdzenie-nip; build, SPOJNOSC OK, JAKOSC OK; skanu na produkcji nie uruchamiano.
 **Dla Pawła:** zalogowanie do Search Console w profilu chrome-google (port 9228), https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl, nadal przekierowuje na stronę „about”.
 **Zostało otwarte:** Z3 IndexNow (od 09:00), dalej Z4-Z16 wg cykl/plan-ruchu.md.
+
+## 2026-11-08 10:48
+**Kanał:** Bing i IndexNow (Z3), kontrola telefonu (Z4).
+**Co zrobione:** Z3: zgłoszono do IndexNow 12 adresów (/sprawdzenie-nip po Z2, 5 stron innych sesji, dział Wideo: 4 artykuły, kategoria i /strefa-wiedzy/ksef-2027-w-malej-firmie zamiast przekierowanego /wideo/ksef-2027-przewodnik). Z4: /sprawdzenie-nip na iPhonie 390/390, 0 błędów konsoli, pole NIP w pierwszym ekranie.
+**Ruch:** doba 240 odsłon, 135 osób; b2b-email 181, Google 10, Facebook 3, YouTube 3, /materialy 2. Uruchomienia narzędzi: 2.
+**Dowód:** IndexNow Yandex 200, Naver 200, wspólny 403 (znany); zrzut /tmp/telefon-1794131040941.png; linie Z3 i Z4 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 temat dla fluxlab-meta (od 11:00), dalej Z6-Z16 wg planu. Uwaga z Z4: baner cookies na telefonie zasłania nagłówek karty sprawdzenia, do oceny przez stratega.
+
+## 2026-11-08 12:52
+**Kanał:** Facebook przez FL_meta (Z5), treść: kontrola szkicu artykułu na 9.11 (Z6).
+**Co zrobione:** Z5: temat posta „Przelew od 15 000 zł na konto spoza białej listy…” z linkiem /sprawdzenie-nip?utm_source=facebook&utm_campaign=biala-lista-15k doręczony do FL_meta; Z6: szkic /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen gotowy do publikacji, 6 sprawdzeń bez braków.
+**Ruch:** doba 158 odsłon, 95 osób (+4% wobec średniej 152,3); tydzień 1170 odsłon, 583 osoby. Źródła: b2b-email 98, www.google.com 9, YouTube 5, Facebook 3, /materialy 2. Uruchomienia narzędzi: 2. Lejek 7 dni: 583 sesje, 6 form_start, 2 wysłane.
+**Dowód:** „Doręczono do FL_meta (12:43)”; gov.pl pytania-i-odpowiedzi 200, biznes.gov.pl/pl/portal/004495 200 (curl lokalny), slug bae w lib/slownik.ts:84; linie Z5 i Z6 w cykl/plan-ruchu.md.
+**Dla Pawła:** zalogowanie do Search Console w profilu chrome-google (port 9228), bez zmian od rana.
+**Zostało otwarte:** Z7 lejek (od 13:00), Z8 GSC (od 14:00), dalej Z9-Z16 wg planu. VPS gpd-vps odrzuca połączenie ssh (connection refused), sprawdzenia „z VPS” robione lokalnie.
+
+## 2026-11-08 14:44
+**Kanał:** pomiar (Z7 lejek) i Google (Z8 GSC) z planu 8.11.
+**Co zrobione:** Z7: lejek 14 dni w cykl/z7-lejek-2026-11-08.txt, 8 sesji z formularzem, 2 wysłane zapytania, oba z lead_landing (3.11 Google przez / do /e-doreczenia-integracja, 5.11 bez odsyłacza na /), 6 form_start na narzędziach (3 na /sprawdzenie-nip) bez wysyłki. Z8 [!]: GSC wylogowany.
+**Ruch:** doba 119 odsłon, 76 osób (-25% wobec średniej 158,6); źródła: b2b-email 58, www.google.com 12, youtube 6, facebook 3, fluxlab.pl/materialy 2.
+**Dowód:** cykl/z7-lejek-2026-11-08.txt; Z8: przekierowanie na accounts.google.com/v3/signin/identifier, karta zamknięta.
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google (port 9228, okno na DISPLAY=:99): https://search.google.com/search-console?resource_id=sc-domain:fluxlab.pl. Bez tego kamienie z Google są na ślepo od 31.10.
+**Zostało otwarte:** Z9 Bing i DDG od 15:00, Z10 od 17:00, Z11 od 22:00, Z12-Z16 9.11.
+
+## 2026-11-08 16:44
+**Kanał:** pomiar wyszukiwarek (plan ruchu 8.11 Z9, Bing i DuckDuckGo).
+**Co zrobione:** sprawdzona pozycja /sprawdzenie-nip na „sprawdzenie nip kontrahenta": fluxlab.pl nie ma w top 26 Binga ani w top 10 DuckDuckGo; Z10 czeka na 17:00, więc drugiego zadania nie wzięto.
+**Ruch:** ostatnia doba 187 odsłon, 124 osoby (+18% wobec średniej); źródła: b2b-email 117, www.google.com 11, youtube 6, m.facebook.com 6, facebook 3; tydzień 1252 odsłony, 635 osób.
+**Dowód:** cykl/z9-bing-ddg-2026-11-08.txt; DDG strony 2-3 dały HTTP 202 (blokada), karta Binga zamknięta.
+**Dla Pawła:** logowanie do Search Console w profilu chrome-google (Z8: GSC wylogowany od 14:44).
+**Zostało otwarte:** Z10 od 17:00, Z11 od 22:00, Z12-Z16 9.11.
+
+## 2026-11-08 18:45
+**Kanał:** pomiar (Z10 planu stratega).
+**Co zrobione:** Z10: od wdrożenia Z2 (8.11 08:44) /sprawdzenie-nip ma 0 sesji ludzi, 0 uruchomiono_skan, 0 form_start, 0 wysłanych; na całej stronie w tym czasie 99 sesji ludzi, więc licznik działa, a strona po prostu nie dostała dziś wejść.
+**Ruch:** doba 204 odsłony, 132 osoby; źródła: b2b-email 136, www.google.com 7, youtube 6, m.facebook.com 10; uruchomienia narzędzi 0; lejek 7 dni: 645 sesji, 6 form_start, 2 wysłane.
+**Dowód:** cykl/plan-ruchu.md, linia Z10.
+**Dla Pawła:** 
+**Zostało otwarte:** Z11 (bilans dnia, od 22:00), Z12-Z16 od 9.11 00:30.
+
+## 2026-11-08 20:43
+**Kanał:** brak, okno 18:00-21:59 celowo puste (hamulec budżetu).
+**Co zrobione:** czekam na Z11 o 22:00; żadne zadanie planu nie było dostępne.
+**Ruch:** doba 219 odsłon, 130 osób (+35% wobec średniej); źródła: b2b-email 156, www.google.com 7, youtube 6, m.facebook.com 6, facebook 4; tydzień 1293 odsłony, 642 osoby; uruchomienia narzędzi 0; lejek 7 dni: 642 sesje, 6 form_start, 2 wysłane.
+**Dowód:** cykl/plan-ruchu.md, Z11 „nie wcześniej niż 22:00”.
+**Dla Pawła:** logowanie do Search Console w profilu chrome-google (Z8, GSC wylogowany od 14:44).
+**Zostało otwarte:** Z11 od 22:00, Z12-Z16 od 9.11 00:30.
+
+### Bilans planu 2026-11-08/11-09
+| kanał (24 h, po odsiewie) | 7/8.11 | 8/9.11 (22:43) |
+|---|---|---|
+| ludzie | 37 | 27 |
+| Google | 8 | 4 |
+| bez odsyłacza | 22 | 13 |
+| Bing + DDG | 0 + 0 | 0 + 0 |
+| Facebook | 2 | 2 (utm profil 1; `biala-lista-15k`: 0) |
+| YouTube | 0 | 6 (ja-buduje-ty-polecasz 2, crm-dla-posrednikow-kredytowych, lead-stygnie, film, ksef-jdg-film) |
+| Instagram | 3 | 1 |
+| useme.com | 0 | 2 |
+| uruchomienia narzędzi | 4 | 0 + 7 pobrań checklisty KSeF 2027 |
+| form_start | 0 | 0 |
+| lead_* | 0 | 0 |
+
+7 dni: ludzie 254, lejek 641 sesji → 6 form_start → 2 zapytania. raport_ruchu: doba 224 odsłony, 134 osoby (166 to otwarcia maili b2b-email). Resend 24 h: 2 delivered.
+
+| zadanie | wynik |
+|---|---|
+| Z1 | zrobione (timer enabled) |
+| Z2 | zrobione, commit b92d17a7 (zdanie o koncie z faktury po zielonym wyniku /sprawdzenie-nip) |
+| Z3 | zrobione (IndexNow) |
+| Z4 | zrobione (telefon 390/390, 0 błędów) |
+| Z5 | zrobione (temat biała lista 15k do FL_meta), w dobie 0 wejść z `utm_campaign=biala-lista-15k` |
+| Z6 | zrobione (szkic artykułu 9.11 gotowy, Z12 może ruszyć) |
+| Z7 | zrobione (cykl/z7-lejek-2026-11-08.txt: 2 wysłane w 14 dni) |
+| Z8 | [!] GSC wylogowany |
+| Z9 | zrobione (fluxlab.pl poza top 26 Binga i top 10 DDG dla „sprawdzenie nip kontrahenta”) |
+| Z10 | zrobione (od wdrożenia Z2: 0 sesji ludzi na /sprawdzenie-nip) |
+
+Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosnący kanał to YouTube (6 sesji z utm filmów); Z2 bez efektu, bo /sprawdzenie-nip nie dostała w dobie ani jednej sesji.
+
+## 2026-11-08 22:50
+**Kanał:** pomiar (plan ruchu Z11).
+**Co zrobione:** bilans dnia 8.11 w tabeli wyżej; nic nie poszło w świat, Z12-Z16 mają start od 9.11 00:30.
+**Ruch:** raport_ruchu: doba 224 odsłony, 134 osoby (+38%), tydzień 1297 / 641; źródła b2b-email 166, www.google.com 6, youtube 6, m.facebook.com 6, www.facebook.com 6. Po odsiewie 27 ludzi, uruchomienia 0, pobrania checklisty 7, form_start 0, leady 0.
+**Dowód:** linijka Z11 w cykl/plan-ruchu.md; pomiar-kanalow.py 22:43.
+**Dla Pawła:** zalogowanie Search Console w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console
+**Zostało otwarte:** Z12 (artykuł, od 9.11 00:30), Z13 (01:30), Z14 (02:00), Z15 (02:30), Z16 (05:30).
+
+<!-- WYSLANO 2026-11-08 23:15 -->
+
+## 2026-11-09 00:50
+**Kanał:** widoczność w asystentach AI i wyszukiwarkach (plan ruchu Z12, artykuł z kalendarza 9.11).
+**Co zrobione:** opublikowany artykuł „Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń” z FAQPage w HTML i linkiem przychodzącym z /e-doreczenia-integracja.
+**Ruch:** raport_ruchu (00:43): tydzień 641 sesji, 6 form_start, 2 wysłane formularze; doba jak w bilansie Z11 (27 ludzi po odsiewie, Google 4, YouTube 6).
+**Dowód:** commit f3865542; https://fluxlab.pl/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen 200, adres w sitemap.xml, link na /e-doreczenia-integracja.
+**Dla Pawła:** zalogowanie Search Console w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console
+**Zostało otwarte:** Z13 (IndexNow, od 01:30), Z14 (telefon, 02:00), Z15 (02:30), Z16 (05:30).
+
+## 2026-11-09 02:48
+**Kanał:** Bing i IndexNow, kontrola na telefonie (plan 8.11 Z13, Z14).
+**Co zrobione:** artykuł /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen i strona źródłowa /e-doreczenia-integracja zgłoszone do IndexNow; artykuł sprawdzony na iPhonie (390/390 px, 0 błędów, FAQ się rozwija).
+**Ruch:** ostatnia doba 221 odsłon, 126 osób (+34% wobec średniej 164,4); źródła: b2b-email 162, m.facebook.com 6, facebook.com 6, google.com 5, youtube 4; uruchomienia narzędzi 1.
+**Dowód:** IndexNow Yandex 202, Naver 200, wspólny 403 (znany); zrzuty /tmp/telefon-1794188623778.png i /tmp/telefon-1794188633242.png.
+**Dla Pawła:** GSC nadal niezalogowany (Z8 [!]), żądanie indeksowania artykułu czeka na zalogowanie profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z15 (od 02:30, punkt odniesienia w z17-baza-kamieni), Z16 (od 05:30).
+
+## 2026-11-09 04:50
+**Kanał:** pomiar (plan 8.11 Z15).
+**Co zrobione:** punkt odniesienia kamieni uzupełniony o /sprawdzenie-nip (po Z2) i artykuł o adresie do e-Doręczeń, liczby przeliczone z bazy po odsiewie i zgodne z planem.
+**Ruch:** ostatnia doba 230 odsłon, 131 osób (+40% wobec średniej 164,3); źródła: b2b-email 169, m.facebook.com 6, facebook.com 6, google.com 5, youtube 4.
+**Dowód:** cykl/z17-baza-kamieni-2026-11-08.txt ma 8 wierszy; /sprawdzenie-nip 14 dni przed wdrożeniem: 12 z wyszukiwarek (Bing 8, DDG 4), form_start 3, wysłane 0; po wdrożeniu 0.
+**Dla Pawła:** zalogowanie Search Console w profilu ~/.config/chrome-google (port 9228): https://search.google.com/search-console
+**Zostało otwarte:** czekam na Z16 o 05:30 (dane dla stratega), potem plan zamknięty.
+
+## Strategia dobowa 2026-11-09
+**Wynik doby (24 h do 06:15, po odsiewie):** 25 ludzi (doba wcześniej 31), tydzień 256 (było 241). Google 3 / 55 w tygodniu, YouTube 4 / 8, useme.com 2 (nowe źródło), Facebook 2 / 9, Bing + DDG 0 trzecią dobę. Lejek 7 dni: 7 form_start, 2 zapytania; leadów w dobie 0. Uruchomienia narzędzi 1, pobrania checklisty KSeF 2027: 6. Resend 2 maile (testy), Zoho 0 odpowiedzi. Plan 8.11: 15 z 16 [x], Z8 [!] (GSC wylogowany).
+**Plan 9/10.11:** 16 zadań, 0 zmian treści i 0 maili (budżet „wstrzymaj”, 90% tygodnia, reset 11.11 ok. 08:00). Bing i DDG bez godzin poza IndexNow.
+**Trzy najważniejsze zadania:** Z2 IndexNow dla stron innych sesji z 8.11; Z6 bilans zimnego outreachu (osoby i zapytania na 100 maili) do decyzji 13.11; Z7 skąd biorą się pobrania checklisty KSeF 2027.
+**Dla Pawła:**
+- Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), dziewiąta doba bez danych z Google: https://search.google.com/search-console, 3 min.
+- Decyzja o zimnym outreachu, karta f755c6e1, termin 13.11: https://biuro.fluxlab.pl/decyzje/, 5 min (liczby z Z6 dziś po 12:00).
