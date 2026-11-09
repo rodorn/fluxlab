@@ -65,7 +65,7 @@ export default function PorownanieFormPage() {
           <div className="mt-16 max-w-3xl mx-auto">
             <h2 className="h2-sekcji">Jak liczymy</h2>
             <p className="mt-3 text-gray-600 dark:text-gray-300">
-              Każdą formę liczymy tym samym silnikiem co kalkulatory PIT i ZUS, dla tych samych przychodów i kosztów w obu latach. Na rękę to przychód minus koszty, składki społeczne, składka zdrowotna i podatek. Ulg prorodzinnych, wspólnego rozliczenia i straty z lat ubiegłych nie uwzględniamy, bo dotyczą tylko skali; dla nich użyj kalkulatora PIT.
+              Każdą formę liczymy tym samym silnikiem co kalkulatory PIT i ZUS, dla tych samych przychodów i kosztów w obu latach. Na rękę to przychód minus koszty, składki społeczne, składka zdrowotna i podatek. Nie uwzględniamy straty z lat ubiegłych ani ulg i wspólnego rozliczenia z małżonkiem, które dotyczą tylko skali; wspólne rozliczenie policzysz w kalkulatorze PIT.
             </p>
           </div>
 
