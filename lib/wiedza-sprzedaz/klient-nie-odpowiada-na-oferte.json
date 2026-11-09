@@ -1,0 +1,100 @@
+{
+  "slug": "klient-nie-odpowiada-na-oferte",
+  "tytulStrony": "Klient nie odpowiada na ofertę: co zrobić",
+  "h1": "Klient nie odpowiada na ofertę: co zrobić, zanim go skreślisz",
+  "tytulKrotki": "Klient nie odpowiada na ofertę",
+  "opis": "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy.",
+  "lead": "Wysłałeś ofertę, klient podziękował i zniknął: nie odbiera, nie odpisuje. Zobaczysz, skąd bierze się ta cisza, jak rozpisać kontakt na 14 dni po wysyłce i jakie pytania zadać przed następną ofertą, żeby do ciszy w ogóle nie doszło. Przykłady pochodzą z pracy pośrednika kredytowego, ubezpieczeniowego i w nieruchomościach.",
+  "opublikowano": "2026-11-09T08:00:00+01:00",
+  "kategoria": { "nazwa": "Sprzedaż", "slug": "sprzedaz" },
+  "sekcje": [
+    {
+      "h2": "Cisza po ofercie zaczyna się przed ofertą",
+      "akapity": [
+        "Ewa jest pośredniczką kredytową. W poniedziałek dzwoni do niej klient: chce kredytu hipotecznego z najniższą marżą i prosi o ofertę na maila. Ewa zbiera dane, liczy trzy warianty, wysyła porównanie we wtorek wieczorem. Klient odpisuje „dziękuję, przeanalizuję” i od tej chwili nie odbiera.",
+        "Żeby zrozumieć tę ciszę, trzeba spojrzeć na drogę, którą klient przeszedł, zanim zadzwonił. Najpierw pojawia się powód: znalezione mieszkanie, kończąca się polisa, firma, która potrzebuje leasingu. Potem klient układa sobie koncepcję, zbiera informacje, rozmawia ze znajomymi i doradcami, wybiera rozwiązanie. Cena jest ostatnim krokiem tej drogi.",
+        "Wielu klientów dzwoni dopiero na tym ostatnim kroku. Całą resztę przeszli już z kimś innym: z doradcą w oddziale banku, z agentem, który zna ich od lat, z pośrednikiem polecanym przez szwagra. Oferta od Ciebie służy wtedy do porównania albo do negocjacji u tamtej osoby. Klient nie milczy ze złośliwości. Po prostu nigdy nie planował decyzji z Tobą."
+      ]
+    },
+    {
+      "h2": "Cztery najczęstsze powody, dla których klient milczy",
+      "akapity": [
+        "Zanim wyślesz kolejne przypomnienie, ustal, który z tych powodów pasuje do sprawy. Od tego zależy, co ma sens dalej."
+      ],
+      "lista": [
+        "Klient porównuje ceny, a decyzję podejmie z kimś, z kim przeszedł całą drogę. Twoja oferta trafiła do niego jako punkt odniesienia.",
+        "Decyzja nie należy do osoby, z którą rozmawiałeś. Przy kredycie jest współkredytobiorca, przy polisie firmowej wspólnik albo księgowa, przy mieszkaniu rodzina, która dokłada do wkładu własnego.",
+        "Klient odkłada decyzję. Brakuje mu powodu, żeby zdecydować teraz: czeka na decyzję o stopach, na sprzedaż starego mieszkania, na lepszy moment w firmie.",
+        "Oferta nie odpowiada na jego problem albo jest za trudna do porównania. Trzy warianty, dziesięć parametrów i brak jednego zdania „to polecam i dlaczego” sprawiają, że łatwiej odłożyć maila niż odpisać."
+      ]
+    },
+    {
+      "h2": "Zanim wyślesz ofertę: cofnij się z klientem o kilka kroków",
+      "akapity": [
+        "Najwięcej ciszy da się zapobiec przed wysłaniem oferty. Gdy przychodzi zapytanie o samą cenę, nie wysyłaj od razu liczb. Najpierw dowiedz się, jak klient doszedł do tego miejsca. Wystarczy pięć pytań i kwadrans rozmowy.",
+        "Odpowiedzi od razu pokazują, który z czterech powodów milczenia grozi tej sprawie. Jeśli klient od miesiąca rozmawia z doradcą w banku i chce tylko sprawdzić marżę, wiesz, że Twoja oferta musi wnieść coś więcej niż liczbę. Jeśli decyduje dwoje ludzi, umawiasz rozmowę z obojgiem.",
+        "Ostatni krok przed wysyłką: umów termin omówienia oferty, zanim ją wyślesz. „Wyślę porównanie dziś wieczorem, a w czwartek o 18:00 przejdziemy przez nie razem, dobrze?” Umówiona rozmowa to zupełnie inna sytuacja niż telefon, którego klient się nie spodziewa."
+      ],
+      "lista": [
+        "Co się wydarzyło, że szukasz rozwiązania właśnie teraz?",
+        "Z kim jeszcze rozmawiasz o tej sprawie i jakie masz już propozycje?",
+        "Kto oprócz Ciebie podejmuje decyzję?",
+        "Co musi być w ofercie, żebyś mógł podjąć decyzję?",
+        "Do kiedy chcesz mieć sprawę zamkniętą?"
+      ]
+    },
+    {
+      "h2": "Plan kontaktu na 14 dni po wysłaniu oferty",
+      "akapity": [
+        "Jeśli oferta już wyszła i zapadła cisza, działaj według planu, nie według nastroju. Każdy kontakt ma wnosić coś nowego. Pytanie „czy zapoznał się Pan z ofertą?” powtórzone pięć razy niczego nie wnosi i tylko utwierdza klienta, że lepiej nie odbierać.",
+        "Plan rozpisz w kalendarzu albo w CRM w dniu wysyłki oferty, razem z datami. Po 14 dniach sprawa ma jasny status: rozmawiacie dalej, klient wybrał kogoś innego albo oferta jest wycofana."
+      ],
+      "lista": [
+        "Dzień 0: oferta z jednym zdaniem rekomendacji i umówionym terminem omówienia.",
+        "Dzień 2 lub 3: telefon w umówionym terminie. Gdy klient nie odbiera, krótki SMS z propozycją dwóch innych godzin.",
+        "Dzień 5: wiadomość z jedną nową informacją, na przykład o terminie ważności oferty, zmianie warunków w banku albo dokumencie, który przyspieszy sprawę.",
+        "Dzień 9: pytanie, na które łatwo odpowiedzieć jednym słowem: „Czy temat kredytu jest dla Pana nadal aktualny?”",
+        "Dzień 14: wiadomość o wycofaniu oferty, opisana niżej."
+      ]
+    },
+    {
+      "h2": "Wiadomość o wycofaniu oferty",
+      "akapity": [
+        "Gdy klient milczy mimo kilku prób, dobrze działa uprzejme, oficjalne wycofanie oferty. Nie ma w nim pretensji ani nacisku. Jest przyznanie, że oferta mogła nie trafić w potrzebę, i otwarte drzwi na powrót.",
+        "Przykład: „Dzień dobry, kilka razy próbowaliśmy się skontaktować w sprawie oferty kredytu z 4 listopada. Możliwe, że propozycja nie odpowiada na Pana potrzeby, dlatego ją wycofujemy, żeby nie zajmowała miejsca w skrzynce. Jeśli temat wróci, wystarczy odpisać na tę wiadomość albo zadzwonić, chętnie policzymy go od nowa.”",
+        "Taka wiadomość często sprawia, że klient odzywa się po raz pierwszy od tygodni: wyjaśnia, że czeka na sprzedaż mieszkania, że decyzję podjęła żona, że wybrał bank, w którym ma konto. Każda z tych odpowiedzi jest cenniejsza niż cisza, bo pozwala zamknąć sprawę albo umówić konkretny termin powrotu."
+      ]
+    },
+    {
+      "h2": "Co mierzyć, żeby cisza była coraz rzadsza",
+      "akapity": [
+        "Jedna zgubiona oferta to przypadek. Dziesięć w miesiącu to wzór, który da się zmienić. Wystarczą trzy liczby, liczone raz w miesiącu: ile ofert zostało bez żadnej odpowiedzi, po ilu dniach klient zwykle odpowiada i w ilu sprawach termin omówienia był umówiony przed wysyłką.",
+        "Jeśli oferty z umówionym omówieniem kończą się rozmową znacznie częściej niż pozostałe, masz gotową zasadę na kolejne miesiące. Uważaj też na licznik otwarć maila: otwarcie wiadomości nie oznacza, że klient obejrzał ofertę, o czym piszemy w artykule o otwarciach maila z ofertą w tej samej strefie wiedzy."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ile czekać na odpowiedź klienta po wysłaniu oferty?",
+      "a": "Nie czekaj biernie. Umów termin omówienia jeszcze przed wysyłką, a gdy klient milczy, rozpisz kontakt na 14 dni: telefon po 2 lub 3 dniach, nowa informacja po 5, krótkie pytanie po 9 i wycofanie oferty po 14."
+    },
+    {
+      "q": "Co napisać, gdy klient nie odpowiada na ofertę?",
+      "a": "Każda wiadomość powinna wnosić coś nowego: termin ważności, zmianę warunków, brakujący dokument. Na koniec sprawdza się uprzejme wycofanie oferty z zaproszeniem do powrotu, bez pretensji i nacisku."
+    },
+    {
+      "q": "Dlaczego klient prosi o ofertę, a potem znika?",
+      "a": "Często przeszedł całą drogę decyzji z kimś innym i potrzebuje Twojej oferty do porównania albo negocjacji. Inne powody to decyzja po stronie innej osoby, odkładanie decyzji i oferta trudna do porównania."
+    },
+    {
+      "q": "Jak nie zgubić terminu kontaktu po ofercie?",
+      "a": "Zapisz plan kontaktu z datami w dniu wysyłki oferty, w kalendarzu albo w CRM. Każda sprawa powinna mieć datę następnego kontaktu, żeby nic nie zależało od pamięci."
+    }
+  ],
+  "cta": {
+    "naglowek": "Każda sprawa z datą następnego kontaktu?",
+    "opis": "Zobacz demo FluxCRM dla pośrednika kredytowego: sprawa od zapytania do uruchomienia, dokumenty z brakami, wnioski do banków i prowizje w jednym miejscu.",
+    "etykieta": "Zobacz demo CRM",
+    "href": "/crm-dla-posrednikow-kredytowych"
+  }
+}

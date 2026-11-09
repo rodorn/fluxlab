@@ -816,5 +816,15 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "url": "/strefa-wiedzy/strona-dla-malej-firmy-wordpress-wix-czy-nextjs",
     "tytul": "Strona dla firmy: WordPress, Wix czy Next.js?",
     "opis": "WordPress, Wix czy Next.js dla małej firmy? Czas startu, koszt przez trzy lata, plusy i minusy każdej drogi oraz trzy pytania, które rozstrzygają wybór."
+  },
+  {
+    "url": "/strefa-wiedzy/klient-nie-odpowiada-na-oferte",
+    "tytul": "Klient nie odpowiada na ofertę: co zrobić",
+    "opis": "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy."
+  },
+  {
+    "url": "/strefa-wiedzy/spotkanie-z-klientem-przygotowanie",
+    "tytul": "Jak przygotować się do spotkania z klientem",
+    "opis": "Jak przygotować się do spotkania z klientem: 5 kroków przed, 6 zasad w trakcie i 2 rzeczy po spotkaniu oraz 8 błędów, które kosztują sprawę."
   }
 ];

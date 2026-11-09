@@ -486,6 +486,28 @@ export const categories: Category[] = [
     ],
   },
   {
+    name: "Sprzedaż",
+    slug: "sprzedaz",
+    description:
+      "Praktyka sprzedaży dla pośredników kredytowych, ubezpieczeniowych, w nieruchomościach i dla JDG: oferta, spotkanie, obiekcje, cena i kontakt po ofercie.",
+    articles: [
+      {
+        href: "/strefa-wiedzy/klient-nie-odpowiada-na-oferte",
+        title: "Klient nie odpowiada na ofertę",
+        description:
+          "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/spotkanie-z-klientem-przygotowanie",
+        title: "Przygotowanie do spotkania z klientem",
+        description:
+          "Jak przygotować się do spotkania z klientem: 5 kroków przed, 6 zasad w trakcie i 2 rzeczy po spotkaniu oraz 8 błędów, które kosztują sprawę.",
+        bezOkladki: true,
+      },
+    ],
+  },
+  {
     name: "Wideo",
     slug: "wideo",
     description:

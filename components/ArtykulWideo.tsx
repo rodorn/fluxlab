@@ -12,10 +12,11 @@ export type ArtykulWideoDane = {
   tytulKrotki: string;
   opis: string;
   lead: string;
-  youtubeId: string;
-  dlugosc: number;
+  youtubeId?: string;
+  dlugosc?: number;
   opublikowano: string;
-  sekcje: { h2: string; od: number; akapity: string[]; lista?: string[] }[];
+  kategoria?: { nazwa: string; slug: string };
+  sekcje: { h2: string; od?: number; akapity: string[]; lista?: string[] }[];
   faq: { q: string; a: string }[];
   cta: { naglowek: string; opis: string; etykieta: string; href: string };
 };
@@ -34,14 +35,16 @@ export function metadaneArtykuluWideo(d: ArtykulWideoDane): Metadata {
       description: d.opis,
       locale: "pl_PL",
       type: "article",
-      images: [
-        {
-          url: `https://i.ytimg.com/vi/${d.youtubeId}/hqdefault.jpg`,
-          width: 480,
-          height: 360,
-          alt: d.h1,
-        },
-      ],
+      ...(d.youtubeId && {
+        images: [
+          {
+            url: `https://i.ytimg.com/vi/${d.youtubeId}/hqdefault.jpg`,
+            width: 480,
+            height: 360,
+            alt: d.h1,
+          },
+        ],
+      }),
     },
     alternates: { canonical: adres(d) },
   };
@@ -49,7 +52,8 @@ export function metadaneArtykuluWideo(d: ArtykulWideoDane): Metadata {
 
 export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
   const url = `https://fluxlab.pl${adres(d)}`;
-  const film = `https://www.youtube.com/watch?v=${d.youtubeId}`;
+  const film = d.youtubeId && `https://www.youtube.com/watch?v=${d.youtubeId}`;
+  const kat = d.kategoria ?? { nazwa: "Wideo", slug: "wideo" };
   return (
     <>
       <Header />
@@ -58,14 +62,16 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
           href={adres(d)}
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
-            { label: "Wideo", href: "/strefa-wiedzy/kategoria/wideo" },
+            { label: kat.nazwa, href: `/strefa-wiedzy/kategoria/${kat.slug}` },
             { label: d.tytulKrotki },
           ]}
         />
 
         <section className="pt-16 pb-8">
           <div className="container-wide max-w-3xl mx-auto text-center">
-            <span className="section-label">Strefa wiedzy · wideo</span>
+            <span className="section-label">
+              Strefa wiedzy · {kat.nazwa.toLowerCase()}
+            </span>
             <h1 className="mt-4 h1-artykulu">{d.h1}</h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               {d.lead}
@@ -75,24 +81,28 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
 
         <div className="container-wide pb-16">
           <div className="max-w-3xl mx-auto">
-            <div className="aspect-video overflow-hidden rounded-xl border border-gray-200 dark:border-white/10">
-              <iframe
-                className="h-full w-full"
-                src={`https://www.youtube-nocookie.com/embed/${d.youtubeId}`}
-                title={d.h1}
-                loading="lazy"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-              Film trwa {czas(d.dlugosc)}. Niżej ten sam materiał jako tekst,
-              przy każdej części link do miejsca w filmie.
-            </p>
+            {film && d.dlugosc && (
+              <>
+                <div className="aspect-video overflow-hidden rounded-xl border border-gray-200 dark:border-white/10">
+                  <iframe
+                    className="h-full w-full"
+                    src={`https://www.youtube-nocookie.com/embed/${d.youtubeId}`}
+                    title={d.h1}
+                    loading="lazy"
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                  Film trwa {czas(d.dlugosc)}. Niżej ten sam materiał jako
+                  tekst, przy każdej części link do miejsca w filmie.
+                </p>
+              </>
+            )}
 
             <nav
               aria-label="Spis treści"
-              className="mt-10 rounded-2xl border border-gray-200 p-6 dark:border-gray-700"
+              className={`${film ? "mt-10" : ""} rounded-2xl border border-gray-200 p-6 dark:border-gray-700`}
             >
               <p className="mb-3 font-semibold text-gray-900 dark:text-white">
                 W artykule
@@ -130,14 +140,16 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
                       ))}
                     </ul>
                   )}
-                  <a
-                    href={`${film}&t=${s.od}s`}
-                    target="_blank"
-                    rel="noopener"
-                    className="mt-4 inline-flex text-sm text-accent hover:underline"
-                  >
-                    Ta część w filmie od {czas(s.od)}
-                  </a>
+                  {film && s.od !== undefined && (
+                    <a
+                      href={`${film}&t=${s.od}s`}
+                      target="_blank"
+                      rel="noopener"
+                      className="mt-4 inline-flex text-sm text-accent hover:underline"
+                    >
+                      Ta część w filmie od {czas(s.od)}
+                    </a>
+                  )}
                 </section>
               ))}
 
@@ -196,16 +208,19 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
                 name: "Fluxlab",
                 url: "https://fluxlab.pl",
               },
-              video: {
-                "@type": "VideoObject",
-                name: d.h1,
-                description: d.opis,
-                thumbnailUrl: `https://i.ytimg.com/vi/${d.youtubeId}/hqdefault.jpg`,
-                uploadDate: d.opublikowano,
-                duration: `PT${Math.floor(d.dlugosc / 60)}M${d.dlugosc % 60}S`,
-                embedUrl: `https://www.youtube-nocookie.com/embed/${d.youtubeId}`,
-                contentUrl: film,
-              },
+              ...(film &&
+                d.dlugosc && {
+                  video: {
+                    "@type": "VideoObject",
+                    name: d.h1,
+                    description: d.opis,
+                    thumbnailUrl: `https://i.ytimg.com/vi/${d.youtubeId}/hqdefault.jpg`,
+                    uploadDate: d.opublikowano,
+                    duration: `PT${Math.floor(d.dlugosc / 60)}M${d.dlugosc % 60}S`,
+                    embedUrl: `https://www.youtube-nocookie.com/embed/${d.youtubeId}`,
+                    contentUrl: film,
+                  },
+                }),
             },
             {
               "@context": "https://schema.org",
