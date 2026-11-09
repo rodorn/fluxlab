@@ -120,7 +120,7 @@ export const SEKCJE: Sekcja[] = [
       },
       {
         nazwa: "Podatki i ZUS",
-        strony: [s("/narzedzia/kalkulator-zus", "Kalkulator ZUS 2026 i 2027"), s("/narzedzia/kalkulator-pit", "Kalkulator PIT 2026 i 2027")],
+        strony: [s("/narzedzia/kalkulator-zus", "Kalkulator ZUS 2026 i 2027"), s("/narzedzia/kalkulator-pit", "Kalkulator PIT 2026 i 2027"), s("/narzedzia/porownanie-form-opodatkowania", "Porównanie form opodatkowania")],
       },
       {
         nazwa: "KSeF i e-Doręczenia",

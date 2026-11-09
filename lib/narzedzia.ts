@@ -186,6 +186,13 @@ export const businessTools: Narzedzie[] = [
     ikona: "kalkulator",
   },
   {
+    title: "Porównanie form opodatkowania",
+    description:
+      "Skala, liniowy i ryczałt obok siebie dla 2026 i 2027: ZUS, zdrowotna, podatek i kwota na rękę dla Twoich liczb.",
+    href: "/narzedzia/porownanie-form-opodatkowania",
+    ikona: "kalkulator",
+  },
+  {
     title: "Audyt poczty firmowej",
     description:
       "Sprawdzamy SPF, DKIM i DMARC, czyli czy ktoś może wysyłać maile w Twoim imieniu i czemu Twoje wiadomości trafiają do spamu.",

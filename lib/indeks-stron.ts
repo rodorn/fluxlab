@@ -298,6 +298,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Przy każdej obniżce sklep ma podać najniższą cenę z 30 dni. Sprawdzamy każdą przecenioną pozycję z zewnątrz i pokazujemy te bez tej informacji. Od 49 zł."
   },
   {
+    "url": "/narzedzia/porownanie-form-opodatkowania",
+    "tytul": "Skala, liniowy czy ryczałt? Porównanie 2026 i 2027",
+    "opis": "Trzy formy opodatkowania obok siebie dla Twoich przychodów i kosztów, rok 2026 i 2027: ZUS, zdrowotna, podatek i kwota na rękę."
+  },
+  {
     "url": "/narzedzia/kalkulator-pit",
     "tytul": "Kalkulator PIT 2026 i 2027: JDG i etat, na rękę",
     "opis": "Podatek z działalności (skala, liniowy, ryczałt) i z etatu: zaliczki miesięczne, zeznanie roczne, wspólne rozliczenie z małżonkiem i kwota na rękę."

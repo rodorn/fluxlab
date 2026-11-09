@@ -256,6 +256,11 @@ const SYTUACJE: Sytuacja[] = [
         powod:
           "Podatek i kwota na rękę z działalności albo etatu, z zaliczkami miesiąc po miesiącu.",
       },
+      {
+        href: "/narzedzia/porownanie-form-opodatkowania",
+        powod:
+          "Skala, liniowy i ryczałt obok siebie dla Twoich przychodów i kosztów, w tym i przyszłym roku.",
+      },
     ],
   },
 ];

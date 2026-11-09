@@ -350,6 +350,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/narzedzia/porownanie-form-opodatkowania`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/sprawdzenie-nip`,
       changeFrequency: "weekly" as const,
       priority: 0.9,
