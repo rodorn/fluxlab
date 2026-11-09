@@ -10919,3 +10919,11 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Dowód:** cykl/z3-useme-2026-11-09.txt (2 sesje 8.11, wejście /audyt-strony, 0 s, 0 zdarzeń); `sesja napisz FL_meta` „Doręczono do FL_meta (12:43)”: pytanie o biala-lista-15k i temat „Od 1.01.2026 urząd i kontrahent piszą na adres do e-Doręczeń…” z linkiem /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen?utm_source=facebook&utm_campaign=adres-e-doreczen; telefon-test /crm-dla-posrednikow-kredytowych: 200, 390/390, 0 błędów, „Umów demo” na pierwszym ekranie (/tmp/telefon-1794224642099.png); cykl/z6-outreach-bilans-2026-11-09.txt: 73 maile do kancelarii (7.09-6.10), 0 odpowiedzi w Zoho, utm_source=mail 30 dni 7 sesji i 0 form_start, czyli 0 zapytań na 100 wysłanych.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (checklista KSeF, od 13:00), dalej Z8-Z16 według planu; dopisanie utm do linku w profilu useme zleca strateg 10.11 sesji freelancing.
+
+## 2026-11-09 14:55
+**Kanał:** pomiar (plan ruchu Z7, checklista KSeF 2027).
+**Co zrobione:** rozpisane 9 pobrań checklisty z 7 dni; żadne nie pochodzi od człowieka, więc „6 pobrań w dobie” z 8.11 nie jest podstawą do kamienia pod ten materiał.
+**Ruch:** ostatnia doba 349 odsłon, 200 osób; źródła: b2b-email 278, www.facebook.com 8, www.google.com 7, http://m.facebook.com 6 (to pobrania PDF przez automat grupy, nie ludzie), m.facebook.com 6; YouTube 1 sesja, Threads 1; uruchomienia narzędzi 1.
+**Dowód:** cykl/z7-checklista-2026-11-09.txt. 2 pobrania z /materialy = telefon-test --klik 'a[download]' (7.11 17:58 i 23:14 UTC), 6 z m.facebook.com 8.11 16:01-16:02 = grupa_wlasna z fluxlab-meta (posty/dziennik.log 16:08, 16:28), 1 z 6.11 18:36 w serii 5 PDF bez żadnej odsłony. Odsłony /materialy od 2.11: 0.
+**Dla Pawła:**
+**Zostało otwarte:** proxy.ts liczy pobrania także z telefon-test i Chrome automatów (filtr UA ich nie łapie); dla stratega 10.11: pomiar pobrań trzeba odsiać, zanim posłuży do wyboru kamienia. Następne zadanie planu: Z8 (GSC, od 14:00).

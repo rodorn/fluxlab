@@ -1,0 +1,7 @@
+Z7 9.11 checklista-ksef-2027.pdf, 7 dni (2.11-9.11), stan 14:55. Pobranie liczy proxy.ts po stronie serwera: bez sesji, więc źródło to tylko odsyłacz i utm; dopasowanie po czasie z surowymi wierszami bazy i logami automatów.
+06.11 18:36 | bez odsyłacza, bez utm, komputer | seria 5 różnych PDF od 18:32 do 18:46 bez żadnej odsłony strony | nieustalone, wzór robota (wszystkie pliki po kolei, 0 odsłon)
+07.11 18:58 | odsyłacz /materialy, telefon | 2 min po commicie 1676dcb5: telefon-test https://fluxlab.pl/materialy --klik 'a[download]' (sesja FL_strona, 17:58 UTC) | własna automatyka
+08.11 00:14 | odsyłacz /materialy, telefon | telefon-test https://fluxlab.pl/materialy --klik 'a[download]' (sesja fluxlab-site, 23:14 UTC) | własna automatyka
+08.11 16:01-16:02 | odsyłacz m.facebook.com, utm checklista-ksef, telefon, 6 pobrań w 54 s | automat grupa_wlasna (fluxlab-meta) dołączał PDF do grupy 1157865010013969, wpis 16:08 i 16:28 w posty/dziennik.log | własna automatyka
+Ludzie: 0 pobrań. form_start i zapis_email przy pobraniu: 0 (żadnego form_start ani zapis_email w oknie ±15 min od pobrań; jedyny zapis_email w 7 dniach to 06.11 13:32 na /strefa-wiedzy/jak-liczyc-zdrowotna-jdg). Odsłony /materialy od 2.11: 0 (surowa baza).
+Wniosek: żadna strona ani źródło nie daje pobrań checklisty; „6 pobrań w dobie” z 8.11 to automat grupy na Facebooku, nie ludzie. Pomiar pobrań wymaga odsiewu własnej automatyki (proxy.ts przepuszcza Chrome sterowany przez CDP i telefon-test).
