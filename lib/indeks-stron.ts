@@ -19,7 +19,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   },
   {
     "url": "/wlasny-crm",
-    "tytul": "Własny CRM dla firmy w trzy tygodnie",
+    "tytul": "Własny CRM dla firmy, pierwsza wersja w 3 tygodnie",
     "opis": "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie 1 zł, abonament od 499 zł miesięcznie za 3 osoby."
   },
   {
