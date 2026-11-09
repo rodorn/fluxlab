@@ -1718,6 +1718,12 @@ html:not(.fraunces) [data-szeryf-pozniej] {
 .dark .nic__wezel { fill: rgb(var(--gray-950)); }
 .nic__wezel--jest,
 .dark .nic__wezel--jest { opacity: 1; fill: rgb(var(--accent)); transform: scale(1.25); }
+/* Koralik przejeżdża przez węzeł: kółko rozbłyskuje i wraca do stanu zapalonego. */
+.nic__wezel--blysk { animation: nic-blysk 0.5s ease-out; }
+@keyframes nic-blysk {
+  0% { transform: scale(2); fill: rgb(165 180 252); stroke-width: 6; stroke-opacity: 0.35; opacity: 1; }
+  35% { transform: scale(1.8); stroke-width: 5; stroke-opacity: 0.25; }
+}
 .wezel-nici { display: block; height: 3rem; }
 .nic__koralik {
   position: absolute;
@@ -1821,6 +1827,7 @@ form[data-obszyta] .btn-primary::after {
   .hero-nic__twarz { animation: none; stroke-dashoffset: 0; }
   .hero-nic__przycisk { animation-duration: 0s; animation-delay: 0s; }
   .nic__wezel { transition: none; opacity: 1; }
+  .nic__wezel--blysk { animation: none; }
   .nic .nic__linia,
   .nic .nic__jasna { visibility: visible; stroke-dasharray: none !important; }
   .nic__koralik { display: none; }

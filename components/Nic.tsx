@@ -91,6 +91,7 @@ export default function Nic() {
     let uklad = "";
     let ramka = 0;
     let wWezle = -1;
+    let poprzedniaPoz = -1;
     let koniec = false;
     let forma: HTMLElement | null = null;
     let dlSzwu = [0, 0];
@@ -328,8 +329,22 @@ export default function Nic() {
           blisko >= 0 && blisko === wezly.length - 1,
         );
       }
+      if (!bezRuchu && poprzedniaPoz >= 0 && poz !== poprzedniaPoz) {
+        const a = Math.min(poprzedniaPoz, poz);
+        const b = Math.max(poprzedniaPoz, poz);
+        indeksyWezlow.forEach((k, n) => {
+          if (k > a && k <= b && wezly[n]) blysk(wezly[n].kolo);
+        });
+      }
+      poprzedniaPoz = poz;
       if (poz > zasieg) zasieg = poz;
       rysuj();
+    }
+
+    function blysk(kolo: SVGCircleElement) {
+      kolo.classList.remove("nic__wezel--blysk");
+      void kolo.getBoundingClientRect();
+      kolo.classList.add("nic__wezel--blysk");
     }
 
     function rysuj() {
