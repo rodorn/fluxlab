@@ -569,6 +569,13 @@ export const categories: Category[] = [
           "WordPress, Wix czy Next.js dla małej firmy? Czas startu, koszt przez trzy lata, plusy i minusy każdej drogi oraz trzy pytania, które rozstrzygają wybór.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/crm-dla-posrednika-kredytowego-arkusz-czy-crm",
+        title: "CRM pośrednika: arkusz, gotowy czy branżowy",
+        description:
+          "Arkusz z kalendarzem, gotowy CRM czy system pod pośrednika kredytowego? Tabela trzech dróg, cztery cele biura, trzy pytania przed zakupem i FAQ.",
+        bezOkladki: true,
+      },
     ],
   },
 ];

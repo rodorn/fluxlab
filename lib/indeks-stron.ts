@@ -818,6 +818,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "WordPress, Wix czy Next.js dla małej firmy? Czas startu, koszt przez trzy lata, plusy i minusy każdej drogi oraz trzy pytania, które rozstrzygają wybór."
   },
   {
+    "url": "/strefa-wiedzy/crm-dla-posrednika-kredytowego-arkusz-czy-crm",
+    "tytul": "CRM dla pośrednika kredytowego: arkusz czy CRM?",
+    "opis": "Arkusz z kalendarzem, gotowy CRM czy system pod pośrednika kredytowego? Tabela trzech dróg, cztery cele biura, trzy pytania przed zakupem i FAQ."
+  },
+  {
     "url": "/strefa-wiedzy/klient-nie-odpowiada-na-oferte",
     "tytul": "Klient nie odpowiada na ofertę: co zrobić",
     "opis": "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy."

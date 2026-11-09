@@ -16,7 +16,13 @@ export type ArtykulWideoDane = {
   dlugosc?: number;
   opublikowano: string;
   kategoria?: { nazwa: string; slug: string };
-  sekcje: { h2: string; od?: number; akapity: string[]; lista?: string[] }[];
+  sekcje: {
+    h2: string;
+    od?: number;
+    akapity: string[];
+    lista?: string[];
+    tabela?: { naglowki: string[]; wiersze: string[][] };
+  }[];
   faq: { q: string; a: string }[];
   cta: { naglowek: string; opis: string; etykieta: string; href: string };
 };
@@ -139,6 +145,38 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
                         <li key={p}>{p}</li>
                       ))}
                     </ul>
+                  )}
+                  {s.tabela && (
+                    <div className="mt-6 overflow-x-auto">
+                      <table className="w-full min-w-[36rem] text-left text-sm text-gray-600 dark:text-gray-400">
+                        <thead className="text-gray-900 dark:text-white">
+                          <tr className="border-b border-gray-200 dark:border-gray-700">
+                            {s.tabela.naglowki.map((h, k) => (
+                              <th key={k} className="py-2 pr-4 font-semibold align-bottom">
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {s.tabela.wiersze.map((w) => (
+                            <tr key={w[0]} className="border-b border-gray-100 dark:border-gray-800">
+                              {w.map((k, n) =>
+                                n === 0 ? (
+                                  <th key={n} className="py-2 pr-4 font-semibold text-gray-900 dark:text-white align-top">
+                                    {k}
+                                  </th>
+                                ) : (
+                                  <td key={n} className="py-2 pr-4 align-top">
+                                    {k}
+                                  </td>
+                                ),
+                              )}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   )}
                   {film && s.od !== undefined && (
                     <a
