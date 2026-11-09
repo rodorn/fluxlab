@@ -6,14 +6,14 @@ import KonfiguratorCrm from "@/components/KonfiguratorCrm";
 import PodgladCrm from "@/components/PodgladCrm";
 
 export const metadata: Metadata = {
-  title: "Własny CRM dla firmy, pierwsza wersja w 3 tygodnie | Fluxlab",
+  title: "Własny CRM dla firmy, pierwsza wersja w 3 tygodnie | Fluxlab",
   description:
     "Własny CRM: lead z formularza, telefonu i poczty sam trafia do handlowca. Wdrożenie 1 zł, abonament od 499 zł miesięcznie za 3 osoby.",
   alternates: { canonical: "/wlasny-crm" },
   openGraph: {
-    title: "Własny CRM dla firmy, pierwsza wersja w 3 tygodnie | Fluxlab",
+    title: "Własny CRM dla firmy, pierwsza wersja w 3 tygodnie | Fluxlab",
     description:
-      "Lead z każdego źródła trafia sam do opiekuna z zadaniem na 15 minut. Pierwsza wersja w 3 tygodnie, pełne wdrożenie 4–8 tygodni, dane zawsze Twoje.",
+      "Lead z każdego źródła trafia sam do opiekuna z zadaniem na 15 minut. Pierwsza wersja w 3 tygodnie, pełne wdrożenie 4⁠–⁠8 tygodni, dane zawsze Twoje.",
     locale: "pl_PL",
     type: "website",
     images: ["/og?t=W%C5%82asny%20CRM%20dla%20firmy%2C%20pierwsza%20wersja%20w%203%20tygodnie%20%7C%20Fluxlab"],
@@ -38,7 +38,7 @@ export default function WlasnyCrm() {
       breadcrumb="Własny CRM"
       eyebrow="FluxCRM"
       h1="Własny CRM dla Twojej firmy"
-      lead="Lead z formularza, telefonu i poczty trafia sam do opiekuna, z zadaniem „zadzwoń w 15 minut”. Aplikacja na komputerze i telefonie każdego handlowca. Pierwsza działająca wersja w 3 tygodnie, pełne wdrożenie w 4–8 tygodni."
+      lead="Lead z formularza, telefonu i poczty trafia sam do opiekuna, z zadaniem „zadzwoń w 15 minut”. Aplikacja na komputerze i telefonie każdego handlowca. Pierwsza działająca wersja w 3 tygodnie, pełne wdrożenie w 4⁠–⁠8 tygodni."
       podLeadem={
         <>
           Pośrednik kredytowy?{" "}
