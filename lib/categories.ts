@@ -540,6 +540,13 @@ export const categories: Category[] = [
           "CRM dla małej firmy: kiedy wystarczy Excel albo darmowy CRM, a kiedy czas na własny. Trzy sygnały i oferta od 499 zł netto z 3 kontami.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/strona-dla-malej-firmy-wordpress-wix-czy-nextjs",
+        title: "Strona firmy: WordPress, Wix czy Next.js",
+        description:
+          "WordPress, Wix czy Next.js dla małej firmy? Czas startu, koszt przez trzy lata, plusy i minusy każdej drogi oraz trzy pytania, które rozstrzygają wybór.",
+        bezOkladki: true,
+      },
     ],
   },
 ];

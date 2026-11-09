@@ -811,5 +811,10 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "url": "/strefa-wiedzy/crm-dla-malej-firmy-excel-gotowy-czy-wlasny",
     "tytul": "CRM dla małej firmy: Excel, gotowy czy własny?",
     "opis": "CRM dla małej firmy: kiedy wystarczy Excel albo darmowy CRM, a kiedy czas na własny. Trzy sygnały i oferta od 499 zł netto z 3 kontami."
+  },
+  {
+    "url": "/strefa-wiedzy/strona-dla-malej-firmy-wordpress-wix-czy-nextjs",
+    "tytul": "Strona dla firmy: WordPress, Wix czy Next.js?",
+    "opis": "WordPress, Wix czy Next.js dla małej firmy? Czas startu, koszt przez trzy lata, plusy i minusy każdej drogi oraz trzy pytania, które rozstrzygają wybór."
   }
 ];

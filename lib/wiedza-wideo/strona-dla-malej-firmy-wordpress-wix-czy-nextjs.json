@@ -1,0 +1,117 @@
+{
+  "slug": "strona-dla-malej-firmy-wordpress-wix-czy-nextjs",
+  "tytulStrony": "Strona dla firmy: WordPress, Wix czy Next.js?",
+  "h1": "Strona internetowa dla małej firmy: WordPress, Wix czy Next.js?",
+  "tytulKrotki": "Strona firmy: WordPress, Wix czy Next.js",
+  "opis": "WordPress, Wix czy Next.js dla małej firmy? Czas startu, koszt przez trzy lata, plusy i minusy każdej drogi oraz trzy pytania, które rozstrzygają wybór.",
+  "lead": "Zakładasz stronę firmy i każdy wykonawca poleca inną technologię. Na przykładzie gabinetu fizjoterapii zobaczysz trzy drogi: kreator typu Wix, WordPress i stronę w kodzie na Next.js, porównane w tym samym porządku, oraz prostą regułę wyboru.",
+  "youtubeId": "E8BqXM21w4M",
+  "dlugosc": 583,
+  "opublikowano": "2026-11-08T17:50:11-08:00",
+  "frazy": [
+    "strona internetowa dla małej firmy",
+    "WordPress czy Wix",
+    "Wix czy WordPress dla firmy",
+    "strona w Next.js",
+    "kreator stron czy WordPress",
+    "ile kosztuje strona internetowa",
+    "strona dla gabinetu",
+    "koszt utrzymania strony WordPress"
+  ],
+  "sekcje": [
+    {
+      "h2": "Trzech wykonawców, trzy różne odpowiedzi",
+      "od": 0,
+      "akapity": [
+        "Marta prowadzi gabinet fizjoterapii: dwie fizjoterapeutki, pięć dni w tygodniu, kalendarz w zeszycie. Pacjenci dzwonią w trakcie zabiegów, telefon milknie, a część z nich dzwoni potem do gabinetu po drugiej stronie ulicy. Marta chce strony, na której pacjent sam znajdzie gabinet i sam umówi wizytę, także o 23:00.",
+        "Pyta trzech wykonawców. Pierwszy mówi: Wix, zrobisz to sama w weekend. Drugi: tylko WordPress. Trzeci: dziś robi się to w kodzie, na Next.js. Każda odpowiedź prowadzi do innej strony, innego rachunku i innej pracy przez kolejne lata. Dlatego każdą drogę sprawdzamy tak samo: czas startu, koszt przez trzy lata, mocna i słaba strona."
+      ]
+    },
+    {
+      "h2": "Zanim wybierzesz narzędzie: co strona ma robić",
+      "od": 61,
+      "akapity": [
+        "Marta zaczyna od kartki, nie od technologii. Zapisuje, co strona ma robić, i dwie informacje o gabinecie. Ta kartka jest miarą, którą przykłada się do każdej z trzech dróg."
+      ],
+      "lista": [
+        "Pacjent znajduje gabinet w Google.",
+        "Na telefonie widzi cennik, zespół i dojazd.",
+        "Jednym przyciskiem umawia wizytę.",
+        "Cennik i grafik Marta zmienia sama, mniej więcej raz w miesiącu.",
+        "Za dwa lata planuje drugi gabinet w sąsiedniej dzielnicy."
+      ]
+    },
+    {
+      "h2": "Droga 1: kreator stron, na przykład Wix",
+      "od": 103,
+      "akapity": [
+        "Marta zakłada konto, wybiera szablon, wkleja zdjęcia i cennik, włącza moduł rezerwacji i podpina domenę. Start zajmuje jeden weekend jej pracy, a koszt startu jest najniższy z trzech dróg: pierwszy okres abonamentu i domena. Wykonawca jest opcjonalny.",
+        "Plusy: cennik zmieniasz sama w kilka minut, a hosting, kopie zapasowe i aktualizacje są po stronie dostawcy. Koszt przez trzy lata to równy abonament, wyższy w planie z rezerwacjami. Suma abonamentów często kilka razy przewyższa koszt startu, choć przy prostej stronie i tak bywa najniższa.",
+        "Minusy wychodzą, gdy firma rośnie. Strona mieszka u dostawcy kreatora: domenę da się przenieść, ale wygląd i układ zwykle trzeba zbudować od nowa. Kreator ładuje też wiele własnych skryptów, więc na starszym telefonie przy słabym zasięgu strona bywa wolniejsza, a pacjent wraca do wyników wyszukiwania."
+      ]
+    },
+    {
+      "h2": "Droga 2: WordPress z wtyczkami",
+      "od": 196,
+      "akapity": [
+        "WordPress to najpopularniejszy system stron: według W3Techs działa na nim mniej więcej 40% wszystkich stron internetowych. Zwykle zleca się go wykonawcy, który kupuje hosting, dobiera motyw i dodaje wtyczki: rezerwacje, formularz, kopie zapasowe, ochronę przed spamem. Start trwa zwykle od dwóch do sześciu tygodni, koszt startu jest wyższy niż w kreatorze, a hosting potem kosztuje mało.",
+        "Plusy: panel, w którym sama dopiszesz aktualność i podmienisz cennik, swoboda rozbudowy (drugi gabinet to nowa podstrona i drugi kalendarz) oraz pełna własność: pliki i bazę przeniesiesz do dowolnego hostingu i wykonawcy.",
+        "Minus to opieka. WordPress i każda wtyczka dostają aktualizacje co kilka tygodni, każda od innego autora. Ktoś musi je instalować, robić kopię przed aktualizacją i sprawdzać, czy rezerwacje dalej działają. Inaczej zdarza się scenariusz z filmu: piątkowe „aktualizuj wszystko” i formularz, który przez trzy dni wysyła wiadomości donikąd. Przez trzy lata największą pozycją jest właśnie stała opieka."
+      ]
+    },
+    {
+      "h2": "Droga 3: strona w kodzie na Next.js",
+      "od": 330,
+      "akapity": [
+        "Next.js to framework, czyli szkielet, z którego programista składa stronę jak dom z prefabrykatów. Wykonawca projektuje ją dokładnie pod firmę: cennik, zespół, dojazd i przycisk rezerwacji na górze ekranu telefonu, a do zmian treści dodaje prosty panel. Rezerwacje podpina z gotowego systemu. U typowego wykonawcy start trwa zwykle od czterech do ośmiu tygodni, a koszt startu jest najwyższy, bo każdy element powstaje pod jedną firmę. Hosting często mieści się w darmowym albo tanim planie.",
+        "Plusy: strona to w dużej mierze gotowe pliki, które serwer tylko podaje, więc otwiera się szybko także na starszym telefonie, a Google bierze szybkość pod uwagę. Mało wtyczek oznacza mało aktualizacji, opieka to drobne poprawki kilka razy w roku. Kod i domena są zapisane na Ciebie, więc zmiana wykonawcy to przekazanie kluczy.",
+        "Minus: zmiany większe niż cennik i zdjęcia robi programista. Dla firmy, która zmienia układ strony raz na kilka miesięcy, to zwykle wystarcza. Dla firmy, która przebudowuje stronę codziennie, byłoby uciążliwe."
+      ]
+    },
+    {
+      "h2": "Rachunek trzech lat i co wybrała Marta",
+      "od": 483,
+      "akapity": [
+        "Wszystkie trzy drogi dają stronę w Google, cennik na telefonie i przycisk rezerwacji. Różnią się tym, kiedy płacisz, kto pracuje i co się dzieje, gdy firma rośnie. Kreator to mały start i równy abonament, WordPress to średni start i stała opieka, kod to duży start i niskie koszty potem. Konkretne kwoty sprawdź w aktualnych cennikach, bo zmieniają się co roku. Liczy się suma trzech lat, nie pierwsza faktura.",
+        "Marta ma dziś jeden adres, rzadkie zmiany i mały budżet, więc wybiera kreator. Domenę rejestruje na siebie i zapisuje w kalendarzu datę: za rok sprawdzić, czy ta droga dalej pasuje. Gdy drugi gabinet staje się pewny, a pacjenci coraz częściej szukają jej w Google na telefonie, zamawia stronę w kodzie albo na WordPressie, a domena przechodzi razem z nią."
+      ]
+    },
+    {
+      "h2": "Prosta reguła wyboru dla Twojej firmy",
+      "od": 540,
+      "akapity": [
+        "Zadaj sobie trzy pytania: kto zmienia treść i jak często, ile możesz płacić co miesiąc przez kolejne trzy lata i jak ważni są klienci, którzy szukają Cię w Google na telefonie. Odpowiedzi prowadzą do jednej z trzech dróg.",
+        "Niezależnie od drogi strona ma być Twoja: domena zapisana na Ciebie, dostęp do panelu w Twoich rękach i kopia, którą możesz pobrać. Gdy wykonawca mówi „tylko ta technologia”, zapytaj o te trzy rzeczy i poproś o koszt całych trzech lat razem ze startem."
+      ],
+      "lista": [
+        "Prosta strona, rzadkie zmiany, mały budżet, start w weekend: kreator.",
+        "Częste nowe treści, blog i osoba w firmie, która lubi panel: WordPress z opłaconą opieką.",
+        "Szybkość na telefonie, klienci z Google i strona na lata przy małej opiece: strona w kodzie, na przykład na Next.js."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wix czy WordPress dla małej firmy?",
+      "a": "Wix wystarczy, gdy strona jest prosta, treść zmienia się rzadko, a budżet na start jest mały. WordPress lepiej pasuje, gdy często dodajesz treści i blog, ale wymaga stałej opieki nad aktualizacjami."
+    },
+    {
+      "q": "Ile trwa zrobienie strony firmowej?",
+      "a": "Strona z kreatora może działać po weekendzie. WordPress u wykonawcy trwa zwykle od dwóch do sześciu tygodni, strona w kodzie u typowego wykonawcy od czterech do ośmiu tygodni, zależnie od ilości treści."
+    },
+    {
+      "q": "Co kosztuje najwięcej przez trzy lata?",
+      "a": "W kreatorze rośnie suma abonamentów, w WordPressie największą pozycją jest opieka, a w stronie w kodzie koszt startu. Porównuj sumę trzech lat, nie pierwszą fakturę."
+    },
+    {
+      "q": "Jak nie uzależnić się od wykonawcy strony?",
+      "a": "Zarejestruj domenę na siebie, miej dostęp do panelu i kopię strony, którą możesz pobrać. Wtedy zmiana wykonawcy albo technologii to przeprowadzka z kompletem kluczy."
+    }
+  ],
+  "cta": {
+    "naglowek": "Strona w kodzie, która otwiera się szybko na telefonie?",
+    "opis": "Strona w tydzień za 2 900 zł albo strona firmowa z panelem edycji w 12 dni za 5 900 zł. Hosting jest w cenie wdrożenia, a domenę kupujesz na siebie.",
+    "etykieta": "Zobacz strony WWW",
+    "href": "/strony-www"
+  }
+}

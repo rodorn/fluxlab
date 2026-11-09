@@ -264,3 +264,5 @@ mObywatel
 figmie
 gclid
 sanity
+Wix
+Techs

@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 
-const zrodlo = `${homedir()}/Projekty/fluxlab-prawo/reguly`;
+const zrodlo = `${homedir()}/Projekty/ug/prawo/reguly`;
 for (const rok of [2026, 2027]) {
   const pelny = JSON.parse(readFileSync(`${zrodlo}/${rok}.json`, "utf8"));
   const { _opis, ...strona } = pelny.strona;

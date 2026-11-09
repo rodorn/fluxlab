@@ -55,8 +55,8 @@
  },
  "funduszPracy": {
   "v": 0.0245,
-  "zrodlo": "https://isap.sejm.gov.pl/",
-  "akt": "Ustawa o rynku pracy i służbach zatrudnienia (Fundusz Pracy) oraz ustawa o FGŚP (Fundusz Solidarnościowy), FP 2,45% łącznie z FS; nie opłaca się przy podstawie preferencyjnej i przez pierwsze 24 mies. (ulga dla nowych firm)",
+  "zrodlo": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000062",
+  "akt": "ustawa o rynku pracy i służbach zatrudnienia (FP) oraz ustawa o Funduszu Solidarnościowym (FS), FP i FS łącznie 2,45% (FP 1,0% + FS 1,45%, ustawa budżetowa na 2026, Dz.U. 2026 poz. 62, art. 25–26; FS wg ustawy o FS art. 4); FP/FS płaci przedsiębiorca, gdy podstawa składek ≥ minimalne wynagrodzenie; przy podstawie preferencyjnej i w uldze na start nie płaci",
   "stan": "2026-11-09",
   "szacunek": false,
   "uwagi": "FP z FS łącznie; nie przy podstawie preferencyjnej"
