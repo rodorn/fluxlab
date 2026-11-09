@@ -10911,3 +10911,11 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Dowód:** Yandex 200 success, Naver 200, wspólny punkt 403 (Bing nie zna domeny); wszystkie 15 adresów 200 przed zgłoszeniem.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (useme, od 09:00), Z4 (Facebook, od 10:00), dalej według planu.
+
+## 2026-11-09 12:48
+**Kanał:** pomiar i dystrybucja (plan 9.11, Z3-Z6).
+**Co zrobione:** Z3 ustalił źródło wejść z useme (portfolio i opis profilu, link do /audyt-strony bez utm), Z4 doręczył temat e-Doręczeń do FL_meta, Z5 potwierdził stronę CRM dla pośredników na telefonie, Z6 policzył bilans zimnego maila do decyzji 13.11.
+**Ruch:** raport_ruchu, ostatnia doba: 317 odsłon, 188 osób; źródła: b2b-email 253, Google 8, Facebook 17 (www 7, m. 10), YouTube 2 sesje, Threads 1; uruchomienia narzędzi 1; lejek 7 dni 691 sesji → 7 form_start → 3 zapytania.
+**Dowód:** cykl/z3-useme-2026-11-09.txt (2 sesje 8.11, wejście /audyt-strony, 0 s, 0 zdarzeń); `sesja napisz FL_meta` „Doręczono do FL_meta (12:43)”: pytanie o biala-lista-15k i temat „Od 1.01.2026 urząd i kontrahent piszą na adres do e-Doręczeń…” z linkiem /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen?utm_source=facebook&utm_campaign=adres-e-doreczen; telefon-test /crm-dla-posrednikow-kredytowych: 200, 390/390, 0 błędów, „Umów demo” na pierwszym ekranie (/tmp/telefon-1794224642099.png); cykl/z6-outreach-bilans-2026-11-09.txt: 73 maile do kancelarii (7.09-6.10), 0 odpowiedzi w Zoho, utm_source=mail 30 dni 7 sesji i 0 form_start, czyli 0 zapytań na 100 wysłanych.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (checklista KSeF, od 13:00), dalej Z8-Z16 według planu; dopisanie utm do linku w profilu useme zleca strateg 10.11 sesji freelancing.

@@ -1,0 +1,6 @@
+Z3 9.11 useme.com, 7 dni po odsiewie (pomiar-kanalow.wiersze + odsiew), stan 12:45
+08.11 11:20 | odsyłacz useme.com (sama domena, bez ścieżki) | wejście /audyt-strony | 1 odsłona | 0 s | brak zdarzeń | Chrome Android
+08.11 11:52 | odsyłacz useme.com (sama domena, bez ścieżki) | wejście /audyt-strony | 1 odsłona | 0 s | brak zdarzeń | Chrome Android
+Razem: 2 sesje, 2 odsłony, 0 uruchomień audytu, 0 form_start. Bez utm, więc profil ani zlecenie nie są w danych.
+Link ze strony do useme: brak (grep "useme" w app, components, lib: 0 trafień).
+Skąd link: profil FluxLab na useme ma pozycję portfolio z adresem https://fluxlab.pl/audyt-strony (freelancing/narzedzia/portf_nowa2.py) i zdanie w „O mnie” z fluxlab.pl/audyt-strony (narzedzia/omnie_pl.txt); oba bez utm. Konto useme prowadzi sesja freelancing (PODZIAL_PRACY.md), więc dopisanie ?utm_source=useme zlecić jej.

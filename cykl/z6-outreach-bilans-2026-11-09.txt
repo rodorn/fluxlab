@@ -1,0 +1,7 @@
+Z6 9.11 bilans zimnego maila (dane do decyzji 13.11, karta f755c6e1), stan 12:48, bez wysyłki
+1. wyslane_kanc.json: 73 maile (63 bez segmentu, 10 „kancelarie”); pierwsza wysyłka 7.09.2026 02:23 (dziennik: „18 już wysłanych 7.09”), ostatnia 6.10.2026 10:47. Resend nie ma już tych maili (404, retencja 30 dni), statusów doręczenia brak.
+2. Licznik po odsiewie, 30 dni (od 10.10), utm_source=mail: 7 sesji, kampanie: agencje 5, ksiegowe 1, audyt-wynik 1; kancelarie 0 (wysyłka skończyła się przed oknem). form_start 0, lead_* 0. Wejścia na /e-doreczenia-integracja (6) i /audyt-strony (1).
+3. Dla porównania b2b-email (kampania b2b, inna wysyłka): 675 sesji, z czego 664 to sam piksel otwarcia, 11 z kliknięciem lub odsłoną; form_start 0, lead_* 0.
+4. Zoho pawel@fluxlab.pl (reply_to tych maili), wszystkie foldery od 6.09: odpowiedzi od 73 adresów i 65 domen firmowych z wyslane_kanc.json: 0.
+Wszystkie segmenty razem w mail-audyt/wyslane*.json: 459 maili.
+Wniosek: zimny mail do kancelarii dał 0 odpowiedzi i 0 zapytań na 73 wysłane, czyli 0 osób z odpowiedzią i 0 zapytań na 100; cały kanał utm_source=mail dał w 30 dni 7 sesji i 0 zapytań.
