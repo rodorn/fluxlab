@@ -256,6 +256,17 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/:sciezka*",
+        has: [
+          {
+            type: "host",
+            value: "(www\\.)?(ustawygospodarcze|portal-dla-firm)\\.pl",
+          },
+        ],
+        destination: "https://fluxlab.pl/narzedzia/",
+        statusCode: 302,
+      },
       // Subdomena mta-sts sluzy tylko polityce poczty; reszta nie moze byc
       // druga kopia strony w Google.
       {
