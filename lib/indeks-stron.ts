@@ -833,6 +833,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy."
   },
   {
+    "url": "/strefa-wiedzy/klient-mowi-za-drogo",
+    "tytul": "Klient mówi, że za drogo: co zrobić",
+    "opis": "Klient mówi, że za drogo? Pięć powodów, dla których to rzadko jest cena, trzy pytania o przewagę, sposób pokazania różnicy i pytania, które kończą spór o rabat."
+  },
+  {
     "url": "/strefa-wiedzy/spotkanie-z-klientem-przygotowanie",
     "tytul": "Jak przygotować się do spotkania z klientem",
     "opis": "Jak przygotować się do spotkania z klientem: 5 kroków przed, 6 zasad w trakcie i 2 rzeczy po spotkaniu oraz 8 błędów, które kosztują sprawę."

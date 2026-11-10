@@ -492,6 +492,13 @@ export const categories: Category[] = [
       "Praktyka sprzedaży dla pośredników kredytowych, ubezpieczeniowych, w nieruchomościach i dla JDG: oferta, spotkanie, obiekcje, cena i kontakt po ofercie.",
     articles: [
       {
+        href: "/strefa-wiedzy/klient-mowi-za-drogo",
+        title: "Klient mówi, że za drogo: co zrobić",
+        description:
+          "Klient mówi, że za drogo? Pięć powodów, dla których to rzadko jest cena, trzy pytania o przewagę, sposób pokazania różnicy i pytania, które kończą spór o rabat.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/klient-nie-odpowiada-na-oferte",
         title: "Klient nie odpowiada na ofertę",
         description:

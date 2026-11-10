@@ -192,6 +192,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/crm-dla-posrednika-kredytowego-arkusz-czy-crm", "Wideo: CRM pośrednika: arkusz czy CRM"),
           s("/strefa-wiedzy/crm-dla-firmy-fotowoltaicznej-zeszyt-arkusz-czy-crm", "Wideo: CRM dla firmy OZE: zeszyt, arkusz, CRM"),
           s("/strefa-wiedzy/klient-nie-odpowiada-na-oferte", "Klient nie odpowiada na ofertę"),
+          s("/strefa-wiedzy/klient-mowi-za-drogo", "Klient mówi, że za drogo"),
           s("/strefa-wiedzy/spotkanie-z-klientem-przygotowanie", "Przygotowanie do spotkania z klientem"),
           s("/strefa-wiedzy/kategoria/[slug]", "Kategoria artykułów"),
           s("/strefa-wiedzy/ai-w-automatyzacji-firm", "AI w automatyzacji firm"),

@@ -1,0 +1,99 @@
+{
+  "slug": "klient-mowi-za-drogo",
+  "tytulStrony": "Klient mówi, że za drogo: co zrobić",
+  "h1": "Klient mówi „za drogo”: co zrobić, zanim obniżysz cenę",
+  "tytulKrotki": "Klient mówi, że za drogo",
+  "opis": "Klient mówi, że za drogo? Pięć powodów, dla których to rzadko jest cena, trzy pytania o przewagę, sposób pokazania różnicy i pytania, które kończą spór o rabat.",
+  "lead": "Wysłałeś ofertę i słyszysz: „u konkurencji taniej”. Zobaczysz, skąd bierze się to zdanie, jak sprawdzić, czy chodzi o cenę, i co zrobić, zanim zaproponujesz rabat. Przykłady pochodzą z pracy pośrednika kredytowego, doradcy ubezpieczeniowego i firmy usługowej.",
+  "opublikowano": "2026-11-10T17:10:00+01:00",
+  "kategoria": { "nazwa": "Sprzedaż", "slug": "sprzedaz" },
+  "sekcje": [
+    {
+      "h2": "„Za drogo” to najwygodniejsza odpowiedź",
+      "akapity": [
+        "Klient, który rezygnuje, rzadko mówi: „zdenerwowały mnie Twoje telefony” albo „nie zrozumiałem oferty”. Takie zdania wymagają odwagi i prowadzą do niezręcznej rozmowy. „Za drogo” jest grzeczne, nikogo nie obraża i kończy temat.",
+        "Po stronie sprzedawcy działa ten sam mechanizm. Łatwiej uznać, że przegrała cena, niż przyznać, że źle zbadałeś potrzebę, słabo pokazałeś różnicę albo wysłałeś ofertę, której klient nie zrozumiał. Cena jest powodem, którego nikt nie musi naprawiać, więc oboje chętnie się na niej zatrzymują.",
+        "Przykład: Marek zapytał klienta, dlaczego wybrał inną firmę. Usłyszał, że była tańsza. Dopiero drugie pytanie, „czy było coś oprócz ceny, co wpłynęło na decyzję?”, dało prawdziwą odpowiedź: oferta była nieczytelna i klient nie wiedział, jak cała sprawa będzie wyglądać."
+      ]
+    },
+    {
+      "h2": "Pięć powodów, dla których klient mówi „za drogo”",
+      "akapity": [
+        "Zanim zareagujesz, ustal, który z powodów jest prawdziwy. Każdy wymaga innej odpowiedzi, a rabat pomaga tylko w ostatnim."
+      ],
+      "lista": [
+        "Nie widzi różnicy. Dla niego dwie oferty to ten sam produkt w innej cenie, bo nikt nie pokazał mu, czym się różnią.",
+        "Nie zrozumiał oferty. Gdy nie wie, co dostanie i jak to będzie wyglądać, porównuje to, co widać, czyli kwotę.",
+        "Nie chce się tłumaczyć. Powód, którego nie da się łatwo podważyć, jest bezpieczniejszy niż szczera odpowiedź.",
+        "To nie jest Twój klient. Ktoś, kto szuka najtańszego rozwiązania, nie kupi pełnej usługi, choćbyś mówił najlepiej na świecie.",
+        "Cena naprawdę jest za wysoka. Zdarza się, szczególnie gdy konkurent wchodzi w wojnę cenową, ale to rzadziej, niż się wydaje."
+      ]
+    },
+    {
+      "h2": "Zadaj pytanie, zanim zaproponujesz rabat",
+      "akapity": [
+        "Rabat daje klientowi sygnał, że cena była umowna, więc następnym razem też warto ją negocjować. Zamiast niego zadaj pytanie, które oddziela cenę od reszty: „Gdyby ceny były takie same, którą ofertę wybrałby Pan lub Pani i dlaczego?”",
+        "Jeśli klient bez wahania wskaże inną firmę, problemem jest oferta albo relacja, nie kwota. Jeśli wskaże Twoją, rozmowa przechodzi do tego, co jest dla niego warte dopłaty, i tam szukasz argumentów.",
+        "Na tym etapie nie broń ceny. Zapytaj, z czym ją porównuje: z konkretną ofertą czy z wyobrażeniem. Obejrzyj tę ofertę razem z klientem, nawet jeśli to dla Ciebie niewygodne. Często okazuje się, że zawiera mniej, niż klient zakładał."
+      ]
+    },
+    {
+      "h2": "Trzy pytania o przewagę, które warto zadać sobie przed rozmową",
+      "akapity": [
+        "Jeśli nie umiesz w kilku zdaniach odpowiedzieć, dlaczego klient miałby wybrać właśnie Ciebie, nie wyjdzie to w rozmowie. Wypisz odpowiedzi na trzy pytania, najlepiej razem z zespołem:"
+      ],
+      "lista": [
+        "Dlaczego my? Co sprawia, że ktoś, kto szuka takiej usługi, zdecyduje się na Ciebie.",
+        "Dlaczego zmienić na nas? Jaki powód ma klient, który już z kimś współpracuje, żeby to zmienić. To nie jest ta sama odpowiedź co w pierwszym pytaniu.",
+        "Dlaczego zostać? Co sprawia, że klient po roku nie odejdzie do kogoś tańszego."
+      ]
+    },
+    {
+      "h2": "Pokaż różnicę i nazwij ryzyko tańszej opcji",
+      "akapity": [
+        "Klient nie zapłaci więcej za coś, czego nie widzi. Wypisz, co jest w Twojej cenie: czas reakcji, osoba prowadząca sprawę, sprawdzenie dokumentów, pomoc po sprzedaży, szybkość oferty. Dopiero wtedy cena ma z czym się mierzyć.",
+        "Drugie narzędzie to ryzyko. Tańsze rozwiązanie zwykle oznacza więcej niepewności: mniej opieki, wolniejszą reakcję, brak kogoś, do kogo można zadzwonić, gdy coś pójdzie nie tak. Klient często tego nie widzi, bo nikt mu o tym nie powiedział. Mów o ryzyku językiem jego sprawy, nie Twojego produktu: nie „mamy lepszą jakość”, tylko „jeśli bank odrzuci wniosek w piątek, tego samego dnia dostaje Pan telefon i drugi wariant”.",
+        "Gdy to możliwe, wyceń dodatki osobno. Podstawowa usługa wygląda wtedy taniej, a elementy, które dotąd były gratisem, zaczynają być doceniane, bo mają swoją cenę."
+      ]
+    },
+    {
+      "h2": "Kiedy „za drogo” jest prawdą",
+      "akapity": [
+        "Czasem to naprawdę cena. Wtedy zadaj sobie dwa pytania. Pierwsze: czy ten klient w ogóle jest dla Ciebie? Handlowiec, który chce sprzedać każdemu, spędza najwięcej czasu z osobami, które nigdy nie kupią pełnej usługi. Ustal z góry, jakich zapytań nie obsługujesz, i pozwól sobie na uprzejmą odmowę.",
+        "Drugie: ile z ceny z oferty naprawdę trafia na konto. Rabaty, wydłużone terminy płatności i prace wykonane dla klienta za darmo zjadają marżę po cichu. Policz to raz na kwartał dla kilku ostatnich zleceń, bo często wychodzi, że zlecenie, które wyglądało na opłacalne, kończy się na zerze.",
+        "Jeśli cena jest dla klienta decydująca, a Ty nie masz najniższych kosztów, nie wygrasz tej rozmowy rabatem. Wygrasz ją szybkością odpowiedzi, prostą ofertą i dostępnością, czyli tym, co klient zobaczy, zanim zobaczy fakturę."
+      ]
+    },
+    {
+      "h2": "Zapisuj powód, nie samo „za drogo”",
+      "akapity": [
+        "Jeśli w notatce przy sprawie zapiszesz „za drogo”, za pół roku nic z niej nie wyciągniesz. Zapisz, z czym klient porównywał, co powiedział po pytaniu o powód i co sam uważasz za prawdziwy powód. Po kilkudziesięciu sprawach zobaczysz, czy przegrywasz ceną, czytelnością oferty, czy tym, że rozmawiasz z niewłaściwymi klientami.",
+        "To wymaga miejsca, w którym każda sprawa ma swój status, datę następnego kontaktu i pole na powód rezygnacji. W arkuszu da się to robić, dopóki spraw jest kilkanaście. Przy większej liczbie przydaje się CRM, w którym powód wybierasz z listy i widzisz zestawienie."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Czy zawsze pytać klienta o prawdziwy powód rezygnacji?",
+      "a": "Tak, ale jednym pytaniem i bez nacisku. Zapytaj, czy poza ceną było coś, co wpłynęło na decyzję, i zostaw chwilę ciszy. Jeśli klient nie chce odpowiadać, zapisz to i nie wracaj do tematu."
+    },
+    {
+      "q": "Kiedy warto obniżyć cenę?",
+      "a": "Gdy dostajesz za to coś konkretnego: większy zakres, dłuższą umowę, szybszą decyzję albo polecenie. Rabat bez niczego w zamian uczy klienta, że cenę zawsze można zbić."
+    },
+    {
+      "q": "Co zrobić, gdy konkurent oferuje to samo taniej?",
+      "a": "Najpierw sprawdź, czy to naprawdę to samo: porównaj zakres, termin, obsługę po sprzedaży i warunki rozwiązania umowy. Jeśli jest identyczne, rozmowa o cenie jest uczciwa i trzeba zdecydować, czy chcesz w niej uczestniczyć."
+    },
+    {
+      "q": "Jak odróżnić klienta, który negocjuje, od klienta, który odchodzi?",
+      "a": "Negocjujący pyta, co można zmienić, i wraca z kolejnym pytaniem. Odchodzący dziękuje, mówi „przemyślę” i milknie. Na drugi przypadek pomaga umówiony termin omówienia, zanim wyślesz ofertę."
+    }
+  ],
+  "cta": {
+    "naglowek": "Powód rezygnacji przy każdej sprawie?",
+    "opis": "Zobacz demo FluxCRM dla pośrednika kredytowego: sprawa od zapytania do uruchomienia, dokumenty z brakami, wnioski do banków i prowizje w jednym miejscu.",
+    "etykieta": "Zobacz demo CRM",
+    "href": "/crm-dla-posrednikow-kredytowych"
+  }
+}
