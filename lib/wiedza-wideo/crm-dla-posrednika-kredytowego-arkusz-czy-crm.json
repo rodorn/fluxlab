@@ -5,8 +5,8 @@
   "tytulKrotki": "CRM pośrednika: arkusz, gotowy czy branżowy",
   "opis": "Arkusz z kalendarzem, gotowy CRM czy system pod pośrednika kredytowego? Tabela trzech dróg, cztery cele biura, trzy pytania przed zakupem i FAQ.",
   "lead": "Klient szukający hipoteki zwykle pisze do kilku pośredników naraz, a sprawę najczęściej prowadzi ten, kto odezwie się pierwszy i konkretnie. Na przykładzie małego biura z Łodzi porównujemy trzy sposoby pilnowania zapytań: arkusz z kalendarzem, gotowy CRM w abonamencie i CRM zrobiony pod pośrednika, każdy przyłożony do tych samych czterech celów.",
-  "youtubeId": "9tfvPUjaj-4",
-  "dlugosc": 626,
+  "youtubeId": "zgMDGzcosRs",
+  "dlugosc": 624,
   "opublikowano": "2026-11-09T18:20:00+01:00",
   "frazy": [
     "CRM dla pośrednika kredytowego",
@@ -41,7 +41,7 @@
     },
     {
       "h2": "Droga 1: arkusz i kalendarz w telefonie",
-      "od": 156,
+      "od": 155,
       "akapity": [
         "Oddzwonienia trafiają do kalendarza w telefonie, a sprawy do wspólnego arkusza z kolumnami: klient, kredyt, bank, etap, czego brakuje. Ola ma dostęp z linku. Start zajmuje jeden wieczór, a koszt w pieniądzach jest najniższy, bo płacisz głównie własnym czasem. Ten czas wraca codziennie, przy każdym przepisanym formularzu i każdej poprawce. W środę okazuje się, że obie wpisały tę samą osobę dwa razy, z innym etapem sprawy.",
         "Plus to znane narzędzia i zero nauki, a dla jednej osoby z kilkoma sprawami w miesiącu to często wystarcza. Minusy wychodzą, gdy spraw przybywa. Każdy wpis zależy od pamięci: formularz z porównywarki trzeba przepisać, nieodebrane połączenie zostaje w historii telefonu, mail od agenta ginie między fakturami. Kolumna „czego brakuje” to tylko napis, przypomnienie powstaje dopiero, gdy ktoś do niej zajrzy. Do tego dane kredytowe klientów w arkuszu z linkiem to sprawa ochrony danych osobowych.",
@@ -50,7 +50,7 @@
     },
     {
       "h2": "Droga 2: gotowy CRM w abonamencie",
-      "od": 276,
+      "od": 275,
       "akapity": [
         "CRM to jedno miejsce na klientów, rozmowy i zadania: lista kontaktów, lejek sprzedaży, przypomnienia i aplikacja na telefon. Start zajmuje kilka dni: konto, import arkusza, etapy. Koszt to abonament za każdą osobę co miesiąc. Przy dwóch osobach jest niewielki, ale rośnie z zespołem, a integracje, na przykład z porównywarką czy bramką SMS, często są płatne osobno.",
         "Plus: przypomnienia o oddzwonieniu działają same, formularz ze strony wpada od razu na listę, Ola widzi te same sprawy na laptopie, a Agnieszka na telefonie między spotkaniami. Przy pierwszej hipotece system pyta jednak o wartość oferty i datę zamknięcia transakcji, a Agnieszka potrzebuje listy dokumentów i trzech banków.",
@@ -60,7 +60,7 @@
     },
     {
       "h2": "Droga 3: CRM zrobiony pod pośrednika",
-      "od": 395,
+      "od": 397,
       "akapity": [
         "Może to być gotowy system branżowy albo system budowany dla Twojego biura. Podstawą jest sprawa kredytowa, a kontakt to tylko jej część. Start trwa od tygodnia do trzech, razem z przeniesieniem spraw z arkusza. Koszt to wyższy abonament albo jednorazowe wdrożenie i potem opieka; o opiekę, aktualizacje i własność danych pytaj już na pierwszej rozmowie.",
         "Agnieszka sprawdza system na parze od dewelopera. Formularz wpada na listę w minutę, rozmowa kończy się zadaniem „oddzwoń w czwartek o 10:00”, w czwartek rano telefon przypomina, a Ola widzi to samo zadanie. Lista dokumentów do hipoteki jest gotowa, prośba do klienta idzie jednym SMS-em, a każdy dosłany dokument odhacza się sam. Nieodebrane połączenie od razu tworzy zadanie oddzwonienia, a rano lista pokazuje, kto czeka najdłużej.",
@@ -69,7 +69,7 @@
     },
     {
       "h2": "Trzy drogi w jednej tabeli",
-      "od": 496,
+      "od": 494,
       "akapity": [
         "Agnieszka wybiera drogę trzecią, bo dokumenty i banki to sedno jej pracy i właśnie tam gubiła najwięcej. Jeśli pracujesz sam i masz kilka spraw w miesiącu, wystarczy droga pierwsza z dyscypliną. Jeśli obok kredytów sprzedajesz dużo innych produktów, rozważ drogę drugą."
       ],
@@ -128,7 +128,7 @@
     },
     {
       "h2": "Trzy pytania przed zakupem CRM",
-      "od": 534,
+      "od": 536,
       "akapity": [
         "Na prezentacji systemu poproś o jedno: przejdźmy przez prawdziwą sprawę od zapytania do prowizji. Weź sprawę z ostatniego miesiąca, z dwoma bankami i brakującym dokumentem. Po pół godziny zobaczysz więcej niż po godzinie slajdów. Odpowiedzi na trzy pytania zapisz i porównaj obok siebie."
       ],
@@ -140,7 +140,7 @@
     },
     {
       "h2": "Przejście z arkusza i trzy nawyki na dziś",
-      "od": 552,
+      "od": 567,
       "akapity": [
         "Przejście zaplanuj na spokojny tydzień. Najpierw przenieś otwarte sprawy z arkusza, potem podepnij formularz i telefon, stare sprawy dociągniesz później. Przez pierwsze dni sprawdzaj wieczorem, czy wszystko, co przyszło, jest na liście.",
         "Miesiąc później biuro Agnieszki zaczyna dzień od jednej listy. Ola oddzwania z niej po kolei, karteczki znikają z monitora, nowe zapytanie dostaje odpowiedź tego samego dnia, a obiecane oddzwonienie ma godzinę w kalendarzu obu osób."
