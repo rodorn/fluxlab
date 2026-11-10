@@ -63,6 +63,10 @@ export interface ProductLandingProps {
   formIntro: string;
   submitLabel: string;
   microCopy: string;
+  /** Dodatkowe pole formularza, np. liczba pism miesięcznie. */
+  poleFormularza?: { etykieta: string; placeholder: string };
+  /** Domyślna forma kontaktu w formularzu. */
+  kontaktDomyslny?: "meet" | "phone" | "email";
   serviceName: string;
   serviceDesc: string;
   serviceType: string;
@@ -367,6 +371,8 @@ export default function ProductLanding(p: ProductLandingProps) {
               intro={p.formIntro}
               submitLabel={p.submitLabel}
               microCopy={p.microCopy}
+              pole={p.poleFormularza}
+              kontaktDomyslny={p.kontaktDomyslny}
             />
             {p.poFormularzu && <div className="mt-8">{p.poFormularzu}</div>}
           </div>

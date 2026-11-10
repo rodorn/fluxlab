@@ -203,6 +203,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Jednoosobowa firma z CEIDG wpisana przed 2025 ma obowiązek od 1 października 2026, spółka od 1 kwietnia 2025. Termin i odpis po KRS w 10 sekund."
   },
   {
+    "url": "/e-doreczenia-dla-firm",
+    "tytul": "e-Doręczenia dla dużych firm: integracja z obiegiem dokumentów",
+    "opis": "Tysiące pism z adresu do e-Doręczeń nie muszą być klikane osobno. Wpinamy skrzynkę w obieg dokumentów, EZD albo system przez API. Bezpłatna diagnoza."
+  },
+  {
     "url": "/ksef-integracja",
     "tytul": "Od kiedy KSeF jest obowiązkowy? Terminy dla firm",
     "opis": "Duże firmy od 1 lutego 2026, pozostałe od 1 kwietnia, sprzedaż do 10 tys. zł miesięcznie i kasy od 1 stycznia 2027. Sprawdź swój termin, bez rejestracji."

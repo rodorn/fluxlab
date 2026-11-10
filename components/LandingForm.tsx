@@ -101,6 +101,10 @@ interface Props {
   microCopy?: string;
   /** Nagłówek jako h1, gdy formularz jest główną treścią strony. */
   h1?: boolean;
+  /** Dodatkowe pole tekstowe w kroku z opisem, wysyłane jako „skala”. */
+  pole?: { etykieta: string; placeholder: string };
+  /** Forma kontaktu zaznaczona na starcie. */
+  kontaktDomyslny?: Kontakt;
 }
 
 export default function LandingForm({
@@ -110,6 +114,8 @@ export default function LandingForm({
   submitLabel = "Wyślij",
   microCopy,
   h1 = false,
+  pole,
+  kontaktDomyslny,
 }: Props) {
   const Naglowek = h1 ? "h1" : "h2";
   const router = useRouter();
@@ -125,7 +131,7 @@ export default function LandingForm({
     referrer: "",
   }));
   const formStartedRef = useRef(false);
-  const [kontakt, setKontakt] = useState<Kontakt>("meet");
+  const [kontakt, setKontakt] = useState<Kontakt>(kontaktDomyslny ?? "meet");
   const [termin, setTermin] = useState("");
   const [telefon, setTelefon] = useState("");
   const [krok, setKrok] = useState(0);
@@ -424,7 +430,9 @@ export default function LandingForm({
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
       // Temat zgłoszenia to nazwa strony, z której przyszło.
       problemType: document.title.split("|")[0].trim() || formId,
-      problemScale: "nie-wiemy",
+      problemScale: pole
+        ? (form.elements.namedItem("skala") as HTMLInputElement).value.trim() || "nie-wiemy"
+        : "nie-wiemy",
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
       contactPref: kontakt,
@@ -625,6 +633,22 @@ export default function LandingForm({
             </p>
           )}
         </div>
+        {pole && (
+          <div>
+            <label htmlFor={`${formId}-skala`} className={etykietaClass}>
+              {pole.etykieta} <span className="text-accent">*</span>
+            </label>
+            <input
+              id={`${formId}-skala`}
+              name="skala"
+              type="text"
+              required
+              maxLength={80}
+              placeholder={pole.placeholder}
+              className={inputClass}
+            />
+          </div>
+        )}
 
         </div>
 
