@@ -833,6 +833,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy."
   },
   {
+    "url": "/strefa-wiedzy/obiekcje-klienta",
+    "tytul": "Obiekcje klienta: jak na nie odpowiadać",
+    "opis": "Obiekcje klienta w sprzedaży B2B: trzy rodzaje, zasada „nie kontrargumentuj”, zdania, które zgadzają się z klientem, i sposób na odpowiedzi umieszczone na stronie, zanim klient zadzwoni."
+  },
+  {
     "url": "/strefa-wiedzy/klient-mowi-za-drogo",
     "tytul": "Klient mówi, że za drogo: co zrobić",
     "opis": "Klient mówi, że za drogo? Pięć powodów, dla których to rzadko jest cena, trzy pytania o przewagę, sposób pokazania różnicy i pytania, które kończą spór o rabat."

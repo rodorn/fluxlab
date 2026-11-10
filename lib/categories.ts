@@ -492,6 +492,13 @@ export const categories: Category[] = [
       "Praktyka sprzedaży dla pośredników kredytowych, ubezpieczeniowych, w nieruchomościach i dla JDG: oferta, spotkanie, obiekcje, cena i kontakt po ofercie.",
     articles: [
       {
+        href: "/strefa-wiedzy/obiekcje-klienta",
+        title: "Obiekcje klienta: jak na nie odpowiadać",
+        description:
+          "Obiekcje klienta w sprzedaży B2B: trzy rodzaje, zasada „nie kontrargumentuj”, zdania, które zgadzają się z klientem, i sposób na odpowiedzi umieszczone na stronie, zanim klient zadzwoni.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/klient-mowi-za-drogo",
         title: "Klient mówi, że za drogo: co zrobić",
         description:
