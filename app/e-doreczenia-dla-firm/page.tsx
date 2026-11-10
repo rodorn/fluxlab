@@ -113,7 +113,7 @@ export default function EDoreczeniaDlaFirm() {
         },
         {
           q: "Z jakim systemem da się to spiąć?",
-          a: "Z każdym, który ma API albo import dokumentów: obieg dokumentów, EZD, system sprawowy lub własna aplikacja. Co dokładnie, ustalamy na diagnozie.",
+          a: "Z każdym, który ma API albo import dokumentów: obieg dokumentów, EZD, system do obsługi spraw lub własna aplikacja. Co dokładnie, ustalamy na diagnozie.",
         },
         {
           q: "Co jeśli mamy kilka adresów do e-Doręczeń?",
