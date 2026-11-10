@@ -191,6 +191,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/strona-dla-malej-firmy-wordpress-wix-czy-nextjs", "Wideo: WordPress, Wix czy Next.js"),
           s("/strefa-wiedzy/crm-dla-posrednika-kredytowego-arkusz-czy-crm", "Wideo: CRM pośrednika: arkusz czy CRM"),
           s("/strefa-wiedzy/crm-dla-firmy-fotowoltaicznej-zeszyt-arkusz-czy-crm", "Wideo: CRM dla firmy OZE: zeszyt, arkusz, CRM"),
+          s("/strefa-wiedzy/kalkulator-oze-formularz-wycena-czy-kalkulator", "Wideo: Kalkulator OZE: formularz, wycena, kalkulator"),
           s("/strefa-wiedzy/klient-nie-odpowiada-na-oferte", "Klient nie odpowiada na ofertę"),
           s("/strefa-wiedzy/obiekcje-klienta", "Obiekcje klienta: jak odpowiadać"),
           s("/strefa-wiedzy/klient-mowi-za-drogo", "Klient mówi, że za drogo"),

@@ -597,6 +597,13 @@ export const categories: Category[] = [
           "Jak pilnować klienta firmy OZE przez dziewięć etapów? Zeszyt, arkusz i CRM z etapami: plusy, minusy, czas dziennie, wdrożenie, dwa dodatki i trzy sygnały do zmiany.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/kalkulator-oze-formularz-wycena-czy-kalkulator",
+        title: "Kalkulator OZE: formularz, wycena, kalkulator",
+        description:
+          "Jak zbierać zapytania do firmy OZE? Formularz z numerem, ręczna wycena w arkuszu i kalkulator z automatyczną odpowiedzią i portalem: plusy, minusy, czas pracy, wdrożenie i reguła wyboru.",
+        bezOkladki: true,
+      },
     ],
   },
 ];

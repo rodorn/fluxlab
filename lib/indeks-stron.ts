@@ -828,6 +828,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Jak pilnować klienta firmy OZE przez dziewięć etapów? Zeszyt, arkusz i CRM z etapami: plusy, minusy, czas dziennie, wdrożenie, dwa dodatki i trzy sygnały do zmiany."
   },
   {
+    "url": "/strefa-wiedzy/kalkulator-oze-formularz-wycena-czy-kalkulator",
+    "tytul": "Kalkulator OZE na stronie: formularz, wycena czy kalkulator?",
+    "opis": "Jak zbierać zapytania do firmy OZE? Formularz z numerem, ręczna wycena w arkuszu i kalkulator z automatyczną odpowiedzią i portalem: plusy, minusy, czas pracy, wdrożenie i reguła wyboru."
+  },
+  {
     "url": "/strefa-wiedzy/klient-nie-odpowiada-na-oferte",
     "tytul": "Klient nie odpowiada na ofertę: co zrobić",
     "opis": "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy."
