@@ -576,6 +576,13 @@ export const categories: Category[] = [
           "Arkusz z kalendarzem, gotowy CRM czy system pod pośrednika kredytowego? Tabela trzech dróg, cztery cele biura, trzy pytania przed zakupem i FAQ.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/crm-dla-firmy-fotowoltaicznej-zeszyt-arkusz-czy-crm",
+        title: "CRM dla firmy OZE: zeszyt, arkusz, CRM",
+        description:
+          "Jak pilnować klienta firmy OZE przez dziewięć etapów? Zeszyt, arkusz i CRM z etapami: plusy, minusy, czas dziennie, wdrożenie, dwa dodatki i trzy sygnały do zmiany.",
+        bezOkladki: true,
+      },
     ],
   },
 ];

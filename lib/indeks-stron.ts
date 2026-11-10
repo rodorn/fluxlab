@@ -823,6 +823,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Arkusz z kalendarzem, gotowy CRM czy system pod pośrednika kredytowego? Tabela trzech dróg, cztery cele biura, trzy pytania przed zakupem i FAQ."
   },
   {
+    "url": "/strefa-wiedzy/crm-dla-firmy-fotowoltaicznej-zeszyt-arkusz-czy-crm",
+    "tytul": "CRM dla firmy OZE: zeszyt, arkusz czy CRM?",
+    "opis": "Jak pilnować klienta firmy OZE przez dziewięć etapów? Zeszyt, arkusz i CRM z etapami: plusy, minusy, czas dziennie, wdrożenie, dwa dodatki i trzy sygnały do zmiany."
+  },
+  {
     "url": "/strefa-wiedzy/klient-nie-odpowiada-na-oferte",
     "tytul": "Klient nie odpowiada na ofertę: co zrobić",
     "opis": "Klient nie odpowiada na ofertę? Cztery powody milczenia, plan kontaktu na 14 dni, wiadomość o wycofaniu oferty i pytania, które zapobiegają ciszy."
