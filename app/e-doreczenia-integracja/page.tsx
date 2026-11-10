@@ -57,7 +57,7 @@ export default function EDoreczeniaIntegracja() {
       breadcrumb="Integracja z e-Doręczeniami"
       eyebrow="e-Doręczenia"
       h1="Integracja z e-Doręczeniami"
-      lead="Skrzynka do e-Doręczeń jest obowiązkowa, ale nie musisz obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z Twoim systemem: pisma i dowody doręczenia trafiają tam, gdzie pracujesz."
+      lead="Skrzynka do e-Doręczeń jest obowiązkowa, ale nie musisz obsługiwać jej ręcznie w osobnym panelu. Spinamy ją z Twoim systemem: pisma i dowody doręczenia trafiają tam, gdzie pracujesz, a odpowiedzi wychodzą z Twojego systemu."
       ctaLabel="Sprawdź swój termin"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
@@ -110,18 +110,18 @@ export default function EDoreczeniaIntegracja() {
         {
           name: "Odbiór pism",
           price: "1 490 zł",
-          desc: "Najczęstszy zakres na start.",
+          desc: "Gdy na razie wystarczy samo odbieranie.",
           features: [
             "Pisma i dowody doręczenia w Twoim systemie",
             "Powiadomienie o nowym piśmie",
             "Kod i dostępy zostają u ciebie",
           ],
-          featured: true,
         },
         {
           name: "Odbiór i wysyłka",
           price: "2 900 zł",
-          desc: "Z wysyłaniem pism z Twojego systemu.",
+          desc: "Pisma przychodzą i wychodzą z Twojego systemu.",
+          featured: true,
           features: [
             "Wszystko z odbioru pism",
             "Wysyłka z załącznikami i ponowieniami",

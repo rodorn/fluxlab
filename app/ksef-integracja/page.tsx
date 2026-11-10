@@ -35,7 +35,7 @@ export default function KsefIntegracja() {
       breadcrumb="Integracja z KSeF"
       eyebrow="KSeF"
       h1="Integracja z KSeF"
-      lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używasz, a numer KSeF i UPO zapisują się przy dokumencie."
+      lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używasz: wystawiasz faktury i odbierasz je w jednym miejscu, a numer KSeF i UPO zapisują się przy dokumencie."
       ctaLabel="Sprawdź, co cię obowiązuje"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
@@ -97,19 +97,19 @@ export default function KsefIntegracja() {
         {
           name: "Odbiór faktur kosztowych",
           price: "1 900 zł",
-          desc: "Najczęstszy zakres na start.",
+          desc: "Gdy na razie wystarczy samo odbieranie.",
           features: [
             "Faktury zakupowe pobierane z KSeF automatycznie",
             "Trafiają do księgowości, obiegu dokumentów albo arkusza",
             "Numer KSeF i UPO zapisane przy każdym dokumencie",
             "Kod i dostępy zostają u ciebie",
           ],
-          featured: true,
         },
         {
           name: "Wystawianie i odbiór",
           price: "3 900 zł",
-          desc: "Z wysyłaniem faktur z Twojego systemu.",
+          desc: "Faktury wystawiasz i odbierasz w jednym miejscu.",
+          featured: true,
           features: [
             "Wszystko z wariantu podstawowego",
             "Wysyłka w schemacie FA(3), z walidacją przed wysłaniem",
