@@ -88,6 +88,7 @@ export default function EDoreczeniaDlaFirm() {
             "Z jakiego systemu i jak da się spiąć skrzynkę",
             "Zakres, termin i wycena wdrożenia na piśmie",
           ],
+          cta: "Umów diagnozę",
         },
         {
           name: "Wdrożenie konektora",
