@@ -176,9 +176,9 @@ export default function Home() {
             <a
               id="cta-hero"
               href="#kontakt"
-              className="btn-primary btn-lg w-full sm:w-60"
+              className="btn-primary btn-lg w-full sm:w-auto sm:min-w-60"
             >
-              Bezpłatna wycena
+              Wycena w 1 dzień roboczy, 0 zł
             </a>
             <a
               href="#handlowiec"
