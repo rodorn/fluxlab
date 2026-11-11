@@ -63,6 +63,10 @@ export default function KsefIntegracja() {
       ]}
       checks={[
         {
+          title: "Dokumentacja API otwarta bez logowania",
+          desc: "Opis wszystkich punktów końcowych naszej instancji FluxKSeF (ksef.fluxlab.pl/docs, specyfikacja OpenAPI w ksef.fluxlab.pl/openapi.json) przeczyta Twój programista przed rozmową z nami, bez konta i bez umowy.",
+        },
+        {
           title: "Kod klienta API jest publiczny",
           desc: "Klient KSeF API v2 z wysyłką faktur FA(3) i pobieraniem UPO leży na github.com/rodorn/fluxlab-ksef-integracja. Działa w trybie demo i na produkcji KSeF, więc ocenisz go przed rozmową z nami.",
         },
