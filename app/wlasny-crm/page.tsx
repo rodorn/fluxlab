@@ -62,6 +62,10 @@ export default function WlasnyCrm() {
           desc: "Osobna instancja na serwerze w UE, kopie i aktualizacje w abonamencie. Eksport danych w każdej chwili, rezygnacja w dowolnym dniu.",
         },
         {
+          title: "Otwarte API i konfiguracja bez kodu",
+          desc: "Publiczna dokumentacja REST API (OpenAPI), 12 zdarzeń webhooków z podpisem i dziennikiem dostaw, połączenie z Zapier, Make i n8n. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
+        },
+        {
           title: "Kiedy to się nie opłaca",
           desc: "Przy kilku leadach miesięcznie wystarczy gotowy Pipedrive. Taki też wdrażamy.",
         },
