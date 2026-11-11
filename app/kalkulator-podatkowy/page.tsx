@@ -68,9 +68,9 @@ export default function KalkulatorPodatkowyPage() {
                 <p className="section-label mb-3">Narzędzie</p>
                 <h1 className="h1-strony">Kalkulator JDG 2026</h1>
                 <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
-                  Przy niskich kosztach i stawce ryczałtu do 12% zwykle
-                  wygrywa ryczałt, przy wysokich kosztach liniowy albo skala.
-                  Wpisz przychód i koszty, a policzymy wszystkie trzy formy.
+                  Przy niskich kosztach i stawce ryczałtu do 12% zwykle wygrywa
+                  ryczałt, przy wysokich kosztach liniowy albo skala. Wpisz
+                  przychód i koszty, a policzymy wszystkie trzy formy.
                 </p>
                 <ul className="mt-4 space-y-2">
                   {[
@@ -179,14 +179,15 @@ export default function KalkulatorPodatkowyPage() {
                             mieszany.
                           </p>
                           <p>
-                            Ryczałt przegrywa zwykle przy wysokich kosztach i
-                            stawce 15% lub 17%. Więcej:{" "}
-                            <Link
-                              href="/strefa-wiedzy/ryczalt-czy-liniowy"
+                            Formę na 2027 zmienisz w CEIDG do 20. dnia miesiąca
+                            po pierwszym przychodzie w 2027, zwykle do
+                            20.02.2027. Przed decyzją pobierz{" "}
+                            <a
+                              href="/pobierz/checklista-forma-opodatkowania-2027.pdf"
                               className="text-accent hover:underline"
                             >
-                              ryczałt czy liniowy w 2026
-                            </Link>
+                              checklistę zmiany formy na 2027
+                            </a>
                             .
                           </p>
                         </div>
