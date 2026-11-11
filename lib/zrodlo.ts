@@ -1,9 +1,9 @@
 // Zrodlo wejscia z kampanii (link partnera, reklama) trzeba pamietac dluzej
 // niz jedna odslone: widz z YouTube wchodzi na strone glowna, czyta oferte i
 // dopiero na /kontakt wypelnia formularz, a wtedy w adresie nie ma juz utm.
-// Bez tego nie da sie policzyc prowizji partnera. Zapamietujemy tylko wejscia
-// z utm_medium, bo linki wewnetrzne strony (utm_source=narzedzie itp.) go nie
-// maja i nie moga nadpisac zrodla zewnetrznego. Waznosc 90 dni = okno
+// Bez tego nie da sie policzyc prowizji partnera. Zapamietujemy wejscia z utm_medium albo
+// z utm_source spoza listy oznaczen wewnetrznych (narzedzie, bramka itp.), bo
+// te nie moga nadpisac zrodla zewnetrznego. Waznosc 90 dni = okno
 // prowizji w umowach z partnerami.
 
 export interface UtmFields {
@@ -17,6 +17,16 @@ export interface UtmFields {
 }
 
 const KLUCZ = "fl_zrodlo";
+// Oznaczenia linków wewnętrznych strony: nie są źródłem wejścia.
+const WEWNETRZNE = new Set([
+  "narzedzie",
+  "bramka",
+  "czat",
+  "wycena_ai",
+  "produkty",
+  "lista-ksef-2027",
+  "abonament-ceny",
+]);
 const WAZNOSC_MS = 90 * 24 * 60 * 60 * 1000;
 
 export const PUSTE_UTM: UtmFields = {
@@ -45,7 +55,8 @@ function zAdresu(): UtmFields {
 export function zapamietajZrodlo(): void {
   if (typeof window === "undefined") return;
   const teraz = zAdresu();
-  if (!teraz.utm_source || !teraz.utm_medium) return;
+  if (!teraz.utm_source) return;
+  if (!teraz.utm_medium && WEWNETRZNE.has(teraz.utm_source)) return;
   // Kopia w ciasteczku dla formularzy, ktore nie wysylaja utm w tresci
   // (narzedzia, koszyk): /api/contact czyta ja, gdy body nie ma zrodla.
   document.cookie = `${KLUCZ}=${encodeURIComponent(
