@@ -267,8 +267,8 @@ export const PRODUCTS: Product[] = [
   {
     category: "dane",
     name: "Integracja z KSeF",
-    tagline: "Faktury wychodzą tam, gdzie powstają",
-    desc: "Krajowy System e-Faktur jest obowiązkowy, ale nikt nie każe przeklejać do niego faktur ręcznie z osobnej aplikacji. Spinamy z nim Twój system: wysyłka w schemacie FA(3), zapis numeru KSeF i UPO przy dokumencie, pobieranie faktur kosztowych.",
+    tagline: "Faktury kosztowe same trafiają do księgowości",
+    desc: "Krajowy System e-Faktur jest obowiązkowy, ale nikt nie każe przeklejać do niego faktur ręcznie z osobnej aplikacji. Spinamy z nim Twój system: pobieranie faktur kosztowych, zapis numeru KSeF i UPO przy dokumencie.",
     price: "od 1 900 zł",
     href: "/ksef-integracja",
     grupa: "integracje",
@@ -276,7 +276,7 @@ export const PRODUCTS: Product[] = [
     cta: "Opisz, w czym fakturujesz",
     bullets: [
       "otwarty klient tego API z trybem demo, do uruchomienia przed decyzją",
-      "wystawianie i odbiór faktur 3 900 zł, sam odbiór 1 900 zł",
+      "odbiór faktur kosztowych od 1 900 zł",
       "kod i dostępy zostają u ciebie",
     ],
   },
