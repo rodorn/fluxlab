@@ -53,7 +53,7 @@ const faq = [
   {
     question: "Ile to kosztuje?",
     answer:
-      "Pierwszy krok, czyli jeden etap procesu: 900, 1 200 albo 1 500 zł netto, gotowe w 5 dni. Diagnoza przed wyceną: 0 zł.",
+      "Pojedynczy przepływ n8n od 790 zł netto (prosty 790 do 1 500 zł, rozbudowany 1 500 do 3 500 zł), komplet startowy z serwerem i trzema przepływami 2 400 zł, opieka 190 zł miesięcznie albo zero. Jeśli wolisz zacząć od diagnozy procesu, jest pierwszy krok automatyzacji: jeden etap za 900, 1 200 albo 1 500 zł netto, gotowy w 5 dni. Diagnoza przed wyceną: 0 zł.",
   },
 ];
 
@@ -68,9 +68,7 @@ export default function N8nPage() {
         <section className="relative overflow-hidden pt-24 pb-12">
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-3">Usługa</p>
-            <h1 className="h1-strony mb-6">
-              Automatyzacja z n8n
-            </h1>
+            <h1 className="h1-strony mb-6">Automatyzacja z n8n</h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
               Łączymy systemy i API w jeden workflow, z pełną kontrolą nad
               danymi.
@@ -92,9 +90,7 @@ export default function N8nPage() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="h2-sekcji mb-10">
-                        Co oferujemy
-                      </h2>
+                      <h2 className="h2-sekcji mb-10">Co oferujemy</h2>
                       <ul className="space-y-5">
                         {offer.map((item) => (
                           <li
@@ -118,9 +114,7 @@ export default function N8nPage() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="h2-sekcji mb-10">
-                        Częste pytania
-                      </h2>
+                      <h2 className="h2-sekcji mb-10">Częste pytania</h2>
                       <div className="space-y-4">
                         {faq.map((item) => (
                           <details
@@ -183,7 +177,7 @@ export default function N8nPage() {
             ]}
           />
         </div>
-      <CTA naglowek="Sprawdź, czy n8n pasuje do procesów w Twojej firmie" />
+        <CTA naglowek="Sprawdź, czy n8n pasuje do procesów w Twojej firmie" />
       </main>
 
       {/* Service Schema */}
