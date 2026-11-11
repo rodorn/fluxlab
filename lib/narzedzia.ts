@@ -276,7 +276,7 @@ export const otherTools: Narzedzie[] = [
   {
     title: "Kalkulator podatkowy JDG",
     description:
-      "Porównaj skalę podatkową, podatek liniowy i ryczałt. Uwzględnia składki ZUS, VAT, ulgi i daje jasną odpowiedź, co się bardziej opłaca.",
+      "Porównaj skalę podatkową, podatek liniowy i ryczałt ze składkami ZUS i ulgami, z jasną odpowiedzią, co się bardziej opłaca.",
     href: "/kalkulator-podatkowy",
     image: "/photos/tax-calculation/calculator.jpg",
   },
