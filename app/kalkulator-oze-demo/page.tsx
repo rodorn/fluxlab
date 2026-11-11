@@ -49,8 +49,8 @@ export default function KalkulatorOzeDemoPage() {
             <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
               Tak wygląda kalkulator, który firma fotowoltaiczna ma na swojej
               stronie. Klient wpisuje zużycie i moc instalacji, zaznacza, czy
-              chce magazyn energii, i widzi koszt oraz czas zwrotu obu wariantów.
-              Wypróbuj poniżej.
+              chce magazyn energii, i widzi koszt oraz czas zwrotu obu
+              wariantów. Wypróbuj poniżej.
             </p>
           </div>
         </section>
@@ -62,8 +62,10 @@ export default function KalkulatorOzeDemoPage() {
               title="Przykładowy kalkulator oszczędności PV z magazynem energii"
             />
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-              Przykład, dane i założenia demonstracyjne. Formularz w tej wersji
-              niczego nie wysyła.
+              <strong className="font-semibold">
+                Przykładowe założenia, nie oferta.
+              </strong>{" "}
+              Formularz w tej wersji niczego nie wysyła.
             </p>
           </div>
         </section>
@@ -86,7 +88,9 @@ export default function KalkulatorOzeDemoPage() {
 
         <section className="py-8">
           <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="text-xl font-semibold">Jak osadzić na swojej stronie</h2>
+            <h2 className="text-xl font-semibold">
+              Jak osadzić na swojej stronie
+            </h2>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Kalkulator to jeden iframe wklejany w dowolne miejsce strony, w
               WordPressie, Wix czy własnym kodzie:
@@ -105,7 +109,9 @@ export default function KalkulatorOzeDemoPage() {
 
         <section className="py-8">
           <div className="container-wide max-w-3xl mx-auto">
-            <h2 className="text-xl font-semibold">Film: kalkulator zamiast formularza</h2>
+            <h2 className="text-xl font-semibold">
+              Film: kalkulator zamiast formularza
+            </h2>
             <div className="mt-3 aspect-video overflow-hidden rounded-xl border border-gray-200 dark:border-white/10">
               <iframe
                 className="h-full w-full"

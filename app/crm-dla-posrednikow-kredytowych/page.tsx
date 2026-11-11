@@ -44,6 +44,14 @@ const punkty = [
     opis: "Klient dostaje listę dokumentów, a CRM pokazuje, czego jeszcze brakuje. Wnioski do kilku banków prowadzisz w jednej sprawie.",
   },
   {
+    tytul: "Portal klienta z linkiem ważnym do wybranej daty",
+    opis: "Przycisk „Przygotuj link” tworzy link do portalu klienta z datą ważności. Doradca wysyła go własnym kanałem: mailem, SMS-em albo w komunikatorze.",
+  },
+  {
+    tytul: "Oferty banków w karcie sprawy",
+    opis: "Przy każdym wniosku zapisujesz ofertę banku: kwotę przyznaną, oprocentowanie i ratę. Wybrany wniosek ustawia kwotę umowy, od której liczy się prowizja.",
+  },
+  {
     tytul: "Zgody RODO i rejestr czynności",
     opis: "Zgody klienta, rejestr czynności przetwarzania i umowa powierzenia są w systemie.",
   },
@@ -168,9 +176,9 @@ export default function CrmPosrednicyPage() {
             <p className="mb-6 text-gray-600 dark:text-gray-300">
               Paweł buduje CRM i automatyzacje dla pośredników, a sprzedaż
               zostawia tym, którym klienci ufają. Jeśli znasz biuro, które
-              prowadzi sprawy w arkuszu albo w skrzynce mailowej, zgłoś je niżej.
-              Odezwiemy się do tej osoby, powiemy, że kontakt jest od Ciebie, i
-              napiszemy Ci, jak poszła rozmowa.
+              prowadzi sprawy w arkuszu albo w skrzynce mailowej, zgłoś je
+              niżej. Odezwiemy się do tej osoby, powiemy, że kontakt jest od
+              Ciebie, i napiszemy Ci, jak poszła rozmowa.
             </p>
             <FormularzPolecenia />
           </div>

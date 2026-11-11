@@ -69,9 +69,12 @@ export default function OzePage() {
               src="/kalkulator-pv-demo/index.html"
               title="Przykładowy kalkulator oszczędności PV z magazynem energii"
             />
-            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-              Przykład, dane i założenia demonstracyjne. W tej wersji formularz
-              niczego nie wysyła.
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+              <strong className="font-semibold">
+                Przykładowe założenia, nie oferta.
+              </strong>{" "}
+              Ceny i parametry w kalkulatorze są demonstracyjne, firma wpisuje
+              własne. W tej wersji formularz niczego nie wysyła.
             </p>
           </div>
         </section>
