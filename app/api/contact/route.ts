@@ -225,6 +225,14 @@ export async function POST(req: Request) {
     }
   }
 
+  let stronaFormularza = "";
+  try {
+    const ref = req.headers.get("referer");
+    if (ref) stronaFormularza = new URL(ref).pathname.slice(0, 120);
+  } catch {
+    /* brak lub zly Referer: zgloszenie bez strony formularza */
+  }
+
   // Rekord w kolektorze powstaje w chwili zdarzenia, przed mailem. Awaria
   // kolektora nie blokuje maila (blad tylko w konsoli), a awaria maila nie
   // kasuje rekordu.
@@ -241,6 +249,7 @@ export async function POST(req: Request) {
         termin && `Termin Meet: ${termin}`,
         skad && `Skąd o nas wie: ${skad}`,
         powod && `Powód kontaktu teraz: ${powod}`,
+        stronaFormularza && `Formularz na stronie: ${stronaFormularza}`,
         message,
       ]
         .filter(Boolean)
