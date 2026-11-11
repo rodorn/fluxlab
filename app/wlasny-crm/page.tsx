@@ -66,6 +66,10 @@ export default function WlasnyCrm() {
           desc: "Publiczna dokumentacja REST API (OpenAPI), webhooki na 12 zdarzeń, z podpisem i dziennikiem dostaw, połączenie z Zapier, Make i n8n. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
         },
         {
+          title: "Procedura oceny rozmowy",
+          desc: "Ustawiasz kroki rozmowy (nazwa, waga, frazy kluczowe, do 30 kroków), a system sprawdza w transkrypcji, czy doradca je spełnił. Potwierdzenie przez AI z cytatem jest opcjonalne i domyślnie wyłączone, włączasz je sam.",
+        },
+        {
           title: "Kiedy to się nie opłaca",
           desc: "Przy kilku leadach miesięcznie wystarczy gotowy Pipedrive. Taki też wdrażamy.",
         },
