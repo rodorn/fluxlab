@@ -35,7 +35,7 @@ export default function KsefIntegracja() {
       breadcrumb="Integracja z KSeF"
       eyebrow="KSeF"
       h1="Integracja z KSeF"
-      lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używasz: faktury kosztowe trafiają do niego same, a numer KSeF i UPO zapisują się przy dokumencie."
+      lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używasz: wystawiasz faktury i odbierasz je w jednym miejscu, a numer KSeF i UPO zapisują się przy dokumencie."
       ctaLabel="Sprawdź, co cię obowiązuje"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
@@ -64,7 +64,7 @@ export default function KsefIntegracja() {
       checks={[
         {
           title: "Kod klienta API jest publiczny",
-          desc: "Klient KSeF API v2 z pobieraniem faktur i UPO leży na github.com/rodorn/fluxlab-ksef-integracja. Działa w trybie demo, więc ocenisz go przed rozmową z nami.",
+          desc: "Klient KSeF API v2 z wysyłką faktur FA(3) i pobieraniem UPO leży na github.com/rodorn/fluxlab-ksef-integracja. Działa w trybie demo, więc ocenisz go przed rozmową z nami.",
         },
         {
           title: "Sprawdzone na własnej firmie",
@@ -97,15 +97,26 @@ export default function KsefIntegracja() {
         {
           name: "Odbiór faktur kosztowych",
           price: "1 900 zł",
-          desc: "Faktury kosztowe trafiają do Twojego systemu.",
+          desc: "Gdy na razie wystarczy samo odbieranie.",
           features: [
             "Faktury zakupowe pobierane z KSeF automatycznie",
             "Trafiają do księgowości, obiegu dokumentów albo arkusza",
             "Numer KSeF i UPO zapisane przy każdym dokumencie",
-            "Pierwszy miesiąc opieki w cenie",
             "Kod i dostępy zostają u ciebie",
           ],
+        },
+        {
+          name: "Wystawianie i odbiór",
+          price: "3 900 zł",
+          desc: "Faktury wystawiasz i odbierasz w jednym miejscu.",
           featured: true,
+          features: [
+            "Wszystko z wariantu podstawowego",
+            "Wysyłka w schemacie FA(3), z walidacją przed wysłaniem",
+            "Kolejka ponowień i widok stanu każdej faktury",
+            "Rozdzielenie sprzedaży dla firm i dla osób prywatnych",
+            "Pierwszy miesiąc opieki w cenie",
+          ],
         },
       ]}
       faq={[
@@ -138,7 +149,7 @@ export default function KsefIntegracja() {
       submitLabel="Wyślij opis i sprawdź cenę"
       microCopy="Ustalenia prowadzimy mailowo. Telefon, jeśli tak Ci wygodniej."
       serviceName="Integracja z KSeF"
-      serviceDesc="Spięcie systemu sprzedażowego, ERP albo programu księgowego z Krajowym Systemem e-Faktur: pobieranie faktur kosztowych przez API v2, zapis numeru KSeF i UPO przy dokumencie."
+      serviceDesc="Spięcie systemu sprzedażowego, ERP albo programu księgowego z Krajowym Systemem e-Faktur: wysyłka faktur w schemacie FA(3) przez API v2, zapis numeru KSeF i UPO, pobieranie faktur kosztowych."
       serviceType="Integracja systemów informatycznych"
     />
   );
