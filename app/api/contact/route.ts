@@ -169,6 +169,7 @@ export async function POST(req: Request) {
 
   const email = str(body.email, MAX_EMAIL);
   const company = str(body.company, MAX_COMPANY);
+  const imie = str(body.imie, 100);
   const problemType = str(body.problemType, MAX_VALUE);
   const problemScale = str(body.problemScale, MAX_VALUE);
   const message = str(body.message, MAX_MESSAGE);
@@ -230,6 +231,7 @@ export async function POST(req: Request) {
   await wyslijZgloszenie(
     ladunekZgloszenia({
       email,
+      imie,
       firma: company,
       rodzaj_problemu: problemType,
       skala: problemScale,
@@ -260,6 +262,7 @@ export async function POST(req: Request) {
     .join("\n");
 
   const text = [
+    `Imię: ${imie || "-"}`,
     `E-mail: ${email}`,
     `Firma: ${company || "-"}`,
     `Co chce usprawnić: ${problemTypeLabel}`,

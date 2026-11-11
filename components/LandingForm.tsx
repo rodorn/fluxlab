@@ -298,7 +298,7 @@ export default function LandingForm({
       if (!raw) return;
       const szkic = JSON.parse(raw) as Record<string, string>;
       let odtworzono = false;
-      for (const nazwa of ["email", "company", "message"]) {
+      for (const nazwa of ["imie", "email", "company", "message"]) {
         const pole = form.elements.namedItem(nazwa) as
           | HTMLInputElement
           | HTMLTextAreaElement
@@ -326,6 +326,7 @@ export default function LandingForm({
         localStorage.setItem(
           SZKIC_KLUCZ,
           JSON.stringify({
+            imie: wartosc("imie"),
             email: wartosc("email"),
             company: wartosc("company"),
             message: wartosc("message"),
@@ -426,6 +427,7 @@ export default function LandingForm({
     setErrorMsg(null);
     const form = e.currentTarget;
     const data = {
+      imie: (form.elements.namedItem("imie") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
       // Temat zgłoszenia to nazwa strony, z której przyszło.
@@ -679,6 +681,23 @@ export default function LandingForm({
         )}
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
+            <label htmlFor="imie" className={etykietaClass}>
+              Imię{" "}
+              <span className="text-gray-600 dark:text-gray-400 font-normal text-xs">
+                (opcjonalnie)
+              </span>
+            </label>
+            <input
+              id="imie"
+              name="imie"
+              type="text"
+              autoComplete="given-name"
+              maxLength={100}
+              placeholder="np. Paweł"
+              className={inputClass}
+            />
+          </div>
+          <div>
             <label
               htmlFor="email"
               className={etykietaClass}
@@ -698,7 +717,7 @@ export default function LandingForm({
               Tu wyślemy cenę i termin. Bez newslettera.
             </p>
           </div>
-          <div>
+          <div className="sm:col-span-2">
             <label
               htmlFor="company"
               className={etykietaClass}

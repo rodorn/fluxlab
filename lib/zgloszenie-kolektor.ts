@@ -6,6 +6,7 @@
 
 export type PolaZgloszenia = {
   email: string;
+  imie?: string;
   firma?: string;
   rodzaj_problemu?: string;
   skala?: string;
@@ -23,6 +24,7 @@ export type PolaZgloszenia = {
 
 export type LadunekZgloszenia = {
   email: string;
+  imie: string;
   firma: string;
   rodzaj_problemu: string;
   skala: string;
@@ -42,6 +44,7 @@ export type LadunekZgloszenia = {
 // wysylac wiecej, niz zostanie zapisane.
 const LIMITY: Record<keyof LadunekZgloszenia, number> = {
   email: 320,
+  imie: 100,
   firma: 200,
   rodzaj_problemu: 200,
   skala: 100,
