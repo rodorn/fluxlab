@@ -10927,3 +10927,11 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Dowód:** cykl/z7-checklista-2026-11-09.txt. 2 pobrania z /materialy = telefon-test --klik 'a[download]' (7.11 17:58 i 23:14 UTC), 6 z m.facebook.com 8.11 16:01-16:02 = grupa_wlasna z fluxlab-meta (posty/dziennik.log 16:08, 16:28), 1 z 6.11 18:36 w serii 5 PDF bez żadnej odsłony. Odsłony /materialy od 2.11: 0.
 **Dla Pawła:**
 **Zostało otwarte:** proxy.ts liczy pobrania także z telefon-test i Chrome automatów (filtr UA ich nie łapie); dla stratega 10.11: pomiar pobrań trzeba odsiać, zanim posłuży do wyboru kamienia. Następne zadanie planu: Z8 (GSC, od 14:00).
+
+## Strategia dobowa 2026-11-11
+**Wynik doby (24 h do 08:15, po odsiewie):** 36 ludzi (9.11: 25), tydzień 268 (było 256); 10.11 44 sesje. Google 3 / 55 w tygodniu (/kalkulator-podatkowy 6 wejść, 16 sesji z Google uruchomiło kalkulator), HAJS METRICS 1 / 19, YouTube 1 / 10, Facebook 2 / 11, Bing + DDG 0 piątą dobę. Lejek 7 dni: 9 form_start, 2 zapytania; leadów w dobie 0. Resend 48 h: 0 maili, Zoho 0 odpowiedzi na outreach. Cykl stał 40 h (limit tygodnia 9.11 ok. 16:00 do 11.11 08:00), Z9-Z16 planu 9.11 przepadły.
+**Plan 11/12.11:** 17 zadań, 2 krótkie zmiany treści (Z5 termin zmiany formy 2027 na /kalkulator-podatkowy, Z9 kolejność /narzedzia), 0 maili (święto, decyzja 13.11), bez promocji CRM (bramka 11.11).
+**Trzy najważniejsze zadania:** Z2 IndexNow dla 10 stron innych sesji z 9-11.11; Z5 termin zmiany formy opodatkowania na 2027 w kalkulatorze; Z6 temat posta o formie 2027 dla fluxlab-meta.
+**Dla Pawła:**
+- Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), jedenasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
+- Decyzja o zimnym outreachu, karta f755c6e1, termin 13.11: https://biuro.fluxlab.pl/decyzje/, 5 min.
