@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalkulator oszczędności PV (demo)</title>
+    <link rel="stylesheet" href="./calc-core.css" />
+    <style>
+      body {
+        margin: 0;
+        background: #f3f4f6;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="./pv-logic.js"></script>
+    <script src="./calc-core.js"></script>
+    <script>
+      // ===== KONFIGURACJA KLIENTA (branding + bramka e-mail) =====
+      // Podmien wartosci pod klienta. Sekretow tu nie trzymamy - endpoint jest publiczny (formspree/webhook).
+      var KONFIG = {
+        brand: {
+          nazwa: "Przykładowa Firma PV",
+          logo: "", // np. "https://klient.pl/logo.png"
+          kolor: "#1f6feb",
+          kolorAkcent: "#16a34a",
+          stopka:
+            'Przykład: dane i założenia demonstracyjne. Silnik: <a href="https://fluxlab.pl" target="_blank" rel="noopener">FluxLab</a>',
+        },
+        lead: {
+          tryb: "demo", // wersja demonstracyjna: nic nie jest wysyłane
+          temat: "Zapytanie z kalkulatora PV",
+          tekst:
+            "To demo: wpisz dowolny adres, nic nie zostanie wysłane. Odsłoni się pełny wynik.",
+          cta: "Pokaż pełny wynik",
+          komunikatHtml:
+            'To tylko przykład: nic nie zostało wysłane. Chcesz taki kalkulator na swojej stronie? <a href="/kontakt" target="_top">Napisz do nas</a>.',
+          komunikatOk:
+            "Dziękujemy! Skontaktujemy się z pełnym raportem i ofertą.",
+        },
+        // Parametry cenowe (parametryzowane) - dostosuj do biezacych taryf.
+        params: {
+          cenaEnergii: 0.62,
+          oplataDystrybucyjnaZmienna: 0.38,
+          akcyza: 0.005,
+          vat: 0.23,
+          autokonsumpcja: 0.3,
+          wspInstalacji: 1000,
+          cenaZaKwp: 4200,
+          depozytStawka: 0.5,
+          // Magazyn energii: ZAŁOŻENIA PRZYKŁADOWE, firma podmienia je na własny cennik
+          // i parametry oferowanych magazynów. To nie są dane rynkowe.
+          cenaZaKWhMagazynu: 2500, // zł brutto za 1 kWh pojemności (założenie)
+          cykleMagazynuRocznie: 250, // pełne cykle w roku (założenie)
+          sprawnoscMagazynu: 0.9, // sprawność ładowania i rozładowania (założenie)
+        },
+      };
+      // ===========================================================
+
+      FluxCalc.init({
+        mount: "#app",
+        brand: KONFIG.brand,
+        lead: KONFIG.lead,
+        tytul: "Kalkulator oszczędności PV",
+        opis: "Sprawdź roczne oszczędności i okres zwrotu instalacji fotowoltaicznej z pompą ciepła lub ładowaniem auta, także z magazynem energii.",
+        ctaOblicz: "Policz oszczędności",
+        pola: [
+          {
+            id: "zuzycieRoczne",
+            etykieta: "Roczne zużycie prądu z sieci",
+            typ: "number",
+            wartosc: 4000,
+            min: 0,
+            krok: 100,
+            jednostka: "kWh",
+            pomoc:
+              "Z rachunku rocznego. Przeciętne gospodarstwo: 2500-5000 kWh.",
+          },
+          {
+            id: "mocPV",
+            etykieta: "Planowana moc instalacji",
+            typ: "number",
+            wartosc: 6,
+            min: 0,
+            krok: 0.5,
+            jednostka: "kWp",
+          },
+          {
+            id: "dodatkoweZuzyciePompa",
+            etykieta: "Dodatkowe zużycie: pompa ciepła",
+            typ: "number",
+            wartosc: 0,
+            min: 0,
+            krok: 100,
+            jednostka: "kWh",
+            pomoc:
+              "Szacunkowe roczne zużycie pompy (dom ~120 m2: 3000-5000 kWh). 0, jeśli brak.",
+          },
+          {
+            id: "dodatkoweZuzycieEV",
+            etykieta: "Dodatkowe zużycie: auto elektryczne",
+            typ: "number",
+            wartosc: 0,
+            min: 0,
+            krok: 100,
+            jednostka: "kWh",
+            pomoc:
+              "Ok. 15-20 kWh/100 km. 15 000 km/rok = ~2700 kWh. 0, jeśli brak.",
+          },
+          {
+            id: "magazyn",
+            etykieta: "Czy chcesz instalację z magazynem energii?",
+            typ: "select",
+            wartosc: 0,
+            opcje: [
+              { wartosc: 0, etykieta: "Nie, sama instalacja PV" },
+              { wartosc: 1, etykieta: "Tak, pokaż wariant z magazynem" },
+            ],
+          },
+          {
+            id: "magazynPojemnosc",
+            etykieta: "Pojemność magazynu energii",
+            typ: "number",
+            wartosc: 10,
+            min: 1,
+            krok: 1,
+            jednostka: "kWh",
+            widoczneGdy: { id: "magazyn", wartosc: 1 },
+            pomoc:
+              "Pokażemy koszt i okres zwrotu instalacji z takim magazynem. Wybór trafia też do zapytania do firmy.",
+          },
+        ],
+        oblicz: function (values) {
+          var w = PVLogic.oblicz(values, KONFIG.params);
+          var m = w.magazyn;
+          var wierszeMagazyn = m
+            ? [
+                {
+                  etykieta:
+                    "Wariant z magazynem " + m.pojemnoscKWh + " kWh: oszczędność roczna",
+                  wartosc: m.oszczednoscRoczna,
+                  pln: true,
+                  wyroznij: true,
+                },
+                {
+                  etykieta: "Wariant z magazynem: koszt instalacji",
+                  wartosc: m.kosztInstalacji,
+                  pln: true,
+                },
+                {
+                  etykieta: "Wariant z magazynem: okres zwrotu",
+                  wartosc: m.okresZwrotuLat,
+                  jednostka: "lat",
+                },
+              ]
+            : [];
+          return {
+            podsumowanie: [
+              {
+                etykieta: "Oszczędność roczna",
+                wartosc: w.oszczednoscRoczna,
+                pln: true,
+                wyroznij: true,
+              },
+              {
+                etykieta: "Oszczędność miesięczna",
+                wartosc: w.oszczednoscMiesieczna,
+                pln: true,
+              },
+            ].concat(wierszeMagazyn.slice(0, 1)),
+            pelne: [
+              {
+                etykieta: "Cena 1 kWh z sieci (brutto)",
+                wartosc: w.cenaBruttoKWh,
+                pln: true,
+              },
+              {
+                etykieta: "Całkowite roczne zużycie",
+                wartosc: w.zuzycieCalkowite,
+                jednostka: "kWh",
+              },
+              {
+                etykieta: "Roczna produkcja PV",
+                wartosc: w.produkcjaPV,
+                jednostka: "kWh",
+              },
+              {
+                etykieta: "Koszt prądu bez PV (rok)",
+                wartosc: w.kosztBezPV,
+                pln: true,
+              },
+              {
+                etykieta: "Koszt prądu z PV (rok)",
+                wartosc: w.kosztZPV,
+                pln: true,
+              },
+              {
+                etykieta: "Oszczędność roczna",
+                wartosc: w.oszczednoscRoczna,
+                pln: true,
+                wyroznij: true,
+              },
+              {
+                etykieta: "Szacowany koszt instalacji",
+                wartosc: w.kosztInstalacji,
+                pln: true,
+              },
+              {
+                etykieta: "Okres zwrotu",
+                wartosc: w.okresZwrotuLat,
+                jednostka: "lat",
+              },
+              {
+                etykieta: "Bilans po 25 latach",
+                wartosc: w.oszczednosc25lat,
+                pln: true,
+              },
+            ].concat(
+              wierszeMagazyn,
+              m
+                ? [
+                    {
+                      etykieta: "Energia z magazynu w roku",
+                      wartosc: m.energiaZMagazynuKWh,
+                      jednostka: "kWh",
+                    },
+                    {
+                      etykieta: "Dodatkowa oszczędność roczna dzięki magazynowi",
+                      wartosc: m.dodatkowaOszczednoscRoczna,
+                      pln: true,
+                    },
+                  ]
+                : [],
+            ),
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

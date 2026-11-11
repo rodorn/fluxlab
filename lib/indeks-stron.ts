@@ -88,6 +88,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Oblicz pełny roczny koszt posiadania samochodu: paliwo, olej, opony, serwis, ubezpieczenie i utrata wartości. Poznaj realny koszt na kilometr."
   },
   {
+    "url": "/kalkulator-oze-demo",
+    "tytul": "Przykładowy kalkulator PV z magazynem energii dla firm OZE",
+    "opis": "Działający przykład kalkulatora oszczędności PV z opcją magazynu energii, który firma OZE osadza na swojej stronie jednym iframe. Dane demonstracyjne."
+  },
+  {
     "url": "/kalkulator-podatkowy",
     "tytul": "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS",
     "opis": "Porównaj ryczałt, podatek liniowy i skalę dla JDG w 2026. Uwzględnia ZUS, składkę zdrowotną, VAT, koszty prywatne i samochód. Bez rejestracji."

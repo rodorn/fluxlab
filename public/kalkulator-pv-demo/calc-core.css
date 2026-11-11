@@ -1,0 +1,185 @@
+/* FluxLab - style szkieletu kalkulatora. Kolory nadpisywalne przez branding (--fx-*). */
+.fx-calc {
+  --fx-kolor: #1f6feb;
+  --fx-akcent: #16a34a;
+  --fx-tlo: #ffffff;
+  --fx-tekst: #1a1a1a;
+  --fx-obwodka: #e2e6ea;
+  --fx-szary: #6b7280;
+  box-sizing: border-box;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--fx-tlo);
+  color: var(--fx-tekst);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  border-radius: 14px;
+}
+.fx-calc *,
+.fx-calc *::before,
+.fx-calc *::after {
+  box-sizing: border-box;
+}
+.fx-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.fx-logo {
+  height: 44px;
+  width: auto;
+}
+.fx-marka {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--fx-kolor);
+}
+.fx-tytul {
+  font-size: 22px;
+  margin: 0;
+}
+.fx-opis {
+  margin: 4px 0 0;
+  color: var(--fx-szary);
+  font-size: 14px;
+}
+.fx-form {
+  display: grid;
+  gap: 14px;
+}
+.fx-pole {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fx-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.fx-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--fx-obwodka);
+  border-radius: 9px;
+  font-size: 15px;
+  background: #fff;
+  color: var(--fx-tekst);
+}
+.fx-input:focus {
+  outline: 2px solid var(--fx-kolor);
+  outline-offset: 1px;
+  border-color: var(--fx-kolor);
+}
+.fx-input-grupa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fx-jednostka {
+  color: var(--fx-szary);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.fx-pomoc {
+  color: var(--fx-szary);
+  font-size: 12px;
+}
+.fx-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 9px;
+  background: var(--fx-kolor);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fx-btn:hover {
+  filter: brightness(1.06);
+}
+.fx-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.fx-btn-akcent {
+  background: var(--fx-akcent);
+}
+.fx-wynik {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--fx-obwodka);
+}
+.fx-wynik-wiersz {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--fx-obwodka);
+}
+.fx-wynik-etykieta {
+  color: var(--fx-szary);
+}
+.fx-wynik-wartosc {
+  font-weight: 700;
+  text-align: right;
+}
+.fx-wyroznij {
+  background: color-mix(in srgb, var(--fx-akcent) 12%, transparent);
+  border-radius: 8px;
+  padding: 11px 10px;
+  border-bottom: none;
+}
+.fx-wyroznij .fx-wynik-wartosc {
+  color: var(--fx-akcent);
+  font-size: 18px;
+}
+.fx-pelne {
+  margin-top: 10px;
+}
+.fx-brama {
+  margin-top: 18px;
+  padding: 16px;
+  background: color-mix(in srgb, var(--fx-kolor) 7%, transparent);
+  border-radius: 11px;
+}
+.fx-brama-zamknieta {
+  display: none;
+}
+.fx-brama-tekst {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+.fx-lead-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.fx-lead-form .fx-input {
+  flex: 1 1 200px;
+}
+.fx-status {
+  flex-basis: 100%;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.fx-ok {
+  color: var(--fx-akcent);
+}
+.fx-blad {
+  color: #dc2626;
+}
+.fx-stopka {
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--fx-szary);
+  text-align: center;
+}
+.fx-stopka a {
+  color: var(--fx-kolor);
+}
+
+.fx-pole[hidden] {
+  display: none;
+}

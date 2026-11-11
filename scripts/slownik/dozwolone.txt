@@ -266,3 +266,5 @@ gclid
 sanity
 Wix
 Techs
+iframe
+kwp
