@@ -16,7 +16,9 @@ export const metadata: Metadata = {
       "Lead z każdego źródła trafia sam do opiekuna z zadaniem na 15 minut. Pierwsza wersja w 3 tygodnie, pełne wdrożenie 4⁠–⁠8 tygodni, dane zawsze Twoje.",
     locale: "pl_PL",
     type: "website",
-    images: ["/og?t=W%C5%82asny%20CRM%20dla%20firmy%2C%20pierwsza%20wersja%20w%203%20tygodnie%20%7C%20Fluxlab"],
+    images: [
+      "/og?t=W%C5%82asny%20CRM%20dla%20firmy%2C%20pierwsza%20wersja%20w%203%20tygodnie%20%7C%20Fluxlab",
+    ],
   },
 };
 
@@ -42,7 +44,10 @@ export default function WlasnyCrm() {
       podLeadem={
         <>
           Pośrednik kredytowy?{" "}
-          <Link href="/crm-dla-posrednikow-kredytowych" className="font-semibold text-accent hover:underline">
+          <Link
+            href="/crm-dla-posrednikow-kredytowych"
+            className="font-semibold text-accent hover:underline"
+          >
             Umów 30 minut demo FluxCRM
           </Link>
         </>
@@ -64,6 +69,10 @@ export default function WlasnyCrm() {
         {
           title: "Otwarte API i konfiguracja bez kodu",
           desc: "Publiczna dokumentacja REST API (OpenAPI), webhooki na każde ważne zdarzenie, z podpisem HMAC i dziennikiem dostaw, integracja z Zapier, Make i n8n przez webhooki (bez gotowej aplikacji w katalogu), webhook przychodzący z tokenem dodaje szansę. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
+        },
+        {
+          title: "Własne raporty z zapisanych widoków",
+          desc: "Zapisujesz widok listy szans z filtrami, sortowaniem i wybranymi kolumnami. Tabelę grupujesz po źródle albo opiekunie, z liczbą szans i sumą ofert w każdej grupie. Raport z widoku powstaje sam codziennie, w wybrany dzień tygodnia albo miesiąca i czeka w CRM z powiadomieniem. Eksport do CSV, XLSX albo PDF.",
         },
         {
           title: "Procedura oceny rozmowy",

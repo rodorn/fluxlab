@@ -838,6 +838,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Arkusz z kalendarzem, gotowy CRM czy system pod pośrednika kredytowego? Tabela trzech dróg, cztery cele biura, trzy pytania przed zakupem i FAQ."
   },
   {
+    "url": "/strefa-wiedzy/lejek-wazony-posrednik-kredytowy",
+    "tytul": "Lejek ważony: ile naprawdę wpłynie ze spraw",
+    "opis": "Lejek ważony u pośrednika kredytowego: 25 otwartych spraw to 159 780 zł na papierze i 34 218 zł po ważeniu szansą. Zobacz, jak to liczyć i planować."
+  },
+  {
     "url": "/strefa-wiedzy/crm-dla-firmy-fotowoltaicznej-zeszyt-arkusz-czy-crm",
     "tytul": "CRM dla firmy OZE: zeszyt, arkusz czy CRM?",
     "opis": "Jak pilnować klienta firmy OZE przez dziewięć etapów? Zeszyt, arkusz i CRM z etapami: plusy, minusy, czas dziennie, wdrożenie, dwa dodatki i trzy sygnały do zmiany."

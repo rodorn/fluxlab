@@ -525,7 +525,7 @@ export const categories: Category[] = [
     name: "Wideo",
     slug: "wideo",
     description:
-      "Filmy FluxLab w formie artykułów: KSeF 2027, e-Doręczenia, automatyzacja obsługi, statystyki ofert i CRM dla pośrednika. Film i pełny tekst na jednej stronie.",
+      "Filmy FluxLab w formie artykułów: KSeF 2027, e-Doręczenia, automatyzacja obsługi, statystyki ofert, CRM i lejek ważony dla pośrednika. Film i pełny tekst na jednej stronie.",
     articles: [
       {
         href: "/strefa-wiedzy/ksef-2027-w-malej-firmie",
@@ -588,6 +588,13 @@ export const categories: Category[] = [
         title: "CRM pośrednika: arkusz, gotowy czy branżowy",
         description:
           "Arkusz z kalendarzem, gotowy CRM czy system pod pośrednika kredytowego? Tabela trzech dróg, cztery cele biura, trzy pytania przed zakupem i FAQ.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/lejek-wazony-posrednik-kredytowy",
+        title: "Lejek ważony",
+        description:
+          "Lejek ważony u pośrednika kredytowego: 25 otwartych spraw to 159 780 zł na papierze i 34 218 zł po ważeniu szansą. Zobacz, jak to liczyć i planować.",
         bezOkladki: true,
       },
       {

@@ -1,0 +1,93 @@
+{
+  "slug": "lejek-wazony-posrednik-kredytowy",
+  "tytulStrony": "Lejek ważony: ile naprawdę wpłynie ze spraw",
+  "h1": "Lejek ważony: ile naprawdę wpłynie z otwartych spraw kredytowych",
+  "tytulKrotki": "Lejek ważony",
+  "opis": "Lejek ważony u pośrednika kredytowego: 25 otwartych spraw to 159 780 zł na papierze i 34 218 zł po ważeniu szansą. Zobacz, jak to liczyć i planować.",
+  "lead": "Suma prowizji ze wszystkich otwartych spraw wygląda dobrze na kaflu, ale wpłynie tylko wtedy, gdy zamkniesz każdą sprawę. Lejek ważony pokazuje kwotę, która naprawdę ma szansę trafić na konto biura.",
+  "youtubeId": "aVd6824-E7s",
+  "dlugosc": 45,
+  "opublikowano": "2026-11-08T02:02:09-08:00",
+  "sekcje": [
+    {
+      "h2": "Ile pieniędzy naprawdę wpłynie z otwartych spraw",
+      "od": 0,
+      "akapity": [
+        "Masz 25 otwartych spraw kredytowych. Część to świeże zapytania z formularza, część czeka na dokumenty, kilka jest już w banku. Pytanie, które zadaje sobie każdy właściciel biura, brzmi prosto: ile pieniędzy z tego naprawdę wpłynie?",
+        "Najczęstsza odpowiedź to suma prowizji ze wszystkich spraw. Łatwo ją policzyć w arkuszu i dobrze wygląda w raporcie. Problem w tym, że zakłada coś, co w biurze pośrednika prawie się nie zdarza: że każda sprawa skończy się umową."
+      ]
+    },
+    {
+      "h2": "Suma lejka: kwota, która wpłynie tylko wtedy, gdy zamkniesz każdą sprawę",
+      "od": 5,
+      "akapity": [
+        "W filmie kafel prognozy pokazuje 159 780 zł w 25 otwartych sprawach. To prowizja ze wszystkich spraw razem, bez względu na to, czy klient dopiero zostawił numer telefonu, czy ma już decyzję banku.",
+        "Taka liczba mówi, ile jest w lejku, ale nie mówi, ile z niego wyjdzie. Sprawa, w której nikt jeszcze nie oddzwonił do klienta, liczy się w niej tak samo jak sprawa przed podpisaniem umowy."
+      ]
+    },
+    {
+      "h2": "Wynik po ważeniu szansą: 34 218 zł, prawie 5 razy mniej",
+      "od": 13,
+      "akapity": [
+        "Nad sumą stoi druga kwota: wynik po ważeniu szansą, 34 218 zł. Te same 25 spraw, ale każda policzona z prawdopodobieństwem, że naprawdę się zamknie.",
+        "Różnica jest prawie pięciokrotna. 159 780 zł na papierze i 34 218 zł po ważeniu to dwa zupełnie różne biura: jedno może planować zatrudnienie, drugie powinno najpierw zadbać o sprawy, które już ma.",
+        "Lejek ważony nie jest pesymistyczną wersją lejka. To ta sama lista spraw, policzona tak, jak zachowuje się w praktyce: część klientów rezygnuje, część dostaje odmowę w banku, część idzie do innego pośrednika."
+      ]
+    },
+    {
+      "h2": "Jak liczyć lejek ważony: prowizja razy szansa wygranej",
+      "od": 25,
+      "akapity": [
+        "System liczy każdą sprawę osobno: prowizja z tej sprawy razy szansa wygranej. Wynik dla całego biura to suma takich iloczynów, a nie suma prowizji.",
+        "U pośrednika kredytowego prowizja w sprawie wynika z kwoty kredytu i stawki prowizji. Gdy jest już oferta banku, liczy się kwota z oferty. Wcześniej, na etapie zapytania, liczy się kwota, o którą wnioskuje klient.",
+        "W FluxCRM wyliczenie widać przy kolumnach lejka: lista spraw, kwota, szansa i wynik dla każdej z nich. Nie musisz wierzyć jednej liczbie na kaflu, możesz sprawdzić, skąd się wzięła."
+      ]
+    },
+    {
+      "h2": "Dlaczego sprawa przy umowie waży więcej niż nowy kontakt",
+      "od": 32,
+      "akapity": [
+        "Szansa wygranej zależy od tego, jak daleko jest sprawa. Klient, który ma podpisaną umowę, liczy się w pełnej kwocie. Klient, który dopiero zostawił numer, ma przed sobą zdolność, dokumenty, wnioski i decyzję banku, więc waży znacznie mniej.",
+        "Sprawa, w której biuro jeszcze nie odezwało się do klienta, nie dokłada do prognozy nic. Wartość pojawia się dopiero po pierwszym kontakcie. To uczciwa zasada: zapytanie, na które nikt nie odpowiedział, nie jest jeszcze szansą, tylko numerem w skrzynce.",
+        "Dzięki temu prognoza rośnie wtedy, gdy biuro pracuje ze sprawami, a nie wtedy, gdy przychodzi więcej zapytań."
+      ]
+    },
+    {
+      "h2": "Planuj z kwoty, która naprawdę ma szansę wpłynąć",
+      "od": 35,
+      "akapity": [
+        "Suma lejka przydaje się do jednego: żeby wiedzieć, ile spraw jest w obiegu. Do planowania lepsza jest kwota po ważeniu. Na niej opierasz decyzję o kolejnym doradcy, budżecie na reklamy czy kosztach, które biuro może udźwignąć w najbliższych miesiącach.",
+        "Lejek ważony podpowiada też, gdzie szukać pieniędzy. Jeśli suma jest wysoka, a kwota po ważeniu niska, większość spraw stoi na wczesnych etapach. Wtedy więcej da szybsza odpowiedź na nowe zapytania i pilnowanie dokumentów niż kolejna kampania.",
+        "Najprostszy nawyk: patrz na obie liczby naraz i śledź, jak zmienia się kwota po ważeniu z tygodnia na tydzień. Gdy rośnie, sprawy idą do przodu. Gdy stoi, coś utknęło na którymś etapie."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Co to jest lejek ważony?",
+      "a": "To suma otwartych spraw, w której każda sprawa jest pomnożona przez szansę wygranej. Zamiast pytać, ile jest w lejku, odpowiada na pytanie, ile z niego realnie wpłynie."
+    },
+    {
+      "q": "Czym różni się suma lejka od wyniku po ważeniu?",
+      "a": "Suma lejka zakłada, że zamkniesz każdą sprawę. Wynik po ważeniu uwzględnia, że część spraw nie dojdzie do umowy. W przykładzie z filmu to 159 780 zł wobec 34 218 zł w tych samych 25 sprawach."
+    },
+    {
+      "q": "Jak policzyć prognozę prowizji w biurze pośrednika kredytowego?",
+      "a": "Dla każdej sprawy pomnóż prowizję przez szansę wygranej i zsumuj wyniki. Prowizję liczysz z kwoty kredytu i stawki, a szansa zależy od etapu sprawy: im bliżej umowy, tym wyższa."
+    },
+    {
+      "q": "Czy nowe zapytanie powinno się liczyć do prognozy?",
+      "a": "W FluxCRM sprawa bez pierwszego kontaktu z klientem ma wagę zero. Wartość pojawia się po pierwszej rozmowie lub wiadomości od biura, a sprawa z podpisaną umową liczy się w całości."
+    },
+    {
+      "q": "Czy lejek ważony da się prowadzić w Excelu?",
+      "a": "Da się, jeśli dla każdej sprawy na bieżąco uzupełniasz etap, kwotę i szansę. W praktyce arkusz szybko się rozjeżdża z rzeczywistością, bo etap trzeba zmieniać ręcznie po każdej rozmowie. CRM przelicza prognozę sam, gdy sprawa zmienia etap."
+    }
+  ],
+  "cta": {
+    "naglowek": "Chcesz zobaczyć lejek ważony na sprawach Twojego biura?",
+    "opis": "Pokażemy FluxCRM na przykładowych sprawach kredytowych w 30 minut: sumę lejka, wynik po ważeniu i wyliczenie dla każdej sprawy.",
+    "etykieta": "Umów demo",
+    "href": "/crm-dla-posrednikow-kredytowych?utm_campaign=ja-buduje-ty-polecasz&utm_source=fluxlab&utm_medium=artykul&utm_content=lejek-wazony-posrednik-kredytowy"
+  }
+}
