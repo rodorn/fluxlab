@@ -10948,3 +10948,11 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Dowód:** /sprawdzenie-nip od 8.11 08:44: 0 sesji ludzi (surowo 1 sesja 10.11 13:21 z facebook.com, 3 odsłony w minucie, odsiana), skan 0, form_start 0, wysłane 0. /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen od 9.11 00:45: 0 sesji, przejścia na /e-doreczenia-integracja 0. sitemap.xml: 179 <loc>, 11/11 sprawdzanych adresów obecne.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 i Z6 od 12:30.
+
+## 2026-11-11 12:43
+**Kanał:** Google (kalkulator podatkowy, Z5) i Facebook przez FL_meta (Z6).
+**Co zrobione:** Na /kalkulator-podatkowy akapit o ryczałcie zastąpiony 2 zdaniami o terminie zmiany formy na 2027 (do 20. dnia miesiąca po pierwszym przychodzie, zwykle 20.02.2027, w CEIDG) z linkiem do checklisty PDF; FL_meta dostała jedyny temat posta na dziś z utm_campaign=forma-2027.
+**Ruch:** ostatnia doba 132 odsłony, 83 osoby (−40% wobec średniej 218,6); źródła: b2b-email 88, google 6, facebook 5, t.co 3, x 2; Threads 2 sesje, YouTube 1, X 1; uruchomienia narzędzi 1.
+**Dowód:** commit 3b854db7 (źródło terminu w commicie: podatki.gov.pl, opodatkowanie podatkiem liniowym); https://fluxlab.pl/kalkulator-podatkowy zawiera „20.02.2027” po 140 s; PDF 200; IndexNow Yandex 200, Naver 200, wspólny 403; telefon-test: akapit widoczny w zakładce „Jak działa”, 0 błędów konsoli; „Doręczono do FL_meta (12:44)”.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 i Z8 od 14:30 (HAJS METRICS, kalkulator po wyniku); potwierdzenie i adres posta od FL_meta (Z15).
