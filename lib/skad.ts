@@ -14,8 +14,10 @@ export const SKAD = [
 
 export const INNE = "inne: ";
 
+export const Z_FORMULARZA_POLECENIA = "formularz polecenia";
+
 export function skadZBody(v: string) {
-  if (SKAD.includes(v)) return v;
+  if (SKAD.includes(v) || v === Z_FORMULARZA_POLECENIA) return v;
   const t = v.replace(/[|\r\n]+/g, " ").trim();
   return t.startsWith(INNE) && t.length > INNE.length ? t.slice(0, 80) : "";
 }
