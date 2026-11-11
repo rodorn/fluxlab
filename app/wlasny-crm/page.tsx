@@ -125,6 +125,10 @@ export default function WlasnyCrm() {
           a: "Pipedrive to gotowe narzędzie z licencją za każdą osobę, takie samo dla wszystkich. Własny CRM ma lejek ułożony pod Twoją branżę, kilka wniosków w jednej sprawie i rozliczenie prowizji.",
         },
         {
+          q: "Czego brakuje w systemie, a my tego potrzebujemy?",
+          a: "Opisz to w formularzu własnymi słowami. Odpiszemy, czy da się to zrobić, w jakim zakresie i za ile, zanim cokolwiek zapłacisz. Integracje i automatyzacje dokładamy w abonamencie Z integracjami co miesiąc, a pola, etapy i reguły ustawiasz sam w panelu.",
+        },
+        {
           q: "Co się stanie, gdy zrezygnujemy?",
           a: "Rezygnujesz w dowolnym dniu i płacisz tylko za dni korzystania. Dane i ich eksport zostają u ciebie.",
         },
