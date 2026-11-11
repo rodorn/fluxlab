@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "e-Doręczenia dla dużych firm: konektor do obiegu pism",
     description:
-      "Odbiór pism i dowodów doręczenia, rozdział do działów i wysyłka z Twojego systemu. Bezpłatna diagnoza.",
+      "Odbiór pism i dowodów doręczenia, rozdział do działów według reguł. Bezpłatna diagnoza.",
     url: "/e-doreczenia-dla-firm",
   },
 };
@@ -23,7 +23,7 @@ export default function EDoreczeniaDlaFirm() {
       cena="Wycena po bezpłatnej diagnozie"
       breadcrumb="e-Doręczenia dla firm"
       h1="e-Doręczenia dla dużych firm"
-      lead="Gdy pism z adresu do e-Doręczeń są tysiące, a każde klika osobno kilka osób, panel dostawcy przestaje wystarczać. Konektor wpina skrzynkę w Twój obieg dokumentów, EZD albo system przez API: odbiór, dowody doręczenia, rozdział do działów i wysyłka."
+      lead="Gdy pism z adresu do e-Doręczeń są tysiące, a każde klika osobno kilka osób, panel dostawcy przestaje wystarczać. Konektor wpina skrzynkę w Twój obieg dokumentów, EZD albo system przez API: odbiór, dowody doręczenia, rozdział do działów."
       podLeadem={
         <>
           Mała firma z kilkoma pismami rocznie:{" "}
@@ -57,8 +57,8 @@ export default function EDoreczeniaDlaFirm() {
           desc: "Konektor pobiera pisma i dowody doręczenia jako osobny zasób, bez logowania do panelu. Dowód zostaje przy piśmie, bo bez niego korespondencja nie ma wartości dowodowej.",
         },
         {
-          title: "Rozdział do działów i wysyłka",
-          desc: "Reguły kierują pismo do działu, osoby albo kolejki zadań. Odpowiedzi wychodzą z załącznikami z Twojego systemu, bez ręcznego przepisywania.",
+          title: "Rozdział do działów",
+          desc: "Reguły kierują pismo do działu, osoby albo kolejki zadań. Nikt nie przekazuje pism dalej ręcznie.",
         },
         {
           title: "Wpięcie w to, co już masz",
@@ -98,7 +98,6 @@ export default function EDoreczeniaDlaFirm() {
           features: [
             "Odbiór pism i dowodów doręczenia",
             "Rozdział do działów według reguł",
-            "Wysyłka z załącznikami z Twojego systemu",
           ],
           cta: "Umów diagnozę",
         },
@@ -132,7 +131,7 @@ export default function EDoreczeniaDlaFirm() {
       }}
       kontaktDomyslny="phone"
       serviceName="Integracja e-Doręczeń dla dużych firm"
-      serviceDesc="Konektor wpinający skrzynkę do doręczeń elektronicznych w obieg dokumentów, EZD lub system przez API: odbiór pism i dowodów doręczenia, rozdział do działów, wysyłka."
+      serviceDesc="Konektor wpinający skrzynkę do doręczeń elektronicznych w obieg dokumentów, EZD lub system przez API: odbiór pism i dowodów doręczenia, rozdział do działów."
       serviceType="Integracja systemów informatycznych"
     />
   );

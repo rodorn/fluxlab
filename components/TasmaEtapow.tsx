@@ -38,7 +38,7 @@ function Blok({
 }) {
   const wyglad =
     etap === 0
-      ? "border border-dashed border-gray-400 bg-transparent text-gray-400"
+      ? "border border-dashed border-gray-400 bg-transparent text-gray-600 dark:text-gray-400"
       : etap === 1
         ? `border border-transparent bg-gray-100 text-gray-500 ${makieta}`
         : `border border-transparent ${gotowa}`;

@@ -260,7 +260,7 @@ export const PRODUCTS: Product[] = [
     cta: "Opisz, czego używasz",
     bullets: [
       "otwarty klient tego API napisany przez nas, do obejrzenia przed decyzją",
-      "odbiór i wysyłka pism 2 900 zł, sam odbiór 1 490 zł",
+      "odbiór pism i dowodów doręczenia od 1 490 zł",
       "kod i dostępy zostają u ciebie",
     ],
   },
