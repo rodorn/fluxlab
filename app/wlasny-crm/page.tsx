@@ -63,7 +63,7 @@ export default function WlasnyCrm() {
         },
         {
           title: "Otwarte API i konfiguracja bez kodu",
-          desc: "Publiczna dokumentacja REST API (OpenAPI), 12 zdarzeń webhooków z podpisem i dziennikiem dostaw, połączenie z Zapier, Make i n8n. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
+          desc: "Publiczna dokumentacja REST API (OpenAPI), webhooki na 12 zdarzeń, z podpisem i dziennikiem dostaw, połączenie z Zapier, Make i n8n. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
         },
         {
           title: "Kiedy to się nie opłaca",
