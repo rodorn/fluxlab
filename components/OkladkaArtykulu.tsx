@@ -3,6 +3,7 @@ interface Props {
   kategoria?: string;
   wysoka?: boolean;
   src?: string;
+  pilna?: boolean;
 }
 
 // Okladka rysowana z tytulu, a nie brana ze zdjec stokowych. Kazdy artykul
@@ -33,6 +34,7 @@ export default function OkladkaArtykulu({
   kategoria,
   wysoka,
   src,
+  pilna,
 }: Props) {
   const z = ziarno(tytul);
   const [ciemny, jasny] = PALETY[z % PALETY.length];
@@ -48,7 +50,8 @@ export default function OkladkaArtykulu({
         <img
           src={src}
           alt=""
-          loading="lazy"
+          loading={pilna ? "eager" : "lazy"}
+          fetchPriority={pilna ? "high" : undefined}
           decoding="async"
           width={960}
           height={640}

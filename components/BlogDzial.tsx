@@ -59,6 +59,7 @@ export default function BlogDzial({
             <OkladkaArtykulu
               tytul={lead.title}
               src={okladka(lead.href, lead.bezOkladki)}
+              pilna={numer === 1}
             />
           </div>
           <div className="lg:col-span-5 lg:order-1 lg:col-start-8 lg:row-start-1 flex flex-col justify-center">
