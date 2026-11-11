@@ -59,8 +59,7 @@ export default function KalkulatorOzeDemoPage() {
             <iframe
               src="/kalkulator-pv-demo/index.html"
               title="Przykładowy kalkulator oszczędności PV z magazynem energii"
-              className="w-full rounded-xl border border-gray-200 dark:border-white/10"
-              style={{ height: 760, background: "#f3f4f6" }}
+              className="w-full h-[1500px] md:h-[1050px] rounded-xl border border-gray-200 dark:border-white/10 bg-gray-100"
               loading="lazy"
             />
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
@@ -95,7 +94,7 @@ export default function KalkulatorOzeDemoPage() {
             </p>
             <pre className="mt-3 overflow-x-auto rounded-lg bg-gray-100 dark:bg-white/5 p-4 text-sm">
               <code>{`<iframe src="https://twoja-domena.pl/kalkulator-pv/"
-  title="Kalkulator PV" width="100%" height="760"
+  title="Kalkulator PV" width="100%" height="1180"
   style="border:0"></iframe>`}</code>
             </pre>
             <p className="mt-3 text-gray-600 dark:text-gray-400">
