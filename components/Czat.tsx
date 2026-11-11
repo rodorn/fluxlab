@@ -136,6 +136,20 @@ export default function Czat() {
   const sciezka = usePathname() || "/";
   const [dymek, setDymek] = useState(false);
   const [otwarty, setOtwarty] = useState(false);
+  const [przewija, setPrzewija] = useState(false);
+  useEffect(() => {
+    let t: ReturnType<typeof setTimeout> | undefined;
+    const naScroll = () => {
+      setPrzewija(true);
+      clearTimeout(t);
+      t = setTimeout(() => setPrzewija(false), 600);
+    };
+    window.addEventListener("scroll", naScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", naScroll);
+      clearTimeout(t);
+    };
+  }, []);
   const [historia, setHistoria] = useState<Wiadomosc[]>([POWITANIE]);
   const [pole, setPole] = useState("");
   const [czeka, setCzeka] = useState(false);
@@ -291,7 +305,7 @@ export default function Czat() {
         aria-expanded={otwarty}
         aria-label={otwarty ? "Zamknij czat" : "Zapytaj o ofertę"}
         title={online && !otwarty ? "Jesteśmy online, zaraz odpowiemy" : undefined}
-        className="btn-primary przycisk-czatu fixed bottom-6 right-6 z-50 h-14 px-5"
+        className={`btn-primary przycisk-czatu fixed bottom-6 right-6 z-50 h-14 px-5 transition-opacity duration-200 ${przewija && !otwarty ? "opacity-30 max-md:pointer-events-none" : ""}`}
       >
         {online && !otwarty && (
           <span className="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5" aria-hidden="true">
