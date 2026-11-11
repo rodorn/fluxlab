@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import KalkulatorIframe from "@/components/KalkulatorIframe";
 import LandingForm from "@/components/LandingForm";
 
 export const metadata: Metadata = {
@@ -64,11 +65,9 @@ export default function OzePage() {
 
         <section className="pb-8">
           <div className="container-wide max-w-3xl mx-auto">
-            <iframe
+            <KalkulatorIframe
               src="/kalkulator-pv-demo/index.html"
               title="Przykładowy kalkulator oszczędności PV z magazynem energii"
-              className="w-full h-[1500px] md:h-[1050px] rounded-xl border border-gray-200 dark:border-white/10 bg-gray-100"
-              loading="lazy"
             />
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
               Przykład, dane i założenia demonstracyjne. W tej wersji formularz
