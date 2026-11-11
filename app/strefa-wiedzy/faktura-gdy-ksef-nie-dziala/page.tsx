@@ -37,6 +37,12 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Nie mamy internetu, a klient czeka na fakturę. Co robimy?",
     a: "Wystawiasz ją w trybie offline24 w strukturze FA(3) i wysyłasz do KSeF najpóźniej następnego dnia roboczego. Ogłoszenie awarii nie jest do tego potrzebne.",
+    linki: [
+      {
+        fraza: "wysyłasz do KSeF",
+        href: "/ksef-integracja",
+      },
+    ],
   },
   {
     q: "Jaka jest data wystawienia takiej faktury?",
