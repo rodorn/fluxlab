@@ -70,6 +70,10 @@ export default function WlasnyCrm() {
           desc: "Ustawiasz kroki rozmowy (nazwa, waga, frazy kluczowe, do 30 kroków), a system sprawdza w transkrypcji, czy doradca je spełnił. Potwierdzenie przez AI z cytatem jest opcjonalne i domyślnie wyłączone, włączasz je sam.",
         },
         {
+          title: "Oferta zaakceptowana podpisem online",
+          desc: "Klient otwiera ofertę z linku bez logowania i akceptuje ją podpisem narysowanym palcem. Szansa przechodzi na etap „umowa”, a CRM tworzy szkic umowy z kwotą z oferty. Nic nie wychodzi do klienta bez akceptacji człowieka.",
+        },
+        {
           title: "Kiedy to się nie opłaca",
           desc: "Przy kilku leadach miesięcznie wystarczy gotowy Pipedrive. Taki też wdrażamy.",
         },
