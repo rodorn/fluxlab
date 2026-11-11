@@ -24,7 +24,7 @@ export type Narzedzie = {
 export const businessTools: Narzedzie[] = [
   {
     title: "Integracja z KSeF",
-    pytanie: "Co z KSeF obowiązuje cię już dziś?",
+    pytanie: "Czy wszystko z KSeF obowiązuje cię już dziś?",
     description:
       "Wybierz grupę podatnika, a pokażemy, od kiedy wystawiasz faktury w KSeF i jaki wyjątek jeszcze cię chroni.",
     href: "/ksef-integracja",
