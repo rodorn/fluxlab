@@ -3,6 +3,8 @@ import { ViewTransition } from "react";
 import { Fraunces, Instrument_Sans } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import PomiarFormularzy from "@/components/PomiarFormularzy";
+import PomiarAds from "@/components/PomiarAds";
+import ContactClickTracker from "@/components/ContactClickTracker";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import TloKursora from "@/components/TloKursora";
 import TytulKarty from "@/components/TytulKarty";
@@ -230,6 +232,8 @@ export default function RootLayout({
         <TloKursora />
         <GoogleAnalytics />
         <PomiarFormularzy />
+        <PomiarAds />
+        <ContactClickTracker />
         <ZgodaCookies />
         <CiszaPrzyPrzewijaniu />
         <ViewTransition default="vt-page">{children}</ViewTransition>

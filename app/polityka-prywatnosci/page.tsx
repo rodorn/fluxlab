@@ -213,12 +213,15 @@ export default function PolitykaPrywatnosci() {
                           4. Pliki cookie
                         </h2>
                         <p>
-                          Serwis nie wykorzystuje plików cookie do celów
-                          marketingowych. Vercel Analytics działa bez plików
-                          cookie i nie identyfikuje użytkowników. Google
-                          Analytics zapisuje pliki cookie wyłącznie po
-                          kliknięciu „Akceptuj” w oknie zgody; bez zgody
-                          wysyła tylko anonimowe sygnały bez plików cookie.
+                          Vercel Analytics działa bez plików cookie i nie
+                          identyfikuje użytkowników. Google Analytics oraz
+                          pomiar skuteczności reklam Google Ads (zliczanie
+                          wysłanych zgłoszeń i kliknięć w numer telefonu)
+                          zapisują pliki cookie wyłącznie po kliknięciu
+                          „Akceptuj” w oknie zgody; bez zgody Google Ads
+                          nie jest ładowany, a Google Analytics wysyła tylko
+                          anonimowe sygnały bez plików cookie. Personalizacja
+                          reklam pozostaje wyłączona.
                           Wybór można zmienić, czyszcząc dane strony w
                           przeglądarce. Poza tym pliki cookie służą wyłącznie
                           prawidłowemu działaniu Serwisu (pliki techniczne).

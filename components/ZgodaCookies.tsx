@@ -37,7 +37,13 @@ export default function ZgodaCookies() {
     try {
       localStorage.setItem("fluxlab_zgoda", tak ? "tak" : "nie");
     } catch {}
-    window.gtag?.("consent", "update", { analytics_storage: tak ? "granted" : "denied" });
+    window.gtag?.("consent", "update", {
+      analytics_storage: tak ? "granted" : "denied",
+      ad_storage: tak ? "granted" : "denied",
+      ad_user_data: tak ? "granted" : "denied",
+    });
+    const adsId = process.env.NEXT_PUBLIC_ADS_ID;
+    if (tak && adsId) window.gtag?.("config", adsId);
     setWidoczne(false);
   };
 
@@ -49,7 +55,7 @@ export default function ZgodaCookies() {
       className="cookie-consent print:hidden fixed bottom-4 left-4 right-4 z-[45] rounded-2xl border border-gray-200 bg-white p-4 text-sm shadow-2xl dark:border-white/10 dark:bg-gray-900 md:right-auto md:max-w-sm"
     >
       <p className="text-gray-700 dark:text-gray-300">
-        Liczymy odwiedziny w Google Analytics. Ciasteczka zapiszemy tylko za Twoją zgodą.{" "}
+        Liczymy odwiedziny w Google Analytics i skuteczność reklam Google Ads. Ciasteczka zapiszemy tylko za Twoją zgodą.{" "}
         <Link href="/polityka-prywatnosci" className="text-accent underline underline-offset-2">
           Szczegóły
         </Link>

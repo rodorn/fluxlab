@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const ADS_ID = process.env.NEXT_PUBLIC_ADS_ID;
 
 /** Tag (540 kB po rozpakowaniu) ładuje się przy pierwszym ruchu odwiedzającego
  *  albo po 8 s, a nie zaraz po zdarzeniu load: na słabym telefonie jego
@@ -56,13 +57,14 @@ export default function GoogleAnalytics() {
       try { zgoda = localStorage.getItem('fluxlab_zgoda'); } catch (e) {}
       gtag('consent', 'default', {
         'analytics_storage': zgoda === 'tak' ? 'granted' : 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
+        'ad_storage': zgoda === 'tak' ? 'granted' : 'denied',
+        'ad_user_data': zgoda === 'tak' ? 'granted' : 'denied',
         'ad_personalization': 'denied',
       });
       gtag('config', '${GA_MEASUREMENT_ID}', {
         page_path: window.location.pathname,
       });
+      ${ADS_ID ? `if (zgoda === 'tak') gtag('config', '${ADS_ID}');` : ""}
     `;
     const tag = document.createElement("script");
     tag.async = true;

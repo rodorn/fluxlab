@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { event as gaEvent } from "@/lib/gtag";
+import { event as gaEvent, konwersjaAds } from "@/lib/gtag";
 
 /**
  * Globalny tracker kliknięć w `mailto:` i `tel:` linki.
@@ -29,6 +29,7 @@ export default function ContactClickTracker() {
           href,
           location: window.location.pathname,
         });
+        konwersjaAds("telefon");
       }
     }
 
