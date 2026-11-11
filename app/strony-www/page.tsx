@@ -18,7 +18,7 @@ import DlaZakupow from "@/components/DlaZakupow";
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
   description:
-    "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI w treści, obrazach i kodzie. Hosting w cenie wdrożenia. Strona w tydzień za 2 900 zł.",
+    "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI. Hosting w cenie wdrożenia. Landing page od 790 zł, strona w tydzień 2 900 zł.",
   alternates: { canonical: "/strony-www" },
   openGraph: {
     title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -30,6 +30,11 @@ export const metadata: Metadata = {
 };
 
 const pricing = [
+  {
+    title: "Landing page",
+    price: "od 790 zł",
+    description: "Jedna podstrona, formularz podpięty do CRM, hosting w cenie wdrożenia.",
+  },
   {
     title: "Naprawa i poprawki",
     price: "150 / 290 / 490 zł",
@@ -80,6 +85,11 @@ const faq = [
       "Hosting jest w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), konfigurację robimy my.",
   },
   {
+    question: "Co jest w cenie landing page za 790 zł?",
+    answer:
+      "Jedna podstrona z formularzem, który trafia do CRM, hosting w cenie wdrożenia i zakres spisany w punktach. Cena netto. Domenę kupujesz na siebie (50-150 zł/rok), jej konfigurację robimy my. Więcej podstron to strona w tydzień od 2 900 zł.",
+  },
+  {
     question: "Co jest w cenie strony w tydzień (2 900 zł)?",
     answer:
       "Do 5 podstron, formularz kontaktowy, kalendarz spotkań i hosting w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), jej konfigurację robimy my. Płatność przez Useme albo fakturą z góry.",
@@ -112,6 +122,16 @@ export default function StronyWww() {
               >
                 Strony internetowe dla firm
               </h1>
+              <a
+                href="#konfigurator-heading"
+                className="animate-fade-up-2 mb-5 inline-flex flex-wrap items-baseline justify-center gap-x-2 rounded-2xl border border-accent/50 bg-accent/10 px-5 py-3 text-gray-900 dark:text-white"
+              >
+                <span className="text-sm font-semibold">Landing page</span>
+                <span className="text-2xl font-bold text-accent">od 790 zł netto</span>
+                <span className="w-full text-xs text-gray-600 dark:text-gray-300">
+                  jedna podstrona, formularz do CRM, hosting w cenie
+                </span>
+              </a>
               <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fade-up-3">
                 Nowa strona od zera albo poprawki w istniejącej. Prosta strona
                 w 7 dni, firmowa w 12 dni, sklep w 21 dni.
@@ -173,7 +193,7 @@ export default function StronyWww() {
                     </h2>
                     <TabelaCennika />
                     <dl className="mt-10 grid gap-x-8 gap-y-6 border-t border-gray-300 pt-8 dark:border-gray-600 md:grid-cols-3">
-                      {[pricing[0], pricing[4], pricing[5]].map((track) => (
+                      {[pricing[1], pricing[5], pricing[6]].map((track) => (
                         <div key={track.title}>
                           <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">
                             {track.title}
@@ -268,6 +288,14 @@ export default function StronyWww() {
                 priceCurrency: "PLN",
                 description:
                   "Bezpłatna rozmowa diagnostyczna: czy warto, co i jak.",
+              },
+              {
+                "@type": "Offer",
+                name: "Landing page",
+                price: "790",
+                priceCurrency: "PLN",
+                description:
+                  "Jedna podstrona, formularz podpięty do CRM, hosting w cenie wdrożenia.",
               },
               {
                 "@type": "Offer",

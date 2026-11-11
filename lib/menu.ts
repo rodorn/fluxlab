@@ -67,7 +67,7 @@ export const MENU: PozycjaMenu[] = [
     ],
     kafel: {
       tytul: "Strona z opieką od 300\u00a0zł/mies.",
-      opis: "Nowa strona od 2 900 zł, poprawki od 150 zł.",
+      opis: "Landing page od 790 zł, poprawki od 150 zł.",
       href: "/strony-www",
       cta: "Zobacz ofertę",
     },

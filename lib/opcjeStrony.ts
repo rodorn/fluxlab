@@ -21,6 +21,15 @@ export type Rodzaj = {
 
 export const RODZAJE: Rodzaj[] = [
   {
+    id: "lp",
+    nazwa: "Landing page",
+    opis: "Jedna podstrona, formularz podpięty do CRM, hosting w cenie wdrożenia.",
+    cena: 790,
+    podstron: 1,
+    dni: 5,
+    przyklad: "jedna strona: oferta, argumenty, formularz kontaktowy",
+  },
+  {
     id: "landing",
     nazwa: "Strona w tydzień, do 5 podstron",
     opis: "Formularz i kalendarz spotkań.",
@@ -66,20 +75,22 @@ export type OpcjaStrony = {
 export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
   crm: {
     nazwa: "Formularz podpięty do CRM",
-    wCenie: ["landing", "firmowa", "sklep"],
+    wCenie: ["lp", "landing", "firmowa", "sklep"],
     cena: 0,
   },
   rezerwacje: {
     nazwa: "Kalendarz spotkań i rezerwacje",
     wCenie: ["landing", "firmowa", "sklep"],
+    tylko: ["landing", "firmowa", "sklep"],
     cena: 0,
   },
   cms: {
     nazwa: "Panel do edycji treści (CMS)",
     wCenie: ["firmowa", "sklep"],
+    tylko: ["landing", "firmowa", "sklep"],
     cena: 1500,
   },
-  blog: { nazwa: "Blog", wCenie: ["firmowa"], cena: 1200 },
+  blog: { nazwa: "Blog", wCenie: ["firmowa"], tylko: ["landing", "firmowa", "sklep"], cena: 1200 },
   platnosci: { nazwa: "Płatności online", wCenie: ["sklep"], cena: 790 },
   projekt: { nazwa: "Indywidualny projekt graficzny", wCenie: [], cena: 1500 },
   migracja: {
@@ -124,7 +135,7 @@ export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
 /** Przykład dla liczby podstron na suwaku konfiguratora. */
 export const przykladPodstron = (n: number) =>
   n <= 5
-    ? RODZAJE[0].przyklad
+    ? RODZAJE[1].przyklad
     : n <= 15
       ? `strona główna, kontakt i ${n - 2} podstron z usługami, cennikiem i pytaniami`
       : `jak FINREAL: 35 podstron, w tym 21 z ofertą kredytów, zespół, kalkulator i regulaminy`;
@@ -191,10 +202,10 @@ const sto = (n: number) => Math.round(n / 100) * 100;
 export function wycenStrone(k: KonfiguracjaStrony): WynikWyceny | null {
   const rodzaj = RODZAJE.find((r) => r.id === k.r);
   if (!rodzaj) return null;
-  const p = Math.min(
-    MAX_PODSTRON,
-    Math.max(1, Math.round(k.p ?? rodzaj.podstron)),
-  );
+  const p =
+    rodzaj.id === "lp"
+      ? 1
+      : Math.min(MAX_PODSTRON, Math.max(1, Math.round(k.p ?? rodzaj.podstron)));
   const j = Math.min(MAX_JEZYKOW, Math.max(0, Math.round(k.j ?? 0)));
   const tresci = TRESCI.find((t) => t.id === k.tr) ?? TRESCI[0];
   const produkty =

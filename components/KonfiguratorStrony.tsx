@@ -95,7 +95,7 @@ function PodgladMakiety({
             <span className={`block h-2 w-full ${blok}`} />
             <span className="mt-1 inline-block h-5 w-16 rounded-full bg-accent-solid" />
           </div>
-          {rodzajId === "landing" ? (
+          {(rodzajId === "landing" || rodzajId === "lp") ? (
             <div className="space-y-1.5 rounded-lg border border-accent/40 bg-white p-2 dark:bg-gray-900">
               <span className={`block h-2 ${blok}`} />
               <span className={`block h-2 ${blok}`} />
@@ -187,7 +187,8 @@ function Wybor<T extends string | number>({
 export default function KonfiguratorStrony() {
   const [rodzajId, setRodzajId] = useState("firmowa");
   const [wybrane, setWybrane] = useState<string[]>([]);
-  const [podstron, setPodstron] = useState(10);
+  const [podstronSuwak, setPodstron] = useState(10);
+  const podstron = rodzajId === "lp" ? 1 : podstronSuwak;
   const [jezyki, setJezyki] = useState(0);
   const [tresci, setTresci] = useState<string>("mam");
   const [produkty, setProdukty] = useState<string>("do100");
@@ -251,7 +252,7 @@ export default function KonfiguratorStrony() {
         <p className="mb-3 text-center text-sm font-semibold text-gray-900 dark:text-white">
           1. Rodzaj strony
         </p>
-        <div role="radiogroup" aria-label="Rodzaj strony" className="grid gap-3 md:grid-cols-3">
+        <div role="radiogroup" aria-label="Rodzaj strony" className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
           {RODZAJE.map((r) => {
             const aktywny = r.id === rodzajId;
             return (
@@ -295,6 +296,7 @@ export default function KonfiguratorStrony() {
               min={1}
               max={MAX_PODSTRON}
               value={podstron}
+              disabled={rodzajId === "lp"}
               onChange={(e) => setPodstron(Number(e.target.value))}
               className="mt-3 w-full cursor-pointer accent-[rgb(var(--accent))]"
             />

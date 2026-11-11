@@ -2,8 +2,9 @@ import { RODZAJE, terminTekst } from "@/lib/opcjeStrony";
 import { zl } from "@/lib/wycena";
 
 
-const OD = new Set(["sklep"]);
+const OD = new Set(["lp", "sklep"]);
 const PLATNOSC: Record<string, string> = {
+  lp: "Useme albo faktura z góry",
   landing: "Useme albo faktura z góry",
   firmowa: "Useme albo faktura z góry",
   sklep: "Useme albo faktura z góry",
