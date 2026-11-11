@@ -308,6 +308,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozujemy przyczynę i naprawiamy szyfrowanie razem z przekierowaniami."
   },
   {
+    "url": "/naprawa-wordpress",
+    "tytul": "Naprawa WordPress: błąd krytyczny, biały ekran",
+    "opis": "„W witrynie wystąpił błąd krytyczny” albo biały ekran? Czytamy log błędów, wskazujemy przyczynę i naprawiamy. 150, 290 albo 490 zł netto, płatność po efekcie."
+  },
+  {
     "url": "/rejestr-cen",
     "tytul": "Najniższa cena z 30 dni i rejestr cen, od 49 zł",
     "opis": "Przy każdej obniżce sklep ma podać najniższą cenę z 30 dni. Sprawdzamy każdą przecenioną pozycję z zewnątrz i pokazujemy te bez tej informacji. Od 49 zł."

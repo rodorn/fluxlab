@@ -47,6 +47,7 @@ export const MENU: PozycjaMenu[] = [
         linki: [
           l("/strony-www"),
           l("/landing-z-platnoscia"),
+          l("/naprawa-wordpress"),
           l("/strona-po-wlamaniu"),
           l("/mail-firmowy"),
           l("/naprawa-https"),
@@ -264,6 +265,7 @@ export const MENU: PozycjaMenu[] = [
 export const OPIS_MENU: Record<string, string> = {
   "/strony-www": "Nowa strona albo naprawa obecnej",
   "/landing-z-platnoscia": "Sprzedaż od razu, płatność na stronie",
+  "/naprawa-wordpress": "Błąd krytyczny i biały ekran naprawione",
   "/strona-po-wlamaniu": "Czyścimy, łatamy i stawiamy na nogi",
   "/mail-firmowy": "Adres w domenie, poczta bez spamu",
   "/naprawa-https": "Koniec z ostrzeżeniem w przeglądarce",

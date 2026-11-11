@@ -350,6 +350,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/naprawa-wordpress`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/rejestr-cen`,
       changeFrequency: "monthly" as const,
       priority: 0.9,
@@ -549,11 +554,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const wszystkie = [...staticPages, ...articlePages, ...zNawigacji, ...kategorie];
+  const wszystkie = [
+    ...staticPages,
+    ...articlePages,
+    ...zNawigacji,
+    ...kategorie,
+  ];
   const widziane = new Set<string>();
   return wszystkie
     .filter((p) => {
-      const url = p.url.length > baseUrl.length + 1 ? p.url.replace(/\/+$/, "") : p.url;
+      const url =
+        p.url.length > baseUrl.length + 1 ? p.url.replace(/\/+$/, "") : p.url;
       if (NOINDEX.has(url.replace(baseUrl, "") || "/")) return false;
       if (widziane.has(url)) return false;
       widziane.add(url);

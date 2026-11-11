@@ -39,7 +39,7 @@
       "od": 25,
       "akapity": [
         "System liczy każdą sprawę osobno: prowizja z tej sprawy razy szansa wygranej. Wynik dla całego biura to suma takich iloczynów, a nie suma prowizji.",
-        "U pośrednika kredytowego prowizja w sprawie wynika z kwoty kredytu i stawki prowizji. Gdy jest już oferta banku, liczy się kwota z oferty. Wcześniej, na etapie zapytania, liczy się kwota, o którą wnioskuje klient.",
+        "U pośrednika kredytowego wartością sprawy jest prowizja. Gdy klient ma już wniosek w banku, liczy się prowizja z tego wniosku. Wcześniej system liczy ją z kwoty, o którą wnioskuje klient, i stawki prowizji biura.",
         "W FluxCRM wyliczenie widać przy kolumnach lejka: lista spraw, kwota, szansa i wynik dla każdej z nich. Nie musisz wierzyć jednej liczbie na kaflu, możesz sprawdzić, skąd się wzięła."
       ]
     },
@@ -47,9 +47,9 @@
       "h2": "Dlaczego sprawa przy umowie waży więcej niż nowy kontakt",
       "od": 32,
       "akapity": [
-        "Szansa wygranej zależy od tego, jak daleko jest sprawa. Klient, który ma podpisaną umowę, liczy się w pełnej kwocie. Klient, który dopiero zostawił numer, ma przed sobą zdolność, dokumenty, wnioski i decyzję banku, więc waży znacznie mniej.",
-        "Sprawa, w której biuro jeszcze nie odezwało się do klienta, nie dokłada do prognozy nic. Wartość pojawia się dopiero po pierwszym kontakcie. To uczciwa zasada: zapytanie, na które nikt nie odpowiedział, nie jest jeszcze szansą, tylko numerem w skrzynce.",
-        "Dzięki temu prognoza rośnie wtedy, gdy biuro pracuje ze sprawami, a nie wtedy, gdy przychodzi więcej zapytań."
+        "Szansa wygranej zależy od etapu sprawy. Klient, który dopiero zostawił numer, ma przed sobą analizę, dokumenty, wnioski do banków i decyzję, więc waży niewiele. Sprawa przy umowie waży dużo, a pełną kwotę osiąga dopiero na etapie prowizji.",
+        "W FluxCRM wagi etapów rosną od kontaktu, przez analizę, dokumenty, banki i decyzję, po umowę i prowizję. Biuro może je zmienić w konfiguracji lejka, gdy jego własne sprawy pokazują inne proporcje.",
+        "Dzięki temu prognoza rośnie przede wszystkim wtedy, gdy sprawy przechodzą do kolejnych etapów, a nie tylko wtedy, gdy przychodzi więcej zapytań."
       ]
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "q": "Czy nowe zapytanie powinno się liczyć do prognozy?",
-      "a": "W FluxCRM sprawa bez pierwszego kontaktu z klientem ma wagę zero. Wartość pojawia się po pierwszej rozmowie lub wiadomości od biura, a sprawa z podpisaną umową liczy się w całości."
+      "a": "Tak, ale z małą wagą. W FluxCRM u pośrednika waga zależy od etapu: nowy kontakt waży najmniej, umowa dużo, a pełną kwotę sprawa osiąga na etapie prowizji. Wagi etapów biuro ustawia samo w konfiguracji lejka."
     },
     {
       "q": "Czy lejek ważony da się prowadzić w Excelu?",
