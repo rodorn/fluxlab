@@ -10940,3 +10940,11 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Kanał:** Google i Bing (plan Z1, Z2). **Co zrobione:** IndexNow dla 10 nowych stron innych sesji (wszystkie 200): Yandex 202, Naver 200, wspólny 403; timer enabled, budżet „utrzymaj”.
 **Ruch:** doba 210 odsłon, 139 osób; YouTube 1, X 1, Threads 2 sesje.
 **Dla Pawła:** Search Console nadal wylogowany w profilu ~/.config/chrome-google (port 9228): zalogować na https://search.google.com/search-console, wtedy 4 zgłoszenia indeksowania z Z1 da się zrobić. **Zostało otwarte:** Z3 i Z4 od 10:30.
+
+## 2026-11-11 10:43
+**Kanał:** pomiar i Google (plan 11.11, Z3 i Z4).
+**Co zrobione:** Z3 zmierzone: dwie strony nowe z 8-9.11 nie dostały w tych dniach ani jednej sesji człowieka; Z4: mapa witryny ma 179 adresów, komplet nowych stron, bez /cennik i /wideo/*.
+**Ruch:** pomiar-kanalow 24 h: 26 ludzi, 38 odsłon; bez odsyłacza 19, Google 2, Facebook 2, X/t.co 2, HAJS METRICS 1, ustawygospodarcze.pl 1, useme 1. 7 dni: 266 ludzi (Google 55, HAJS METRICS 18, YouTube 8).
+**Dowód:** /sprawdzenie-nip od 8.11 08:44: 0 sesji ludzi (surowo 1 sesja 10.11 13:21 z facebook.com, 3 odsłony w minucie, odsiana), skan 0, form_start 0, wysłane 0. /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen od 9.11 00:45: 0 sesji, przejścia na /e-doreczenia-integracja 0. sitemap.xml: 179 <loc>, 11/11 sprawdzanych adresów obecne.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 i Z6 od 12:30.
