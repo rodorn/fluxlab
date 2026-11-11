@@ -63,7 +63,7 @@ export default function WlasnyCrm() {
         },
         {
           title: "Otwarte API i konfiguracja bez kodu",
-          desc: "Publiczna dokumentacja REST API (OpenAPI), webhooki na każde ważne zdarzenie, z podpisem HMAC i dziennikiem dostaw, połączenie z Zapier, Make i n8n. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
+          desc: "Publiczna dokumentacja REST API (OpenAPI), webhooki na każde ważne zdarzenie, z podpisem HMAC i dziennikiem dostaw, integracja z Zapier, Make i n8n przez webhooki (bez gotowej aplikacji w katalogu), webhook przychodzący z tokenem dodaje szansę. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
         },
         {
           title: "Procedura oceny rozmowy",
