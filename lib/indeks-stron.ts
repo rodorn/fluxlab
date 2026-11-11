@@ -88,6 +88,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Oblicz pełny roczny koszt posiadania samochodu: paliwo, olej, opony, serwis, ubezpieczenie i utrata wartości. Poznaj realny koszt na kilometr."
   },
   {
+    "url": "/oze",
+    "tytul": "Kalkulator PV z magazynem na stronie firmy OZE",
+    "opis": "Klient liczy instalację z magazynem energii na stronie firmy OZE, a firma dostaje gotowe zapytanie. Wypróbuj przykład i umów rozmowę."
+  },
+  {
     "url": "/kalkulator-oze-demo",
     "tytul": "Przykładowy kalkulator PV z magazynem energii dla firm OZE",
     "opis": "Działający przykład kalkulatora oszczędności PV z opcją magazynu energii, który firma OZE osadza na swojej stronie jednym iframe. Dane demonstracyjne."

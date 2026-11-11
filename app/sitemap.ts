@@ -115,6 +115,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/oze`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/kalkulator-oze-demo`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
