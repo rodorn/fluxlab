@@ -10935,3 +10935,8 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Dla Pawła:**
 - Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), jedenasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
 - Decyzja o zimnym outreachu, karta f755c6e1, termin 13.11: https://biuro.fluxlab.pl/decyzje/, 5 min.
+
+## 2026-11-11 08:47
+**Kanał:** Google i Bing (plan Z1, Z2). **Co zrobione:** IndexNow dla 10 nowych stron innych sesji (wszystkie 200): Yandex 202, Naver 200, wspólny 403; timer enabled, budżet „utrzymaj”.
+**Ruch:** doba 210 odsłon, 139 osób; YouTube 1, X 1, Threads 2 sesje.
+**Dla Pawła:** Search Console nadal wylogowany w profilu ~/.config/chrome-google (port 9228): zalogować na https://search.google.com/search-console, wtedy 4 zgłoszenia indeksowania z Z1 da się zrobić. **Zostało otwarte:** Z3 i Z4 od 10:30.
