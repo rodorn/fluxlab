@@ -79,6 +79,16 @@ const faq = [
     answer:
       "Hosting jest w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), konfigurację robimy my.",
   },
+  {
+    question: "Co jest w cenie strony w tydzień (2 900 zł)?",
+    answer:
+      "Do 5 podstron, formularz kontaktowy, kalendarz spotkań i hosting w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), jej konfigurację robimy my. Płatność przez Useme albo fakturą z góry.",
+  },
+  {
+    question: "Co dzieje się po odbiorze strony?",
+    answer:
+      "Przez 30 dni po odbiorze poprawiamy bez opłat wszystko, co nie działa tak, jak opisaliśmy w ofercie. Potem możesz zostać przy opiece od 300 zł miesięcznie (2, 5 albo 10 poprawek na kwartał) albo zlecać pojedyncze poprawki od 150 zł.",
+  },
 ];
 
 export default function StronyWww() {
