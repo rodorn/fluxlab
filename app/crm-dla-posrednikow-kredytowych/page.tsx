@@ -52,6 +52,10 @@ const punkty = [
     opis: "Przy każdym wniosku zapisujesz ofertę banku: kwotę przyznaną, oprocentowanie i ratę. Wybrany wniosek ustawia kwotę umowy, od której liczy się prowizja.",
   },
   {
+    tytul: "Każdy doradca widzi tylko swoje lejki",
+    opis: "W Uprawnieniach do danych ustawiasz, że rola albo konto widzi tylko wybrane lejki, na przykład doradca leasingowy tylko Leasing. Sprawy z innych lejków nie pojawiają się mu na listach ani w raportach, a CRM nie pozwala ich zmienić.",
+  },
+  {
     tytul: "Zgody RODO i rejestr czynności",
     opis: "Zgody klienta, rejestr czynności przetwarzania i umowa powierzenia są w systemie.",
   },
