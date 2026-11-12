@@ -113,7 +113,7 @@ type Podmiot = {
 async function zRejestru(nip: string, data: string): Promise<Podmiot | null> {
   try {
     const r = await fetch(
-      `https://wl-api.mf.gov.pl/api/search/nip/${nip}?date=${data}`,
+      `https://wykazpodatnikowvat.mf.gov.pl/api/search/nip/${nip}?date=${data}`,
       { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000) },
     );
     if (!r.ok) return null;

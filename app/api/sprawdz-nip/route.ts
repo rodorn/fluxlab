@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-const MF_API = "https://wl-api.mf.gov.pl/api/search/nip";
+const MF_API = "https://wykazpodatnikowvat.mf.gov.pl/api/search/nip";
 
 function cleanNip(raw: string): string {
   return (raw || "").replace(/\D/g, "");

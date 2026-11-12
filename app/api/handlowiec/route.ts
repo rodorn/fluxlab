@@ -133,7 +133,7 @@ async function bialaLista(nip: string): Promise<Rejestr | null> {
   try {
     const data = new Date().toISOString().slice(0, 10);
     const r = await fetch(
-      `https://wl-api.mf.gov.pl/api/search/nip/${nip}?date=${data}`,
+      `https://wykazpodatnikowvat.mf.gov.pl/api/search/nip/${nip}?date=${data}`,
       {
         headers: { Accept: "application/json" },
         signal: AbortSignal.timeout(8000),
