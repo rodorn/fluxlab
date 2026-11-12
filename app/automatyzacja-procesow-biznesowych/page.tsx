@@ -59,7 +59,8 @@ const faqs = [
   {
     question: "Ile to kosztuje?",
     answer:
-      "Pierwszy krok, czyli jeden etap procesu: 900, 1 200 albo 1 500 zł netto, gotowe w 5 dni. Diagnoza przed wyceną: 0 zł.",
+      "Pierwszy krok automatyzacji, czyli jeden etap procesu z diagnozą przed wyceną: 900, 1 200 albo 1 500 zł netto, gotowe w 5 dni. Diagnoza: 0 zł. Pojedynczy przepływ n8n bez diagnozy procesu to osobna usługa: od 790 zł netto.",
+    link: { href: "/wdrozenie-n8n-cena", label: "Cennik przepływów n8n" },
   },
 ];
 
@@ -170,6 +171,14 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                             </summary>
                             <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-400">
                               {faq.answer}
+                              {faq.link && (
+                                <>
+                                  {" "}
+                                  <Link href={faq.link.href} className="text-accent hover:underline">
+                                    {faq.link.label}
+                                  </Link>
+                                </>
+                              )}
                             </div>
                           </details>
                         ))}
