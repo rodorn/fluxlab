@@ -25,6 +25,7 @@ const OPISY: Record<string, { dla: string; opis: string }> = {
   "checklista-koniec-roku-jdg.pdf": { dla: "JDG", opis: "Co zamknąć przed 31 grudnia, żeby nie przepłacić." },
   "poradnik-seo-mala-firma.pdf": { dla: "Małe firmy", opis: "Jak mała firma może pojawić się wyżej w Google." },
   "arkusz-automatyzacja-czy-etat.pdf": { dla: "Małe firmy", opis: "Ile kosztuje powtarzalna praca, ile automat i po ilu miesiącach się zwraca." },
+  "schemat-integracji-crm-erp.pdf": { dla: "Firmy", opis: "Co płynie między CRM a ERP, który system rozstrzyga spór i 10 pytań do wyceny integracji." },
 };
 
 type Material = { plik: string; tytul: string; stron: number | null; kb: number };
