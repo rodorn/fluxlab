@@ -123,6 +123,14 @@ export default function KsefIntegracja() {
           ],
         },
       ]}
+      poCenniku={
+        <>
+          Wersja w abonamencie:{" "}
+          <a href="https://ksef.fluxlab.pl/cennik" className="font-semibold text-accent underline">
+            cennik FluxKSeF
+          </a>
+        </>
+      }
       faq={[
         {
           q: "Od kiedy KSeF jest obowiązkowy?",

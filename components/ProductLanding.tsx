@@ -59,6 +59,8 @@ export interface ProductLandingProps {
   formId: string;
   /** Dodatkowy blok pod formularzem, na przykład płatny wariant narzędzia. */
   poFormularzu?: ReactNode;
+  /** Linijka pod kartami cennika, na przykład odnośnik do pełnego cennika produktu. */
+  poCenniku?: ReactNode;
   formHeading: string;
   formIntro: string;
   submitLabel: string;
@@ -293,6 +295,11 @@ export default function ProductLanding(p: ProductLandingProps) {
                 </div>
               ))}
             </div>
+            {p.poCenniku && (
+              <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+                {p.poCenniku}
+              </p>
+            )}
           </div>
 
           {!narzedzieNajpierw && narzedzie}
