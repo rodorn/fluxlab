@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalkulator PV z magazynem energii (demo)</title>
+    <link rel="stylesheet" href="./calc-core.css" />
+    <style>
+      body {
+        margin: 0;
+        background: #f6f6f6;
+        padding: 16px;
+      }
+      .fx-marka {
+        font-size: 17px;
+        letter-spacing: 0.01em;
+      }
+      .fx-wyroznij {
+        background: color-mix(in srgb, var(--fx-akcent) 14%, transparent);
+        border-left: 3px solid var(--fx-akcent);
+      }
+      .fx-wyroznij .fx-wynik-wartosc {
+        color: var(--fx-kolor);
+      }
+      .fx-podsumowanie .fx-wynik-wiersz {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .fx-podsumowanie .fx-wynik-wartosc {
+        text-align: left;
+        font-size: 17px;
+      }
+      .fx-btn-akcent {
+        color: #003049;
+      }
+      .fx-ok {
+        color: #166534;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="./pv-logic.js"></script>
+    <script src="./calc-core.js"></script>
+    <script>
+      var INWERTERY = {
+        1: "Deye SUN-5K-SG01LP1-EU (5 kW, jednofazowy)",
+        2: "Deye SUN-10K-SG04LP3-EU (10 kW, trójfazowy)",
+      };
+      var MAGAZYNY = {
+        1: {
+          nazwa: "Meri Energy ME-LVB 6.5",
+          kwh: 6.5,
+          pole: "liczbaMeri",
+          domyslnie: 2,
+        },
+        2: {
+          nazwa: "ION Breeze 48V 50Ah",
+          kwh: 2.4,
+          pole: "liczbaBreeze",
+          domyslnie: 4,
+        },
+      };
+
+      function magazynZWejscia(v) {
+        var m = MAGAZYNY[v.magazynModel];
+        if (!m) return null;
+        var sztuk = Math.max(1, Math.round(Number(v[m.pole]) || m.domyslnie));
+        return {
+          nazwa: m.nazwa,
+          sztuk: sztuk,
+          kwh: Math.round(sztuk * m.kwh * 10) / 10,
+        };
+      }
+
+      function fmtKWh(x) {
+        return FluxCalc.fmtNum(x, "kWh");
+      }
+
+      // ===== KONFIGURACJA FIRMY =====
+      // Ceny to przykładowe założenia: firma ustawia własny cennik sprzętu i montażu.
+      var KONFIG = {
+        brand: {
+          nazwa: "NU-NRG Energia Przyszłości",
+          logo: "",
+          kolor: "#003049",
+          kolorAkcent: "#f77f00",
+          stopka:
+            'Ceny sprzętu to przykładowe założenia do ustawienia przez firmę. Silnik: <a href="https://fluxlab.pl" target="_blank" rel="noopener">FluxLab</a>',
+        },
+        lead: {
+          tryb: "demo",
+          endpoint: "",
+          slug: "",
+          token: "",
+          stronaZrodlowa: "https://fluxlab.pl/demo/nu-nrg",
+          tekst:
+            "Zostaw kontakt, a odezwiemy się z pełnym wyliczeniem i doborem sprzętu. Pełny wynik pokażemy od razu.",
+          cta: "Wyślij zapytanie",
+          uslugiEtykieta: "Czego dotyczy zapytanie?",
+          uslugi: [
+            { id: "projekt", etykieta: "Projekt instalacji PV" },
+            { id: "audyt", etykieta: "Audyt i pomiary PV" },
+            { id: "magazyn", etykieta: "Magazyn energii" },
+            { id: "smarthome", etykieta: "Smart home" },
+          ],
+          kontakt: true,
+          zgoda:
+            "Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na to zapytanie.",
+          komunikatOk:
+            "Dziękujemy, zapytanie dotarło. Odezwiemy się z pełnym wyliczeniem.",
+          zaznaczUslugi: function (v) {
+            var z = ["projekt"];
+            if (Number(v.magazynModel) > 0) z.push("magazyn");
+            return z;
+          },
+          wiadomosc: function (d) {
+            var v = d.wejscie || {};
+            var mag = magazynZWejscia(v);
+            var linie = [
+              "Zapytanie z kalkulatora PV z magazynem energii",
+              "Usługi: " +
+                (d.uslugi.length ? d.uslugi.join(", ") : "nie wybrano"),
+              "Roczne zużycie: " +
+                fmtKWh(v.zuzycieRoczne) +
+                ", moc PV: " +
+                FluxCalc.fmtNum(v.mocPV, "kWp"),
+              "Inwerter: " + (INWERTERY[v.inwerter] || "-"),
+              "Preferowany magazyn: " +
+                (mag
+                  ? mag.nazwa + " x " + mag.sztuk + " (" + fmtKWh(mag.kwh) + ")"
+                  : "bez magazynu"),
+              "Pompa ciepła: " +
+                fmtKWh(v.dodatkoweZuzyciePompa) +
+                ", auto elektryczne: " +
+                fmtKWh(v.dodatkoweZuzycieEV),
+              "",
+              "Wynik:",
+            ];
+            (d.wynik || []).forEach(function (w) {
+              if (w.naglowek) return linie.push("", w.etykieta);
+              if (w.tekst !== undefined)
+                return linie.push("- " + w.etykieta + ": " + w.tekst);
+              linie.push(
+                "- " +
+                  w.etykieta +
+                  ": " +
+                  (w.pln
+                    ? FluxCalc.fmtPLN(w.wartosc)
+                    : FluxCalc.fmtNum(w.wartosc, w.jednostka)),
+              );
+            });
+            return linie.join("\n").slice(0, 4900);
+          },
+        },
+        params: {
+          cenaEnergii: 0.62,
+          oplataDystrybucyjnaZmienna: 0.38,
+          akcyza: 0.005,
+          vat: 0.23,
+          autokonsumpcja: 0.3,
+          wspInstalacji: 1000,
+          cenaZaKwp: 4200, // zł brutto za 1 kWp z inwerterem i montażem (założenie)
+          depozytStawka: 0.5,
+          cenaZaKWhMagazynu: 2500, // zł brutto za 1 kWh pojemności (założenie)
+          cykleMagazynuRocznie: 250,
+          sprawnoscMagazynu: 0.9,
+        },
+      };
+      // ===========================================================
+
+      FluxCalc.init({
+        mount: "#app",
+        brand: KONFIG.brand,
+        lead: KONFIG.lead,
+        tytul: "Kalkulator fotowoltaiki z magazynem energii",
+        opis: "Wybierz inwerter i magazyn energii, wpisz zużycie prądu i sprawdź oszczędność oraz okres zwrotu.",
+        ctaOblicz: "Policz oszczędności",
+        pola: [
+          {
+            id: "zuzycieRoczne",
+            etykieta: "Roczne zużycie prądu z sieci",
+            typ: "number",
+            wartosc: 6000,
+            min: 0,
+            krok: 100,
+            jednostka: "kWh",
+            pomoc: "Z rocznego rachunku za prąd.",
+          },
+          {
+            id: "mocPV",
+            etykieta: "Planowana moc instalacji",
+            typ: "number",
+            wartosc: 5,
+            min: 0,
+            krok: 0.5,
+            jednostka: "kWp",
+          },
+          {
+            id: "inwerter",
+            etykieta: "Inwerter hybrydowy",
+            typ: "select",
+            wartosc: 1,
+            opcje: [
+              { wartosc: 1, etykieta: INWERTERY[1] },
+              { wartosc: 2, etykieta: INWERTERY[2] },
+            ],
+            pomoc: "Ostateczny dobór potwierdza projektant po audycie.",
+          },
+          {
+            id: "magazynModel",
+            etykieta: "Preferowany magazyn energii",
+            typ: "select",
+            wartosc: 1,
+            opcje: [
+              { wartosc: 0, etykieta: "Bez magazynu" },
+              { wartosc: 1, etykieta: "Meri Energy ME-LVB 6.5" },
+              { wartosc: 2, etykieta: "ION Breeze 48V 50Ah" },
+            ],
+          },
+          {
+            id: "liczbaMeri",
+            etykieta: "Liczba modułów ME-LVB 6.5",
+            typ: "number",
+            wartosc: 2,
+            min: 1,
+            max: 16,
+            krok: 1,
+            jednostka: "szt.",
+            widoczneGdy: { id: "magazynModel", wartosc: 1 },
+            pomoc: "6,5 kWh na moduł, do 16 modułów (104 kWh).",
+          },
+          {
+            id: "liczbaBreeze",
+            etykieta: "Liczba modułów ION Breeze 48V 50Ah",
+            typ: "number",
+            wartosc: 4,
+            min: 1,
+            max: 16,
+            krok: 1,
+            jednostka: "szt.",
+            widoczneGdy: { id: "magazynModel", wartosc: 2 },
+            pomoc: "48 V x 50 Ah, czyli 2,4 kWh na moduł.",
+          },
+          {
+            id: "dodatkoweZuzyciePompa",
+            etykieta: "Dodatkowe zużycie: pompa ciepła",
+            typ: "number",
+            wartosc: 0,
+            min: 0,
+            krok: 100,
+            jednostka: "kWh",
+            pomoc: "Szacunkowe roczne zużycie pompy. 0, jeśli brak.",
+          },
+          {
+            id: "dodatkoweZuzycieEV",
+            etykieta: "Dodatkowe zużycie: auto elektryczne",
+            typ: "number",
+            wartosc: 0,
+            min: 0,
+            krok: 100,
+            jednostka: "kWh",
+            pomoc: "Ok. 15-20 kWh na 100 km. 0, jeśli brak.",
+          },
+        ],
+        oblicz: function (values) {
+          function licz(magazynModel) {
+            var mag = magazynZWejscia(
+              Object.assign({}, values, { magazynModel: magazynModel }),
+            );
+            var w = PVLogic.oblicz(
+              {
+                zuzycieRoczne: values.zuzycieRoczne,
+                mocPV: values.mocPV,
+                dodatkoweZuzyciePompa: values.dodatkoweZuzyciePompa,
+                dodatkoweZuzycieEV: values.dodatkoweZuzycieEV,
+                magazyn: mag ? 1 : 0,
+                magazynPojemnosc: mag ? mag.kwh : 0,
+              },
+              KONFIG.params,
+            );
+            return { mag: mag, w: w, m: w.magazyn };
+          }
+          var wybrany = Number(values.magazynModel) || 0;
+          var warianty = [
+            { nr: 0, nazwa: "Wariant 1: sama instalacja PV" },
+            {
+              nr: 1,
+              nazwa: "Wariant 2: PV + Meri Energy ME-LVB 6.5",
+            },
+            { nr: 2, nazwa: "Wariant 3: PV + ION Breeze 48V 50Ah" },
+          ].map(function (v) {
+            var r = licz(v.nr);
+            var x = r.m || r.w;
+            return {
+              nr: v.nr,
+              nazwa: r.mag
+                ? v.nazwa + " x " + r.mag.sztuk + " (" + fmtKWh(r.mag.kwh) + ")"
+                : v.nazwa,
+              oszczednosc: r.m ? r.m.oszczednoscRoczna : r.w.oszczednoscRoczna,
+              koszt: x.kosztInstalacji,
+              zwrot: x.okresZwrotuLat,
+              energiaMag: r.m ? r.m.energiaZMagazynuKWh : 0,
+              w: r.w,
+            };
+          });
+          var baza = warianty[0].w;
+          var pelne = [
+            { etykieta: "Inwerter", tekst: INWERTERY[values.inwerter] || "-" },
+            {
+              etykieta: "Cena 1 kWh z sieci (brutto)",
+              wartosc: baza.cenaBruttoKWh,
+              pln: true,
+            },
+            {
+              etykieta: "Całkowite roczne zużycie",
+              wartosc: baza.zuzycieCalkowite,
+              jednostka: "kWh",
+            },
+            {
+              etykieta: "Roczna produkcja PV",
+              wartosc: baza.produkcjaPV,
+              jednostka: "kWh",
+            },
+            {
+              etykieta: "Koszt prądu bez PV (rok)",
+              wartosc: baza.kosztBezPV,
+              pln: true,
+            },
+          ];
+          warianty.forEach(function (v) {
+            pelne.push({ etykieta: v.nazwa, tekst: "", naglowek: true });
+            pelne.push({
+              etykieta: "Oszczędność roczna",
+              wartosc: v.oszczednosc,
+              pln: true,
+              wyroznij: v.nr === wybrany,
+            });
+            pelne.push({
+              etykieta: "Koszt instalacji",
+              wartosc: v.koszt,
+              pln: true,
+            });
+            pelne.push({
+              etykieta: "Okres zwrotu",
+              wartosc: v.zwrot,
+              jednostka: "lat",
+            });
+            if (v.nr)
+              pelne.push({
+                etykieta: "Energia z magazynu w roku",
+                wartosc: v.energiaMag,
+                jednostka: "kWh",
+              });
+          });
+          return {
+            podsumowanie: warianty.map(function (v) {
+              return {
+                etykieta: v.nazwa,
+                tekst:
+                  FluxCalc.fmtPLN(v.oszczednosc) +
+                  " rocznie, zwrot " +
+                  FluxCalc.fmtNum(v.zwrot, "lat"),
+                wyroznij: v.nr === wybrany,
+              };
+            }),
+            pelne: pelne,
+          };
+        },
+      });
+    </script>
+  </body>
+</html>
