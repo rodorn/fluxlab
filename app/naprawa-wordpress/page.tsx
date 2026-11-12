@@ -96,12 +96,8 @@ export default function Page() {
       ]}
       faq={[
         {
-          q: "Co zrobić, gdy w witrynie wystąpił błąd krytyczny?",
-          a: "Sprawdź skrzynkę administratora strony. WordPress wysyła tam maila z opisem błędu i linkiem do trybu odzyskiwania, w którym możesz wyłączyć winną wtyczkę albo motyw. Gdy maila nie ma, przyczynę wskaże log błędów na hostingu.",
-        },
-        {
-          q: "Skąd się bierze biały ekran w WordPressie?",
-          a: "Z tego samego, co komunikat o błędzie krytycznym: kod PHP zatrzymał stronę, a serwer nie wyświetla treści błędu. Najczęściej winna jest świeżo zaktualizowana wtyczka, motyw albo zmiana wersji PHP na hostingu.",
+          q: "Co zrobić, gdy w witrynie wystąpił błąd krytyczny albo biały ekran?",
+          a: "Oba objawy mają tę samą przyczynę: kod PHP zatrzymał stronę, najczęściej po aktualizacji wtyczki, motywu albo zmianie wersji PHP na hostingu. Sprawdź skrzynkę administratora strony. WordPress wysyła tam maila z opisem błędu i linkiem do trybu odzyskiwania, w którym możesz wyłączyć winną wtyczkę albo motyw. Gdy maila nie ma, przyczynę wskaże log błędów na hostingu.",
         },
         {
           q: "Ile kosztuje naprawa WordPressa?",

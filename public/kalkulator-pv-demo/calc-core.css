@@ -183,3 +183,10 @@
 .fx-pole[hidden] {
   display: none;
 }
+@media (max-width: 480px) {
+  .fx-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
