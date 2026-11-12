@@ -291,6 +291,11 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        source: "/wideo/strona-ktora-sprzedaje",
+        destination: "/strefa-wiedzy/strona-ktora-sprzedaje",
+        statusCode: 301,
+      },
+      {
         source: "/wideo",
         destination: "/strefa-wiedzy/kategoria/wideo",
         statusCode: 301,

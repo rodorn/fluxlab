@@ -605,6 +605,13 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/strona-ktora-sprzedaje",
+        title: "Strona, która sprzedaje: 8 rzeczy przed zleceniem",
+        description:
+          "Zlecasz stronę firmową? Sprawdź przed umową cel, treści, formularz, wygodę na telefonie, szybkość, własność domeny, wymagane informacje i warunki umowy.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/crm-dla-firmy-fotowoltaicznej-zeszyt-arkusz-czy-crm",
         title: "CRM dla firmy OZE: zeszyt, arkusz, CRM",
         description:
