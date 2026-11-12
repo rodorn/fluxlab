@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
@@ -22,6 +23,7 @@ export type ArtykulWideoDane = {
     akapity: string[];
     lista?: string[];
     tabela?: { naglowki: string[]; wiersze: string[][] };
+    linki?: { tekst: string; href: string }[];
   }[];
   faq: { q: string; a: string }[];
   cta: { naglowek: string; opis: string; etykieta: string; href: string };
@@ -143,6 +145,17 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
                     <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-600 dark:text-gray-400">
                       {s.lista.map((p) => (
                         <li key={p}>{p}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {s.linki && (
+                    <ul className="mt-4 space-y-2">
+                      {s.linki.map((l) => (
+                        <li key={l.href}>
+                          <Link href={l.href} className="font-semibold text-accent hover:underline">
+                            {l.tekst}
+                          </Link>
+                        </li>
                       ))}
                     </ul>
                   )}

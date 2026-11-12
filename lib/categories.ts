@@ -162,6 +162,13 @@ export const categories: Category[] = [
         description:
           "Kiedy API ma sens, jakie problemy rozwiązuje i kiedy lepiej nie komplikować.",
       },
+      {
+        href: "/strefa-wiedzy/biala-lista-vat-nowe-api",
+        title: "Biała lista VAT: nowy adres API do 1 grudnia 2026",
+        description:
+          "API wykazu podatników VAT działa pod adresem wykazpodatnikowvat.mf.gov.pl/api. Stary wl-api.mf.gov.pl działa do 1.12.2026. Co zmienić w ERP, CRM i automatyzacjach.",
+        bezOkladki: true,
+      },
     ],
   },
   {

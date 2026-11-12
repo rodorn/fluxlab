@@ -269,3 +269,6 @@ Techs
 iframe
 kwp
 Twilio
+Swagger
+wykazpodatnikowvat
+date

@@ -563,6 +563,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze."
   },
   {
+    "url": "/strefa-wiedzy/biala-lista-vat-nowe-api",
+    "tytul": "Biała lista VAT: nowy adres API do 1 grudnia 2026",
+    "opis": "API wykazu podatników VAT działa pod adresem wykazpodatnikowvat.mf.gov.pl/api. Stary wl-api.mf.gov.pl działa do 1.12.2026. Co zmienić w ERP, CRM i automatyzacjach."
+  },
+  {
     "url": "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",
     "tytul": "Jak liczyć składkę zdrowotną w JDG w 2026",
     "opis": "Zasady obliczania składki zdrowotnej w JDG w 2026. Różnice między skalą, liniowym i ryczałtem, progi, podstawy wymiaru i wpływ na opłacalność."

@@ -1,0 +1,145 @@
+{
+  "slug": "biala-lista-vat-nowe-api",
+  "tytulStrony": "Biała lista VAT: nowy adres API do 1 grudnia 2026",
+  "h1": "Biała lista VAT ma nowy adres API. Co zmienić w systemach firmy do 1 grudnia 2026",
+  "tytulKrotki": "Biała lista VAT: nowy adres API",
+  "opis": "API wykazu podatników VAT działa pod adresem wykazpodatnikowvat.mf.gov.pl/api. Stary wl-api.mf.gov.pl działa do 1.12.2026. Co zmienić w ERP, CRM i automatyzacjach.",
+  "lead": "Ministerstwo Finansów przeniosło API białej listy VAT pod nowy adres. Stary adres działa jeszcze do 1 grudnia 2026. Jeśli program księgowy, CRM, skrypt albo scenariusz w Zapier sprawdza kontrahentów automatycznie, ten adres trzeba zmienić przed tą datą. Poniżej znajdziesz, co dokładnie się zmieniło, gdzie szukać starego adresu i jak sprawdzić, że po zmianie wszystko działa.",
+  "opublikowano": "2026-11-12T08:33:00+01:00",
+  "kategoria": {
+    "nazwa": "Integracje",
+    "slug": "integracje"
+  },
+  "sekcje": [
+    {
+      "h2": "Co zmieniło się 15 października 2026",
+      "akapity": [
+        "15 października 2026 usługa API pod adresem wl-api.mf.gov.pl została przeniesiona do nowej witryny wykazpodatnikowvat.mf.gov.pl/api. Razem z adresem zmienił się certyfikat bezpieczeństwa witryny.",
+        "Stary adres będzie obsługiwany do 1 grudnia 2026. Krajowa Administracja Skarbowa prosi, żeby do tego dnia zaktualizować zakładki i zapisane odnośniki. Źródło: komunikat „API Wykazu podatników VAT” na gov.pl/web/kas/api-wykazu-podatnikow-vat.",
+        "Zmienia się tylko adres serwera. Metody i ścieżki zapytań są takie same, więc w większości systemów wystarczy podmienić początek adresu."
+      ]
+    },
+    {
+      "h2": "Stare i nowe adresy API białej listy",
+      "akapity": [
+        "Nowe adresy obowiązują od 15 października 2026. Obok API do sprawdzania podmiotu i rachunku jest też API WL2, które zwraca sam status VAT podatnika na wskazany dzień."
+      ],
+      "tabela": {
+        "naglowki": [
+          "Usługa",
+          "Stary adres, działa do 1.12.2026",
+          "Nowy adres"
+        ],
+        "wiersze": [
+          [
+            "API produkcyjne",
+            "https://wl-api.mf.gov.pl",
+            "https://wykazpodatnikowvat.mf.gov.pl/api/"
+          ],
+          [
+            "API testowe",
+            "https://wl-test.mf.gov.pl/",
+            "https://wykazpodatnikowvat-test.mf.gov.pl/api/"
+          ],
+          [
+            "API WL2 produkcyjne",
+            "brak w komunikacie",
+            "https://wykazpodatnikowvat.mf.gov.pl/api2"
+          ],
+          [
+            "API WL2 testowe",
+            "brak w komunikacie",
+            "https://wykazpodatnikowvat-test.mf.gov.pl/api2"
+          ]
+        ]
+      }
+    },
+    {
+      "h2": "Gdzie w firmie szukać starego adresu",
+      "akapity": [
+        "Biała lista jest sprawdzana automatycznie w wielu miejscach, o których księgowość nie zawsze wie. Przejdź po kolei tę listę:"
+      ],
+      "lista": [
+        "Program księgowy i ERP: zapytaj dostawcę, czy wersja, której używasz, łączy się już z nowym adresem, i zainstaluj aktualizację.",
+        "CRM i system sprzedaży: sprawdzanie NIP przy zakładaniu kontrahenta albo przed wystawieniem oferty.",
+        "Własne skrypty i aplikacje: wyszukaj w kodzie i plikach konfiguracyjnych ciąg „wl-api.mf.gov.pl”.",
+        "Zapier, Make i n8n: moduły HTTP albo webhooki, w których adres API wpisano ręcznie.",
+        "Zapora i listy dozwolonych adresów: serwer, który wychodzi do internetu tylko na wybrane adresy, musi mieć dopisany host wykazpodatnikowvat.mf.gov.pl.",
+        "Certyfikat: jeśli system ma na sztywno wpisany certyfikat starej witryny, po zmianie połączenie zostanie odrzucone. Trzeba go zaktualizować albo zdjąć tę blokadę.",
+        "Zakładki i instrukcje w księgowości: zapisane linki do API i opisy procedur z adresem wl-api.mf.gov.pl."
+      ]
+    },
+    {
+      "h2": "Jak sprawdzić, że po zmianie wszystko działa",
+      "akapity": [
+        "Wyślij jedno zapytanie na nowy adres, na przykład o znany NIP kontrahenta na dzisiejszy dzień: /search/nip/NIP?date=RRRR-MM-DD. Odpowiedź powinna mieć ten sam układ co ze starego adresu: nazwę, status VAT i listę rachunków.",
+        "Zmianę najpierw sprawdź na środowisku testowym wykazpodatnikowvat-test.mf.gov.pl/api/, a dopiero potem przełącz system produkcyjny. Do testów służą dane testowe, które ministerstwo publikuje razem z dokumentacją.",
+        "Na fluxlab.pl zmieniliśmy adres w trzech narzędziach 12 listopada 2026. Zapytanie o ten sam NIP z obu adresów zwróciło taką samą odpowiedź."
+      ],
+      "linki": [
+        {
+          "tekst": "Sprawdź NIP w wykazie podatników VAT za darmo",
+          "href": "/sprawdzenie-nip"
+        }
+      ]
+    },
+    {
+      "h2": "Limity zapytań i plik płaski",
+      "akapity": [
+        "Limity podane w komunikacie KAS: metodą „search” złożysz 100 zapytań dziennie, w każdym o najwyżej 30 podmiotów. Metodą „check” sprawdzisz 5 000 podmiotów, a API WL2 przyjmie 50 000 zapytań na dzień. Po wyczerpaniu limitu dostęp może zostać zablokowany do północy, także w wyszukiwarce na stronie wykazu.",
+        "Firma, która sprawdza bardzo wielu kontrahentów, może zamiast API pobierać plik płaski. Ministerstwo publikuje go codziennie o północy na wykazpodatnikowvat.mf.gov.pl/plik-plaski. Zawiera zaszyfrowane pary NIP i numer rachunku, które sprawdzisz u siebie bez wysyłania zapytań."
+      ]
+    },
+    {
+      "h2": "Dokumentacja API w wersji 1.6.2",
+      "akapity": [
+        "Aktualna dokumentacja ma wersję 1.6.2 z 5 listopada 2026: opis API w PDF, plik Swagger (YAML), lista kodów błędów i dane testowe. Wcześniejsza wersja 1.6.1 jest z 12 października 2026. Wszystkie pliki są do pobrania w komunikacie KAS na gov.pl.",
+        "Jeśli Twój system korzysta z pliku Swagger do generowania klienta API, pobierz nową wersję i sprawdź w niej adres serwera."
+      ]
+    },
+    {
+      "h2": "Plan na kolejne dni przed 1 grudnia",
+      "akapity": [
+        "Najpierw spisz miejsca, w których firma odpytuje białą listę. Potem zmień adres, zacznij od środowiska testowego, i dopisz nowy host do zapory. Na koniec wyślij zapytanie testowe z każdego systemu. Zostaw sobie zapas przed 1 grudnia, bo poprawka w programie od dostawcy może przyjść z opóźnieniem."
+      ],
+      "linki": [
+        {
+          "tekst": "Sprawdź kontrahenta przed przelewem: konto, status VAT i KRS",
+          "href": "/sprawdz-kontrahenta"
+        },
+        {
+          "tekst": "Integracje API i łączenie systemów w firmie",
+          "href": "/integracje-api"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Jaki jest nowy adres API białej listy VAT?",
+      "a": "https://wykazpodatnikowvat.mf.gov.pl/api/ dla API produkcyjnego i https://wykazpodatnikowvat-test.mf.gov.pl/api/ dla testowego. API WL2 działa pod adresem https://wykazpodatnikowvat.mf.gov.pl/api2."
+    },
+    {
+      "q": "Do kiedy działa stary adres wl-api.mf.gov.pl?",
+      "a": "Według komunikatu Krajowej Administracji Skarbowej stary adres będzie obsługiwany do 1 grudnia 2026. Usługa działa pod nowym adresem od 15 października 2026."
+    },
+    {
+      "q": "Czy zmieniają się ścieżki i format odpowiedzi API?",
+      "a": "Zmienia się adres serwera i certyfikat witryny. Ścieżki zapytań, na przykład /search/nip/NIP?date=RRRR-MM-DD, zostają takie same, więc zwykle wystarczy podmienić początek adresu."
+    },
+    {
+      "q": "Ile zapytań dziennie przyjmuje API białej listy?",
+      "a": "Metodą „search” 100 zapytań dziennie o najwyżej 30 podmiotów w każdym, metodą „check” 5 000 podmiotów, a API WL2 50 000 zapytań na dzień. Po wyczerpaniu limitu dostęp może być zablokowany do północy."
+    },
+    {
+      "q": "Co zrobić, jeśli program księgowy sam sprawdza białą listę?",
+      "a": "Zapytaj dostawcę programu, czy Twoja wersja łączy się już z nowym adresem, i zainstaluj aktualizację przed 1 grudnia 2026. Jeśli firma ogranicza połączenia wychodzące, dopisz host wykazpodatnikowvat.mf.gov.pl do listy dozwolonych adresów."
+    }
+  ],
+  "cta": {
+    "naglowek": "Sprawdzanie białej listy działa u Ciebie w kilku systemach?",
+    "opis": "Opisz, gdzie firma sprawdza kontrahentów: program księgowy, CRM, skrypty albo Zapier. Po bezpłatnej diagnozie odpiszemy, co trzeba zmienić i ile to kosztuje.",
+    "etykieta": "Zamów bezpłatną diagnozę",
+    "href": "/integracje-api?utm_source=fluxlab&utm_medium=artykul&utm_content=biala-lista-vat-nowe-api#diagnoza"
+  }
+}
