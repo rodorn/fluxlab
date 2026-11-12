@@ -24,6 +24,7 @@ const OPISY: Record<string, { dla: string; opis: string }> = {
   "checklista-forma-opodatkowania-2027.pdf": { dla: "JDG", opis: "Pytania do przejścia przed wyborem formy opodatkowania." },
   "checklista-koniec-roku-jdg.pdf": { dla: "JDG", opis: "Co zamknąć przed 31 grudnia, żeby nie przepłacić." },
   "poradnik-seo-mala-firma.pdf": { dla: "Małe firmy", opis: "Jak mała firma może pojawić się wyżej w Google." },
+  "arkusz-automatyzacja-czy-etat.pdf": { dla: "Małe firmy", opis: "Ile kosztuje powtarzalna praca, ile automat i po ilu miesiącach się zwraca." },
 };
 
 type Material = { plik: string; tytul: string; stron: number | null; kb: number };
