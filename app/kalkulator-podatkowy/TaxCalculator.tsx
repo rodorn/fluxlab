@@ -49,7 +49,10 @@ const RYCZALT_HEALTH_SALARY = 9_228.64;
 const RYCZALT_HEALTH_BRACKETS: { limit: number; base: number }[] = [
   { limit: 60_000, base: Math.round(RYCZALT_HEALTH_SALARY * 0.6 * 100) / 100 },
   { limit: 300_000, base: RYCZALT_HEALTH_SALARY },
-  { limit: Infinity, base: Math.round(RYCZALT_HEALTH_SALARY * 1.8 * 100) / 100 },
+  {
+    limit: Infinity,
+    base: Math.round(RYCZALT_HEALTH_SALARY * 1.8 * 100) / 100,
+  },
 ];
 
 // Limit odliczenia składki zdrowotnej – liniowy
@@ -434,7 +437,10 @@ function calculate(p: {
     const srcHealthDed = Math.round(ryczHealthDed * proportion);
     const srcIkzeDed = Math.round(ikze * proportion);
     const srcTaxableNoIkze = Math.max(0, srcAnn - srcZusDed - srcHealthDed);
-    const srcTaxable = Math.max(0, srcAnn - srcZusDed - srcHealthDed - srcIkzeDed);
+    const srcTaxable = Math.max(
+      0,
+      srcAnn - srcZusDed - srcHealthDed - srcIkzeDed,
+    );
     ryczTaxBase += srcTaxable;
 
     if (src.isNajem) {
@@ -484,7 +490,8 @@ function calculate(p: {
       ikzeContribution: ikze,
       ikzeTaxSavings: ikzeSav,
       privateSavings: privSav,
-      effectiveRate: annRev - annBizCosts > 0 ? burden / (annRev - annBizCosts) : 0,
+      effectiveRate:
+        annRev - annBizCosts > 0 ? burden / (annRev - annBizCosts) : 0,
       // ── Debug ──
       dbgAnnBizCosts: annBizCosts,
       dbgAnnPrivCosts: annPrivCosts,
@@ -645,9 +652,13 @@ function NumberInput({
         </span>
       </div>
       {showBrutto && brutto && vatPct && vatPct > 0 && value > 0 && (
-        <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">Netto: {pln(nettoVal)}</p>
+        <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+          Netto: {pln(nettoVal)}
+        </p>
       )}
-      {hint && <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">{hint}</p>}
+      {hint && (
+        <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">{hint}</p>
+      )}
     </div>
   );
 }
@@ -856,7 +867,9 @@ function DonutChart({
             <span className="text-[10px] font-bold text-gray-900 dark:text-white tabular-nums">
               {pln(Math.round(active.value / d))}
             </span>
-            <span className="text-[8px] text-gray-600 dark:text-gray-400">{sfx}</span>
+            <span className="text-[8px] text-gray-600 dark:text-gray-400">
+              {sfx}
+            </span>
           </div>
         )}
       </div>
@@ -1151,7 +1164,9 @@ function ResultCard({
           >
             {pln(Math.round(r.disposable / d))}
           </span>
-          <span className="text-sm text-gray-600 dark:text-gray-400">{sfx}</span>
+          <span className="text-sm text-gray-600 dark:text-gray-400">
+            {sfx}
+          </span>
         </div>
         <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
           Efektywna stawka (bez VAT): {pct(result.effectiveRate)}
@@ -1196,7 +1211,9 @@ function ResultCard({
             >
               {r.negative ? "−\u00A0" : ""}
               {pln(Math.abs(Math.round(r.value / d)))}
-              <span className="text-gray-600 dark:text-gray-400 text-xs ml-1">{sfx}</span>
+              <span className="text-gray-600 dark:text-gray-400 text-xs ml-1">
+                {sfx}
+              </span>
             </span>
             {r.tip && (
               <div className="absolute left-0 right-0 bottom-full mb-2 hidden group-hover/row:block z-20 pointer-events-none">
@@ -1801,10 +1818,19 @@ export default function TaxCalculator() {
                     className="mt-3 flex items-center justify-between gap-3 rounded-xl bg-accent/10 px-4 py-3 text-sm"
                   >
                     <span className="text-gray-700 dark:text-gray-300">
-                      Najkorzystniej: <strong className="text-gray-900 dark:text-white">{best.label}</strong>,{" "}
-                      <span className="tabular-nums">{pln(Math.round(best.disposable / 12))}</span>/mies. do dyspozycji
+                      Najkorzystniej:{" "}
+                      <strong className="text-gray-900 dark:text-white">
+                        {best.label}
+                      </strong>
+                      ,{" "}
+                      <span className="tabular-nums">
+                        {pln(Math.round(best.disposable / 12))}
+                      </span>
+                      /mies. do dyspozycji
                     </span>
-                    <span className="shrink-0 font-semibold text-accent">Porównanie ↓</span>
+                    <span className="shrink-0 font-semibold text-accent">
+                      Porównanie ↓
+                    </span>
                   </a>
                 </div>
               </div>
@@ -1878,7 +1904,9 @@ export default function TaxCalculator() {
                         </button>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">{hint}</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+                      {hint}
+                    </p>
                     <div className="space-y-2">
                       {items.map((c) => {
                         const cNetto = n(c.amount, c.brutto, c.vatRate);
@@ -2237,23 +2265,33 @@ export default function TaxCalculator() {
                   </h3>
                 </div>
                 <div className="p-4 bg-gray-50 dark:bg-gray-800/50 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-                  <span className="text-gray-600 dark:text-gray-400">Społeczne:</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Społeczne:
+                  </span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(zusM))}/mies.
                   </span>
-                  <span className="text-gray-600 dark:text-gray-400">Fundusz Pracy:</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Fundusz Pracy:
+                  </span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(fpM))}/mies.
                   </span>
-                  <span className="text-gray-600 dark:text-gray-400">Zdrowotna (skala):</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Zdrowotna (skala):
+                  </span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(results.skala.healthInsurance / 12))}/mies.
                   </span>
-                  <span className="text-gray-600 dark:text-gray-400">Zdrowotna (liniowy):</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Zdrowotna (liniowy):
+                  </span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(results.linear.healthInsurance / 12))}/mies.
                   </span>
-                  <span className="text-gray-600 dark:text-gray-400">Zdrowotna (ryczałt):</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Zdrowotna (ryczałt):
+                  </span>
                   <span className="tabular-nums font-medium text-right">
                     {pln(Math.round(results.ryczalt.healthInsurance / 12))}
                     /mies.
@@ -2275,7 +2313,9 @@ export default function TaxCalculator() {
                     Samochód – odliczenia
                   </h3>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                    <span className="text-gray-600 dark:text-gray-400">Koszt faktyczny:</span>
+                    <span className="text-gray-600 dark:text-gray-400">
+                      Koszt faktyczny:
+                    </span>
                     <span className="tabular-nums text-right">
                       {pln(carCosts)}/mies.
                     </span>
@@ -2354,7 +2394,10 @@ export default function TaxCalculator() {
           </div>
 
           {/* ── COMPARISON BAR ── */}
-          <div id="porownanie-form" className="scroll-mt-24 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 bg-white dark:bg-gray-900/50">
+          <div
+            id="porownanie-form"
+            className="scroll-mt-24 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 bg-white dark:bg-gray-900/50"
+          >
             <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
               Do dyspozycji {viewMode === "monthly" ? "miesięcznie" : "rocznie"}
             </h3>
@@ -2412,6 +2455,7 @@ export default function TaxCalculator() {
             Kiedy która forma wygrywa:{" "}
             <a
               href="/strefa-wiedzy/ryczalt-czy-liniowy"
+              onClick={() => zglosZdarzenie("klik_po_wyniku")}
               className="font-semibold text-accent underline underline-offset-2"
             >
               ryczałt czy liniowy w 2026
@@ -2424,7 +2468,9 @@ export default function TaxCalculator() {
             tytul={`Najkorzystniej: ${best.label}, ${pln(Math.round(best.disposable / 12))} miesięcznie do dyspozycji`}
             linie={[
               `Przychód ${pln(monthlyRevenue)} miesięcznie, rok ${YEAR}.`,
-              ...([results.skala, results.linear, results.ryczalt] as TaxResult[]).map(
+              ...(
+                [results.skala, results.linear, results.ryczalt] as TaxResult[]
+              ).map(
                 (r) =>
                   `${r.label}: do dyspozycji ${pln(Math.round(r.disposable / 12))} miesięcznie; podatek ${pln(Math.round(r.incomeTax))}, składka zdrowotna ${pln(Math.round(r.healthInsurance))}, ZUS społeczny ${pln(Math.round(r.zusSpoleczne))} rocznie.`,
               ),
@@ -2472,8 +2518,8 @@ export default function TaxCalculator() {
                 dochodu
               </div>
               <div>
-                <strong>Zdrowotna (liniowy):</strong> {pc(Math.round(HEALTH_RATE_LINEAR * 1000) / 10)}
-                % dochodu
+                <strong>Zdrowotna (liniowy):</strong>{" "}
+                {pc(Math.round(HEALTH_RATE_LINEAR * 1000) / 10)}% dochodu
               </div>
               <div>
                 <strong>Pełny ZUS – podstawa:</strong> {pln(FULL_ZUS_BASE)}
