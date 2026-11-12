@@ -63,6 +63,14 @@ export default function WlasnyCrm() {
           desc: "Rozmowy, SMS, maile i dokumenty klienta w jednym miejscu, także kilka wniosków w jednej sprawie.",
         },
         {
+          title: "Telefony z Twojej centrali",
+          desc: "Centrala (Twilio, CloudTalk, Cisco albo inna, która po rozmowie wysyła webhook) przekazuje koniec każdej rozmowy do CRM. Rozmowa trafia do leada po numerze, nowy numer zakłada leada, a nieodebrane połączenie daje opiekunowi zadanie „Oddzwonić”.",
+        },
+        {
+          title: "Kalendarz zespołu",
+          desc: "Zadania całego zespołu na dzień i tydzień w siatce godzin. Na komputerze przeciągasz zadanie na inny dzień albo godzinę i możesz to cofnąć, na telefonie widzisz je jako listę.",
+        },
+        {
           title: "System i dane są Twoje",
           desc: "Osobna instancja na serwerze w UE, kopie i aktualizacje w abonamencie. Eksport danych w każdej chwili, rezygnacja w dowolnym dniu.",
         },
