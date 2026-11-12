@@ -12,11 +12,11 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 export const metadata: Metadata = {
   title: "Porównanie kosztów: etat 7 240 zł vs automat",
   description:
-    "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 990 zł.",
+    "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 900 zł netto.",
   openGraph: {
     title: "Porównanie kosztów: etat 7 240 zł vs automat",
     description:
-      "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 990 zł.",
+      "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 900 zł netto.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -44,7 +44,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
     {
       question: "Ile kosztuje automatyzacja jednego procesu?",
       answer:
-        "Wdrożenie pojedynczego procesu to u nas 990 do 8 000 zł, zależnie od liczby integracji i wyjątków. Narzędzia dla kilkunastu scenariuszy to zwykle 200 do 600 zł miesięcznie.",
+        "Pierwszy krok, czyli jeden etap procesu, to u nas 900, 1 200 albo 1 500 zł netto, zależnie od liczby integracji i wyjątków. Narzędzia dla kilkunastu scenariuszy to zwykle 200 do 600 zł miesięcznie.",
     },
     {
       question: "Czy automatyzacja wymaga utrzymania?",
@@ -78,7 +78,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Przy 10 do 40 godzinach powtarzalnej pracy miesięcznie taniej
-              wychodzi automat, wdrożenie od 990 zł raz. Etat z pensją 6 000 zł kosztuje firmę
+              wychodzi automat, wdrożenie od 900 zł netto, jednorazowo. Etat z pensją 6 000 zł kosztuje firmę
               ok. 7 240 zł miesięcznie.
             </p>
             <div className="mt-6">
@@ -86,6 +86,13 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
                 Otwórz kalkulator
               </Link>
             </div>
+            <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+              Do policzenia na kartce:{" "}
+              <a href="/pobierz/arkusz-automatyzacja-czy-etat.pdf" className="text-accent hover:underline">
+                arkusz porównania kosztów (PDF, 2 strony)
+              </a>
+              .
+            </p>
           </div>
         </section>
 
