@@ -99,6 +99,10 @@ export default function WlasnyCrm() {
           desc: "Publiczna dokumentacja REST API (OpenAPI), webhooki na każde ważne zdarzenie, z podpisem HMAC i dziennikiem dostaw, integracja z Zapier, Make i n8n przez webhooki (bez gotowej aplikacji w katalogu), webhook przychodzący z tokenem dodaje szansę. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
         },
         {
+          title: "Zmiany na zamówienie z wyceną",
+          desc: "Pomysł na zmianę zgłaszasz w CRM przyciskiem „Zgłoś problem”, rodzaj „Pomysł”. Wycenę z kwotą netto i terminem w dniach roboczych dostajesz w panelu i klikasz „Akceptuję wycenę” albo „Odrzucam”. Obie strony dostają powiadomienie, a całą ścieżkę opisuje Pomoc, w części Wsparcie.",
+        },
+        {
           title: "Własne raporty z zapisanych widoków",
           desc: "Zapisujesz widok listy szans z filtrami, sortowaniem i wybranymi kolumnami. Tabelę grupujesz po źródle albo opiekunie, z liczbą szans i sumą ofert w każdej grupie. Raport z widoku powstaje sam codziennie, w wybrany dzień tygodnia albo miesiąca i czeka w CRM z powiadomieniem. Eksport do CSV, XLSX albo PDF.",
         },
