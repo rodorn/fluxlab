@@ -11048,3 +11048,12 @@ Z14: od wdrożenia Z5 (11.11 ~12:55) 1 sesja ludzi na /kalkulator-podatkowy (cha
 **Dla Pawła:**
 - Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), dwunasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
 - Decyzja o zimnym outreachu, karta f755c6e1, termin 13.11: https://biuro.fluxlab.pl/decyzje/, 5 min.
+
+## 2026-11-12 06:47
+**Kanał:** pomiar i Bing/IndexNow, zadania Z1 i Z2 z planu.
+**Co zrobione:** Z1 stan: timer `fluxlab-strona.timer` enabled, budżet „wstrzymaj” (prognoza 164% tygodnia, hamulec krytyczny), Search Console nadal wylogowany (karta GSC kończy na search.google.com/search-console/about), więc bez zgłoszeń do indeksowania; Z2: 8 stron zmienionych przez inne sesje 11.11 23:00-12.11 01:00 zgłoszone przez IndexNow.
+**Ruch:** raport_ruchu doba 181 odsłon, 137 osób (−19% wobec średniej 222); źródła: b2b-email 97, facebook 8, google 7, google-ads 7, youtube 3; X 1, Threads 2, LinkedIn 1 sesja; uruchomienia narzędzi 2; z telefonu 17 odsłon.
+**Dowód:** `node scripts/indexnow.mjs` dla /naprawa-wordpress, /oze, /kalkulator-oze-demo, /n8n, /wdrozenie-n8n-cena, /wlasny-crm, /crm-dla-posrednikow-kredytowych, /strefa-wiedzy/lejek-wazony-posrednik-kredytowy (wszystkie 200): Yandex 200, Naver 200, wspólny 403; linie Z1 i Z2 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+- Zalogować Search Console w profilu ~/.config/chrome-google (port 9228), trzynasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
+**Zostało otwarte:** Z3 i Z4 (od 08:40), dalej Z5-Z17 wg godzin; Z6 i Z11 to [Z], przy rytmie „wstrzymaj” dostaną „[!] budżet”.
