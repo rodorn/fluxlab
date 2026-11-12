@@ -10956,3 +10956,95 @@ Wniosek: doba ludzi spadła 37 → 27 (niedziela), Google 8 → 4; jedyny rosną
 **Dowód:** commit 3b854db7 (źródło terminu w commicie: podatki.gov.pl, opodatkowanie podatkiem liniowym); https://fluxlab.pl/kalkulator-podatkowy zawiera „20.02.2027” po 140 s; PDF 200; IndexNow Yandex 200, Naver 200, wspólny 403; telefon-test: akapit widoczny w zakładce „Jak działa”, 0 błędów konsoli; „Doręczono do FL_meta (12:44)”.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 i Z8 od 14:30 (HAJS METRICS, kalkulator po wyniku); potwierdzenie i adres posta od FL_meta (Z15).
+
+## 2026-11-11 14:43
+**Kanał:** pomiar (Z7 HAJS METRICS, Z8 kalkulator po wyniku).
+**Co zrobione:** dwa pomiary z planu na 14 dniach po odsiewie; wyniki w cykl/plan-ruchu.md.
+**Ruch:** ostatnia doba 139 odsłon, 91 osób (spadek 37% wobec średniej 220), źródła: b2b-email 101, Google 6, Facebook 2, Threads 2, hajsmetrics 1; w 7 dniach 1481 odsłon, 756 osób.
+**Dowód:** Z7: 19 sesji partner (hajsmetrics), wejścia /kalkulator-podatkowy 12, /hajs 5, / 2; dalej niż strona wejścia 5 (żadna z /hajs); kalkulator uruchomiły 3; form_start 0. Z8: 23 sesje z uruchomieniem kalkulatora (Google 17, hajsmetrics 3, chatgpt 1, bez odsyłacza 2); po wyniku 19 sesji kończy, 2 idą na /strefa-wiedzy/ryczalt-czy-liniowy, 1 na /narzedzia, 1 na /strefa-wiedzy/jak-liczyc-zdrowotna-jdg; pobrań checklist 0 (zdarzenie nie wystąpiło w 14 dniach), klik_po_wyniku 0, form_start 2 (1 przed uruchomieniem).
+**Dla Pawła:**
+**Zostało otwarte:** Z9 (/narzedzia, od 16:30), Z10 (od 17:00), Z11 (od 18:30). Wniosek dla stratega: /hajs nie prowadzi nigdzie dalej (5/5 sesji kończy na niej), a po wyniku kalkulatora 83% sesji wychodzi bez kolejnego kroku.
+
+## 2026-11-11 16:47
+**Kanał:** Google (/narzedzia, plan Z9).
+**Co zrobione:** kalkulator podatkowy był już pierwszą kartą na /narzedzia; jego opis skrócony z dwóch zdań do jednego i wdrożony.
+**Ruch:** ostatnia doba 126 odsłon, 82 osoby (−44% wobec średniej); źródła: b2b-email 96, google 6, facebook 2, threads 2, hajsmetrics 1; uruchomienia narzędzi 1.
+**Dowód:** commit 1f641998; na produkcji kolejność kart /kalkulator-podatkowy, /sprawdz-auto, /import-radar; IndexNow /narzedzia: Yandex 200, Naver 200; telefon-test 390 px bez błędów konsoli.
+**Dla Pawła:**
+**Zostało otwarte:** Z10 (od 17:00), Z11 (od 18:30), Z12-Z17 według godzin w planie.
+
+## 2026-11-11 18:50
+**Kanał:** outreach (kontrola Z10) i telefon (Z11).
+**Co zrobione:** sprawdzone odpowiedzi i odbicia outreachu oraz dwie nowe strony innych sesji na telefonie; nic nowego nie poszło w świat.
+**Ruch:** ostatnia doba 114 odsłon, 85 osób (−50% wobec średniej); źródła: b2b-email 80, google 6, facebook 5, threads 2, hajsmetrics 1; uruchomienia narzędzi 1; lejek 7 dni: 8 form_start, 2 zapytania.
+**Dowód:** Z10: Zoho 0 odpowiedzi ludzi, 0 odbić; Resend 14 maili, wszystkie testy formularzy (7 delivered, 4 suppressed, 3 bounced na adresy testowe), 0 outreach. Z11: /e-doreczenia-dla-firm i /strefa-wiedzy/klient-mowi-za-drogo, 200, 390 px, 0 błędów konsoli, zrzuty bez usterek.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (od 22:30), Z13 (od 23:00), Z14-Z17 12.11 według godzin w planie.
+
+## 2026-11-11 20:43
+**Kanał:** brak (czekam na Z12 o 22:30).
+**Co zrobione:** nic nie poszło w świat, bo wszystkie otwarte zadania planu (Z12-Z17) mają godzinę startu po 22:30, a plan zabrania brać je wcześniej.
+**Ruch:** raport_ruchu: ostatnia doba 133 odsłony, 98 osób (−41% wobec średniej 226,7); źródła: b2b-email 84, google 8, facebook 5, google-ads 3, threads 2; uruchomienia narzędzi 1. pomiar-kanalow po odsiewie 24 h: 24 sesje ludzi, 28 odsłon (bez odsyłacza 10, google 4, google-ads 3, youtube 2, hajsmetrics 1, ustawygospodarcze.pl 1, useme.com 1, m.facebook.com 1, x 1); 7 dni: 253 sesje, google 50. Resend 24 h: 20, same testy formularzy, 0 outreach. Zoho 24 h: 0 odpowiedzi ludzi.
+**Dowód:** brak zmian, bo okno Z12 otwiera się o 22:30.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (od 22:30), Z13 (od 23:00), Z14-Z17 12.11 według godzin w planie.
+
+## 2026-11-11 22:44
+**Kanał:** pomiar (Z12, bilans dnia) i Bing/IndexNow (Z13).
+**Co zrobione:** bilans planu 11.11; nic nowego nie poszło w świat.
+**Ruch:** raport_ruchu doba 149 odsłon, 116 osób (b2b-email 89, facebook 8, google 6, google-ads 3, threads 2); pomiar-kanalow po odsiewie 32 sesje ludzi.
+
+Bilans planu 2026-11-11 (po odsiewie, doby kończone o 22:43):
+
+| Kanał | 10/11.11 | 11/12.11 |
+|---|---|---|
+| Ludzie razem | 44 | 32 |
+| Bez odsyłacza | 32 | 17 |
+| Google (organic) | 6 | 4 |
+| Google: wejścia /kalkulator-podatkowy, /narzedzia | 0, 0 | 0, 0 |
+| google-ads | 0 | 3 |
+| Facebook (w tym utm forma-2027) | 1 (0) | 2 (0) |
+| HAJS METRICS | 0 | 1 |
+| YouTube / X / Threads | 1 / 1 / 2 | 2 / 1 / 0 |
+| chatgpt.com / useme / ustawygospodarcze.pl | 1 / 0 / 0 | 0 / 1 / 1 |
+| Uruchomienia narzędzi (kalkulator) | 3 (2) | 0 |
+| Pobrania checklist | 0 | 0 (1 surowo, sesja odsiana) |
+| form_start / lead_* | 2 / 0 | 0 / 0 |
+
+Wynik zadań: Z1-Z11 [x]. Z5 i Z9 (kalkulator, /narzedzia) bez wejść z Google w pierwszej dobie, post forma-2027 (Z6) jeszcze bez wejść; ocena w Z14, Z15. Pierwsze wejścia z google-ads (3) po wdrożeniu tagu innej sesji.
+**Dowód:** cykl/plan-ruchu.md Z12; Z13 23:01: IndexNow 5 adresów (/, /polityka-prywatnosci, /strefa-wiedzy/faktura-gdy-ksef-nie-dziala, /strony-www, /wlasny-crm), Yandex 200, Naver 200, wspólny 403.
+**Dla Pawła:**
+**Zostało otwarte:** Z14 (od 12.11 00:30), Z15-Z17 według godzin w planie.
+
+## 2026-11-12 00:50
+**Kanał:** pomiar (Z14, pierwsza doba po Z5).
+**Co zrobione:** policzony efekt akapitu o terminie zmiany formy na 2027 na /kalkulator-podatkowy; nic nowego nie poszło w świat.
+**Ruch:** raport_ruchu doba 164 odsłony, 123 osoby (−27% wobec średniej 226); źródła: b2b-email 93, facebook 8, google-ads 7, google 6, youtube 3. pomiar-kanalow po odsiewie 24 h: 37 sesji ludzi (bez odsyłacza 19, google-ads 7, google 4, youtube 3, ustawygospodarcze.pl 1, useme.com 1, facebook 2, x 1, chatgpt.com 1).
+Z14: od wdrożenia Z5 (11.11 ~12:55) 1 sesja ludzi na /kalkulator-podatkowy (chatgpt.com, 23:47, uruchomiła kalkulator, bez dalszej odsłony), z Google 0; pobrania checklisty formy 2027 ludzkich 0 (2 surowe bez sesji: 19:15 i 00:36, ta druga w paczce 5 PDF w jednej minucie, automat).
+**Dowód:** cykl/plan-ruchu.md Z14.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 (od 02:30), Z16 (od 04:30), Z17 (od 06:00).
+
+## 2026-11-12 02:45
+**Kanał:** pomiar (plan stratega, Z15).
+**Co zrobione:** nic nie dowiezione: budżet w rytmie „wstrzymaj” (prognoza 191% tygodnia, hamulec krytyczny), więc Z15 oznaczone „[!] budżet” zgodnie z planem; Z16 dostępne od 04:30.
+**Ruch:** raport_ruchu doba 169 odsłon, 129 osób (−25% wobec średniej 226); tydzień 1453 odsłony, 799 osób; uruchomienia narzędzi w dobie 1; YouTube 3, Threads 2, X 1, LinkedIn 1 sesja.
+**Dowód:** cykl/plan-ruchu.md Z15.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (od 04:30), Z17 (od 06:00, pomiar dozwolony przy „wstrzymaj”).
+
+## 2026-11-12 04:45
+**Kanał:** Google (mapa witryny), zadanie Z16 z planu.
+**Co zrobione:** kontrola mapy witryny po zmianach dnia: 183 adresy (Z4: 179), wszystkie 5 adresów z Z13 i 4 nowe strony z 11.11 są w mapie, /cennik i /wideo/* poprawnie poza nią.
+**Ruch:** ostatnia doba 174 odsłony, 132 osoby (-23% wobec średniej 225); źródła: b2b-email 91, facebook 8, google 7, google-ads 7, youtube 3, threads 2, x 1, linkedin 1; uruchomienia narzędzi 2.
+**Dowód:** https://fluxlab.pl/sitemap.xml (183 <loc>), linia Z16 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (pomiar dla stratega, nie wcześniej niż 06:00). Budżet w rytmie „wstrzymaj” (prognoza 172% tygodnia, hamulec krytyczny), więc poza Z17 bez nowej pracy na kanałach.
+
+## Strategia dobowa 2026-11-12
+**Wynik doby (24 h do 06:15, po odsiewie):** 44 ludzi (11.11: 36), tydzień 260 (było 268). Google 5 / 48 w tygodniu, google-ads 7 (nowe od 11.11 20:07; wszystkie 1 odsłona, 0 form_start), YouTube 3 / 11, Facebook 2 / 13, chatgpt.com 2 / 4, Instagram, Bing + DDG i mail 0 trzecią dobę. Uruchomienia narzędzi 2, form_start 0, lead\_\* 0. Resend 24 h: 26 maili, 0 outreach (testy formularzy). Zoho: 0 odpowiedzi na nasz outreach. Plan 11.11: 16/17 [x], Z15 [!] budżet. Search Console wylogowany dwunastą dobę.
+**Plan 12/13.11:** 17 zadań (15 pomiarów i kontroli [P], 2 małe zmiany [Z] tylko przy rytmie „utrzymaj”), 0 maili (decyzja 13.11), bez promocji CRM. Budżet: rytm „wstrzymaj”, prognoza 168% tygodnia.
+**Trzy najważniejsze zadania:** Z3 zrzuty stron lądowania Google Ads (/strony-www, /automatyzacja-procesow-biznesowych) i liczby do FL_adsGoogle (7 sesji, 0 dalej); Z6 zdarzenie `klik_po_wyniku` na linku pod wynikiem kalkulatora (19 z 23 sesji kończy po wyniku, kliknięć dziś nie widać); Z11 pytanie FAQ o termin zmiany formy na 2027 na /kalkulator-podatkowy.
+**Dla Pawła:**
+- Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), dwunasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
+- Decyzja o zimnym outreachu, karta f755c6e1, termin 13.11: https://biuro.fluxlab.pl/decyzje/, 5 min.
