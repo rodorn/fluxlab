@@ -82,7 +82,11 @@ export default function WyborTerminu({ onZmiana }: { onZmiana: (termin: string) 
       </div>
       <div>
         <p className="mb-1.5 text-sm font-medium text-gray-700 dark:text-gray-300">Godzina</p>
-        <OsTerminu key={dzien} wolne={wolneDzis} wybrana={godzina} onWybierz={setGodzina} />
+        {!dni ? (
+          <div className="h-[52px] animate-pulse rounded-lg bg-gray-100 dark:bg-white/5" />
+        ) : (
+          <OsTerminu key={dzien} wolne={wolneDzis} wybrana={godzina} onWybierz={setGodzina} />
+        )}
       </div>
       <p className="text-center text-xs text-gray-500 dark:text-gray-400">
         Pokazujemy tylko godziny wolne w naszym kalendarzu. Potwierdzimy zaproszeniem z linkiem do Meet.
