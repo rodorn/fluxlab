@@ -336,7 +336,11 @@ for (const f of sourceFiles) {
 // regulaminu, polityki prywatnosci i danych firmy, a /audyt-poczty nie miala
 // ani menu, ani stopki. Wchodzacy z Google na te dwa adresy nie widzial, kto
 // stoi za strona. /cv jest osobnym dokumentem, nie czescia oferty.
-const BEZ_RAMY = new Set(["app/cv/page.tsx", "app/wycena/page.tsx"]);
+const BEZ_RAMY = new Set([
+  "app/cv/page.tsx",
+  "app/wycena/page.tsx",
+  "app/demo/nu-nrg/page.tsx",
+]);
 for (const plik of walk("app").filter(
   (f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f),
 )) {

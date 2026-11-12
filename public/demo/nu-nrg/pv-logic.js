@@ -87,7 +87,9 @@
       // Energia nadal kupowana z sieci po odjeciu autokonsumpcji i pokrycia z depozytu.
       var brakujace = Math.max(zuzycieCalkowite - zuzyta, 0);
       // Depozyt (z nadwyzki) pokrywa czesc brakujacej energii, ale nie wiecej niz brakuje.
-      var pokrycie = Math.min(oszczednoscZNadwyzki, brakujace * cenaBrutto);
+      // Depozyt rozlicza tylko oplate za energie czynna, bez dystrybucji (gdy podano cenaEnergiiDepozyt).
+      var cenaDoPokrycia = p.cenaEnergiiDepozyt || cenaBrutto;
+      var pokrycie = Math.min(oszczednoscZNadwyzki, brakujace * cenaDoPokrycia);
       return Math.max(brakujace * cenaBrutto - pokrycie, 0);
     }
 
