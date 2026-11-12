@@ -85,8 +85,11 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               , które działają
               same. Mniej błędów, szybsza realizacja.
             </p>
-            <div className="mt-8">
-              <a href="#branza" className="btn-primary">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              <a href="#diagnoza" className="btn-primary">
+                Opisz proces, odpiszemy z wyceną
+              </a>
+              <a href="#branza" className="text-sm font-semibold text-accent hover:underline">
                 Sprawdź, co pochłania czas w Twojej branży
               </a>
             </div>
@@ -177,6 +180,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               },
               {
                 label: "Diagnoza",
+                kotwica: "diagnoza",
                 content: (
                   <div id="diagnoza" className="scroll-mt-20 py-10 lg:py-12">
                     <div className="container-wide">
