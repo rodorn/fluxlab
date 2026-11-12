@@ -83,6 +83,10 @@ export default function WlasnyCrm() {
           desc: "W Marketingu planujesz posty na Facebooka i Instagrama: kalendarz, szkice i statusy. CRM niczego sam nie publikuje. Opinie z Google i Facebooka wpisujesz ręcznie, a pulpit pokazuje średnią, rozkład ocen i źródła.",
         },
         {
+          title: "Dostęp tylko do wybranych lejków",
+          desc: "W Uprawnieniach do danych ustawiasz, że rola albo konto widzi tylko wybrane lejki, na przykład handlowiec tylko Leasing. Szanse z innych lejków znikają mu z list i raportów, a CRM blokuje ich zmianę, przeniesienie do obcego lejka i import poza zakresem. Działa razem z ustawieniem „tylko swoje szanse”.",
+        },
+        {
           title: "System i dane są Twoje",
           desc: "Osobna instancja na serwerze w UE, kopie i aktualizacje w abonamencie. Eksport danych w każdej chwili, rezygnacja w dowolnym dniu.",
         },
