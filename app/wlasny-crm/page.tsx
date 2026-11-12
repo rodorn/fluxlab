@@ -63,6 +63,10 @@ export default function WlasnyCrm() {
           desc: "Rozmowy, SMS, maile i dokumenty klienta w jednym miejscu, także kilka wniosków w jednej sprawie.",
         },
         {
+          title: "Wspólna skrzynka odpowiedzi",
+          desc: "Odpowiedzi klientów trafiają do jednej skrzynki zespołu. Rozmowę przypisujesz opiekunowi z listy, a filtry „Moje” i „Bez opiekuna” pokazują, co jest Twoje, a co czeka na przydział. Każdy login ma własny licznik nieprzeczytanych.",
+        },
+        {
           title: "Telefony z Twojej centrali",
           desc: "Centrala (Twilio, CloudTalk, Cisco albo inna, która po rozmowie wysyła webhook) przekazuje koniec każdej rozmowy do CRM. Rozmowa trafia do leada po numerze, nowy numer zakłada leada, a nieodebrane połączenie daje opiekunowi zadanie „Oddzwonić”.",
         },
