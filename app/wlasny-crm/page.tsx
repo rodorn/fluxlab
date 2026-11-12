@@ -68,7 +68,7 @@ export default function WlasnyCrm() {
         },
         {
           title: "Kalendarz zespołu",
-          desc: "Zadania całego zespołu na dzień i tydzień w siatce godzin. Na komputerze przeciągasz zadanie na inny dzień albo godzinę i możesz to cofnąć, na telefonie widzisz je jako listę.",
+          desc: "Zadania całego zespołu na dzień i tydzień w siatce godzin. Na komputerze przeciągasz zadanie na inny dzień albo godzinę i możesz to cofnąć, na telefonie widzisz je jako listę. Gdy klient przyjmie albo odrzuci zaproszenie z Kalendarza Google, jego odpowiedź sama trafia na kartę leada razem z linkiem do spotkania w Meet.",
         },
         {
           title: "Własny landing, import leadów i reguły",
