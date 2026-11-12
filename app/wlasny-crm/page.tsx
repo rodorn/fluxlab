@@ -71,6 +71,18 @@ export default function WlasnyCrm() {
           desc: "Zadania całego zespołu na dzień i tydzień w siatce godzin. Na komputerze przeciągasz zadanie na inny dzień albo godzinę i możesz to cofnąć, na telefonie widzisz je jako listę.",
         },
         {
+          title: "Własny landing, import leadów i reguły",
+          desc: "Landing z własnymi pytaniami (tekst, wybór, liczba, kwota), także w trybie krok po kroku. Wybierasz, do którego lejka trafia nowy lead. Leady z formularzy TikTok i LinkedIn wgrywasz z pliku CSV, a raport źródeł pokazuje, skąd przyszły. Reguły automatyczne przenoszą leada do innego lejka i powiadamiają opiekuna.",
+        },
+        {
+          title: "WhatsApp, Messenger i Instagram",
+          desc: "WhatsApp Business (Cloud API Meta) podłączasz sam w Ustawieniach, w zakładce Kanały. Odpowiedź do klienta wychodzi dopiero po akceptacji człowieka. Messengera i Instagrama konfigurujemy przy wdrożeniu.",
+        },
+        {
+          title: "Planer postów i pulpit opinii",
+          desc: "W Marketingu planujesz posty na Facebooka i Instagrama: kalendarz, szkice i statusy. CRM niczego sam nie publikuje. Opinie z Google i Facebooka wpisujesz ręcznie, a pulpit pokazuje średnią, rozkład ocen i źródła.",
+        },
+        {
           title: "System i dane są Twoje",
           desc: "Osobna instancja na serwerze w UE, kopie i aktualizacje w abonamencie. Eksport danych w każdej chwili, rezygnacja w dowolnym dniu.",
         },
