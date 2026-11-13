@@ -12,11 +12,11 @@ const OPIS =
   "Faktura RR w KSeF nie jest obowiązkowa: od 1.04.2026 możesz ją tam wystawić, a gdy rolnik wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie.";
 
 export const metadata: Metadata = {
-  title: "Faktura VAT RR w KSeF: kiedy trzeba, kiedy papier | Fluxlab",
+  title: "Faktura RR w KSeF 2026: obowiązek czy papier? | Fluxlab",
   description:
     "Faktura RR w KSeF nie jest obowiązkowa: od 1.04.2026 możesz ją tam wystawić, a gdy rolnik wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie.",
   openGraph: {
-    title: "Faktura VAT RR w KSeF: kiedy trzeba, kiedy papier | Fluxlab",
+    title: "Faktura RR w KSeF 2026: obowiązek czy papier? | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
