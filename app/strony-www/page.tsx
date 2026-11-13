@@ -212,6 +212,27 @@ export default function StronyWww() {
                       poza zakresem to pozycja z cennika napraw. Płatność z góry,
                       bez rabatów.
                     </p>
+                    <div
+                      id="gwarancja"
+                      className="mt-10 mx-auto max-w-3xl scroll-mt-20 rounded-2xl border border-gray-200 bg-white/60 p-6 dark:border-gray-700 dark:bg-gray-900/40"
+                    >
+                      <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+                        Do czego się zobowiązujemy
+                      </h3>
+                      <dl className="mt-4 divide-y divide-gray-200 text-sm dark:divide-gray-700">
+                        {[
+                          ["Zakres i termin", "Spisane w ofercie przed startem: co robimy, w ilu dniach i za ile. Prosta strona 7 dni, firmowa 12, sklep 21."],
+                          ["30 dni po odbiorze", "Bez opłat poprawiamy wszystko, co nie działa tak, jak opisaliśmy w ofercie."],
+                          ["Hosting", "W cenie wdrożenia. Domena na Ciebie, jej konfigurację robimy my."],
+                          ["Po 30 dniach", "Opieka od 300 zł miesięcznie albo pojedyncze poprawki od 150 zł."],
+                        ].map(([t, d]) => (
+                          <div key={t} className="grid gap-1 py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
+                            <dt className="font-semibold text-gray-900 dark:text-white">{t}</dt>
+                            <dd className="text-gray-600 dark:text-gray-400 leading-relaxed">{d}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
                   </div>
         </section>
 
