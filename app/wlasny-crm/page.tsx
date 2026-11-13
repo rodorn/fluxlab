@@ -99,6 +99,10 @@ export default function WlasnyCrm() {
           desc: "Publiczna dokumentacja REST API (OpenAPI), webhooki na każde ważne zdarzenie, z podpisem HMAC i dziennikiem dostaw, integracja z Zapier, Make i n8n przez webhooki (bez gotowej aplikacji w katalogu), webhook przychodzący z tokenem dodaje szansę. API filtruje i sortuje szanse także po polach własnych, na przykład segmencie albo budżecie, i zwraca tylko wybrane pola. Własne pola, etapy, role i reguły ustawiasz w panelu, a dane eksportujesz do JSON albo CSV.",
         },
         {
+          title: "Lejki i etapy zmieniasz sam",
+          desc: "W Ustawieniach zmieniasz nazwy lejków i etapów, ich kolejność i rolę etapu, dodajesz nowe etapy i lejki, a puste usuwasz. Zmiana działa bez edycji plików i bez restartu. Etapu ani lejka z szansami nie da się usunąć, najpierw przenosisz szanse. Każda zmiana trafia do dziennika audytu, a to samo zrobisz przez API. Nowe kolumny na tablicy Kanban widać po odświeżeniu panelu.",
+        },
+        {
           title: "Zmiany na zamówienie z wyceną",
           desc: "Pomysł na zmianę zgłaszasz w CRM przyciskiem „Zgłoś problem”, rodzaj „Pomysł”. Wycenę z kwotą netto i terminem w dniach roboczych dostajesz w panelu i klikasz „Akceptuję wycenę” albo „Odrzucam”. Obie strony dostają powiadomienie, a całą ścieżkę opisuje Pomoc, w części Wsparcie.",
         },
