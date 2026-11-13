@@ -209,7 +209,76 @@
         "<li>Cena prądu 0,98 zł/kWh brutto z dystrybucją, taryfa G11 Enea, według serwisów porównawczych rankomat.pl i enerad.pl; do sprawdzenia w taryfie Enea Operator. Energia czynna 0,6187 zł/kWh brutto według oferty Enea (taryfa zatwierdzona przez URE do 31.12.2026).</li>" +
         "<li>Energia oddana do sieci 0,346 zł/kWh: RCEm za wrzesień 2026 (PSE), według gramwzielone.pl. Depozyt rozlicza tylko energię czynną, bez dystrybucji.</li>" +
         "<li>Autokonsumpcja 30%, 250 cykli magazynu w roku, sprawność 90% oraz ceny instalacji i magazynów to założenia przykładowe do ustawienia przez firmę. Dotacji nie wliczamy: brak potwierdzonego trwającego naboru Mój Prąd.</li>" +
+        "<li>Podpowiedź pojemności zaczyna od zużycia domu, nie od mocy instalacji: wariant minimum pokrywa zużycie wieczorem i w nocy, wariant z zapasem średnie zużycie całej doby. Udział zużycia wieczorem i w nocy 50% to założenie przykładowe. W programie Przydomowe Magazyny Energii (NFOŚiGW) przyjęto około 2 kWh pojemności na 1 kWp mocy PV; to warunek programu, nie dobór do zużycia. Ostateczny dobór po audycie.</li>" +
         "</ol>";
+
+      var TARYFY = { 1: "G11 (całodobowa)", 2: "G12 lub G12w (strefowa)", 3: "dynamiczna" };
+
+      function modulyNa(kwh) {
+        return [1, 2]
+          .map(function (nr) {
+            var m = MAGAZYNY[nr];
+            var szt = Math.max(1, Math.ceil(kwh / m.kwh - 0.05));
+            var nazwa = nr === 1 ? "Meri" : "ION Breeze";
+            return szt > m.max
+              ? nazwa + ": ponad " + m.max + " moduły w kalkulatorze"
+              : nazwa + ": " + szt + " x " + FluxCalc.fmtNum(m.kwh, "kWh");
+          })
+          .join(", ");
+      }
+
+      function podpowiedzPojemnosci(values) {
+        var calosc =
+          (Number(values.zuzycieRoczne) || 0) +
+          (Number(values.dodatkoweZuzyciePompa) || 0) +
+          (Number(values.dodatkoweZuzycieEV) || 0);
+        var doba = calosc / 365;
+        var udzial = Math.min(Math.max(Number(values.udzialNoc) || 0, 0), 100) / 100;
+        var noc = doba * udzial;
+        var pme = (Number(values.mocPV) || 0) * 2;
+        var taryfa = Number(values.taryfa) || 1;
+        var r1 = function (x) { return Math.round(x * 10) / 10; };
+        var wiersze = [
+          { etykieta: "Podpowiedź pojemności magazynu", naglowek: true },
+          { etykieta: "Średnie zużycie na dobę", wartosc: r1(doba), jednostka: "kWh" },
+          {
+            etykieta: "Minimum: wieczór i noc",
+            tekst: FluxCalc.fmtNum(r1(noc), "kWh") + " (" + modulyNa(noc) + ")",
+            wyroznij: taryfa === 1,
+          },
+          {
+            etykieta: "Z zapasem: cała doba",
+            tekst: FluxCalc.fmtNum(r1(doba), "kWh") + " (" + modulyNa(doba) + ")",
+            wyroznij: taryfa !== 1,
+          },
+        ];
+        var mag = magazynZWejscia(values);
+        if (mag) {
+          var ocena =
+            mag.kwh + 0.05 >= doba
+              ? "pokrywa całą dobę"
+              : mag.kwh + 0.05 >= noc
+                ? "pokrywa wieczór i noc"
+                : "mniej niż zużycie wieczorem i w nocy";
+          wiersze.push({
+            etykieta: "Wybrany magazyn",
+            tekst: FluxCalc.fmtNum(mag.kwh, "kWh") + ": " + ocena,
+          });
+        }
+        wiersze.push({
+          etykieta: "Taryfa " + TARYFY[taryfa],
+          tekst:
+            taryfa === 1
+              ? "punktem wyjścia jest wariant minimum"
+              : "warto rozważyć wariant z zapasem: zimą magazyn można ładować tańszą energią z sieci",
+        });
+        if (pme > 0)
+          wiersze.push({
+            etykieta: "Program Przydomowe Magazyny Energii",
+            tekst: "około " + FluxCalc.fmtNum(r1(pme), "kWh") + " (2 kWh na 1 kWp), warunek programu, nie dobór",
+          });
+        return wiersze;
+      }
 
       // ===== KONFIGURACJA FIRMY =====
       var KONFIG = {
@@ -269,6 +338,10 @@
                 fmtKWh(v.dodatkoweZuzyciePompa) +
                 ", auto elektryczne: " +
                 fmtKWh(v.dodatkoweZuzycieEV),
+              "Zużycie wieczorem i w nocy: " +
+                (Number(v.udzialNoc) || 0) +
+                "%, taryfa: " +
+                (TARYFY[v.taryfa] || "-"),
             ];
             (d.podsumowanie || []).concat(d.wynik || []).forEach(function (w) {
               if (w.naglowek) return linie.push("", w.etykieta);
@@ -367,7 +440,7 @@
         brand: KONFIG.brand,
         lead: KONFIG.lead,
         tytul: "Ile zaoszczędzisz z fotowoltaiką i magazynem energii?",
-        opis: "Wpisz zużycie prądu, wybierz sprzęt i porównaj trzy warianty: koszt, oszczędność, autokonsumpcję i okres zwrotu.",
+        opis: "Wpisz zużycie prądu, a podpowiemy pojemność magazynu i porównamy trzy warianty: koszt, oszczędność, autokonsumpcję i okres zwrotu.",
         ctaOblicz: "Porównaj warianty",
         pola: [
           pole("zuzycieRoczne", "Roczne zużycie prądu", 6000, "kWh", 100, "Z rocznego rachunku za prąd."),
@@ -419,6 +492,29 @@
           },
           pole("dodatkoweZuzyciePompa", "Dodatkowe zużycie: pompa ciepła", 0, "kWh", 100, "Szacunkowe roczne zużycie pompy. 0, jeśli brak."),
           pole("dodatkoweZuzycieEV", "Dodatkowe zużycie: auto elektryczne", 0, "kWh", 100, "Około 15-20 kWh na 100 km. 0, jeśli brak."),
+          {
+            id: "udzialNoc",
+            etykieta: "Zużycie wieczorem i w nocy",
+            typ: "number",
+            wartosc: 50,
+            min: 0,
+            max: 100,
+            krok: 5,
+            jednostka: "%",
+            pomoc: "Część zużycia po zachodzie słońca. 50% to założenie przykładowe; dokładnie pokaże licznik lub aplikacja operatora.",
+          },
+          {
+            id: "taryfa",
+            etykieta: "Taryfa za prąd",
+            typ: "select",
+            wartosc: 1,
+            opcje: [
+              { wartosc: 1, etykieta: TARYFY[1] },
+              { wartosc: 2, etykieta: TARYFY[2] },
+              { wartosc: 3, etykieta: TARYFY[3] },
+            ],
+            pomoc: "Wpływa na podpowiedź pojemności. Rachunek liczymy według ceny z założeń.",
+          },
           pole("z_produkcja", "Produkcja z 1 kWp w roku", 1039.7, "kWh", 0.1, "[1] PVGIS, Gorzów Wlkp."),
           pole("z_cena", "Cena prądu z dystrybucją (brutto)", 0.98, "zł/kWh", 0.01, "[2] G11 Enea, do sprawdzenia w taryfie Enea Operator."),
           pole("z_energia", "Cena energii czynnej (brutto)", 0.6187, "zł/kWh", 0.0001, "[2] Do tej kwoty depozyt pokrywa rachunek."),
@@ -485,7 +581,7 @@
           ostatnie = { bezPV: baza.kosztBezPV, warianty: warianty, wybrany: wybrany };
           setTimeout(rysujWykres, 0);
 
-          var podsumowanie = [];
+          var podsumowanie = podpowiedzPojemnosci(values);
           warianty.forEach(function (v) {
             podsumowanie.push(
               { etykieta: v.nazwa, naglowek: true },
