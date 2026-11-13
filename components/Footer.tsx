@@ -182,17 +182,17 @@ export default function Footer() {
           <StatusOnline />
           <Kolofon />
           {/* Wynik z prawdziwego pomiaru (lib/lighthouse.json). Pokazujemy go tylko
-              przy 100 we wszystkich kategoriach; link pozwala sprawdzić samemu. */}
+              przy 100 we wszystkich kategoriach; link prowadzi do pełnego raportu z tego pomiaru. */}
           {[lighthouse.wydajnosc, lighthouse.dostepnosc, lighthouse.praktyki, lighthouse.seo].every((x) => x === 100) && (
             <p className="mt-2">
               <a
-                href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Ffluxlab.pl%2F&form_factor=desktop"
+                href="/pomiary/lighthouse-telefon.html"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex min-h-6 items-center gap-1.5 hover:text-accent transition-colors"
               >
                 <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500" />
-                Lighthouse na komputerze: 100 / 100 / 100 / 100, pomiar{" "}
+                Lighthouse na telefonie: 100 / 100 / 100 / 100, pomiar{" "}
                 {new Date(lighthouse.data).toLocaleDateString("pl-PL")}
               </a>
             </p>
