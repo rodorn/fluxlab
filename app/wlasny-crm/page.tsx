@@ -76,7 +76,7 @@ export default function WlasnyCrm() {
         },
         {
           title: "Własny landing, import leadów i reguły",
-          desc: "Landing z własnymi pytaniami (tekst, wybór, liczba, kwota), także w trybie krok po kroku. Wybierasz, do którego lejka trafia nowy lead. Leady z formularzy TikTok i LinkedIn wgrywasz z pliku CSV, a raport źródeł pokazuje, skąd przyszły. Reguły automatyczne przenoszą leada do innego lejka i powiadamiają opiekuna.",
+          desc: "Landing z własnymi pytaniami (tekst, wybór, liczba, kwota), także w trybie krok po kroku. Wybierasz, do którego lejka trafia nowy lead. Leady z formularzy TikTok i LinkedIn wgrywasz z pliku CSV, a raport źródeł pokazuje, skąd przyszły. Kontakty i szanse z innego CRM przenosisz kreatorem importu z pliku CSV, XLSX albo JSON, a pola zagnieżdżone w JSON, na przykład adres.miasto, stają się osobnymi kolumnami. Reguły automatyczne przenoszą leada do innego lejka i powiadamiają opiekuna.",
         },
         {
           title: "WhatsApp, Messenger i Instagram",
