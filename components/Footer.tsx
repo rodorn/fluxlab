@@ -189,9 +189,9 @@ export default function Footer() {
                 href="/pomiary/lighthouse-telefon.html"
                 target="_blank"
                 rel="noopener"
-                className="inline-flex min-h-6 items-center gap-1.5 hover:text-accent transition-colors"
+                className="inline-block min-h-6 leading-6 hover:text-accent transition-colors"
               >
-                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500" />
+                <span aria-hidden="true" className="mr-1.5 inline-block h-2 w-2 rounded-full bg-emerald-500 align-middle" />
                 Lighthouse na telefonie: 100 / 100 / 100 / 100, pomiar{" "}
                 {new Date(lighthouse.data).toLocaleDateString("pl-PL")}
               </a>
