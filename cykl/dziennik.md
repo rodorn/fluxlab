@@ -11198,3 +11198,10 @@ Zero przez 3 doby (11-13.11): instagram, facebook (utm), threads, b2b, hajsmetri
 **Dla Pawła:**
 - Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), czternasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
 - Więcej skrzynek do outreachu na razie niepotrzebne: dziś do 48 maili z pawel@fluxlab.pl; prośba wróci, gdy segment `wordpress` da choć jedną sesję z drugą odsłoną.
+
+## 2026-11-13 06:43
+**Kanał:** pomiar (Z1, Z2 planu 13.11).
+**Co zrobione:** stan: timer fluxlab-strona enabled, budżet „wstrzymaj” (128%, hamulec alarm), GSC wylogowany (karta → search-console/about); Z17 planu 12.11 zamknięty przez plan 13.11; IndexNow: brak zmian do zgłoszenia (0 commitów w app od 12.11 20:40).
+**Ruch:** doba do 06:15: 54 ludzi po odsiewie (google-ads 7, Google 3, X 3, YouTube 2, chatgpt.com 1, perplexity 1, reszta bez odsyłacza 39).
+**Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google: https://search.google.com/search-console
+**Zostało otwarte:** Z3 od 08:40 (lista kandydatów wordpress), Z4 od 10:40.
