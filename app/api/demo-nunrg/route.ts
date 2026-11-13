@@ -22,8 +22,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false }, { status: 403 });
   }
   const url = process.env.NUNRG_CRM_WEBHOOK;
-  const sekret = process.env.NUNRG_CRM_SEKRET;
-  if (!url || !sekret) return NextResponse.json({ ok: false }, { status: 503 });
+  if (!url) return NextResponse.json({ ok: false }, { status: 503 });
 
   const body = (await req.json().catch(() => null)) as Record<
     string,
@@ -43,7 +42,7 @@ export async function POST(req: Request) {
 
   const res = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "x-fluxcrm-sekret": sekret },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       id: randomUUID(),
       nazwa: imie || email,
