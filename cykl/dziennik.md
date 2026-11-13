@@ -11057,3 +11057,144 @@ Z14: od wdrożenia Z5 (11.11 ~12:55) 1 sesja ludzi na /kalkulator-podatkowy (cha
 **Dla Pawła:**
 - Zalogować Search Console w profilu ~/.config/chrome-google (port 9228), trzynasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
 **Zostało otwarte:** Z3 i Z4 (od 08:40), dalej Z5-Z17 wg godzin; Z6 i Z11 to [Z], przy rytmie „wstrzymaj” dostaną „[!] budżet”.
+<!-- WYSLANO 2026-11-12 07:05 -->
+
+## 2026-11-12 08:50
+**Kanał:** pomiar (plan Z3 google-ads, Z4 Facebook).
+**Co zrobione:** Z3: zrzuty telefonu /strony-www i /automatyzacja-procesow-biznesowych (200, TTFB 0,13 s; przycisk z pierwszego ekranu nie prowadzi do formularza na /automatyzacja, baner ciasteczek zasłania ~145 px) wysłane do FL_adsGoogle; Z4: posta z forma-2027 nie było, temat poszedł jako post 333 z utm seria-podatki, 0 wejść z obu kampanii.
+**Ruch:** 24 h do 06:15: 44 ludzi po odsiewie (11.11: 36); Facebook od 11.11 12:44: 2 sesje, google-ads 7 sesji po 1 odsłonie.
+**Dowód:** „Doręczono do FL_adsGoogle (08:43)”; ~/Projekty/fluxlab-meta/posty/link_komentarze.json (333-ryczalt-2027-przychod-2026). **Dla Pawła:** pusto. **Zostało otwarte:** Z5 i Z6 od 10:40 (Z6 [Z] przy rytmie „wstrzymaj” = [!] budżet).
+
+## 2026-11-12 10:53
+**Kanał:** pomiar (Z5 google-ads) i Google (Z6 kalkulator, zdarzenie po wyniku).
+**Co zrobione:** Z5: 7 sesji google-ads od 11.11 20:00 po 1 odsłonie i 0 s, od północy 0, 6 z 7 bez rozpoznanego systemu (podejrzenie podglądu reklamy); Z6: link „ryczałt czy liniowy w 2026” pod wynikiem kalkulatora wysyła `klik_po_wyniku`, wdrożone. Z6 to [Z] i przy rytmie „wstrzymaj” miało dostać „[!] budżet”; przeoczyłem regułę, zmiana jednolinijkowa zostaje.
+**Ruch:** pomiar-kanalow 24 h: 45 ludzi po odsiewie, 53 odsłony; bez odsyłacza 25, google-ads 7, www.google.com 5, youtube 3, x 2, chatgpt.com 2, facebook 2, linkedin 1, t.co 1. Google organic od 11.11 20:00: 2 sesje, 1,5 odsłony na sesję, a google-ads 1,0.
+**Dowód:** commit 54211bdf; chunk a0240b77cd01bf98.js na produkcji zawiera onClick z klik_po_wyniku; /kalkulator-podatkowy 200, telefon-test 390/390 px, 0 błędów konsoli; IndexNow Yandex 200, Naver 200, wspólny 403.
+**Dla Pawła:** Search Console nadal wylogowany (patrz wpis 06:45): https://search.google.com/search-console w profilu ~/.config/chrome-google, 3 min.
+**Zostało otwarte:** Z7 i Z8 od 12:40 (pomiary), Z9 od 14:40 (Z6 wdrożone 10:50, liczyć od tej godziny), Z11 [Z] przy „wstrzymaj” = „[!] budżet”.
+
+## 2026-11-12 12:50
+**Kanał:** 2 (asystenci AI, pomiar) i kontrola stron lądowania na telefonie (plan Z7, Z8).
+**Co zrobione:** Z7: llms.txt zawiera /kalkulator-podatkowy i /narzedzia, plik bez zmian; z asystentów AI w 14 dni po odsiewie 6 sesji (chatgpt.com 5, perplexity 1, copilot 0, gemini 0), w tym 2 sesje chatgpt.com na /kalkulator-podatkowy z 3 uruchomieniami i 1 na /analiza-lokalizacji ze skanem i form_start. Z8: /oze i /naprawa-wordpress na telefonie bez rozjazdu; dwie drobne usterki zgłoszone autorom (FAQ 5 pytań na /naprawa-wordpress, ściśnięty nagłówek ramki kalkulatora PV na /oze).
+**Ruch:** raport_ruchu doba: 248 odsłon, 181 osób (b2b-email 146 to piksel otwarć), facebook 13, google-ads 7, google 4, chatgpt.com 3. pomiar-kanalow 24 h: 53 ludzi po odsiewie; bez odsyłacza 34, google-ads 7, www.google.com 4, x 2, youtube 2, chatgpt.com 2, facebook 2, linkedin 1, t.co 1, perplexity 1.
+**Dowód:** plan Z7 i Z8 => z liczbami; sesja napisz FL_rynekStrony i FL_rynekOZE, doręczono 12:44; zrzuty /tmp/telefon-1794483832970.png (/oze), /tmp/telefon-1794483836632.png (/naprawa-wordpress).
+**Dla Pawła:** Search Console nadal wylogowany (wpis 06:45): https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z9 od 14:40 (klik_po_wyniku od wdrożenia Z6 10:50), Z10 i Z11 od 16:40, Z12 od 20:40, Z13 od 22:40, Z14-Z17 13.11.
+
+## 2026-11-12 14:47
+**Kanał:** pomiar, zadanie Z9 z planu.
+**Co zrobione:** Z9: od wdrożenia Z6 (12.11 10:50) do 14:45 po odsiewie 0 sesji na /kalkulator-podatkowy, więc klik_po_wyniku 0 i uruchomiono_kalkulator_podatkowy 0; za wcześnie na ocenę zdarzenia, pełna doba w Z16.
+**Ruch:** raport_ruchu doba: 281 odsłon, 197 osób; źródła: b2b-email 165 (piksel otwarć), facebook 13, google-ads 9, www.google.com 5, youtube 3; uruchomienia narzędzi 2; lejek 7 dni: 829 sesji, 6 form_start, 2 zapytania.
+**Dowód:** plan-ruchu.md Z9 => z liczbami.
+**Dla Pawła:** Search Console nadal wylogowany (wpis 06:45): https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z10 i Z11 od 16:40 (Z11 [Z] podlega regule budżetu), Z12 od 20:40, Z13 od 22:40, Z14-Z17 13.11.
+
+## 2026-11-12 16:52
+**Kanał:** outreach (kontrola Z10) i Google/AI (Z11 wstrzymane budżetem).
+**Co zrobione:** Z10: 0 odpowiedzi ludzi na outreach, 0 odbić w Zoho, 0 maili w Resend od 12.11 00:00; Z11 „[!] budżet” (rytm „wstrzymaj”), FAQ /kalkulator-podatkowy ma 3 pytania, bez pytania o termin formy na 2027.
+**Ruch:** raport_ruchu doba: 296 odsłon, 201 osób; źródła: b2b-email 168 (piksel otwarć), facebook 13, google-ads 9, www.google.com 6, youtube 5; uruchomienia narzędzi 2; lejek 7 dni: 837 sesji, 6 form_start, 2 zapytania.
+**Dowód:** plan-ruchu.md Z10 => i Z11 [!] z liczbami.
+**Dla Pawła:** Search Console nadal wylogowany (wpis 06:45): https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z11 przy rytmie „utrzymaj”, Z12 od 20:40, Z13 od 22:40, Z14-Z17 13.11.
+
+## 2026-11-12 18:45
+**Kanał:** brak, czekam na Z12 o 20:40 (plan: przed godziną zadania nie biorę).
+**Co zrobione:** tylko pomiar; Z1-Z10 [x], Z11 [!] budżet, pierwsze otwarte Z12 dostępne od 20:40.
+**Ruch:** raport_ruchu doba: 308 odsłon, 205 osób; źródła: b2b-email 169 (piksel otwarć), google-ads 10, www.facebook.com 10, www.youtube.com 8, www.google.com 6; uruchomienia narzędzi 2; lejek 7 dni: 844 sesji, 6 form_start, 2 zapytania. pomiar-kanalow 24 h po odsiewie: 71 ludzi (bez odsyłacza 49, google-ads 10, www.google.com 6, youtube 3+1, chatgpt.com 2, perplexity 1, facebook 1, linkedin 1, x 1, t.co 1); 7 dni: 270.
+**Dowód:** cykl/pomiar-kanalow.py 18:43.
+**Dla Pawła:** Search Console nadal wylogowany (wpis 06:45): https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z12 od 20:40, Z13 od 22:40, Z14-Z17 13.11.
+
+## 2026-11-12 20:43
+**Kanał:** Bing i IndexNow (plan Z12).
+**Co zrobione:** zgłoszono przez IndexNow 10 stron zmienionych przez inne sesje 12.11 po 06:40 (Yandex 200, Naver 200, wspólny 403 jak dotąd); trzy z nich (/wlasny-crm, /naprawa-wordpress, /crm-dla-posrednikow-kredytowych) poszły ponownie, bo zmieniły się po zgłoszeniu z Z2.
+**Ruch:** raport_ruchu doba: 289 odsłon, 191 osób (piksel otwarć maili 159 zdarzeń); uruchomienia narzędzi 2, pobrania 7, form_start 1; lejek 7 dni: 845 sesji, 6 form_start, 2 zapytania. pomiar-kanalow 24 h po odsiewie: 66 ludzi (bez odsyłacza 49, google-ads 7, www.google.com 4, youtube 2+1, chatgpt.com 2, x 2, facebook 1, linkedin 1, t.co 1, perplexity 1); 7 dni: 269.
+**Dowód:** plan-ruchu.md Z12 => z listą adresów; kody HTTP 200 dla 10/10.
+**Dla Pawła:** Search Console nadal wylogowany (wpis 06:45): https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z13 od 22:40, Z14-Z17 13.11.
+
+## 2026-11-12 22:43
+**Kanał:** pomiar (plan Z13, bilans dnia).
+**Co zrobione:** policzony bilans planu 2026-11-12; nic nowego nie poszło w świat, bo to zadanie pomiarowe.
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 57 ludzi (bez odsyłacza 40, google-ads 7, www.google.com 3, youtube 2+1, chatgpt.com 2, x 2, t.co 1, linkedin 1, perplexity 1, github.com 1); 7 dni: 268. raport_ruchu doba jak w wpisie 20:43 (289 odsłon, 191 osób z pikselem maili).
+
+Bilans planu 2026-11-12 (po odsiewie, doby kończone o 22:43):
+
+| Kanał | 11/12.11 | 12/13.11 |
+|---|---|---|
+| Ludzie razem | 32 | 57 |
+| Bez odsyłacza | 17 | 40 |
+| Google (organic) | 4 | 3 (/analiza-lokalizacji, /kalkulator-oze-demo x2) |
+| Google: wejścia /kalkulator-podatkowy, /narzedzia | 0, 0 | 0, 0 |
+| google-ads: sesje, odsłony na sesję, form_start | 3, b.d., 0 | 7, 1,0, 0 |
+| Facebook (w tym utm forma-2027) | 2 (0) | 0 (0) |
+| YouTube / X | 2 / 1 | 3 / 3 |
+| chatgpt.com / perplexity | 0 / 0 | 2 / 1 |
+| Uruchomienia narzędzi (kalkulator) | 0 | 2 (2) |
+| klik_po_wyniku | brak pomiaru | 0 |
+| Pobrania ludzi (surowo) | 0 (1) | 0 (7, wszystkie bez sesji odsłony) |
+| form_start / lead_* | 0 / 0 | 1 (/, z scena_leada) / 0 |
+
+Wynik zadań: Z1-Z10 i Z12 [x], Z11 [!] budżet (FAQ kalkulatora bez pytania o termin zmiany formy). google-ads: wejścia tylko na /automatyzacja-procesow-biznesowych (4) i /strony-www (2-3), każda sesja 1 odsłona, 0 zdarzeń, druga doba z rzędu. Post forma-2027 nie powstał (Z4), Facebook 0 wejść. Search Console wylogowany trzynastą dobę.
+**Dowód:** cykl/plan-ruchu.md Z13.
+**Dla Pawła:** Search Console nadal wylogowany (wpis 06:45): https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z14 od 13.11 00:40, Z15 od 02:40, Z16 od 04:40, Z17 od 06:00.
+<!-- WYSLANO 2026-11-12 23:05 -->
+
+## 2026-11-13 00:45
+**Kanał:** Google (plan Z14, kontrola mapy witryny).
+**Co zrobione:** mapa witryny na produkcji ma 185 adresów (12.11 04:45: 183), wszystkie 10 adresów zgłoszonych w Z12 są w mapie; przyrost +2 to /strefa-wiedzy/biala-lista-vat-nowe-api i /strefa-wiedzy/strona-ktora-sprzedaje, /demo/nu-nrg poprawnie poza mapą (noindex). Nic nowego nie poszło w świat, zadanie kontrolne.
+**Ruch:** raport_ruchu, ostatnia doba: 264 odsłony, 174 osoby (z pikselem maili); najczęściej /, /demo/nu-nrg, /automatyzacja-procesow-biznesowych, /strony-www; YouTube 1, LinkedIn 1, X 2, Threads 1 sesja. Lejek 7 dni: 852 sesje, 6 form_start, 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md Z14; `curl -s https://fluxlab.pl/sitemap.xml` = 185 `<loc>`.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z15 od 02:40, Z16 od 04:40, Z17 od 06:00 (przed tymi godzinami zadań nie brać).
+
+## 2026-11-13 02:45
+**Kanał:** pomiar (plan Z15, kanały po dobach dla reguły 3 dób).
+**Co zrobione:** tabela kanał × doby po odsiewie z pomiar-kanalow.py (pary, serie testowe, salwy, /grupa-ksef), kanał = źródło pierwszej odsłony sesji, google-ads osobno (utm „ads”). Nic nie poszło w świat, zadanie pomiarowe.
+
+| kanał | 13.11 (do 02:43) | 12.11 | 11.11 | 7 dni |
+|---|---|---|---|---|
+| bez odsyłacza | 0 | 40 | 17 | 153 |
+| www.google.com | 1 | 3 | 4 | 48 |
+| youtube | 0 | 1 | 3 | 12 |
+| google-ads | 0 | 4 | 7 | 11 |
+| instagram | 0 | 0 | 0 | 5 |
+| facebook (utm) | 0 | 0 | 0 | 5 |
+| m.facebook.com | 0 | 0 | 1 | 4 |
+| chatgpt.com | 0 | 1 | 1 | 4 |
+| x | 0 | 2 | 1 | 4 |
+| threads | 0 | 0 | 0 | 3 |
+| useme.com | 0 | 0 | 1 | 3 |
+| www.facebook.com | 0 | 0 | 1 | 3 |
+| b2b | 0 | 0 | 0 | 2 |
+| hajsmetrics | 0 | 0 | 0 | 2 |
+| com.google.android.gm | 0 | 0 | 0 | 1 |
+| ustawygospodarcze.pl | 0 | 0 | 1 | 1 |
+| linkedin | 0 | 1 | 0 | 1 |
+| perplexity | 0 | 1 | 0 | 1 |
+| github.com | 0 | 1 | 0 | 1 |
+| razem | 1 | 54 | 37 | 264 |
+
+Zero przez 3 doby (11-13.11): instagram, facebook (utm), threads, b2b, hajsmetrics, com.google.android.gm. Facebook jako całość nie jest zerowy (m.facebook.com 1 i www.facebook.com 1 w 11.11).
+**Ruch:** raport_ruchu, ostatnia doba: 258 odsłon, 170 osób (+24% wobec średniej 207,6) (z pikselem maili); lejek 7 dni: 853 sesje, 6 form_start, 1 zapytanie (bez odpowiedzi 1).
+**Dowód:** cykl/plan-ruchu.md Z15.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z16 od 04:40, Z17 od 06:00.
+
+## 2026-11-13 04:45
+**Kanał:** pomiar (Z16, Google i asystenci AI, kalkulator).
+**Co zrobione:** pomiar kalkulatora podatkowego po wdrożeniu zdarzenia klik_po_wyniku (Z6): od 12.11 10:50 jedna sesja na /kalkulator-podatkowy (z chatgpt.com, 1 odsłona, bez uruchomienia), klik_po_wyniku 0, pobrania checklisty formy 2027: 0. Z11 nie wdrożone (budżet), więc bez pomiaru.
+**Ruch:** raport_ruchu, ostatnia doba: 254 odsłony, 168 osób (+22% wobec średniej 208,3); źródła: b2b-email 154 (piksel maili), youtube 9, facebook 7, google-ads 6, google 3; uruchomienia narzędzi 0; lejek 7 dni: 855 sesji, 6 form_start, 1 zapytanie (bez odpowiedzi 1).
+**Dowód:** cykl/plan-ruchu.md Z16.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z17 od 06:00 (pomiar dla stratega, potem „plan zamknięty”).
+
+## Strategia dobowa 2026-11-13
+**Wynik doby (24 h do 06:15, po odsiewie):** 54 ludzi (12.11: 44, 11.11: 36), tydzień 271 (było 260). google-ads 7 / 14 w tygodniu (każda sesja 1 odsłona, 0 form_start), Google 3 / 49, YouTube 2 / 14, X 3 / 6, chatgpt.com 1 / 4, perplexity 1, Facebook 0 / 12; Bing + DDG, Instagram, Threads, mail 0 trzecią dobę. Uruchomienia narzędzi 0, form_start 7 dni 6, zapytania 1 (bez odpowiedzi 1), lead\_\* 0. Resend 24 h: 0 maili. Zoho: 0 odpowiedzi na outreach. Plan 12.11: 16/17 [x], Z11 [!] budżet. Search Console wylogowany czternastą dobę.
+**Odkrycie:** decyzja Pawła o zimnym outreachu (karta f755c6e1) zapadła 7.11 o 18:42: „TAK. Rób to z rozmachem”. Plany 8-12.11 jej nie odczytały i trzymały 0 maili przez 5 dni roboczych. Od dziś outreach wraca.
+**Plan 13/14.11:** 17 zadań: 4 wysyłki po 12 maili w nowym segmencie `wordpress` (małe firmy usługowe ze stroną na WordPressie i zmierzonym problemem, link do /naprawa-wordpress i /audyt-strony, utm_campaign=wordpress), 2 zadania przygotowania i koordynacji, 1 zmiana [Z] przy rytmie „utrzymaj”, reszta pomiary. Bez CRM, bez biur rachunkowych, kancelarii, pośredników, dealerów i OZE. Budżet: rytm „wstrzymaj”, prognoza 128%.
+**Trzy najważniejsze zadania:** Z3 lista co najmniej 48 firm z WordPressem i 2 zmierzonymi problemami (pkt.pl, gabinety stomatologiczne i fizjoterapia, 10 miast); Z4 maile z liczbami i pierwsza wysyłka 12 o 10:43; Z6 ustalenie, czy zapytanie z formularza z ostatnich 7 dni czeka bez odpowiedzi (FL_leady).
+**Dla Pawła:**
+- Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), czternasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
+- Więcej skrzynek do outreachu na razie niepotrzebne: dziś do 48 maili z pawel@fluxlab.pl; prośba wróci, gdy segment `wordpress` da choć jedną sesję z drugą odsłoną.
