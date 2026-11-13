@@ -206,6 +206,10 @@ export default function Footer() {
               Jak zbudowana jest ta strona
             </Link>
             <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <a href="https://ustawygospodarcze.pl" target="_blank" rel="noopener" className="hover:text-accent transition-colors">
+              Ustawy Gospodarcze: kalkulatory podatków i ZUS, zmiany w prawie dla firm
+            </a>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
             <PrzelacznikDzwieku />
           </p>
         </div>
