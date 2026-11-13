@@ -104,7 +104,7 @@ export default function WlasnyCrm() {
         },
         {
           title: "Własne raporty z zapisanych widoków",
-          desc: "Zapisujesz widok listy szans z filtrami, sortowaniem i wybranymi kolumnami. Tabelę grupujesz po źródle albo opiekunie, z liczbą szans i sumą ofert w każdej grupie. Raport z widoku powstaje sam codziennie, w wybrany dzień tygodnia albo miesiąca i czeka w CRM z powiadomieniem. Eksport do CSV, XLSX albo PDF.",
+          desc: "Zapisujesz widok listy szans z filtrami, sortowaniem i wybranymi kolumnami. Filtrujesz także po polach własnych, takich jak lista wyboru, tak/nie, tekst, liczba, kwota i zakres dat. Tabelę grupujesz po źródle albo opiekunie, z liczbą szans i sumą ofert w każdej grupie. Raport z widoku powstaje sam codziennie, w wybrany dzień tygodnia albo miesiąca i czeka w CRM z powiadomieniem. Eksport do CSV, XLSX albo PDF.",
         },
         {
           title: "Procedura oceny rozmowy",
