@@ -11330,3 +11330,9 @@ Zero przez 3 doby (12-14.11): facebook w całości (utm, www, m.), useme.com, ha
 **Trzy najważniejsze zadania:** Z3 MX dla 24 czekających maili (08:40); Z4 nowi kandydaci WordPress, cel 30 (08:40); Z6 maile na poniedziałek, bez wysyłki (12:40).
 **Dla Pawła:**
 - Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), szesnasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
+
+## 2026-11-14 06:45
+**Kanał:** pomiar + Bing/IndexNow (plan 14.11, Z1 i Z2).
+**Co zrobione:** Z1: timer `fluxlab-strona` enabled, budżet „zwolnij” (125%, hamulec alarm), GSC nadal wylogowany (search-console/about). Z17 planu 13.11 zamknięty pomiarem stratega 14.11 06:15. Z2: /strony-www (200) zgłoszone do IndexNow.
+**Ruch:** wg stratega 06:15: 44 osoby po odsiewie w 24 h, źródła: bez odsyłacza 27, google-ads 6, Google 5, X 4, YouTube 3.
+**Dowód:** IndexNow Yandex 200, Naver 200, wspólny 403. **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google). **Zostało otwarte:** Z3 i Z4 od 08:40.
