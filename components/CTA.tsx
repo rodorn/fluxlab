@@ -57,6 +57,15 @@ function CTAFormularz() {
           <a href="tel:+48665466565" className="font-semibold text-accent hover:underline">
             665 466 565
           </a>
+          , ten sam numer na{" "}
+          <a
+            href="https://wa.me/48665466565"
+            target="_blank"
+            rel="noopener"
+            className="font-semibold text-accent hover:underline"
+          >
+            WhatsApp
+          </a>
         </p>
       </div>
     </section>

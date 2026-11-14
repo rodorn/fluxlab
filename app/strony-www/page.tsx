@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import OsCzasuStrony from "@/components/OsCzasuStrony";
 import KonfiguratorStrony from "@/components/KonfiguratorStrony";
 import GeneratorHasla from "@/components/GeneratorHasla";
@@ -136,7 +137,7 @@ export default function StronyWww() {
                 Nowa strona od zera albo poprawki w istniejącej. Prosta strona
                 w 7 dni, firmowa w 12 dni, sklep w 21 dni.
               </p>
-              <div className="animate-fade-up-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              <div data-poza-reklama="" className="animate-fade-up-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a href="#kontakt" className="btn-primary">
                   Napisz do nas
                 </a>
@@ -144,6 +145,7 @@ export default function StronyWww() {
                   Odpisujemy w 1 dzień roboczy, z ceną i terminem.
                 </span>
               </div>
+              <FormularzKrotki formId="krotki_web" />
             </div>
           </div>
         </section>

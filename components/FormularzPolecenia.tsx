@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 import { readUtm } from "@/lib/zrodlo";
 
@@ -51,7 +50,6 @@ export default function FormularzPolecenia() {
         throw new Error(p?.error ?? "");
       }
       if (!v("website")) {
-        gaEvent("generate_lead", { form_id: "polecenie_crm_posrednik" });
         zglosZdarzenie("lead_polecenie");
       }
       setStan("wyslane");

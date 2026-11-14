@@ -1,15 +1,42 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
-/* Pasek „Zamów wycenę” w telefonie: pokazuje się po zjechaniu z pierwszego
-   ekranu, gdy przycisk z hero zniknął z widoku, chowa przy formularzu,
+const BEZ_PASKA = [
+  "/kontakt",
+  "/dziekuje",
+  "/panel",
+  "/cv",
+  "/koszyk",
+  "/zakup",
+  "/crm",
+  "/demo",
+  "/polityka",
+  "/regulamin",
+];
+
+/* Pasek „Bezpłatna wycena” w telefonie na każdej stronie: pokazuje się po
+   zjechaniu z pierwszego ekranu, prowadzi do formularza tej strony
+   (albo do /kontakt, gdy strona go nie ma) i chowa się przy formularzu,
    żeby nie zasłaniał pól. */
 export default function PasekAkcji() {
+  const sciezka = usePathname();
+  const wylaczony = BEZ_PASKA.some(
+    (p) => sciezka === p || sciezka.startsWith(`${p}/`) || sciezka.startsWith(`${p}-`),
+  );
   const [widoczny, setWidoczny] = useState(false);
+  const [cel, setCel] = useState("/kontakt");
 
   useEffect(() => {
-    const formularz = document.getElementById("kontakt");
+    if (wylaczony) return;
+    const formularz =
+      document.querySelector<HTMLElement>("#kontakt, #zamow, #diagnoza") ??
+      document
+        .querySelector("form input[name=website]")
+        ?.closest<HTMLElement>("[id]") ??
+      null;
+    setCel(formularz ? `#${formularz.id}` : "/kontakt");
     const ctaHero = document.getElementById("cta-hero");
     let przyFormularzu = false;
     let ctaWidoczne = !!ctaHero;
@@ -40,8 +67,11 @@ export default function PasekAkcji() {
       obs?.disconnect();
       obsCta?.disconnect();
       document.body.removeAttribute("data-pasek-akcji");
+      setWidoczny(false);
     };
-  }, []);
+  }, [sciezka, wylaczony]);
+
+  if (wylaczony) return null;
 
   return (
     <div
@@ -51,7 +81,7 @@ export default function PasekAkcji() {
       aria-hidden={!widoczny}
     >
       <a
-        href="#kontakt"
+        href={cel}
         tabIndex={widoczny ? 0 : -1}
         className="btn-primary btn-lg w-full"
       >

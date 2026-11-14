@@ -5,6 +5,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import PomiarFormularzy from "@/components/PomiarFormularzy";
 import PomiarAds from "@/components/PomiarAds";
 import ZgodaCookies from "@/components/ZgodaCookies";
+import PasekAkcji from "@/components/PasekAkcji";
 import TloKursora from "@/components/TloKursora";
 import TytulKarty from "@/components/TytulKarty";
 import Dzwieki from "@/components/Dzwieki";
@@ -95,14 +96,16 @@ const ADS_LABEL_TEL = process.env.NEXT_PUBLIC_ADS_LABEL_TEL;
  *  ładuje się później (components/GoogleAnalytics.tsx) i przetwarza kolejkę.
  *  Kliknięcia tel: i mailto: są liczone tutaj, żeby nie ginęły przed hydratacją;
  *  identyfikator kliknięcia reklamy z adresu wejścia zostaje w window.__flKlik
- *  (bez zapisu na urządzeniu) i trafia do zgłoszenia (components/PomiarAds.tsx). */
+ *  (bez zapisu na urządzeniu) i trafia do zgłoszenia (components/PomiarAds.tsx).
+ *  Wejście z reklamy ustawia html[data-reklama]: nagłówek bez menu i wyszukiwarki
+ *  (elementy z data-poza-reklama), zostają logo, telefon, WhatsApp i wycena. */
 const zgodaGoogle = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-try{if(localStorage.getItem('fluxlab_zgoda')==='tak')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',analytics_storage:'granted'})}catch(e){}
+try{if(localStorage.getItem('fluxlab_zgoda')==='tak')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',analytics_storage:'granted',ad_personalization:localStorage.getItem('fluxlab_zgoda_rem')==='tak'?'granted':'denied'})}catch(e){}
 gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 gtag('js',new Date());${GA_ID ? `gtag('config','${GA_ID}',{page_path:location.pathname});` : ""}${ADS_ID ? `gtag('config','${ADS_ID}',{allow_enhanced_conversions:true});` : ""}
-try{var q=new URLSearchParams(location.search),k={};['gclid','gbraid','wbraid'].forEach(function(n){var v=q.get(n);if(v)k[n]=v});if(k.gclid||k.gbraid||k.wbraid)window.__flKlik=k}catch(e){}
-document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',p={href:h,location:location.pathname};if(h.indexOf('mailto:')===0)gtag('event','email_click',p);else if(h.indexOf('tel:')===0){gtag('event','phone_click',p);${ADS_ID && ADS_LABEL_TEL ? `gtag('event','conversion',{send_to:'${ADS_ID}/${ADS_LABEL_TEL}'});` : ""}}else return;window.__gtagTeraz=1;window.dispatchEvent(new Event('gtag-teraz'))},true);`;
+try{var q=new URLSearchParams(location.search),k={};['gclid','gbraid','wbraid'].forEach(function(n){var v=q.get(n);if(v)k[n]=v});if(k.gclid||k.gbraid||k.wbraid)window.__flKlik=k;if(window.__flKlik||/^(cpc|ppc|paid)/i.test(q.get('utm_medium')||''))document.documentElement.dataset.reklama=''}catch(e){}
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',p={href:h,location:location.pathname};if(h.indexOf('mailto:')===0)gtag('event','email_click',p);else if(h.indexOf('https://wa.me/')===0)gtag('event','whatsapp_click',p);else if(h.indexOf('tel:')===0){gtag('event','phone_click',p);${ADS_ID && ADS_LABEL_TEL ? `gtag('event','conversion',{send_to:'${ADS_ID}/${ADS_LABEL_TEL}'});` : ""}}else return;window.__gtagTeraz=1;window.dispatchEvent(new Event('gtag-teraz'))},true);`;
 
 export default function RootLayout({
   children,
@@ -113,7 +116,7 @@ export default function RootLayout({
     <html lang="pl" suppressHydrationWarning>
       <head>
         <style>
-          {"html[data-zgoda-zapisana] .cookie-consent{display:none}"}
+          {"html[data-zgoda-zapisana] .cookie-consent{display:none}html[data-reklama] [data-poza-reklama]{display:none!important}[data-tylko-reklama]{display:none}html[data-reklama] [data-tylko-reklama]{display:block}"}
         </style>
         <script
           dangerouslySetInnerHTML={{
@@ -259,6 +262,7 @@ export default function RootLayout({
         <ZgodaCookies />
         <CiszaPrzyPrzewijaniu />
         <ViewTransition default="vt-page">{children}</ViewTransition>
+        <PasekAkcji />
         <TytulKarty />
         <Mikrotypografia />
         <Dzwieki />

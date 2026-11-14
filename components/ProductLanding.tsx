@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import RelatedProducts from "@/components/RelatedProducts";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { cenaWejscia } from "@/lib/products";
@@ -182,7 +183,7 @@ export default function ProductLanding(p: ProductLandingProps) {
             {/* Na stronie narzędzia pierwszym krokiem jest narzędzie, na
                 stronie usługi zamówienie, a narzędzie stoi pod cennikiem. */}
             {!p.bezPrzyciskowHero && (
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            <div data-poza-reklama="" className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <a href={narzedzieNajpierw ? "#narzedzie" : "#zamow"} className="btn-primary">
                 {narzedzieNajpierw ? p.ctaLabel : "Napisz do nas"}
               </a>
@@ -196,6 +197,7 @@ export default function ProductLanding(p: ProductLandingProps) {
               )}
             </div>
             )}
+            <FormularzKrotki formId={`krotki_${p.formId}`} />
           </div>
 
           {narzedzieNajpierw && narzedzie}

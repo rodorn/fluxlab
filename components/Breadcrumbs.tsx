@@ -84,6 +84,7 @@ export default function Breadcrumbs({
         className={`container-wide pt-20 pb-0 [.container-wide_&]:mb-6 [.container-wide_&]:max-w-none [.container-wide_&]:px-0 [.container-wide_&]:pt-0 [main[class*='max-w-']_&]:mb-6 [main[class*='max-w-']_&]:max-w-none [main[class*='max-w-']_&]:px-0 [main[class*='max-w-']_&]:pt-0`}
       >
         <ol
+          data-poza-reklama=""
           className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400"
         >
           {fullItems.map((item, index) => {

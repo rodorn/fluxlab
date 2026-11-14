@@ -273,7 +273,43 @@ export async function POST(req: Request) {
     .map(([k, v]) => `${k}: ${v}`)
     .join("\n");
 
+  const zReklamyGoogle =
+    Boolean(utm.gclid || utm.gbraid || utm.wbraid) ||
+    (/google/i.test(utm.utm_source) && /cpc|ppc|paid/i.test(utm.utm_medium));
+  let zrodlo = "brak danych (wejście bezpośrednie albo bez zgody na pomiar)";
+  if (zReklamyGoogle) {
+    zrodlo = [
+      "REKLAMA GOOGLE",
+      utm.utm_campaign && `kampania ${utm.utm_campaign}`,
+      utm.utm_term && `fraza „${utm.utm_term}”`,
+    ]
+      .filter(Boolean)
+      .join(", ");
+  } else if (utm.utm_source) {
+    zrodlo = [
+      `${utm.utm_source}${utm.utm_medium ? ` / ${utm.utm_medium}` : ""}`,
+      utm.utm_campaign && `kampania ${utm.utm_campaign}`,
+    ]
+      .filter(Boolean)
+      .join(", ");
+  } else if (utm.referrer) {
+    try {
+      zrodlo = `link z ${new URL(utm.referrer).hostname}`;
+    } catch {
+      zrodlo = `link z ${utm.referrer}`;
+    }
+  }
+  const wejscie = [
+    utm.landing_page && `wejście ${utm.landing_page}`,
+    stronaFormularza && `formularz na ${stronaFormularza}`,
+  ]
+    .filter(Boolean)
+    .join(", ");
+
   const text = [
+    `Źródło: ${zrodlo}`,
+    wejscie ? `Ścieżka: ${wejscie}` : "",
+    "",
     `Imię: ${imie || "-"}`,
     `E-mail: ${email}`,
     `Firma: ${company || "-"}`,
@@ -309,7 +345,7 @@ export async function POST(req: Request) {
         : contactPref === "phone" && telefon
           ? `ZADZWOŃ ${telefon}: `
           : ""
-    }${polecenie ? "Nowe polecenie" : "Nowa diagnoza"}: ${problemTypeLabel}${subjectCompany}`,
+    }${zReklamyGoogle ? "[Reklama Google] " : ""}${polecenie ? "Nowe polecenie" : "Nowa diagnoza"}: ${problemTypeLabel}${subjectCompany}`,
     text,
   });
 

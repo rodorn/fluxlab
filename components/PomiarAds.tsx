@@ -127,6 +127,8 @@ export default function PomiarAds() {
             gaEvent("generate_lead", {
               oferta: oferta(location.pathname),
               location: location.pathname,
+              ...(typeof body.problemType === "string" &&
+                body.problemType && { lead_type: body.problemType }),
             });
             konwersjaAds("formularz");
           }

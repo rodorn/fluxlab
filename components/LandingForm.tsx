@@ -462,11 +462,8 @@ export default function LandingForm({
       if (res.ok) {
         // Serwer udaje sukces, gdy bot wypelni ukryte pole, i nie wysyla maila.
         // Takie wejscie nie moze trafic do konwersji.
+        // generate_lead i konwersję Ads wysyła components/PomiarAds.tsx.
         const bot = data.website.trim().length > 0;
-        if (!bot) gaEvent("generate_lead", {
-          form_id: formId,
-          lead_type: data.problemType,
-        });
         // Zapytanie od klienta to jedyna konwersja, ktora sie liczy, a do tej
         // pory nie byla mierzona nigdzie poza Google Analytics, ktorego nie
         // mamy podlaczonego. Zgloszenie ma keepalive, wiec przezyje

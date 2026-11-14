@@ -44,6 +44,21 @@ const IKONA_TELEFONU = (
   </svg>
 );
 
+const IKONA_WHATSAPP = (
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path
+      d="M3.2 16.8l1-3.4a7.4 7.4 0 1 1 2.6 2.5z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.6 6.9c.2-.4.6-.4.8 0l.5 1.2c.1.2 0 .5-.2.7l-.4.4a5 5 0 0 0 2.4 2.4l.4-.4c.2-.2.5-.3.7-.2l1.2.5c.4.2.4.6 0 .8-.5.5-1.2.8-1.9.6a6.6 6.6 0 0 1-4-4c-.2-.7.1-1.4.5-2z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 const IKONA_LUPY = (
   <svg
     width="18"
@@ -185,6 +200,7 @@ export default function HeaderKlient({
         <div className="hidden xl:flex items-center gap-3 shrink-0">
           <button
             type="button"
+            data-poza-reklama=""
             onClick={() => setSzukaj(true)}
             aria-label="Ctrl K, szukaj na stronie"
             aria-haspopup="dialog"
@@ -203,6 +219,15 @@ export default function HeaderKlient({
             {IKONA_TELEFONU}
             <span className="hidden min-[1400px]:inline">665 466 565</span>
           </a>
+          <a
+            href="https://wa.me/48665466565"
+            target="_blank"
+            rel="noopener"
+            aria-label="Napisz na WhatsApp: 665 466 565"
+            className="p-1 text-gray-700 transition-colors hover:text-accent dark:text-gray-200"
+          >
+            {IKONA_WHATSAPP}
+          </a>
           <Link href="/kontakt" className="btn-primary">
             Bezpłatna wycena
           </Link>
@@ -217,8 +242,18 @@ export default function HeaderKlient({
           >
             {IKONA_TELEFONU}
           </a>
+          <a
+            href="https://wa.me/48665466565"
+            target="_blank"
+            rel="noopener"
+            aria-label="Napisz na WhatsApp: 665 466 565"
+            className="p-2 text-gray-700 dark:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg"
+          >
+            {IKONA_WHATSAPP}
+          </a>
           <button
             type="button"
+            data-poza-reklama=""
             onClick={() => setSzukaj(true)}
             aria-label="Szukaj na stronie"
             aria-haspopup="dialog"
@@ -230,6 +265,7 @@ export default function HeaderKlient({
           <LicznikKoszyka />
           <button
             type="button"
+            data-poza-reklama=""
             onClick={() => setOpen(!open)}
             aria-label={open ? "Zamknij menu" : "Otwórz menu"}
             aria-expanded={open}

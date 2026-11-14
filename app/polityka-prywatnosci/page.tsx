@@ -225,8 +225,16 @@ export default function PolitykaPrywatnosci() {
                           wysłano zgłoszenie), a Google szacuje z nich
                           konwersje zbiorczo. Identyfikator kliknięcia
                           reklamy może wtedy przechodzić między podstronami
-                          w adresie zamiast w pliku cookie. Personalizacja
-                          reklam pozostaje wyłączona.
+                          w adresie zamiast w pliku cookie. Zgoda obejmuje
+                          także reklamy dopasowane: Google może wtedy pokazywać reklamy
+                          Fluxlab osobom, które odwiedziły Serwis
+                          (remarketing). Po wysłaniu formularza, wyłącznie
+                          przy tej zgodzie, adres e-mail i numer telefonu z
+                          formularza trafiają do Google Ads w postaci
+                          zaszyfrowanej skrótem (SHA-256) do dopasowania
+                          konwersji (konwersje rozszerzone). Bez zgody
+                          reklamy dopasowane i konwersje rozszerzone są
+                          wyłączone.
                           Wybór można zmienić, czyszcząc dane strony w
                           przeglądarce. Poza tym pliki cookie służą wyłącznie
                           prawidłowemu działaniu Serwisu (pliki techniczne).

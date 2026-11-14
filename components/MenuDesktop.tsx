@@ -249,6 +249,7 @@ export default function MenuDesktop({
 
   return (
     <nav
+      data-poza-reklama=""
       ref={nav}
       aria-label="Menu główne"
       className="relative hidden flex-1 items-center justify-center gap-1 px-6 xl:flex"

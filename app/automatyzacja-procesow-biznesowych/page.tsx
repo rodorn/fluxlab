@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import Tabs from "@/components/Tabs";
 import WybierzBranze from "@/components/WybierzBranze";
 import SkladajAutomatyzacje from "@/components/SkladajAutomatyzacje";
@@ -87,7 +88,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               , które działają
               same. Mniej błędów, szybsza realizacja.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            <div data-poza-reklama="" className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <a href="#diagnoza" className="btn-primary">
                 Opisz proces, odpiszemy z wyceną
               </a>
@@ -95,6 +96,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                 Sprawdź, co pochłania czas w Twojej branży
               </a>
             </div>
+            <FormularzKrotki formId="krotki_procesy" />
           </div>
         </section>
 

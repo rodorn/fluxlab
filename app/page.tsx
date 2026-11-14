@@ -5,7 +5,6 @@ import TloHero from "@/components/TloHero";
 import HeroNic from "@/components/HeroNic";
 import Nic from "@/components/Nic";
 import LandingForm from "@/components/LandingForm";
-import PasekAkcji from "@/components/PasekAkcji";
 import WirtualnyHandlowiec from "@/components/WirtualnyHandlowiec";
 import WitajPonownie from "@/components/WitajPonownie";
 import EtykietaNocna from "@/components/EtykietaNocna";
@@ -21,6 +20,7 @@ import { nazwaFilaru } from "@/lib/filary";
 import NapisBoczny from "@/components/NapisBoczny";
 import { Ikona, type NazwaIlustracji } from "@/components/Ilustracje";
 import { preload } from "react-dom";
+import FormularzKrotki from "@/components/FormularzKrotki";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
 // FluxCRM jako produkt flagowy, katalog małych usług jako wejście.
@@ -172,7 +172,7 @@ export default function Home() {
             wyroznione={["dla", "firm"]}
           />
           <PodtytulZrodlo />
-          <div className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+          <div data-poza-reklama="" className="animate-fade-up-1 mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <a
               id="cta-hero"
               href="#kontakt"
@@ -187,9 +187,10 @@ export default function Home() {
               Dobierz usługi
             </a>
           </div>
-          <p className="animate-fade-up-1 mt-3 text-sm text-gray-600 dark:text-white/60">
+          <p data-poza-reklama="" className="animate-fade-up-1 mt-3 text-sm text-gray-600 dark:text-white/60">
             0 zł, cena i termin w 1 dzień roboczy
           </p>
+          <FormularzKrotki formId="krotki_home" />
           <HeroNic />
         </section>
 
@@ -488,7 +489,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <PasekAkcji />
       <Footer />
     </>
   );

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import Tabs from "@/components/Tabs";
 
 export const metadata: Metadata = {
@@ -73,11 +74,12 @@ export default function N8nPage() {
               Łączymy systemy i API w jeden workflow, z pełną kontrolą nad
               danymi.
             </p>
-            <div className="mt-8">
+            <div data-poza-reklama="" className="mt-8">
               <a href="#sekcje" className="btn-primary">
                 Sprawdź swój workflow
               </a>
             </div>
+            <FormularzKrotki formId="krotki_n8n" />
           </div>
         </section>
 
