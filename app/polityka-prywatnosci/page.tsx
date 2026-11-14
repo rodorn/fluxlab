@@ -48,7 +48,7 @@ export default function PolitykaPrywatnosci() {
               Polityka prywatności
             </h1>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Ostatnia aktualizacja: 4 kwietnia 2026
+              Ostatnia aktualizacja: 14 listopada 2026
             </p>
           </div>
         </section>
@@ -218,9 +218,14 @@ export default function PolitykaPrywatnosci() {
                           pomiar skuteczności reklam Google Ads (zliczanie
                           wysłanych zgłoszeń i kliknięć w numer telefonu)
                           zapisują pliki cookie wyłącznie po kliknięciu
-                          „Akceptuj” w oknie zgody; bez zgody Google Ads
-                          nie jest ładowany, a Google Analytics wysyła tylko
-                          anonimowe sygnały bez plików cookie. Personalizacja
+                          „Akceptuj” w oknie zgody. Bez zgody oba narzędzia
+                          działają w trybie zaawansowanym Consent Mode:
+                          wysyłają do Google tylko sygnały bez plików cookie
+                          i bez identyfikatorów reklamowych (na przykład, że
+                          wysłano zgłoszenie), a Google szacuje z nich
+                          konwersje zbiorczo. Identyfikator kliknięcia
+                          reklamy może wtedy przechodzić między podstronami
+                          w adresie zamiast w pliku cookie. Personalizacja
                           reklam pozostaje wyłączona.
                           Wybór można zmienić, czyszcząc dane strony w
                           przeglądarce. Poza tym pliki cookie służą wyłącznie

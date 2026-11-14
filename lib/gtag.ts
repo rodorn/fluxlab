@@ -20,18 +20,15 @@ const ADS_ETYKIETY = {
   telefon: process.env.NEXT_PUBLIC_ADS_LABEL_TEL,
 } as const;
 
-/** Konwersja Google Ads. Idzie tylko po zgodzie z banera i tylko gdy ustawiono
- *  identyfikator konta oraz etykietę danej konwersji. */
+/** Konwersja Google Ads. Idzie zawsze: bez zgody z banera Google dostaje ją
+ *  jako sygnał bez ciasteczek (Consent Mode, kolejka gtag z app/layout.tsx).
+ *  Zdarzenie gtag-teraz ładuje tag od razu, żeby nie czekał na ciszę na stronie. */
 export function konwersjaAds(rodzaj: keyof typeof ADS_ETYKIETY): void {
   const etykieta = ADS_ETYKIETY[rodzaj];
   if (!ADS_ID || !etykieta) return;
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
-  try {
-    if (localStorage.getItem("fluxlab_zgoda") !== "tak") return;
-  } catch {
-    return;
-  }
   window.gtag("event", "conversion", { send_to: `${ADS_ID}/${etykieta}` });
+  window.dispatchEvent(new Event("gtag-teraz"));
 }
 
 export {};

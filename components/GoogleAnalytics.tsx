@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const ADS_ID = process.env.NEXT_PUBLIC_ADS_ID;
 
 /** Tag (540 kB po rozpakowaniu) ładuje się przy pierwszym ruchu odwiedzającego
  *  albo po 8 s, a nie zaraz po zdarzeniu load: na słabym telefonie jego
@@ -34,6 +33,8 @@ export default function GoogleAnalytics() {
       poCiszy();
     };
     const zegar = setTimeout(start, 8000);
+    const teraz = () => ustawGotowe(true);
+    window.addEventListener("gtag-teraz", teraz);
     zdarzenia.forEach((z) =>
       window.addEventListener(z, start, { once: true, passive: true }),
     );
@@ -42,34 +43,16 @@ export default function GoogleAnalytics() {
       clearTimeout(cisza);
       zdarzenia.forEach((z) => window.removeEventListener(z, start));
       window.removeEventListener("scroll", poCiszy);
+      window.removeEventListener("gtag-teraz", teraz);
     };
   }, []);
 
   useEffect(() => {
     if (!gotowe || process.env.NODE_ENV !== "production" || !GA_MEASUREMENT_ID) return;
-    const ustawienia = document.createElement("script");
-    ustawienia.id = "google-analytics";
-    ustawienia.text = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      var zgoda = null;
-      try { zgoda = localStorage.getItem('fluxlab_zgoda'); } catch (e) {}
-      gtag('consent', 'default', {
-        'analytics_storage': zgoda === 'tak' ? 'granted' : 'denied',
-        'ad_storage': zgoda === 'tak' ? 'granted' : 'denied',
-        'ad_user_data': zgoda === 'tak' ? 'granted' : 'denied',
-        'ad_personalization': 'denied',
-      });
-      gtag('config', '${GA_MEASUREMENT_ID}', {
-        page_path: window.location.pathname,
-      });
-      ${ADS_ID ? `if (zgoda === 'tak') gtag('config', '${ADS_ID}');` : ""}
-    `;
     const tag = document.createElement("script");
     tag.async = true;
     tag.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.append(ustawienia, tag);
+    document.head.append(tag);
   }, [gotowe]);
 
   return null;

@@ -85,6 +85,19 @@ export const metadata: Metadata = {
   },
 };
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const ADS_ID = process.env.NEXT_PUBLIC_ADS_ID;
+
+/** Consent Mode v2 w trybie zaawansowanym: kolejka gtag istnieje od pierwszego
+ *  bajtu strony, domyślnie wszystko odmówione. Bez zgody Google dostaje tylko
+ *  sygnały bez ciasteczek, więc konwersje Ads liczą się zawsze. Sam gtag/js
+ *  ładuje się później (components/GoogleAnalytics.tsx) i przetwarza kolejkę. */
+const zgodaGoogle = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+try{if(localStorage.getItem('fluxlab_zgoda')==='tak')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',analytics_storage:'granted'})}catch(e){}
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+gtag('js',new Date());${GA_ID ? `gtag('config','${GA_ID}',{page_path:location.pathname});` : ""}${ADS_ID ? `gtag('config','${ADS_ID}');` : ""}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -100,6 +113,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html:
               "try{if(localStorage.getItem('fluxlab_zgoda'))document.documentElement.dataset.zgodaZapisana=''}catch(e){}",
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: zgodaGoogle,
           }}
         />
         <script

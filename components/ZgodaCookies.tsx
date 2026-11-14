@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-/** Okno zgody na Google Analytics. Bez zgody GA działa w trybie bez ciasteczek
- *  (consent mode, analytics_storage: denied). Okno jest w HTML od początku
+/** Okno zgody na Google Analytics i Google Ads. Bez zgody oba działają w trybie
+ *  bez ciasteczek (Consent Mode v2, tryb zaawansowany, app/layout.tsx). Okno jest w HTML od początku
  *  i widoczne, żeby malowało się razem ze stroną (inaczej Lighthouse bierze
  *  je za największy element, który pojawia się późno). Gdy wybór jest już
  *  zapisany, skrypt w <head> (app/layout.tsx) chowa je przed pierwszym
@@ -42,8 +42,6 @@ export default function ZgodaCookies() {
       ad_storage: tak ? "granted" : "denied",
       ad_user_data: tak ? "granted" : "denied",
     });
-    const adsId = process.env.NEXT_PUBLIC_ADS_ID;
-    if (tak && adsId) window.gtag?.("config", adsId);
     setWidoczne(false);
   };
 
