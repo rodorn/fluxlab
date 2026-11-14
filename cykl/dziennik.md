@@ -11350,3 +11350,10 @@ Zero przez 3 doby (12-14.11): facebook w całości (utm, www, m.), useme.com, ha
 **Kanał:** outreach (plan 14.11, Z6; Z7 „[!] budżet”, rytm „zwolnij”). **Co zrobione:** 6 nowych maili na poniedziałek (maile_wp/037-042, fryzjerzy, salony urody, pensjonaty, sala weselna), wszystkie domeny z MX; gen_wp.py numeruje teraz od następnego wolnego numeru zamiast nadpisywać 001; nic nie wysłane (sobota).
 **Ruch:** pomiar-kanalow 24 h: 47 osób po odsiewie (7 dni 278), bez odsyłacza 33, X 3, google-ads 3. **Dowód:** `wyslij_segment.py wordpress --proba --limit=60`: 30 gotowych niewysłanych, utm w obu linkach. **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
 **Zostało otwarte:** cel 48 maili niespełniony (30); Z8 od 14:40, Z9 i Z10 od 16:40.
+
+## 2026-11-14 14:52
+**Kanał:** pomiar (plan 14.11, Z8). **Co zrobione:** usunięty fałszywy alarm „bez odpowiedzi”: `czas_odpowiedzi.py` liczy odpowiedź na dowolny adres firmowej domeny zgłaszającego (darmowe skrzynki dalej po pełnym adresie); zgłoszenie #25 Keller Finanse ma teraz odpowiedź po 29 h 46 min, nic nie poszło w świat.
+**Ruch:** pomiar-kanalow 24 h: 49 osób po odsiewie (7 dni 281), bez odsyłacza 34, Google 4, X 3.
+**Dowód:** raport_ruchu: „Czas pierwszej odpowiedzi: 1 zgłoszenie, mediana 29 h 46 min, do 15 minut 0 z 1.” (wcześniej „bez odpowiedzi 1”); plik nieśledzony w gicie fluxlab-ruch, ostatnio zmieniany 4.11, żadna aktywna sesja go nie trzyma; test_kolektor.py 10/11, ten sam test (migracja starej bazy) pada też na wersji sprzed zmiany.
+**Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
+**Zostało otwarte:** czekam na Z9 i Z10 o 16:40.
