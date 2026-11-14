@@ -11357,3 +11357,26 @@ Zero przez 3 doby (12-14.11): facebook w całości (utm, www, m.), useme.com, ha
 **Dowód:** raport_ruchu: „Czas pierwszej odpowiedzi: 1 zgłoszenie, mediana 29 h 46 min, do 15 minut 0 z 1.” (wcześniej „bez odpowiedzi 1”); plik nieśledzony w gicie fluxlab-ruch, ostatnio zmieniany 4.11, żadna aktywna sesja go nie trzyma; test_kolektor.py 10/11, ten sam test (migracja starej bazy) pada też na wersji sprzed zmiany.
 **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
 **Zostało otwarte:** czekam na Z9 i Z10 o 16:40.
+
+## 2026-11-14 16:50
+**Kanał:** pomiar Google + artykuł poniedziałku (plan 14.11, Z9 i Z10). **Co zrobione:** tabela stron wejścia z Google bez GSC dla stratega 15.11 i potwierdzenie, że temat 16.11 jest wolny, a szkic gotowy; nic nie poszło w świat.
+**Ruch:** pomiar-kanalow 24 h: 46 osób po odsiewie (7 dni 280), bez odsyłacza 32, Google 5, google-ads 3, X 2, chatgpt.com 2.
+**Z9, strony wejścia sesji z www.google.com, 7 dni, po odsiewie (39 sesji):**
+
+| Strona wejścia | Sesje | Odsłon na sesję | Zdarzenia |
+|---|---|---|---|
+| / | 23 | 1,8 | uruchomiono_kalkulator_podatkowy 2 |
+| /strefa-wiedzy/numer-ksef-w-przelewie | 3 | 1,0 | - |
+| /kalkulator-podatkowy | 2 | 1,5 | uruchomiono_kalkulator_podatkowy 1 |
+| /kontakt | 2 | 7,0 | lead_landing 1 |
+| /numer-ksef | 2 | 3,0 | form_start 2, uruchomiono_numer_ksef 2 |
+| /kalkulator-oze-demo | 2 | 3,5 | - |
+| /automatyzacja-leadow-crm | 1 | 1,0 | - |
+| /strefa-wiedzy/gutschrift-ksef | 1 | 1,0 | - |
+| /analiza-lokalizacji | 1 | 2,0 | - |
+| /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef | 1 | 1,0 | - |
+
+Poza tabelą: /strefa-wiedzy/biala-lista-vat-nowe-api 1 (3,0). Wniosek dla stratega: najlepiej z Google pracuje /numer-ksef (narzędzie uruchamiane i formularz rozpoczynany), artykuł o numerze KSeF w przelewie ściąga wejścia, ale nikt z niego nie idzie dalej (1,0).
+**Z10:** temat 16.11 „Black Friday i weekendowe zgłoszenia” wolny (`ls app/strefa-wiedzy | grep -iE 'weekend|black|sobot|leada'` = 0), /czas-reakcji-na-leada 200, szkic czeka w cykl/artykul-2026-11-16-szkic.md (fakty F1-F6 do ponownego odczytu przy publikacji).
+**Dowód:** cykl/plan-ruchu.md Z9 i Z10 oznaczone [x]. **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
+**Zostało otwarte:** czekam na Z11 o 20:40.
