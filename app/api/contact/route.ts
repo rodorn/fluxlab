@@ -276,11 +276,16 @@ export async function POST(req: Request) {
   const zReklamyGoogle =
     Boolean(utm.gclid || utm.gbraid || utm.wbraid) ||
     (/google/i.test(utm.utm_source) && /cpc|ppc|paid/i.test(utm.utm_medium));
+  const KAMPANIE: Record<string, string> = {
+    "24471841621": "e-Doręczenia",
+    "24456876167": "n8n i procesy",
+  };
   let zrodlo = "brak danych (wejście bezpośrednie albo bez zgody na pomiar)";
   if (zReklamyGoogle) {
     zrodlo = [
       "REKLAMA GOOGLE",
-      utm.utm_campaign && `kampania ${utm.utm_campaign}`,
+      utm.utm_campaign &&
+        `kampania ${KAMPANIE[utm.utm_campaign] ? `${KAMPANIE[utm.utm_campaign]} (${utm.utm_campaign})` : utm.utm_campaign}`,
       utm.utm_term && `fraza „${utm.utm_term}”`,
     ]
       .filter(Boolean)
