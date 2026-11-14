@@ -11345,3 +11345,8 @@ Zero przez 3 doby (12-14.11): facebook w całości (utm, www, m.), useme.com, ha
 **Dowód:** ~/Projekty/mail-audyt/kandydaci-wp-2026-11-14.json (6), wp14.log „zbadane 652, wordpress 231, z 1+ problemem 100, kandydaci 6”; Resend GET /emails/<id> dla 12 z wyslane_wp.json: 9 delivered, 3 bounced (te same); Zoho od 00:40: 0 odpowiedzi na „<domena>: …”, 0 „wypisz”.
 **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
 **Zostało otwarte:** Z6 od 12:40 (6 kandydatów zamiast 30, gotowych maili po Z6 ok. 30 przy celu 48; dla stratega: 94 z 100 stron z problemem nie ma firmowego adresu, kolejne zapytanie OSM nie poprawi trafności bez szukania maila na podstronie kontaktu), Z7 od 12:40, Z8 od 14:40.
+
+## 2026-11-14 12:55
+**Kanał:** outreach (plan 14.11, Z6; Z7 „[!] budżet”, rytm „zwolnij”). **Co zrobione:** 6 nowych maili na poniedziałek (maile_wp/037-042, fryzjerzy, salony urody, pensjonaty, sala weselna), wszystkie domeny z MX; gen_wp.py numeruje teraz od następnego wolnego numeru zamiast nadpisywać 001; nic nie wysłane (sobota).
+**Ruch:** pomiar-kanalow 24 h: 47 osób po odsiewie (7 dni 278), bez odsyłacza 33, X 3, google-ads 3. **Dowód:** `wyslij_segment.py wordpress --proba --limit=60`: 30 gotowych niewysłanych, utm w obu linkach. **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
+**Zostało otwarte:** cel 48 maili niespełniony (30); Z8 od 14:40, Z9 i Z10 od 16:40.
