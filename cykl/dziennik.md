@@ -11205,3 +11205,128 @@ Zero przez 3 doby (11-13.11): instagram, facebook (utm), threads, b2b, hajsmetri
 **Ruch:** doba do 06:15: 54 ludzi po odsiewie (google-ads 7, Google 3, X 3, YouTube 2, chatgpt.com 1, perplexity 1, reszta bez odsyłacza 39).
 **Dla Pawła:** zalogować Search Console w profilu ~/.config/chrome-google: https://search.google.com/search-console
 **Zostało otwarte:** Z3 od 08:40 (lista kandydatów wordpress), Z4 od 10:40.
+
+<!-- WYSLANO 2026-11-13 07:19 -->
+
+## 2026-11-13 12:43
+**Kanał:** outreach z gotowym raportem (Z3, Z4; Z5, Z7, Z8 wstrzymane).
+**Co zrobione:** 12 maili `wordpress` do gabinetów i salonów z błędami WordPressa (certyfikat SSL, brak https, stara wersja WP), 9 doręczonych, 3 odbicia, więc reguła Z5 wstrzymała kolejne partie; skan: 1730 domen, 852 na WordPressie, 36 kandydatów.
+**Ruch:** raport_ruchu, ostatnia doba: 284 odsłony, 176 osób (+37%); źródła: b2b-email 177 (piksel), google-ads 14, YouTube 10, Google 8, Threads 3; uruchomienia narzędzi 0; lejek 7 dni: 909 sesji, 6 form_start, 1 zapytanie.
+**Dowód:** ~/Projekty/mail-audyt/wyslane_wp.json (12 identyfikatorów Resend 01a1d4b9-4f48…01a1d4bb-db1a); odbicia (Transient): info@dental-practice.pl 550 brak MX, info@medicavision.pl i info@magnolianailbar.pl 552 skrzynka pełna, dopisane do pomijane.json.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** 24 gotowe maile w maile_wp (wszystkie domeny mają MX) czekają na decyzję stratega o wznowieniu; Z6 (zapytanie bez odpowiedzi) od 12:40 dla cyklu 14:43; cykle 08:43 i 10:43 nie zapisały wpisów (10:43: 403 Cloudflare przy logowaniu API).
+
+## 2026-11-13 14:50
+**Kanał:** leady (Z6 planu 13.11).
+**Co zrobione:** sprawdzone jedyne zgłoszenie z 7 dni oznaczone jako bez odpowiedzi: to Keller Finanse (9.11 10:59, /kontakt), obsłużone przez FL_keller mailami z 10.11 16:46 i 22:28; licznik go nie widzi, bo w formularzu jest literówka w adresie (jamyk zamiast kamyk).
+**Ruch:** doba 249 odsłon, 157 osób; źródła: b2b-email 152 (otwarcia maili), google-ads 12, youtube 8, google 7, threads 3, x 1. Uruchomienia narzędzi 0, form_start 1.
+**Dowód:** kolektor VPS zgloszenia id 25; Zoho Sent: „RE: CRM dla pośredników kredytowych” 10.11 16:46:13 i 22:28:24; plan-ruchu.md Z6 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z9 od 16:40 (Z8 ma [!], więc treść „outreach wznowiony” nie pasuje; karta f755c6e1 nie do zamknięcia jako wykonana), Z10 od 18:40, Z11 i Z12 od 20:40. czas_odpowiedzi.py będzie dalej pokazywał „bez odpowiedzi 1” do 16.11, gdy zgłoszenie wyjdzie z okna 7 dni.
+
+## 2026-11-13 16:45
+**Kanał:** 4, outreach (koordynacja, Z9 planu 13.11).
+**Co zrobione:** FL_marketing dostał listę 12 adresów segmentu wordpress (wyslane_wp.json, pomijane.json), żeby nie dublować wysyłek; partie 2-4 dalej wstrzymane po 3 odbiciach na 12.
+**Ruch:** ostatnia doba 234 odsłony, 151 osób; źródła: b2b-email 147, google-ads 12, www.google.com 6, www.youtube.com 5, threads 3.
+**Dowód:** `sesja napisz FL_marketing` (dwie wiadomości: lista i korekta godziny 12:44), „w skrzynce, dojdzie po turze”. Karta f755c6e1 nie należy do tej sesji (`decyzja zamknij`: „Brak otwartej karty decyzji f755c6e1 tej sesji”), pominięta.
+**Dla Pawła:** karta f755c6e1 („Czy wznowić zimny outreach…”, Twoje TAK z 7.11) wisi jako to_do na https://biuro.fluxlab.pl/decyzje/; outreach wznowiony 13.11, 12 maili, można ją zamknąć.
+**Zostało otwarte:** Z10 od 18:40 (statusy Resend i odpowiedzi Zoho partii 1), Z11 i Z12 od 20:40, Z13 od 22:40, Z14-Z17 14.11.
+
+## 2026-11-13 18:50
+**Kanał:** 4, outreach (pierwszy pomiar segmentu wordpress, Z10 planu 13.11).
+**Co zrobione:** pomiar partii 1: wysłane 12 / doręczone 9 / odbite 3 / skargi 0 / odpowiedzi 0 / sesje z utm_campaign=wordpress 0; nic nowego nie poszło w świat, partie 2-4 dalej wstrzymane regułą Z5.
+**Ruch:** ostatnia doba 246 odsłon, 159 osób (+15% wobec średniej 214); źródła: b2b-email 155 (piksel otwarć, nie ludzie), google-ads 12, www.google.com 6, www.facebook.com 5, threads 4; uruchomienia narzędzi 0, form_start 2.
+**Dowód:** Resend GET /emails/<id> dla 12 identyfikatorów z ~/Projekty/mail-audyt/wyslane_wp.json (9 delivered, 3 bounced: dental-practice.pl, medicavision.pl, magnolianailbar.pl, wszystkie już w pomijane.json, 63 pozycje); Zoho od 09:00: dwa maile (FINREAL, test piksela fluxlabstudio), 0 odpowiedzi na „<domena>: …”, 0 „wypisz”; baza wizyt na VPS: 0 wierszy z kampania='wordpress' od 13.11 08:00, także przed odsiewem. Audyt uruchomiony 17:03 (macOS, bez odsyłacza i kampanii) nie da się przypisać do maili.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 i Z12 od 20:40, Z13 od 22:40, Z14-Z17 14.11. Odpowiedzi na partię 1 mogą przyjść w nocy (Z14).
+
+## 2026-11-13 20:47
+**Kanał:** widoczność w wyszukiwarkach (Bing/Yandex/Naver przez IndexNow), plan Z11-Z12.
+**Co zrobione:** Z12: dwa adresy zmienione dziś przez inne sesje zgłoszone do IndexNow; Z11 (czwarte pytanie FAQ na /kalkulator-podatkowy) oznaczone „[!] budżet”, bo rytm to „zwolnij” (prognoza 118% tygodnia, hamulec alarm).
+**Ruch:** ostatnia doba 242 odsłony, 156 osób (+13% wobec średniej 214). Źródła: b2b-email 155, google-ads 12, www.google.com 6, www.facebook.com 5, threads 4; YouTube 3 sesje, X 1. Uruchomienia narzędzi: 1.
+**Dowód:** IndexNow: /wlasny-crm, /strefa-wiedzy/faktura-vat-rr-ksef, oba 200 na produkcji; Yandex 200, Naver 200, wspólny punkt 403.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 przy rytmie co najmniej „utrzymaj”; Z13 od 22:40 (bilans dnia), Z14-Z17 w nocy i rano 14.11.
+
+## 2026-11-13 22:45
+**Kanał:** pomiar (plan Z13, bilans dnia).
+**Co zrobione:** policzony bilans planu 2026-11-13; nic nowego nie poszło w świat, bo to zadanie pomiarowe.
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 43 ludzi, 67 odsłon (pierwsza odsłona: bez odsyłacza 20, google-ads 10, www.google.com 4, youtube 2+1, x 2, threads 2, chatgpt.com 1, instagram 1); 7 dni: 270. raport_ruchu doba: 237 odsłon, 152 osoby (z pikselem maili); lejek 7 dni: 926 sesji, 5 form_start, 1 zapytanie.
+
+Bilans planu 2026-11-13 (po odsiewie, doby kończone o 22:43, kanał = źródło pierwszej odsłony):
+
+| Kanał | 12/13.11 | 13/14.11 |
+|---|---|---|
+| Ludzie razem | 57 | 43 |
+| Bez odsyłacza | 40 | 20 |
+| Google (organic) | 3 | 4 (/ x2, /strefa-wiedzy/biala-lista-vat-nowe-api, /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef) |
+| google-ads: sesje, odsłony na sesję, form_start | 7, 1,0, 0 | 10, 1,6, 2 (jedna sesja: /strony-www → /automatyzacja-procesow-biznesowych → /audyt-strony, czat, audyt uruchomiony) |
+| utm_campaign=wordpress (sesje) | b.d. | 0 (także surowo przed odsiewem) |
+| YouTube / X / Threads | 3 / 3 / 0 | 3 / 2 / 2 |
+| chatgpt.com / perplexity | 2 / 1 | 1 / 0 |
+| Uruchomienia narzędzi | 2 (kalkulator) | 2 (audyt-strony 1, koszt-recznej-obslugi-leadow 1) |
+| klik_po_wyniku | 0 | 0 |
+| form_start / lead_* | 1 / 0 | 2 (/strony-www, /audyt-strony, ta sama sesja z google-ads) / 0 |
+| Pobrania (surowo) | 7 | 1 (schemat-integracji-crm-erp.pdf, bez sesji odsłony) |
+
+Wynik zadań: Z1-Z4, Z6, Z9, Z10, Z12 [x]; Z5, Z7, Z8 [!] partie 2-4 outreachu wordpress wstrzymane po 3 odbiciach na 12 w partii 1 (Resend 24 h: 9 delivered, 3 bounced, 0 odpowiedzi, 0 wejść z utm wordpress); Z11 [!] budżet „zwolnij”. google-ads pierwszy raz z sesją wielostronicową i form_start (po dwóch dobach samych odsłon pojedynczych), ale bez wysłanego zapytania. Search Console wylogowany czternastą dobę.
+**Dowód:** cykl/plan-ruchu.md Z13.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z14 od 14.11 00:40, Z15 od 02:40, Z16 od 04:40, Z17 od 06:00 (przed tymi godzinami zadań nie brać).
+<!-- WYSLANO 2026-11-13 23:20 -->
+
+## 2026-11-14 00:47
+**Kanał:** 4, outreach (pomiar nocny, Z14).
+**Co zrobione:** nocny pomiar partii 1 outreachu wordpress: bez odpowiedzi, bez wypisów i bez wejść z kampanii.
+**Ruch:** ostatnia doba 234 odsłony, 147 osób; Threads 4 sesje, YouTube 3, X 3, LinkedIn 0; 1 uruchomienie narzędzia; najczęściej /, /strony-www, /demo/nu-nrg.
+**Dowód:** Resend GET /emails/<id> dla 12 identyfikatorów z ~/Projekty/mail-audyt/wyslane_wp.json: 9 delivered, 3 bounced (te same co w Z10), 0 complained; Zoho od 13.11 18:40: jeden mail (raport TLS Google), 0 odpowiedzi na „<domena>: …”, 0 „wypisz”; baza wizyt na VPS od 18:40: 0 wierszy z kampania='wordpress' (24 sesje ogółem, przed odsiewem); cykl/plan-ruchu.md Z14 [x].
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z15 o 02:40, Z16 od 04:40, Z17 od 06:00.
+
+## 2026-11-14 02:45
+**Kanał:** pomiar (plan Z15, kanały po dobach dla reguły 3 dób).
+**Co zrobione:** tabela kanał × doby po odsiewie z pomiar-kanalow.py (pary, serie testowe, salwy, /grupa-ksef), kanał = źródło pierwszej odsłony sesji, google-ads i mail/wordpress osobno. Nic nie poszło w świat, zadanie pomiarowe.
+
+| kanał | 14.11 (do 02:43) | 13.11 | 12.11 | 7 dni |
+|---|---|---|---|---|
+| bez odsyłacza | 6 | 14 | 40 | 158 |
+| www.google.com | 1 | 4 | 3 | 37 |
+| google-ads | 0 | 9 | 4 | 20 |
+| youtube | 0 | 2 | 1 | 14 |
+| x | 0 | 3 | 2 | 7 |
+| instagram | 0 | 1 | 0 | 5 |
+| chatgpt.com | 0 | 0 | 1 | 4 |
+| threads | 0 | 2 | 0 | 4 |
+| facebook (utm) | 0 | 0 | 0 | 3 |
+| useme.com | 0 | 0 | 0 | 3 |
+| www.facebook.com | 0 | 0 | 0 | 3 |
+| hajsmetrics | 0 | 0 | 0 | 2 |
+| m.facebook.com | 0 | 0 | 0 | 2 |
+| com.google.android.gm | 0 | 0 | 0 | 1 |
+| ustawygospodarcze.pl | 0 | 0 | 0 | 1 |
+| linkedin | 0 | 0 | 1 | 1 |
+| perplexity | 0 | 0 | 1 | 1 |
+| github.com | 0 | 0 | 1 | 1 |
+| mail/wordpress | 0 | 0 | 0 | 0 |
+| razem | 7 | 35 | 54 | 267 |
+
+Zero przez 3 doby (12-14.11): facebook w całości (utm, www, m.), useme.com, hajsmetrics, com.google.android.gm, ustawygospodarcze.pl, mail/wordpress (partia 1 outreachu, 9 doręczonych). google-ads 13.11 = 9, w tym 4 z utm „landing-test1”.
+**Ruch:** raport_ruchu, ostatnia doba: 245 odsłon, 158 osób (+14% wobec średniej 215,0) (z pikselem maili); lejek 7 dni: 928 sesji, 5 form_start, 1 zapytanie (bez odpowiedzi 1).
+**Dowód:** cykl/plan-ruchu.md Z15 [x].
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z16 o 04:40, Z17 od 06:00 (przed tymi godzinami zadań nie brać).
+
+## 2026-11-14 04:45
+**Kanał:** Google (mapa witryny), Z16 planu 13.11.
+**Co zrobione:** sprawdzona mapa witryny: 185 adresów `<loc>` (bez zmian od 13.11 00:45), oba adresy z Z12 są w mapie (/wlasny-crm, /strefa-wiedzy/faktura-vat-rr-ksef), Z2 nie miał adresów; sesja napisz niepotrzebna.
+**Ruch:** raport_ruchu, ostatnia doba: 245 odsłon, 157 osób (+14% wobec średniej 215,3), źródła: b2b-email 150, google-ads 9, www.google.com 6, www.facebook.com 5, threads 4; X 3 sesje, YouTube 3; uruchomienia narzędzi 1; lejek 7 dni: 927 sesji, 5 form_start, 1 zapytanie (bez odpowiedzi 1).
+**Dowód:** cykl/plan-ruchu.md Z16 [x].
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z17 o 06:00 (ostatnie zadanie planu 13.11).
+
+## Strategia dobowa 2026-11-14
+**Wynik doby (24 h do 06:15, po odsiewie):** 44 ludzi (13.11: 54, 12.11: 44), tydzień 269 (było 271). Google 5 / 39 w tygodniu, google-ads 6 / 20, YouTube 3 / 15, X 4 / 10, Threads 2 / 5, chatgpt.com 1 / 4, Facebook 0 trzecią dobę, Bing + DDG 0. Outreach `wordpress` 13.11: 12 wysłanych, 9 doręczonych, 3 odbicia (1 brak MX, 2 pełne skrzynki), 0 odpowiedzi, 0 sesji z kampanii. Uruchomienia narzędzi 1, form_start 7 dni 5, lead_* 0. Z17 planu 13.11 zamknięty tym pomiarem.
+**Plan 14/15.11 (sobota):** 16 zadań, zero wysyłek (weekend). Przygotowanie poniedziałku: sprawdzenie MX 24 czekających maili, nowi kandydaci WordPress z innych branż (fryzjerzy, rzemiosło, szkoły językowe, biura podróży, pensjonaty), maile gotowe do wysyłki 16.11 (cel co najmniej 48). Naprawa fałszywego „bez odpowiedzi 1” w raporcie, strony wejścia z Google bez GSC, rozpoznanie artykułu 16.11; reszta to pomiary i IndexNow. FAQ kalkulatora czeka na rytm „utrzymaj” (budżet „zwolnij”, 122%).
+**Trzy najważniejsze zadania:** Z3 MX dla 24 czekających maili (08:40); Z4 nowi kandydaci WordPress, cel 30 (08:40); Z6 maile na poniedziałek, bez wysyłki (12:40).
+**Dla Pawła:**
+- Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), szesnasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
