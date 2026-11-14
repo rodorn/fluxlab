@@ -11336,3 +11336,12 @@ Zero przez 3 doby (12-14.11): facebook w całości (utm, www, m.), useme.com, ha
 **Co zrobione:** Z1: timer `fluxlab-strona` enabled, budżet „zwolnij” (125%, hamulec alarm), GSC nadal wylogowany (search-console/about). Z17 planu 13.11 zamknięty pomiarem stratega 14.11 06:15. Z2: /strony-www (200) zgłoszone do IndexNow.
 **Ruch:** wg stratega 06:15: 44 osoby po odsiewie w 24 h, źródła: bez odsyłacza 27, google-ads 6, Google 5, X 4, YouTube 3.
 **Dowód:** IndexNow Yandex 200, Naver 200, wspólny 403. **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google). **Zostało otwarte:** Z3 i Z4 od 08:40.
+<!-- WYSLANO 2026-11-14 07:07 -->
+
+## 2026-11-14 10:50
+**Kanał:** outreach (plan 14.11, Z4 i Z5).
+**Co zrobione:** Z4 zamknięty z wyniku przebiegu 08:43 (nie oznaczył planu): 652 nowe domeny usługowe zbadane, 231 na WordPressie, 6 kandydatów z firmowym adresem; Z5 pomiar dnia 2 partii wordpress bez zmian, nic nie poszło w świat.
+**Ruch:** wg stratega 06:15: 44 osoby po odsiewie w 24 h (bez odsyłacza 27, google-ads 6, Google 5, X 4, YouTube 3); od 00:40 46 sesji przed odsiewem, 0 z utm_campaign=wordpress.
+**Dowód:** ~/Projekty/mail-audyt/kandydaci-wp-2026-11-14.json (6), wp14.log „zbadane 652, wordpress 231, z 1+ problemem 100, kandydaci 6”; Resend GET /emails/<id> dla 12 z wyslane_wp.json: 9 delivered, 3 bounced (te same); Zoho od 00:40: 0 odpowiedzi na „<domena>: …”, 0 „wypisz”.
+**Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
+**Zostało otwarte:** Z6 od 12:40 (6 kandydatów zamiast 30, gotowych maili po Z6 ok. 30 przy celu 48; dla stratega: 94 z 100 stron z problemem nie ma firmowego adresu, kolejne zapytanie OSM nie poprawi trafności bez szukania maila na podstronie kontaktu), Z7 od 12:40, Z8 od 14:40.
