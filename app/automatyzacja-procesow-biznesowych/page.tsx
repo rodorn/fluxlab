@@ -79,6 +79,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
               Automatyzacja procesów biznesowych
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
+              Automatyzacja firmy zaczyna się od jednego procesu.
               Zastępujemy ręczną, powtarzalną pracę{" "}
               <Link href="/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych" className="text-accent hover:underline">
                 procesami
@@ -120,7 +121,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto">
                       <h2 className="h2-sekcji mb-10">
-                        Co oferujemy
+                        Co obejmuje automatyzacja firmy
                       </h2>
                       <ul className="space-y-5">
                         {offer.map((item) => (

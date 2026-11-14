@@ -10,11 +10,11 @@ import Tabs from "@/components/Tabs";
 export const metadata: Metadata = {
   title: "n8n vs Make 2026: ceny i co wybrać w firmie | Fluxlab",
   description:
-    "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
+    "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze od 30 zł miesięcznie. Co wybrać w małej firmie.",
   openGraph: {
     title: "n8n vs Make 2026: ceny i co wybrać w firmie | Fluxlab",
     description:
-      "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
+      "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze od 30 zł miesięcznie. Co wybrać w małej firmie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -41,7 +41,7 @@ export default function MakeVsN8nArticle() {
     {
       question: "Czy n8n self-hosted jest tańszy od Make?",
       answer:
-        "Powyżej ok. 50 000 operacji miesięcznie tak. Serwer to ok. 25 zł/mies., do tego utrzymanie 200 do 500 zł/mies.",
+        "Powyżej ok. 50 000 operacji miesięcznie tak. Serwer to 30 do 90 zł/mies., do tego utrzymanie: 1 do 3 godzin pracy miesięcznie.",
     },
     {
       question: "Czy Make jest łatwiejszy w nauce niż n8n?",
@@ -74,7 +74,7 @@ export default function MakeVsN8nArticle() {
               Make vs n8n, porównanie dla firm MŚP
             </h1>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Oba to wizualne platformy automatyzacji z mocną logiką. Różnią je
+              Make vs n8n w skrócie: oba to wizualne platformy automatyzacji z mocną logiką. Różnią je
               model dostarczania, koszt przy wzroście i miejsce, w którym leżą
               Twoje dane.
             </p>
@@ -91,7 +91,7 @@ export default function MakeVsN8nArticle() {
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
                       <h2 className="h2-sekcji mb-6">
-                        Model i koszt dla MŚP
+                        Make czy n8n: porównanie kosztów
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Make to czeski SaaS, działa tylko w chmurze. n8n to
@@ -102,8 +102,8 @@ export default function MakeVsN8nArticle() {
                         <li>Make Core: od ok. 9 USD/mies. za 10 000 operacji</li>
                         <li>n8n.cloud Starter: od ok. 24 EUR/mies. za 2 500 wykonań</li>
                         <li>
-                          n8n self-hosted: serwer ok. 25 zł/mies. plus utrzymanie
-                          200 do 500 zł/mies.
+                          n8n self-hosted: licencja 0 zł, serwer 30 do 90 zł/mies.
+                          plus utrzymanie
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -111,6 +111,25 @@ export default function MakeVsN8nArticle() {
                         kosztują podobnie. Powyżej 30 tys. wyraźnie wygrywa n8n
                         na własnym serwerze, bo koszt rośnie z serwerem, a nie z
                         liczbą operacji.
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">
+                        Do abonamentu dochodzi praca: u nas od 790 zł za
+                        przepływ, rozpisane na pozycje w{" "}
+                        <Link
+                          href="/wdrozenie-n8n-cena"
+                          className="text-accent hover:underline"
+                        >
+                          cenniku wdrożenia n8n
+                        </Link>
+                        . Jeśli płacisz już za operacje w Make, policz, ile
+                        zostanie po przeniesieniu scenariuszy:{" "}
+                        <Link
+                          href="/tansze-automatyzacje"
+                          className="text-accent hover:underline"
+                        >
+                          tańsze automatyzacje bez opłat za kroki
+                        </Link>
+                        .
                       </p>
                     </div>
                   </div>
@@ -312,7 +331,7 @@ export default function MakeVsN8nArticle() {
             "@type": "Article",
             headline: "Make vs n8n, porównanie dla firm MŚP",
             description:
-              "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze ok. 25 zł miesięcznie. Co wybrać w małej firmie.",
+              "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze od 30 zł miesięcznie. Co wybrać w małej firmie.",
             datePublished: "2026-04-19",
             author: {
               "@type": "Organization",
