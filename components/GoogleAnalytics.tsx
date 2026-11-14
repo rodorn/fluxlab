@@ -34,6 +34,7 @@ export default function GoogleAnalytics() {
     };
     const zegar = setTimeout(start, 8000);
     const teraz = () => ustawGotowe(true);
+    if ((window as { __gtagTeraz?: number }).__gtagTeraz) teraz();
     window.addEventListener("gtag-teraz", teraz);
     zdarzenia.forEach((z) =>
       window.addEventListener(z, start, { once: true, passive: true }),

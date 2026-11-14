@@ -207,6 +207,9 @@ export async function POST(req: Request) {
     utm_content: str(body.utm_content, MAX_UTM),
     landing_page: str(body.landing_page, MAX_UTM),
     referrer: str(body.referrer, MAX_UTM),
+    gclid: str(body.gclid, 300),
+    gbraid: str(body.gbraid, 300),
+    wbraid: str(body.wbraid, 300),
   };
   if (!utm.utm_source) {
     const ciastko = /(?:^|;\s*)fl_zrodlo=([^;]+)/.exec(

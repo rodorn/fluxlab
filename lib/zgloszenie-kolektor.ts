@@ -20,6 +20,9 @@ export type PolaZgloszenia = {
   landing_page?: string;
   referrer?: string;
   sesja?: string;
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
 };
 
 export type LadunekZgloszenia = {
@@ -38,6 +41,9 @@ export type LadunekZgloszenia = {
   landing_page: string;
   referrer: string;
   sesja: string;
+  gclid: string;
+  gbraid: string;
+  wbraid: string;
 };
 
 // Te same granice, co w kolektorze: kolektor i tak utnie, ale nie ma powodu
@@ -58,6 +64,9 @@ const LIMITY: Record<keyof LadunekZgloszenia, number> = {
   landing_page: 500,
   referrer: 500,
   sesja: 40,
+  gclid: 300,
+  gbraid: 300,
+  wbraid: 300,
 };
 
 function utnij(wartosc: unknown, max: number): string {

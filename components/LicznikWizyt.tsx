@@ -89,8 +89,12 @@ function Zliczanie() {
     // to jedyna rzecz, ktorej ma dowiesc proba kampanii. Google dokleja gclid
     // do kazdego klikniecia w reklame, wiec jego obecnosc rozstrzyga sprawe
     // nawet wtedy, gdy ktos zapomni otagowac adresu przez utm.
+    // Samo utm_medium=cpc nie wystarcza: tak oznaczone bywaja tez linki z
+    // innych zrodel (np. utm_source=chatgpt), a te nie sa reklama Google.
+    const zrodloUtm = (parametry.get("utm_source") ?? "").toLowerCase();
     const zReklamy =
-      parametry.has("gclid") || parametry.get("utm_medium") === "cpc";
+      ["gclid", "gbraid", "wbraid"].some((n) => parametry.has(n)) ||
+      (parametry.get("utm_medium") === "cpc" && (!zrodloUtm || zrodloUtm === "google"));
     const dane = {
       sciezka,
       zrodlo: zReklamy ? "google-ads" : parametry.get("utm_source") || zrodlo,

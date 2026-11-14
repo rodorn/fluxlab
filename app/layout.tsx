@@ -87,16 +87,22 @@ export const metadata: Metadata = {
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const ADS_ID = process.env.NEXT_PUBLIC_ADS_ID;
+const ADS_LABEL_TEL = process.env.NEXT_PUBLIC_ADS_LABEL_TEL;
 
 /** Consent Mode v2 w trybie zaawansowanym: kolejka gtag istnieje od pierwszego
  *  bajtu strony, domyślnie wszystko odmówione. Bez zgody Google dostaje tylko
  *  sygnały bez ciasteczek, więc konwersje Ads liczą się zawsze. Sam gtag/js
- *  ładuje się później (components/GoogleAnalytics.tsx) i przetwarza kolejkę. */
+ *  ładuje się później (components/GoogleAnalytics.tsx) i przetwarza kolejkę.
+ *  Kliknięcia tel: i mailto: są liczone tutaj, żeby nie ginęły przed hydratacją;
+ *  identyfikator kliknięcia reklamy z adresu wejścia zostaje w window.__flKlik
+ *  (bez zapisu na urządzeniu) i trafia do zgłoszenia (components/PomiarAds.tsx). */
 const zgodaGoogle = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
 try{if(localStorage.getItem('fluxlab_zgoda')==='tak')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',analytics_storage:'granted'})}catch(e){}
 gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
-gtag('js',new Date());${GA_ID ? `gtag('config','${GA_ID}',{page_path:location.pathname});` : ""}${ADS_ID ? `gtag('config','${ADS_ID}');` : ""}`;
+gtag('js',new Date());${GA_ID ? `gtag('config','${GA_ID}',{page_path:location.pathname});` : ""}${ADS_ID ? `gtag('config','${ADS_ID}',{allow_enhanced_conversions:true});` : ""}
+try{var q=new URLSearchParams(location.search),k={};['gclid','gbraid','wbraid'].forEach(function(n){var v=q.get(n);if(v)k[n]=v});if(k.gclid||k.gbraid||k.wbraid)window.__flKlik=k}catch(e){}
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'',p={href:h,location:location.pathname};if(h.indexOf('mailto:')===0)gtag('event','email_click',p);else if(h.indexOf('tel:')===0){gtag('event','phone_click',p);${ADS_ID && ADS_LABEL_TEL ? `gtag('event','conversion',{send_to:'${ADS_ID}/${ADS_LABEL_TEL}'});` : ""}}else return;window.__gtagTeraz=1;window.dispatchEvent(new Event('gtag-teraz'))},true);`;
 
 export default function RootLayout({
   children,
