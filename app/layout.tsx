@@ -4,6 +4,7 @@ import { Fraunces, Instrument_Sans } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import PomiarFormularzy from "@/components/PomiarFormularzy";
 import PomiarAds from "@/components/PomiarAds";
+import PikselMeta from "@/components/PikselMeta";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import PasekAkcji from "@/components/PasekAkcji";
 import TloKursora from "@/components/TloKursora";
@@ -259,6 +260,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <PomiarFormularzy />
         <PomiarAds />
+        <PikselMeta />
         <ZgodaCookies />
         <CiszaPrzyPrzewijaniu />
         <ViewTransition default="vt-page">{children}</ViewTransition>

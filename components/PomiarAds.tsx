@@ -131,6 +131,9 @@ export default function PomiarAds() {
                 body.problemType && { lead_type: body.problemType }),
             });
             konwersjaAds("formularz");
+            window.fbq?.("track", "Lead", {
+              content_name: oferta(location.pathname),
+            });
           }
         }
       } catch {}

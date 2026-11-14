@@ -234,7 +234,12 @@ export default function PolitykaPrywatnosci() {
                           zaszyfrowanej skrótem (SHA-256) do dopasowania
                           konwersji (konwersje rozszerzone). Bez zgody
                           reklamy dopasowane i konwersje rozszerzone są
-                          wyłączone.
+                          wyłączone. Piksel Meta (Facebook, Instagram) ładuje
+                          się wyłącznie po kliknięciu „Akceptuj”: zlicza
+                          odwiedziny i wysłane zgłoszenia z reklam Meta oraz
+                          pozwala Meta pokazywać reklamy Fluxlab osobom, które
+                          odwiedziły Serwis. Bez zgody skrypt Meta nie jest
+                          wczytywany.
                           Wybór można zmienić, czyszcząc dane strony w
                           przeglądarce. Poza tym pliki cookie służą wyłącznie
                           prawidłowemu działaniu Serwisu (pliki techniczne).
@@ -258,6 +263,15 @@ export default function PolitykaPrywatnosci() {
                             zlokalizowanych poza Europejskim Obszarem
                             Gospodarczym, z zachowaniem odpowiednich
                             zabezpieczeń (standardowe klauzule umowne).
+                          </li>
+                          <li>
+                            <strong>Google Ireland Limited</strong> – Google
+                            Analytics i Google Ads, w zakresie opisanym w §4.
+                          </li>
+                          <li>
+                            <strong>Meta Platforms Ireland Limited</strong> –
+                            piksel Meta, wyłącznie po zgodzie w oknie cookie
+                            (§4).
                           </li>
                           <li>
                             Podmiotom uprawnionym na podstawie obowiązujących
