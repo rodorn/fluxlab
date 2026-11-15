@@ -8,6 +8,7 @@ import { WDROZENIA } from "@/lib/wdrozenia";
 import RealizacjaFinreal from "@/components/RealizacjaFinreal";
 import RealizacjaFinrealSzczegoly from "@/components/RealizacjaFinrealSzczegoly";
 import JakPracujemyLiczby from "@/components/JakPracujemyLiczby";
+import GaleriaRealizacji from "@/components/GaleriaRealizacji";
 
 export const metadata: Metadata = {
   title: "Realizacje: wdrożenia i ich efekty | Fluxlab",
@@ -172,6 +173,7 @@ export default function RealizacjePage() {
 
           <RealizacjaFinreal />
           <RealizacjaFinrealSzczegoly />
+          <GaleriaRealizacji />
 
           <div className="mt-16 grid gap-5 md:grid-cols-2">
             {WDROZENIA.slice(1).map((w) => (
