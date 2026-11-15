@@ -101,6 +101,7 @@ OFERTA["faktury-kosztowe"] = { nazwa: "Faktury kosztowe z KSeF na maila, codzien
 OFERTA["kontrola-faktur"] = { nazwa: "Kontrola faktur kosztowych z KSeF przed zapłatą", netto: 39, miesiecznie: true, strona: "/kontrola-faktur-kosztowych", dostep: "/ksef-dostep" };
 OFERTA["faktury-z-excela"] = { nazwa: "Faktury z Excela do KSeF", netto: 49, miesiecznie: true, strona: "/faktury-z-excela-do-ksef", dostep: "/ksef-wystawianie" };
 OFERTA["paragon-do-arkusza"] = { nazwa: "Paragon do arkusza", netto: 29, miesiecznie: true, strona: "/paragon-do-arkusza", dostep: "/paragony-dostep" };
+OFERTA["wzmianki"] = { nazwa: "Wzmianki o firmie w sieci co tydzień", netto: 39, miesiecznie: true, strona: "/wzmianki-o-firmie-w-sieci", dostep: "/wzmianki-dostep" };
 OFERTA["nowe-firmy"] = { nazwa: "Nowe spółki w branży i regionie co tydzień", netto: 49, miesiecznie: true, strona: "/nowe-spolki-w-branzy-i-regionie", dostep: "/nowe-firmy-dostep" };
 OFERTA["przypomnienia"] = { nazwa: "Przypomnienia o płatnościach faktur z KSeF", netto: 39, miesiecznie: true, strona: "/przypomnienia-o-platnosciach", dostep: "/ksef-dostep" };
 OFERTA["naleznosci"] = { nazwa: "Należności i przeterminowane faktury z KSeF co tydzień", netto: 29, miesiecznie: true, strona: "/naleznosci-i-przeterminowane-faktury", dostep: "/ksef-dostep" };

@@ -475,6 +475,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/wzmianki-o-firmie-w-sieci`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/nowe-spolki-w-branzy-i-regionie`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

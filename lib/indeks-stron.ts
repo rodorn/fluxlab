@@ -353,6 +353,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Zdjęcie paragonu wysyłasz mailem, a pozycja z kwotą, VAT i kategorią trafia do arkusza. Odczyt robi model AI."
   },
   {
+    "url": "/wzmianki-o-firmie-w-sieci",
+    "tytul": "Wzmianki o firmie w sieci co tydzień, 39 zł/mies.",
+    "opis": "Co poniedziałek zestawienie publikacji o Twojej firmie z Google News, serwisów branżowych i Wykopu, ze streszczeniem i linkami. Bez logowania do czegokolwiek."
+  },
+  {
     "url": "/nowe-spolki-w-branzy-i-regionie",
     "tytul": "Nowe spółki z KRS co tydzień, 49 zł/mies.",
     "opis": "Co poniedziałek lista nowo zarejestrowanych w KRS spółek z Twojej branży (PKD) i regionu: nazwa, NIP, adres, e-mail firmy. Dane z oficjalnego API KRS."
