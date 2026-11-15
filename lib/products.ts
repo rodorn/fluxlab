@@ -216,6 +216,21 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    category: "www",
+    name: "Polityka haseł dla firmy",
+    tagline: "Gotowy PDF z zasadami dla zespołu, z nazwą Twojej firmy",
+    desc: "Netto, jednorazowo. Podajesz nazwę firmy, a po płatności dostajesz mailem PDF: zasady haseł, menedżer haseł, lista kont z 2FA i procedura odejścia pracownika. Do wydruku i podpisu.",
+    price: "19 zł",
+    href: "/polityka-hasel#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz politykę",
+    bullets: [
+      "zasady haseł i menedżer haseł",
+      "lista kont z obowiązkowym 2FA",
+      "procedura odejścia pracownika",
+    ],
+  },
+  {
     category: "automatyzacja",
     name: "Panel zwrotów i reklamacji",
     tagline: "Każdy zwrot przechodzi dziś przez czyjeś ręce",
