@@ -87,8 +87,7 @@ const SYTUACJE: Sytuacja[] = [
   {
     klucz: "przelew",
     etykieta: "Mamy komuś zapłacić albo odzyskać pieniądze",
-    odpowiedz:
-      "Cztery sprawdzenia, wszystkie przed przelewem, nie po nim.",
+    odpowiedz: "Cztery sprawdzenia, wszystkie przed przelewem, nie po nim.",
     wskazania: [
       {
         href: "/sprawdzenie-nip",
@@ -173,6 +172,11 @@ const SYTUACJE: Sytuacja[] = [
         href: "/audyt-crm",
         powod:
           "Dziesięć pytań tak lub nie i wskazanie obszaru, w którym automatyzacja da najwięcej.",
+      },
+      {
+        href: "/dane-firmy-z-nip",
+        powod:
+          "Zgłoszenie z numerem NIP dostaje nazwę firmy, adres, status VAT i dane z KRS, bez przepisywania z rejestrów.",
       },
     ],
   },

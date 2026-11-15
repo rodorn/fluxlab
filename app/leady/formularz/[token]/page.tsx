@@ -3,6 +3,8 @@ import FormularzLeada from "@/components/FormularzLeada";
 
 export const metadata: Metadata = {
   title: "Formularz kontaktowy",
+  description: "Formularz kontaktowy do osadzenia na stronie klienta.",
+  alternates: { canonical: "/leady/formularz" },
   robots: { index: false, follow: false },
 };
 

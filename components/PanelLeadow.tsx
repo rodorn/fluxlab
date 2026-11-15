@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 export interface LeadWiersz {
-  id: number;
+  id: string;
   czas: string;
   pola: Record<string, string>;
-  firma: { nazwa?: string; adres?: string; krs?: string; branza?: string; blad?: string } | null;
+  firma: { nazwa?: string | null; adres?: string | null; krs?: string | null; branza?: string; blad?: string } | null;
   ocena: { kategoria?: string; punkty?: number; streszczenie?: string; nastepny_krok?: string } | null;
   status: string;
 }
@@ -65,11 +65,11 @@ export default function PanelLeadow({
           </p>
           <form onSubmit={zapisz} className="mt-4 grid gap-3">
             <input className={POLE} placeholder="Nazwa firmy w podpisie" aria-label="Nazwa firmy" value={ust.firma ?? ""} onChange={(e) => setUst({ ...ust, firma: e.target.value })} />
-            <textarea className={POLE} rows={5} placeholder="Krótka oferta: co robicie, ile to kosztuje, kiedy oddzwonicie" aria-label="Treść oferty" value={ust.oferta ?? ""} onChange={(e) => setUst({ ...ust, oferta: e.target.value })} />
+            <textarea className={POLE} rows={5} placeholder="Krótka oferta: co robi firma, ile to kosztuje, kiedy nastąpi kontakt" aria-label="Treść oferty" value={ust.oferta ?? ""} onChange={(e) => setUst({ ...ust, oferta: e.target.value })} />
             <input className={POLE} type="url" placeholder="Link do kalendarza, https://..." aria-label="Link do kalendarza" value={ust.kalendarz ?? ""} onChange={(e) => setUst({ ...ust, kalendarz: e.target.value })} />
             <div className="flex items-center gap-4">
               <button type="submit" disabled={stan === "zapis"} className="btn-primary disabled:opacity-50">
-                {stan === "zapis" ? "Zapisuję..." : "Zapisz"}
+                {stan === "zapis" ? "Zapis..." : "Zapisz"}
               </button>
               {stan === "ok" && <span className="text-sm text-emerald-700 dark:text-emerald-400">Zapisane, działa od następnego zgłoszenia.</span>}
               {stan === "blad" && <span className="text-sm text-red-700 dark:text-red-400">{blad}</span>}

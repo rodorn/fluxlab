@@ -29,8 +29,7 @@ export default function Page() {
       ctaLabel="Zobacz przykład"
       ctaNote="19 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
-        { przed: "Chcesz sprawdzić wiarygodność kontrahenta? Użyj", kotwica: "darmowego sprawdzania NIP", href: "/sprawdz-nip", po: "." },
-        { przed: "Do zgłoszeń możesz dodać też", kotwica: "ocenę leada przez AI", href: "/ocena-leada-ai", po: "." },
+        { przed: "Chcesz sprawdzić wiarygodność kontrahenta? Użyj", kotwica: "darmowego sprawdzania NIP", href: "/sprawdzenie-nip", po: "." },
       ]}
       checks={[
         { title: "Dane z rejestrów urzędowych", desc: "Nazwa, adres, KRS, REGON i status VAT z wykazu podatników Ministerstwa Finansów, aktualne na dzień zgłoszenia." },

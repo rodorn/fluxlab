@@ -6,13 +6,13 @@ const POLE =
   "w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 outline-none focus:border-gray-900";
 
 export default function FormularzLeada({ token }: { token: string }) {
-  const [stan, setStan] = useState<"idle" | "wysylam" | "ok" | "blad">("idle");
+  const [stan, setStan] = useState<"idle" | "trwa" | "ok" | "blad">("idle");
   const [blad, setBlad] = useState("");
 
   async function wyslij(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const dane = Object.fromEntries(new FormData(e.currentTarget).entries());
-    setStan("wysylam");
+    setStan("trwa");
     try {
       const r = await fetch(`/api/lead/${token}`, {
         method: "POST",
@@ -49,8 +49,8 @@ export default function FormularzLeada({ token }: { token: string }) {
       <textarea name="wiadomosc" rows={3} placeholder="W czym możemy pomóc?" aria-label="Wiadomość" className={POLE} />
       <p className="text-xs text-gray-500">Podaj e-mail albo telefon. Dane posłużą wyłącznie do odpowiedzi na to zgłoszenie.</p>
       {stan === "blad" && <p className="text-sm text-red-700">{blad}</p>}
-      <button type="submit" disabled={stan === "wysylam"} className="rounded-lg bg-gray-900 px-4 py-3 text-sm font-semibold text-white disabled:opacity-50">
-        {stan === "wysylam" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
+      <button type="submit" disabled={stan === "trwa"} className="rounded-lg bg-gray-900 px-4 py-3 text-sm font-semibold text-white disabled:opacity-50">
+        {stan === "trwa" ? "Wysyłamy..." : "Wyślij zgłoszenie"}
       </button>
     </form>
   );

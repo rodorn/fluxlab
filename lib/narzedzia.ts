@@ -131,6 +131,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "tarcza",
   },
   {
+    title: "Dane firmy z NIP",
+    pytanie: "Kim jest firma, która do Ciebie napisała?",
+    description:
+      "Wpisz NIP, a pokażemy nazwę, adres, KRS i branżę z rejestrów państwowych. W abonamencie dopisujemy je do każdego zgłoszenia.",
+    href: "/dane-firmy-z-nip",
+    ikona: "lupa",
+  },
+  {
     title: "Rejestr cen w sklepie",
     description:
       "Sprawdzamy Twoje przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",
