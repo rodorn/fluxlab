@@ -278,6 +278,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Wprost z danych operatora."
   },
   {
+    "url": "/kalkulator-raty-komis",
+    "tytul": "Kalkulator raty i leasingu na stronę komisu, 49 zł/mies.",
+    "opis": "Kalkulator raty kredytu i leasingu do wklejenia na stronę komisu: Twoja nazwa, kontakt i oprocentowanie. Kod dostajesz mailem zaraz po zamówieniu."
+  },
+  {
     "url": "/nabory-dotacji-oze",
     "tytul": "Nabory dotacji OZE, alert o zmianach, 19 zł/mies.",
     "opis": "Obserwujemy strony programów dotacji na fotowoltaikę, magazyny energii i pompy ciepła i piszemy, gdy pojawi się nowy tekst o naborze lub terminie."

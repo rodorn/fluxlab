@@ -61,6 +61,15 @@ const DLA_KOGO = "Dla kogo: dom czy firma";
 
 OFERTA["dotacje-oze"] = { nazwa: "Nabory dotacji OZE: alert o zmianach na stronach programów", netto: 19, miesiecznie: true, strona: "/nabory-dotacji-oze", pole: DLA_KOGO };
 
+OFERTA["rata-komis"] = {
+  nazwa: "Kalkulator raty i leasingu dla komisu",
+  netto: 49,
+  miesiecznie: true,
+  strona: "/kalkulator-raty-komis",
+  pole: "Nazwa komisu i kontakt dla klientów (telefon lub e-mail)",
+  pole2: "Oprocentowanie kredytu w %, np. 9,5 (opcjonalnie)",
+};
+
 export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
 
 const OFERTY_POZYCJI: Record<string, string[]> = {
