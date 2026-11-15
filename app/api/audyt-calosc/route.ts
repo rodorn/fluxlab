@@ -151,6 +151,34 @@ async function poPlatnosci(sesjaId: string) {
   return NextResponse.json({ ok: true, email });
 }
 
+/**
+ * Zapas dla klientów, którzy zamknęli kartę przed powrotem z płatności: cron
+ * na VPS co 10 minut woła ?zalegle=1, a trasa bierze najstarszą opłaconą sesję
+ * z ostatnich 2 dni bez raportu (po 10 minutach, żeby nie ścigać się z powrotem).
+ */
+export async function GET(request: Request) {
+  if (new URL(request.url).searchParams.get("zalegle") !== "1")
+    return NextResponse.json({ error: "nie ma" }, { status: 404 });
+  const teraz = Math.floor(Date.now() / 1000);
+  const lista = await stripe(
+    `checkout/sessions?limit=100&status=complete&created[gte]=${teraz - 2 * 86400}&expand[]=data.payment_intent`,
+  );
+  const zalegle = (lista.data ?? [])
+    .filter(
+      (s: any) =>
+        s.metadata?.produkt === PRODUKT &&
+        s.payment_status === "paid" &&
+        s.payment_intent?.id &&
+        !s.payment_intent.metadata?.raport &&
+        teraz - s.created > 600,
+    )
+    .sort((a: any, b: any) => a.created - b.created);
+  if (!zalegle.length) return NextResponse.json({ zalegle: 0 });
+  console.log(`[audyt-calosc] zaległa sesja ${zalegle[0].id}, razem ${zalegle.length}`);
+  await poPlatnosci(zalegle[0].id);
+  return NextResponse.json({ zalegle: zalegle.length, sesja: zalegle[0].id });
+}
+
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try {
