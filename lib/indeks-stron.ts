@@ -288,6 +288,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Obserwujemy strony programów dotacji na fotowoltaikę, magazyny energii i pompy ciepła i piszemy, gdy pojawi się nowy tekst o naborze lub terminie."
   },
   {
+    "url": "/paczka-miesieczna-dla-biura",
+    "tytul": "Paczka miesięczna faktur z KSeF dla biura rachunkowego, 19 zł/mies.",
+    "opis": "Co miesiąc ZIP z fakturami kosztowymi i sprzedażowymi z KSeF (XML, PDF, zestawienie CSV) wysłany na maila biura rachunkowego."
+  },
+  {
     "url": "/ile-spolek-znika-z-krs",
     "tytul": "Ile spółek dziennie znika z KRS bez likwidacji",
     "opis": "Licznik liczony codziennie z Monitora Sądowego i Gospodarczego: ile podmiotów sąd skierował do rozwiązania bez likwidacji. Z ostatnich dni roboczych."

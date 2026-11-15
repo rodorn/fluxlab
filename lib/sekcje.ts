@@ -144,6 +144,7 @@ export const SEKCJE: Sekcja[] = [
           s("/ksef-integracja", "Integracja z KSeF"),
           s("/ksef-2027", "Lista KSeF na 2027"),
           s("/numer-ksef", "Sprawdzenie numeru KSeF"),
+          s("/paczka-miesieczna-dla-biura", "Paczka miesięczna z KSeF dla biura"),
           s("/e-doreczenia-integracja", "Integracja z e-Doręczeniami"),
           s("/raport-edoreczen", "Raport e-Doręczeń"),
           s("/e-doreczenia-dla-firm", "e-Doręczenia dla dużych firm"),

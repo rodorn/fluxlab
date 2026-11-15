@@ -8,6 +8,7 @@ export type Oferta = {
   pole?: string;
   pole2?: string;
   wgraj?: "umowa" | "porownanie";
+  dostep?: string;
 };
 
 const ADRES = "Adres strony";
@@ -61,6 +62,7 @@ export const OFERTA: Record<string, Oferta> = {
 const DLA_KOGO = "Dla kogo: dom czy firma";
 
 OFERTA["dotacje-oze"] = { nazwa: "Nabory dotacji OZE: alert o zmianach na stronach programów", netto: 19, miesiecznie: true, strona: "/nabory-dotacji-oze", pole: DLA_KOGO };
+OFERTA["paczka-biuro"] = { nazwa: "Paczka miesięczna faktur z KSeF dla biura rachunkowego", netto: 19, miesiecznie: true, strona: "/paczka-miesieczna-dla-biura", dostep: "/ksef-dostep" };
 
 OFERTA["rata-komis"] = {
   nazwa: "Kalkulator raty i leasingu dla komisu",
