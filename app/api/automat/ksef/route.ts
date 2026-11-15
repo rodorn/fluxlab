@@ -70,13 +70,14 @@ async function przypomnienia() {
     const link = `https://fluxlab.pl/${wystawianie ? "ksef-wystawianie" : "ksef-dostep"}?sesja=${s.id}`;
     const codziennie = prod === "faktury-kosztowe";
     const kontrola = prod === "kontrola-faktur";
+    const naleznosci = prod === "naleznosci";
     const w = await new Resend(process.env.RESEND_API_KEY).emails.send({
       from: FROM,
       to: email,
       replyTo: "pawel@fluxlab.pl",
       subject: wystawianie
         ? "Dokończ uruchomienie wystawiania faktur do KSeF"
-        : kontrola ? "Dokończ uruchomienie kontroli faktur kosztowych" : codziennie ? "Dokończ uruchomienie faktur kosztowych z KSeF" : "Dokończ uruchomienie paczki miesięcznej z KSeF",
+        : naleznosci ? "Dokończ uruchomienie zestawienia należności" : kontrola ? "Dokończ uruchomienie kontroli faktur kosztowych" : codziennie ? "Dokończ uruchomienie faktur kosztowych z KSeF" : "Dokończ uruchomienie paczki miesięcznej z KSeF",
       html: ramkaMaila(
         "Został jeden krok",
         `<p style="margin:0 0 12px">${wystawianie ? "Płatność przyszła, ale nie podałeś jeszcze danych firmy, tokenu KSeF i pliku z fakturami, więc nie mamy co wystawić." : "Płatność przyszła, ale nie podałeś jeszcze NIP-u i tokenu KSeF, więc nie mamy skąd pobrać faktur."}</p><p style="margin:0"><a href="${link}">${wystawianie ? "Uzupełnij dane i dodaj plik" : "Podaj dane firmy"}</a>. Zajmuje to kilka minut, a ${wystawianie ? "wynik przyjdzie na maila w ciągu godziny" : "pierwsze faktury przyjdą na maila w ciągu godziny"}.</p>`,

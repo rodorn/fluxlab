@@ -7,7 +7,7 @@ const POLE =
   "w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent";
 const ETYKIETA = "block text-sm font-medium text-gray-900 dark:text-white";
 
-export default function DostepKsef({ sesja, codziennie = false, kontrola = false }: { sesja: string; codziennie?: boolean; kontrola?: boolean }) {
+export default function DostepKsef({ sesja, codziennie = false, kontrola = false, naleznosci = false }: { sesja: string; codziennie?: boolean; kontrola?: boolean; naleznosci?: boolean }) {
   const [nip, setNip] = useState("");
   const [token, setToken] = useState("");
   const [biuro, setBiuro] = useState("");
@@ -52,7 +52,9 @@ export default function DostepKsef({ sesja, codziennie = false, kontrola = false
       <div aria-live="polite">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dane zapisane</h1>
         <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">
-          {kontrola
+          {naleznosci
+            ? "W ciągu godziny przyjdzie pierwsze zestawienie należności z faktur sprzedażowych z ostatnich 90 dni. Potem co poniedziałek rano, razem z listą faktur po terminie."
+            : kontrola
             ? "W ciągu godziny przyjdzie mail startowy z wynikiem kontroli faktur kosztowych z ostatnich siedmiu dni. Potem każda nowa faktura jest sprawdzana w Białej Liście MF, a mail dostaniesz od razu, gdy rachunek nie będzie się zgadzał ze sprzedawcą."
             : codziennie
             ? "W ciągu godziny przyjdzie mail z fakturami kosztowymi z ostatnich siedmiu dni. Potem rano, w dni, w których w KSeF pojawią się nowe faktury kosztowe, dostaniesz ich komplet."
@@ -77,9 +79,9 @@ export default function DostepKsef({ sesja, codziennie = false, kontrola = false
         <input value={token} onChange={(e) => setToken(e.target.value)} autoComplete="off" spellCheck={false} className={`${POLE} mt-1.5`} />
       </label>
       <label className="block">
-        <span className={ETYKIETA}>{codziennie || kontrola ? "Dodatkowy adres e-mail, na przykład księgowej (opcjonalnie)" : "E-mail biura rachunkowego (opcjonalnie)"}</span>
+        <span className={ETYKIETA}>{codziennie || kontrola || naleznosci ? "Dodatkowy adres e-mail, na przykład księgowej (opcjonalnie)" : "E-mail biura rachunkowego (opcjonalnie)"}</span>
         <input type="email" value={biuro} onChange={(e) => setBiuro(e.target.value)} autoComplete="off" className={`${POLE} mt-1.5`} />
-        <span className="mt-1 block text-xs text-gray-500 dark:text-gray-400">{kontrola ? "Bez adresu alerty trafiają tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię." : codziennie ? "Bez adresu faktury trafiają tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię." : "Bez adresu paczka trafia tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię."}</span>
+        <span className="mt-1 block text-xs text-gray-500 dark:text-gray-400">{naleznosci ? "Bez adresu zestawienie trafia tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię." : kontrola ? "Bez adresu alerty trafiają tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię." : codziennie ? "Bez adresu faktury trafiają tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię." : "Bez adresu paczka trafia tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię."}</span>
       </label>
       <label className="flex cursor-pointer items-start gap-3">
         <input type="checkbox" checked={zgoda} onChange={(e) => setZgoda(e.target.checked)} className="mt-1 h-4 w-4 shrink-0" />

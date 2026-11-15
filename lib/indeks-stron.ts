@@ -313,6 +313,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Obserwujemy strony programów dotacji na fotowoltaikę, magazyny energii i pompy ciepła i piszemy, gdy pojawi się nowy tekst o naborze lub terminie."
   },
   {
+    "url": "/naleznosci-i-przeterminowane-faktury",
+    "tytul": "Należności i przeterminowane faktury z KSeF, 29 zł",
+    "opis": "Co tydzień mail z listą niezapłaconych i przeterminowanych faktur sprzedażowych z KSeF oraz plik CSV."
+  },
+  {
     "url": "/kontrola-faktur-kosztowych",
     "tytul": "Kontrola faktur kosztowych przed zapłatą, 39 zł",
     "opis": "Rachunek z każdej faktury kosztowej z KSeF sprawdzamy w Białej Liście MF i piszemy, gdy nie należy do sprzedawcy."
