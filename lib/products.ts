@@ -231,6 +231,21 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    category: "www",
+    name: "Pilnowanie rekordów DNS",
+    tagline: "Mail, gdy ktoś zmieni rekordy Twojej domeny",
+    desc: "Netto, miesięcznie. Codziennie porównujemy rekordy domeny z zapisanym stanem i piszemy tylko wtedy, gdy coś się zmieni: co usunięto i co dodano. Rezygnacja w każdej chwili.",
+    price: "9 zł/mies.",
+    href: "/pilnowanie-dns#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz pilnowanie",
+    bullets: [
+      "codzienne porównanie rekordów domeny",
+      "mail tylko przy zmianie",
+      "lista: co usunięto i co dodano",
+    ],
+  },
+  {
     category: "automatyzacja",
     name: "Panel zwrotów i reklamacji",
     tagline: "Każdy zwrot przechodzi dziś przez czyjeś ręce",

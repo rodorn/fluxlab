@@ -32,6 +32,7 @@ export const OFERTA: Record<string, Oferta> = {
   "domeny-wyszukiwanie": { nazwa: "Skaner domen: wyszukiwanie", netto: 29, miesiecznie: false, strona: "/skaner-domen", pole: "Frazy albo nazwa firmy" },
   "spf-dkim-dmarc": { nazwa: "SPF, DKIM i DMARC z instrukcją", netto: 19, miesiecznie: false, strona: "/spf-dkim-dmarc", pole: "Domena firmowej poczty (firma.pl)" },
   "polityka-hasel": { nazwa: "Polityka haseł dla firmy", netto: 19, miesiecznie: false, strona: "/polityka-hasel", pole: "Nazwa firmy" },
+  "dns-pilnowanie": { nazwa: "Pilnowanie rekordów DNS jednej domeny", netto: 9, miesiecznie: true, strona: "/pilnowanie-dns", pole: "Domena do pilnowania (firma.pl)" },
   "domeny-pilnowanie": { nazwa: "Skaner domen: pilnowanie do 20 domen", netto: 9, miesiecznie: true, strona: "/skaner-domen", pole: "Domeny do pilnowania, po przecinku" },
   "jezyki-monitoring": { nazwa: "Monitoring wersji językowych", netto: 99, miesiecznie: true, strona: "/kontrola-jezykow", pole: ADRES },
   "ceny-skan": { nazwa: "Skan przecen w sklepie", netto: 49, miesiecznie: false, strona: "/rejestr-cen", pole: "Adres sklepu" },
