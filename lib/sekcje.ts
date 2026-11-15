@@ -81,6 +81,8 @@ export const SEKCJE: Sekcja[] = [
           s("/raport-o-firmie-w-internecie", "Raport o firmie w internecie"),
           s("/raport-dostepnosci-wcag", "Raport dostępności WCAG"),
           s("/posty-z-artykulow-bloga", "Posty z artykułów bloga"),
+          s("/zalaczniki-z-maila-do-folderow", "Załączniki z maila do folderów"),
+          s("/faktury-z-maila-na-dysk", "Faktury z maila na Dysk"),
           s("/transkrypcja-nagran", "Transkrypcja nagrań"),
           s("/protokol-ze-spotkania", "Protokół ze spotkania"),
           s("/kontrola-paliwa", "Kontrola paliwa we flocie"),

@@ -306,3 +306,8 @@ storage
 breeze
 meri
 Safety # nazwa unijnego systemu Safety Gate
+Dropbox
+flac
+ogg
+wav
+webm

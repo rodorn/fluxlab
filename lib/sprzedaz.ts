@@ -27,6 +27,8 @@ export const OFERTA: Record<string, Oferta> = {
   "formularz-zgloszenia": { nazwa: "Formularz do arkusza i Teams lub Slacka", netto: 19, miesiecznie: true, strona: "/formularz-do-arkusza-i-teams", pole: "Nazwa formularza (np. Zapytania ze strony)" },
   "firma-raport": { nazwa: "Firma w internecie: raport PDF", netto: 29, miesiecznie: false, strona: "/raport-o-firmie-w-internecie", pole: "Adres strony firmy (np. twojafirma.pl)" },
   "wcag-raport": { nazwa: "Raport dostępności WCAG", netto: 49, miesiecznie: false, strona: "/raport-dostepnosci-wcag", pole: "Adres strony (np. twojafirma.pl)" },
+  "zalaczniki-z-maila": { nazwa: "Załączniki z maila do folderów na Dysku", netto: 19, miesiecznie: true, strona: "/zalaczniki-z-maila-do-folderow", pole: "Adresy nadawców po przecinku (np. biuro@firma.pl, kadry@firma.pl)", dostep: "/polacz-google" },
+  "faktury-z-maila": { nazwa: "Faktury z maila na Dysk i do arkusza", netto: 29, miesiecznie: true, strona: "/faktury-z-maila-na-dysk", pole: "Adresy nadawców faktur po przecinku (albo wpisz: wszyscy)", dostep: "/polacz-google" },
   "transkrypcja-nagran": { nazwa: "Transkrypcja nagrań ze streszczeniem", netto: 49, miesiecznie: true, strona: "/transkrypcja-nagran", pole: "Link do pierwszego nagrania (do 25 MB)" },
   "protokol-spotkania": { nazwa: "Protokół ze spotkania z listą zadań", netto: 79, miesiecznie: true, strona: "/protokol-ze-spotkania", pole: "Link do pierwszego nagrania (do 25 MB)" },
   "posty-z-artykulow": { nazwa: "Posty z artykułów: LinkedIn i Facebook", netto: 49, miesiecznie: true, strona: "/posty-z-artykulow-bloga", pole: "Adres bloga (np. twojafirma.pl/blog)" },

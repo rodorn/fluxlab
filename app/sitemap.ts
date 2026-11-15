@@ -110,6 +110,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/zalaczniki-z-maila-do-folderow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/faktury-z-maila-na-dysk`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/transkrypcja-nagran`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
