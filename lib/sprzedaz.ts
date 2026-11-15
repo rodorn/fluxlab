@@ -45,6 +45,7 @@ export const OFERTA: Record<string, Oferta> = {
   "kopia-wp": { nazwa: "Kopia zapasowa WordPressa", netto: 29, miesiecznie: true, strona: "/kopia-wordpressa", pole: "Adres strony na WordPressie (firma.pl)" },
   "wp-wtyczki": { nazwa: "Miesięczny skan wtyczek WordPressa", netto: 29, miesiecznie: true, strona: "/skan-wtyczek-wordpress", pole: "Adres strony na WordPressie (firma.pl)" },
   "konkurenci-pilnowanie": { nazwa: "Pilnowanie zmian u konkurentów", netto: 29, miesiecznie: true, strona: "/pilnowanie-konkurentow", pole: "Adresy stron konkurentów (do 3, po spacji)" },
+  "artykul-z-filmu": { nazwa: "Artykuł z filmu YouTube co tydzień", netto: 99, miesiecznie: true, strona: "/artykul-z-filmu-youtube", pole: "Link do kanału albo do dowolnego filmu na YouTube" },
   "baner-cookies": { nazwa: "Kontrola banera cookies i Consent Mode v2", netto: 19, miesiecznie: false, strona: "/kontrola-banera-cookies", pole: "Adres strony (firma.pl)" },
   "wizytowka-strona": { nazwa: "Strona firmy z wizytówki Google", netto: 99, miesiecznie: false, strona: "/strona-wizytowka", pole: "Nazwa firmy i miasto albo link do Map Google" },
   "wizytowka-utrzymanie": { nazwa: "Utrzymanie strony z wizytówki Google", netto: 19, miesiecznie: true, strona: "/strona-wizytowka" },

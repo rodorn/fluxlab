@@ -262,6 +262,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Artykuł z filmu YouTube",
+    tagline: "Każdy nowy film z Twojego kanału zamienia się w artykuł na blog",
+    desc: "Netto, miesięcznie. Od razu artykuł z najnowszego filmu, potem co dobę sprawdzamy kanał i z każdego nowego filmu robimy artykuł z tytułem i opisem do wyszukiwarki. Mailem, do wklejenia na bloga. Rezygnacja w każdej chwili.",
+    price: "99 zł/mies.",
+    href: "/artykul-z-filmu-youtube#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz artykuły z filmów",
+    bullets: [
+      "artykuł z najnowszego filmu od razu",
+      "kolejne filmy automatycznie",
+      "tytuł i opis do wyszukiwarki",
+    ],
+  },
+  {
+    category: "www",
     name: "Pilnowanie zmian u konkurentów",
     tagline: "Tygodniowy mail: co konkurenci zmienili na swoich stronach",
     desc: "Netto, miesięcznie. Zapisujemy stan stron do 3 konkurentów i co poniedziałek wysyłamy listę zmian: nowe i zniknięte podstrony, tytuł i nagłówek strony głównej oraz kwoty z cenników. Rezygnacja w każdej chwili.",

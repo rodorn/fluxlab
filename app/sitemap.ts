@@ -720,6 +720,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/artykul-z-filmu-youtube`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/raport-google-analytics`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
