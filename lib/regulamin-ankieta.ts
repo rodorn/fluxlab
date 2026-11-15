@@ -63,7 +63,7 @@ export async function przygotujDokumenty(odp: Record<string, string>): Promise<W
 }
 
 const tresc = (d: Dokument) =>
-  d.sekcje.map((s) => `<h2>${esc(s.naglowek)}</h2>\n${s.akapity.map((a) => `<p>${esc(a)}</p>`).join("\n")}`).join("\n");
+  d.sekcje.map((s) => `<h2 style="font-size:15px;margin:18px 0 6px">${esc(s.naglowek)}</h2>\n${s.akapity.map((a) => `<p style="margin:0 0 8px">${esc(a)}</p>`).join("\n")}`).join("\n");
 
 export function plikHtml(d: Dokument): Buffer {
   return Buffer.from(`<!doctype html><html lang="pl"><head><meta charset="utf-8"><title>${esc(d.tytul)}</title></head><body>\n<h1>${esc(d.tytul)}</h1>\n${tresc(d)}\n</body></html>`);
