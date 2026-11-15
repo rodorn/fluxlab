@@ -247,6 +247,11 @@ const SYTUACJE: Sytuacja[] = [
           "Terminy na adres do doręczeń elektronicznych wchodzą etapami i zależą od tego, gdzie i kiedy podmiot został zarejestrowany.",
       },
       {
+        href: "/kalendarz-terminow",
+        powod:
+          "Terminy PIT, CIT, VAT i ZUS dla Twojej formy firmy w jednym kalendarzu, z przypomnieniami i przesunięciami przez weekendy i święta.",
+      },
+      {
         href: "/rejestr-cen",
         powod:
           "Przecena bez informacji o najniższej cenie z trzydziestu dni jest naruszeniem, a sprawdzenie pokazuje konkretne karty produktów.",

@@ -32,6 +32,15 @@ export const businessTools: Narzedzie[] = [
     badge: "Nowość",
   },
   {
+    title: "Kalendarz terminów",
+    pytanie: "Kiedy masz PIT, VAT i ZUS?",
+    description:
+      "Odpowiedz na pięć pytań o firmę, a dostaniesz kalendarz z terminami i przypomnieniami, który odświeża się sam.",
+    href: "/kalendarz-terminow",
+    ikona: "lista",
+    badge: "Nowość",
+  },
+  {
     title: "Lista KSeF na 2027",
     description:
       "Siedem pytań o to, co trzeba domknąć przed 1 stycznia 2027, z listą braków do wysłania księgowej.",

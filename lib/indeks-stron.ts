@@ -223,6 +223,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Duże firmy od 1 lutego 2026, pozostałe od 1 kwietnia, sprzedaż do 10 tys. zł miesięcznie i kasy od 1 stycznia 2027. Sprawdź swój termin, bez rejestracji."
   },
   {
+    "url": "/kalendarz-terminow",
+    "tytul": "Kalendarz terminów podatkowych i ZUS za darmo",
+    "opis": "Terminy PIT, CIT, VAT i ZUS dopasowane do formy firmy, z przypomnieniami w Google Kalendarzu, Apple i Outlooku. Odświeża się sam, bez rejestracji."
+  },
+  {
     "url": "/ksef-2027",
     "tytul": "KSeF 2027: czy termin przesunięto? Lista kontrolna",
     "opis": "Projekt przesuwa kary KSeF, a nie obowiązek od 1 stycznia 2027. Sprawdź w kilka minut, czego brakuje w Twojej firmie, i wyślij wykaz braków księgowej."

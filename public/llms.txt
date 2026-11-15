@@ -270,6 +270,7 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Sprawdzenie zasad zwrotów w sklepie](https://fluxlab.pl/panel-zwrotow): czego kupujący nie znajdzie, w tym obowiązkowy przycisk odstąpienia od umowy.
 - [Kalkulator kosztu ręcznej obsługi leadów](https://fluxlab.pl/koszt-recznej-obslugi-leadow)
 - [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)
+- [Kalendarz terminów podatkowych i ZUS](https://fluxlab.pl/kalendarz-terminow): terminy PIT, CIT, VAT i ZUS dopasowane do formy firmy, subskrypcja kalendarza z przypomnieniami, za darmo.
 - [Czy klient ustali, komu płaci](https://fluxlab.pl/dane-sprzedawcy): NIP i rachunek znalezione na stronie, porównane z wykazem podatników VAT na dziś.
 - [Audyt CRM](https://fluxlab.pl/audyt-crm): 10 pytań tak/nie, wynik X/10 i obszar, który najbardziej opłaca się zautomatyzować.
 - [Kalkulator kosztów samochodu](https://fluxlab.pl/kalkulator-kosztow): paliwo, serwis, opony, ubezpieczenie i utrata wartości jako koszt roczny i na kilometr.
