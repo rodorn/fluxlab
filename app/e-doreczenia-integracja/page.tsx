@@ -12,7 +12,9 @@ export const metadata: Metadata = {
   openGraph: {
     title:
       "Od kiedy Twoja firma musi mieć adres do e-Doręczeń? Sprawdzenie w jednym kliknięciu",
-    images: ["/og?t=Od%20kiedy%20Twoja%20firma%20musi%20mie%C4%87%20adres%20do%20e-Dor%C4%99cze%C5%84%3F%20Sprawdzenie%20w%20jednym%20klikni%C4%99ciu"],
+    images: [
+      "/og?t=Od%20kiedy%20Twoja%20firma%20musi%20mie%C4%87%20adres%20do%20e-Dor%C4%99cze%C5%84%3F%20Sprawdzenie%20w%20jednym%20klikni%C4%99ciu",
+    ],
     description:
       "Wybierasz formę działalności, a wynik pokazuje termin obowiązku, ile dni zostało albo minęło i co zrobić dalej. Firmy z CEIDG wpisane przed 2025 mają obowiązek od 1 października 2026. Bez rejestracji.",
     locale: "pl_PL",
@@ -118,6 +120,19 @@ export default function EDoreczeniaIntegracja() {
             "Kod i dostępy zostają u ciebie",
           ],
           featured: true,
+        },
+        {
+          name: "Instalacja w infrastrukturze firmy",
+          price: "Wycena indywidualna",
+          desc: "Po bezpłatnej diagnozie.",
+          features: [
+            "Serwer po Twojej stronie",
+            "Przegląd bezpieczeństwa i dokumenty do oceny dostawcy",
+            "Logowanie firmowe (SSO)",
+            "Tysiące pism miesięcznie",
+            "Utrzymanie z czasem reakcji",
+          ],
+          cta: "Umów diagnozę",
         },
       ]}
       faq={[
