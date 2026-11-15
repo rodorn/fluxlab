@@ -91,7 +91,9 @@ export function mailPowitalny(token: string, panel: string, nowe: string[], nowy
   const api = `https://fluxlab.pl/api/lead/${token}`;
   const iframe = `<iframe src="${form}" title="Formularz kontaktowy" width="100%" height="520" style="border:0;max-width:520px"></iframe>`;
   let h = `<div style='${STYL}'><p>Dzień dobry,</p><p>usługa działa od teraz: ${nowe.map((p) => esc(PRODUKTY[p].nazwa)).join(", ")}.</p><ul>${nowe.map((p) => `<li>${esc(PRODUKTY[p].opis)}</li>`).join("")}</ul>`;
-  h += nowyKlient
+  h += nowe.every((p) => p === "lead-bzp")
+    ? `<p><a href='${PANEL_URL}${panel}'>Panel</a>: tam ustawisz kryteria. Ten link jest tajny, nie udostępniaj go.</p>`
+    : nowyKlient
     ? `<p><b>1. Formularz.</b> Wklej na swoją stronę ten kod albo podlinkuj <a href='${form}'>gotową stronę z formularzem</a>:</p>` +
       `<pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(iframe)}</pre>` +
       `<p><b>2. Własny formularz, Zapier, Make.</b> Wyślij zgłoszenie jako POST JSON (pola: imie, email, telefon, firma, nip, wiadomosc) na<br><code>${api}</code></p>` +
