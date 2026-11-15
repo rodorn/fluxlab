@@ -353,6 +353,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Sprawdzamy stronę co 5 minut. Przy awarii dostajesz mail, po naprawie informację o przestoju, a co miesiąc raport z dostępnością."
   },
   {
+    "url": "/alert-wycieku-hasel",
+    "tytul": "Alert wycieku haseł od 19 zł",
+    "opis": "Raz na dobę sprawdzamy Twój adres e-mail w publicznych bazach wycieków i piszemy, gdy pojawi się w nowym wycieku."
+  },
+  {
     "url": "/straznik-formularza",
     "tytul": "Strażnik formularza kontaktowego od 19 zł",
     "opis": "Raz na dobę wysyłamy zgłoszenie testowe przez formularz na Twojej stronie. Gdy przestanie przechodzić, dostajesz mail, zanim stracisz zapytania."

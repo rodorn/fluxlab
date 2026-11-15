@@ -37,6 +37,7 @@ export const OFERTA: Record<string, Oferta> = {
   "paliwo-monitoring": { nazwa: "Monitoring kart paliwowych", netto: 149, miesiecznie: true, strona: "/kontrola-paliwa" },
   "mapa-pilnowanie": { nazwa: "Pilnowanie mapy strony", netto: 99, miesiecznie: true, strona: "/mapa-strony", pole: ADRES },
   "monitoring-dostepnosc": { nazwa: "Monitoring dostępności strony", netto: 19, miesiecznie: true, strona: "/monitoring-dostepnosci", pole: "Adres strony" },
+  "monitoring-wyciek": { nazwa: "Alert wycieku haseł", netto: 19, miesiecznie: true, strona: "/alert-wycieku-hasel" },
   "monitoring-formularz": { nazwa: "Strażnik formularza kontaktowego", netto: 19, miesiecznie: true, strona: "/straznik-formularza", pole: "Adres strony z formularzem" },
   "https-pilnowanie": { nazwa: "Pilnowanie ważności certyfikatu", netto: 39, miesiecznie: true, strona: "/naprawa-https", pole: ADRES },
   "google-monitoring": { nazwa: "Monitoring widoczności w Google", netto: 39, miesiecznie: true, strona: "/widocznosc-w-google", pole: ADRES },
