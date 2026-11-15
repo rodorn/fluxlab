@@ -590,6 +590,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/szybkosc-strony-co-miesiac`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/alert-msig`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

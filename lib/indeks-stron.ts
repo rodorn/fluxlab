@@ -458,6 +458,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Co 6 godzin sprawdzamy, czy znaczniki Google i Meta są na stronie i działają, i piszemy, gdy któregoś zabraknie."
   },
   {
+    "url": "/szybkosc-strony-co-miesiac",
+    "tytul": "Szybkość strony co miesiąc od 19 zł",
+    "opis": "Co miesiąc pomiar Core Web Vitals z telefonu i komputera w Google PageSpeed Insights, z porównaniem do poprzedniego miesiąca."
+  },
+  {
     "url": "/alert-msig",
     "tytul": "Alert MSiG o upadłości kontrahenta od 39 zł",
     "opis": "Raz na dobę sprawdzamy Monitor Sądowy i Gospodarczy dla do 20 firm i piszemy o upadłości, restrukturyzacji lub likwidacji."
