@@ -33,7 +33,7 @@ export default function Page() {
       ]}
       checks={[
         { title: "Mail w imieniu Twojej firmy", desc: "Nadawcą jest nazwa firmy z panelu, a odpowiedź klienta trafia prosto na Twój adres. Ty widzisz tylko rozmowę, bez pośrednika." },
-        { title: "Oferta i kalendarz Twoimi słowami", desc: "Piszesz krótką ofertę i wklejasz link do kalendarza, na przykład Calendly albo Google. Zmiana w panelu działa od następnego zgłoszenia." },
+        { title: "Oferta i kalendarz Twoimi słowami", desc: "Piszesz krótką ofertę i wklejasz link do kalendarza, na przykład z Google. Zmiana w panelu działa od następnego zgłoszenia." },
         { title: "Bez ręcznej pracy", desc: "Odpowiedź wychodzi sama, także w nocy i w weekend. Zgłoszenie z oznaczeniem, że klient dostał odpowiedź, zostaje na liście w panelu." },
       ]}
       pricing={[
