@@ -246,6 +246,21 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    category: "www",
+    name: "Skan wtyczek WordPressa",
+    tagline: "Co miesiąc raport o nieaktualnych i porzuconych wtyczkach",
+    desc: "Netto, miesięcznie. Sprawdzamy wtyczki widoczne na stronie i porównujemy z katalogiem wordpress.org: nowsze wersje, wtyczki wycofane i bez aktualizacji od ponad dwóch lat. Raport mailem co 30 dni.",
+    price: "29 zł/mies.",
+    href: "/skan-wtyczek-wordpress#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz skan",
+    bullets: [
+      "lista wtyczek i ich wersji",
+      "ostrzeżenie o wtyczkach wycofanych",
+      "raport mailem co 30 dni",
+    ],
+  },
+  {
     category: "automatyzacja",
     name: "Panel zwrotów i reklamacji",
     tagline: "Każdy zwrot przechodzi dziś przez czyjeś ręce",
