@@ -423,11 +423,6 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Co 6 godzin sprawdzamy, czy znaczniki Google i Meta są na stronie i działają, i piszemy, gdy któregoś zabraknie."
   },
   {
-    "url": "/pilnowanie-zmian-u-konkurentow",
-    "tytul": "Pilnowanie zmian u konkurentów od 29 zł",
-    "opis": "Co tydzień sprawdzamy mapę strony i cennik trzech konkurentów i piszemy, jakie podstrony i ceny doszły."
-  },
-  {
     "url": "/straznik-formularza",
     "tytul": "Strażnik formularza kontaktowego od 19 zł",
     "opis": "Raz na dobę wysyłamy zgłoszenie testowe przez formularz na Twojej stronie. Gdy przestanie przechodzić, dostajesz mail, zanim stracisz zapytania."

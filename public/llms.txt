@@ -275,7 +275,6 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Pilnowanie cen konkurencji](https://fluxlab.pl/pilnowanie-cen-konkurencji): raz na dobę odczyt cen z podanych stron produktów konkurencji i mail przy potwierdzonej zmianie, 39 zł netto miesięcznie.
 - [Audyt strony co miesiąc](https://fluxlab.pl/audyt-strony-co-miesiac): co miesiąc audyt całej strony z porównaniem do poprzedniego i raportem w załączniku, 19 zł netto miesięcznie.
 - [Strażnik konwersji](https://fluxlab.pl/straznik-konwersji): co 6 godzin kontrola znaczników Google i Meta na podanych stronach, alert po potwierdzeniu, 29 zł netto miesięcznie.
-- [Pilnowanie zmian u konkurentów](https://fluxlab.pl/pilnowanie-zmian-u-konkurentow): co tydzień porównanie mapy strony i cennika trzech konkurentów, mail o nowych podstronach i zmianach cen, 29 zł netto miesięcznie.
 - [Kontrola faktur kosztowych przed zapłatą](https://fluxlab.pl/kontrola-faktur-kosztowych): rachunek z każdej faktury kosztowej z KSeF sprawdzany w Białej Liście MF, alert mailem przy niezgodności, 39 zł netto miesięcznie.
 - [Należności i przeterminowane faktury](https://fluxlab.pl/naleznosci-i-przeterminowane-faktury): co poniedziałek mail z niezapłaconymi i przeterminowanymi fakturami sprzedażowymi z KSeF oraz CSV, 29 zł netto miesięcznie.
 - [Strażnik formularza kontaktowego](https://fluxlab.pl/straznik-formularza): raz na dobę zgłoszenie testowe przez formularz na stronie i alert mailem, gdy przestanie przechodzić, 19 zł netto miesięcznie.
