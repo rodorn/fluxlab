@@ -75,6 +75,7 @@ export const SEKCJE: Sekcja[] = [
           s("/integracja-crm-z-erp", "Integracja CRM z ERP"),
           s("/audyt-marz", "Audyt marż sklepu"),
           s("/omnibus-w-sklepie", "Omnibus w sklepie"),
+          s("/raport-o-firmie-w-internecie", "Raport o firmie w internecie"),
           s("/kontrola-paliwa", "Kontrola paliwa we flocie"),
         ],
       },

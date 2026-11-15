@@ -32,12 +32,15 @@ export const TRESC_ZGODY =
   "w sprawie jego wyników. Zgodę mogę wycofać w każdej chwili, odpisując na " +
   "wiadomość.";
 
+export type Zalacznik = { filename: string; content: Buffer };
+
 async function przezResend(
   to: string,
   temat: string,
   html: string,
   tekst: string,
   naglowki?: Record<string, string>,
+  zalaczniki?: Zalacznik[],
 ): Promise<boolean> {
   const klucz = process.env.RESEND_API_KEY;
   if (!klucz || klucz.startsWith("re_placeholder")) return false;
@@ -50,6 +53,7 @@ async function przezResend(
       html,
       text: tekst,
       ...(naglowki ? { headers: naglowki } : {}),
+      ...(zalaczniki ? { attachments: zalaczniki } : {}),
     });
     return !wynik.error;
   } catch {
@@ -63,6 +67,7 @@ async function przezSmtp(
   html: string,
   tekst: string,
   naglowki?: Record<string, string>,
+  zalaczniki?: Zalacznik[],
 ): Promise<boolean> {
   const { SMTP_HOST, SMTP_USER, SMTP_PASS } = process.env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) return false;
@@ -84,6 +89,7 @@ async function przezSmtp(
       html,
       text: tekst,
       ...(naglowki ? { headers: naglowki } : {}),
+      ...(zalaczniki ? { attachments: zalaczniki } : {}),
     });
     return true;
   } catch {
@@ -98,10 +104,11 @@ export async function wyslij(
   html: string,
   tekst: string,
   naglowki?: Record<string, string>,
+  zalaczniki?: Zalacznik[],
 ): Promise<boolean> {
   return (
-    (await przezResend(to, temat, html, tekst, naglowki)) ||
-    przezSmtp(to, temat, html, tekst, naglowki)
+    (await przezResend(to, temat, html, tekst, naglowki, zalaczniki)) ||
+    przezSmtp(to, temat, html, tekst, naglowki, zalaczniki)
   );
 }
 
