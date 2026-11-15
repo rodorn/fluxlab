@@ -106,6 +106,7 @@ export const SEKCJE: Sekcja[] = [
           s("/spf-dkim-dmarc", "SPF, DKIM i DMARC z instrukcją"),
           s("/opisy-produktow-z-csv", "Opisy produktów z CSV"),
           s("/streszczenie-umowy", "Streszczenie umowy i ryzyk"),
+          s("/porownanie-umow", "Porównanie wersji umowy"),
           s("/naprawa-https", "Naprawa ostrzeżenia o stronie"),
           s("/pilnowanie-certyfikatu", "Pilnowanie certyfikatu i domeny"),
           s("/monitoring-dostepnosci", "Monitoring dostępności strony"),
