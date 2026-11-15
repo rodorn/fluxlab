@@ -11514,3 +11514,11 @@ Kanały z 0 przez 3 doby: mail/wordpress (także 0 w 7 dniach), linkedin, perple
 **Ruch:** doba 206 odsłon, 145 osób (−8%); b2b-email 69, www.facebook.com 13, google-ads 11, m.facebook.com 11, facebook 9; uruchomienia narzędzi 0.
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z10 o 18:40 (fakty szkicu 16.11, klasa [A], przy „wstrzymaj” do „[!] budżet”), Z11 o 20:40, Z12 o 22:40.
+
+## 2026-11-15 18:50
+**Kanał:** treść (Z10 planu 15.11, artykuł poniedziałku).
+**Co zrobione:** Z10: szkic /strefa-wiedzy/lead-w-weekend-black-friday zweryfikowany i skrócony; F1-F6: 6 aktualnych, 0 poprawionych (Kodeks pracy Dz.U. 2026 poz. 1245 IN_FORCE, aktów zmieniających KP po 2.09.2026: 0; 27.11.2026 to piątek). Tekst artykułu 208 → 163 słów, FAQ 3 → 2 (wypadło pytanie powtarzające datę z leadu), plik 867 → 546 słów. Bez strony w app/.
+**Ruch:** ostatnia doba 213 odsłon, 144 osoby (−4% wobec średniej); źródła 7 dni: b2b-email 70, www.facebook.com 12, m.facebook.com 11, google-ads 10, facebook 9, threads 15.
+**Dowód:** cykl/artykul-2026-11-16-szkic.md, linki /czas-reakcji-na-leada, /koszt-recznej-obslugi-leadow, /slownik 200.
+**Dla Pawła:** 
+**Zostało otwarte:** czekam na Z11 o 20:40 (IndexNow zmian innych sesji), Z12 o 22:40.
