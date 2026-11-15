@@ -109,7 +109,7 @@ export async function wyslijMail(o: {
 
 /** Ramka maila: jedna kolumna 560 px, czytelna na telefonie. */
 export function ramkaMaila(o: { naglowek: string; tresc: string; stopka: string }): string {
-  return `<!doctype html><html lang="pl"><body style="margin:0;background:#f3f4f6;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#111827">
+  return `<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;background:#f3f4f6;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#111827">
 <div style="max-width:560px;margin:0 auto;padding:16px">
 <div style="background:#fff;border-radius:16px;padding:24px 20px">
 <p style="margin:0 0 4px;font-size:13px;color:#6b7280">Fluxlab</p>

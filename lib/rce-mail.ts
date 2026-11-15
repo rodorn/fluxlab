@@ -57,7 +57,7 @@ export function zlozMail(d: Doba, jutro: boolean, wypis: string, pierwszy: boole
   const drogie4 = najtanszeOkno(g, 4, false)!;
   const dzien = opisDnia(d.data);
   const max = Math.max(...g.map((x) => Math.abs(x.cena)), 1);
-  const temat = `Ceny energii ${jutro ? "na" : "dziś,"} ${dzien}: najtaniej ${hh(tanie4.od)}–${hh(tanie4.do % 24 === 0 ? 24 : tanie4.do)}`.replace("24:00", "24:00");
+  const temat = `Ceny energii ${jutro ? "na jutro" : "na dziś"} (${dzien.replace(/ \d{4}$/, "")}): najtaniej ${hh(tanie4.od)}–${hh(tanie4.do)}`;
 
   const wiersze = g
     .map((x, i) => {
