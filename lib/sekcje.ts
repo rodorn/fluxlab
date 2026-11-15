@@ -119,6 +119,7 @@ export const SEKCJE: Sekcja[] = [
           s("/czytelnosc-tekstow", "Czytelność i poprawność tekstów strony"),
           s("/pilnowanie-konkurentow", "Pilnowanie zmian u konkurentów"),
           s("/bezpieczny-odbior-plikow", "Bezpieczny odbiór plików"),
+          s("/kopia-wordpressa", "Kopia zapasowa WordPressa"),
           s("/opisy-produktow-z-csv", "Opisy produktów z CSV"),
           s("/streszczenie-umowy", "Streszczenie umowy i ryzyk"),
           s("/porownanie-umow", "Porównanie wersji umowy"),

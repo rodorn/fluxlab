@@ -292,6 +292,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Kopia zapasowa WordPressa",
+    tagline: "Codzienna kopia bazy i plików strony poza Twoim hostingiem",
+    desc: "Netto, miesięcznie. Wtyczka raz dziennie pakuje bazę danych i katalog wp-content i wysyła je na nasz serwer. Trzy ostatnie kopie do pobrania, każda do 1 GB. Rezygnacja w każdej chwili.",
+    price: "29 zł/mies.",
+    href: "/kopia-wordpressa#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz kopię WordPressa",
+    bullets: [
+      "kopia raz dziennie, 3 ostatnie do pobrania",
+      "baza danych i wp-content w jednym ZIP-ie",
+      "bez haseł do hostingu",
+    ],
+  },
+  {
+    category: "www",
     name: "Skan wtyczek WordPressa",
     tagline: "Co miesiąc raport o nieaktualnych i porzuconych wtyczkach",
     desc: "Netto, miesięcznie. Sprawdzamy wtyczki widoczne na stronie i porównujemy z katalogiem wordpress.org: nowsze wersje, wtyczki wycofane i bez aktualizacji od ponad dwóch lat. Raport mailem co 30 dni.",
