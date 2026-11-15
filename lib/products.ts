@@ -262,6 +262,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Bezpieczny odbiór plików",
+    tagline: "Link, pod którym klienci wysyłają Ci pliki bez maila",
+    desc: "Netto, miesięcznie. Dostajesz adres do wysyłania plików do 100 MB i stronę do ich odbioru. Mail przy każdej nowej paczce, pliki znikają po 30 dniach. Rezygnacja w każdej chwili.",
+    price: "19 zł/mies.",
+    href: "/bezpieczny-odbior-plikow#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz odbiór plików",
+    bullets: [
+      "link dla nadawców, bez konta",
+      "pliki do 100 MB, szyfrowane połączenie",
+      "mail z podsumowaniem nowych plików",
+    ],
+  },
+  {
+    category: "www",
     name: "Skan wtyczek WordPressa",
     tagline: "Co miesiąc raport o nieaktualnych i porzuconych wtyczkach",
     desc: "Netto, miesięcznie. Sprawdzamy wtyczki widoczne na stronie i porównujemy z katalogiem wordpress.org: nowsze wersje, wtyczki wycofane i bez aktualizacji od ponad dwóch lat. Raport mailem co 30 dni.",

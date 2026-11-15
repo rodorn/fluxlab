@@ -595,6 +595,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/bezpieczny-odbior-plikow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/skan-wtyczek-wordpress`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
