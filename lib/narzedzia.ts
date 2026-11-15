@@ -464,6 +464,12 @@ export const otherTools: Narzedzie[] = [
     href: "/ceny-energii-jutro",
   },
   {
+    title: "Ceny mieszkań od deweloperów",
+    description:
+      "Mediana ceny ofertowej za metr kwadratowy w miastach, z jawnych danych deweloperów, z liczbą ofert i datą danych.",
+    href: "/ceny-mieszkan-deweloperzy",
+  },
+  {
     title: "Dobór samochodu",
     description:
       "Znajdź idealny segment, nadwozie i moc dla siebie. Odpowiedz na kilka pytań, a algorytm dopasuje najlepsze propozycje.",

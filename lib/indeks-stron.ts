@@ -278,6 +278,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Wprost z danych operatora."
   },
   {
+    "url": "/ceny-mieszkan-deweloperzy",
+    "tytul": "Ceny mieszkań od deweloperów, mediana za m²",
+    "opis": "Mediany cen ofertowych mieszkań w miastach z jawnych danych deweloperów, z liczbą ofert i deweloperów oraz datą danych. To ceny ofertowe, nie transakcyjne."
+  },
+  {
     "url": "/kalkulator-zdolnosci-kredytowej",
     "tytul": "Kalkulator zdolności kredytowej na stronę pośrednika, 49 zł/mies.",
     "opis": "Kalkulator orientacyjnej zdolności kredytowej do wklejenia na stronę pośrednika: Twoja nazwa, kontakt i oprocentowanie. Kod w mailu po zamówieniu."

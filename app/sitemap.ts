@@ -420,6 +420,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/ceny-mieszkan-deweloperzy`,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/alert-stop-procentowych`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
