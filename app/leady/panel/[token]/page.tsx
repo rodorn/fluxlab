@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: Promise<{ token: string
                 Usługa jest wyłączona, bo subskrypcja została anulowana. Zgłoszenia nie są już przyjmowane.
               </p>
             )}
-            <PanelLeadow panel={token} token={d.token} produkty={d.produkty} leady={d.leady} ankiety={d.ankiety} opinie={d.opinie} ustawienia={d.ustawienia} />
+            <PanelLeadow panel={token} token={d.token} produkty={d.produkty} leady={d.leady} ankiety={d.ankiety} opinie={d.opinie} rezerwacje={d.rezerwacje} ustawienia={d.ustawienia} />
           </div>
         </div>
       </main>

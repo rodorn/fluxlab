@@ -6,11 +6,12 @@ import type { Ocena } from "@/lib/leady/ocena";
 export const PANEL_URL = "https://fluxlab.pl/leady/panel/";
 const FROM_ADRES = (process.env.RESEND_FROM_FORMULARZ ?? "Fluxlab <formularz@fluxlab.pl>").match(/<(.+)>/)?.[1] ?? "formularz@fluxlab.pl";
 const STYL = "font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#111;max-width:560px";
-const ETYKIETA: Record<string, string> = { imie: "Imię", email: "E-mail", telefon: "Telefon", firma: "Firma", nip: "NIP", wiadomosc: "Wiadomość" };
+const ETYKIETA: Record<string, string> = { imie: "Imię", email: "E-mail", telefon: "Telefon", firma: "Firma", nip: "NIP", wiadomosc: "Wiadomość", uwagi: "Uwagi" };
 
 export const PRODUKTY: Record<string, { nazwa: string; opis: string }> = {
   "lead-opinia": { nazwa: "Prośba o opinię Google", opis: "mail z prośbą o opinię Google wysyłany Twoim klientom z panelu albo z Zapier i Make" },
   "lead-kalkulator": { nazwa: "Kalkulator wyceny na stronę", opis: "kalkulator wyceny do osadzenia na stronie, a zgłoszenia z wyceną trafiają do panelu i na Twój mail" },
+  "lead-rezerwacje": { nazwa: "Rezerwacje online", opis: "kalendarz rezerwacji do osadzenia na stronie, potwierdzenia wysyłamy mailem Tobie i klientowi" },
   "lead-nps": { nazwa: "Ankieta NPS", opis: "ankieta NPS z linkiem dla Twoich klientów, wynik i odpowiedzi w panelu" },
   "lead-formularz": { nazwa: "Formularz leadów z listą zgłoszeń", opis: "formularz do osadzenia i lista zgłoszeń w panelu" },
   "lead-odpowiedz": { nazwa: "Odpowiedź na leada w minutę", opis: "natychmiastowy mail do każdego, kto zostawi zgłoszenie (uzupełnij ofertę i link do kalendarza w panelu)" },
@@ -59,6 +60,15 @@ export function mailNps(panel: string, ocena: number, komentarz: string) {
   return `<div style='${STYL}'><p style='margin:0 0 4px'><b style='font-size:17px'>Ocena ${ocena}/10 (${typ})</b></p>${komentarz ? `<p style='margin:0 0 16px'>${esc(komentarz)}</p>` : "<p style='margin:0 0 16px;color:#666'>Bez komentarza.</p>"}<p style='margin:0'><a href='${PANEL_URL}${esc(panel)}'>Wynik NPS i wszystkie odpowiedzi</a></p></div>`;
 }
 
+export function mailRezerwacjaGosc(firma: string, imie: string, termin: string) {
+  const i = imie.split(" ")[0];
+  return `<div style='${STYL}'><p>Dzień dobry${i ? " " + esc(i) : ""},</p><p>potwierdzamy rezerwację w firmie ${esc(firma)}.</p><p style='padding:10px 12px;background:#f4f4f4'><b>Termin: ${esc(termin)}</b></p><p>Jeśli termin Ci nie pasuje, odpisz na tego maila.</p><p>${esc(firma)}</p></div>`;
+}
+
+export function mailRezerwacjaKlient(panel: string, termin: string, pola: Record<string, string>) {
+  return `<div style='${STYL}'><p style='margin:0 0 12px'><b style='font-size:17px'>Nowa rezerwacja: ${esc(termin)}</b></p><table style='border-collapse:collapse;margin:0 0 16px'>${wiersze(pola)}</table><p style='margin:0'><a href='${PANEL_URL}${esc(panel)}'>Wszystkie rezerwacje</a></p></div>`;
+}
+
 export function mailOpinia(firma: string, imie: string, link: string) {
   const i = imie.split(" ")[0];
   return `<div style='${STYL}'><p>Dzień dobry${i ? " " + esc(i) : ""},</p><p>dziękujemy za współpracę z firmą ${esc(firma)}. Jeśli masz minutę, zostaw nam opinię w Google. To dla nas bardzo ważne.</p><p><a href='${esc(link)}' style='display:inline-block;background:#111;color:#fff;padding:12px 20px;text-decoration:none;border-radius:6px'>Wystaw opinię w Google</a></p><p>${esc(firma)}</p></div>`;
@@ -90,6 +100,8 @@ export function mailPowitalny(token: string, panel: string, nowe: string[], nowy
     h += `<p><b>Prośba o opinię Google.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wklej link do wizytówki Google, a potem wpisuj adresy klientów, którym chcesz wysłać prośbę. Z Zapier i Make wyślij POST JSON (pola: email, imie) na <code>https://fluxlab.pl/api/opinia/${panel}</code>. Ten adres jest tajny.</p>`;
   if (nowe.includes("lead-kalkulator"))
     h += `<p><b>Kalkulator wyceny.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wpisz usługi i ceny (jedna linia: Nazwa | cena). Potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/kalkulator/${token}" title="Kalkulator wyceny" width="100%" height="640" style="border:0;max-width:520px"></iframe>`)}</pre><p>Klient zaznacza usługi, widzi sumę i zostawia kontakt. Zgłoszenie z wyceną dostajesz mailem i na liście w panelu.</p>`;
+  if (nowe.includes("lead-rezerwacje"))
+    h += `<p><b>Rezerwacje online.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> ustaw dni, godziny i długość wizyty, a potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/rezerwacje/${token}" title="Rezerwacja terminu" width="100%" height="680" style="border:0;max-width:520px"></iframe>`)}</pre><p>Klient wybiera wolny termin i zostawia kontakt. Zajęty termin znika z kalendarza, a potwierdzenie przychodzi mailem do obu stron.</p>`;
   if (nowe.includes("lead-nps"))
     h += `<p><b>Ankieta NPS.</b> Ten link wyślij swoim klientom: <a href='https://fluxlab.pl/ankieta/${token}'>https://fluxlab.pl/ankieta/${token}</a>. Każda odpowiedź przychodzi do Ciebie mailem, a wynik NPS jest w panelu. Nazwę firmy w pytaniu ustawisz w panelu.</p>`;
   return `${h}<p>Rezygnacja w dowolnym dniu w portalu płatności (link w potwierdzeniu płatności), za niewykorzystane dni zwracamy pieniądze. Dane zgłoszeń usuwamy 30 dni po rezygnacji. Pytania: odpisz na tego maila.</p><p>Zespół Fluxlab</p></div>`;

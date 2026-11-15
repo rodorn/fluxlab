@@ -30,6 +30,7 @@ export const SEKCJE: Sekcja[] = [
           s("/benchmarking-konkurencji", "Benchmarking konkurencji"),
           s("/dane-firmy-z-nip", "Dane firmy z NIP"),
           s("/ankieta-nps", "Ankieta NPS"),
+          s("/rezerwacje-online", "Rezerwacje online na stronę"),
           s("/kalkulator-wyceny", "Kalkulator wyceny na stronę"),
           s("/prosba-o-opinie-google", "Prośba o opinię Google"),
           s("/formularz-leadow", "Formularz leadów z listą zgłoszeń"),

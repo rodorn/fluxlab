@@ -257,6 +257,13 @@ const nextConfig: NextConfig = {
       },
       // Formularz leadów klientów jest osadzany w ramce na ich stronach.
       {
+        source: "/leady/rezerwacje/:token",
+        headers: [
+          { key: "X-Frame-Options", value: "ALLOWALL" },
+          { key: "Content-Security-Policy", value: "frame-ancestors *" },
+        ],
+      },
+      {
         source: "/leady/kalkulator/:token",
         headers: [
           { key: "X-Frame-Options", value: "ALLOWALL" },

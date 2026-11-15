@@ -204,6 +204,11 @@ const SYTUACJE: Sytuacja[] = [
           "Klient widzi orientacyjną cenę od razu, a Ty dostajesz kontakt z wybranymi usługami zamiast pytania „ile to kosztuje”.",
       },
       {
+        href: "/rezerwacje-online",
+        powod:
+          "Klient sam wybiera wolny termin na Twojej stronie, a Ty nie odbierasz telefonów tylko po to, żeby ustalić godzinę.",
+      },
+      {
         href: "/formularz-leadow",
         powod:
           "Zgłoszenia z Twojej strony trafiają od razu na mail i na listę w jednym miejscu, zamiast ginąć w skrzynce.",

@@ -1,10 +1,11 @@
 import { randomBytes } from "node:crypto";
-import { dane } from "@/lib/fl-dane";
+import { dane, type Dok } from "@/lib/fl-dane";
 import { stripe } from "@/lib/stripe";
 import { daneFirmy, type Firma } from "@/lib/leady/dane-firmy";
 import { ocenaLeada, type Ocena } from "@/lib/leady/ocena";
+import { parsujRez, dniZeSlotami, etykieta, terazWarszawa } from "@/lib/leady/rezerwacje";
 import { parsujWycene } from "@/lib/leady/wycena";
-import { PRODUKTY, mailKarta, mailNps, mailOpinia, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
+import { PRODUKTY, mailKarta, mailNps, mailRezerwacjaGosc, mailRezerwacjaKlient, mailOpinia, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
 
 export type Klient = {
   email: string; nazwa: string; produkty: string[]; subskrypcje: Record<string, string>;
@@ -96,6 +97,47 @@ export async function odpowiedzNps(token: string, wej: Record<string, unknown>):
   return { kod: 202 };
 }
 
+async function wolneTerminy(k: Dok<Klient>) {
+  const c = parsujRez(k.dane.ustawienia);
+  if (!c || typeof c === "string") return null;
+  const t = terazWarszawa();
+  const zajete = new Set((await db.lista<{ slot: string }>("rezerwacje", { klucz: k.id, limit: 2000 })).map((r) => r.dane.slot));
+  return dniZeSlotami(c, t).map((d) => ({ data: d.data, godziny: d.godziny.filter((g) => !zajete.has(`${d.data} ${g}`)) })).filter((d) => d.godziny.length);
+}
+
+export async function rezerwacjeInfo(token: string) {
+  const k = await db.pobierz<Klient>("klienci", token);
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-rezerwacje")) return null;
+  const dni = await wolneTerminy(k);
+  return dni ? { firma: k.dane.ustawienia.firma || k.dane.nazwa || "", dni } : null;
+}
+
+export async function zarezerwuj(token: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string; termin?: string }> {
+  const k = await db.pobierz<Klient>("klienci", token);
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-rezerwacje")) return { kod: 404, blad: "Nieznany albo wyłączony kalendarz." };
+  const imie = String(wej.imie ?? "").trim().slice(0, 120);
+  const email = String(wej.email ?? "").trim().toLowerCase().slice(0, 200);
+  const telefon = String(wej.telefon ?? "").trim().slice(0, 40);
+  const uwagi = String(wej.uwagi ?? "").trim().slice(0, 500);
+  if (!imie) return { kod: 400, blad: "Podaj imię." };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { kod: 400, blad: "Podaj poprawny adres e-mail, na który wyślemy potwierdzenie." };
+  const [data, godz] = String(wej.slot ?? "").split(" ");
+  const wolne = await wolneTerminy(k);
+  if (!wolne?.some((d) => d.data === data && d.godziny.includes(godz))) return { kod: 409, blad: "Ten termin jest już zajęty. Wybierz inny." };
+  if ((await db.licz("rezerwacje", { klucz: k.id, od: new Date().toISOString().slice(0, 10) })) >= LIMIT_DOBA) return { kod: 429, blad: "Dzienny limit rezerwacji wyczerpany." };
+  try {
+    await db.dodaj("rezerwacje", { id: `${k.id}|${data} ${godz}`, klucz: k.id, dane: { slot: `${data} ${godz}`, imie, email, telefon, uwagi } });
+  } catch (e) {
+    if (String(e).includes("409")) return { kod: 409, blad: "Ten termin właśnie ktoś zarezerwował. Wybierz inny." };
+    throw e;
+  }
+  const termin = etykieta(data, godz);
+  const nazwa = (k.dane.ustawienia.firma || k.dane.nazwa || "Fluxlab").replace(/["<>]/g, "");
+  await wyslij({ do: email, temat: `Rezerwacja potwierdzona: ${termin}`, html: mailRezerwacjaGosc(nazwa, imie, termin), od: nazwa, replyTo: k.dane.email }).catch((e) => console.error("mail rezerwacji", e));
+  await wyslij({ do: k.dane.email, temat: `Nowa rezerwacja: ${termin}`, html: mailRezerwacjaKlient(token, termin, { imie, email, ...(telefon ? { telefon } : {}), ...(uwagi ? { uwagi } : {}) }) }).catch((e) => console.error("mail do klienta", e));
+  return { kod: 202, termin };
+}
+
 export async function kalkulatorInfo(token: string) {
   const k = await db.pobierz<Klient>("klienci", token);
   if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-kalkulator")) return null;
@@ -129,16 +171,22 @@ export async function panel(p: string) {
   const leady = (await db.lista<Zgloszenie>("zgloszenia", { klucz: k.id, limit: 200 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
   const ankiety = (await db.lista<{ ocena: number; komentarz: string }>("ankiety", { klucz: k.id, limit: 500 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
   const opinie = (await db.lista<{ email: string; imie: string }>("opinie", { klucz: k.id, limit: 200 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
-  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady, ankiety, opinie };
+  const rezerwacje = (await db.lista<{ slot: string; imie: string; email: string; telefon: string; uwagi: string }>("rezerwacje", { klucz: k.id, limit: 300 }))
+    .map((d) => ({ id: d.id, ...d.dane }))
+    .sort((a, b) => a.slot.localeCompare(b.slot))
+    .filter((r) => r.slot >= terazWarszawa().data);
+  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady, ankiety, opinie, rezerwacje };
 }
 
 export async function zapiszUstawienia(p: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string }> {
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k) return { kod: 404, blad: "Nie ma takiego panelu." };
   const u: Record<string, string> = {};
-  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500], ["wycena", 2000]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
+  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500], ["wycena", 2000], ["rez_dni", 7], ["rez_od", 5], ["rez_do", 5], ["rez_min", 3]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
   if (u.kalendarz && !u.kalendarz.startsWith("https://")) return { kod: 400, blad: "Link do kalendarza musi zaczynać się od https://." };
   if (u.opinia && !u.opinia.startsWith("https://")) return { kod: 400, blad: "Link do opinii musi zaczynać się od https://." };
+  const rez = parsujRez(u);
+  if (typeof rez === "string") return { kod: 400, blad: rez };
   const poz = parsujWycene(u.wycena);
   if (typeof poz === "string") return { kod: 400, blad: poz };
   await db.zmien("klienci", k.id, { dane: { ustawienia: u } });
@@ -232,12 +280,14 @@ export async function sprzatanie() {
       await db.usunKlucz(k.id, "zgloszenia");
       await db.usunKlucz(k.id, "ankiety");
       await db.usunKlucz(k.id, "opinie");
+      await db.usunKlucz(k.id, "rezerwacje");
       await db.usun("klienci", k.id);
       await db.usun("indeks", d.email);
       raport.push(`${d.email}: usunięto dane po rezygnacji`);
     }
   }
   await db.usunPrzed("zgloszenia", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
+  await db.usunPrzed("rezerwacje", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("opinie", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("ankiety", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   return raport;

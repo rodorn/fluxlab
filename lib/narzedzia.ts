@@ -180,6 +180,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Rezerwacje online na stronę",
+    pytanie: "Jak pozwolić klientom umawiać się samemu?",
+    description:
+      "Wybierz termin w przykładowym kalendarzu, tak jak zrobi to Twój klient. W abonamencie ustawiasz własne godziny, a potwierdzenia idą mailem.",
+    href: "/rezerwacje-online",
+    ikona: "lupa",
+  },
+  {
     title: "Formularz leadów z listą zgłoszeń",
     pytanie: "Gdzie lądują zgłoszenia ze strony?",
     description:

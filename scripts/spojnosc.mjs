@@ -342,6 +342,7 @@ const BEZ_RAMY = new Set([
   "app/demo/nu-nrg/page.tsx",
   "app/leady/formularz/[token]/page.tsx",
   "app/leady/kalkulator/[token]/page.tsx",
+  "app/leady/rezerwacje/[token]/page.tsx",
   "app/ankieta/[token]/page.tsx",
   "app/embed/rata/page.tsx",
   "app/embed/zdolnosc/page.tsx",

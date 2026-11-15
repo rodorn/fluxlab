@@ -18,6 +18,15 @@ export interface AnkietaWiersz {
   komentarz: string;
 }
 
+export interface RezerwacjaWiersz {
+  id: string;
+  slot: string;
+  imie: string;
+  email: string;
+  telefon: string;
+  uwagi: string;
+}
+
 export interface OpiniaWiersz {
   id: string;
   czas: string;
@@ -40,6 +49,7 @@ export default function PanelLeadow({
   leady,
   ankiety,
   opinie,
+  rezerwacje,
   ustawienia,
 }: {
   panel: string;
@@ -48,6 +58,7 @@ export default function PanelLeadow({
   leady: LeadWiersz[];
   ankiety: AnkietaWiersz[];
   opinie: OpiniaWiersz[];
+  rezerwacje: RezerwacjaWiersz[];
   ustawienia: Record<string, string>;
 }) {
   const [ust, setUst] = useState(ustawienia);
@@ -55,6 +66,7 @@ export default function PanelLeadow({
   const [blad, setBlad] = useState("");
   const odpowiedz = produkty.includes("lead-odpowiedz");
   const nps = produkty.includes("lead-nps");
+  const rez = produkty.includes("lead-rezerwacje");
   const kalk = produkty.includes("lead-kalkulator");
   const opinia = produkty.includes("lead-opinia");
   const [pr, setPr] = useState({ email: "", imie: "" });
@@ -101,6 +113,27 @@ export default function PanelLeadow({
 
   return (
     <div className="grid gap-10">
+      {rez && (
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Rezerwacje</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Kalendarz: <a className="break-all text-accent underline" href={`https://fluxlab.pl/leady/rezerwacje/${token}`}>{`https://fluxlab.pl/leady/rezerwacje/${token}`}</a>. Dni, godziny i długość wizyty ustawisz niżej w Ustawieniach (dni: 1 = poniedziałek, 12345 = pn-pt).
+          </p>
+          {rezerwacje.length === 0 ? (
+            <p className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-5 text-sm text-gray-600 dark:text-gray-400">Brak nadchodzących rezerwacji.</p>
+          ) : (
+            <ul className="mt-4 grid gap-2">
+              {rezerwacje.map((r) => (
+                <li key={r.id} className="rounded-xl border border-gray-200 dark:border-gray-800 p-3 text-sm">
+                  <p className="font-semibold text-gray-900 dark:text-white">{r.slot}</p>
+                  <p className="break-all text-gray-700 dark:text-gray-300">{[r.imie, r.email, r.telefon].filter(Boolean).join(" · ")}</p>
+                  {r.uwagi && <p className="text-gray-600 dark:text-gray-400">{r.uwagi}</p>}
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
       {opinia && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Prośba o opinię Google</h2>
@@ -155,7 +188,7 @@ export default function PanelLeadow({
           )}
         </section>
       )}
-      {(odpowiedz || nps || opinia || kalk) && (
+      {(odpowiedz || nps || opinia || kalk || rez) && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">{odpowiedz ? "Odpowiedź dla zgłaszającego" : "Ustawienia"}</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
@@ -167,6 +200,14 @@ export default function PanelLeadow({
             <input className={POLE} placeholder="Nazwa firmy w podpisie" aria-label="Nazwa firmy" value={ust.firma ?? ""} onChange={(e) => setUst({ ...ust, firma: e.target.value })} />
             {odpowiedz && <textarea className={POLE} rows={5} placeholder="Krótka oferta: co robi firma, ile to kosztuje, kiedy nastąpi kontakt" aria-label="Treść oferty" value={ust.oferta ?? ""} onChange={(e) => setUst({ ...ust, oferta: e.target.value })} />}
             {odpowiedz && <input className={POLE} type="url" placeholder="Link do kalendarza, https://..." aria-label="Link do kalendarza" value={ust.kalendarz ?? ""} onChange={(e) => setUst({ ...ust, kalendarz: e.target.value })} />}
+            {rez && (
+              <div className="grid gap-3 sm:grid-cols-4">
+                <input className={POLE} placeholder="Dni, np. 12345" aria-label="Dni rezerwacji (1 = poniedziałek)" value={ust.rez_dni ?? ""} onChange={(e) => setUst({ ...ust, rez_dni: e.target.value })} />
+                <input className={POLE} placeholder="Od, np. 09:00" aria-label="Godzina od" value={ust.rez_od ?? ""} onChange={(e) => setUst({ ...ust, rez_od: e.target.value })} />
+                <input className={POLE} placeholder="Do, np. 17:00" aria-label="Godzina do" value={ust.rez_do ?? ""} onChange={(e) => setUst({ ...ust, rez_do: e.target.value })} />
+                <input className={POLE} inputMode="numeric" placeholder="Wizyta, minut" aria-label="Długość wizyty w minutach" value={ust.rez_min ?? ""} onChange={(e) => setUst({ ...ust, rez_min: e.target.value })} />
+              </div>
+            )}
             {kalk && <textarea className={POLE} rows={6} placeholder={"Pozycje kalkulatora, jedna w linii:\nMontaż okna | 450\nMalowanie ścian | 1200"} aria-label="Pozycje kalkulatora wyceny" value={ust.wycena ?? ""} onChange={(e) => setUst({ ...ust, wycena: e.target.value })} />}
             {opinia && <input className={POLE} type="url" placeholder="Link do opinii Google, https://..." aria-label="Link do opinii Google" value={ust.opinia ?? ""} onChange={(e) => setUst({ ...ust, opinia: e.target.value })} />}
             <div className="flex items-center gap-4">
