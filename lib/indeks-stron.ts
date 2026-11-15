@@ -323,6 +323,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Codziennie rano mail z nowymi fakturami kosztowymi z KSeF (XML, PDF, zestawienie CSV), bez logowania do KSeF."
   },
   {
+    "url": "/faktury-z-excela-do-ksef",
+    "tytul": "Faktury z Excela do KSeF, 49 zł/mies.",
+    "opis": "Wgrywasz arkusz z pozycjami, a my wystawiamy faktury FA(3) w KSeF i odsyłamy zestawienie z numerami KSeF na maila."
+  },
+  {
     "url": "/paczka-miesieczna-dla-biura",
     "tytul": "Paczka miesięczna faktur z KSeF dla biura rachunkowego, 19 zł/mies.",
     "opis": "Co miesiąc ZIP z fakturami kosztowymi i sprzedażowymi z KSeF (XML, PDF, zestawienie CSV) wysłany na maila biura rachunkowego."

@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import { ramkaMaila } from "@/lib/dokumenty-mail";
 import { dane } from "@/lib/fl-dane";
 import { automatDozwolony } from "@/lib/fl-produkty";
-import { type Dostep, PRODUKTY_KSEF } from "@/lib/ksef-dostep";
+import { type Dostep, type Partia, PRODUKTY_KSEF } from "@/lib/ksef-dostep";
 import { stripe } from "@/lib/stripe";
 
 export const runtime = "nodejs";
@@ -28,6 +28,7 @@ async function zadania() {
     }
     if (!aktywna) {
       await db().usun("dostepy", d.id);
+      await db().usunKlucz(d.id, "partie");
       continue;
     }
     wynik.push({
@@ -39,6 +40,13 @@ async function zadania() {
       email: r.email,
       biuro: r.biuro,
       produkt: r.produkt ?? "paczka-biuro",
+      sprzedawca: r.sprzedawca ?? null,
+      partie:
+        r.produkt === "faktury-z-excela"
+          ? (await db().lista<Partia>("partie", { klucz: d.id, limit: 20 }))
+              .filter((p) => p.dane.status === "nowa")
+              .map((p) => ({ id: p.id, nazwa: p.dane.nazwa, base64: p.dane.base64 }))
+          : [],
       status: r.status,
       wyslano: r.wyslano ?? {},
       blad_mail: r.blad_mail ?? "",
@@ -58,17 +66,20 @@ async function przypomnienia() {
     if (await db().pobierz("dostepy", s.id)) continue;
     const email = s.customer_details?.email;
     if (!email) continue;
-    const link = `https://fluxlab.pl/ksef-dostep?sesja=${s.id}`;
+    const wystawianie = prod === "faktury-z-excela";
+    const link = `https://fluxlab.pl/${wystawianie ? "ksef-wystawianie" : "ksef-dostep"}?sesja=${s.id}`;
     const codziennie = prod === "faktury-kosztowe";
     const kontrola = prod === "kontrola-faktur";
     const w = await new Resend(process.env.RESEND_API_KEY).emails.send({
       from: FROM,
       to: email,
       replyTo: "pawel@fluxlab.pl",
-      subject: kontrola ? "Dokończ uruchomienie kontroli faktur kosztowych" : codziennie ? "Dokończ uruchomienie faktur kosztowych z KSeF" : "Dokończ uruchomienie paczki miesięcznej z KSeF",
+      subject: wystawianie
+        ? "Dokończ uruchomienie wystawiania faktur do KSeF"
+        : kontrola ? "Dokończ uruchomienie kontroli faktur kosztowych" : codziennie ? "Dokończ uruchomienie faktur kosztowych z KSeF" : "Dokończ uruchomienie paczki miesięcznej z KSeF",
       html: ramkaMaila(
         "Został jeden krok",
-        `<p style="margin:0 0 12px">Płatność przyszła, ale nie podałeś jeszcze NIP-u i tokenu KSeF, więc nie mamy skąd pobrać faktur.</p><p style="margin:0"><a href="${link}">Podaj dane firmy</a>. Zajmuje to minutę, a pierwsze faktury przyjdą na maila w ciągu godziny.</p>`,
+        `<p style="margin:0 0 12px">${wystawianie ? "Płatność przyszła, ale nie podałeś jeszcze danych firmy, tokenu KSeF i pliku z fakturami, więc nie mamy co wystawić." : "Płatność przyszła, ale nie podałeś jeszcze NIP-u i tokenu KSeF, więc nie mamy skąd pobrać faktur."}</p><p style="margin:0"><a href="${link}">${wystawianie ? "Uzupełnij dane i dodaj plik" : "Podaj dane firmy"}</a>. Zajmuje to kilka minut, a ${wystawianie ? "wynik przyjdzie na maila w ciągu godziny" : "pierwsze faktury przyjdą na maila w ciągu godziny"}.</p>`,
       ),
     });
     if (w.error) continue;
@@ -103,6 +114,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
+  if (d.akcja === "partia") {
+    const p = await db().pobierz<Partia>("partie", String(d.partia ?? ""));
+    if (!p || p.dane.sesja !== id) return NextResponse.json({ error: "brak partii" }, { status: 404 });
+    if (!["gotowa", "blad"].includes(d.status)) return NextResponse.json({ error: "status" }, { status: 400 });
+    await db().zmien("partie", p.id, { dane: { status: d.status, wynik: String(d.wynik ?? "").slice(0, 500), base64: "" } });
+    return NextResponse.json({ ok: true });
+  }
+
   if (d.akcja === "mail") {
     if (typeof d.temat !== "string" || typeof d.tytul !== "string" || typeof d.tresc !== "string")
       return NextResponse.json({ error: "temat, tytul, tresc" }, { status: 400 });
@@ -123,5 +142,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true, do: biuro || r.email, resend: w.data?.id });
   }
 
-  return NextResponse.json({ error: "akcja: stan | mail" }, { status: 400 });
+  return NextResponse.json({ error: "akcja: stan | mail | partia" }, { status: 400 });
 }

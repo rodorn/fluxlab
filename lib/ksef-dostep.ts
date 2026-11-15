@@ -1,6 +1,6 @@
 import { constants, publicEncrypt } from "node:crypto";
 
-export const PRODUKTY_KSEF = ["paczka-biuro", "faktury-kosztowe", "kontrola-faktur"];
+export const PRODUKTY_KSEF = ["paczka-biuro", "faktury-kosztowe", "kontrola-faktur", "faktury-z-excela"];
 
 export function nipOk(nip: string): boolean {
   if (!/^\d{10}$/.test(nip)) return false;
@@ -17,11 +17,22 @@ export function zaszyfruj(dane: { nip: string; token: string }): string {
   ).toString("base64");
 }
 
+export type Sprzedawca = { nazwa: string; adres1: string; adres2: string; konto: string };
+
+export type Partia = {
+  sesja: string;
+  nazwa: string;
+  base64: string;
+  status: "nowa" | "gotowa" | "blad";
+  wynik?: string;
+};
+
 export type Dostep = {
   nip: string;
   blob: string;
   srodowisko: "prod" | "test";
   produkt: string;
+  sprzedawca?: Sprzedawca;
   email: string;
   biuro: string;
   subskrypcja: string;

@@ -415,6 +415,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/faktury-z-excela-do-ksef`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/paczka-miesieczna-dla-biura`,
       changeFrequency: "weekly" as const,
       priority: 0.7,
