@@ -56,6 +56,7 @@ export const MENU: PozycjaMenu[] = [
           l("/benchmarking-konkurencji"),
           l("/dane-firmy-z-nip"),
           l("/ocena-leada-ai"),
+          l("/odpowiedz-na-leada"),
         ],
       },
       {
@@ -279,6 +280,7 @@ export const OPIS_MENU: Record<string, string> = {
   "/benchmarking-konkurencji": "Co zmienia konkurencja, od 39 zł/mies.",
   "/dane-firmy-z-nip": "Nazwa, adres, KRS i branża z NIP, 19 zł/mies.",
   "/ocena-leada-ai": "Gorący, ciepły, zimny: ocena zgłoszenia, 29 zł/mies.",
+  "/odpowiedz-na-leada": "Mail z ofertą w minutę po zgłoszeniu, 29 zł/mies.",
   "/widocznosc-w-ai": "Czy ChatGPT poleca Twoją firmę",
   "/mapa-strony": "Mapa dla Google bez błędów",
   "/audyt-poczty": "SPF, DKIM, DMARC w jednym sprawdzeniu",

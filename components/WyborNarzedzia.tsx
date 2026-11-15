@@ -174,6 +174,11 @@ const SYTUACJE: Sytuacja[] = [
           "Dziesięć pytań tak lub nie i wskazanie obszaru, w którym automatyzacja da najwięcej.",
       },
       {
+        href: "/odpowiedz-na-leada",
+        powod:
+          "Klient, który zostawił zgłoszenie, w minutę dostaje ofertę i link do kalendarza, zanim zdąży zapytać kogoś innego.",
+      },
+      {
         href: "/ocena-leada-ai",
         powod:
           "Każde zgłoszenie z formularza dostaje ocenę gorący, ciepły albo zimny i podpowiedź na rozmowę, więc kolejność telefonów nie zależy od przypadku.",

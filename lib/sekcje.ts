@@ -30,6 +30,7 @@ export const SEKCJE: Sekcja[] = [
           s("/benchmarking-konkurencji", "Benchmarking konkurencji"),
           s("/dane-firmy-z-nip", "Dane firmy z NIP"),
           s("/ocena-leada-ai", "Ocena leada przez AI"),
+          s("/odpowiedz-na-leada", "Odpowiedź na leada w minutę"),
           s("/skaner-domen", "Skaner domen"),
         ],
       },

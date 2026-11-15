@@ -156,6 +156,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Odpowiedź na leada w minutę",
+    pytanie: "Ile czeka klient na Twoją pierwszą odpowiedź?",
+    description:
+      "Wpisz ofertę i link do kalendarza, a pokażemy mail, który klient dostanie w minutę po zgłoszeniu. W abonamencie wysyłamy go automatycznie.",
+    href: "/odpowiedz-na-leada",
+    ikona: "lupa",
+  },
+  {
     title: "Rejestr cen w sklepie",
     description:
       "Sprawdzamy Twoje przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",
