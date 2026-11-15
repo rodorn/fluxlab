@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
+import RceZapis from "@/components/RceZapis";
 import { doba } from "@/lib/ceny-energii";
 
 export const revalidate = 1800;
@@ -210,6 +211,8 @@ export default async function Page() {
             .
           </p>
         </div>
+
+        <RceZapis />
 
         <div className="mt-8 rounded-2xl border border-gray-200/80 dark:border-gray-800/80 bg-white/70 dark:bg-gray-900/50 p-6">
           <p className="text-base font-bold text-gray-900 dark:text-white">
