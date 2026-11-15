@@ -11471,3 +11471,34 @@ Kanały z 0 przez 3 doby: mail/wordpress (także 0 w 7 dniach), linkedin, perple
 **Trzy najważniejsze zadania:** Z3 adresy dla stron z problemem bez maila (08:40); Z4 maile z Z3, bez wysyłki (10:40); Z6 nowe branże z luźniejszą regułą adresu (12:40).
 **Dla Pawła:**
 - Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), osiemnasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
+
+## 2026-11-15 06:43
+**Kanał:** pomiar i Bing/IndexNow (Z1, Z2 planu 15.11). Z16 planu 14.11 zamknięty pomiarem stratega 15.11 06:15. Timer fluxlab-strona: enabled; budżet: rytm „zwolnij”, prognoza 118%, hamulec alarm.
+**Co zrobione:** 6 zmienionych adresów (/, /strony-www, /n8n, /automatyzacja-procesow-biznesowych, /polityka-prywatnosci, /dla-zespolu), wszystkie 200 bez noindex, zgłoszone przez IndexNow: Yandex 200, Naver 200, wspólny 403.
+**Ruch:** wg stratega 06:15: 54 osoby po odsiewie w dobie (bez odsyłacza 32, google-ads 8, Facebook 6, Google 4, chatgpt 4), tydzień 290.
+**Dla Pawła:** pusto. **Zostało otwarte:** Z3 (luźna reguła adresu) od 08:40, Z6 od 12:40.
+
+<!-- WYSLANO 2026-11-15 07:04 -->
+
+## 2026-11-15 09:13
+**Kanał:** outreach, Z3 planu 15.11. **Co zrobione:** nowy `~/Projekty/mail-audyt/wp_adresy_luzne.py` (luźna reguła adresu) przebadał 240 stron WordPress z problemem bez adresu: 69 z 2+ problemami, adres znaleziony regułą a 6, b 7, generic 7, kandydaci 14 w `kandydaci-wp-2026-11-15.json` (np. rezerwacja@jetsetclinic.pl, apdentpoznan@gmail.com, salon@beauty-club.com.pl); w maile_wp 42 pliki .txt, z tego 30 niewysłanych wg stratega.
+**Ruch:** doba 194 odsłony, 146 osób (−16%); b2b-email 88, facebook 9, google-ads 8, m.facebook.com 7, www.google.com 7; uruchomienia narzędzi 3; lejek 7 dni 970 / 7 form_start / 1 zapytanie.
+**Dla Pawła:** pusto. **Zostało otwarte:** Z4 (14 maili z Z3, bez wysyłki) od 10:40; pula da ok. 44 gotowe, Z6/Z7 muszą dołożyć resztę do 48.
+
+## 2026-11-15 10:43
+**Kanał:** outreach, Z4 i Z5 planu 15.11.
+**Co zrobione:** 14 maili `wordpress` z kandydatów Z3 przygotowanych bez wysyłki (maile_wp 043-056, 93-113 słów); MX 7/7 domen firmowych, 0 do pomijane.json; kontrola próbą: 44 gotowe niewysłane, każdy z 2 linkami z utm, 3 przeczytane (kot.krakow.pl, solnagrota.com, best-dent.com) zgodne z JSON, 0 odrzuconych.
+**Ruch:** doba 199 odsłon, 152 osoby (−14% wobec średniej); źródła: b2b-email 96, m.facebook.com 10, facebook 9, www.google.com 8, google-ads 8; Threads 3 sesje; uruchomienia narzędzi 2; lejek 7 dni 985 / 7 form_start / 1 zapytanie.
+**Dowód:** `ls ~/Projekty/mail-audyt/maile_wp/*.txt | wc -l` 42 → 56; `wyslij_segment.py wordpress --proba --limit=80`: 44 DO, 88 linków utm.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** do celu 48 brakuje 4 maili, dołożą Z6 (nowe branże, od 12:40) i Z7 (od 14:40).
+
+<!-- WYSLANO 2026-11-15 10:57 -->
+
+## 2026-11-15 12:43
+**Kanał:** outreach, Z6 planu 15.11 (nowe branże).
+**Co zrobione:** Overpass dla 10 nowych miast (Katowice, Gdynia, Częstochowa, Radom, Toruń, Kielce, Rzeszów, Gliwice, Zabrze, Olsztyn, 7 tagów usług): 421 obiektów; `wp_adresy_luzne.py` dostał tryb pliku OSM; zbadane 283 domeny, WordPress 98, z problemem 41, 2+ problemy 9, kandydaci 5 (`kandydaci-wp-2026-11-15b.json`), z czego w Z7 odpadną dagmara@autoserwisquickkatowice.pl (adres imienny) i duncan-scania.pl (dealer), zostają 3.
+**Ruch:** doba 208 odsłon, 149 osób (−8%); źródła: b2b-email 93, www.facebook.com 10, google-ads 10, facebook 9, m.facebook.com 8; Threads 2 sesje; uruchomienia narzędzi 0; lejek 7 dni 1005 / 7 form_start / 1 zapytanie.
+**Dowód:** ~/Projekty/mail-audyt/osm-uslugi-2026-11-15.json, kandydaci-wp-2026-11-15b.json, wp15b.log („zbadane 283, wordpress 98, 2+ problemy 9, regula a 1, b 1, generic 55, kandydaci 5”).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z7 od 14:40 (3 maile z Z6, cel 48: 44 + 3 = 47, brakuje 1); trafność usług w średnich miastach 9 z 283, reguła adresu nie jest już wąskim gardłem, wąskie gardło to liczba stron z 2+ problemami.
