@@ -100,6 +100,9 @@ export async function gapi(token: string, url: string, init: RequestInit = {}) {
     headers: { Authorization: `Bearer ${token}`, ...(init.headers ?? {}) },
     signal: AbortSignal.timeout(60_000),
   });
-  if (!r.ok) throw new Error(`google ${r.status} ${url.split("?")[0].slice(-40)}`);
+  if (!r.ok) {
+    const j = await r.json().catch(() => ({}));
+    throw new Error(`google ${r.status} ${url.split("?")[0].slice(-30)}: ${String(j?.error?.message ?? "").slice(0, 120)}`);
+  }
   return r;
 }
