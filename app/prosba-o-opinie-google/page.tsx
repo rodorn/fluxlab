@@ -50,7 +50,7 @@ export default function Page() {
       faq={[
         { q: "Skąd wziąć link do opinii w Google?", a: "W swoim profilu firmy w Google wybierz „Poproś o opinie” i skopiuj link. Wklejasz go raz w panelu." },
         { q: "Czy system sam wysyła prośby do wszystkich klientów?", a: "Nie. Prośbę dostaje tylko ten adres, który wpiszesz w panelu albo wyślesz z własnego systemu. Nie pobieramy list klientów." },
-        { q: "Jak długo przechowujecie adresy?", a: "Listę wysłanych próśb przechowujemy 365 dni. Po rezygnacji dane usuwamy po 30 dniach." },
+        { q: "Jak długo są przechowywane adresy?", a: "Listę wysłanych próśb przechowujemy 365 dni. Po rezygnacji dane usuwamy po 30 dniach." },
         { q: "Jak zrezygnować?", a: "W dowolnym dniu w portalu płatności, link jest w potwierdzeniu płatności. Za niewykorzystane dni zwracamy pieniądze, a wysyłka przestaje działać." },
       ]}
       formId="order_prosba_opinia"
