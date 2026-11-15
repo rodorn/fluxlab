@@ -348,6 +348,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Zdjęcie paragonu wysyłasz mailem, a pozycja z kwotą, VAT i kategorią trafia do arkusza. Odczyt robi model AI."
   },
   {
+    "url": "/nowe-spolki-w-branzy-i-regionie",
+    "tytul": "Nowe spółki z KRS co tydzień, 49 zł/mies.",
+    "opis": "Co poniedziałek lista nowo zarejestrowanych w KRS spółek z Twojej branży (PKD) i regionu: nazwa, NIP, adres, e-mail firmy. Dane z oficjalnego API KRS."
+  },
+  {
     "url": "/paczka-miesieczna-dla-biura",
     "tytul": "Paczka miesięczna faktur z KSeF dla biura rachunkowego, 19 zł/mies.",
     "opis": "Co miesiąc ZIP z fakturami kosztowymi i sprzedażowymi z KSeF (XML, PDF, zestawienie CSV) wysłany na maila biura rachunkowego."

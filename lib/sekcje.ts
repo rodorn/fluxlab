@@ -170,6 +170,7 @@ export const SEKCJE: Sekcja[] = [
           s("/analiza-lokalizacji", "Analiza lokalizacji pod punkt"),
           s("/audyt-kurierski", "Audyt faktur kurierskich"),
           s("/paragon-do-arkusza", "Paragon do arkusza"),
+          s("/nowe-spolki-w-branzy-i-regionie", "Nowe spółki w branży i regionie"),
         ],
       },
       {
