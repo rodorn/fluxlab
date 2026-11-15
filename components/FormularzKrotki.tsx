@@ -169,7 +169,10 @@ export default function FormularzKrotki({ formId }: { formId: string }) {
           {blad}
         </p>
       )}
-      <p className="mt-2 text-center text-xs text-gray-600 dark:text-gray-400">
+      <p className="mt-2 text-center text-sm font-medium text-gray-800 dark:text-gray-200">
+        Odpowiadamy w ciągu 2 godzin, w godz. 11–24.
+      </p>
+      <p className="mt-1 text-center text-xs text-gray-600 dark:text-gray-400">
         Bez newslettera.{" "}
         <Link
           href="/polityka-prywatnosci"
