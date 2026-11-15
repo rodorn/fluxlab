@@ -38,7 +38,7 @@ export default function Page() {
       checks={[
         {
           title: "Kurs z dnia poprzedzającego",
-          desc: "Przy przeliczaniu przychodów i kosztów w walucie obcej stosuje się kurs średni NBP z ostatniego dnia roboczego poprzedzającego dzień uzyskania przychodu, poniesienia kosztu albo wystawienia faktury. Liczymy go za Ciebie, także po weekendach i świętach.",
+          desc: "Przy przeliczaniu przychodów i kosztów wyrażonych we frankach, euro czy dolarach stosuje się kurs średni NBP z ostatniego dnia roboczego poprzedzającego dzień uzyskania przychodu, poniesienia kosztu albo wystawienia faktury. Liczymy go za Ciebie, także po weekendach i świętach.",
         },
         {
           title: "Numer tabeli do dokumentu",

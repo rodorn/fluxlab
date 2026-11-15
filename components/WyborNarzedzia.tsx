@@ -281,7 +281,7 @@ const SYTUACJE: Sytuacja[] = [
       {
         href: "/kursy-nbp",
         powod:
-          "Faktura w walucie obcej wymaga kursu NBP z dnia poprzedzającego, a narzędzie podaje go z numerem tabeli i dopisuje do arkusza.",
+          "Faktura walutowa wymaga kursu NBP z dnia poprzedzającego, a narzędzie podaje go z numerem tabeli i dopisuje do arkusza.",
       },
       {
         href: "/raport-edoreczen",
