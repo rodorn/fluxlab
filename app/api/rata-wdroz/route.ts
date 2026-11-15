@@ -25,7 +25,7 @@ function rozbierz(dane: string, oproc: string) {
   const mail = dane.match(/[^\s,;]+@[^\s,;]+\.[^\s,;]{2,}/)?.[0];
   const tel = dane.match(/(\+?\d[\d\s-]{7,}\d)/)?.[0];
   const kontakt = (mail ?? tel ?? "").trim();
-  const nazwa = dane.replace(kontakt, "").replace(/[,;\-–]+\s*$/g, "").replace(/^[\s,;\-–]+/, "").replace(/\s+/g, " ").trim();
+  const nazwa = dane.replace(kontakt, "").replace(/[\s,;:\-–]*(tel\.?|telefon|e-?mail|mail|kontakt)?[\s,;:\-–]*$/i, "").replace(/^[\s,;\-–]+/, "").replace(/\s+/g, " ").trim();
   const o = Number(oproc.replace(",", ".").replace(/[^\d.]/g, ""));
   return { nazwa: nazwa.slice(0, 80), kontakt: kontakt.slice(0, 80), oproc: Number.isFinite(o) && o > 0 && o <= 40 ? String(o) : "" };
 }
