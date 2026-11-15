@@ -1,4 +1,4 @@
 ﻿numer;data_wystawienia;nabywca;nip_nabywcy;ulica;kod_miasto;opis;ilosc;jm;cena_netto;vat;termin_platnosci;podstawa_zwolnienia
-FV/1/11/2026;2026-11-16;Przykładowa Firma Sp. z o.o.;5260250274;ul. Wiejska 4;00-902 Warszawa;Usługa doradcza;10;godz;150,00;23;2026-11-30;
-FV/1/11/2026;2026-11-16;Przykładowa Firma Sp. z o.o.;5260250274;ul. Wiejska 4;00-902 Warszawa;Dojazd;1;szt;80,00;23;2026-11-30;
-FV/2/11/2026;2026-11-17;Jan Kowalski;;ul. Polna 1;30-001 Kraków;Szkolenie;1;szt;500,00;zw;2026-12-01;art. 43 ust. 1 pkt 26 ustawy o VAT
+FV/1/11/2026;;Przykładowa Firma Sp. z o.o.;5260250274;ul. Wiejska 4;00-902 Warszawa;Usługa doradcza;10;godz;150,00;23;2026-11-30;
+FV/1/11/2026;;Przykładowa Firma Sp. z o.o.;5260250274;ul. Wiejska 4;00-902 Warszawa;Dojazd;1;szt;80,00;23;2026-11-30;
+FV/2/11/2026;;Jan Kowalski;;ul. Polna 1;30-001 Kraków;Szkolenie;1;szt;500,00;zw;2026-12-01;art. 43 ust. 1 pkt 26 ustawy o VAT
