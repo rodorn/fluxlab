@@ -448,6 +448,16 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Co 6 godzin sprawdzamy, czy znaczniki Google i Meta są na stronie i działają, i piszemy, gdy któregoś zabraknie."
   },
   {
+    "url": "/alert-msig",
+    "tytul": "Alert MSiG o upadłości kontrahenta od 39 zł",
+    "opis": "Raz na dobę sprawdzamy Monitor Sądowy i Gospodarczy dla do 20 firm i piszemy o upadłości, restrukturyzacji lub likwidacji."
+  },
+  {
+    "url": "/zmiany-w-krs-kontrahentow",
+    "tytul": "Zmiany w KRS kontrahentów od 29 zł",
+    "opis": "Raz na dobę czytamy odpis z KRS do 20 firm i piszemy, gdy zmieni się zarząd, prokura, adres lub kapitał."
+  },
+  {
     "url": "/straznik-formularza",
     "tytul": "Strażnik formularza kontaktowego od 19 zł",
     "opis": "Raz na dobę wysyłamy zgłoszenie testowe przez formularz na Twojej stronie. Gdy przestanie przechodzić, dostajesz mail, zanim stracisz zapytania."

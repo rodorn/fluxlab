@@ -53,6 +53,8 @@ export const OFERTA: Record<string, Oferta> = {
   "monitoring-ceny": { nazwa: "Pilnowanie cen konkurencji", netto: 39, miesiecznie: true, strona: "/pilnowanie-cen-konkurencji", pole: "Adresy produktów (do 3, po spacji)" },
   "monitoring-audyt": { nazwa: "Audyt strony co miesiąc", netto: 19, miesiecznie: true, strona: "/audyt-strony-co-miesiac", pole: "Adres strony" },
   "monitoring-konwersje": { nazwa: "Strażnik konwersji", netto: 29, miesiecznie: true, strona: "/straznik-konwersji", pole: "Adresy stron ze znacznikami (do 3, po spacji)" },
+  "monitoring-krs": { nazwa: "Zmiany w KRS kontrahentów", netto: 29, miesiecznie: true, strona: "/zmiany-w-krs-kontrahentow", pole: "Numery KRS lub NIP firm (do 20, po spacji)" },
+  "monitoring-msig": { nazwa: "Alert MSiG", netto: 39, miesiecznie: true, strona: "/alert-msig", pole: "Numery KRS lub NIP firm (do 20, po spacji)" },
   "monitoring-wyciek": { nazwa: "Alert wycieku haseł", netto: 19, miesiecznie: true, strona: "/alert-wycieku-hasel" },
   "monitoring-formularz": { nazwa: "Strażnik formularza kontaktowego", netto: 19, miesiecznie: true, strona: "/straznik-formularza", pole: "Adres strony z formularzem" },
   "https-pilnowanie": { nazwa: "Pilnowanie ważności certyfikatu", netto: 39, miesiecznie: true, strona: "/naprawa-https", pole: ADRES },

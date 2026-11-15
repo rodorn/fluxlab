@@ -138,6 +138,8 @@ export const SEKCJE: Sekcja[] = [
           s("/pilnowanie-cen-konkurencji", "Pilnowanie cen konkurencji"),
           s("/audyt-strony-co-miesiac", "Audyt strony co miesiąc"),
           s("/straznik-konwersji", "Strażnik konwersji"),
+          s("/alert-msig", "Alert MSiG"),
+          s("/zmiany-w-krs-kontrahentow", "Zmiany w KRS kontrahentów"),
           s("/kody-qr", "Kody QR z licznikiem skanów"),
           s("/naprawa-wordpress", "Naprawa WordPress"),
           s("/skan-wtyczek-wordpress", "Skan wtyczek WordPressa"),
