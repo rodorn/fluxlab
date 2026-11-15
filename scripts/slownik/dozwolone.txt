@@ -294,7 +294,6 @@ feed
 rss
 unsubscribe
 xml
-||||||| parent of c26c7db5 (Kontrola banera cookies i Consent Mode v2: podstrona i oferta 19 zł)
 Clarity
 Complianz
 Cookiebot
@@ -306,3 +305,4 @@ personalization
 storage
 breeze
 meri
+Safety # nazwa unijnego systemu Safety Gate

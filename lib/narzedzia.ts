@@ -361,6 +361,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Sprawdzenie auta przed zakupem",
+    pytanie: "Czy to auto jest tym, za które się podaje?",
+    description:
+      "Podajesz VIN, a dostajesz raport z poprawnością numeru, wycofaniami marki w UE i listą kontrolną oględzin. Strukturę VIN sprawdzisz za darmo.",
+    href: "/sprawdzenie-auta",
+    ikona: "lupa",
+  },
+  {
     title: "Adresy do e-Doręczeń z listy NIP",
     description:
       "Wklej do 50 numerów NIP, a dostaniesz plik z adresami do e-Doręczeń wpisanymi do KRS i listę firm bez adresu.",

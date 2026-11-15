@@ -226,3 +226,11 @@ OFERTA["raport-kontrahenta"] = {
   strona: "/raport-kontrahenta",
   pole: "NIP kontrahenta (10 cyfr)",
 };
+
+OFERTA["sprawdzenie-auta"] = {
+  nazwa: "Sprawdzenie auta przed zakupem",
+  netto: 19,
+  miesiecznie: false,
+  strona: "/sprawdzenie-auta",
+  pole: "VIN (17 znaków), opcjonalnie model auta",
+};

@@ -164,6 +164,7 @@ export const SEKCJE: Sekcja[] = [
           s("/sprawdzenie-nip", "Sprawdzenie NIP"),
           s("/sprawdz-kontrahenta", "Sprawdzony kontrahent"),
           s("/czujka-rejestrowa", "Dłużnik znika z rejestru"),
+          s("/sprawdzenie-auta", "Sprawdzenie auta przed zakupem"),
           s("/raport-kontrahenta", "Raport o kontrahencie w PDF"),
           s("/monitoring-kontrahentow", "Monitoring kontrahentów na białej liście VAT"),
           s("/weryfikacja-rachunkow", "Weryfikacja rachunków przed przelewem"),
