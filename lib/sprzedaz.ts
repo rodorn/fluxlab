@@ -27,6 +27,7 @@ export const OFERTA: Record<string, Oferta> = {
   "formularz-zgloszenia": { nazwa: "Formularz do arkusza i Teams lub Slacka", netto: 19, miesiecznie: true, strona: "/formularz-do-arkusza-i-teams", pole: "Nazwa formularza (np. Zapytania ze strony)" },
   "firma-raport": { nazwa: "Firma w internecie: raport PDF", netto: 29, miesiecznie: false, strona: "/raport-o-firmie-w-internecie", pole: "Adres strony firmy (np. twojafirma.pl)" },
   "wcag-raport": { nazwa: "Raport dostępności WCAG", netto: 49, miesiecznie: false, strona: "/raport-dostepnosci-wcag", pole: "Adres strony (np. twojafirma.pl)" },
+  "posty-z-artykulow": { nazwa: "Posty z artykułów: LinkedIn i Facebook", netto: 49, miesiecznie: true, strona: "/posty-z-artykulow-bloga", pole: "Adres bloga (np. twojafirma.pl/blog)" },
   "omnibus-sklep": { nazwa: "Omnibus w sklepie: raport", netto: 29, miesiecznie: false, strona: "/omnibus-w-sklepie", pole: "Adres sklepu (np. twojsklep.pl)" },
   "benchmarking-miesiac": { nazwa: "Benchmarking konkurencji raz w miesiącu", netto: 39, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES, pole2: KONKURENCI },
   "benchmarking-tydzien": { nazwa: "Benchmarking konkurencji raz w tygodniu", netto: 49, miesiecznie: true, strona: "/benchmarking-konkurencji", pole: ADRES, pole2: KONKURENCI },
