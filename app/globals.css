@@ -1356,9 +1356,15 @@ blockquote {
     from { transform: scale(0.88, 0.9); }
     to { transform: none; }
   }
+  .maska-sekcji > .swiatlo-fraktal {
+    border-radius: 2rem;
+    animation: maska-sekcji linear both;
+    animation-timeline: --maska-sekcji;
+    animation-range: entry 0% cover 45%;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ramka-3d, .maska-sekcji::before { animation: none; }
+  .ramka-3d, .maska-sekcji::before, .maska-sekcji > .swiatlo-fraktal { animation: none; }
 }
 
 /* 23: menu mobilne na sprężynie, pozycje wchodzą kolejno */
