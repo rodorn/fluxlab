@@ -110,6 +110,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/transkrypcja-nagran`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/protokol-ze-spotkania`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/posty-z-artykulow-bloga`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
