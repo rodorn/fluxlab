@@ -670,6 +670,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/tlumaczenie-strony-en-de`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/porownanie-umow`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

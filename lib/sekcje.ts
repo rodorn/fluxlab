@@ -123,6 +123,7 @@ export const SEKCJE: Sekcja[] = [
           s("/porownanie-umow", "Porównanie wersji umowy"),
           s("/odpowiedz-podatkowa", "Wstępna odpowiedź podatkowa"),
           s("/faktury-pdf-do-excela", "Faktury PDF do Excela"),
+          s("/tlumaczenie-strony-en-de", "Tłumaczenie strony EN i DE"),
           s("/naprawa-https", "Naprawa ostrzeżenia o stronie"),
           s("/pilnowanie-certyfikatu", "Pilnowanie certyfikatu i domeny"),
           s("/monitoring-dostepnosci", "Monitoring dostępności strony"),

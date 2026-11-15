@@ -55,7 +55,7 @@ export async function POST(req: Request) {
   }
   const id = String(sesja.metadata?.produkt ?? "");
   const tryb = OFERTA[id]?.wgraj;
-  if (!["paid", "no_payment_required"].includes(sesja.payment_status) || !tryb || tryb === "faktury") return blad("Ta płatność nie jest opłacona albo nie dotyczy tego produktu.", 402);
+  if (!["paid", "no_payment_required"].includes(sesja.payment_status) || !tryb || tryb === "faktury" || tryb === "adres") return blad("Ta płatność nie jest opłacona albo nie dotyczy tego produktu.", 402);
   const email: string = sesja.customer_details?.email ?? sesja.customer_email ?? "";
   if (!email) return blad("Brak adresu e-mail w płatności.", 400);
 

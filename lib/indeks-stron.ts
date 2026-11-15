@@ -508,6 +508,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wgraj dwie wersje umowy w PDF, a dostaniesz listę zmian: co było, co jest i co to zmienia. Wynik po kilku minutach, 19 zł netto."
   },
   {
+    "url": "/tlumaczenie-strony-en-de",
+    "tytul": "Tłumaczenie strony na angielski i niemiecki, 199 zł",
+    "opis": "Podajesz adres strony, a dostajesz teksty przetłumaczone na angielski i niemiecki: arkusz Excel i pliki do wklejenia. Do 6 podstron, 199 zł netto."
+  },
+  {
     "url": "/faktury-pdf-do-excela",
     "tytul": "Faktury PDF do Excela, 49 zł/mies.",
     "opis": "Wgraj faktury w PDF, a dostaniesz arkusz Excel z numerem, datami, NIP-ami i kwotami. Do 100 faktur w miesiącu, 49 zł netto miesięcznie."

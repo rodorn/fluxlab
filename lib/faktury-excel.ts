@@ -145,7 +145,7 @@ const kolumna = (i: number) => String.fromCharCode(65 + i);
 const xml = (s: string) =>
   esc(s).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, "");
 
-function arkusz(faktury: Faktura[]): string {
+function arkusz(naglowki: string[], dane: (string | number | null)[][], szerokosci: number[]): string {
   const komorka = (
     v: string | number | null,
     k: number,
@@ -159,18 +159,17 @@ function arkusz(faktury: Faktura[]): string {
     return `<c r="${ref}" s="${styl}" t="inlineStr"><is><t xml:space="preserve">${xml(v)}</t></is></c>`;
   };
   const wiersze = [
-    `<row r="1">${NAGLOWKI.map((h, k) => komorka(h, k, 1, 1)).join("")}</row>`,
-    ...faktury.map(
-      (f, i) =>
-        `<row r="${i + 2}">${wiersz(f)
+    `<row r="1">${naglowki.map((h, k) => komorka(h, k, 1, 1)).join("")}</row>`,
+    ...dane.map(
+      (w, i) =>
+        `<row r="${i + 2}">${w
           .map((v, k) => komorka(v, k, i + 2, typeof v === "number" ? 2 : 0))
           .join("")}</row>`,
     ),
   ];
-  const kol = NAGLOWKI.map(
-    (h, k) =>
-      `<col min="${k + 1}" max="${k + 1}" width="${[0, 5, 7, 14].includes(k) ? 22 : k >= 10 && k <= 12 ? 13 : 18}" customWidth="1"/>`,
-  ).join("");
+  const kol = naglowki
+    .map((_, k) => `<col min="${k + 1}" max="${k + 1}" width="${szerokosci[k]}" customWidth="1"/>`)
+    .join("");
   return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>${kol}</cols><sheetData>${wiersze.join("")}</sheetData></worksheet>`;
 }
 
@@ -234,6 +233,10 @@ function zip(pliki: { nazwa: string; tresc: string }[]): Buffer {
 }
 
 export function xlsxFaktur(faktury: Faktura[]): Buffer {
+  return xlsxTabeli("Faktury", NAGLOWKI, faktury.map(wiersz), NAGLOWKI.map((_, k) => ([0, 5, 7, 14].includes(k) ? 22 : k >= 10 && k <= 12 ? 13 : 18)));
+}
+
+export function xlsxTabeli(arkuszNazwa: string, naglowki: string[], dane: (string | number | null)[][], szerokosci: number[]): Buffer {
   const NS = "http://schemas.openxmlformats.org/";
   return zip([
     {
@@ -246,14 +249,14 @@ export function xlsxFaktur(faktury: Faktura[]): Buffer {
     },
     {
       nazwa: "xl/workbook.xml",
-      tresc: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="${NS}spreadsheetml/2006/main" xmlns:r="${NS}officeDocument/2006/relationships"><sheets><sheet name="Faktury" sheetId="1" r:id="rId1"/></sheets></workbook>`,
+      tresc: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="${NS}spreadsheetml/2006/main" xmlns:r="${NS}officeDocument/2006/relationships"><sheets><sheet name="${xml(arkuszNazwa)}" sheetId="1" r:id="rId1"/></sheets></workbook>`,
     },
     {
       nazwa: "xl/_rels/workbook.xml.rels",
       tresc: `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="${NS}package/2006/relationships"><Relationship Id="rId1" Type="${NS}officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="${NS}officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`,
     },
     { nazwa: "xl/styles.xml", tresc: STYLE },
-    { nazwa: "xl/worksheets/sheet1.xml", tresc: arkusz(faktury) },
+    { nazwa: "xl/worksheets/sheet1.xml", tresc: arkusz(naglowki, dane, szerokosci) },
   ]);
 }
 
