@@ -64,6 +64,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Kody QR z licznikiem skanów",
+    pytanie: "Czy ktoś skanuje Twoje ulotki?",
+    description:
+      "Kod QR na ulotkę albo auto, który liczy skany. Obraz do druku i comiesięczny wynik przychodzą mailem.",
+    href: "/kody-qr",
+    ikona: "lupa",
+  },
+  {
     title: "Naprawa ostrzeżenia o stronie",
     pytanie: "Czy przeglądarka straszy Twoją stroną?",
     description:

@@ -308,6 +308,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozujemy przyczynę i naprawiamy szyfrowanie razem z przekierowaniami."
   },
   {
+    "url": "/kody-qr",
+    "tytul": "Kody QR z licznikiem skanów",
+    "opis": "Kod QR na ulotkę albo auto, który liczy skany. Obraz do druku i comiesięczny wynik skanów przychodzą mailem. Bezpłatnie, bez konta."
+  },
+  {
     "url": "/naprawa-wordpress",
     "tytul": "Naprawa WordPress: błąd krytyczny, biały ekran",
     "opis": "„W witrynie wystąpił błąd krytyczny” albo biały ekran? Czytamy log błędów, wskazujemy przyczynę i naprawiamy. 150, 290 albo 490 zł netto, płatność po efekcie."

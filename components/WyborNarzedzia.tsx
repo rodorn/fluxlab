@@ -190,6 +190,19 @@ const SYTUACJE: Sytuacja[] = [
     ],
   },
   {
+    klucz: "reklama-w-realu",
+    etykieta: "Drukujemy ulotki, naklejki albo oklejamy auta",
+    odpowiedz:
+      "Papier i folia nie mówią, ile osób coś z nich wyniosło. Jeden kod ze zliczaniem skanów to zmienia.",
+    wskazania: [
+      {
+        href: "/kody-qr",
+        powod:
+          "Kod prowadzi na Twoją stronę, a pierwszego dnia miesiąca przychodzi mail z liczbą skanów każdego kodu.",
+      },
+    ],
+  },
+  {
     klucz: "nowy-rynek",
     etykieta: "Planujemy nowy punkt albo nowy rynek",
     odpowiedz:

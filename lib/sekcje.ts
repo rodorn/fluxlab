@@ -99,6 +99,7 @@ export const SEKCJE: Sekcja[] = [
         strony: [
           s("/audyt-strony", "Darmowy audyt techniczny"),
           s("/naprawa-https", "Naprawa ostrzeżenia o stronie"),
+          s("/kody-qr", "Kody QR z licznikiem skanów"),
           s("/naprawa-wordpress", "Naprawa WordPress"),
           s("/widocznosc-w-google", "Widoczność w Google"),
           s("/widocznosc-w-ai", "Widoczność w AI"),
