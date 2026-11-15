@@ -8,6 +8,7 @@ import PikselMeta from "@/components/PikselMeta";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import PasekAkcji from "@/components/PasekAkcji";
 import TloKursora from "@/components/TloKursora";
+import TloPodstrony from "@/components/TloPodstrony";
 import TytulKarty from "@/components/TytulKarty";
 import Dzwieki from "@/components/Dzwieki";
 import Mikrotypografia from "@/components/Mikrotypografia";
@@ -257,6 +258,7 @@ export default function RootLayout({
           }}
         />
         <TloKursora />
+        <TloPodstrony />
         <GoogleAnalytics />
         <PomiarFormularzy />
         <PomiarAds />

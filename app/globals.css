@@ -886,6 +886,20 @@ main[class*="max-w-"]:has(> nav[aria-label="Breadcrumb"]) {
 .dark .tlo-hero__warstwa::after {
   background: radial-gradient(ellipse 70% 62% at 50% 36%, rgb(var(--gray-950) / 0) 15%, rgb(var(--gray-950)) 68%);
 }
+.tlo-podstrony {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 760px;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.dark .tlo-podstrony {
+  display: block;
+}
 .tlo-kursora {
   position: fixed;
   top: 0;
@@ -1060,6 +1074,7 @@ p {
   .czat-dymek,
   .tlo-hero__warstwa,
   .tlo-kursora,
+  .tlo-podstrony,
   .nic,
   button,
   [role="tablist"],
