@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import TrackedCTA from "@/components/TrackedCTA";
 import Tabs from "@/components/Tabs";
 import ProductGrid from "@/components/ProductGrid";
@@ -93,7 +94,7 @@ export default function ScrapingDanychPage() {
                 Strony WWW, PDF-y, maile i dokumenty trafiają do Twojego CRM
                 albo arkusza. Bez ręcznego kopiowania.
               </p>
-              <div className="animate-fade-up-4 flex flex-wrap items-center gap-4">
+              <div data-poza-reklama="" className="animate-fade-up-4 flex flex-wrap items-center gap-4">
                 <TrackedCTA
                   href="#sekcje"
                   location="hero_scraping"
@@ -113,6 +114,7 @@ export default function ScrapingDanychPage() {
                   Sprawdź, czy da się to spiąć
                 </a>
               </div>
+              <FormularzKrotki formId="krotki_scraping" />
             </div>
           </div>
         </section>

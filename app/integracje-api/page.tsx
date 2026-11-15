@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import Tabs from "@/components/Tabs";
 import ZakresWyceny from "@/components/ZakresWyceny";
 import { WYCENA_INTEGRACJE } from "@/lib/wycena";
@@ -91,11 +92,12 @@ export default function IntegracjeApi() {
               Łączymy systemy tak, żeby dane przechodziły same, bez ręcznego
               przepisywania. Spięcie dwóch systemów od 299 zł.
             </p>
-            <div>
+            <div data-poza-reklama="">
               <a href="#sekcje" className="btn-primary">
                 Policz zakres wyceny
               </a>
             </div>
+            <FormularzKrotki formId="krotki_api" />
           </div>
         </section>
 

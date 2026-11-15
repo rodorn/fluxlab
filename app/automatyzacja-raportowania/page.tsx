@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import Tabs from "@/components/Tabs";
 import ZakresWyceny from "@/components/ZakresWyceny";
 import { WYCENA_RAPORTOWANIE } from "@/lib/wycena";
@@ -79,11 +80,12 @@ export default function AutomatyzacjaRaportowania() {
               Dane z różnych źródeł zbierają się same, a raport przychodzi o
               stałej porze. Jedno źródło od 790 zł.
             </p>
-            <div>
+            <div data-poza-reklama="">
               <a href="#sekcje" className="btn-primary">
                 Policz zakres wyceny
               </a>
             </div>
+            <FormularzKrotki formId="krotki_raport" />
           </div>
         </section>
 
