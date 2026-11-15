@@ -288,6 +288,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Kalkulator opłacalności fotowoltaiki z magazynem energii do wklejenia na stronę instalatora: Twoje ceny i kontakt. Kod w mailu po zamówieniu."
   },
   {
+    "url": "/newsletter-z-bloga",
+    "tytul": "Newsletter z bloga, 29 zł/mies.",
+    "opis": "Nowe wpisy z bloga same trafiają mailem do czytelników zapisanych formularzem na Twojej stronie. Podwójne potwierdzenie, wypis w każdym mailu."
+  },
+  {
     "url": "/wycena-auta-z-ogloszen",
     "tytul": "Wycena auta z ogłoszeń Otomoto, 19 zł",
     "opis": "Raport cen podobnych aut z Otomoto dla Twojego ogłoszenia: mediana, zakres cen i najbardziej podobne oferty. Mail zaraz po zamówieniu."

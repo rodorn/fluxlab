@@ -141,6 +141,14 @@ OFERTA["pv"] = {
   pole2: "Cena instalacji za kWp i magazynu za kWh w zł, np. 4500 i 2000 (opcjonalnie)",
 };
 
+OFERTA["newsletter"] = {
+  nazwa: "Newsletter z bloga",
+  netto: 29,
+  miesiecznie: true,
+  strona: "/newsletter-z-bloga",
+  pole: "Adres kanału RSS bloga i nazwa nadawcy, np. https://blog.pl/feed Mój blog",
+};
+
 export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
 
 const OFERTY_POZYCJI: Record<string, string[]> = {

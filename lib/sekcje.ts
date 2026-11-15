@@ -208,6 +208,7 @@ export const SEKCJE: Sekcja[] = [
           s("/kalkulator-pv-z-magazynem", "Kalkulator PV z magazynem"),
           s("/wycena-auta-z-ogloszen", "Wycena auta z ogłoszeń"),
           s("/alert-nowych-ogloszen-auta", "Alert nowych ogłoszeń auta"),
+          s("/newsletter-z-bloga", "Newsletter z bloga"),
         ],
       },
     ],

@@ -290,3 +290,7 @@ mojecieplo
 Incoming
 webhooka
 Workflows
+feed
+rss
+unsubscribe
+xml
