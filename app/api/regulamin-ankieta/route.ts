@@ -52,7 +52,7 @@ export async function POST(req: Request) {
   } catch {
     return blad("Nie znaleziono płatności.", 404);
   }
-  if (OFERTA[String(sesja.metadata?.produkt ?? "")]?.wgraj !== "adres" || !["paid", "no_payment_required"].includes(sesja.payment_status))
+  if (OFERTA[String(sesja.metadata?.produkt ?? "")]?.wgraj !== "ankieta" || !["paid", "no_payment_required"].includes(sesja.payment_status))
     return blad("Ta płatność nie jest opłacona albo nie dotyczy tego produktu.", 402);
   const email: string = sesja.customer_details?.email ?? sesja.customer_email ?? "";
   if (!email) return blad("Brak adresu e-mail w płatności.", 400);
