@@ -12,10 +12,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "brak dostępu" }, { status: 401 });
   const klucz = process.env.ZYTE_API_KEY;
   if (!klucz) return NextResponse.json({ error: "brak klucza" }, { status: 500 });
-  const dane = (await req.json().catch(() => null)) as { fraza?: string; debug?: boolean } | null;
+  const dane = (await req.json().catch(() => null)) as { fraza?: string; debug?: boolean; wariant?: number } | null;
   const fraza = String(dane?.fraza ?? "").trim().slice(0, 100);
   if (fraza.length < 2) return NextResponse.json({ error: "fraza" }, { status: 400 });
-  const url = `https://www.google.pl/search?q=${encodeURIComponent(fraza)}&hl=pl&gl=pl&num=20&pws=0`;
+  const w = dane?.wariant ?? 0;
+  const url =
+    w === 0
+      ? `https://www.google.pl/search?q=${encodeURIComponent(fraza)}&hl=pl&gl=pl`
+      : `https://www.google.pl/search?q=${encodeURIComponent(fraza)}&hl=pl&gl=pl&num=20&pws=0`;
+  const zadanie: Record<string, unknown> =
+    w === 2 ? { url, browserHtml: true, geolocation: "PL" } : { url, serp: true, geolocation: "PL" };
   try {
     const odp = await fetch("https://api.zyte.com/v1/extract", {
       method: "POST",
@@ -24,7 +30,7 @@ export async function POST(req: Request) {
         authorization: `Basic ${Buffer.from(`${klucz}:`).toString("base64")}`,
         "content-type": "application/json",
       },
-      body: JSON.stringify({ url, serp: true, geolocation: "PL" }),
+      body: JSON.stringify(zadanie),
     });
     const tekst = await odp.text();
     if (!odp.ok) return NextResponse.json({ error: `zyte ${odp.status}`, szczegol: tekst.slice(0, 400) }, { status: 502 });
