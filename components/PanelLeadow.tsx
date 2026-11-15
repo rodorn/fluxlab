@@ -1,0 +1,121 @@
+"use client";
+
+import { useState } from "react";
+
+export interface LeadWiersz {
+  id: number;
+  czas: string;
+  pola: Record<string, string>;
+  firma: { nazwa?: string; adres?: string; krs?: string; branza?: string; blad?: string } | null;
+  ocena: { kategoria?: string; punkty?: number; streszczenie?: string; nastepny_krok?: string } | null;
+  status: string;
+}
+
+const POLE =
+  "w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-3.5 py-2.5 text-sm text-gray-900 dark:text-white outline-none focus:border-accent";
+const KOLOR: Record<string, string> = {
+  gorący: "text-red-700 dark:text-red-400",
+  ciepły: "text-amber-700 dark:text-amber-400",
+  zimny: "text-sky-700 dark:text-sky-400",
+};
+
+export default function PanelLeadow({
+  panel,
+  token,
+  produkty,
+  leady,
+  ustawienia,
+}: {
+  panel: string;
+  token: string;
+  produkty: string[];
+  leady: LeadWiersz[];
+  ustawienia: Record<string, string>;
+}) {
+  const [ust, setUst] = useState(ustawienia);
+  const [stan, setStan] = useState<"" | "zapis" | "ok" | "blad">("");
+  const [blad, setBlad] = useState("");
+  const odpowiedz = produkty.includes("lead-odpowiedz");
+
+  async function zapisz(e: React.FormEvent) {
+    e.preventDefault();
+    setStan("zapis");
+    const r = await fetch(`/api/lead-ustawienia/${panel}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(ust),
+    }).catch(() => null);
+    const d = await r?.json().catch(() => ({}));
+    if (r?.ok) setStan("ok");
+    else {
+      setBlad(d?.error || "Nie udało się zapisać.");
+      setStan("blad");
+    }
+  }
+
+  const adresForm = `https://fluxlab.pl/leady/formularz/${token}`;
+
+  return (
+    <div className="grid gap-10">
+      {odpowiedz && (
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Odpowiedź dla zgłaszającego</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Każdy, kto zostawi adres e-mail, dostaje od razu wiadomość z poniższą treścią. Bez uzupełnienia mail do zgłaszającego nie jest wysyłany.
+          </p>
+          <form onSubmit={zapisz} className="mt-4 grid gap-3">
+            <input className={POLE} placeholder="Nazwa firmy w podpisie" aria-label="Nazwa firmy" value={ust.firma ?? ""} onChange={(e) => setUst({ ...ust, firma: e.target.value })} />
+            <textarea className={POLE} rows={5} placeholder="Krótka oferta: co robicie, ile to kosztuje, kiedy oddzwonicie" aria-label="Treść oferty" value={ust.oferta ?? ""} onChange={(e) => setUst({ ...ust, oferta: e.target.value })} />
+            <input className={POLE} type="url" placeholder="Link do kalendarza, https://..." aria-label="Link do kalendarza" value={ust.kalendarz ?? ""} onChange={(e) => setUst({ ...ust, kalendarz: e.target.value })} />
+            <div className="flex items-center gap-4">
+              <button type="submit" disabled={stan === "zapis"} className="btn-primary disabled:opacity-50">
+                {stan === "zapis" ? "Zapisuję..." : "Zapisz"}
+              </button>
+              {stan === "ok" && <span className="text-sm text-emerald-700 dark:text-emerald-400">Zapisane, działa od następnego zgłoszenia.</span>}
+              {stan === "blad" && <span className="text-sm text-red-700 dark:text-red-400">{blad}</span>}
+            </div>
+          </form>
+        </section>
+      )}
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">Zgłoszenia</h2>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+          Formularz: <a className="text-accent underline" href={adresForm}>{adresForm}</a>
+        </p>
+        {leady.length === 0 ? (
+          <p className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-5 text-sm text-gray-600 dark:text-gray-400">
+            Jeszcze nic nie wpłynęło. Wklej formularz na stronę albo wyślij zgłoszenie próbne.
+          </p>
+        ) : (
+          <ul className="mt-4 grid gap-3">
+            {leady.map((l) => (
+              <li key={l.id} className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/50 p-4 text-sm">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <p className="font-semibold text-gray-900 dark:text-white">
+                    {l.firma?.nazwa || l.pola.firma || l.pola.imie || l.pola.email || "Zgłoszenie"}
+                  </p>
+                  <p className="text-xs text-gray-500">{new Date(l.czas).toLocaleString("pl-PL", { dateStyle: "short", timeStyle: "short", timeZone: "Europe/Warsaw" })}</p>
+                </div>
+                {l.ocena?.kategoria && (
+                  <p className={`mt-1 font-semibold ${KOLOR[l.ocena.kategoria] ?? ""}`}>
+                    Lead {l.ocena.kategoria}, {l.ocena.punkty}/10
+                  </p>
+                )}
+                {l.ocena?.streszczenie && <p className="mt-1 text-gray-700 dark:text-gray-300">{l.ocena.streszczenie}</p>}
+                <p className="mt-2 text-gray-600 dark:text-gray-400">
+                  {[l.pola.imie, l.pola.email, l.pola.telefon].filter(Boolean).join(" · ")}
+                </p>
+                {l.pola.wiadomosc && <p className="mt-1 text-gray-700 dark:text-gray-300">{l.pola.wiadomosc}</p>}
+                {l.firma && !l.firma.blad && (
+                  <p className="mt-2 text-xs text-gray-500">
+                    {[l.firma.adres, l.firma.krs && `KRS ${l.firma.krs}`, l.firma.branza].filter(Boolean).join(" · ")}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </div>
+  );
+}
