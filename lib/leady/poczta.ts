@@ -9,7 +9,7 @@ const STYL = "font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:
 const ETYKIETA: Record<string, string> = { imie: "Imię", email: "E-mail", telefon: "Telefon", firma: "Firma", nip: "NIP", wiadomosc: "Wiadomość" };
 
 export const PRODUKTY: Record<string, { nazwa: string; opis: string }> = {
-  "lead-formularz": { nazwa: "Formularz leadów z SMS-em i listą zgłoszeń", opis: "formularz do osadzenia i lista zgłoszeń w panelu" },
+  "lead-formularz": { nazwa: "Formularz leadów z listą zgłoszeń", opis: "formularz do osadzenia i lista zgłoszeń w panelu" },
   "lead-odpowiedz": { nazwa: "Odpowiedź na leada w minutę", opis: "natychmiastowy mail do każdego, kto zostawi zgłoszenie (uzupełnij ofertę i link do kalendarza w panelu)" },
   "lead-ocena": { nazwa: "Ocena leada przez AI", opis: "ocena i streszczenie każdego zgłoszenia w mailu do Ciebie" },
   "lead-nip": { nazwa: "Dane firmy do leada z NIP", opis: "dane firmy z rejestrów (nazwa, adres, KRS, branża), gdy zgłoszenie zawiera NIP" },

@@ -48,7 +48,7 @@ export const OFERTA: Record<string, Oferta> = {
   "ai-warunki": { nazwa: "Naprawa warunków wstępnych widoczności w AI", netto: 890, miesiecznie: false, strona: "/widocznosc-w-ai", pole: ADRES },
   "n8n-przeplyw": { nazwa: "Wdrożenie pojedynczego przepływu n8n", netto: 790, miesiecznie: false, strona: "/wdrozenie-n8n-cena" },
   "n8n-opieka": { nazwa: "Opieka nad n8n", netto: 190, miesiecznie: true, strona: "/wdrozenie-n8n-cena" },
-  "lead-formularz": { nazwa: "Formularz leadów z SMS-em i listą zgłoszeń", netto: 49, miesiecznie: true, strona: "/formularz-leadow" },
+  "lead-formularz": { nazwa: "Formularz leadów z listą zgłoszeń", netto: 49, miesiecznie: true, strona: "/formularz-leadow" },
   "lead-odpowiedz": { nazwa: "Odpowiedź na leada w minutę", netto: 29, miesiecznie: true, strona: "/odpowiedz-na-leada" },
   "lead-ocena": { nazwa: "Ocena leada przez AI", netto: 29, miesiecznie: true, strona: "/ocena-leada-ai" },
   "lead-nip": { nazwa: "Dane firmy do leada z NIP", netto: 19, miesiecznie: true, strona: "/dane-firmy-z-nip" },

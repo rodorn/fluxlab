@@ -148,6 +148,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Formularz leadów z listą zgłoszeń",
+    pytanie: "Gdzie lądują zgłoszenia ze strony?",
+    description:
+      "Zobacz formularz, który wkleisz na stronę, i mail, który dostaniesz po każdym zgłoszeniu. W abonamencie zgłoszenia zostają też na liście w panelu.",
+    href: "/formularz-leadow",
+    ikona: "lupa",
+  },
+  {
     title: "Ocena leada przez AI",
     pytanie: "Do którego zgłoszenia zadzwonić najpierw?",
     description:

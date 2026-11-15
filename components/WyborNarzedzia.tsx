@@ -184,6 +184,11 @@ const SYTUACJE: Sytuacja[] = [
           "Klient, który zostawił zgłoszenie, w minutę dostaje ofertę i link do kalendarza, zanim zdąży zapytać kogoś innego.",
       },
       {
+        href: "/formularz-leadow",
+        powod:
+          "Zgłoszenia z Twojej strony trafiają od razu na mail i na listę w jednym miejscu, zamiast ginąć w skrzynce.",
+      },
+      {
         href: "/ocena-leada-ai",
         powod:
           "Każde zgłoszenie z formularza dostaje ocenę gorący, ciepły albo zimny i podpowiedź na rozmowę, więc kolejność telefonów nie zależy od przypadku.",
