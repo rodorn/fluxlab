@@ -313,6 +313,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Mail z nowymi ogłoszeniami spełniającymi Twoje kryteria z Otomoto, sprawdzane co pół godziny. Pierwszy mail ze stanem na start po zamówieniu."
   },
   {
+    "url": "/paliwa-dla-floty",
+    "tytul": "Ceny paliw dla floty: hurt Orlenu i Twoje stacje, 29 zł/mies.",
+    "opis": "Codziennie rano hurtowe ceny Orlenu i ceny wskazanych przez Ciebie stacji z autocentrum.pl, tylko świeże, z datą wpisu."
+  },
+  {
     "url": "/alert-stop-procentowych",
     "tytul": "Alert zmian stóp NBP i WIRON, 19 zł/mies.",
     "opis": "Mail, gdy NBP zmieni stopy procentowe albo WIRON 3M ruszy o co najmniej 0,05 pp. Pierwszy mail z aktualnym stanem zaraz po zamówieniu."

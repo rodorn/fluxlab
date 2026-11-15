@@ -234,6 +234,7 @@ export const SEKCJE: Sekcja[] = [
           s("/kalkulator-pv-z-magazynem", "Kalkulator PV z magazynem"),
           s("/wycena-auta-z-ogloszen", "Wycena auta z ogłoszeń"),
           s("/alert-nowych-ogloszen-auta", "Alert nowych ogłoszeń auta"),
+          s("/paliwa-dla-floty", "Ceny paliw dla floty"),
           s("/newsletter-z-bloga", "Newsletter z bloga"),
           s("/landing-z-formularza", "Landing z formularzem"),
         ],

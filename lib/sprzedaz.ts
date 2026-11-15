@@ -146,6 +146,15 @@ OFERTA["auto-alert"] = {
   pole: "Link do wyszukiwania na Otomoto (strona z wynikami i Twoimi filtrami)",
 };
 
+OFERTA["paliwa-flota"] = {
+  nazwa: "Dzienny mail z cenami paliw: hurt Orlenu i Twoje stacje",
+  netto: 29,
+  miesiecznie: true,
+  strona: "/paliwa-dla-floty",
+  pole: "Do 3 linków do stron stacji z autocentrum.pl, po spacji",
+  pole2: "Kolejne do 3 linków do stacji (opcjonalnie)",
+};
+
 OFERTA["zdolnosc"] = {
   nazwa: "Kalkulator zdolności kredytowej dla pośrednika",
   netto: 49,

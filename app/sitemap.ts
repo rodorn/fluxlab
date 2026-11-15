@@ -460,6 +460,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/paliwa-dla-floty`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/kalkulator-raty-komis`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
