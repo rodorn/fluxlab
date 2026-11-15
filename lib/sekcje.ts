@@ -173,6 +173,7 @@ export const SEKCJE: Sekcja[] = [
           s("/ceny-energii-jutro", "Ceny energii na jutro"),
           s("/nabory-dotacji-oze", "Nabory dotacji OZE"),
           s("/kalkulator-raty-komis", "Kalkulator raty dla komisu"),
+          s("/alert-stop-procentowych", "Alert stóp NBP i WIRON"),
         ],
       },
     ],

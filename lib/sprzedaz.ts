@@ -64,6 +64,14 @@ const DLA_KOGO = "Dla kogo: dom czy firma";
 OFERTA["dotacje-oze"] = { nazwa: "Nabory dotacji OZE: alert o zmianach na stronach programów", netto: 19, miesiecznie: true, strona: "/nabory-dotacji-oze", pole: DLA_KOGO };
 OFERTA["paczka-biuro"] = { nazwa: "Paczka miesięczna faktur z KSeF dla biura rachunkowego", netto: 19, miesiecznie: true, strona: "/paczka-miesieczna-dla-biura", dostep: "/ksef-dostep" };
 
+OFERTA["alert-stop"] = {
+  nazwa: "Alert zmian stóp NBP i WIRON",
+  netto: 19,
+  miesiecznie: true,
+  strona: "/alert-stop-procentowych",
+  pole: "Co obserwować: stopy NBP, WIRON albo oba",
+};
+
 OFERTA["rata-komis"] = {
   nazwa: "Kalkulator raty i leasingu dla komisu",
   netto: 49,

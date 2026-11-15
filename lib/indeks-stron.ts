@@ -278,6 +278,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Wprost z danych operatora."
   },
   {
+    "url": "/alert-stop-procentowych",
+    "tytul": "Alert zmian stóp NBP i WIRON, 19 zł/mies.",
+    "opis": "Mail, gdy NBP zmieni stopy procentowe albo WIRON 3M ruszy o co najmniej 0,05 pp. Pierwszy mail z aktualnym stanem zaraz po zamówieniu."
+  },
+  {
     "url": "/kalkulator-raty-komis",
     "tytul": "Kalkulator raty i leasingu na stronę komisu, 49 zł/mies.",
     "opis": "Kalkulator raty kredytu i leasingu do wklejenia na stronę komisu: Twoja nazwa, kontakt i oprocentowanie. Kod dostajesz mailem zaraz po zamówieniu."
