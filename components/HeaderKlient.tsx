@@ -174,10 +174,10 @@ export default function HeaderKlient({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`naglowek-szklo fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white dark:bg-gray-950 border-b border-gray-200/60 dark:border-gray-800/60 shadow-sm shadow-gray-900/5"
-          : "bg-white dark:bg-gray-950 border-b border-transparent"
+          ? "border-b border-gray-200/60 dark:border-white/10 shadow-sm shadow-gray-900/5"
+          : "border-b border-transparent"
       }`}
     >
       {/* Pełna szerokość, bez container-wide */}
@@ -197,7 +197,7 @@ export default function HeaderKlient({
         <MenuDesktop pozycje={menu} opisy={opisy} />
 
         {/* Right */}
-        <div className="hidden xl:flex items-center gap-3 shrink-0">
+        <div className="hidden xl:flex items-center gap-2 shrink-0 2xl:gap-3">
           <button
             type="button"
             data-poza-reklama=""
@@ -207,7 +207,7 @@ export default function HeaderKlient({
             className="flex items-center gap-2 rounded-lg border border-gray-200 px-2.5 py-1.5 text-gray-500 transition-colors hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:border-white/10 dark:text-gray-400 dark:hover:text-white"
           >
             {IKONA_LUPY}
-            <kbd className="text-[11px] font-sans">Ctrl K</kbd>
+            <kbd className="hidden text-[11px] font-sans 2xl:inline">Ctrl K</kbd>
           </button>
           <ThemeToggle />
           <LicznikKoszyka />
@@ -217,7 +217,7 @@ export default function HeaderKlient({
             className="flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-gray-700 transition-colors hover:text-accent dark:text-gray-200"
           >
             {IKONA_TELEFONU}
-            <span className="hidden min-[1400px]:inline">665 466 565</span>
+            <span className="hidden min-[1600px]:inline">665 466 565</span>
           </a>
           <a
             href="https://wa.me/48665466565"

@@ -21,6 +21,7 @@ import NapisBoczny from "@/components/NapisBoczny";
 import { Ikona, type NazwaIlustracji } from "@/components/Ilustracje";
 import { preload } from "react-dom";
 import FormularzKrotki from "@/components/FormularzKrotki";
+import SwiatloFraktal from "@/components/SwiatloFraktal";
 
 // Oferta jak w szkoleniu produktowym (16.10.2026): projekty z ceną z góry,
 // FluxCRM jako produkt flagowy, katalog małych usług jako wejście.
@@ -215,7 +216,7 @@ export default function Home() {
               >
                 <Link
                   href={o.href}
-                  className={`karta-obrys group flex w-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10 ${
+                  className={`karta-obrys karta-szklo group flex w-full flex-col rounded-2xl border p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10 ${
                     o.wyrozniona
                       ? "border-accent/60 bg-accent/5"
                       : "border-gray-200 dark:border-white/10"
@@ -326,7 +327,8 @@ export default function Home() {
           aria-label="Zasada"
           className="maska-sekcji relative overflow-hidden bg-accent-solid py-20 text-white lg:py-32"
         >
-          <div className="container-wide">
+          <SwiatloFraktal odcien="zasada" />
+          <div className="container-wide relative">
             <div className="flex items-baseline justify-between border-b border-white/30 pb-4 text-xs font-medium uppercase tracking-widest text-white/70">
               <span>Zasada</span>
               <span className="tabular-nums">FluxLab</span>

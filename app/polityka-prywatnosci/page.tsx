@@ -38,15 +38,12 @@ export default function PolitykaPrywatnosci() {
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
           <div className="container-wide">
-            <Breadcrumbs href="/polityka-prywatnosci"
-              items={[
-                { label: "Polityka prywatności" },
-              ]}
+            <Breadcrumbs
+              href="/polityka-prywatnosci"
+              items={[{ label: "Polityka prywatności" }]}
             />
 
-            <h1 className="h1-strony mt-8 mb-4">
-              Polityka prywatności
-            </h1>
+            <h1 className="h1-strony mt-8 mb-4">Polityka prywatności</h1>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Ostatnia aktualizacja: 14 listopada 2026
             </p>
@@ -111,7 +108,7 @@ export default function PolitykaPrywatnosci() {
                           <li>
                             <strong>Dane techniczne</strong> – adres IP, typ
                             przeglądarki, system operacyjny, dostawca internetu
-                           , przetwarzane automatycznie przez serwer w ramach
+                            , przetwarzane automatycznie przez serwer w ramach
                             logów systemowych.
                           </li>
                         </ul>
@@ -124,13 +121,13 @@ export default function PolitykaPrywatnosci() {
                         </h2>
                         <p>
                           W wybranych narzędziach (sprawdzenie numeru KSeF,
-                          kalkulator podatkowy, audyt strony) możesz poprosić
-                          o pełny wynik na e-mail. Podanie adresu jest
-                          dobrowolne, a wynik skrócony widzisz na ekranie bez
-                          niego. Gdy podasz adres i zaznaczysz zgodę,
-                          zapisujemy: adres e-mail, nazwę narzędzia, datę,
-                          treść zgody, stronę, z której przyszło zgłoszenie, i
-                          odpowiedź na pytanie o firmę, jeśli ją wpiszesz.
+                          kalkulator podatkowy, audyt strony) możesz poprosić o
+                          pełny wynik na e-mail. Podanie adresu jest dobrowolne,
+                          a wynik skrócony widzisz na ekranie bez niego. Gdy
+                          podasz adres i zaznaczysz zgodę, zapisujemy: adres
+                          e-mail, nazwę narzędzia, datę, treść zgody, stronę, z
+                          której przyszło zgłoszenie, i odpowiedź na pytanie o
+                          firmę, jeśli ją wpiszesz.
                         </p>
                         <p className="mt-2">
                           Cel: wysłanie wyniku i trzech maili z poradami do
@@ -141,8 +138,8 @@ export default function PolitykaPrywatnosci() {
                           wysyłamy już nic, a sam zapis zgody z datą wycofania
                           przechowujemy do 3 lat jako dowód, że wysyłka była
                           zgodna z prawem. Dane nie są sprzedawane ani
-                          przekazywane innym firmom poza dostawcą wysyłki
-                          poczty (Resend) i serwerem w OVH (Polska).
+                          przekazywane innym firmom poza dostawcą wysyłki poczty
+                          (Resend) i serwerem w OVH (Polska).
                         </p>
                         <p className="mt-2">
                           Odpowiedź na pytanie o firmę możesz wysłać także bez
@@ -150,28 +147,68 @@ export default function PolitykaPrywatnosci() {
                           wskazówka i nie da się jej powiązać z Tobą.
                         </p>
                       </section>
-                        <section id="pobranie" className="scroll-mt-24">
-                          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                            Porady na e-mail po pobraniu materiału
-                          </h2>
-                          <p>
-                            Materiały PDF ze strony /materialy pobierasz bez podawania
-                            adresu. Po pobraniu możesz dobrowolnie wpisać e-mail i
-                            zaznaczyć zgodę. Wtedy zapisujemy: adres e-mail, nazwę
-                            pobranego pliku, datę, treść zgody i stronę, z której
-                            przyszło zgłoszenie.
-                          </p>
-                          <p className="mt-2">
-                            Cel: wysłanie trzech maili z poradami do pobranego
-                            materiału i piątkowego newslettera FluxLab. Podstawa: Twoja
-                            zgoda (art. 6 ust. 1 lit. a RODO). Zgodę wycofujesz w każdej
-                            chwili jednym kliknięciem w link „Wypisz mnie” w każdej
-                            wiadomości albo pisząc na pawel@fluxlab.pl. Maile wysyłamy
-                            przez skrzynkę Zoho (pawel@fluxlab.pl), zapis zgody leży na
-                            serwerze w OVH (Polska). Po wycofaniu zapis zgody z datą
-                            wycofania przechowujemy do 3 lat jako dowód.
-                          </p>
-                        </section>
+                      <section id="pobranie" className="scroll-mt-24">
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                          Porady na e-mail po pobraniu materiału
+                        </h2>
+                        <p>
+                          Materiały PDF ze strony /materialy pobierasz bez
+                          podawania adresu. Po pobraniu możesz dobrowolnie
+                          wpisać e-mail i zaznaczyć zgodę. Wtedy zapisujemy:
+                          adres e-mail, nazwę pobranego pliku, datę, treść zgody
+                          i stronę, z której przyszło zgłoszenie.
+                        </p>
+                        <p className="mt-2">
+                          Cel: wysłanie trzech maili z poradami do pobranego
+                          materiału i piątkowego newslettera FluxLab. Podstawa:
+                          Twoja zgoda (art. 6 ust. 1 lit. a RODO). Zgodę
+                          wycofujesz w każdej chwili jednym kliknięciem w link
+                          „Wypisz mnie” w każdej wiadomości albo pisząc na
+                          pawel@fluxlab.pl. Maile wysyłamy przez skrzynkę Zoho
+                          (pawel@fluxlab.pl), zapis zgody leży na serwerze w OVH
+                          (Polska). Po wycofaniu zapis zgody z datą wycofania
+                          przechowujemy do 3 lat jako dowód.
+                        </p>
+                      </section>
+                      <section id="google-api" className="scroll-mt-24">
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                          Automaty z dostępem do Gmaila i Dysku Google
+                        </h2>
+                        <p>
+                          Niektóre automaty (na przykład faktury z maila na
+                          Dysk, załączniki z maila do folderów) działają dopiero
+                          po połączeniu konta Google na stronie /polacz-google.
+                          Google pyta wtedy o zgodę na: odczyt wiadomości Gmail
+                          (gmail.readonly), dostęp tylko do plików utworzonych
+                          przez automat na Dysku (drive.file) i adres e-mail
+                          konta.
+                        </p>
+                        <p className="mt-2">
+                          Dane z Gmaila i Dysku przetwarzamy wyłącznie po to, by
+                          wykonać kupiony automat. Nie używamy ich do reklam,
+                          nie sprzedajemy ich, nie przekazujemy innym podmiotom
+                          poza wykonaniem usługi i nie czytamy ich ręcznie,
+                          chyba że o to poprosisz, wymaga tego bezpieczeństwo
+                          albo prawo. Token dostępu przechowujemy zaszyfrowany
+                          (AES-GCM). Dostęp cofasz w każdej chwili w
+                          ustawieniach konta Google
+                          (myaccount.google.com/permissions) albo pisząc na
+                          pawel@fluxlab.pl.
+                        </p>
+                        <p className="mt-2">
+                          Korzystanie przez FluxLab z informacji otrzymanych z
+                          interfejsów API Google i ich przekazywanie do innych
+                          aplikacji jest zgodne z{" "}
+                          <a
+                            href="https://developers.google.com/terms/api-services-user-data-policy"
+                            className="text-accent underline"
+                            rel="noopener"
+                          >
+                            Google API Services User Data Policy
+                          </a>
+                          , w tym z wymogami Limited Use.
+                        </p>
+                      </section>
 
                       {/* 3 */}
                       <section>
@@ -219,30 +256,28 @@ export default function PolitykaPrywatnosci() {
                           wysłanych zgłoszeń i kliknięć w numer telefonu)
                           zapisują pliki cookie wyłącznie po kliknięciu
                           „Akceptuj” w oknie zgody. Bez zgody oba narzędzia
-                          działają w trybie zaawansowanym Consent Mode:
-                          wysyłają do Google tylko sygnały bez plików cookie
-                          i bez identyfikatorów reklamowych (na przykład, że
-                          wysłano zgłoszenie), a Google szacuje z nich
-                          konwersje zbiorczo. Identyfikator kliknięcia
-                          reklamy może wtedy przechodzić między podstronami
-                          w adresie zamiast w pliku cookie. Zgoda obejmuje
-                          także reklamy dopasowane: Google może wtedy pokazywać reklamy
-                          Fluxlab osobom, które odwiedziły Serwis
-                          (remarketing). Po wysłaniu formularza, wyłącznie
-                          przy tej zgodzie, adres e-mail i numer telefonu z
-                          formularza trafiają do Google Ads w postaci
-                          zaszyfrowanej skrótem (SHA-256) do dopasowania
-                          konwersji (konwersje rozszerzone). Bez zgody
-                          reklamy dopasowane i konwersje rozszerzone są
-                          wyłączone. Piksel Meta (Facebook, Instagram) ładuje
-                          się wyłącznie po kliknięciu „Akceptuj”: zlicza
-                          odwiedziny i wysłane zgłoszenia z reklam Meta oraz
-                          pozwala Meta pokazywać reklamy Fluxlab osobom, które
-                          odwiedziły Serwis. Bez zgody skrypt Meta nie jest
-                          wczytywany.
-                          Wybór można zmienić, czyszcząc dane strony w
-                          przeglądarce. Poza tym pliki cookie służą wyłącznie
-                          prawidłowemu działaniu Serwisu (pliki techniczne).
+                          działają w trybie zaawansowanym Consent Mode: wysyłają
+                          do Google tylko sygnały bez plików cookie i bez
+                          identyfikatorów reklamowych (na przykład, że wysłano
+                          zgłoszenie), a Google szacuje z nich konwersje
+                          zbiorczo. Identyfikator kliknięcia reklamy może wtedy
+                          przechodzić między podstronami w adresie zamiast w
+                          pliku cookie. Zgoda obejmuje także reklamy dopasowane:
+                          Google może wtedy pokazywać reklamy Fluxlab osobom,
+                          które odwiedziły Serwis (remarketing). Po wysłaniu
+                          formularza, wyłącznie przy tej zgodzie, adres e-mail i
+                          numer telefonu z formularza trafiają do Google Ads w
+                          postaci zaszyfrowanej skrótem (SHA-256) do dopasowania
+                          konwersji (konwersje rozszerzone). Bez zgody reklamy
+                          dopasowane i konwersje rozszerzone są wyłączone.
+                          Piksel Meta (Facebook, Instagram) ładuje się wyłącznie
+                          po kliknięciu „Akceptuj”: zlicza odwiedziny i wysłane
+                          zgłoszenia z reklam Meta oraz pozwala Meta pokazywać
+                          reklamy Fluxlab osobom, które odwiedziły Serwis. Bez
+                          zgody skrypt Meta nie jest wczytywany. Wybór można
+                          zmienić, czyszcząc dane strony w przeglądarce. Poza
+                          tym pliki cookie służą wyłącznie prawidłowemu
+                          działaniu Serwisu (pliki techniczne).
                         </p>
                       </section>
 

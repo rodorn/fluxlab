@@ -12,6 +12,7 @@ export type Kafel = { tytul: string; opis: string; href: string; cta: string };
 export type PozycjaMenu = {
   id: string;
   etykieta: string;
+  krotko?: string;
   href: string;
   kolumny: Kolumna[];
   kafel: Kafel;
@@ -40,6 +41,7 @@ export const MENU: PozycjaMenu[] = [
   {
     id: "strony",
     etykieta: nazwaFilaru("/strony-www")!,
+    krotko: "Strony",
     href: "/strony-www",
     kolumny: [
       {
@@ -47,23 +49,10 @@ export const MENU: PozycjaMenu[] = [
         linki: [
           l("/strony-www"),
           l("/landing-z-platnoscia"),
+          l("/mail-firmowy"),
           l("/naprawa-wordpress"),
           l("/strona-po-wlamaniu"),
-          l("/mail-firmowy"),
           l("/naprawa-https"),
-          l("/kody-qr"),
-          l("/profil-firmy-google"),
-          l("/benchmarking-konkurencji"),
-          l("/ankieta-nps"),
-          l("/rezerwacje-online"),
-          l("/zamowienia-publiczne-bzp"),
-          l("/czat-ai-na-strone"),
-          l("/kalkulator-wyceny"),
-          l("/prosba-o-opinie-google"),
-          l("/dane-firmy-z-nip"),
-          l("/formularz-leadow"),
-          l("/ocena-leada-ai"),
-          l("/odpowiedz-na-leada"),
         ],
       },
       {
@@ -87,6 +76,7 @@ export const MENU: PozycjaMenu[] = [
   {
     id: "automatyzacja",
     etykieta: nazwaFilaru("/automatyzacja-leadow-crm")!,
+    krotko: "Automatyzacja",
     href: "/automatyzacja-leadow-crm",
     kolumny: [
       {
@@ -189,6 +179,47 @@ export const MENU: PozycjaMenu[] = [
     },
   },
   {
+    id: "produkty",
+    etykieta: "Produkty",
+    href: "/produkty",
+    kolumny: [
+      {
+        tytul: "Na stronę",
+        linki: [
+          l("/formularz-leadow", "49 zł/mies."),
+          l("/czat-ai-na-strone", "99 zł/mies."),
+          l("/rezerwacje-online", "39 zł/mies."),
+          l("/kalkulator-wyceny", "49 zł/mies."),
+          l("/kody-qr", "0 zł"),
+        ],
+      },
+      {
+        tytul: "Leady",
+        linki: [
+          l("/odpowiedz-na-leada", "29 zł/mies."),
+          l("/ocena-leada-ai", "29 zł/mies."),
+          l("/dane-firmy-z-nip", "19 zł/mies."),
+          l("/zamowienia-publiczne-bzp", "49 zł/mies."),
+        ],
+      },
+      {
+        tytul: "Opinie i Google",
+        linki: [
+          l("/prosba-o-opinie-google", "29 zł/mies."),
+          l("/ankieta-nps", "29 zł/mies."),
+          l("/profil-firmy-google", "349 zł/mies."),
+          l("/benchmarking-konkurencji", "od 39 zł/mies."),
+        ],
+      },
+    ],
+    kafel: {
+      tytul: "Wszystkie produkty",
+      opis: "Gotowe usługi z ceną z góry, rezygnacja w dowolnym dniu.",
+      href: "/produkty",
+      cta: "Zobacz listę",
+    },
+  },
+  {
     id: "cennik",
     etykieta: "Cennik",
     href: "/produkty",
@@ -273,6 +304,13 @@ export const MENU: PozycjaMenu[] = [
 ];
 
 /** Jedno zdanie pod nazwą linku w panelu menu. */
+for (const p of MENU)
+  for (const k of p.kolumny)
+    if (k.linki.length > 7)
+      throw new Error(
+        `Menu „${p.etykieta}”, kolumna „${k.tytul}”: ${k.linki.length} linków, limit 7. Nowy produkt dopisz do /produkty albo do innej kolumny.`,
+      );
+
 export const OPIS_MENU: Record<string, string> = {
   "/strony-www": "Nowa strona albo naprawa obecnej",
   "/landing-z-platnoscia": "Sprzedaż od razu, płatność na stronie",

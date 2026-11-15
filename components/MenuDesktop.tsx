@@ -9,7 +9,7 @@ import type { LinkMenu, PozycjaMenu } from "@/lib/menu";
  *  linku pod kursorem, a w cenniku są suwaki z prawdziwymi cenami. */
 
 const LINK_NAV =
-  "relative z-10 inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white";
+  "relative z-10 inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm 2xl:px-3 font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white";
 
 function Strzalka({ otwarte }: { otwarte: boolean }) {
   return (
@@ -252,7 +252,7 @@ export default function MenuDesktop({
       data-poza-reklama=""
       ref={nav}
       aria-label="Menu główne"
-      className="relative hidden flex-1 items-center justify-center gap-1 px-6 xl:flex"
+      className="relative hidden flex-1 items-center justify-center gap-1 px-3 xl:flex 2xl:px-6"
       onMouseLeave={zamknij}
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget as Node | null))
@@ -290,7 +290,14 @@ export default function MenuDesktop({
             }}
             onClick={zamknij}
           >
-            {p.etykieta}
+            {p.krotko ? (
+              <>
+                <span className="2xl:hidden">{p.krotko}</span>
+                <span className="hidden 2xl:inline">{p.etykieta}</span>
+              </>
+            ) : (
+              p.etykieta
+            )}
             <Strzalka otwarte={menu === p.id} />
           </Link>
         ))}
