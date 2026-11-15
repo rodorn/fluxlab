@@ -126,7 +126,7 @@ export async function zarezerwuj(token: string, wej: Record<string, unknown>): P
   if (!wolne?.some((d) => d.data === data && d.godziny.includes(godz))) return { kod: 409, blad: "Ten termin jest już zajęty. Wybierz inny." };
   if ((await db.licz("rezerwacje", { klucz: k.id, od: new Date().toISOString().slice(0, 10) })) >= LIMIT_DOBA) return { kod: 429, blad: "Dzienny limit rezerwacji wyczerpany." };
   try {
-    await db.dodaj("rezerwacje", { id: `${k.id}|${data} ${godz}`, klucz: k.id, dane: { slot: `${data} ${godz}`, imie, email, telefon, uwagi } });
+    await db.dodaj("rezerwacje", { id: `${k.id}_${data}_${godz.replace(":", "")}`, klucz: k.id, dane: { slot: `${data} ${godz}`, imie, email, telefon, uwagi } });
   } catch (e) {
     if (String(e).includes("409")) return { kod: 409, blad: "Ten termin właśnie ktoś zarezerwował. Wybierz inny." };
     throw e;
