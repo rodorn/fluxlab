@@ -117,6 +117,7 @@ export const SEKCJE: Sekcja[] = [
           s("/polityka-hasel", "Polityka haseł dla firmy"),
           s("/pilnowanie-dns", "Pilnowanie rekordów DNS"),
           s("/czytelnosc-tekstow", "Czytelność i poprawność tekstów strony"),
+          s("/kontrola-banera-cookies", "Kontrola banera cookies i Consent Mode v2"),
           s("/pilnowanie-konkurentow", "Pilnowanie zmian u konkurentów"),
           s("/bezpieczny-odbior-plikow", "Bezpieczny odbiór plików"),
           s("/kopia-wordpressa", "Kopia zapasowa WordPressa"),

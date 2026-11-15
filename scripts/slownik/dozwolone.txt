@@ -294,3 +294,13 @@ feed
 rss
 unsubscribe
 xml
+||||||| parent of c26c7db5 (Kontrola banera cookies i Consent Mode v2: podstrona i oferta 19 zł)
+Clarity
+Complianz
+Cookiebot
+denied
+fbp
+Hotjar
+Iubenda
+personalization
+storage

@@ -247,6 +247,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Kontrola banera cookies i Consent Mode v2",
+    tagline: "Czy tagi śledzące czekają na zgodę, w jednym raporcie",
+    desc: "Netto, jednorazowo. Czytamy kod strony i sprawdzamy, które tagi startują przed zgodą, czy Consent Mode v2 ma cztery sygnały z odmową domyślną i jakie ciasteczka ustawia serwer. Mail z PDF w kilka minut.",
+    price: "19 zł",
+    href: "/kontrola-banera-cookies#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz raport",
+    bullets: [
+      "tagi: czekają na zgodę czy nie",
+      "Consent Mode v2: cztery sygnały",
+      "ciasteczka od pierwszej odpowiedzi",
+    ],
+  },
+  {
+    category: "www",
     name: "Pilnowanie zmian u konkurentów",
     tagline: "Tygodniowy mail: co konkurenci zmienili na swoich stronach",
     desc: "Netto, miesięcznie. Zapisujemy stan stron do 3 konkurentów i co poniedziałek wysyłamy listę zmian: nowe i zniknięte podstrony, tytuł i nagłówek strony głównej oraz kwoty z cenników. Rezygnacja w każdej chwili.",
