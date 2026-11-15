@@ -126,6 +126,7 @@ export const SEKCJE: Sekcja[] = [
           s("/pilnowanie-konkurentow", "Pilnowanie zmian u konkurentów"),
           s("/raport-google-analytics", "Raport Google Analytics prostym językiem"),
           s("/raport-google-ads", "Raport Google Ads z alertem przepalania"),
+          s("/strona-wizytowka", "Strona firmy z wizytówki Google"),
           s("/bezpieczny-odbior-plikow", "Bezpieczny odbiór plików"),
           s("/kopia-wordpressa", "Kopia zapasowa WordPressa"),
           s("/polityka-cookies", "Polityka cookies ze skanu"),

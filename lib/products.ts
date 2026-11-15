@@ -307,6 +307,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Strona firmy z wizytówki Google",
+    tagline: "Nazwa firmy i gotowa strona z mapą, godzinami i opiniami",
+    desc: "Netto, jednorazowo, 30 dni działania. Podajesz nazwę firmy, a my budujemy stronę z publicznych danych jej wizytówki Google. Utrzymanie po 30 dniach 19 zł miesięcznie.",
+    price: "99 zł",
+    href: "/strona-wizytowka#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz stronę",
+    bullets: [
+      "opis, godziny, telefon i mapa",
+      "opinie z Google z podpisem autora",
+      "gotowe w kilka minut po płatności",
+    ],
+  },
+  {
+    category: "www",
     name: "Pilnowanie rekordów DNS",
     tagline: "Mail, gdy ktoś zmieni rekordy Twojej domeny",
     desc: "Netto, miesięcznie. Codziennie porównujemy rekordy domeny z zapisanym stanem i piszemy tylko wtedy, gdy coś się zmieni: co usunięto i co dodano. Rezygnacja w każdej chwili.",

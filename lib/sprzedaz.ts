@@ -46,6 +46,8 @@ export const OFERTA: Record<string, Oferta> = {
   "wp-wtyczki": { nazwa: "Miesięczny skan wtyczek WordPressa", netto: 29, miesiecznie: true, strona: "/skan-wtyczek-wordpress", pole: "Adres strony na WordPressie (firma.pl)" },
   "konkurenci-pilnowanie": { nazwa: "Pilnowanie zmian u konkurentów", netto: 29, miesiecznie: true, strona: "/pilnowanie-konkurentow", pole: "Adresy stron konkurentów (do 3, po spacji)" },
   "baner-cookies": { nazwa: "Kontrola banera cookies i Consent Mode v2", netto: 19, miesiecznie: false, strona: "/kontrola-banera-cookies", pole: "Adres strony (firma.pl)" },
+  "wizytowka-strona": { nazwa: "Strona firmy z wizytówki Google", netto: 99, miesiecznie: false, strona: "/strona-wizytowka", pole: "Nazwa firmy i miasto albo link do Map Google" },
+  "wizytowka-utrzymanie": { nazwa: "Utrzymanie strony z wizytówki Google", netto: 19, miesiecznie: true, strona: "/strona-wizytowka" },
   "ga4-raport": { nazwa: "Raport Google Analytics prostym językiem", netto: 29, miesiecznie: true, strona: "/raport-google-analytics", pole: "Numer usługi Google Analytics 4 (same cyfry)" },
   "ads-raport": { nazwa: "Raport Google Ads z alertem przepalania", netto: 49, miesiecznie: true, strona: "/raport-google-ads" },
   "czytelnosc-tekstow": { nazwa: "Czytelność i poprawność tekstów strony", netto: 19, miesiecznie: false, strona: "/czytelnosc-tekstow", pole: "Adres strony (firma.pl)" },
