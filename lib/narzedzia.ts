@@ -105,6 +105,23 @@ export const businessTools: Narzedzie[] = [
     ikona: "tarcza",
   },
   {
+    title: "Pilnowanie certyfikatu i domeny",
+    pytanie: "Kiedy wygasa certyfikat Twojej strony?",
+    description:
+      "Podaj domenę i e-mail. Sprawdzamy certyfikat HTTPS i ważność domeny raz na dobę i piszemy 30, 14 i 3 dni przed końcem.",
+    href: "/pilnowanie-certyfikatu",
+    ikona: "tarcza",
+    badge: "Nowość",
+  },
+  {
+    title: "Monitoring dostępności strony",
+    pytanie: "Czy Twoja strona działa w tej chwili?",
+    description:
+      "Sprawdzamy adres tak jak odwiedzający i pokazujemy kod odpowiedzi oraz czas. Chcesz, żeby robiono to co 5 minut, włączasz monitoring za 19 zł.",
+    href: "/monitoring-dostepnosci",
+    ikona: "tarcza",
+  },
+  {
     title: "Rejestr cen w sklepie",
     description:
       "Sprawdzamy Twoje przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",

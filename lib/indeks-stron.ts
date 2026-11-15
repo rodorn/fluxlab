@@ -313,6 +313,16 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wygasły certyfikat oznacza pełnoekranowe ostrzeżenie dla każdego odwiedzającego. Diagnozujemy przyczynę i naprawiamy szyfrowanie razem z przekierowaniami."
   },
   {
+    "url": "/pilnowanie-certyfikatu",
+    "tytul": "Pilnowanie certyfikatu i domeny za darmo",
+    "opis": "Podaj domenę i e-mail. Raz na dobę sprawdzamy certyfikat HTTPS i ważność domeny, a mail dostajesz 30, 14 i 3 dni przed końcem."
+  },
+  {
+    "url": "/monitoring-dostepnosci",
+    "tytul": "Monitoring dostępności strony od 19 zł",
+    "opis": "Sprawdzamy stronę co 5 minut. Przy awarii dostajesz mail, po naprawie informację o przestoju, a co miesiąc raport z dostępnością."
+  },
+  {
     "url": "/kody-qr",
     "tytul": "Kody QR z licznikiem skanów",
     "opis": "Kod QR na ulotkę albo auto, który liczy skany. Obraz do druku i comiesięczny wynik skanów przychodzą mailem. Bezpłatnie, bez konta."

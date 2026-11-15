@@ -32,6 +32,7 @@ export const OFERTA: Record<string, Oferta> = {
   "ceny-rejestr": { nazwa: "Rejestr cen", netto: 99, miesiecznie: true, strona: "/rejestr-cen", pole: "Adres sklepu" },
   "paliwo-monitoring": { nazwa: "Monitoring kart paliwowych", netto: 149, miesiecznie: true, strona: "/kontrola-paliwa" },
   "mapa-pilnowanie": { nazwa: "Pilnowanie mapy strony", netto: 99, miesiecznie: true, strona: "/mapa-strony", pole: ADRES },
+  "monitoring-dostepnosc": { nazwa: "Monitoring dostępności strony", netto: 19, miesiecznie: true, strona: "/monitoring-dostepnosci", pole: "Adres strony" },
   "https-pilnowanie": { nazwa: "Pilnowanie ważności certyfikatu", netto: 39, miesiecznie: true, strona: "/naprawa-https", pole: ADRES },
   "google-monitoring": { nazwa: "Monitoring widoczności w Google", netto: 39, miesiecznie: true, strona: "/widocznosc-w-google", pole: ADRES },
   "domena-pilnowanie": { nazwa: "Pilnowanie domeny", netto: 49, miesiecznie: true, strona: "/wlasnosc-domeny", pole: "Domena" },

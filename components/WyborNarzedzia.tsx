@@ -192,6 +192,11 @@ const SYTUACJE: Sytuacja[] = [
         powod:
           "Wygasły certyfikat albo certyfikat wystawiony na firmę hostingową oznacza pełnoekranowe ostrzeżenie przy wejściu.",
       },
+      {
+        href: "/pilnowanie-certyfikatu",
+        powod:
+          "Mail 30, 14 i 3 dni przed końcem certyfikatu i domeny, żeby ostrzeżenie w przeglądarce nigdy się nie pojawiło.",
+      },
     ],
   },
   {
