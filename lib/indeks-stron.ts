@@ -373,6 +373,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Raz na dobę sprawdzamy Twój adres e-mail w publicznych bazach wycieków i piszemy, gdy pojawi się w nowym wycieku."
   },
   {
+    "url": "/pilnowanie-cen-konkurencji",
+    "tytul": "Pilnowanie cen konkurencji od 39 zł",
+    "opis": "Raz na dobę sprawdzamy ceny produktów konkurencji na podanych stronach i piszemy, gdy któraś się zmieni."
+  },
+  {
     "url": "/straznik-formularza",
     "tytul": "Strażnik formularza kontaktowego od 19 zł",
     "opis": "Raz na dobę wysyłamy zgłoszenie testowe przez formularz na Twojej stronie. Gdy przestanie przechodzić, dostajesz mail, zanim stracisz zapytania."
