@@ -35,7 +35,7 @@ const MAX_ZALACZNIKOW = 8;
 const RESEND = (sciezka: string) =>
   fetch(`https://api.resend.com${sciezka}`, {
     headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      Authorization: `Bearer ${process.env.RESEND_KLUCZ_ODBIOR}`,
       "User-Agent": "fluxlab-paragony",
     },
   });
