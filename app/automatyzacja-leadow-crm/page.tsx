@@ -10,6 +10,7 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS } from "@/lib/products";
 import DrogaLeada from "@/components/DrogaLeada";
+import FormularzKrotki from "@/components/FormularzKrotki";
 
 export const metadata: Metadata = {
   title: "Automatyzacja CRM z AI: lead w minutę | Fluxlab",
@@ -154,7 +155,7 @@ export default function AutomatyzacjaLeadowCRM() {
                 </Link>
                 .
               </p>
-              <div className="mt-10">
+              <div data-poza-reklama="" className="mt-10">
                 <TrackedCTA
                   href="#sekcje"
                   location="lp_leadow_hero"
@@ -165,6 +166,7 @@ export default function AutomatyzacjaLeadowCRM() {
                   Bezpłatna diagnoza
                 </TrackedCTA>
               </div>
+              <FormularzKrotki formId="krotki_leadow" />
             </div>
           </div>
         </section>

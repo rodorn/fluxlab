@@ -88,6 +88,15 @@ export default function FormularzKrotki({ formId }: { formId: string }) {
       <p className="text-base font-semibold text-gray-900 dark:text-white">
         Zostaw kontakt, odpiszemy z ceną i terminem w 1 dzień roboczy
       </p>
+      <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
+        Wolisz rozmowę? Zadzwoń:{" "}
+        <a
+          href="tel:+48665466565"
+          className="font-semibold text-accent underline underline-offset-2"
+        >
+          665 466 565
+        </a>
+      </p>
       <div
         aria-hidden="true"
         style={{

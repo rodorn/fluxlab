@@ -59,19 +59,24 @@ export default function ZgodaCookies() {
       role="dialog"
       aria-label="Zgoda na cookies"
       hidden={!widoczne}
-      className="cookie-consent print:hidden fixed bottom-4 left-4 right-4 z-[45] rounded-2xl border border-gray-200 bg-white p-4 text-sm shadow-2xl dark:border-white/10 dark:bg-gray-900 md:right-auto md:max-w-sm"
+      className="cookie-consent print:hidden fixed bottom-2 left-2 right-2 z-[45] rounded-xl border border-gray-200 bg-white p-3 text-xs shadow-2xl dark:border-white/10 dark:bg-gray-900 md:bottom-4 md:left-4 md:right-auto md:max-w-sm md:rounded-2xl md:p-4 md:text-sm"
     >
       <p className="text-gray-700 dark:text-gray-300">
-        Liczymy odwiedziny w Google Analytics i skuteczność reklam Google i Meta. „Akceptuj” oznacza zgodę na ciasteczka analityczne i reklamowe, w tym na reklamy Google i Meta (Facebook, Instagram) dopasowane do tej wizyty (remarketing). Bez zgody nic nie zapisujemy.{" "}
+        <span className="md:hidden">
+          Ciasteczka Google Analytics oraz reklam Google i Meta (w tym remarketing) zapisujemy tylko po „Akceptuj”.
+        </span>
+        <span className="hidden md:inline">
+          Liczymy odwiedziny w Google Analytics i skuteczność reklam Google i Meta. „Akceptuj” oznacza zgodę na ciasteczka analityczne i reklamowe, w tym na reklamy Google i Meta (Facebook, Instagram) dopasowane do tej wizyty (remarketing). Bez zgody nic nie zapisujemy.
+        </span>{" "}
         <Link href="/polityka-prywatnosci" className="text-accent underline underline-offset-2">
           Szczegóły
         </Link>
       </p>
-      <div className="mt-3 flex gap-2">
-        <button type="button" onClick={() => zapisz(true)} className="btn-primary flex-1 px-4 py-2">
+      <div className="mt-2 flex gap-2 md:mt-3">
+        <button type="button" onClick={() => zapisz(true)} className="btn-primary flex-1 px-3 py-2 text-xs md:px-4 md:py-2 md:text-sm">
           Akceptuj
         </button>
-        <button type="button" onClick={() => zapisz(false)} className="btn-secondary flex-1 px-4 py-2">
+        <button type="button" onClick={() => zapisz(false)} className="btn-secondary flex-1 px-3 py-2 text-xs md:px-4 md:py-2 md:text-sm">
           Odrzuć
         </button>
       </div>
