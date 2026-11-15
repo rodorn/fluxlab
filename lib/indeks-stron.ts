@@ -333,6 +333,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wgrywasz arkusz z pozycjami, a my wystawiamy faktury FA(3) w KSeF i odsyłamy zestawienie z numerami KSeF na maila."
   },
   {
+    "url": "/paragon-do-arkusza",
+    "tytul": "Paragon ze zdjęcia do arkusza, 29 zł/mies.",
+    "opis": "Zdjęcie paragonu wysyłasz mailem, a pozycja z kwotą, VAT i kategorią trafia do arkusza. Odczyt robi model AI."
+  },
+  {
     "url": "/paczka-miesieczna-dla-biura",
     "tytul": "Paczka miesięczna faktur z KSeF dla biura rachunkowego, 19 zł/mies.",
     "opis": "Co miesiąc ZIP z fakturami kosztowymi i sprzedażowymi z KSeF (XML, PDF, zestawienie CSV) wysłany na maila biura rachunkowego."

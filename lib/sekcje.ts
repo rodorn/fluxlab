@@ -156,6 +156,7 @@ export const SEKCJE: Sekcja[] = [
           s("/adresy-do-edoreczen", "Adresy do e-Doręczeń z listy NIP"),
           s("/analiza-lokalizacji", "Analiza lokalizacji pod punkt"),
           s("/audyt-kurierski", "Audyt faktur kurierskich"),
+          s("/paragon-do-arkusza", "Paragon do arkusza"),
         ],
       },
       {

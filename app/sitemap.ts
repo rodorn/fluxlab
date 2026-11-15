@@ -440,6 +440,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/paragon-do-arkusza`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/naleznosci-i-przeterminowane-faktury`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
