@@ -224,6 +224,11 @@ const SYTUACJE: Sytuacja[] = [
           "Klient sam wybiera wolny termin na Twojej stronie, a Ty nie odbierasz telefonów tylko po to, żeby ustalić godzinę.",
       },
       {
+        href: "/zamowienia-publiczne-bzp",
+        powod:
+          "Nowe przetargi z Twojej branży przychodzą rano mailem, więc nie przeglądasz Biuletynu Zamówień Publicznych ręcznie.",
+      },
+      {
         href: "/formularz-leadow",
         powod:
           "Zgłoszenia z Twojej strony trafiają od razu na mail i na listę w jednym miejscu, zamiast ginąć w skrzynce.",

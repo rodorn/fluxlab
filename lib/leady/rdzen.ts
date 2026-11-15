@@ -5,8 +5,9 @@ import { daneFirmy, type Firma } from "@/lib/leady/dane-firmy";
 import { ocenaLeada, type Ocena } from "@/lib/leady/ocena";
 import { parsujRez, dniZeSlotami, etykieta, terazWarszawa } from "@/lib/leady/rezerwacje";
 import { odpowiedzCzatu, type Wiadomosc } from "@/lib/leady/czat";
+import { kryteria, bladKryteriow, pobierz as bzpPobierz, dopasuj as bzpDopasuj } from "@/lib/leady/bzp";
 import { parsujWycene } from "@/lib/leady/wycena";
-import { PRODUKTY, mailKarta, mailNps, mailRezerwacjaGosc, mailRezerwacjaKlient, mailOpinia, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
+import { PRODUKTY, mailKarta, mailNps, mailRezerwacjaGosc, mailRezerwacjaKlient, mailOpinia, mailDoLeada, mailPowitalny, mailPrzeprosiny, mailBzp, wyslij } from "@/lib/leady/poczta";
 
 export type Klient = {
   email: string; nazwa: string; produkty: string[]; subskrypcje: Record<string, string>;
@@ -198,22 +199,65 @@ export async function panel(p: string) {
     .map((d) => ({ id: d.id, ...d.dane }))
     .sort((a, b) => a.slot.localeCompare(b.slot))
     .filter((r) => r.slot >= terazWarszawa().data);
-  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady, ankiety, opinie, rezerwacje };
+  const bzp = (await db.lista<{ nr: string; tytul: string; org: string; miasto: string; termin: string; url: string }>("bzp", { klucz: k.id, limit: 50, kolejnosc: "desc" })).map((d) => d.dane);
+  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady, ankiety, opinie, rezerwacje, bzp };
 }
 
 export async function zapiszUstawienia(p: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string }> {
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k) return { kod: 404, blad: "Nie ma takiego panelu." };
   const u: Record<string, string> = {};
-  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500], ["wycena", 2000], ["wiedza", 6000], ["rez_dni", 7], ["rez_od", 5], ["rez_do", 5], ["rez_min", 3]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
+  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500], ["wycena", 2000], ["wiedza", 6000], ["bzp_slowa", 400], ["bzp_cpv", 200], ["bzp_woj", 4], ["rez_dni", 7], ["rez_od", 5], ["rez_do", 5], ["rez_min", 3]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
   if (u.kalendarz && !u.kalendarz.startsWith("https://")) return { kod: 400, blad: "Link do kalendarza musi zaczynać się od https://." };
   if (u.opinia && !u.opinia.startsWith("https://")) return { kod: 400, blad: "Link do opinii musi zaczynać się od https://." };
   const rez = parsujRez(u);
   if (typeof rez === "string") return { kod: 400, blad: rez };
   const poz = parsujWycene(u.wycena);
   if (typeof poz === "string") return { kod: 400, blad: poz };
+  const bzpBlad = bladKryteriow(u);
+  if (bzpBlad) return { kod: 400, blad: bzpBlad };
+  const bylo = JSON.stringify(kryteria(k.dane.ustawienia));
   await db.zmien("klienci", k.id, { dane: { ustawienia: u } });
+  if (k.dane.aktywny && k.dane.produkty.includes("lead-bzp") && kryteria(u) && JSON.stringify(kryteria(u)) !== bylo)
+    try {
+      await bzpPrzebieg({ ...k, dane: { ...k.dane, ustawienia: u } }, new Date(Date.now() - BZP_WSTECZ_DNI * 86400000).toISOString(), true);
+    } catch (e) {
+      console.error("bzp pierwszy przebieg", k.id, e);
+      return { kod: 502, blad: "Ustawienia zapisane, ale rejestr BZP nie odpowiada. Pierwszy mail dostaniesz jutro rano." };
+    }
   return { kod: 200 };
+}
+
+const BZP_WSTECZ_DNI = 2;
+const idOgl = (nr: string) => nr.replace(/[^A-Za-z0-9]+/g, "_");
+
+async function bzpPrzebieg(k: Dok<Klient>, odIso: string, pierwszy: boolean): Promise<number> {
+  const kr = kryteria(k.dane.ustawienia);
+  if (!kr) return 0;
+  const start = new Date().toISOString();
+  const trafione = bzpDopasuj(await bzpPobierz(odIso), kr);
+  await db.ustaw("bzp_stan", k.id, { klucz: k.id, dane: { kursor: start, dzien: terazWarszawa().data } });
+  for (const o of trafione.slice(0, 100)) await db.ustaw("bzp", idOgl(o.nr), { klucz: k.id, dane: o });
+  if (trafione.length || pierwszy)
+    await wyslij({ do: k.dane.email, temat: trafione.length ? `Zamówienia publiczne: ${trafione.length} nowych ogłoszeń` : "Zamówienia publiczne: kryteria zapisane", html: mailBzp(trafione, pierwszy, k.klucz ?? "", BZP_WSTECZ_DNI), kopia: pierwszy });
+  return trafione.length;
+}
+
+export async function bzpCodziennie() {
+  const raport: string[] = [];
+  const t = terazWarszawa();
+  if (t.min < 7 * 60) return raport;
+  for (const k of await db.lista<Klient>("klienci", { limit: 1000 })) {
+    if (!k.dane.aktywny || !k.dane.produkty.includes("lead-bzp") || !kryteria(k.dane.ustawienia)) continue;
+    const stan = await db.pobierz<{ kursor: string; dzien: string }>("bzp_stan", k.id);
+    if (stan?.dane.dzien === t.data) continue;
+    try {
+      raport.push(`${k.dane.email}: bzp ${await bzpPrzebieg(k, stan?.dane.kursor ?? new Date(Date.now() - BZP_WSTECZ_DNI * 86400000).toISOString(), false)}`);
+    } catch (e) {
+      console.error("bzp", k.id, e);
+    }
+  }
+  return raport;
 }
 
 async function anulujIZwroc(s: { id: string; subscription?: string; invoice?: string }) {
@@ -305,6 +349,8 @@ export async function sprzatanie() {
       await db.usunKlucz(k.id, "opinie");
       await db.usunKlucz(k.id, "rezerwacje");
       await db.usunKlucz(k.id, "czat");
+      await db.usunKlucz(k.id, "bzp");
+      await db.usunKlucz(k.id, "bzp_stan");
       await db.usun("klienci", k.id);
       await db.usun("indeks", d.email);
       raport.push(`${d.email}: usunięto dane po rezygnacji`);
@@ -313,6 +359,7 @@ export async function sprzatanie() {
   await db.usunPrzed("zgloszenia", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("rezerwacje", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("czat", new Date(teraz - 30 * 86400000).toISOString());
+  await db.usunPrzed("bzp", new Date(teraz - 60 * 86400000).toISOString());
   await db.usunPrzed("opinie", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("ankiety", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   return raport;

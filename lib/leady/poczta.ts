@@ -9,6 +9,7 @@ const STYL = "font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:
 const ETYKIETA: Record<string, string> = { imie: "Imię", email: "E-mail", telefon: "Telefon", firma: "Firma", nip: "NIP", wiadomosc: "Wiadomość", uwagi: "Uwagi" };
 
 export const PRODUKTY: Record<string, { nazwa: string; opis: string }> = {
+  "lead-bzp": { nazwa: "Zamówienia publiczne BZP", opis: "codzienny mail z nowymi ogłoszeniami z Biuletynu Zamówień Publicznych dopasowanymi do Twoich słów kluczowych, kodów CPV i województwa" },
   "lead-opinia": { nazwa: "Prośba o opinię Google", opis: "mail z prośbą o opinię Google wysyłany Twoim klientom z panelu albo z Zapier i Make" },
   "lead-kalkulator": { nazwa: "Kalkulator wyceny na stronę", opis: "kalkulator wyceny do osadzenia na stronie, a zgłoszenia z wyceną trafiają do panelu i na Twój mail" },
   "lead-czat": { nazwa: "Czat AI z wiedzy strony", opis: "czat AI do osadzenia na stronie, który odpowiada klientom wyłącznie na podstawie informacji, które wkleisz w panelu" },
@@ -105,9 +106,26 @@ export function mailPowitalny(token: string, panel: string, nowe: string[], nowy
     h += `<p><b>Czat AI.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wklej informacje o firmie (oferta, ceny, godziny, kontakt), a czat odpowie klientom wyłącznie na ich podstawie. Potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/czat/${token}" title="Czat" width="100%" height="520" style="border:0;max-width:520px"></iframe>`)}</pre><p>Czat nie działa, dopóki nie wkleisz informacji. Treści rozmów nie zapisujemy.</p>`;
   if (nowe.includes("lead-rezerwacje"))
     h += `<p><b>Rezerwacje online.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> ustaw dni, godziny i długość wizyty, a potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/rezerwacje/${token}" title="Rezerwacja terminu" width="100%" height="680" style="border:0;max-width:520px"></iframe>`)}</pre><p>Klient wybiera wolny termin i zostawia kontakt. Zajęty termin znika z kalendarza, a potwierdzenie przychodzi mailem do obu stron.</p>`;
+  if (nowe.includes("lead-bzp"))
+    h += `<p><b>Zamówienia publiczne BZP.</b> Wpisz w <a href='${PANEL_URL}${panel}'>panelu</a> słowa kluczowe, kody CPV i ewentualnie województwo. Zaraz po zapisaniu dostaniesz mail z ogłoszeniami z ostatnich 2 dni, potem codziennie rano nowe, tylko gdy coś pasuje.</p>`;
   if (nowe.includes("lead-nps"))
     h += `<p><b>Ankieta NPS.</b> Ten link wyślij swoim klientom: <a href='https://fluxlab.pl/ankieta/${token}'>https://fluxlab.pl/ankieta/${token}</a>. Każda odpowiedź przychodzi do Ciebie mailem, a wynik NPS jest w panelu. Nazwę firmy w pytaniu ustawisz w panelu.</p>`;
   return `${h}<p>Rezygnacja w dowolnym dniu w portalu płatności (link w potwierdzeniu płatności), za niewykorzystane dni zwracamy pieniądze. Dane zgłoszeń usuwamy 30 dni po rezygnacji. Pytania: odpisz na tego maila.</p><p>Zespół Fluxlab</p></div>`;
+}
+
+export function mailBzp(o: { nr: string; tytul: string; org: string; miasto: string; termin: string; url: string }[], pierwszy: boolean, panel: string, dni: number) {
+  const pokaz = o.slice(0, 30);
+  const termin = (t: string) => (t ? new Date(t).toLocaleString("pl-PL", { timeZone: "Europe/Warsaw", dateStyle: "short", timeStyle: "short" }) : "brak");
+  const lista = pokaz
+    .map(
+      (x) =>
+        `<p style='margin:0 0 14px'><a href='${esc(x.url)}' style='font-weight:bold'>${esc(x.tytul.slice(0, 220))}</a><br><span style='color:#555'>${esc(x.org)}, ${esc(x.miasto)}<br>Termin składania ofert: ${esc(termin(x.termin))}. Numer: ${esc(x.nr)}</span></p>`,
+    )
+    .join("");
+  const wstep = o.length
+    ? `<p>${pierwszy ? `Kryteria zapisane. Ogłoszenia z ostatnich ${dni} dni` : "Nowe ogłoszenia"} pasujące do Twoich kryteriów: <b>${o.length}</b>${o.length > pokaz.length ? `, poniżej pierwsze ${pokaz.length}` : ""}.</p>`
+    : `<p>Kryteria zapisane. W ostatnich ${dni} dniach nie było ogłoszeń pasujących do Twoich kryteriów. Od jutra rano dostaniesz mail tylko wtedy, gdy pojawi się coś nowego.</p>`;
+  return `<div style='${STYL}'>${wstep}${lista}<p style='color:#555'>Źródło: Biuletyn Zamówień Publicznych (ezamowienia.gov.pl), ogłoszenia o zamówieniu. Kryteria zmienisz w <a href='${PANEL_URL}${panel}'>panelu</a>.</p><p>Zespół Fluxlab</p></div>`;
 }
 
 export const mailPrzeprosiny = () =>

@@ -196,6 +196,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Zamówienia publiczne BZP",
+    pytanie: "Jak nie przegapić przetargu z mojej branży?",
+    description:
+      "Wpisz słowo kluczowe i zobacz prawdziwe ogłoszenia z BZP z ostatnich 2 dni. W abonamencie dostajesz takie zestawienie codziennie rano mailem.",
+    href: "/zamowienia-publiczne-bzp",
+    ikona: "lupa",
+  },
+  {
     title: "Formularz leadów z listą zgłoszeń",
     pytanie: "Gdzie lądują zgłoszenia ze strony?",
     description:

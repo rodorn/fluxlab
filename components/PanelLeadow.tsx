@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { WOJEWODZTWA } from "@/lib/leady/bzp";
 
 export interface LeadWiersz {
   id: string;
@@ -50,6 +51,7 @@ export default function PanelLeadow({
   ankiety,
   opinie,
   rezerwacje,
+  bzp,
   ustawienia,
 }: {
   panel: string;
@@ -59,6 +61,7 @@ export default function PanelLeadow({
   ankiety: AnkietaWiersz[];
   opinie: OpiniaWiersz[];
   rezerwacje: RezerwacjaWiersz[];
+  bzp: { nr: string; tytul: string; org: string; miasto: string; termin: string; url: string }[];
   ustawienia: Record<string, string>;
 }) {
   const [ust, setUst] = useState(ustawienia);
@@ -68,6 +71,7 @@ export default function PanelLeadow({
   const nps = produkty.includes("lead-nps");
   const rez = produkty.includes("lead-rezerwacje");
   const czat = produkty.includes("lead-czat");
+  const bz = produkty.includes("lead-bzp");
   const kalk = produkty.includes("lead-kalkulator");
   const opinia = produkty.includes("lead-opinia");
   const [pr, setPr] = useState({ email: "", imie: "" });
@@ -114,6 +118,24 @@ export default function PanelLeadow({
 
   return (
     <div className="grid gap-10">
+      {bz && (
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Zamówienia publiczne BZP</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Wpisz w ustawieniach poniżej słowa kluczowe lub kody CPV. Po zapisaniu dostaniesz mail z ogłoszeniami z ostatnich 2 dni, potem codziennie rano nowe, tylko gdy coś pasuje.
+          </p>
+          {bzp.length > 0 && (
+            <ul className="mt-4 grid gap-3">
+              {bzp.map((o) => (
+                <li key={o.nr} className="rounded-xl border border-gray-200 p-3 text-sm dark:border-gray-700">
+                  <a className="font-semibold text-accent underline" href={o.url} target="_blank" rel="noreferrer">{o.tytul.slice(0, 200)}</a>
+                  <div className="mt-1 text-gray-600 dark:text-gray-400">{o.org}, {o.miasto}. Termin ofert: {o.termin ? new Date(o.termin).toLocaleDateString("pl-PL") : "brak"}</div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
       {czat && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Czat AI</h2>
@@ -197,7 +219,7 @@ export default function PanelLeadow({
           )}
         </section>
       )}
-      {(odpowiedz || nps || opinia || kalk || rez || czat) && (
+      {(odpowiedz || nps || opinia || kalk || rez || czat || bz) && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">{odpowiedz ? "Odpowiedź dla zgłaszającego" : "Ustawienia"}</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
@@ -216,6 +238,14 @@ export default function PanelLeadow({
                 <input className={POLE} placeholder="Do, np. 17:00" aria-label="Godzina do" value={ust.rez_do ?? ""} onChange={(e) => setUst({ ...ust, rez_do: e.target.value })} />
                 <input className={POLE} inputMode="numeric" placeholder="Wizyta, minut" aria-label="Długość wizyty w minutach" value={ust.rez_min ?? ""} onChange={(e) => setUst({ ...ust, rez_min: e.target.value })} />
               </div>
+            )}
+            {bz && <input className={POLE} placeholder="Słowa kluczowe po przecinku, np. remont, dach, oprogramowanie" aria-label="Słowa kluczowe BZP" value={ust.bzp_slowa ?? ""} onChange={(e) => setUst({ ...ust, bzp_slowa: e.target.value })} />}
+            {bz && <input className={POLE} placeholder="Kody CPV po przecinku, np. 45261000, 72" aria-label="Kody CPV" value={ust.bzp_cpv ?? ""} onChange={(e) => setUst({ ...ust, bzp_cpv: e.target.value })} />}
+            {bz && (
+              <select className={POLE} aria-label="Województwo" value={ust.bzp_woj ?? ""} onChange={(e) => setUst({ ...ust, bzp_woj: e.target.value })}>
+                <option value="">Cała Polska</option>
+                {Object.entries(WOJEWODZTWA).map(([kod, n]) => <option key={kod} value={kod}>{n}</option>)}
+              </select>
             )}
             {czat && <textarea className={POLE} rows={8} placeholder={"Informacje o firmie dla czatu: oferta, ceny, godziny, obszar działania, kontakt, najczęstsze pytania. Czat odpowie tylko na ich podstawie."} aria-label="Wiedza czatu AI" value={ust.wiedza ?? ""} onChange={(e) => setUst({ ...ust, wiedza: e.target.value })} />}
             {kalk && <textarea className={POLE} rows={6} placeholder={"Pozycje kalkulatora, jedna w linii:\nMontaż okna | 450\nMalowanie ścian | 1200"} aria-label="Pozycje kalkulatora wyceny" value={ust.wycena ?? ""} onChange={(e) => setUst({ ...ust, wycena: e.target.value })} />}
