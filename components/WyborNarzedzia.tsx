@@ -77,6 +77,11 @@ const SYTUACJE: Sytuacja[] = [
         powod:
           "SPF, DKIM i DMARC decydują, czy list trafi do skrzynki, do spamu, oraz czy ktoś obcy może wysyłać z Twojego adresu.",
       },
+      {
+        href: "/czarne-listy",
+        powod:
+          "Serwer poczty na liście spamowej to maile odrzucane albo wrzucane do spamu u odbiorców. Sprawdzenie obejmuje 11 list, a alert przychodzi mailem.",
+      },
     ],
   },
   {

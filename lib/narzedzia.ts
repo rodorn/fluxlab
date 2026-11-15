@@ -73,6 +73,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Czarne listy spamowe",
+    pytanie: "Czy maile firmy nie lądują w spamie?",
+    description:
+      "Sprawdzenie domeny i serwerów poczty na 11 listach spamowych, a potem codzienny alert mailem. Za darmo.",
+    href: "/czarne-listy",
+    ikona: "lupa",
+  },
+  {
     title: "Kody QR z licznikiem skanów",
     pytanie: "Czy ktoś skanuje Twoje ulotki?",
     description:
