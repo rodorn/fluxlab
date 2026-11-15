@@ -6,7 +6,8 @@
  *  (790 zł), każdy język 30% strony, bo to tłumaczenie i kopia każdej podstrony.
  *  Opieka jak w cenniku /strony-www: 300, 600 albo 1 280 zł miesięcznie.
  *  Chatbot: tylko opłata miesięczna, bez wdrożenia (decyzja Pawła 25.10.2026).
- *  Dodatki AI do sklepu na wzór Luigi's Box, tylko co miesiąc (Paweł 25.10.2026). */
+ *  Dodatki AI do sklepu na wzór Luigi's Box, tylko co miesiąc (Paweł 25.10.2026).
+ *  Strona z CMS start 3 900 zł, do 8 podstron, 10 dni (decyzja Pawła 15.11.2026, karta b84231b1). */
 
 export type Rodzaj = {
   id: string;
@@ -37,6 +38,15 @@ export const RODZAJE: Rodzaj[] = [
     podstron: 5,
     dni: 7,
     przyklad: "strona główna, oferta, o nas, realizacje, kontakt",
+  },
+  {
+    id: "cmsstart",
+    nazwa: "Strona z CMS start",
+    opis: "Do 8 podstron, panel edycji tekstów. Bez bloga i Profilu Google.",
+    cena: 3900,
+    podstron: 8,
+    dni: 10,
+    przyklad: "do tego osobne podstrony trzech głównych usług",
   },
   {
     id: "firmowa",
@@ -75,22 +85,22 @@ export type OpcjaStrony = {
 export const OPCJE_STRONY: Record<string, OpcjaStrony> = {
   crm: {
     nazwa: "Formularz podpięty do CRM",
-    wCenie: ["lp", "landing", "firmowa", "sklep"],
+    wCenie: ["lp", "landing", "cmsstart", "firmowa", "sklep"],
     cena: 0,
   },
   rezerwacje: {
     nazwa: "Kalendarz spotkań i rezerwacje",
-    wCenie: ["landing", "firmowa", "sklep"],
-    tylko: ["landing", "firmowa", "sklep"],
+    wCenie: ["landing", "cmsstart", "firmowa", "sklep"],
+    tylko: ["landing", "cmsstart", "firmowa", "sklep"],
     cena: 0,
   },
   cms: {
     nazwa: "Panel do edycji treści (CMS)",
-    wCenie: ["firmowa", "sklep"],
-    tylko: ["landing", "firmowa", "sklep"],
+    wCenie: ["cmsstart", "firmowa", "sklep"],
+    tylko: ["landing", "cmsstart", "firmowa", "sklep"],
     cena: 1500,
   },
-  blog: { nazwa: "Blog", wCenie: ["firmowa"], tylko: ["landing", "firmowa", "sklep"], cena: 1200 },
+  blog: { nazwa: "Blog", wCenie: ["firmowa"], tylko: ["landing", "cmsstart", "firmowa", "sklep"], cena: 1200 },
   platnosci: { nazwa: "Płatności online", wCenie: ["sklep"], cena: 790 },
   projekt: { nazwa: "Indywidualny projekt graficzny", wCenie: [], cena: 1500 },
   migracja: {

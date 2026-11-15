@@ -6,6 +6,7 @@ const OD = new Set(["lp", "sklep"]);
 const PLATNOSC: Record<string, string> = {
   lp: "Useme albo faktura z góry",
   landing: "Useme albo faktura z góry",
+  cmsstart: "Useme albo faktura z góry",
   firmowa: "Useme albo faktura z góry",
   sklep: "Useme albo faktura z góry",
 };
@@ -43,7 +44,7 @@ export default function TabelaCennika() {
         Przesuń tabelę w bok →
       </p>
       <div className="overflow-x-auto overscroll-x-contain border-y border-gray-300 dark:border-gray-600 [-webkit-overflow-scrolling:touch]">
-        <table className="w-full min-w-[40rem] border-collapse text-sm text-gray-900 dark:text-gray-100 [font-variant-numeric:tabular-nums]">
+        <table className="w-full min-w-[48rem] border-collapse text-sm text-gray-900 dark:text-gray-100 [font-variant-numeric:tabular-nums]">
           <caption className="sr-only">
             Porównanie pakietów stron WWW: cena netto, liczba podstron, czas realizacji, zakres i płatność.
           </caption>

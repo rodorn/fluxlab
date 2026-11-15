@@ -34,11 +34,11 @@ function Strzalka({ otwarte }: { otwarte: boolean }) {
 const zl = (n: number) => `${String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} zł`;
 
 /** Suwaki w panelu cennika. Ceny z cennika: strona w tydzień do 5 podstron 2 900 zł,
- *  strona z CMS 5 900 zł; CRM 499 zł miesięcznie do 3 osób, każda kolejna 99 zł. */
+ *  strona z CMS start do 8 podstron 3 900 zł, strona z CMS 5 900 zł; CRM 499 zł miesięcznie do 3 osób, każda kolejna 99 zł. */
 function SuwakiCen({ zamknij }: { zamknij: () => void }) {
   const [podstrony, setPodstrony] = useState(5);
   const [osoby, setOsoby] = useState(3);
-  const strona = podstrony <= 5 ? 2900 : 5900;
+  const strona = podstrony <= 5 ? 2900 : podstrony <= 8 ? 3900 : 5900;
   const crm = 499 + Math.max(0, osoby - 3) * 99;
   const suwak =
     "suwak-menu mt-2 h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/25 accent-white";

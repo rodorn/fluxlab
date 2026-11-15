@@ -48,6 +48,11 @@ const pricing = [
     accent: true,
   },
   {
+    title: "Strona z CMS start",
+    price: "3 900 zł",
+    description: "Do 8 podstron, formularz, kalendarz spotkań i panel edycji tekstów. Bez bloga i Profilu Google. Gotowa w 10 dni.",
+  },
+  {
     title: "Strona firmowa z CMS",
     price: "5 900 zł",
     description: "Do 15 podstron, blog i panel edycji, Profil Google podpięty. Gotowa w 12 dni.",
@@ -73,12 +78,12 @@ const faq = [
   {
     question: "Ile czasu zajmuje wdrożenie?",
     answer:
-      "Naprawa: zwykle ten sam lub następny dzień. Strona w tydzień: 7 dni. Strona firmowa z CMS: 12 dni. Sklep: 21 dni.",
+      "Naprawa: zwykle ten sam lub następny dzień. Strona w tydzień: 7 dni. Strona z CMS start: 10 dni. Strona firmowa z CMS: 12 dni. Sklep: 21 dni.",
   },
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
     answer:
-      "Tak. Strona firmowa dostaje prosty CMS, w którym edytujesz teksty jak dokument.",
+      "Tak. Strona z CMS start i strona firmowa dostają prosty CMS, w którym edytujesz teksty jak dokument. Strona w tydzień nie ma panelu, zmiany robimy my.",
   },
   {
     question: "Hosting i domena?",
@@ -327,6 +332,14 @@ export default function StronyWww() {
                 priceCurrency: "PLN",
                 description:
                   "Do 5 podstron, formularz, kalendarz spotkań, gotowa w 7 dni.",
+              },
+              {
+                "@type": "Offer",
+                name: "Strona z CMS start",
+                price: "3900",
+                priceCurrency: "PLN",
+                description:
+                  "Do 8 podstron, formularz, kalendarz spotkań, panel edycji tekstów, gotowa w 10 dni.",
               },
               {
                 "@type": "Offer",

@@ -17,6 +17,8 @@ export type UslugaHandlowca = {
 
 const KIEDY: Record<string, string> = {
   landing: "Gdy firma nie ma strony albo ma jedną starą stronę wizytówkę.",
+  cmsstart:
+    "Gdy firma chce sama zmieniać teksty, a wystarczy jej do 8 podstron bez bloga.",
   firmowa:
     "Gdy strona jest przestarzała, wolna albo nie ma podstron usług i bloga.",
   sklep: "Gdy firma sprzedaje produkty, a nie ma sklepu albo sklep jest słaby.",
@@ -197,7 +199,8 @@ export function uporzadkujPakiet<T extends { id: string; powod: string }>(
   d: DecyzjaStrony | null,
 ): T[] {
   const w = wielkosc ? WIELKOSC[wielkosc] : undefined;
-  const nowa = (id: string) => id === "landing" || id === "firmowa";
+  const nowa = (id: string) =>
+    id === "landing" || id === "cmsstart" || id === "firmowa";
   let strona = false;
   const wynik: T[] = [];
   if (d?.decyzja === "poprawki")

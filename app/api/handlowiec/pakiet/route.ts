@@ -159,7 +159,7 @@ export async function POST(req: Request) {
         powod:
           decyzja &&
           decyzja.decyzja !== "nowa" &&
-          (id === "landing" || id === "firmowa")
+          (id === "landing" || id === "cmsstart" || id === "firmowa")
             ? decyzja.powod
             : id === "poprawki"
               ? decyzja?.decyzja === "nowa"

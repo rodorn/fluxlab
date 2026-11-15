@@ -198,7 +198,11 @@ export default function KonfiguratorStrony() {
   const w = wycenStrone(konf)!;
   const rodzaj = w.rodzaj;
   const cena = useAnimowana(w.suma);
-  const firmowa = rodzajId === "landing" ? wycenStrone({ ...konf, r: "firmowa" })! : null;
+  const nr = RODZAJE.findIndex((r) => r.id === rodzajId);
+  const lepsza = ["cmsstart", "firmowa"]
+    .filter((id) => RODZAJE.findIndex((r) => r.id === id) > nr && rodzajId !== "lp")
+    .map((id) => wycenStrone({ ...konf, r: id })!)
+    .find((x) => x.suma <= w.suma);
 
   const przelacz = (id: string) =>
     setWybrane((x) => (x.includes(id) ? x.filter((y) => y !== id) : [...x, id]));
@@ -252,7 +256,7 @@ export default function KonfiguratorStrony() {
         <p className="mb-3 text-center text-sm font-semibold text-gray-900 dark:text-white">
           1. Rodzaj strony
         </p>
-        <div role="radiogroup" aria-label="Rodzaj strony" className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+        <div role="radiogroup" aria-label="Rodzaj strony" className="grid gap-3 md:grid-cols-3 lg:grid-cols-5">
           {RODZAJE.map((r) => {
             const aktywny = r.id === rodzajId;
             return (
@@ -434,10 +438,10 @@ export default function KonfiguratorStrony() {
             {w.miesiecznie > 0 &&
               ` Co miesiąc, poza sumą: ${w.abonamenty.map((x) => `${x.nazwa.split(" ")[0].toLowerCase()} ${zl(x.netto)}`).join(", ")}.`}
           </p>
-          {firmowa && firmowa.suma <= w.suma && (
+          {lepsza && (
             <p className="mt-3 text-center text-sm">
-              <button type="button" onClick={() => setRodzajId("firmowa")} className="font-semibold text-accent hover:underline">
-                Strona firmowa z CMS wyjdzie {firmowa.suma < w.suma ? "taniej" : "tyle samo"} ({zl(firmowa.suma)}), a ma panel edycji i blog
+              <button type="button" onClick={() => setRodzajId(lepsza.rodzaj.id)} className="font-semibold text-accent hover:underline">
+                {lepsza.rodzaj.nazwa} wyjdzie {lepsza.suma < w.suma ? "taniej" : "tyle samo"} ({zl(lepsza.suma)}), a ma panel edycji{lepsza.rodzaj.id === "firmowa" ? " i blog" : ""}
               </button>
             </p>
           )}

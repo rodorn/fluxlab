@@ -21,7 +21,7 @@ const OFERTA = [
   ],
   [
     "Strony internetowe",
-    "Naprawa i poprawki 150 / 290 / 490 zł. Strona w tydzień do 5 podstron 2 900 zł, strona z CMS 5 900 zł, sklep od 9 900 zł.",
+    "Naprawa i poprawki 150 / 290 / 490 zł. Strona w tydzień do 5 podstron 2 900 zł, strona z CMS start do 8 podstron 3 900 zł, strona firmowa z CMS 5 900 zł, sklep od 9 900 zł.",
   ],
   [
     "Własny CRM",
