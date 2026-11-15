@@ -944,6 +944,21 @@ export const PRODUCTS: Product[] = [
       "rezygnacja w dowolnym dniu",
     ],
   },
+  {
+    category: "dane",
+    name: "Porównanie SEO z 3 konkurentami",
+    tagline: "Czym konkurenci wyprzedzają Twoją stronę",
+    desc: "Netto, jednorazowo. Podajesz swoją domenę i do trzech konkurentów, a mailem dostajesz zestawienie podstron, szybkości na telefonie, opinii Google i jakości tytułów.",
+    price: "29 zł",
+    href: "/porownanie-seo",
+    grupa: "raporty",
+    cta: "Zamów porównanie",
+    bullets: [
+      "podstrony, szybkość i dane techniczne obok siebie",
+      "opinie Google tam, gdzie wizytówka zgadza się z domeną",
+      "zwrot pieniędzy, gdy strona nie odpowiada",
+    ],
+  },
 ];
 
 export function productsByCategory(category: ProductCategory): Product[] {
