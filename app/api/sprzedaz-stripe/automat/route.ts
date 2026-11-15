@@ -81,8 +81,8 @@ async function sprzedazStripe(): Promise<Wynik[]> {
 }
 
 export async function GET(req: Request) {
-  const sekret = process.env.AUTOMATY_TICK_SEKRET;
-  if (!sekret || req.headers.get("authorization") !== `Bearer ${sekret}`)
+  const sekret = process.env.AUTOMAT_SEKRET;
+  if (!sekret || req.headers.get("x-automat") !== sekret)
     return NextResponse.json({ error: "brak dostępu" }, { status: 401 });
   const wyniki = [...(await sprzedazStripe())];
   return NextResponse.json({ ok: true, wyniki });
