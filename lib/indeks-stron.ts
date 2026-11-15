@@ -478,6 +478,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Codzienna kontrola wizytówki firmy w Google: alert, gdy zmieni się nazwa, adres, godziny, kategoria lub status."
   },
   {
+    "url": "/widocznosc-na-frazy-w-google",
+    "tytul": "Widoczność na frazy w Google od 39 zł",
+    "opis": "Raz w tygodniu pozycja strony w Google dla do 20 fraz, zmiany od zeszłego tygodnia i najczęstsi konkurenci."
+  },
+  {
     "url": "/szybkosc-strony-co-miesiac",
     "tytul": "Szybkość strony co miesiąc od 19 zł",
     "opis": "Co miesiąc pomiar Core Web Vitals z telefonu i komputera w Google PageSpeed Insights, z porównaniem do poprzedniego miesiąca."

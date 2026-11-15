@@ -620,6 +620,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/widocznosc-na-frazy-w-google`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/szybkosc-strony-co-miesiac`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

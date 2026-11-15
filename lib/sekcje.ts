@@ -146,6 +146,7 @@ export const SEKCJE: Sekcja[] = [
           s("/audyt-strony-co-miesiac", "Audyt strony co miesiąc"),
           s("/straznik-konwersji", "Strażnik konwersji"),
           s("/pilnowanie-wizytowki-google", "Pilnowanie wizytówki Google"),
+          s("/widocznosc-na-frazy-w-google", "Widoczność na frazy w Google"),
           s("/szybkosc-strony-co-miesiac", "Szybkość strony co miesiąc"),
           s("/alert-msig", "Alert MSiG"),
           s("/zmiany-w-krs-kontrahentow", "Zmiany w KRS kontrahentów"),

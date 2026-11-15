@@ -61,6 +61,7 @@ export const OFERTA: Record<string, Oferta> = {
   "monitoring-ceny": { nazwa: "Pilnowanie cen konkurencji", netto: 39, miesiecznie: true, strona: "/pilnowanie-cen-konkurencji", pole: "Adresy produktów (do 3, po spacji)" },
   "monitoring-szybkosc": { nazwa: "Szybkość strony co miesiąc", netto: 19, miesiecznie: true, strona: "/szybkosc-strony-co-miesiac", pole: "Adres strony" },
   "monitoring-wizytowka": { nazwa: "Pilnowanie wizytówki Google", netto: 29, miesiecznie: true, strona: "/pilnowanie-wizytowki-google", pole: "Nazwa firmy i miasto" },
+  "monitoring-widocznosc": { nazwa: "Widoczność na frazy w Google", netto: 39, miesiecznie: true, strona: "/widocznosc-na-frazy-w-google", pole: "Domena, potem frazy po przecinku (do 20)" },
   "monitoring-audyt": { nazwa: "Audyt strony co miesiąc", netto: 19, miesiecznie: true, strona: "/audyt-strony-co-miesiac", pole: "Adres strony" },
   "monitoring-konwersje": { nazwa: "Strażnik konwersji", netto: 29, miesiecznie: true, strona: "/straznik-konwersji", pole: "Adresy stron ze znacznikami (do 3, po spacji)" },
   "monitoring-krs": { nazwa: "Zmiany w KRS kontrahentów", netto: 29, miesiecznie: true, strona: "/zmiany-w-krs-kontrahentow", pole: "Numery KRS lub NIP firm (do 20, po spacji)" },

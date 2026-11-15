@@ -277,6 +277,7 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Strażnik konwersji](https://fluxlab.pl/straznik-konwersji): co 6 godzin kontrola znaczników Google i Meta na podanych stronach, alert po potwierdzeniu, 29 zł netto miesięcznie.
 - [Alert MSiG](https://fluxlab.pl/alert-msig): raz na dobę kontrola Monitora Sądowego i Gospodarczego dla do 20 firm, mail o upadłości, restrukturyzacji i likwidacji, 39 zł netto miesięcznie.
 - [Pilnowanie wizytówki Google](https://fluxlab.pl/pilnowanie-wizytowki-google): codzienna kontrola wizytówki firmy w Google z alertem o zmianie nazwy, adresu, godzin, kategorii lub statusu, 29 zł netto miesięcznie.
+- [Widoczność na frazy w Google](https://fluxlab.pl/widocznosc-na-frazy-w-google): cotygodniowy pomiar pozycji strony w Google dla do 20 fraz z porównaniem do poprzedniego tygodnia i listą konkurentów, 39 zł netto miesięcznie.
 - [Szybkość strony co miesiąc](https://fluxlab.pl/szybkosc-strony-co-miesiac): co miesiąc pomiar Core Web Vitals z telefonu i komputera w Google PageSpeed Insights z porównaniem do poprzedniego miesiąca, 19 zł netto miesięcznie.
 - [Zmiany w KRS kontrahentów](https://fluxlab.pl/zmiany-w-krs-kontrahentow): raz na dobę odpis z oficjalnego API KRS do 20 firm, mail przy zmianie zarządu, prokury, adresu lub kapitału, 29 zł netto miesięcznie.
 - [Kontrola faktur kosztowych przed zapłatą](https://fluxlab.pl/kontrola-faktur-kosztowych): rachunek z każdej faktury kosztowej z KSeF sprawdzany w Białej Liście MF, alert mailem przy niezgodności, 39 zł netto miesięcznie.
