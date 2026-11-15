@@ -78,6 +78,11 @@ const SYTUACJE: Sytuacja[] = [
           "SPF, DKIM i DMARC decydują, czy list trafi do skrzynki, do spamu, oraz czy ktoś obcy może wysyłać z Twojego adresu.",
       },
       {
+        href: "/spf-dkim-dmarc",
+        powod:
+          "Gdy audyt pokazuje błędy, ta usługa dostarcza gotowe rekordy do wklejenia w DNS i instrukcję krok po kroku dla Twojego dostawcy poczty.",
+      },
+      {
         href: "/czarne-listy",
         powod:
           "Serwer poczty na liście spamowej to maile odrzucane albo wrzucane do spamu u odbiorców. Sprawdzenie obejmuje 11 list, a alert przychodzi mailem.",

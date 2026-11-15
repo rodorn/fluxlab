@@ -201,6 +201,21 @@ export const PRODUCTS: Product[] = [
 
   // ---------- AUTOMATYZACJA ----------
   {
+    category: "www",
+    name: "SPF, DKIM i DMARC z instrukcją",
+    tagline: "Gotowe wpisy do DNS i kroki dla Twojego dostawcy poczty",
+    desc: "Netto, jednorazowo. Podajesz domenę, a po płatności dostajesz mailem wynik sprawdzenia, rekordy do wklejenia i instrukcję DKIM dla Google Workspace, Microsoft 365, Zoho albo innego dostawcy. Wpisy dodajesz sam.",
+    price: "19 zł",
+    href: "/spf-dkim-dmarc#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz instrukcję",
+    bullets: [
+      "sprawdzenie SPF, DKIM i DMARC domeny",
+      "rekordy gotowe do wklejenia w DNS",
+      "PDF z krokami i planem dojścia do p=reject",
+    ],
+  },
+  {
     category: "automatyzacja",
     name: "Panel zwrotów i reklamacji",
     tagline: "Każdy zwrot przechodzi dziś przez czyjeś ręce",
