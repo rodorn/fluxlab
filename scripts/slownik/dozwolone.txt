@@ -323,3 +323,7 @@ flac
 ogg
 wav
 webm
+Daylight
+Deye
+Ledvance
+Project
