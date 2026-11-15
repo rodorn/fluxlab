@@ -208,6 +208,19 @@ const SYTUACJE: Sytuacja[] = [
     ],
   },
   {
+    klucz: "opisy-do-sklepu",
+    etykieta: "Mamy sklep i setki produktów bez opisów",
+    odpowiedz:
+      "Pisanie opisów jeden po drugim zajmuje tygodnie. Z pliku z cechami robi się to w minutę.",
+    wskazania: [
+      {
+        href: "/opisy-produktow-z-csv",
+        powod:
+          "Plik z nazwami i cechami wraca z opisem krótkim, długim i metatagami, a każdy opis opiera się tylko na Twoich danych.",
+      },
+    ],
+  },
+  {
     klucz: "nowy-rynek",
     etykieta: "Planujemy nowy punkt albo nowy rynek",
     odpowiedz:
