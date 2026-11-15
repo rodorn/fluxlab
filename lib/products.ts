@@ -604,7 +604,7 @@ export const PRODUCTS: Product[] = [
     name: "Integracje API",
     tagline: "Spięcie systemów, które nie chcą rozmawiać",
     desc: "Łączymy sklep, CRM, ERP i hurtownie tak, żeby dane przechodziły same: synchronizacja przyrostowa, obsługa limitów API i logi, które pokazują cichy błąd zanim zepsuje dane.",
-    price: "od 990 zł",
+    price: "od 299 zł",
     href: "/integracje-api",
     grupa: "integracje",
     cta: "Opisz integrację",

@@ -55,8 +55,8 @@ export const WYCENA_INTEGRACJE: Wycena = {
     id: "baza",
     co: "Dwa systemy, dane idą w jedną stronę",
     opis: "Uzgodnienie pól, przepływ przyrostowy zamiast pełnych przebiegów, obsługa błędów i log, w którym widać cichą awarię. Uruchomienie na Twoich kontach, z przekazaniem konfiguracji.",
-    min: 990,
-    max: 1900,
+    min: 299,
+    max: 990,
   },
   zaKazdy: {
     id: "kolejny-system",

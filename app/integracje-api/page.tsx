@@ -13,11 +13,11 @@ import { WYCENA_INTEGRACJE } from "@/lib/wycena";
 export const metadata: Metadata = {
   title: "Integracje API i łączenie systemów w firmie | Fluxlab",
   description:
-    "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 990 zł, zakres wyliczysz na stronie.",
+    "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 299 zł, zakres wyliczysz na stronie.",
   openGraph: {
     title: "Integracje API i łączenie systemów w firmie | Fluxlab",
     description:
-      "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 990 zł, zakres wyliczysz na stronie.",
+      "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 299 zł, zakres wyliczysz na stronie.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -49,7 +49,12 @@ const faq = [
   {
     question: "Ile kosztuje integracja?",
     answer:
-      "Spięcie dwóch systemów w jedną stronę to 990 do 1 900 zł. Kolejne systemy i praca w obie strony podnoszą kwotę. Wiążącą cenę podajemy po bezpłatnej diagnozie.",
+      "Spięcie dwóch systemów w jedną stronę to 299 do 990 zł. Kolejne systemy i praca w obie strony podnoszą kwotę. Wiążącą cenę podajemy po bezpłatnej diagnozie.",
+  },
+  {
+    question: "Ile kosztuje wpięcie formularza lub czatu ze strony w CRM?",
+    answer:
+      "Wpięcie formularza, kalkulatora, przycisku zapytania albo czatu ze strony w Twój CRM: 299 zł netto jednorazowo.",
   },
   {
     question: "Czym różni się integracja API od zwykłej automatyzacji?",
@@ -84,7 +89,7 @@ export default function IntegracjeApi() {
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Łączymy systemy tak, żeby dane przechodziły same, bez ręcznego
-              przepisywania. Spięcie dwóch systemów od 990 zł.
+              przepisywania. Spięcie dwóch systemów od 299 zł.
             </p>
             <div>
               <a href="#sekcje" className="btn-primary">
@@ -206,7 +211,7 @@ export default function IntegracjeApi() {
             "@type": "Service",
             name: "Integracje API",
             description:
-              "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 990 zł, zakres wyliczysz na stronie.",
+              "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 299 zł, zakres wyliczysz na stronie.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Automatyzacja procesów biznesowych",

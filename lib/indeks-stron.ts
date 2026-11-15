@@ -45,7 +45,7 @@ export const INDEKS_STRON: WpisIndeksu[] = [
   {
     "url": "/integracje-api",
     "tytul": "Integracje API i łączenie systemów w firmie",
-    "opis": "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 990 zł, zakres wyliczysz na stronie."
+    "opis": "Spinamy CRM, ERP, sklep i hurtownie tak, żeby dane przechodziły same. Spięcie dwóch systemów od 299 zł, zakres wyliczysz na stronie."
   },
   {
     "url": "/automatyzacja-ai",
