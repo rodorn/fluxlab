@@ -122,6 +122,8 @@ export const SEKCJE: Sekcja[] = [
           s("/czytelnosc-tekstow", "Czytelność i poprawność tekstów strony"),
           s("/kontrola-banera-cookies", "Kontrola banera cookies i Consent Mode v2"),
           s("/pilnowanie-konkurentow", "Pilnowanie zmian u konkurentów"),
+          s("/raport-google-analytics", "Raport Google Analytics prostym językiem"),
+          s("/raport-google-ads", "Raport Google Ads z alertem przepalania"),
           s("/bezpieczny-odbior-plikow", "Bezpieczny odbiór plików"),
           s("/kopia-wordpressa", "Kopia zapasowa WordPressa"),
           s("/polityka-cookies", "Polityka cookies ze skanu"),
