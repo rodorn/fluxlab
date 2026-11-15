@@ -34,7 +34,9 @@ export default async function ZakupDziekujemy({
               {p === "koszyk" && <CzyscOplacone />}
               {o && <p className="mb-3 font-semibold text-gray-900 dark:text-white">{o.nazwa}</p>}
               <p className="text-gray-600 dark:text-gray-300">
-                {p.startsWith("lead-")
+                {p === "sprzedaz-stripe-dzien" || p === "formularz-zgloszenia"
+                  ? "Usługa uruchamia się sama. W ciągu kilku minut wyślemy na adres e-mail podany przy płatności wiadomość startową. Fakturę VAT wyślemy w ciągu 1 dnia roboczego."
+                  : p.startsWith("lead-")
                   ? "Usługa uruchamia się sama. W ciągu kilku minut wyślemy na adres e-mail podany przy płatności kod formularza i link do panelu. Fakturę VAT wyślemy w ciągu 1 dnia roboczego."
                   : "Fakturę VAT wyślemy w ciągu 1 dnia roboczego na adres e-mail podany przy płatności. W tym samym czasie odezwiemy się, żeby zacząć pracę."}
               </p>
