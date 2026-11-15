@@ -95,10 +95,7 @@ export default function WystawianieKsef({
         <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">
           {odnowa
             ? "W ciągu godziny wystawimy faktury z wgranych wcześniej plików i wyślemy Ci na maila zestawienie z numerami KSeF."
-            : "W ciągu godziny wystawimy faktury w KSeF i wyślemy Ci na maila
-          zestawienie z numerami KSeF. Jeśli w pliku będzie błąd, żadna faktura
-          nie zostanie wystawiona, a w mailu dostaniesz listę wierszy do
-          poprawy."}
+            : "W ciągu godziny wystawimy faktury w KSeF i wyślemy Ci na maila zestawienie z numerami KSeF. Jeśli w pliku będzie błąd, żadna faktura nie zostanie wystawiona, a w mailu dostaniesz listę wierszy do poprawy."}
         </p>
         {!odnowa && (
         <button
