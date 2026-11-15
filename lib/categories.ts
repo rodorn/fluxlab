@@ -605,6 +605,13 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
+        href: "/strefa-wiedzy/wizytowka-google-i-google-ads",
+        title: "Wizytówka Google i Google Ads",
+        description:
+          "Jak prowadzić Profil Firmy w Google: weryfikacja, kategoria, zdjęcia, posty, opinie i statystyki. Kiedy dołożyć Google Ads, ile kosztuje i jak liczyć telefony.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/strona-ktora-sprzedaje",
         title: "Strona, która sprzedaje: 8 rzeczy przed zleceniem",
         description:

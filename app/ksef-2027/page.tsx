@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/ksef-2027" },
   openGraph: {
     title: "KSeF od 1 stycznia 2027: co musisz mieć domknięte",
+    images: ["/og?t=KSeF%20od%201%20stycznia%202027%3A%20co%20musisz%20mie%C4%87%20domkni%C4%99te"],
     description:
       "Darmowa lista kontrolna na koniec przepisów przejściowych KSeF. Na końcu wykaz braków gotowy do wysłania księgowej, bez rejestracji.",
     locale: "pl_PL",

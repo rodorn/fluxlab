@@ -10,3 +10,5 @@ najstarszy wiersz: 2026-10-20 06:21:10+02:00
 /strefa-wiedzy/faktura-wewnetrzna-ksef | wdrożenie 2026-11-08 00:44 (b759bd93) | wyszukiwarki 14 dni przed: 1 {'www.google.com': 1} | wszystkie wejścia 14 dni przed: 1 | po wdrożeniu dotąd: 0 (wyszuk. 0)
 /wdrozenie-n8n-cena | wdrożenie 2026-11-08 02:44 (d4103ef3) | wyszukiwarki 14 dni przed: 1 {'www.google.com': 1} | wszystkie wejścia 14 dni przed: 1 | po wdrożeniu dotąd: 0 (wyszuk. 0)
 /narzedzia | wdrożenie 2026-11-08 02:44 (0a252be4) | wyszukiwarki 14 dni przed: 5 {'www.google.com': 5} | wszystkie wejścia 14 dni przed: 8 | po wdrożeniu dotąd: 0 (wyszuk. 0)
+/sprawdzenie-nip | wdrożenie 2026-11-08 08:43 (b92d17a7, plan 8.11 Z2) | wyszukiwarki 14 dni przed: 12 {'www.bing.com': 8, 'duckduckgo.com': 4} | wszystkie wejścia 14 dni przed: 13 | form_start 14 dni przed: 3, wysłane: 0 | po wdrożeniu dotąd (9.11 04:50): 0 (wyszuk. 0) | ocena 15-16.11
+/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen | wdrożenie 2026-11-09 00:45 (f3865542, plan 8.11 Z12) | nowa strona, wyszukiwarki 14 dni przed: 0 | wszystkie wejścia 14 dni przed: 0 | po wdrożeniu dotąd: 0 (wyszuk. 0) | ocena 15-16.11

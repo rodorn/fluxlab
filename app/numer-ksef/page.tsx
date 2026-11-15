@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/numer-ksef" },
   openGraph: {
     title: "Sprawdź numer KSeF faktury: NIP, data i suma | Fluxlab",
+    images: ["/og?t=Sprawd%C5%BA%20numer%20KSeF%20faktury%3A%20NIP%2C%20data%20i%20suma%20%7C%20Fluxlab"],
     description:
       "Darmowe sprawdzenie numeru KSeF przed przelewem. Suma kontrolna, NIP sprzedawcy i data przyjęcia faktury, liczone w przeglądarce.",
     locale: "pl_PL",

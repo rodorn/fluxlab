@@ -45,3 +45,39 @@ Kontrola Z15 (29.10.2026 19:45, curl lokalnie, gov.pl/web/e-doreczenia/pytania-i
 4. https://www.gov.pl/web/e-doreczenia/dane-adresowe : F11 przykładowy format adresu „AE:PL-45928-68514-CHARA-16” (adres Ministerstwa Cyfryzacji).
 5. Terminy: lib/terminy-e-doreczen.ts (CEIDG przed 2025: od 1.10.2026; KRS przed 2025: od 1.04.2025; nowe wpisy od 2025: od dnia wpisu).
 Wniosek dla Z11: do akapitu „Gdzie szukać” wejść może F10 (CEIDG pokazuje adres JDG, nie tylko KRS), krócej niż obecne zdanie o dziale 1 odpisu.
+
+## Wersja do publikacji (Z11 planu 7.11, 18:50). Zastępuje tekst wyżej; oznaczenia [F..] i [T] usunąć przy publikacji.
+Adres: /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen
+Kategoria: „JDG i podatki” (slug jdg-i-podatki w lib/categories.ts, obok e-doreczenia-adres-prywatny-i-firmowy).
+Title (60 zn.): Czy firma ma adres do e-Doręczeń? Jak to sprawdzić | Fluxlab
+Description (143 zn.): Adres firmy znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma, i czego sprawdzić się nie da.
+H1: Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń
+
+Wstęp:
+Chcesz wysłać wezwanie do zapłaty z dowodem doręczenia i nie wiesz, czy dłużnik ma skrzynkę. Sprawdzenie zajmuje minutę, jeśli wiesz, gdzie patrzeć.
+
+H2: Gdzie zapisany jest adres
+Każdy adres do e-Doręczeń jest wpisany do [Bazy Adresów Elektronicznych](/slownik#bae) (BAE) i wygląda jak AE:PL-45928-68514-CHARA-16. Dane firm w bazie widzą wszyscy użytkownicy e-Doręczeń. [F1, F6, F11]
+
+H2: Jak sprawdzić firmę
+Aktywny adres jest ujawniony we [wpisie firmy w CEIDG albo KRS](/e-doreczenia-integracja), więc wystarczy wyszukiwarka firm na Biznes.gov.pl. W samej skrzynce do e-Doręczeń wyszukasz adres w BAE, ale tylko pojedynczo. [F10, F1, F2]
+
+H2: Jak sprawdzić urząd
+Na gov.pl działa wyszukiwarka urzędów po nazwie, REGON, miejscowości albo województwie, aktualizowana w dni robocze. Jeśli urzędu nie ma w wynikach, nie ma on jeszcze aktywnego adresu. [F9; drugie zdanie to wniosek z F9]
+
+H2: Gdy adresu nie ma
+Urząd wyśle wtedy pismo usługą hybrydową: Poczta Polska je drukuje i doręcza. Firma takiej drogi nie ma, bo e-Doręczeniem wyśle do innej firmy tylko wtedy, gdy obie mają adres, więc zostaje tradycyjna przesyłka. [F3, F7, F8]
+
+FAQ (4):
+1. Czy sprawdzę wielu kontrahentów naraz?
+   Nie, wyszukiwarka w e-Doręczeniach szuka po jednym adresie. Przy dużej liście zostaje system obiegu dokumentów klasy EZD. [F2]
+2. Czy sprawdzę adres osoby prywatnej?
+   Nie. Firmy i inne podmioty niepubliczne nie mogą wyszukiwać adresów obywateli, tylko firm i urzędów. Więcej w tekście o [adresie prywatnym i firmowym](/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy). [F6]
+3. Czy spółka cywilna ma adres do e-Doręczeń?
+   Nie. Adres mogą mieć jej wspólnicy, każdy osobno. [F5]
+4. Od kiedy firma musi mieć adres?
+   Spółki z KRS wpisane przed 2025 od 1 kwietnia 2025, firmy z CEIDG wpisane przed 2025 od 1 października 2026, nowe od dnia wpisu. [T: lib/terminy-e-doreczen.ts; F10 kto ma obowiązek]
+
+Linki wychodzące: /slownik#bae (BAE), /e-doreczenia-integracja (wpis w CEIDG albo KRS), /strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy (FAQ 2).
+Link przychodzący: /e-doreczenia-integracja, istniejące słowo „sprawdzić” w nagłówku „Spółka z KRS bez adresu do e-Doręczeń: co to znaczy i jak sprawdzić” (app/e-doreczenia-integracja/page.tsx:32), 0 nowych słów.
+Kontrola: title 60, description 143, 4 sekcje H2 po 2 zdania, FAQ 4, każdy fakt z [F1-F11] albo [T]; F4 (koszt między firmami) wypadł, bo FAQ ma limit 4. Bez długich myślników, do czytelnika na „ty”.

@@ -11,11 +11,11 @@ const OPIS =
   "Oznaczenia w JPK_VAT od lutego 2026: numer KSeF albo OFF przy awarii KSeF, BFK dla faktury spoza KSeF, DI dla paragonu i faktury offline bez numeru.";
 
 export const metadata: Metadata = {
-  title: "Oznaczenia OFF, BFK i DI w JPK_VAT: które kiedy | Fluxlab",
+  title: "BFK, OFF czy DI w JPK_VAT? Które oznaczenie kiedy | Fluxlab",
   description:
     "Oznaczenia w JPK_VAT od lutego 2026: numer KSeF albo OFF przy awarii KSeF, BFK dla faktury spoza KSeF, DI dla paragonu i faktury offline bez numeru.",
   openGraph: {
-    title: "Oznaczenia OFF, BFK i DI w JPK_VAT: które kiedy | Fluxlab",
+    title: "BFK, OFF czy DI w JPK_VAT? Które oznaczenie kiedy | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",

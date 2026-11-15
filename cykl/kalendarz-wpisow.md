@@ -13,8 +13,8 @@ Zasady dla każdego wpisu:
 ## Tematy
 - [x] 19.10 | KSeF | Limit 10 tys. zł poza KSeF w 2026: co się dzieje po pierwszym przekroczeniu. Link: /ksef-2027, /slownik#ksef. => 19.10 https://fluxlab.pl/strefa-wiedzy/limit-10-tys-poza-ksef
 - [x] 26.10 | KSeF | Certyfikat KSeF: do czego jest potrzebny, gdzie go wyrobić i dlaczego przed pierwszą awarią. Link: /strefa-wiedzy/faktura-gdy-ksef-nie-dziala. => 26.10 https://fluxlab.pl/strefa-wiedzy/certyfikat-ksef
-- [ ] 02.11 | KSeF | Faktury kosztowe z KSeF prosto do programu księgowego: jak to zautomatyzować i ile pracy zdejmuje. Link: /ksef-integracja.
-- [ ] 09.11 | e-Doręczenia | Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń (BAE) i co, gdy go nie ma. Link: /e-doreczenia-integracja, /slownik#bae.
+- [x] 02.11 | KSeF | Faktury kosztowe z KSeF prosto do programu księgowego: jak to zautomatyzować i ile pracy zdejmuje. Link: /ksef-integracja. => 2.11 https://fluxlab.pl/strefa-wiedzy/faktury-kosztowe-z-ksef
+- [x] 09.11 | e-Doręczenia | Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń (BAE) i co, gdy go nie ma. Link: /e-doreczenia-integracja, /slownik#bae. => 9.11 https://fluxlab.pl/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen
 - [ ] 16.11 | leady | Black Friday i weekendowe zgłoszenia: kto odpowiada na leada w sobotę i jak to ustawić automatem. Link: /czas-reakcji-na-leada.
 - [ ] 23.11 | CRM | Zamknięcie roku w CRM: porządek w lejku i dane do raportu rocznego w jeden dzień. Link: /automatyzacja-raportowania.
 - [ ] 30.11 | KSeF | Kasa fiskalna i KSeF od 1 stycznia 2027: faktura do paragonu po końcu przepisów przejściowych. Link: /ksef-2027.

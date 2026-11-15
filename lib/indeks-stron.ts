@@ -1088,6 +1088,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Lejek ważony u pośrednika kredytowego: 25 otwartych spraw to 159 780 zł na papierze i 34 218 zł po ważeniu szansą. Zobacz, jak to liczyć i planować."
   },
   {
+    "url": "/strefa-wiedzy/wizytowka-google-i-google-ads",
+    "tytul": "Wizytówka Google i Google Ads krok po kroku",
+    "opis": "Jak prowadzić Profil Firmy w Google: weryfikacja, kategoria, zdjęcia, posty, opinie i statystyki. Kiedy dołożyć Google Ads, ile kosztuje i jak liczyć telefony."
+  },
+  {
     "url": "/strefa-wiedzy/strona-ktora-sprzedaje",
     "tytul": "Strona, która sprzedaje: co sprawdzić przed zleceniem",
     "opis": "Zlecasz stronę firmową? Sprawdź przed umową cel, treści, formularz, wygodę na telefonie, szybkość, własność domeny, wymagane informacje i warunki umowy."

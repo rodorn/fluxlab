@@ -1,8 +1,8 @@
 Szkic na 26.10 (NIE w app/). Źródło faktów: MF, „Certyfikaty KSeF”, https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/certyfikaty-ksef/ (opublikowano 01.11.2025, zmodyfikowano 21.07.2026), odczyt z VPS (curl) 19.10.2026 09:50; ponowny odczyt 24.10.2026 12:55: strona pokazuje „Opublikowano 30.06.2025, Zmodyfikowano 01.09.2026”, F4 i tokeny bezterminowo bez zmian. Oznaczenia [F1] do [F4] do usunięcia przy publikacji.
 
 Adres: /strefa-wiedzy/certyfikat-ksef
-Tytuł (49 zn.): Certyfikat KSeF: po co jest i jak go wyrobić | Fluxlab
-Opis (152 zn.): Bez certyfikatu KSeF typu offline nie wystawisz faktury, gdy KSeF nie działa. Wyrobisz go w Aplikacji Podatnika KSeF, a ważny jest najwyżej 2 lata.
+Tytuł (54 zn.): Certyfikat KSeF: po co jest i jak go wyrobić | Fluxlab
+Opis (147 zn.): Bez certyfikatu KSeF typu offline nie wystawisz faktury, gdy KSeF nie działa. Wyrobisz go w Aplikacji Podatnika KSeF, a ważny jest najwyżej 2 lata.
 H1: Certyfikat KSeF: do czego służy i kiedy go wyrobić
 
 Akapit 1 (wstęp, przykład):

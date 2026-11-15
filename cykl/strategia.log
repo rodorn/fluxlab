@@ -41,3 +41,227 @@ Outreach dostał 5 h (ostatnie 8 maili, jedna próba wyszukiwarki KRS po nazwie 
 Mail do Pawła wyszedł 06:43 z pawel@fluxlab.pl; sekcja „Dla Pawła”: odpowiedź do Profit Polska (5. dzień), decyzja o płatnej bazie firm albo innym segmencie, 6 tekstów Gofin, dwie odpowiedzi Kontomatik.
 === 2026-10-09 06:23:31 koniec, kod 0
 === 2026-10-10 06:15:30 start
+=== 2026-10-11 06:15:03 start
+=== 2026-10-12 06:15:01 start
+=== 2026-10-13 06:15:00 start
+You've hit your weekly limit · resets Oct 14, 9am (Europe/Warsaw)
+=== 2026-10-13 06:15:03 koniec, kod 1
+=== 2026-10-14 06:15:01 start
+You've hit your weekly limit · resets 9am (Europe/Warsaw)
+=== 2026-10-14 06:15:04 koniec, kod 1
+=== 2026-10-14 17:43:57 start
+=== 2026-10-15 06:15:00 start
+=== 2026-10-16 06:15:10 start
+=== 2026-10-17 06:15:20 start
+=== 2026-10-18 06:15:00 start
+=== 2026-10-19 06:15:00 start
+=== 2026-10-20 06:15:00 start
+=== 2026-10-21 06:15:07 start
+=== 2026-10-22 06:15:00 start
+=== 2026-10-23 06:15:00 start
+=== 2026-10-24 06:15:00 start
+=== 2026-10-25 06:15:00 start
+=== 2026-10-26 06:15:01 start
+=== 2026-10-27 06:15:00 start
+=== 2026-10-28 06:15:00 start
+=== 2026-10-29 06:15:00 start
+=== 2026-10-30 06:15:00 start
+=== 2026-10-31 06:15:00 start
+=== 2026-11-01 06:15:04 start
+=== 2026-11-02 06:15:00 start
+=== 2026-11-03 06:15:00 start
+=== 2026-11-04 06:15:00 start
+Permission allow rule "Read(*)" adds nothing to Read's default, which already runs without asking in the working directories. "Read" alone allows every path. Older versions of Claude Code treat "Read(*)" as "Read", and this version will too if Anthropic turns this change off.
+Permission allow rule "Edit(*)" lets Edit run without asking only in the working directories. "Edit" alone allows every path. Older versions of Claude Code treat "Edit(*)" as "Edit", and this version will too if Anthropic turns this change off.
+Permission allow rule "Write(*)" lets Write run without asking only in the working directories. "Write" alone allows every path. Older versions of Claude Code treat "Write(*)" as "Write", and this version will too if Anthropic turns this change off.
+Permission allow rule "Glob(*)" adds nothing to Glob's default, which already runs without asking in the working directories. "Glob" alone allows every path. Older versions of Claude Code treat "Glob(*)" as "Glob", and this version will too if Anthropic turns this change off.
+Permission allow rule "Grep(*)" adds nothing to Grep's default, which already runs without asking in the working directories. "Grep" alone allows every path. Older versions of Claude Code treat "Grep(*)" as "Grep", and this version will too if Anthropic turns this change off.
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-04 06:15:02 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1793769302.timer
+Will run service as unit: fluxlab-strategia-ponow-1793769302.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-04 07:15:03 start
+Permission allow rule "Read(*)" adds nothing to Read's default, which already runs without asking in the working directories. "Read" alone allows every path. Older versions of Claude Code treat "Read(*)" as "Read", and this version will too if Anthropic turns this change off.
+Permission allow rule "Edit(*)" lets Edit run without asking only in the working directories. "Edit" alone allows every path. Older versions of Claude Code treat "Edit(*)" as "Edit", and this version will too if Anthropic turns this change off.
+Permission allow rule "Write(*)" lets Write run without asking only in the working directories. "Write" alone allows every path. Older versions of Claude Code treat "Write(*)" as "Write", and this version will too if Anthropic turns this change off.
+Permission allow rule "Glob(*)" adds nothing to Glob's default, which already runs without asking in the working directories. "Glob" alone allows every path. Older versions of Claude Code treat "Glob(*)" as "Glob", and this version will too if Anthropic turns this change off.
+Permission allow rule "Grep(*)" adds nothing to Grep's default, which already runs without asking in the working directories. "Grep" alone allows every path. Older versions of Claude Code treat "Grep(*)" as "Grep", and this version will too if Anthropic turns this change off.
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-04 07:15:05 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1793772905.timer
+Will run service as unit: fluxlab-strategia-ponow-1793772905.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-04 08:15:05 start
+=== 2026-11-05 06:15:00 start
+=== 2026-11-06 06:15:06 start
+=== 2026-11-07 06:15:00 start
+=== 2026-11-08 06:15:00 start
+=== 2026-11-09 06:15:00 start
+=== 2026-11-10 06:15:00 start
+You've hit your weekly limit · resets Nov 11, 8am (Europe/Warsaw)
+=== 2026-11-10 06:15:01 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794287701.timer
+Will run service as unit: fluxlab-strategia-ponow-1794287701.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 07:15:01 start
+You've hit your weekly limit · resets Nov 11, 8am (Europe/Warsaw)
+=== 2026-11-10 07:15:03 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794291303.timer
+Will run service as unit: fluxlab-strategia-ponow-1794291303.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 08:15:03 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 08:15:05 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794294905.timer
+Will run service as unit: fluxlab-strategia-ponow-1794294905.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 09:15:05 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 09:15:07 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794298507.timer
+Will run service as unit: fluxlab-strategia-ponow-1794298507.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 10:54:56 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 10:54:58 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794304498.timer
+Will run service as unit: fluxlab-strategia-ponow-1794304498.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 11:54:58 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 11:55:00 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794308100.timer
+Will run service as unit: fluxlab-strategia-ponow-1794308100.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 12:55:00 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 12:55:06 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794311706.timer
+Will run service as unit: fluxlab-strategia-ponow-1794311706.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 13:55:06 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 13:55:07 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794315307.timer
+Will run service as unit: fluxlab-strategia-ponow-1794315307.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 14:55:08 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 14:55:10 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794318910.timer
+Will run service as unit: fluxlab-strategia-ponow-1794318910.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 15:55:10 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 15:55:12 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794322512.timer
+Will run service as unit: fluxlab-strategia-ponow-1794322512.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 16:55:12 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 16:55:14 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794326114.timer
+Will run service as unit: fluxlab-strategia-ponow-1794326114.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 17:55:14 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 17:55:16 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794329716.timer
+Will run service as unit: fluxlab-strategia-ponow-1794329716.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 18:55:16 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 18:55:18 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794333318.timer
+Will run service as unit: fluxlab-strategia-ponow-1794333318.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 19:55:18 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 19:55:19 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794336919.timer
+Will run service as unit: fluxlab-strategia-ponow-1794336919.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 20:55:20 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 20:55:21 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794340521.timer
+Will run service as unit: fluxlab-strategia-ponow-1794340521.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 21:55:22 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 21:55:23 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794344123.timer
+Will run service as unit: fluxlab-strategia-ponow-1794344123.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 22:55:23 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 22:55:25 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794347725.timer
+Will run service as unit: fluxlab-strategia-ponow-1794347725.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-10 23:55:25 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-10 23:55:27 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794351327.timer
+Will run service as unit: fluxlab-strategia-ponow-1794351327.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 00:55:27 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 00:55:29 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794354929.timer
+Will run service as unit: fluxlab-strategia-ponow-1794354929.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 02:40:53 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 02:40:54 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794361254.timer
+Will run service as unit: fluxlab-strategia-ponow-1794361254.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 03:40:55 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 03:40:56 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794364856.timer
+Will run service as unit: fluxlab-strategia-ponow-1794364856.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 04:40:56 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 04:40:58 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794368458.timer
+Will run service as unit: fluxlab-strategia-ponow-1794368458.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 05:40:58 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 05:41:00 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794372060.timer
+Will run service as unit: fluxlab-strategia-ponow-1794372060.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 06:15:00 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 06:15:03 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794374103.timer
+Will run service as unit: fluxlab-strategia-ponow-1794374103.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 06:41:00 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 06:41:01 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794375661.timer
+Will run service as unit: fluxlab-strategia-ponow-1794375661.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 07:15:03 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 07:15:05 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794377705.timer
+Will run service as unit: fluxlab-strategia-ponow-1794377705.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 07:41:02 start
+You've hit your weekly limit · resets 8am (Europe/Warsaw)
+=== 2026-11-11 07:41:03 koniec, kod 1
+Running timer as unit: fluxlab-strategia-ponow-1794379263.timer
+Will run service as unit: fluxlab-strategia-ponow-1794379263.service
+=== limit, ponowna próba za 1 h
+=== 2026-11-11 08:15:05 start
+=== 2026-11-12 06:15:00 start
+=== 2026-11-13 06:15:00 start
+=== 2026-11-14 06:15:00 start
+=== 2026-11-15 06:15:00 start

@@ -45,7 +45,7 @@ KROK 3. NAPISZ cykl/plan-ruchu.md NA NAJBLIŻSZE 24 GODZINY. Format dokładnie t
 
 ZASADY DLA ZADAŃ:
 - Każde zadanie wykonalne bez Pawła. Konto, którego nie mamy, płatność, decyzja
-  biznesowa: to nie jest zadanie godzinne, tylko punkt do maila dla Pawła (krok 4).
+  biznesowa: to nie jest zadanie godzinne, tylko punkt do sekcji „Dla Pawła” (krok 4).
 - Każde zadanie kończy się czymś, co wyszło w świat albo czymś zmierzonym. „Przygotuj
   tekst" bez publikacji jest dozwolone tylko, jeśli publikację wykonuje inne zadanie.
 - Rozkład: outreach z prawdziwym raportem (~/Projekty/mail-audyt, pipeline jak w
@@ -61,18 +61,17 @@ ZASADY DLA ZADAŃ:
 - Nie zakładaj kont, nie podawaj haseł, nie rób KYC, nie twórz fałszywych opinii ani
   referencji, nie bombarduj produkcji fluxlab.pl seriami zapytań.
 
-KROK 4. JEDEN MAIL DO PAWŁA. Przez ~/Projekty/fluxlab-site/skrypty-raport
-(report_mail.py + send_fluxlab.py), na iwanekpawel55@gmail.com. Temat:
-„FluxLab ruch, plan na <data>: <najważniejsza liczba doby>". Treść krótka: wynik
-doby w liczbach, trzy najważniejsze zadania na dziś, i osobna sekcja „Dla Pawła"
-z rzeczami, których cykl nie zrobi sam (konto, płatność, decyzja), każda z adresem
-i liczbą minut. Bez długich myślników. Przeczytaj tekst przed wysyłką.
+KROK 4. BEZ MAILA I BEZ OSOBNEGO RAPORTU (zasada 7.11: jeden raport dobowy na
+obszar). Wynik doby w liczbach, trzy najważniejsze zadania na dziś i sekcję
+„Dla Pawła" (rzeczy, których cykl nie zrobi sam: konto, płatność, decyzja, każda
+z adresem i liczbą minut) zapisz w cykl/dziennik.md w sekcji z kroku 5. Raport
+dobowy strony o 7:03 (cykl/prompt-raport.txt) weźmie je stamtąd.
 
 KROK 5. Commit cykl/plan-ruchu.md i wpis w cykl/dziennik.md (sekcja „Strategia
 dobowa <data>"), git pull --rebase --autostash, push na origin/main.
 
 Odpowiedź końcowa: 5 linijek. Wynik doby, liczba zadań w planie, trzy pierwsze
-zadania, czy mail wyszedł.
+zadania, czy wpis w dzienniku jest.
 
 ZASADA OD 7.10.2026 (Paweł): każda pojedyncza strona ma mieć MAŁO treści. Krótkie
 akapity (2-3 zdania), FAQ najwyżej 4 pytania, bez powtórzeń tej samej myśli w kilku
@@ -87,3 +86,5 @@ niezaznaczony temat z cykl/kalendarz-wpisow.md, którego data już minęła lub
 przypada dziś, z zasadami z nagłówka tego pliku. Jeśli w poniedziałek się nie
 udało, wstaw je w planie na wtorek albo środę. To zadanie jest wyjątkiem od
 „nie tworzyć nowych stron" w planie dobowym. Hamulec budżetu nadal obowiązuje.
+
+Fora Gofin i e-prawnik nie należą do tego planu: prowadzi je FL_gofin (strategia social mediów v3, karta 26). Nie planuj dla nich zadań, nie wyłączaj ich i nie zatrzymuj timerów fl-gofin-auto, fl-eprawnik, fl-fora-licznik.

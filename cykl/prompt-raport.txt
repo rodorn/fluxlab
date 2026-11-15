@@ -1,5 +1,5 @@
-Raport zbiorczy z rozwoju strony fluxlab.pl. Wychodzi co cztery godziny i jest
-jedynym mailem, jaki Paweł dostaje z tego wątku, więc ma być długi, dokładny i
+Raport zbiorczy z rozwoju strony fluxlab.pl. Wychodzi raz dziennie o 7:03 i jest
+jedynym raportem, jaki Paweł dostaje z tego wątku, więc ma być długi, dokładny i
 samowystarczalny: po jego przeczytaniu Paweł ma wiedzieć wszystko, co się
 wydarzyło, bez zaglądania do kodu.
 
@@ -27,18 +27,18 @@ CZEGO OCZEKUJĘ W MAILU, w tej kolejności:
   okresie nie było zmiany wizualnej, nie dołączaj nic i nie tłumacz się.
 
 JAK WYSŁAĆ:
-- skrypty w ~/Projekty/fluxlab-site/skrypty-raport: report_mail.py buduje HTML
-  z report_data.json, send_fluxlab.py wysyła przez Zoho.
-- odbiorca: iwanekpawel55@gmail.com
-- temat: "FluxLab strona, GG:MM, <najważniejsza zmiana w kilku słowach>"
+- NIE mailem. Raport idzie na podstronę panelu jednym poleceniem:
+  raport dodaj --obszar "FL_strona" --temat "FluxLab strona, RRRR-MM-DD, <najważniejsza zmiana w kilku słowach>" --liczba "<wynik z liczbą>" --plik tresc.html
+  Bez --mail. HTML zbuduj skryptem skrypty-raport/report_mail.py z report_data.json.
+- Nie używaj send_fluxlab.py ani poczty: zasada 7.11, jeden raport dobowy na
+  obszar, bez maili do Pawła.
 
 ZASADY:
 - Bez długich myślników, zamiast nich przecinki.
-- PRZECZYTAJ treść przed wysłaniem. Sprawdź ortografię i odmianę. Ten mail ma
+- PRZECZYTAJ treść przed dodaniem. Sprawdź ortografię i odmianę. Ten raport ma
   wyglądać jak raport od firmy, bo taki jest jego cel.
 - Nie pisz o klientach, referencjach ani wynikach u klientów, bo ich nie ma.
-- Po udanej wysyłce dopisz na końcu dziennika linię "<!-- WYSLANO -->" wraz z
+- Po dodaniu raportu dopisz na końcu dziennika linię "<!-- WYSLANO -->" wraz z
   datą i godziną, żeby następny raport wiedział, od którego miejsca czytać.
 - Jeżeli od ostatniego raportu nie przybył ani jeden wpis w dzienniku, nie
-  wysyłaj pustego maila. Zamiast tego dopisz do dziennika notatkę, że cztery
-  godziny minęły bez zmian, i zakończ.
+  dodawaj pustego raportu. Zamiast tego dopisz do dziennika notatkę, że doba minęła bez zmian, i zakończ.

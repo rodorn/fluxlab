@@ -39,6 +39,11 @@ CZTERY KANAŁY, wybrane przez Pawła. Rotuj je, nie rób w kółko jednego:
    Odpowiedź ma być użyteczna sama w sobie, link tylko jako dowód. Tam, gdzie
    publikacja wymaga konta, którego nie mam, przygotuj gotowy tekst do wklejenia
    i wypisz go w dzienniku jako zadanie dla Pawła, z adresem i uzasadnieniem.
+   FORA GOFIN I E-PRAWNIK (strategia social mediów v3, karta 26; Paweł 21.10:
+   „pracować intensywnie”): prowadzi je sesja FL_gofin automatami fl-gofin-auto,
+   fl-eprawnik i fl-fora-licznik (~/Projekty/fl-gofin). Ten cykl NIE publikuje na
+   forach, nie kolejkuje wpisów, nie wyłącza kanału i nie zatrzymuje tych timerów,
+   także przy 0 wejść; forum nie jest kanałem tego planu. Stan: ~/Projekty/fl-gofin/licznik.json.
 
 2. WIDOCZNOŚĆ W ASYSTENTACH AI. Jedyny kanał, który cokolwiek dowiózł:
    jedyne wejście z 22.09 przyszło z chatgpt.com. Pisz treści odpowiadające
@@ -72,7 +77,9 @@ ZASADY TWARDE, bez zmian:
 - LICZBA MNOGA. Fluxlab występuje jako firma, nie jako jedna osoba.
   Piszemy "automatyzujemy", "sprawdzamy", "nasze", nigdy "automatyzuję",
   "sprawdzam", "moje". W pytaniach FAQ klient zwraca się do nas per "Wy":
-  "Czego potrzebujecie", nie "Czego potrzebujesz". Wyjątki, których nie
+  "Czy robicie sklepy?". Do klienta za to piszemy na "ty" (Paweł 16.10):
+  "Twoja strona", "Sprawdź", "Wyślij", nigdy "Wasza", "sprawdźcie",
+  "Wyślijcie". Pilnuje tego reguła "forma wy" w spojnosc.mjs. Wyjątki, których nie
   ruszamy: dane rejestrowe w stopce i w danych strukturalnych (Paweł Iwanek,
   NIP, REGON), strona /cv, przełącznik /nie-licz-mnie, który dotyczy jednej
   przeglądarki, oraz cytaty cudzych wypowiedzi, bo te padają tak, jak padły.
@@ -84,7 +91,9 @@ ZASADY TWARDE, bez zmian:
   to Pawłowi jako zadanie z adresem i opisem, co dokładnie kliknąć.
 - Nie bombarduj produkcji: seria zapytań włącza zabezpieczenie Vercela.
 - Przed commitem: `RESEND_API_KEY=re_placeholder_build npx next build` oraz
-  `node scripts/spojnosc.mjs`. Potem commit, `git pull --rebase origin main`,
+  `node scripts/spojnosc.mjs`, a po buildzie `node scripts/jakosc.mjs`
+  (pisownia, obrazy, mapa witryny; ma wypisać JAKOSC OK; nowe słowo do
+  scripts/slownik/dozwolone.txt tylko, gdy to nie literówka). Potem commit, `git pull --rebase origin main`,
   `git push origin main`.
 - Po wdrożeniu zgłoś adresy: `node scripts/indexnow.mjs`.
 
@@ -97,6 +106,9 @@ NA KONIEC KAŻDEGO CYKLU dopisz wpis do dziennika
 **Ruch:** odsłony z ostatniej doby i źródła, prosto z raportu.
 **Dowód:** adres opublikowanego wpisu, lista wysłanych adresów, commit.
 **Dla Pawła:** co wymaga jego kliknięcia, z adresem. Pusto, jeśli nic.
+  Zanim napiszesz, że ktoś czeka w Zoho na odpowiedź, sprawdź folder Wysłane
+  (`poczta lista sent`, wątek po temacie i adresacie): 15.10 raport trzy razy
+  zgłosił Content Rocket i comparic jako czekające, choć odpowiedzi poszły 14.10 23:13.
 **Zostało otwarte:** dla następnego cyklu.
 
 NIE WYSYŁAJ MAILA. Raport zbiorczy wychodzi co cztery godziny osobnym

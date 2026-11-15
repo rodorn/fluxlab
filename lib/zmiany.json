@@ -1,162 +1,162 @@
 [
   {
-    "data": "2026-10-25T10:27:09+01:00",
-    "opis": "Scena leada: karta w telefonie nie wychodzi poza ekran"
+    "data": "2026-10-30T23:28:25+01:00",
+    "opis": "Dyskretne dźwięki interfejsu: cichy tik przy przyciskach, akord przy wyniku narzędzia, wyłącznik w stopce"
   },
   {
-    "data": "2026-10-25T10:24:25+01:00",
-    "opis": "Nić: efekt na końcu, kropka zlewa się z węzłem, start od przycisku; font hero bez blokowania; stopka bez prefetchu przy przewijaniu"
+    "data": "2026-10-30T18:44:06+01:00",
+    "opis": "Cykl 30.10 18:50: dziennik, otwarte zadania"
   },
   {
-    "data": "2026-10-25T00:09:44+02:00",
-    "opis": "Formularz: jedna siatka godzin zamiast suwaka, krótsze nazwy kafli"
+    "data": "2026-10-30T11:49:38+01:00",
+    "opis": "Cykl 30.10 11:49: poprawka godziny wpisu"
   },
   {
-    "data": "2026-10-25T00:02:55+02:00",
-    "opis": "Telefon w scenie leada: przy bezchmurnym niebie w nocy księżyc zamiast słońca"
+    "data": "2026-10-29T11:49:22+01:00",
+    "opis": "Cykl 29.10: godzina wpisu"
   },
   {
-    "data": "2026-10-24T23:59:05+02:00",
-    "opis": "Hero strony głównej z osadzonym podzbiorem Fraunces, pełny krój kursywy dociąga się po załadowaniu strony, poza ścieżką LCP"
+    "data": "2026-10-29T08:43:22+01:00",
+    "opis": "Cykl 29.10 08:43: brak zadania po blokadzie godzin, dziennik"
   },
   {
-    "data": "2026-10-24T23:46:28+02:00",
-    "opis": "Nić przelicza się, gdy węzły albo fioletowa sekcja przesuną się bez zmiany wysokości strony"
+    "data": "2026-10-29T04:46:50+01:00",
+    "opis": "Cykl 29.10 04:43: dziennik"
   },
   {
-    "data": "2026-10-24T23:38:45+02:00",
-    "opis": "Nić rysuje się za koralikiem: na starcie jest tylko rysunek w hero, dalsza linia i węzły pojawiają się tam, gdzie koralik już dojechał"
+    "data": "2026-10-29T04:44:22+01:00",
+    "opis": "Cykl 29.10 04:43: automatyzacja vs zatrudnienie, pierwszy akapit odpowiada, co się bardziej opłaca"
   },
   {
-    "data": "2026-10-24T23:30:17+02:00",
-    "opis": "Jedna linia przez stronę: nić wraca jako przedłużenie rysunku w hero, koralik jedzie ze stałą prędkością przez hero i dalej po nici za przewijaniem"
+    "data": "2026-10-29T03:46:51+01:00",
+    "opis": "Cykl 29.10 03:43: dziennik"
   },
   {
-    "data": "2026-10-24T23:21:55+02:00",
-    "opis": "Kroki pod formularzem zgodne z Meet jako domyślną formą kontaktu"
+    "data": "2026-10-29T03:44:07+01:00",
+    "opis": "Cykl 29.10 03:43: Gutschrift a KSeF, pierwszy akapit odpowiada, czy trafia do KSeF"
   },
   {
-    "data": "2026-10-24T23:19:13+02:00",
-    "opis": "Formularz kontaktu: Meet domyślnie jako pierwszy krok, zwykłe pola, komunikaty po polsku, terminy tego samego dnia z wyprzedzeniem 3 h"
+    "data": "2026-10-29T02:47:21+01:00",
+    "opis": "Cykl 29.10 02:43: dziennik"
   },
   {
-    "data": "2026-10-24T22:58:15+02:00",
-    "opis": "Podtytuł hero w jednej linii na desktopie"
+    "data": "2026-10-29T02:44:22+01:00",
+    "opis": "Cykl 29.10 02:43: sprawdź kontrahenta, pierwszy akapit mówi, jak sprawdzić firmę"
   },
   {
-    "data": "2026-10-24T22:56:49+02:00",
-    "opis": "Szybsze ładowanie na telefonie: GA po interakcji, bez intro, LCP od razu, Fraunces bez preload, etykieta nocna bez CLS"
+    "data": "2026-10-29T01:43:32+01:00",
+    "opis": "Cykl 29.10 01:43: dziennik"
   },
   {
-    "data": "2026-10-24T22:43:40+02:00",
-    "opis": "Usunięcie nici ze strony głównej, linia hero kończy się na wykresie"
+    "data": "2026-10-29T00:46:51+01:00",
+    "opis": "Cykl 29.10 00:43: dziennik"
   },
   {
-    "data": "2026-10-24T22:38:46+02:00",
-    "opis": "Płynne przewijanie: tło bez pełnoekranowych masek, nić bez objazdu przy hero, kropka znika"
+    "data": "2026-10-29T00:44:38+01:00",
+    "opis": "Cykl 29.10 00:43: analiza lokalizacji, pierwszy akapit odpowiada, jak ocenić lokal"
   },
   {
-    "data": "2026-10-24T22:28:09+02:00",
-    "opis": "Płynne przewijanie: nić statyczna, węzły przez IntersectionObserver, tło kursora bez obsługi scrolla; twarz w awatarze, połączenie linii"
+    "data": "2026-10-28T23:46:58+01:00",
+    "opis": "Cykl 28.10 23:43: dziennik"
   },
   {
-    "data": "2026-10-24T22:19:55+02:00",
-    "opis": "Nić bez przemalowywania strony przy przewijaniu: odsłanianie transformacjami"
+    "data": "2026-10-28T23:43:47+01:00",
+    "opis": "Cykl 28.10 23:43: dobór samochodu, pierwszy akapit odpowiada na pytanie o napęd"
   },
   {
-    "data": "2026-10-24T21:26:13+02:00",
-    "opis": "Światło kursora na tle każdej podstrony"
+    "data": "2026-10-28T22:46:43+01:00",
+    "opis": "Cykl 28.10 22:43: dziennik"
   },
   {
-    "data": "2026-10-24T21:13:32+02:00",
-    "opis": "Kursywa nagłówków: Fraunces 500 zamiast cienkiego Instrument Serif"
+    "data": "2026-10-28T22:44:05+01:00",
+    "opis": "Cykl 28.10 22:43: kalkulator JDG, pierwszy akapit odpowiada na pytanie"
   },
   {
-    "data": "2026-10-24T21:06:17+02:00",
-    "opis": "Kursywa nagłówków: display swap, żeby ą i ę nie zostawały w kroju zastępczym"
+    "data": "2026-10-28T17:43:24+01:00",
+    "opis": "Cykl 28.10 17:43: dziennik, zadania planu czekają na godziny"
   },
   {
-    "data": "2026-10-24T20:11:10+02:00",
-    "opis": "Kontakt: ten sam formularz co na stronie głównej zamiast starego z 6 polami"
+    "data": "2026-10-28T16:43:27+01:00",
+    "opis": "Cykl 28.10 16:43: dziennik, zadania planu czekają na godziny"
   },
   {
-    "data": "2026-10-24T19:41:39+02:00",
-    "opis": "Ikona karty w jednym kolorze jak znak w nagłówku"
+    "data": "2026-10-28T15:43:32+01:00",
+    "opis": "Cykl 28.10 15:43: dziennik, zadania planu czekają na godziny"
   },
   {
-    "data": "2026-10-24T19:41:10+02:00",
-    "opis": "Pasek Zasada, tryb ciemny, formularz jak list, znak fl"
+    "data": "2026-10-28T14:43:24+01:00",
+    "opis": "Cykl 28.10 14:43: dziennik, zadania planu czekają na godziny"
   },
   {
-    "data": "2026-10-24T19:29:19+02:00",
-    "opis": "Hero: punkty siatki jaśnieją pod kursorem"
+    "data": "2026-10-28T13:43:26+01:00",
+    "opis": "Cykl 28.10 13:43: dziennik, zadania planu czekają na godziny"
   },
   {
-    "data": "2026-10-24T18:54:50+02:00",
-    "opis": "Audyt: ostatni etap rośnie płynnie zamiast stać na 95%, licznik sekund"
+    "data": "2026-10-26T15:34:25+01:00",
+    "opis": "Krótki link /grupa-ksef: liczy wejście w liczniku ruchu i przekierowuje do grupy KSeF na Facebooku"
   },
   {
-    "data": "2026-10-24T18:11:54+02:00",
-    "opis": "Formularz: najpierw forma kontaktu, potem potrzeba i dane"
+    "data": "2026-10-26T06:48:57+01:00",
+    "opis": "Artykuł: certyfikat KSeF, link z faktury gdy KSeF nie działa"
   },
   {
-    "data": "2026-10-24T18:04:54+02:00",
-    "opis": "Kolofon: bez obcego słowa"
+    "data": "2026-10-25T23:44:11+01:00",
+    "opis": "CRM: zakup online przez Stripe Checkout w konfiguratorze /wlasny-crm"
   },
   {
-    "data": "2026-10-24T18:04:15+02:00",
-    "opis": "Stopka: kolofon z krojem i pomiarem odsłony na żywo"
+    "data": "2026-10-25T22:52:56+01:00",
+    "opis": "Subdomena mta-sts przekierowuje na fluxlab.pl poza plikiem polityki"
   },
   {
-    "data": "2026-10-24T17:56:03+02:00",
-    "opis": "Rysowane podkreślenia linków, jedna skala H1 na /materialy i 404"
+    "data": "2026-10-25T15:42:32+01:00",
+    "opis": "Handlowiec: postęp liczy się do końca audytu strony"
   },
   {
-    "data": "2026-10-24T17:53:22+02:00",
-    "opis": "Mniej ruchu: bez magnesu, kursora i tiltu; polska mikrotypografia; węższa paleta"
+    "data": "2026-10-25T15:17:00+01:00",
+    "opis": "Hero: jeden nagłówek, podtytuły bez CRM zależne od źródła"
   },
   {
-    "data": "2026-10-24T17:42:14+02:00",
-    "opis": "Usuń poświatę pod kursorem, zostaw przejście karty i obrys"
+    "data": "2026-10-25T15:04:01+01:00",
+    "opis": "Hero: Strony internetowe i narzędzia dla firm, słowo zależne od źródła wejścia"
   },
   {
-    "data": "2026-10-24T16:40:49+02:00",
-    "opis": "Kalkulator strony: podstrony, teksty, języki, produkty, opieka, pozycje z kwotami"
+    "data": "2026-10-25T14:59:26+01:00",
+    "opis": "Hero: powrót do poprzedniego nagłówka i podtytułu"
   },
   {
-    "data": "2026-10-24T16:31:27+02:00",
-    "opis": "Wygląd: większe H1 z szeryfową końcówką, ziarno i poświata za kursorem, przejście karta→podstrona"
+    "data": "2026-10-25T14:56:02+01:00",
+    "opis": "Hero: nagłówek bez dwuznaczności"
   },
   {
-    "data": "2026-10-24T16:22:44+02:00",
-    "opis": "Czat: zielona kropka online 11-23, status w stopce od 11:00"
+    "data": "2026-10-25T14:47:30+01:00",
+    "opis": "Hero: korzyść zamiast „strony i CRM”, automatyzacja pierwsza w ofercie, CRM w handlowcu tylko od 6 osób"
   },
   {
-    "data": "2026-10-24T16:16:54+02:00",
-    "opis": "Stopka: profile YouTube, TikTok, Instagram, X, LinkedIn zamiast Zleca.pl"
+    "data": "2026-10-25T14:40:06+01:00",
+    "opis": "Audyt: sąsiednie elementy nie sklejają się w fałszywe literówki"
   },
   {
-    "data": "2026-10-23T22:08:33+02:00",
-    "opis": "Strony WWW: taśma etapów buduje stronę w jednej ramce, makieta w barwach klienta jak prawdziwa strona, dymek czatu znika po 8 s"
+    "data": "2026-10-25T14:34:51+01:00",
+    "opis": "Handlowiec: ustalenia audytu pokazują miejsce i szczegół, poprawna odmiana podstron"
   },
   {
-    "data": "2026-10-22T14:34:13+02:00",
-    "opis": "Czcionki bez podmiany po załadowaniu: koniec skoków układu"
+    "data": "2026-10-25T14:24:55+01:00",
+    "opis": "Handlowiec: finanse ze sprawozdania pobierane po KRS zamiast zgadywania przez wyszukiwarkę"
   },
   {
-    "data": "2026-10-22T14:26:45+02:00",
-    "opis": "Czcionka Instrument Sans zamiast Geist, z polskimi znakami"
+    "data": "2026-10-25T14:12:38+01:00",
+    "opis": "Handlowiec: sam audytuje całą stronę w trakcie analizy i z wyniku decyduje, poprawki czy nowa strona"
   },
   {
-    "data": "2026-10-21T23:34:21+02:00",
-    "opis": "Kalkulator podatkowy: bez podziału na pół od 1800 px, wyniki zawsze pod danymi"
+    "data": "2026-10-25T13:55:14+01:00",
+    "opis": "Handlowiec: przy działającej stronie audyt całej strony zamiast nowej"
   },
   {
-    "data": "2026-10-21T16:58:58+02:00",
-    "opis": "Nagrywanie w formularzu: nagranie OGG z Firefoksa wysyłane z poprawnym rozszerzeniem, serwer ustala rozszerzenie z typu pliku"
+    "data": "2026-10-25T13:47:43+01:00",
+    "opis": "Handlowiec: sprzedaje korzyścią i zaprasza do telefonu, przycisk otwiera formularz na telefonie"
   },
   {
-    "data": "2026-10-21T16:45:07+02:00",
-    "opis": "Jak pracujemy: krótsze, spójne terminy, forma na ty"
+    "data": "2026-10-25T13:35:50+01:00",
+    "opis": "Handlowiec: opieka nad stroną i benchmarking w pakiecie według wielkości firmy"
   }
 ]
