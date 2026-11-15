@@ -30,6 +30,77 @@ float g=mix(mix(.3,.42,d),.34,w);
 gl_FragColor=vec4(c*a*g,a*g);
 }`;
 
+const FS_NOC = `#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+uniform vec2 r;uniform float t;uniform vec2 m;uniform float w;uniform float s;
+float h(vec2 p){vec3 q=fract(vec3(p.xyx)*.1031);q+=dot(q,q.yzx+33.33);return fract((q.x+q.y)*q.z);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+1.),f.x),f.y);}
+float fbm(vec2 p){float v=0.,a=.5;mat2 R=mat2(.8,.6,-.6,.8);
+for(int i=0;i<4;i++){v+=a*n(p);p=R*p*2.03;a*=.5;}return v;}
+vec3 gwiazdy(vec2 px,float gest,float ziarno){
+vec3 c=vec3(0.);
+vec2 par=(m-.5*r)/s;
+for(int k=0;k<3;k++){
+float fk=float(k),sz=24.+fk*20.;
+vec2 g=(px+par*(.008+fk*.012))/sz+fk*31.7+ziarno;
+vec2 id=floor(g),f=fract(g);
+float hv=h(id);
+float jest=step(1.-gest*(.18+.07*fk),hv);
+vec2 o=.2+.6*vec2(h(id+3.7),h(id+9.1));
+float dd=length(f-o)*sz;
+float rad=.45+fk*.3+h(id+5.3)*.6;
+float tw=.55+.45*sin(t*(.6+2.2*h(id+1.9))+hv*60.);
+float b=jest*tw*(smoothstep(rad+1.,0.,dd)+.22*exp(-dd*.4));
+c+=mix(vec3(.72,.8,1.),vec3(1.,.9,.78),h(id+7.3))*b*(.5+.25*fk);
+}
+return c;}
+vec4 galaktyka(vec2 fc){
+float sz=clamp((r.x/s-640.)/600.,0.,1.);
+float R=mix(r.x*.78,min(r.x*.36,r.y*.66),sz);
+vec2 C=vec2(r.x*mix(.84,.84,sz),r.y*mix(.83,.52,sz))+(m-.5*r)*.015;
+vec2 q=(fc-C)/R;
+float a0=-.42;q=mat2(cos(a0),sin(a0),-sin(a0),cos(a0))*q;q.y/=.42;
+float rr=length(q),th=atan(q.y,q.x),ob=t*.05,lg=log(rr+.001)*4.2;
+float ram=pow(.5+.5*sin(2.*(th-ob)+lg),2.5);
+float ca=cos(ob),sa=sin(ob);
+vec2 qr=mat2(ca,-sa,sa,ca)*q;
+float pl=fbm(qr*3.6+7.);
+float dysk=exp(-rr*2.6)*smoothstep(1.3,.55,rr);
+float jadro=exp(-rr*rr*24.);
+float pas=pow(.5+.5*sin(2.*(th-ob)+lg-.9),10.)*smoothstep(.08,.35,rr);
+float j=dysk*(.2+1.15*ram)*(.5+.95*pl)*(1.-.55*pas)+jadro*1.5;
+vec3 kol=mix(vec3(.47,.42,1.),vec3(.36,.82,1.),clamp(rr*1.3*pl,0.,1.));
+kol=mix(kol,vec3(1.,.91,.8),clamp(jadro*1.4+exp(-rr*7.)*.45,0.,1.));
+vec2 g=qr*R/(s*6.),id=floor(g),f=fract(g)-.5;
+vec2 o=(vec2(h(id+2.1),h(id+8.3))-.5)*.6;
+vec2 dq=mat2(ca,sa,-sa,ca)*((f-o)*6.*s/R);
+float dpx=length(vec2(dq.x,dq.y*.42))*R/s;
+float pg=clamp(j*1.5,0.,1.);
+float gw=step(1.-pg*.5,h(id+4.4))*smoothstep(1.4,0.,dpx)*(.6+.4*sin(t*1.7+h(id)*50.));
+float al=clamp(j*.68+gw*.8,0.,1.);
+return vec4(kol*j*.68+vec3(.95,.96,1.)*gw*.8,al);}
+void main(){
+vec2 fc=gl_FragCoord.xy,px=fc/s;
+vec3 c=gwiazdy(px,1.,0.);
+float al=clamp(max(c.r,max(c.g,c.b)),0.,1.);
+if(w<.5){vec4 g=galaktyka(fc);c=c*(1.-g.a)+g.rgb;al=al*(1.-g.a)+g.a;}
+else{
+vec2 uv=(fc-.5*r)/r.y;
+float dl=dot(uv,normalize(vec2(.45,1.)))+.08*sin(uv.x*2.3+1.);
+float pl=fbm(uv*3.+vec2(t*.012,0.));
+float pas=exp(-dl*dl*16.)*(.35+.9*pl);
+c+=gwiazdy(px,pas*2.2,57.)*.8;
+vec3 mg=mix(vec3(.85,.85,1.),vec3(.6,.85,1.),pl)*pas*.16;
+c+=mg;al=clamp(max(al,max(c.r,max(c.g,c.b))),0.,1.);
+}
+c=min(c,vec3(al));
+gl_FragColor=vec4(c,al);
+}`;
+
 type Odcien = "hero" | "zasada";
 
 export default function SwiatloFraktal({
@@ -58,12 +129,17 @@ export default function SwiatloFraktal({
       gl.compileShader(s);
       return s;
     };
-    const pr = gl.createProgram()!;
-    gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS));
-    gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS));
-    gl.linkProgram(pr);
-    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
-    gl.useProgram(pr);
+    const program = (fs: string) => {
+      const pr = gl.createProgram()!;
+      gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS));
+      gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs));
+      gl.bindAttribLocation(pr, 0, "a");
+      gl.linkProgram(pr);
+      return gl.getProgramParameter(pr, gl.LINK_STATUS) ? pr : null;
+    };
+    const pJasny = program(FS);
+    const pNoc = program(FS_NOC);
+    if (!pJasny) return;
     gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
     gl.bufferData(
       gl.ARRAY_BUFFER,
@@ -72,19 +148,29 @@ export default function SwiatloFraktal({
     );
     gl.enableVertexAttribArray(0);
     gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
-    const u = (k: string) => gl.getUniformLocation(pr, k);
-    const uR = u("r"),
-      uT = u("t"),
-      uM = u("m"),
-      uD = u("d"),
-      uW = u("w");
-    gl.uniform1f(uW, odcien === "zasada" ? 1 : 0);
+    let uR: WebGLUniformLocation | null = null,
+      uT: WebGLUniformLocation | null = null,
+      uM: WebGLUniformLocation | null = null,
+      uD: WebGLUniformLocation | null = null,
+      uS: WebGLUniformLocation | null = null;
+    const noc = () => ciemny === 1 && pNoc !== null;
+    const uzyj = () => {
+      const pr = noc() ? pNoc! : pJasny;
+      gl.useProgram(pr);
+      const u = (k: string) => gl.getUniformLocation(pr, k);
+      uR = u("r");
+      uT = u("t");
+      uM = u("m");
+      uD = u("d");
+      uS = u("s");
+      gl.uniform1f(u("w"), odcien === "zasada" ? 1 : 0);
+    };
 
-    const skala = 0.4;
     const spokoj = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const kursor = matchMedia("(pointer: fine)").matches && !spokoj;
     const html = document.documentElement;
     let ciemny = html.classList.contains("dark") ? 1 : 0;
+    let skala = 0.4;
     const mysz = { x: 0.62, y: 0.42, cx: 0.62, cy: 0.42 };
     let widoczny = false,
       raf = 0,
@@ -92,6 +178,7 @@ export default function SwiatloFraktal({
     const t0 = performance.now() - 30000;
 
     const rozmiar = () => {
+      skala = noc() ? Math.min(devicePixelRatio || 1, 1.5) : 0.4;
       const b = cv.getBoundingClientRect();
       cv.width = Math.max(1, Math.round(b.width * skala));
       cv.height = Math.max(1, Math.round(b.height * skala));
@@ -105,6 +192,7 @@ export default function SwiatloFraktal({
       gl.uniform1f(uT, spokoj ? 40 : (teraz - t0) / 1000);
       gl.uniform2f(uM, mysz.cx * cv.width, (1 - mysz.cy) * cv.height);
       gl.uniform1f(uD, ciemny);
+      gl.uniform1f(uS, skala);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
 
@@ -124,6 +212,7 @@ export default function SwiatloFraktal({
       raf = 0;
     };
 
+    uzyj();
     rozmiar();
     const ro = new ResizeObserver(() => {
       rozmiar();
@@ -137,7 +226,11 @@ export default function SwiatloFraktal({
     });
     io.observe(cv);
     const mo = new MutationObserver(() => {
-      ciemny = html.classList.contains("dark") ? 1 : 0;
+      const nowy = html.classList.contains("dark") ? 1 : 0;
+      if (nowy === ciemny) return;
+      ciemny = nowy;
+      uzyj();
+      rozmiar();
       rysuj(performance.now());
     });
     mo.observe(html, { attributes: true, attributeFilter: ["class"] });
