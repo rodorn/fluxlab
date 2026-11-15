@@ -329,6 +329,11 @@ const SYTUACJE: Sytuacja[] = [
           "Terminy PIT, CIT, VAT i ZUS dla Twojej formy firmy w jednym kalendarzu, z przypomnieniami i przesunięciami przez weekendy i święta.",
       },
       {
+        href: "/adresy-do-edoreczen",
+        powod:
+          "Chcesz pisać do kontrahentów przez e-Doręczenia? Z listy NIP dostaniesz adresy wpisane w KRS i listę firm, które ich jeszcze nie mają.",
+      },
+      {
         href: "/rejestr-cen",
         powod:
           "Przecena bez informacji o najniższej cenie z trzydziestu dni jest naruszeniem, a sprawdzenie pokazuje konkretne karty produktów.",

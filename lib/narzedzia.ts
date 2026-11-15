@@ -297,6 +297,13 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Adresy do e-Doręczeń z listy NIP",
+    description:
+      "Wklej do 50 numerów NIP, a dostaniesz plik z adresami do e-Doręczeń wpisanymi do KRS i listę firm bez adresu.",
+    href: "/adresy-do-edoreczen",
+    ikona: "lupa",
+  },
+  {
     title: "Kalkulator ZUS 2026 i 2027",
     description:
       "Składki społeczne i zdrowotna dla dużego ZUS, preferencyjnego, Małego ZUS Plus i ulgi na start, miesięcznie i rocznie. Każda stawka z linkiem do aktu.",

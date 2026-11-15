@@ -328,6 +328,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Licznik liczony codziennie z Monitora Sądowego i Gospodarczego: ile podmiotów sąd skierował do rozwiązania bez likwidacji. Z ostatnich dni roboczych."
   },
   {
+    "url": "/adresy-do-edoreczen",
+    "tytul": "Adresy do e-Doręczeń z listy firm, za darmo",
+    "opis": "Wklej listę NIP i pobierz plik z adresami do e-Doręczeń wpisanymi do KRS. Do 50 firm na raz, za darmo."
+  },
+  {
     "url": "/czujka-rejestrowa",
     "tytul": "Twój dłużnik może zniknąć z KRS w trzy miesiące",
     "opis": "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy jest na niej kontrahent. Monitoring od 99 zł."

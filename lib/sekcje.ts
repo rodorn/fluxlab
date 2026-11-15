@@ -139,6 +139,7 @@ export const SEKCJE: Sekcja[] = [
           s("/sprawdzenie-nip", "Sprawdzenie NIP"),
           s("/sprawdz-kontrahenta", "Sprawdzony kontrahent"),
           s("/czujka-rejestrowa", "Dłużnik znika z rejestru"),
+          s("/adresy-do-edoreczen", "Adresy do e-Doręczeń z listy NIP"),
           s("/analiza-lokalizacji", "Analiza lokalizacji pod punkt"),
           s("/audyt-kurierski", "Audyt faktur kurierskich"),
         ],
