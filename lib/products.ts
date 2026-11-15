@@ -886,7 +886,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "automatyzacja",
-    name: "Faktury z maila na Dysk i do arkusza",
+    name: "Faktury z maila na Dysk",
     tagline: "Faktury kosztowe rozsypane po skrzynce",
     desc: "Faktury w PDF z poczty same trafiają do folderów miesięcznych na Dysku Google, a do arkusza dopisuje się wiersz z datą, nadawcą i linkiem. Księgowa ma wszystko w jednym miejscu.",
     price: "29 zł/mies.",
@@ -901,7 +901,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "automatyzacja",
-    name: "Transkrypcja nagrań ze streszczeniem",
+    name: "Transkrypcja nagrań",
     tagline: "Nagranie, którego nikt nie chce odsłuchiwać",
     desc: "Wklejasz link do nagrania, a mailem dostajesz streszczenie w punktach i pełny tekst w załączniku. Do 10 godzin nagrań w miesiącu.",
     price: "49 zł/mies.",
@@ -916,7 +916,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "automatyzacja",
-    name: "Protokół ze spotkania z listą zadań",
+    name: "Protokół ze spotkania",
     tagline: "Po spotkaniu nikt nie pamięta ustaleń",
     desc: "Z nagrania spotkania powstaje protokół: podsumowanie, decyzje, zadania z osobą i terminem oraz gotowy mail do uczestników.",
     price: "79 zł/mies.",
