@@ -12,4 +12,4 @@ export function parsujWycene(tekst: string): Pozycja[] | string {
   return wyn;
 }
 
-export const zl = (n: number) => `${n.toLocaleString("pl-PL", { maximumFractionDigits: 2 })} zł`;
+export const zl = (n: number) => `${n.toLocaleString("pl-PL", { minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 })} zł`;
