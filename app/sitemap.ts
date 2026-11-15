@@ -595,6 +595,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/pilnowanie-konkurentow`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/czytelnosc-tekstow`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

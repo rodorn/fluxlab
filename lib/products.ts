@@ -247,6 +247,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Pilnowanie zmian u konkurentów",
+    tagline: "Tygodniowy mail: co konkurenci zmienili na swoich stronach",
+    desc: "Netto, miesięcznie. Zapisujemy stan stron do 3 konkurentów i co poniedziałek wysyłamy listę zmian: nowe i zniknięte podstrony, tytuł i nagłówek strony głównej oraz kwoty z cenników. Rezygnacja w każdej chwili.",
+    price: "29 zł/mies.",
+    href: "/pilnowanie-konkurentow#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz pilnowanie",
+    bullets: [
+      "do 3 konkurentów",
+      "nowe podstrony i zmiany nagłówka",
+      "kwoty z cenników: co doszło, co zniknęło",
+    ],
+  },
+  {
+    category: "www",
     name: "Pilnowanie rekordów DNS",
     tagline: "Mail, gdy ktoś zmieni rekordy Twojej domeny",
     desc: "Netto, miesięcznie. Codziennie porównujemy rekordy domeny z zapisanym stanem i piszemy tylko wtedy, gdy coś się zmieni: co usunięto i co dodano. Rezygnacja w każdej chwili.",
