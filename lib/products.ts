@@ -232,6 +232,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Czytelność i poprawność tekstów strony",
+    tagline: "Literówki, długie zdania i frazy do poprawy w jednym raporcie",
+    desc: "Netto, jednorazowo. Pobieramy do 12 podstron, sprawdzamy pisownię słownikiem i wskazujemy zdania do skrócenia oraz urzędowe frazy z prostszym zamiennikiem. Mail z PDF w kilka minut.",
+    price: "19 zł",
+    href: "/czytelnosc-tekstow#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz raport",
+    bullets: [
+      "literówki z podpowiedziami",
+      "zdania do skrócenia z miejscem podziału",
+      "frazy z prostszym zamiennikiem",
+    ],
+  },
+  {
+    category: "www",
     name: "Pilnowanie rekordów DNS",
     tagline: "Mail, gdy ktoś zmieni rekordy Twojej domeny",
     desc: "Netto, miesięcznie. Codziennie porównujemy rekordy domeny z zapisanym stanem i piszemy tylko wtedy, gdy coś się zmieni: co usunięto i co dodano. Rezygnacja w każdej chwili.",

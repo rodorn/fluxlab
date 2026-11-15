@@ -246,6 +246,11 @@ const SYTUACJE: Sytuacja[] = [
         powod:
           "Mail 30, 14 i 3 dni przed końcem certyfikatu i domeny, żeby ostrzeżenie w przeglądarce nigdy się nie pojawiło.",
       },
+      {
+        href: "/czytelnosc-tekstow",
+        powod:
+          "Literówka na stronie głównej kosztuje zaufanie. Raport pokazuje literówki, zdania do skrócenia i frazy, które klient musi tłumaczyć.",
+      },
     ],
   },
   {

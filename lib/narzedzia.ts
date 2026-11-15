@@ -107,6 +107,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Czytelność i poprawność tekstów strony",
+    pytanie: "Czy teksty na stronie da się czytać bez potknięć?",
+    description:
+      "Wklej fragment tekstu i zobacz za darmo długie zdania i urzędowe frazy. Pełny raport z literówkami dla całej strony kosztuje 19 zł.",
+    href: "/czytelnosc-tekstow",
+    ikona: "lista",
+  },
+  {
     title: "Opisy produktów z CSV",
     pytanie: "Nie chce Ci się pisać opisów do sklepu?",
     description:
