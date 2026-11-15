@@ -82,6 +82,22 @@ OFERTA["rata-komis"] = {
   pole2: "Oprocentowanie kredytu w %, np. 9,5 (opcjonalnie)",
 };
 
+OFERTA["auto-wycena"] = {
+  nazwa: "Wycena auta z ogłoszeń",
+  netto: 19,
+  miesiecznie: false,
+  strona: "/wycena-auta-z-ogloszen",
+  pole: "Link do ogłoszenia auta na Otomoto",
+};
+
+OFERTA["auto-alert"] = {
+  nazwa: "Alert nowych ogłoszeń auta",
+  netto: 19,
+  miesiecznie: true,
+  strona: "/alert-nowych-ogloszen-auta",
+  pole: "Link do wyszukiwania na Otomoto (strona z wynikami i Twoimi filtrami)",
+};
+
 export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
 
 const OFERTY_POZYCJI: Record<string, string[]> = {

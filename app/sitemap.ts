@@ -350,6 +350,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/wycena-auta-z-ogloszen`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/alert-nowych-ogloszen-auta`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/kalkulator-raty-komis`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

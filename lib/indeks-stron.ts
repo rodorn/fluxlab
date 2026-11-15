@@ -278,6 +278,16 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Wprost z danych operatora."
   },
   {
+    "url": "/wycena-auta-z-ogloszen",
+    "tytul": "Wycena auta z ogłoszeń Otomoto, 19 zł",
+    "opis": "Raport cen podobnych aut z Otomoto dla Twojego ogłoszenia: mediana, zakres cen i najbardziej podobne oferty. Mail zaraz po zamówieniu."
+  },
+  {
+    "url": "/alert-nowych-ogloszen-auta",
+    "tytul": "Alert nowych ogłoszeń aut z Otomoto, 19 zł/mies.",
+    "opis": "Mail z nowymi ogłoszeniami spełniającymi Twoje kryteria z Otomoto, sprawdzane co pół godziny. Pierwszy mail ze stanem na start po zamówieniu."
+  },
+  {
     "url": "/alert-stop-procentowych",
     "tytul": "Alert zmian stóp NBP i WIRON, 19 zł/mies.",
     "opis": "Mail, gdy NBP zmieni stopy procentowe albo WIRON 3M ruszy o co najmniej 0,05 pp. Pierwszy mail z aktualnym stanem zaraz po zamówieniu."
