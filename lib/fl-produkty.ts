@@ -58,7 +58,14 @@ export async function aktywni(produkt: string): Promise<Subskrybent[]> {
   return wynik;
 }
 
-const sekret = () => process.env.RUCH_SEKRET ?? "";
+const sekret = () => process.env.AUTOMAT_SEKRET ?? "";
+
+/** Trasy wołane cronem z VPS: nagłówek x-automat musi równać się AUTOMAT_SEKRET. */
+export function automatDozwolony(req: Request): boolean {
+  const s = sekret();
+  const n = req.headers.get("x-automat") ?? "";
+  return s.length > 20 && n.length === s.length && timingSafeEqual(Buffer.from(n), Buffer.from(s));
+}
 
 export function podpis(produkt: string, email: string): string {
   return createHmac("sha256", sekret()).update(`fl:${produkt}:${email.toLowerCase()}`).digest("base64url").slice(0, 22);

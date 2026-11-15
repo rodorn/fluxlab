@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { aktywni, linkWypisu, ustaw, wyslijMail } from "@/lib/fl-produkty";
+import { aktywni, automatDozwolony, linkWypisu, ustaw, wyslijMail } from "@/lib/fl-produkty";
 import { dobaDoMaila, PRODUKT_RCE, zlozMail } from "@/lib/rce-mail";
 
 export const runtime = "nodejs";
@@ -10,9 +10,7 @@ export const maxDuration = 300;
 /** Wywoływane z crona na VPS co 10 minut po 14:15. Idempotentne: każdy subskrybent
  *  ma fl_ostatnia (data doby, którą dostał), więc druga wysyłka tej samej doby nie idzie. */
 export async function POST(request: Request) {
-  const s = process.env.AUTOMAT_SEKRET;
-  if (!s || request.headers.get("x-automat") !== s)
-    return new NextResponse(null, { status: 401 });
+  if (!automatDozwolony(request)) return new NextResponse(null, { status: 401 });
   const dane = await dobaDoMaila();
   if (!dane || !dane.jutro) return NextResponse.json({ czeka: true });
   const lista = (await aktywni(PRODUKT_RCE)).filter(
