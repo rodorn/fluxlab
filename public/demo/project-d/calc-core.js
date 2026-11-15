@@ -95,7 +95,30 @@
     }
     input.setAttribute("data-pole", pole.id);
 
-    if (pole.jednostka && pole.typ !== "select") {
+    if (pole.suwak && pole.typ !== "select") {
+      var suwak = el("input", {
+        type: "range",
+        class: "fx-suwak",
+        "aria-label": pole.etykieta,
+        value: input.value,
+      });
+      suwak.min = pole.suwak.min;
+      suwak.max = pole.suwak.max;
+      suwak.step = pole.suwak.krok || 1;
+      suwak.value = input.value;
+      suwak.addEventListener("input", function () {
+        input.value = suwak.value;
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+      input.addEventListener("input", function () {
+        if (input.value !== "") suwak.value = input.value;
+      });
+      input.classList.add("fx-input-krotkie");
+      var rzad = el("div", { class: "fx-input-grupa fx-suwak-rzad" }, [suwak, input]);
+      if (pole.jednostka)
+        rzad.appendChild(el("span", { class: "fx-jednostka", text: pole.jednostka }));
+      wrap.appendChild(rzad);
+    } else if (pole.jednostka && pole.typ !== "select") {
       var grupa = el("div", { class: "fx-input-grupa" }, [input]);
       grupa.appendChild(
         el("span", { class: "fx-jednostka", text: pole.jednostka }),
@@ -468,6 +491,17 @@
         }
       }
       sekcja.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    form.addEventListener("input", function (ev) {
+      if (sekcja.hidden || !ev.target.hasAttribute("data-pole")) return;
+      var values = zbierzWartosci(mount);
+      var wynik = cfg.oblicz(values);
+      stanWynik.wejscie = values;
+      stanWynik.podsumowanie = wynik.podsumowanie || [];
+      stanWynik.pelne = wynik.pelne || [];
+      renderWiersze(podsumowanie, wynik.podsumowanie || []);
+      renderWiersze(pelneWiersze, wynik.pelne || []);
     });
 
     return { mount: mount };

@@ -443,7 +443,7 @@
         opis: "Wpisz zużycie prądu, a podpowiemy pojemność magazynu i porównamy trzy warianty: koszt, oszczędność, autokonsumpcję i okres zwrotu.",
         ctaOblicz: "Porównaj warianty",
         pola: [
-          pole("zuzycieRoczne", "Roczne zużycie prądu", 6000, "kWh", 100, "Z rocznego rachunku za prąd."),
+          Object.assign(pole("zuzycieRoczne", "Roczne zużycie prądu", 6000, "kWh", 100, "Z rocznego rachunku za prąd."), { suwak: { min: 1000, max: 15000, krok: 100 } }),
           pole("mocPV", "Moc instalacji fotowoltaicznej", 5, "kWp", 0.5),
           {
             id: "inwerter",
@@ -470,6 +470,7 @@
           },
           {
             id: "liczbaMeri",
+            suwak: { min: 1, max: 4, krok: 1 },
             etykieta: "Moduły Deye RW-M6.1-B",
             typ: "number",
             wartosc: 2,
@@ -481,6 +482,7 @@
           },
           {
             id: "liczbaBreeze",
+            suwak: { min: 1, max: 6, krok: 1 },
             etykieta: "Moduły Ledvance LES-HV-4K",
             typ: "number",
             wartosc: 4,
@@ -494,6 +496,7 @@
           pole("dodatkoweZuzycieEV", "Dodatkowe zużycie: auto elektryczne", 0, "kWh", 100, "Około 15-20 kWh na 100 km. 0, jeśli brak."),
           {
             id: "udzialNoc",
+            suwak: { min: 0, max: 100, krok: 5 },
             etykieta: "Zużycie wieczorem i w nocy",
             typ: "number",
             wartosc: 50,
