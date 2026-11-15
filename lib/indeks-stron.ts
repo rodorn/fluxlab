@@ -348,6 +348,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wklej listę NIP i pobierz plik z adresami do e-Doręczeń wpisanymi do KRS. Do 50 firm na raz, za darmo."
   },
   {
+    "url": "/weryfikacja-rachunkow",
+    "tytul": "Weryfikacja rachunku przed przelewem",
+    "opis": "Wgrywasz paczkę przelewów w CSV i dostajesz listę rachunków spoza białej listy VAT. 29 zł netto miesięcznie."
+  },
+  {
     "url": "/czujka-rejestrowa",
     "tytul": "Twój dłużnik może zniknąć z KRS w trzy miesiące",
     "opis": "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy jest na niej kontrahent. Monitoring od 99 zł."

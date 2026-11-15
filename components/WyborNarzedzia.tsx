@@ -92,12 +92,17 @@ const SYTUACJE: Sytuacja[] = [
   {
     klucz: "przelew",
     etykieta: "Mamy komuś zapłacić albo odzyskać pieniądze",
-    odpowiedz: "Cztery sprawdzenia, wszystkie przed przelewem, nie po nim.",
+    odpowiedz: "Pięć sprawdzeń, wszystkie przed przelewem, nie po nim.",
     wskazania: [
       {
         href: "/sprawdzenie-nip",
         powod:
           "Wykaz podatników VAT mówi, czy firma istnieje, czy jest czynnym podatnikiem i ile rachunków zgłosiła.",
+      },
+      {
+        href: "/weryfikacja-rachunkow",
+        powod:
+          "Paczka przelewów z banku w pliku CSV i lista rachunków, których nie ma na białej liście VAT albo które należą do innej firmy.",
       },
       {
         href: "/numer-ksef",

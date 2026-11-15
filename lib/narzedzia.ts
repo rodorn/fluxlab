@@ -313,6 +313,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Weryfikacja rachunków przed przelewem",
+    pytanie: "Czy rachunki z paczki przelewów są na białej liście VAT?",
+    description:
+      "Wgraj CSV z banku, a pokażemy rachunki spoza białej listy albo należące do innej firmy niż kontrahent. Pierwsze pięć sprawdzisz za darmo.",
+    href: "/weryfikacja-rachunkow",
+    ikona: "tarcza",
+  },
+  {
     title: "Adresy do e-Doręczeń z listy NIP",
     description:
       "Wklej do 50 numerów NIP, a dostaniesz plik z adresami do e-Doręczeń wpisanymi do KRS i listę firm bez adresu.",

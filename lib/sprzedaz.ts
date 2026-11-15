@@ -161,3 +161,11 @@ export function warianty(p: { id: string; nazwa: string; cena: string; href: str
     lista.unshift({ etykieta: `${p.nazwa}: zakres do wyceny`, cena: p.cena });
   return { pytanie: PYTANIA[p.href] ?? "Który wariant?", lista };
 }
+
+OFERTA["weryfikacja-rachunkow"] = {
+  nazwa: "Weryfikacja rachunków przed przelewem",
+  netto: 29,
+  miesiecznie: true,
+  strona: "/weryfikacja-rachunkow",
+  dostep: "/weryfikacja-rachunkow/panel",
+};
