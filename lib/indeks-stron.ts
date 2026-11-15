@@ -413,6 +413,21 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Raz na dobę sprawdzamy ceny produktów konkurencji na podanych stronach i piszemy, gdy któraś się zmieni."
   },
   {
+    "url": "/audyt-strony-co-miesiac",
+    "tytul": "Audyt strony co miesiąc od 19 zł",
+    "opis": "Co miesiąc audyt całej strony tym samym pomiarem co audyt jednorazowy, z porównaniem do poprzedniego i raportem w załączniku."
+  },
+  {
+    "url": "/straznik-konwersji",
+    "tytul": "Strażnik konwersji od 29 zł",
+    "opis": "Co 6 godzin sprawdzamy, czy znaczniki Google i Meta są na stronie i działają, i piszemy, gdy któregoś zabraknie."
+  },
+  {
+    "url": "/pilnowanie-zmian-u-konkurentow",
+    "tytul": "Pilnowanie zmian u konkurentów od 29 zł",
+    "opis": "Co tydzień sprawdzamy mapę strony i cennik trzech konkurentów i piszemy, jakie podstrony i ceny doszły."
+  },
+  {
     "url": "/straznik-formularza",
     "tytul": "Strażnik formularza kontaktowego od 19 zł",
     "opis": "Raz na dobę wysyłamy zgłoszenie testowe przez formularz na Twojej stronie. Gdy przestanie przechodzić, dostajesz mail, zanim stracisz zapytania."
