@@ -398,6 +398,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Podajesz VIN, a dostajesz mailem raport: poprawność numeru, wycofania marki w UE i lista kontrolna oględzin. 19 zł netto."
   },
   {
+    "url": "/porownanie-seo",
+    "tytul": "Porównanie SEO z 3 konkurentami",
+    "opis": "Podajesz swoją stronę i trzech konkurentów, a mailem dostajesz zestawienie: podstrony, szybkość, opinie Google i jakość tytułów. 29 zł netto."
+  },
+  {
     "url": "/czujka-rejestrowa",
     "tytul": "Twój dłużnik może zniknąć z KRS w trzy miesiące",
     "opis": "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy jest na niej kontrahent. Monitoring od 99 zł."

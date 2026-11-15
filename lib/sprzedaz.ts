@@ -242,3 +242,11 @@ OFERTA["sprawdzenie-auta"] = {
   strona: "/sprawdzenie-auta",
   pole: "VIN (17 znaków), opcjonalnie model auta",
 };
+
+OFERTA["porownanie-seo"] = {
+  nazwa: "Porównanie SEO z 3 konkurentami",
+  netto: 29,
+  miesiecznie: false,
+  strona: "/porownanie-seo",
+  pole: "Twoja domena i do 3 domen konkurentów, oddzielone spacją",
+};

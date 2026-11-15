@@ -162,6 +162,7 @@ export const SEKCJE: Sekcja[] = [
           s("/rejestr-cen", "Rejestr cen w sklepie"),
           s("/panel-zwrotow", "Panel zwrotów i reklamacji"),
           s("/audyt-poczty", "Audyt poczty firmowej"),
+          s("/porownanie-seo", "Porównanie SEO z 3 konkurentami"),
         ],
       },
       {
