@@ -238,6 +238,7 @@ export const MENU: PozycjaMenu[] = [
         linki: [
           l("/audyt-strony", "0 zł"),
           l("/pogotowie-automatyzacji", "diagnoza 49 zł"),
+          l("/integracje-api", "wpięcie w CRM 299 zł"),
           l("/automatyzacja-leadow-crm", "od 900 zł"),
           l("/wdrozenie-n8n-cena", "od 790 zł"),
         ],
