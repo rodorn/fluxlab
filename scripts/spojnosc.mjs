@@ -340,6 +340,7 @@ const BEZ_RAMY = new Set([
   "app/cv/page.tsx",
   "app/wycena/page.tsx",
   "app/demo/nu-nrg/page.tsx",
+  "app/demo/project-d/page.tsx",
   "app/leady/formularz/[token]/page.tsx",
   "app/leady/kalkulator/[token]/page.tsx",
   "app/leady/rezerwacje/[token]/page.tsx",
