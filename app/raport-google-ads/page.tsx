@@ -33,7 +33,7 @@ export default function Page() {
         },
         {
           title: "Alert przepalania",
-          desc: "Gdy fraza wyda w ciągu 30 dni co najmniej 50 zł bez żadnej konwersji, dostajesz mail w dniu, w którym próg został przekroczony. Próg zmienisz jedną liczbą w skrypcie.",
+          desc: "Gdy fraza wyda w ciągu 30 dni co najmniej 50 zł bez żadnej konwersji, dostajesz mail w dniu, w którym próg został przekroczony. Próg zmienisz jedną liczbą w kodzie.",
         },
         {
           title: "Lista fraz bez konwersji",
