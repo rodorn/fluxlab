@@ -180,3 +180,11 @@ OFERTA["weryfikacja-rachunkow"] = {
   strona: "/weryfikacja-rachunkow",
   dostep: "/weryfikacja-rachunkow/panel",
 };
+
+OFERTA["monitoring-kontrahentow"] = {
+  nazwa: "Monitoring kontrahentów na białej liście VAT",
+  netto: 29,
+  miesiecznie: true,
+  strona: "/monitoring-kontrahentow",
+  dostep: "/monitoring-kontrahentow/panel",
+};

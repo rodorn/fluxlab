@@ -358,6 +358,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wgrywasz paczkę przelewów w CSV i dostajesz listę rachunków spoza białej listy VAT. 29 zł netto miesięcznie."
   },
   {
+    "url": "/monitoring-kontrahentow",
+    "tytul": "Monitoring kontrahentów na białej liście VAT",
+    "opis": "Codzienne sprawdzanie statusu VAT i rachunków do 50 kontrahentów, alert mailem przy zmianie. 29 zł netto miesięcznie."
+  },
+  {
     "url": "/czujka-rejestrowa",
     "tytul": "Twój dłużnik może zniknąć z KRS w trzy miesiące",
     "opis": "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy jest na niej kontrahent. Monitoring od 99 zł."

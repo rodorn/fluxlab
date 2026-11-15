@@ -337,6 +337,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "tarcza",
   },
   {
+    title: "Monitoring kontrahentów na białej liście VAT",
+    pytanie: "Czy któryś kontrahent wypadł z białej listy VAT?",
+    description:
+      "Podajesz NIP-y, a my codziennie sprawdzamy status VAT i rachunki. Mail dostajesz tylko przy zmianie. Pierwsze trzy firmy sprawdzisz za darmo.",
+    href: "/monitoring-kontrahentow",
+    ikona: "tarcza",
+  },
+  {
     title: "Adresy do e-Doręczeń z listy NIP",
     description:
       "Wklej do 50 numerów NIP, a dostaniesz plik z adresami do e-Doręczeń wpisanymi do KRS i listę firm bez adresu.",
