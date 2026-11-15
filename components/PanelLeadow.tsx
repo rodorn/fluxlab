@@ -75,7 +75,7 @@ export default function PanelLeadow({
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Ankieta NPS</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Link dla Twoich klientów: <a className="text-accent underline" href={adresAnkiety}>{adresAnkiety}</a>
+            Link dla Twoich klientów: <a className="break-all text-accent underline" href={adresAnkiety}>{adresAnkiety}</a>
           </p>
           {wynikNps === null ? (
             <p className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-5 text-sm text-gray-600 dark:text-gray-400">Jeszcze nikt nie odpowiedział.</p>
@@ -124,7 +124,7 @@ export default function PanelLeadow({
       <section>
         <h2 className="text-xl font-bold text-gray-900 dark:text-white">Zgłoszenia</h2>
         <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          Formularz: <a className="text-accent underline" href={adresForm}>{adresForm}</a>
+          Formularz: <a className="break-all text-accent underline" href={adresForm}>{adresForm}</a>
         </p>
         {leady.length === 0 ? (
           <p className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-5 text-sm text-gray-600 dark:text-gray-400">
