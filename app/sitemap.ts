@@ -380,6 +380,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/faktury-kosztowe-z-ksef-na-mail`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/paczka-miesieczna-dla-biura`,
       changeFrequency: "weekly" as const,
       priority: 0.7,

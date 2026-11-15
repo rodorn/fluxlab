@@ -7,7 +7,7 @@ const POLE =
   "w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:border-accent";
 const ETYKIETA = "block text-sm font-medium text-gray-900 dark:text-white";
 
-export default function DostepKsef({ sesja }: { sesja: string }) {
+export default function DostepKsef({ sesja, codziennie = false }: { sesja: string; codziennie?: boolean }) {
   const [nip, setNip] = useState("");
   const [token, setToken] = useState("");
   const [biuro, setBiuro] = useState("");
@@ -52,8 +52,9 @@ export default function DostepKsef({ sesja }: { sesja: string }) {
       <div aria-live="polite">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dane zapisane</h1>
         <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">
-          Pierwsza paczka z fakturami z bieżącego miesiąca przyjdzie na maila w ciągu godziny. Kolejne dochodzą pierwszego dnia
-          każdego miesiąca.
+          {codziennie
+            ? "W ciągu godziny przyjdzie mail z fakturami kosztowymi z ostatnich siedmiu dni. Potem rano, w dni, w których w KSeF pojawią się nowe faktury kosztowe, dostaniesz ich komplet."
+            : "Pierwsza paczka z fakturami z bieżącego miesiąca przyjdzie na maila w ciągu godziny. Kolejne dochodzą pierwszego dnia każdego miesiąca."}
         </p>
       </div>
     );
@@ -74,9 +75,9 @@ export default function DostepKsef({ sesja }: { sesja: string }) {
         <input value={token} onChange={(e) => setToken(e.target.value)} autoComplete="off" spellCheck={false} className={`${POLE} mt-1.5`} />
       </label>
       <label className="block">
-        <span className={ETYKIETA}>E-mail biura rachunkowego (opcjonalnie)</span>
+        <span className={ETYKIETA}>{codziennie ? "Dodatkowy adres e-mail, na przykład księgowej (opcjonalnie)" : "E-mail biura rachunkowego (opcjonalnie)"}</span>
         <input type="email" value={biuro} onChange={(e) => setBiuro(e.target.value)} autoComplete="off" className={`${POLE} mt-1.5`} />
-        <span className="mt-1 block text-xs text-gray-500 dark:text-gray-400">Bez adresu paczka trafia tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię.</span>
+        <span className="mt-1 block text-xs text-gray-500 dark:text-gray-400">{codziennie ? "Bez adresu faktury trafiają tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię." : "Bez adresu paczka trafia tylko do Ciebie. Jeśli go podasz, Ty dostajesz kopię."}</span>
       </label>
       <label className="flex cursor-pointer items-start gap-3">
         <input type="checkbox" checked={zgoda} onChange={(e) => setZgoda(e.target.checked)} className="mt-1 h-4 w-4 shrink-0" />
@@ -90,7 +91,7 @@ export default function DostepKsef({ sesja }: { sesja: string }) {
         </p>
       )}
       <button type="submit" disabled={laduje || !zgoda} className="btn-primary disabled:opacity-60">
-        {laduje ? "Zapisywanie…" : "Uruchom paczkę"}
+        {laduje ? "Zapisywanie…" : codziennie ? "Uruchom wysyłkę faktur" : "Uruchom paczkę"}
       </button>
     </form>
   );
