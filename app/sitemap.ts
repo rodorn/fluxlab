@@ -370,6 +370,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/kalkulator-pv-z-magazynem`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/wycena-auta-z-ogloszen`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

@@ -111,6 +111,15 @@ OFERTA["zdolnosc"] = {
   pole2: "Oprocentowanie kredytu w %, np. 7,5 (opcjonalnie)",
 };
 
+OFERTA["pv"] = {
+  nazwa: "Kalkulator PV z magazynem dla instalatora",
+  netto: 99,
+  miesiecznie: true,
+  strona: "/kalkulator-pv-z-magazynem",
+  pole: "Nazwa firmy i kontakt dla klientów (telefon lub e-mail)",
+  pole2: "Cena instalacji za kWp i magazynu za kWh w zł, np. 4500 i 2000 (opcjonalnie)",
+};
+
 export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
 
 const OFERTY_POZYCJI: Record<string, string[]> = {

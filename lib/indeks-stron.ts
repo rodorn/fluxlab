@@ -283,6 +283,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Kalkulator orientacyjnej zdolności kredytowej do wklejenia na stronę pośrednika: Twoja nazwa, kontakt i oprocentowanie. Kod w mailu po zamówieniu."
   },
   {
+    "url": "/kalkulator-pv-z-magazynem",
+    "tytul": "Kalkulator PV z magazynem na stronę instalatora, 99 zł/mies.",
+    "opis": "Kalkulator opłacalności fotowoltaiki z magazynem energii do wklejenia na stronę instalatora: Twoje ceny i kontakt. Kod w mailu po zamówieniu."
+  },
+  {
     "url": "/wycena-auta-z-ogloszen",
     "tytul": "Wycena auta z ogłoszeń Otomoto, 19 zł",
     "opis": "Raport cen podobnych aut z Otomoto dla Twojego ogłoszenia: mediana, zakres cen i najbardziej podobne oferty. Mail zaraz po zamówieniu."

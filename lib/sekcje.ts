@@ -181,6 +181,7 @@ export const SEKCJE: Sekcja[] = [
           s("/kalkulator-raty-komis", "Kalkulator raty dla komisu"),
           s("/alert-stop-procentowych", "Alert stóp NBP i WIRON"),
           s("/kalkulator-zdolnosci-kredytowej", "Kalkulator zdolności kredytowej"),
+          s("/kalkulator-pv-z-magazynem", "Kalkulator PV z magazynem"),
           s("/wycena-auta-z-ogloszen", "Wycena auta z ogłoszeń"),
           s("/alert-nowych-ogloszen-auta", "Alert nowych ogłoszeń auta"),
         ],
