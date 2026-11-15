@@ -29,9 +29,9 @@ export default function Page() {
       ctaNote="19 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
         {
-          przed: "Sprawdź też, czy",
-          kotwica: "sklep pokazuje poprawne zasady zwrotów",
-          href: "/sprawdz-zwroty",
+          przed: "Sprzedajesz online? Zobacz też",
+          kotwica: "panel zwrotów w sklepie",
+          href: "/panel-zwrotow",
           po: ".",
         },
       ]}

@@ -275,3 +275,5 @@ date
 remarketing
 Ireland
 Platforms
+charges
+refunds
