@@ -37,6 +37,7 @@ export const OFERTA: Record<string, Oferta> = {
   "polityka-hasel": { nazwa: "Polityka haseł dla firmy", netto: 19, miesiecznie: false, strona: "/polityka-hasel", pole: "Nazwa firmy" },
   "dns-pilnowanie": { nazwa: "Pilnowanie rekordów DNS jednej domeny", netto: 9, miesiecznie: true, strona: "/pilnowanie-dns", pole: "Domena do pilnowania (firma.pl)" },
   "bezpieczny-odbior": { nazwa: "Bezpieczny odbiór plików od klientów", netto: 19, miesiecznie: true, strona: "/bezpieczny-odbior-plikow", pole: "Nazwa firmy (widoczna dla nadawców)" },
+  "cookies-skan": { nazwa: "Polityka cookies ze skanu strony", netto: 49, miesiecznie: false, strona: "/polityka-cookies", pole: "Adres strony (firma.pl)" },
   "kopia-wp": { nazwa: "Kopia zapasowa WordPressa", netto: 29, miesiecznie: true, strona: "/kopia-wordpressa", pole: "Adres strony na WordPressie (firma.pl)" },
   "wp-wtyczki": { nazwa: "Miesięczny skan wtyczek WordPressa", netto: 29, miesiecznie: true, strona: "/skan-wtyczek-wordpress", pole: "Adres strony na WordPressie (firma.pl)" },
   "konkurenci-pilnowanie": { nazwa: "Pilnowanie zmian u konkurentów", netto: 29, miesiecznie: true, strona: "/pilnowanie-konkurentow", pole: "Adresy stron konkurentów (do 3, po spacji)" },

@@ -660,6 +660,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/polityka-cookies`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/kopia-wordpressa`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

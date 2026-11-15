@@ -322,6 +322,21 @@ export const PRODUCTS: Product[] = [
   },
   {
     category: "www",
+    name: "Polityka cookies ze skanu strony",
+    tagline: "Polityka z listą narzędzi, które faktycznie działają na stronie",
+    desc: "Netto, jednorazowo. Skanujemy stronę główną i do trzech podstron, wykrywamy analitykę, piksele, wideo i mapy, a politykę cookies w PDF wysyłamy mailem z uwagami o zgodach.",
+    price: "49 zł",
+    href: "/polityka-cookies#cennik",
+    grupa: "naprawy",
+    cta: "Zobacz politykę cookies",
+    bullets: [
+      "tabela narzędzi z dostawcami i czasem cookies",
+      "uwagi o brakującym banerze zgód",
+      "PDF do uzupełnienia danymi firmy",
+    ],
+  },
+  {
+    category: "www",
     name: "Skan wtyczek WordPressa",
     tagline: "Co miesiąc raport o nieaktualnych i porzuconych wtyczkach",
     desc: "Netto, miesięcznie. Sprawdzamy wtyczki widoczne na stronie i porównujemy z katalogiem wordpress.org: nowsze wersje, wtyczki wycofane i bez aktualizacji od ponad dwóch lat. Raport mailem co 30 dni.",
