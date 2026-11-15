@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /** Okno zgody na Google Analytics, Google Ads i piksel Meta (z reklamami dopasowanymi;
  *  fluxlab_zgoda_rem odróżnia ją od zgód sprzed 14.11.2026, które remarketingu nie obejmowały). Bez zgody oba działają w trybie
@@ -18,6 +19,7 @@ declare global {
 }
 
 export default function ZgodaCookies() {
+  const sciezka = usePathname();
   const [widoczne, setWidoczne] = useState(true);
 
   useEffect(() => {
@@ -49,6 +51,8 @@ export default function ZgodaCookies() {
     window.dispatchEvent(new Event("fluxlab-zgoda"));
     setWidoczne(false);
   };
+
+  if (sciezka?.startsWith("/embed/")) return null;
 
   return (
     <div

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -10,6 +11,7 @@ const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
  *  Samo wykonanie trwa ok. 100 ms, więc czeka, aż strona przestanie się
  *  przewijać, żeby nie przycinać ruchu. Odsłona jest liczona tak samo, tylko później. */
 export default function GoogleAnalytics() {
+  const sciezka = usePathname();
   const [gotowe, ustawGotowe] = useState(false);
 
   useEffect(() => {
@@ -49,12 +51,12 @@ export default function GoogleAnalytics() {
   }, []);
 
   useEffect(() => {
-    if (!gotowe || process.env.NODE_ENV !== "production" || !GA_MEASUREMENT_ID) return;
+    if (sciezka?.startsWith("/embed/") || !gotowe || process.env.NODE_ENV !== "production" || !GA_MEASUREMENT_ID) return;
     const tag = document.createElement("script");
     tag.async = true;
     tag.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
     document.head.append(tag);
-  }, [gotowe]);
+  }, [gotowe, sciezka]);
 
   return null;
 }
