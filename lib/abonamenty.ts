@@ -22,11 +22,7 @@ export const ABONAMENTY: Abonament[] = [
     href: "/strony-www",
     miesiecznie: "od 300 zł/mies.",
     kwota: 300,
-    wCenie: [
-      "monitoring działania strony",
-      "2, 5 albo 10 poprawek na kwartał",
-      "odpowiedzi na opinie i post co tydzień w wyższych pakietach",
-    ],
+    wCenie: ["monitoring działania strony", "2, 5 albo 10 poprawek na kwartał"],
     dodatki: [
       {
         nazwa: "Chatbot AI na bazie wiedzy o firmie",
