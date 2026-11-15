@@ -351,6 +351,7 @@ const BEZ_RAMY = new Set([
   "app/embed/newsletter/page.tsx",
   "app/embed/landing/page.tsx",
   "app/l/[slug]/page.tsx",
+  "app/w/[slug]/page.tsx",
 ]);
 for (const plik of walk("app").filter(
   (f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f),
