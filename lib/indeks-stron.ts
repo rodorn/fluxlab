@@ -493,6 +493,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wgraj dwie wersje umowy w PDF, a dostaniesz listę zmian: co było, co jest i co to zmienia. Wynik po kilku minutach, 19 zł netto."
   },
   {
+    "url": "/faktury-pdf-do-excela",
+    "tytul": "Faktury PDF do Excela, 49 zł/mies.",
+    "opis": "Wgraj faktury w PDF, a dostaniesz arkusz Excel z numerem, datami, NIP-ami i kwotami. Do 100 faktur w miesiącu, 49 zł netto miesięcznie."
+  },
+  {
     "url": "/odpowiedz-podatkowa",
     "tytul": "Wstępna odpowiedź podatkowa od AI, 29 zł",
     "opis": "Opisz sprawę podatkową, a dostaniesz wstępną odpowiedź z podstawą, krokami i ryzykami. Wynik po kilku minutach, 29 zł netto."

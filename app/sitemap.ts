@@ -640,6 +640,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/faktury-pdf-do-excela`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/porownanie-umow`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
