@@ -1,7 +1,7 @@
 import { esc, ramkaMaila } from "@/lib/dokumenty-mail";
 import { openaiJson } from "@/lib/openai-json";
 
-export type Tryb = "umowa" | "porownanie";
+export type Tryb = "umowa" | "porownanie" | "pytanie";
 
 const pdf = (nazwa: string, b: Buffer) => ({
   type: "input_file",
@@ -158,4 +158,47 @@ export function mailPorownanie(w: WynikPorownania): { temat: string; html: strin
     "To automatyczna analiza dokumentu, a nie porada prawna.",
   ].join("\n");
   return { temat: "Porównanie dwóch wersji umowy", html, tekst };
+}
+
+const SCHEMAT_PODATKI = {
+  type: "object",
+  additionalProperties: false,
+  required: ["odpowiedz", "podstawa", "kroki", "ryzyka", "braki"],
+  properties: {
+    odpowiedz: tekstow("Wstępna odpowiedź na pytanie w 3 do 6 zdaniach, na wprost"),
+    podstawa: lista("Przepisy i interpretacje, na których opiera się odpowiedź (ustawa, artykuł); tylko te, których jesteś pewien"),
+    kroki: lista("Co praktycznie zrobić, w kolejności"),
+    ryzyka: lista("Wyjątki, ryzyka i sytuacje, w których odpowiedź będzie inna"),
+    braki: lista("Czego zabrakło w opisie, a co zmienia odpowiedź; pusta lista, gdy niczego"),
+  },
+};
+
+export type WynikPodatkowy = { odpowiedz: string; podstawa: string[]; kroki: string[]; ryzyka: string[]; braki: string[] };
+
+export async function odpowiedzPodatkowa(pytanie: string): Promise<WynikPodatkowy> {
+  return openaiJson<WynikPodatkowy>({
+    instrukcja:
+      "Jesteś ekspertem od polskiego prawa podatkowego (PIT, CIT, VAT, ZUS, JDG, spółki). Odpowiadasz po polsku, rzeczowo i wyłącznie na podstawie opisu klienta; nie dopisuj faktów. Powołuj tylko przepisy, których jesteś pewien; gdy nie jesteś pewien, napisz to wprost zamiast zgadywać. Jeśli opis nie wystarcza do odpowiedzi, odpowiedz warunkowo i wypisz braki. Stan prawny z czasu Twojej wiedzy mógł się zmienić. To wstępna odpowiedź, nie interpretacja indywidualna i nie doradztwo podatkowe.",
+    wejscie: [{ role: "user", content: [{ type: "input_text", text: pytanie }] }],
+    nazwa: "odpowiedz_podatkowa",
+    schemat: SCHEMAT_PODATKI,
+    maxTokenow: 3500,
+    timeoutMs: 120_000,
+  });
+}
+
+export function mailPytanie(w: WynikPodatkowy, pytanie: string): { temat: string; html: string; tekst: string } {
+  const stopka =
+    '<p style="font-size:12px;color:#6b7280;margin-top:20px">To wstępna odpowiedź przygotowana automatycznie, a nie doradztwo podatkowe ani interpretacja indywidualna. Stan prawny mógł się zmienić; przed decyzją o większych skutkach sprawdź ją u doradcy podatkowego.</p>';
+  const html = ramkaMaila(
+    "Wstępna odpowiedź podatkowa",
+    `<p style="margin:0;color:#6b7280;font-size:13px">Twoje pytanie: ${esc(pytanie.slice(0, 400))}${pytanie.length > 400 ? "…" : ""}</p>
+<p style="margin:16px 0 0">${esc(w.odpowiedz)}</p>
+<h3 ${NAGLOWEK}>Podstawa</h3>${ul(w.podstawa)}
+<h3 ${NAGLOWEK}>Co zrobić</h3>${ul(w.kroki)}
+<h3 ${NAGLOWEK}>Ryzyka i wyjątki</h3>${ul(w.ryzyka)}
+${w.braki.length ? `<h3 ${NAGLOWEK}>Czego zabrakło w opisie</h3>${ul(w.braki)}` : ""}${stopka}`,
+  );
+  const tekst = [w.odpowiedz, "Podstawa: " + w.podstawa.join("; "), "Co zrobić: " + w.kroki.join("; "), "Ryzyka: " + w.ryzyka.join("; ")].join("\n\n");
+  return { temat: "Wstępna odpowiedź podatkowa", html, tekst };
 }

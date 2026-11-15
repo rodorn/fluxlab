@@ -4,7 +4,7 @@ import { esc, ramkaMaila, wyslijWynik } from "@/lib/dokumenty-mail";
 import { originDozwolony } from "@/lib/limit-ip";
 import { OFERTA } from "@/lib/sprzedaz";
 import { stripe } from "@/lib/stripe";
-import { analizujUmowe, mailPorownanie, mailUmowa, porownajUmowy } from "@/lib/umowy";
+import { analizujUmowe, mailPorownanie, mailPytanie, mailUmowa, odpowiedzPodatkowa, porownajUmowy } from "@/lib/umowy";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -65,20 +65,28 @@ export async function POST(req: Request) {
   if (meta.dok_start && Date.now() - Number(meta.dok_start) < BLOKADA_MS)
     return blad("Analiza trwa. Wynik przyjdzie mailem.", 409);
 
-  const pliki = f!.getAll("plik").filter((x): x is File => x instanceof File && x.size > 0);
-  const potrzeba = tryb === "porownanie" ? 2 : 1;
-  if (pliki.length !== potrzeba) return blad(potrzeba === 2 ? "Wgraj dwa pliki PDF." : "Wgraj jeden plik PDF.", 400);
-  if (pliki.some((x) => x.size > MAX_ZALACZNIKOW)) return blad("Plik jest za duży. Limit to 4 MB na całość.", 413);
-  if (pliki.reduce((s, x) => s + x.size, 0) > MAX_ZALACZNIKOW) return blad("Pliki są za duże. Limit to 4 MB łącznie.", 413);
-  const bufory = await Promise.all(pliki.map(async (x) => Buffer.from(await x.arrayBuffer())));
-  if (bufory.some((b) => b.subarray(0, 5).toString() !== "%PDF-")) return blad("To nie jest plik PDF.", 400);
+  const pytanie = tryb === "pytanie" ? String(f!.get("tekst") ?? "").trim() : "";
+  if (tryb === "pytanie" && (pytanie.length < 30 || pytanie.length > 4000))
+    return blad("Opisz sprawę w 30 do 4000 znakach: kto jesteś podatkowo, co się stało i o co pytasz.", 400);
+  const pliki = tryb === "pytanie" ? [] : f!.getAll("plik").filter((x): x is File => x instanceof File && x.size > 0);
+  let bufory: Buffer[] = [];
+  if (tryb !== "pytanie") {
+    const potrzeba = tryb === "porownanie" ? 2 : 1;
+    if (pliki.length !== potrzeba) return blad(potrzeba === 2 ? "Wgraj dwa pliki PDF." : "Wgraj jeden plik PDF.", 400);
+    if (pliki.some((x) => x.size > MAX_ZALACZNIKOW)) return blad("Plik jest za duży. Limit to 4 MB na całość.", 413);
+    if (pliki.reduce((s, x) => s + x.size, 0) > MAX_ZALACZNIKOW) return blad("Pliki są za duże. Limit to 4 MB łącznie.", 413);
+    bufory = await Promise.all(pliki.map(async (x) => Buffer.from(await x.arrayBuffer())));
+    if (bufory.some((b) => b.subarray(0, 5).toString() !== "%PDF-")) return blad("To nie jest plik PDF.", 400);
+  }
 
   const proby = Number(meta.dok_proby ?? 0) + 1;
   await ustaw(sesjaId, { dok_start: String(Date.now()), dok_proby: String(proby) });
 
   try {
     const mail =
-      tryb === "umowa"
+      tryb === "pytanie"
+        ? mailPytanie(await odpowiedzPodatkowa(pytanie), pytanie)
+        : tryb === "umowa"
         ? mailUmowa(await analizujUmowe(bufory[0], pliki[0].name), pliki[0].name)
         : mailPorownanie(await porownajUmowy(bufory[0], pliki[0].name, bufory[1], pliki[1].name));
     const wyslano = await wyslijWynik(email, mail.temat, mail.html, mail.tekst);

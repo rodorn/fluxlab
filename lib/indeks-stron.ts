@@ -478,6 +478,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wgraj dwie wersje umowy w PDF, a dostaniesz listę zmian: co było, co jest i co to zmienia. Wynik po kilku minutach, 19 zł netto."
   },
   {
+    "url": "/odpowiedz-podatkowa",
+    "tytul": "Wstępna odpowiedź podatkowa od AI, 29 zł",
+    "opis": "Opisz sprawę podatkową, a dostaniesz wstępną odpowiedź z podstawą, krokami i ryzykami. Wynik po kilku minutach, 29 zł netto."
+  },
+  {
     "url": "/opisy-produktow-z-csv",
     "tytul": "Opisy produktów do sklepu z pliku CSV, za darmo",
     "opis": "Wgraj plik z nazwami i cechami produktów, a dostaniesz ten sam plik z opisem krótkim, długim i metatagami. Do 25 produktów, bez płatności."
