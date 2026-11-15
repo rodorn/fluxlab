@@ -313,6 +313,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Obserwujemy strony programów dotacji na fotowoltaikę, magazyny energii i pompy ciepła i piszemy, gdy pojawi się nowy tekst o naborze lub terminie."
   },
   {
+    "url": "/kontrola-faktur-kosztowych",
+    "tytul": "Kontrola faktur kosztowych przed zapłatą, 39 zł",
+    "opis": "Rachunek z każdej faktury kosztowej z KSeF sprawdzamy w Białej Liście MF i piszemy, gdy nie należy do sprzedawcy."
+  },
+  {
     "url": "/faktury-kosztowe-z-ksef-na-mail",
     "tytul": "Faktury kosztowe z KSeF na maila codziennie, 29 zł/mies.",
     "opis": "Codziennie rano mail z nowymi fakturami kosztowymi z KSeF (XML, PDF, zestawienie CSV), bez logowania do KSeF."

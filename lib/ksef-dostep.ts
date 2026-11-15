@@ -1,6 +1,6 @@
 import { constants, publicEncrypt } from "node:crypto";
 
-export const PRODUKTY_KSEF = ["paczka-biuro", "faktury-kosztowe"];
+export const PRODUKTY_KSEF = ["paczka-biuro", "faktury-kosztowe", "kontrola-faktur"];
 
 export function nipOk(nip: string): boolean {
   if (!/^\d{10}$/.test(nip)) return false;

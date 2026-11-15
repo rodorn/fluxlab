@@ -26,7 +26,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ s
       <main className="pt-24 pb-16">
         <div className="container-wide">
           <div className="mx-auto max-w-2xl rounded-2xl border border-gray-100 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:p-12">
-            <DostepKsef sesja={sesja} codziennie={produkt === "faktury-kosztowe"} />
+            <DostepKsef sesja={sesja} codziennie={produkt === "faktury-kosztowe"} kontrola={produkt === "kontrola-faktur"} />
           </div>
         </div>
       </main>

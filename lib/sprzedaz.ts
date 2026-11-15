@@ -72,6 +72,7 @@ const DLA_KOGO = "Dla kogo: dom czy firma";
 
 OFERTA["dotacje-oze"] = { nazwa: "Nabory dotacji OZE: alert o zmianach na stronach programów", netto: 19, miesiecznie: true, strona: "/nabory-dotacji-oze", pole: DLA_KOGO };
 OFERTA["faktury-kosztowe"] = { nazwa: "Faktury kosztowe z KSeF na maila, codziennie", netto: 29, miesiecznie: true, strona: "/faktury-kosztowe-z-ksef-na-mail", dostep: "/ksef-dostep" };
+OFERTA["kontrola-faktur"] = { nazwa: "Kontrola faktur kosztowych z KSeF przed zapłatą", netto: 39, miesiecznie: true, strona: "/kontrola-faktur-kosztowych", dostep: "/ksef-dostep" };
 OFERTA["paczka-biuro"] = { nazwa: "Paczka miesięczna faktur z KSeF dla biura rachunkowego", netto: 19, miesiecznie: true, strona: "/paczka-miesieczna-dla-biura", dostep: "/ksef-dostep" };
 
 OFERTA["alert-stop"] = {

@@ -60,11 +60,12 @@ async function przypomnienia() {
     if (!email) continue;
     const link = `https://fluxlab.pl/ksef-dostep?sesja=${s.id}`;
     const codziennie = prod === "faktury-kosztowe";
+    const kontrola = prod === "kontrola-faktur";
     const w = await new Resend(process.env.RESEND_API_KEY).emails.send({
       from: FROM,
       to: email,
       replyTo: "pawel@fluxlab.pl",
-      subject: codziennie ? "Dokończ uruchomienie faktur kosztowych z KSeF" : "Dokończ uruchomienie paczki miesięcznej z KSeF",
+      subject: kontrola ? "Dokończ uruchomienie kontroli faktur kosztowych" : codziennie ? "Dokończ uruchomienie faktur kosztowych z KSeF" : "Dokończ uruchomienie paczki miesięcznej z KSeF",
       html: ramkaMaila(
         "Został jeden krok",
         `<p style="margin:0 0 12px">Płatność przyszła, ale nie podałeś jeszcze NIP-u i tokenu KSeF, więc nie mamy skąd pobrać faktur.</p><p style="margin:0"><a href="${link}">Podaj dane firmy</a>. Zajmuje to minutę, a pierwsze faktury przyjdą na maila w ciągu godziny.</p>`,

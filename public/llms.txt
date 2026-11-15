@@ -273,6 +273,7 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Monitoring dostępności strony](https://fluxlab.pl/monitoring-dostepnosci): sprawdzanie co 5 minut, alert mailem przy awarii, raport miesięczny, 19 zł netto miesięcznie.
 - [Alert wycieku haseł](https://fluxlab.pl/alert-wycieku-hasel): raz na dobę sprawdzenie adresu e-mail w publicznych bazach wycieków i mail przy nowym wycieku, 19 zł netto miesięcznie.
 - [Pilnowanie cen konkurencji](https://fluxlab.pl/pilnowanie-cen-konkurencji): raz na dobę odczyt cen z podanych stron produktów konkurencji i mail przy potwierdzonej zmianie, 39 zł netto miesięcznie.
+- [Kontrola faktur kosztowych przed zapłatą](https://fluxlab.pl/kontrola-faktur-kosztowych): rachunek z każdej faktury kosztowej z KSeF sprawdzany w Białej Liście MF, alert mailem przy niezgodności, 39 zł netto miesięcznie.
 - [Strażnik formularza kontaktowego](https://fluxlab.pl/straznik-formularza): raz na dobę zgłoszenie testowe przez formularz na stronie i alert mailem, gdy przestanie przechodzić, 19 zł netto miesięcznie.
 - [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)
 - [Kursy NBP do faktur walutowych](https://fluxlab.pl/kursy-nbp): kurs średni NBP z dnia poprzedzającego fakturę i wzór do Google Arkuszy, za darmo.
