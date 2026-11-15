@@ -155,6 +155,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/czat-ai-na-strone`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/rezerwacje-online`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

@@ -67,6 +67,7 @@ export default function PanelLeadow({
   const odpowiedz = produkty.includes("lead-odpowiedz");
   const nps = produkty.includes("lead-nps");
   const rez = produkty.includes("lead-rezerwacje");
+  const czat = produkty.includes("lead-czat");
   const kalk = produkty.includes("lead-kalkulator");
   const opinia = produkty.includes("lead-opinia");
   const [pr, setPr] = useState({ email: "", imie: "" });
@@ -113,6 +114,14 @@ export default function PanelLeadow({
 
   return (
     <div className="grid gap-10">
+      {czat && (
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Czat AI</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Czat: <a className="break-all text-accent underline" href={`https://fluxlab.pl/leady/czat/${token}`}>{`https://fluxlab.pl/leady/czat/${token}`}</a>. Wklej informacje o firmie w ustawieniach poniżej, bez nich czat jest wyłączony.
+          </p>
+        </section>
+      )}
       {rez && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Rezerwacje</h2>
@@ -188,7 +197,7 @@ export default function PanelLeadow({
           )}
         </section>
       )}
-      {(odpowiedz || nps || opinia || kalk || rez) && (
+      {(odpowiedz || nps || opinia || kalk || rez || czat) && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">{odpowiedz ? "Odpowiedź dla zgłaszającego" : "Ustawienia"}</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
@@ -208,6 +217,7 @@ export default function PanelLeadow({
                 <input className={POLE} inputMode="numeric" placeholder="Wizyta, minut" aria-label="Długość wizyty w minutach" value={ust.rez_min ?? ""} onChange={(e) => setUst({ ...ust, rez_min: e.target.value })} />
               </div>
             )}
+            {czat && <textarea className={POLE} rows={8} placeholder={"Informacje o firmie dla czatu: oferta, ceny, godziny, obszar działania, kontakt, najczęstsze pytania. Czat odpowie tylko na ich podstawie."} aria-label="Wiedza czatu AI" value={ust.wiedza ?? ""} onChange={(e) => setUst({ ...ust, wiedza: e.target.value })} />}
             {kalk && <textarea className={POLE} rows={6} placeholder={"Pozycje kalkulatora, jedna w linii:\nMontaż okna | 450\nMalowanie ścian | 1200"} aria-label="Pozycje kalkulatora wyceny" value={ust.wycena ?? ""} onChange={(e) => setUst({ ...ust, wycena: e.target.value })} />}
             {opinia && <input className={POLE} type="url" placeholder="Link do opinii Google, https://..." aria-label="Link do opinii Google" value={ust.opinia ?? ""} onChange={(e) => setUst({ ...ust, opinia: e.target.value })} />}
             <div className="flex items-center gap-4">

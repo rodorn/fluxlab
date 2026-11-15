@@ -204,6 +204,11 @@ const SYTUACJE: Sytuacja[] = [
           "Klient widzi orientacyjną cenę od razu, a Ty dostajesz kontakt z wybranymi usługami zamiast pytania „ile to kosztuje”.",
       },
       {
+        href: "/czat-ai-na-strone",
+        powod:
+          "Klienci pytają o ceny, terminy i zakres usług także wieczorem, a czat odpowiada od razu na podstawie informacji, które mu dasz.",
+      },
+      {
         href: "/rezerwacje-online",
         powod:
           "Klient sam wybiera wolny termin na Twojej stronie, a Ty nie odbierasz telefonów tylko po to, żeby ustalić godzinę.",

@@ -4,6 +4,7 @@ import { stripe } from "@/lib/stripe";
 import { daneFirmy, type Firma } from "@/lib/leady/dane-firmy";
 import { ocenaLeada, type Ocena } from "@/lib/leady/ocena";
 import { parsujRez, dniZeSlotami, etykieta, terazWarszawa } from "@/lib/leady/rezerwacje";
+import { odpowiedzCzatu, type Wiadomosc } from "@/lib/leady/czat";
 import { parsujWycene } from "@/lib/leady/wycena";
 import { PRODUKTY, mailKarta, mailNps, mailRezerwacjaGosc, mailRezerwacjaKlient, mailOpinia, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
 
@@ -15,6 +16,7 @@ export type Zgloszenie = { pola: Record<string, string>; firma: Firma | null; oc
 
 const db = dane("leady");
 const LIMIT_DOBA = 100;
+const LIMIT_CZAT = 300;
 const POLA = ["imie", "email", "telefon", "firma", "nip", "wiadomosc"];
 const AKTYWNE = new Set(["active", "trialing", "past_due"]);
 const ZNACZNIK = "przyjete_lead";
@@ -138,6 +140,27 @@ export async function zarezerwuj(token: string, wej: Record<string, unknown>): P
   return { kod: 202, termin };
 }
 
+export async function czatInfo(token: string) {
+  const k = await db.pobierz<Klient>("klienci", token);
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-czat")) return null;
+  if (!(k.dane.ustawienia.wiedza ?? "").trim()) return null;
+  return { firma: k.dane.ustawienia.firma || k.dane.nazwa || "" };
+}
+
+export async function czatOdpowiedz(token: string, historia: Wiadomosc[]): Promise<{ kod: number; blad?: string; odpowiedz?: string }> {
+  const k = await db.pobierz<Klient>("klienci", token);
+  const wiedza = (k?.dane.ustawienia.wiedza ?? "").trim();
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-czat") || !wiedza) return { kod: 404, blad: "Czat jest wyłączony." };
+  if ((await db.licz("czat", { klucz: k.id, od: new Date().toISOString().slice(0, 10) })) >= LIMIT_CZAT) return { kod: 429, blad: "Dzienny limit pytań wyczerpany. Napisz do nas bezpośrednio." };
+  await db.dodaj("czat", { klucz: k.id, dane: {} });
+  try {
+    return { kod: 200, odpowiedz: await odpowiedzCzatu(k.dane.ustawienia.firma || k.dane.nazwa || "", wiedza, historia) };
+  } catch (e) {
+    console.error("czat", e);
+    return { kod: 502, blad: "Nie mogę teraz odpowiedzieć. Spróbuj za chwilę." };
+  }
+}
+
 export async function kalkulatorInfo(token: string) {
   const k = await db.pobierz<Klient>("klienci", token);
   if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-kalkulator")) return null;
@@ -182,7 +205,7 @@ export async function zapiszUstawienia(p: string, wej: Record<string, unknown>):
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k) return { kod: 404, blad: "Nie ma takiego panelu." };
   const u: Record<string, string> = {};
-  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500], ["wycena", 2000], ["rez_dni", 7], ["rez_od", 5], ["rez_do", 5], ["rez_min", 3]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
+  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500], ["wycena", 2000], ["wiedza", 6000], ["rez_dni", 7], ["rez_od", 5], ["rez_do", 5], ["rez_min", 3]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
   if (u.kalendarz && !u.kalendarz.startsWith("https://")) return { kod: 400, blad: "Link do kalendarza musi zaczynać się od https://." };
   if (u.opinia && !u.opinia.startsWith("https://")) return { kod: 400, blad: "Link do opinii musi zaczynać się od https://." };
   const rez = parsujRez(u);
@@ -281,6 +304,7 @@ export async function sprzatanie() {
       await db.usunKlucz(k.id, "ankiety");
       await db.usunKlucz(k.id, "opinie");
       await db.usunKlucz(k.id, "rezerwacje");
+      await db.usunKlucz(k.id, "czat");
       await db.usun("klienci", k.id);
       await db.usun("indeks", d.email);
       raport.push(`${d.email}: usunięto dane po rezygnacji`);
@@ -288,6 +312,7 @@ export async function sprzatanie() {
   }
   await db.usunPrzed("zgloszenia", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("rezerwacje", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
+  await db.usunPrzed("czat", new Date(teraz - 30 * 86400000).toISOString());
   await db.usunPrzed("opinie", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("ankiety", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   return raport;

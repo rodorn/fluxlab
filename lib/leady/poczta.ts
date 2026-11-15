@@ -11,6 +11,7 @@ const ETYKIETA: Record<string, string> = { imie: "Imię", email: "E-mail", telef
 export const PRODUKTY: Record<string, { nazwa: string; opis: string }> = {
   "lead-opinia": { nazwa: "Prośba o opinię Google", opis: "mail z prośbą o opinię Google wysyłany Twoim klientom z panelu albo z Zapier i Make" },
   "lead-kalkulator": { nazwa: "Kalkulator wyceny na stronę", opis: "kalkulator wyceny do osadzenia na stronie, a zgłoszenia z wyceną trafiają do panelu i na Twój mail" },
+  "lead-czat": { nazwa: "Czat AI z wiedzy strony", opis: "czat AI do osadzenia na stronie, który odpowiada klientom wyłącznie na podstawie informacji, które wkleisz w panelu" },
   "lead-rezerwacje": { nazwa: "Rezerwacje online", opis: "kalendarz rezerwacji do osadzenia na stronie, potwierdzenia wysyłamy mailem Tobie i klientowi" },
   "lead-nps": { nazwa: "Ankieta NPS", opis: "ankieta NPS z linkiem dla Twoich klientów, wynik i odpowiedzi w panelu" },
   "lead-formularz": { nazwa: "Formularz leadów z listą zgłoszeń", opis: "formularz do osadzenia i lista zgłoszeń w panelu" },
@@ -100,6 +101,8 @@ export function mailPowitalny(token: string, panel: string, nowe: string[], nowy
     h += `<p><b>Prośba o opinię Google.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wklej link do wizytówki Google, a potem wpisuj adresy klientów, którym chcesz wysłać prośbę. Z Zapier i Make wyślij POST JSON (pola: email, imie) na <code>https://fluxlab.pl/api/opinia/${panel}</code>. Ten adres jest tajny.</p>`;
   if (nowe.includes("lead-kalkulator"))
     h += `<p><b>Kalkulator wyceny.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wpisz usługi i ceny (jedna linia: Nazwa | cena). Potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/kalkulator/${token}" title="Kalkulator wyceny" width="100%" height="640" style="border:0;max-width:520px"></iframe>`)}</pre><p>Klient zaznacza usługi, widzi sumę i zostawia kontakt. Zgłoszenie z wyceną dostajesz mailem i na liście w panelu.</p>`;
+  if (nowe.includes("lead-czat"))
+    h += `<p><b>Czat AI.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wklej informacje o firmie (oferta, ceny, godziny, kontakt), a czat odpowie klientom wyłącznie na ich podstawie. Potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/czat/${token}" title="Czat" width="100%" height="520" style="border:0;max-width:520px"></iframe>`)}</pre><p>Czat nie działa, dopóki nie wkleisz informacji. Treści rozmów nie zapisujemy.</p>`;
   if (nowe.includes("lead-rezerwacje"))
     h += `<p><b>Rezerwacje online.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> ustaw dni, godziny i długość wizyty, a potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/rezerwacje/${token}" title="Rezerwacja terminu" width="100%" height="680" style="border:0;max-width:520px"></iframe>`)}</pre><p>Klient wybiera wolny termin i zostawia kontakt. Zajęty termin znika z kalendarza, a potwierdzenie przychodzi mailem do obu stron.</p>`;
   if (nowe.includes("lead-nps"))

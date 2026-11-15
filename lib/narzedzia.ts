@@ -180,6 +180,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Czat AI na stronę",
+    pytanie: "Jak odpowiadać klientom na pytania o firmę o każdej porze?",
+    description:
+      "Zadaj pytanie przykładowej firmie i zobacz, jak czat odpowiada wyłącznie na podstawie wklejonych informacji. W abonamencie wklejasz własne.",
+    href: "/czat-ai-na-strone",
+    ikona: "lupa",
+  },
+  {
     title: "Rezerwacje online na stronę",
     pytanie: "Jak pozwolić klientom umawiać się samemu?",
     description:
