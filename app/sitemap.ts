@@ -265,6 +265,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/raport-edoreczen`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/kalendarz-terminow`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

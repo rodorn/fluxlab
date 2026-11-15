@@ -272,6 +272,7 @@ Ceny energii na jutro, godzina po godzinie, na https://fluxlab.pl/ceny-energii-j
 - [Pilnowanie certyfikatu i domeny](https://fluxlab.pl/pilnowanie-certyfikatu): darmowy zapis, sprawdzanie raz na dobę, mail 30, 14 i 3 dni przed końcem certyfikatu HTTPS i domeny.
 - [Monitoring dostępności strony](https://fluxlab.pl/monitoring-dostepnosci): sprawdzanie co 5 minut, alert mailem przy awarii, raport miesięczny, 19 zł netto miesięcznie.
 - [Kalkulator podatkowy JDG](https://fluxlab.pl/kalkulator-podatkowy)
+- [Raport obowiązku e-Doręczeń](https://fluxlab.pl/raport-edoreczen): po NIP albo KRS pokazuje rodzaj firmy, termin obowiązku adresu do e-Doręczeń i stan adresu z odpisu KRS, za darmo.
 - [Kalendarz terminów podatkowych i ZUS](https://fluxlab.pl/kalendarz-terminow): terminy PIT, CIT, VAT i ZUS dopasowane do formy firmy, subskrypcja kalendarza z przypomnieniami, za darmo.
 - [Czy klient ustali, komu płaci](https://fluxlab.pl/dane-sprzedawcy): NIP i rachunek znalezione na stronie, porównane z wykazem podatników VAT na dziś.
 - [Audyt CRM](https://fluxlab.pl/audyt-crm): 10 pytań tak/nie, wynik X/10 i obszar, który najbardziej opłaca się zautomatyzować.

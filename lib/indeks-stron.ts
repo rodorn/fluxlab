@@ -223,6 +223,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Duże firmy od 1 lutego 2026, pozostałe od 1 kwietnia, sprzedaż do 10 tys. zł miesięcznie i kasy od 1 stycznia 2027. Sprawdź swój termin, bez rejestracji."
   },
   {
+    "url": "/raport-edoreczen",
+    "tytul": "Raport obowiązku e-Doręczeń dla firmy za darmo",
+    "opis": "Wpisz NIP albo KRS i sprawdź, czy firma musi mieć adres do e-Doręczeń, od kiedy i czy spółka już go ma. Dane z KRS i wykazu VAT, bez rejestracji."
+  },
+  {
     "url": "/kalendarz-terminow",
     "tytul": "Kalendarz terminów podatkowych i ZUS za darmo",
     "opis": "Terminy PIT, CIT, VAT i ZUS dopasowane do formy firmy, z przypomnieniami w Google Kalendarzu, Apple i Outlooku. Odświeża się sam, bez rejestracji."

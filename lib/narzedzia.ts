@@ -32,6 +32,15 @@ export const businessTools: Narzedzie[] = [
     badge: "Nowość",
   },
   {
+    title: "Raport e-Doręczeń",
+    pytanie: "Czy firma musi mieć adres do e-Doręczeń?",
+    description:
+      "Wpisz NIP albo KRS, a dostaniesz raport: rodzaj firmy, termin obowiązku i stan adresu w odpisie KRS.",
+    href: "/raport-edoreczen",
+    ikona: "koperta",
+    badge: "Nowość",
+  },
+  {
     title: "Kalendarz terminów",
     pytanie: "Kiedy masz PIT, VAT i ZUS?",
     description:

@@ -275,6 +275,11 @@ const SYTUACJE: Sytuacja[] = [
           "Terminy na adres do doręczeń elektronicznych wchodzą etapami i zależą od tego, gdzie i kiedy podmiot został zarejestrowany.",
       },
       {
+        href: "/raport-edoreczen",
+        powod:
+          "Raport po NIP albo KRS pokazuje, czy firma musi mieć adres do doręczeń elektronicznych, od kiedy i czy spółka już go ma.",
+      },
+      {
         href: "/kalendarz-terminow",
         powod:
           "Terminy PIT, CIT, VAT i ZUS dla Twojej formy firmy w jednym kalendarzu, z przypomnieniami i przesunięciami przez weekendy i święta.",
