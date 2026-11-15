@@ -16,24 +16,26 @@ const tekst = (h: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
-/** Wyniki organiczne ze strony wyników Google: odnośnik z nagłówkiem h3, kolejność = pozycja. */
+/** Wyniki organiczne ze strony wyników Google: nagłówek h3, a adres z <cite> pod nim (href to przekierowanie /goto). */
 export function wyniki(html: string): Wynik[] {
   const out: Wynik[] = [];
   const widziane = new Set<string>();
-  for (const m of html.matchAll(/<a\b[^>]*?href="([^"]+)"[^>]*>((?:(?!<\/a>)[\s\S]){0,1500}?)<\/a>/g)) {
-    if (!/<h3\b/.test(m[2])) continue;
-    let url = m[1].replace(/&amp;/g, "&");
-    if (url.startsWith("/url?")) url = new URLSearchParams(url.slice(5)).get("q") ?? "";
-    if (!/^https?:\/\//.test(url)) continue;
+  const h3 = [...html.matchAll(/<h3\b[^>]*class="[^"]*LC20lb[^"]*"[^>]*>([\s\S]{0,400}?)<\/h3>/g)];
+  for (let i = 0; i < h3.length; i++) {
+    const od = h3[i].index! + h3[i][0].length;
+    const po = html.slice(od, h3[i + 1]?.index ?? od + 8000).slice(0, 8000);
+    const c = /<cite\b[^>]*>(?:<[^>]+>|\s)*(https?:\/\/[^<\s]+)/.exec(po);
+    if (!c) continue;
+    let url = c[1].replace(/&amp;/g, "&");
     let host = "";
     try {
       host = new URL(url).hostname;
     } catch {
       continue;
     }
-    if (/(^|\.)google\.[a-z.]+$/.test(host) || widziane.has(url)) continue;
-    widziane.add(url);
-    out.push({ pozycja: out.length + 1, url, tytul: tekst(m[2]).slice(0, 160) });
+    if (/(^|\.)google\.[a-z.]+$/.test(host) || widziane.has(host + url)) continue;
+    widziane.add(host + url);
+    out.push({ pozycja: out.length + 1, url, tytul: tekst(h3[i][1]).slice(0, 160) });
   }
   return out;
 }
