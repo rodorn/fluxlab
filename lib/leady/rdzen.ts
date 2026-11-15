@@ -3,7 +3,7 @@ import { dane } from "@/lib/fl-dane";
 import { stripe } from "@/lib/stripe";
 import { daneFirmy, type Firma } from "@/lib/leady/dane-firmy";
 import { ocenaLeada, type Ocena } from "@/lib/leady/ocena";
-import { PRODUKTY, mailKarta, mailNps, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
+import { PRODUKTY, mailKarta, mailNps, mailOpinia, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
 
 export type Klient = {
   email: string; nazwa: string; produkty: string[]; subskrypcje: Record<string, string>;
@@ -17,6 +17,7 @@ const POLA = ["imie", "email", "telefon", "firma", "nip", "wiadomosc"];
 const AKTYWNE = new Set(["active", "trialing", "past_due"]);
 const ZNACZNIK = "przyjete_lead";
 const RETENCJA_DNI = 365;
+const OPINIA_BLOKADA_DNI = 90;
 const PO_REZYGNACJI_DNI = 30;
 const tajny = (n: number) => randomBytes(n).toString("base64url");
 
@@ -94,20 +95,41 @@ export async function odpowiedzNps(token: string, wej: Record<string, unknown>):
   return { kod: 202 };
 }
 
+export async function wyslijProsbeOpinia(p: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string }> {
+  const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-opinia")) return { kod: 404, blad: "Nieznany albo wyłączony panel." };
+  const link = k.dane.ustawienia.opinia;
+  if (!link) return { kod: 400, blad: "Najpierw wklej link do opinii Google w ustawieniach panelu." };
+  const email = String(wej.email ?? "").trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { kod: 400, blad: "Adres e-mail wygląda na błędny." };
+  const imie = String(wej.imie ?? "").trim().slice(0, 120);
+  const wyslane = await db.lista<{ email: string; imie: string }>("opinie", { klucz: k.id, limit: 500 });
+  if (wyslane.some((o) => o.dane.email === email && Date.now() - Date.parse(o.utworzono) < OPINIA_BLOKADA_DNI * 86400000))
+    return { kod: 409, blad: `Do tego adresu prośba poszła w ciągu ostatnich ${OPINIA_BLOKADA_DNI} dni.` };
+  if ((await db.licz("opinie", { klucz: k.id, od: new Date().toISOString().slice(0, 10) })) >= LIMIT_DOBA)
+    return { kod: 429, blad: "Dzienny limit próśb wyczerpany." };
+  const nazwa = (k.dane.ustawienia.firma || k.dane.nazwa || "Fluxlab").replace(/["<>]/g, "");
+  await wyslij({ do: email, temat: `Jak oceniasz współpracę z firmą ${nazwa}?`, html: mailOpinia(nazwa, imie, link), od: nazwa, replyTo: k.dane.email });
+  await db.dodaj("opinie", { klucz: k.id, dane: { email, imie } });
+  return { kod: 202 };
+}
+
 export async function panel(p: string) {
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k) return null;
   const leady = (await db.lista<Zgloszenie>("zgloszenia", { klucz: k.id, limit: 200 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
   const ankiety = (await db.lista<{ ocena: number; komentarz: string }>("ankiety", { klucz: k.id, limit: 500 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
-  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady, ankiety };
+  const opinie = (await db.lista<{ email: string; imie: string }>("opinie", { klucz: k.id, limit: 200 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
+  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady, ankiety, opinie };
 }
 
 export async function zapiszUstawienia(p: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string }> {
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k) return { kod: 404, blad: "Nie ma takiego panelu." };
   const u: Record<string, string> = {};
-  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
+  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
   if (u.kalendarz && !u.kalendarz.startsWith("https://")) return { kod: 400, blad: "Link do kalendarza musi zaczynać się od https://." };
+  if (u.opinia && !u.opinia.startsWith("https://")) return { kod: 400, blad: "Link do opinii musi zaczynać się od https://." };
   await db.zmien("klienci", k.id, { dane: { ustawienia: u } });
   return { kod: 200 };
 }
@@ -198,12 +220,14 @@ export async function sprzatanie() {
     } else if (d.wylaczono && teraz - Date.parse(d.wylaczono) > PO_REZYGNACJI_DNI * 86400000) {
       await db.usunKlucz(k.id, "zgloszenia");
       await db.usunKlucz(k.id, "ankiety");
+      await db.usunKlucz(k.id, "opinie");
       await db.usun("klienci", k.id);
       await db.usun("indeks", d.email);
       raport.push(`${d.email}: usunięto dane po rezygnacji`);
     }
   }
   await db.usunPrzed("zgloszenia", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
+  await db.usunPrzed("opinie", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   await db.usunPrzed("ankiety", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   return raport;
 }

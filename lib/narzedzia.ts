@@ -156,6 +156,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Prośba o opinię Google",
+    pytanie: "Jak zdobyć więcej opinii w Google?",
+    description:
+      "Zobacz mail z przyciskiem do Twojej wizytówki, który dostaje klient po zakończonej współpracy. W abonamencie wysyłasz go z panelu albo z Zapier i Make.",
+    href: "/prosba-o-opinie-google",
+    ikona: "lupa",
+  },
+  {
     title: "Formularz leadów z listą zgłoszeń",
     pytanie: "Gdzie lądują zgłoszenia ze strony?",
     description:

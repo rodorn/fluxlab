@@ -189,6 +189,11 @@ const SYTUACJE: Sytuacja[] = [
           "Klienci oceniają firmę jednym kliknięciem, a Ty widzisz wynik NPS i komentarze krytyków, zanim ktoś odejdzie.",
       },
       {
+        href: "/prosba-o-opinie-google",
+        powod:
+          "Zadowolony klient dostaje mail z jednym przyciskiem do opinii w Google, więc Twoja wizytówka zbiera oceny bez przypominania się.",
+      },
+      {
         href: "/formularz-leadow",
         powod:
           "Zgłoszenia z Twojej strony trafiają od razu na mail i na listę w jednym miejscu, zamiast ginąć w skrzynce.",

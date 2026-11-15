@@ -18,6 +18,13 @@ export interface AnkietaWiersz {
   komentarz: string;
 }
 
+export interface OpiniaWiersz {
+  id: string;
+  czas: string;
+  email: string;
+  imie: string;
+}
+
 const POLE =
   "w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-3.5 py-2.5 text-sm text-gray-900 dark:text-white outline-none focus:border-accent";
 const KOLOR: Record<string, string> = {
@@ -32,6 +39,7 @@ export default function PanelLeadow({
   produkty,
   leady,
   ankiety,
+  opinie,
   ustawienia,
 }: {
   panel: string;
@@ -39,6 +47,7 @@ export default function PanelLeadow({
   produkty: string[];
   leady: LeadWiersz[];
   ankiety: AnkietaWiersz[];
+  opinie: OpiniaWiersz[];
   ustawienia: Record<string, string>;
 }) {
   const [ust, setUst] = useState(ustawienia);
@@ -46,6 +55,10 @@ export default function PanelLeadow({
   const [blad, setBlad] = useState("");
   const odpowiedz = produkty.includes("lead-odpowiedz");
   const nps = produkty.includes("lead-nps");
+  const opinia = produkty.includes("lead-opinia");
+  const [pr, setPr] = useState({ email: "", imie: "" });
+  const [lista, setLista] = useState(opinie);
+  const [prStan, setPrStan] = useState("");
   const prom = ankiety.filter((a) => a.ocena >= 9).length;
   const kryt = ankiety.filter((a) => a.ocena <= 6).length;
   const wynikNps = ankiety.length ? Math.round(((prom - kryt) / ankiety.length) * 100) : null;
@@ -67,10 +80,52 @@ export default function PanelLeadow({
     }
   }
 
+  async function wyslijProsbe(e: React.FormEvent) {
+    e.preventDefault();
+    setPrStan("Wysyłanie...");
+    const r = await fetch(`/api/opinia/${panel}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pr),
+    }).catch(() => null);
+    const d = await r?.json().catch(() => ({}));
+    if (r?.ok) {
+      setLista([{ id: String(Date.now()), czas: new Date().toISOString(), ...pr }, ...lista]);
+      setPr({ email: "", imie: "" });
+      setPrStan("Prośba wysłana.");
+    } else setPrStan(d?.error || "Nie udało się wysłać.");
+  }
+
   const adresForm = `https://fluxlab.pl/leady/formularz/${token}`;
 
   return (
     <div className="grid gap-10">
+      {opinia && (
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Prośba o opinię Google</h2>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Najpierw wklej niżej link do opinii z Twojego profilu firmy w Google i zapisz. Z Zapier i Make wyślij POST JSON (email, imie) na <span className="break-all">https://fluxlab.pl/api/opinia/{panel}</span>. Ten adres jest tajny.
+          </p>
+          <form onSubmit={wyslijProsbe} className="mt-4 grid gap-3 sm:grid-cols-2">
+            <input className={POLE} type="email" required placeholder="E-mail klienta" aria-label="E-mail klienta" value={pr.email} onChange={(e) => setPr({ ...pr, email: e.target.value })} />
+            <input className={POLE} placeholder="Imię klienta (opcjonalnie)" aria-label="Imię klienta" value={pr.imie} onChange={(e) => setPr({ ...pr, imie: e.target.value })} />
+            <div className="flex items-center gap-4 sm:col-span-2">
+              <button type="submit" className="btn-primary">Wyślij prośbę</button>
+              {prStan && <span className="text-sm text-gray-700 dark:text-gray-300">{prStan}</span>}
+            </div>
+          </form>
+          {lista.length > 0 && (
+            <ul className="mt-4 grid gap-2">
+              {lista.map((o) => (
+                <li key={o.id} className="flex flex-wrap justify-between gap-2 rounded-xl border border-gray-200 dark:border-gray-800 p-3 text-sm">
+                  <span className="break-all text-gray-900 dark:text-white">{[o.imie, o.email].filter(Boolean).join(" · ")}</span>
+                  <span className="text-xs text-gray-500">{new Date(o.czas).toLocaleString("pl-PL", { dateStyle: "short", timeStyle: "short", timeZone: "Europe/Warsaw" })}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
       {nps && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Ankieta NPS</h2>
@@ -99,18 +154,19 @@ export default function PanelLeadow({
           )}
         </section>
       )}
-      {(odpowiedz || nps) && (
+      {(odpowiedz || nps || opinia) && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">{odpowiedz ? "Odpowiedź dla zgłaszającego" : "Ustawienia"}</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             {odpowiedz
               ? "Każdy, kto zostawi adres e-mail, dostaje od razu wiadomość z poniższą treścią. Bez uzupełnienia mail do zgłaszającego nie jest wysyłany."
-              : "Nazwa firmy pojawia się w pytaniu ankiety."}
+              : "Nazwa firmy pojawia się w pytaniu ankiety i w mailu z prośbą o opinię."}
           </p>
           <form onSubmit={zapisz} className="mt-4 grid gap-3">
             <input className={POLE} placeholder="Nazwa firmy w podpisie" aria-label="Nazwa firmy" value={ust.firma ?? ""} onChange={(e) => setUst({ ...ust, firma: e.target.value })} />
             {odpowiedz && <textarea className={POLE} rows={5} placeholder="Krótka oferta: co robi firma, ile to kosztuje, kiedy nastąpi kontakt" aria-label="Treść oferty" value={ust.oferta ?? ""} onChange={(e) => setUst({ ...ust, oferta: e.target.value })} />}
             {odpowiedz && <input className={POLE} type="url" placeholder="Link do kalendarza, https://..." aria-label="Link do kalendarza" value={ust.kalendarz ?? ""} onChange={(e) => setUst({ ...ust, kalendarz: e.target.value })} />}
+            {opinia && <input className={POLE} type="url" placeholder="Link do opinii Google, https://..." aria-label="Link do opinii Google" value={ust.opinia ?? ""} onChange={(e) => setUst({ ...ust, opinia: e.target.value })} />}
             <div className="flex items-center gap-4">
               <button type="submit" disabled={stan === "zapis"} className="btn-primary disabled:opacity-50">
                 {stan === "zapis" ? "Zapis..." : "Zapisz"}
