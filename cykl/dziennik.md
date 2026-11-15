@@ -11502,3 +11502,15 @@ Kanały z 0 przez 3 doby: mail/wordpress (także 0 w 7 dniach), linkedin, perple
 **Dowód:** ~/Projekty/mail-audyt/osm-uslugi-2026-11-15.json, kandydaci-wp-2026-11-15b.json, wp15b.log („zbadane 283, wordpress 98, 2+ problemy 9, regula a 1, b 1, generic 55, kandydaci 5”).
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z7 od 14:40 (3 maile z Z6, cel 48: 44 + 3 = 47, brakuje 1); trafność usług w średnich miastach 9 z 283, reguła adresu nie jest już wąskim gardłem, wąskie gardło to liczba stron z 2+ problemami.
+
+## 2026-11-15 14:43
+**Kanał:** outreach, Z7 planu 15.11 „[!] budżet”: `budzet` daje rytm „wstrzymaj” (prognoza 127%, hamulec alarm), a plan dopuszcza [M] tylko poza nim; Z8 i Z9 dostępne od 16:40, czekam na Z8 o 16:40.
+**Ruch:** doba 209 odsłon, 147 osób (−7%); źródła: b2b-email 76, www.facebook.com 13, m.facebook.com 11, google-ads 10, facebook 9; Threads 15 sesji w 7 dni; uruchomienia narzędzi 0.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** 3 maile z Z6 (altusfitness.pl, endorfina-kielce.pl, interoptyk.com.pl) niewygenerowane, gotowe niewysłane 44 z celu 48; Z8 rozpisze partie z tego, co jest.
+
+## 2026-11-15 16:43
+**Kanał:** outreach i Google Ads, Z8 i Z9 planu 15.11 (oba [P], rytm `budzet` „wstrzymaj”, prognoza 125%): partie na poniedziałek w `~/Projekty/mail-audyt/partie-wp-2026-11-16.txt`, 4 partie, 44 maile (12/11/11/10), reguła b 0/2/3/2, `wyslij_segment.py wordpress --pliki=...` wysyła jedną partię; FL_adsGoogle dostała tabelę: google-ads 28 sesji w 7 dni, 1,11 odsłony na sesję, 0 form_start, /strony-www 7 sesji bez drugiej odsłony.
+**Ruch:** doba 206 odsłon, 145 osób (−8%); b2b-email 69, www.facebook.com 13, google-ads 11, m.facebook.com 11, facebook 9; uruchomienia narzędzi 0.
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z10 o 18:40 (fakty szkicu 16.11, klasa [A], przy „wstrzymaj” do „[!] budżet”), Z11 o 20:40, Z12 o 22:40.
