@@ -213,6 +213,7 @@ export const SEKCJE: Sekcja[] = [
           s("/wycena-auta-z-ogloszen", "Wycena auta z ogłoszeń"),
           s("/alert-nowych-ogloszen-auta", "Alert nowych ogłoszeń auta"),
           s("/newsletter-z-bloga", "Newsletter z bloga"),
+          s("/landing-z-formularza", "Landing z formularzem"),
         ],
       },
     ],

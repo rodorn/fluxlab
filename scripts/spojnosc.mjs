@@ -349,6 +349,8 @@ const BEZ_RAMY = new Set([
   "app/embed/zdolnosc/page.tsx",
   "app/embed/pv/page.tsx",
   "app/embed/newsletter/page.tsx",
+  "app/embed/landing/page.tsx",
+  "app/l/[slug]/page.tsx",
 ]);
 for (const plik of walk("app").filter(
   (f) => f.endsWith("/page.tsx") && !BEZ_RAMY.has(f),
@@ -438,7 +440,7 @@ for (const f of pages) {
   const body = read(f);
   if (body.startsWith('"use client"')) continue; // metadata siedzi w layout albo rodzicu
   if (f === "app/page.tsx") continue; // strona glowna dziedziczy metadata z layoutu
-  if (f === "app/embed/rata/page.tsx" || f === "app/embed/zdolnosc/page.tsx" || f === "app/embed/pv/page.tsx" || f === "app/embed/newsletter/page.tsx") continue; // wstawka iframe, noindex
+  if (f === "app/embed/rata/page.tsx" || f === "app/embed/zdolnosc/page.tsx" || f === "app/embed/pv/page.tsx" || f === "app/embed/newsletter/page.tsx" || f === "app/embed/landing/page.tsx") continue; // wstawka iframe, noindex
   if (f === "app/panel/page.tsx") continue; // chroniony haslem, poza indeksem
   if (/export async function generateMetadata/.test(body)) continue; // trasy dynamiczne
   if (!/export const metadata/.test(body))

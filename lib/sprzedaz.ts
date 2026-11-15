@@ -153,6 +153,15 @@ OFERTA["newsletter"] = {
   pole: "Adres kanału RSS bloga i nazwa nadawcy, np. https://blog.pl/feed Mój blog",
 };
 
+OFERTA["landing-formularz"] = {
+  nazwa: "Landing z formularzem w 10 minut",
+  netto: 29,
+  miesiecznie: true,
+  strona: "/landing-z-formularza",
+  pole: "Nazwa firmy lub oferty",
+  dostep: "/landing-ankieta",
+};
+
 export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
 
 const OFERTY_POZYCJI: Record<string, string[]> = {

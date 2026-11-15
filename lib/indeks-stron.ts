@@ -293,6 +293,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Nowe wpisy z bloga same trafiają mailem do czytelników zapisanych formularzem na Twojej stronie. Podwójne potwierdzenie, wypis w każdym mailu."
   },
   {
+    "url": "/landing-z-formularza",
+    "tytul": "Landing z formularzem w 10 minut, 29 zł/mies.",
+    "opis": "Strona ofertowa z formularzem pod adresem fluxlab.pl/l/twoja-nazwa. Wypełniasz ankietę po płatności, zgłoszenia trafiają mailem na Twój adres."
+  },
+  {
     "url": "/wycena-auta-z-ogloszen",
     "tytul": "Wycena auta z ogłoszeń Otomoto, 19 zł",
     "opis": "Raport cen podobnych aut z Otomoto dla Twojego ogłoszenia: mediana, zakres cen i najbardziej podobne oferty. Mail zaraz po zamówieniu."
