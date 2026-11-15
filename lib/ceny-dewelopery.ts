@@ -1,7 +1,14 @@
 /** Nr 80: mediany cen ofertowych mieszkań z jawnych danych deweloperów (dane.gov.pl). Liczy harvester, tu tylko odczyt z fl-dane. */
-import { dane } from "@/lib/fl-dane";
+import type { Dok } from "@/lib/fl-dane";
 
-const db = dane("ceny-dewelopery");
+async function czytaj<T>(sciezka: string): Promise<T | null> {
+  const r = await fetch(`${process.env.DANE_URL ?? "https://dane.fluxlab.pl"}/ceny-dewelopery/${sciezka}`, {
+    headers: { "X-Dane-Sekret": process.env.DANE_SEKRET ?? "" },
+    next: { revalidate: 3600 },
+    signal: AbortSignal.timeout(10000),
+  });
+  return r.ok ? ((await r.json()) as T) : null;
+}
 
 export type Miasto = {
   miasto: string;
@@ -28,11 +35,11 @@ export type Meta = {
 export async function ceny(): Promise<{ miasta: Miasto[]; meta: Meta | null }> {
   try {
     const [m, meta] = await Promise.all([
-      db.lista<Miasto>("mediany", { limit: 500 }),
-      db.pobierz<Meta>("meta", "dzis"),
+      czytaj<{ dokumenty: Dok<Miasto>[] }>("mediany?limit=500"),
+      czytaj<Dok<Meta>>("meta/dzis"),
     ]);
     return {
-      miasta: m.map((x) => x.dane).sort((a, b) => b.oferty - a.oferty),
+      miasta: (m?.dokumenty ?? []).map((x) => x.dane).sort((a, b) => b.oferty - a.oferty),
       meta: meta?.dane ?? null,
     };
   } catch {
