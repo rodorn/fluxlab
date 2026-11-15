@@ -27,7 +27,11 @@ export default function Page() {
       lead="Podajesz nazwę firmy, a po płatności dostajesz mailem PDF z zasadami dla zespołu: długość haseł, menedżer haseł, dwustopniowe logowanie i co zrobić, gdy ktoś odchodzi z firmy. Dokument jest gotowy do wydruku i podpisu."
       ctaLabel="Zamów politykę haseł"
       ctaNote="19 zł netto, jednorazowo. PDF mailem w kilka minut"
-      podLeadem={<GeneratorHasel />}
+      poCenniku={
+        <div className="mx-auto max-w-xl text-left">
+          <GeneratorHasel />
+        </div>
+      }
       checks={[
         {
           title: "Zasady, które da się stosować",
