@@ -11522,3 +11522,11 @@ Kanały z 0 przez 3 doby: mail/wordpress (także 0 w 7 dniach), linkedin, perple
 **Dowód:** cykl/artykul-2026-11-16-szkic.md, linki /czas-reakcji-na-leada, /koszt-recznej-obslugi-leadow, /slownik 200.
 **Dla Pawła:** 
 **Zostało otwarte:** czekam na Z11 o 20:40 (IndexNow zmian innych sesji), Z12 o 22:40.
+
+## 2026-11-15 20:43
+**Kanał:** widoczność w wyszukiwarkach (Z11 planu 15.11, Bing i IndexNow dla zmian innych sesji).
+**Co zrobione:** z 103 commitów w app od 06:40 wyszło 108 zmienionych stron poza api i adresami z Z2; po odrzuceniu paneli, embedów, dostępów i stron podziękowań sprawdzonych 91. Zgłoszone 87 adresów (200, bez noindex), pominięte 3 z noindex (/ksef-wystawianie, /landing-ankieta, /paragony-arkusz) i /pilnowanie-zmian-u-konkurentow (404, usunięta celowo w 94e71dd3 jako duplikat).
+**Ruch:** doba 215 odsłon, 145 osób (−3% wobec średniej); źródła: b2b-email 74, google-ads 13, www.facebook.com 12, m.facebook.com 11, facebook 8; Threads 1 sesja w dobie, 15 w 7 dni; uruchomienia narzędzi 0; lejek 7 dni 968 / 8 form_start / 1 zapytanie.
+**Dowód:** `node scripts/indexnow.mjs` z 87 adresami: Yandex 200, Naver 200, wspólny 403 (znany, dochodzi mimo 403).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** czekam na Z12 o 22:40 (bilans dnia).
