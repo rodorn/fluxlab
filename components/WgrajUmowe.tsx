@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 
+import { PYTANIA } from "@/lib/regulamin-pytania";
+
 const POLE =
   "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-accent dark:border-gray-700 dark:bg-gray-950 dark:text-white file:mr-3 file:rounded-md file:border-0 file:bg-gray-100 file:px-3 file:py-1.5 file:text-sm file:font-semibold dark:file:bg-gray-800";
 
-export default function WgrajUmowe({ sesja, porownanie, pytanie, faktury, adres }: { sesja: string; porownanie: boolean; pytanie?: boolean; faktury?: boolean; adres?: boolean }) {
+export default function WgrajUmowe({ sesja, porownanie, pytanie, faktury, adres, ankieta }: { sesja: string; porownanie: boolean; pytanie?: boolean; faktury?: boolean; adres?: boolean; ankieta?: boolean }) {
   const [laduje, setLaduje] = useState(false);
   const [blad, setBlad] = useState("");
   const [wynik, setWynik] = useState<{ email: string; wyslano: boolean; html: string; xlsx?: string } | null>(null);
@@ -18,7 +20,7 @@ export default function WgrajUmowe({ sesja, porownanie, pytanie, faktury, adres 
     try {
       const f = new FormData(e.currentTarget);
       f.set("sesja", sesja);
-      const r = await fetch(faktury ? "/api/faktury-excel" : adres ? "/api/tlumaczenie-strony" : "/api/umowy", { method: "POST", body: f });
+      const r = await fetch(ankieta ? "/api/regulamin-ankieta" : faktury ? "/api/faktury-excel" : adres ? "/api/tlumaczenie-strony" : "/api/umowy", { method: "POST", body: f });
       const d = await r.json().catch(() => ({}));
       if (!r.ok || !d.ok) throw new Error(d.error || "Coś poszło nie tak. Spróbuj ponownie.");
       setWynik(d);
@@ -48,6 +50,44 @@ export default function WgrajUmowe({ sesja, porownanie, pytanie, faktury, adres 
           className="mt-5 h-[70vh] w-full rounded-xl border border-gray-200 bg-white dark:border-gray-800"
         />
       </div>
+    );
+
+  if (ankieta)
+    return (
+      <form onSubmit={wyslij} className="flex flex-col gap-4 text-left">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Płatność przyjęta</h1>
+        <p className="text-sm text-gray-600 dark:text-gray-300">Odpowiedz na 15 pytań o sklep. Regulamin i politykę prywatności pokażemy na ekranie i wyślemy mailem jako pliki do wklejenia.</p>
+        {PYTANIA.map((p) => (
+          <label key={p.nazwa} className="flex flex-col gap-1.5 text-sm font-medium text-gray-900 dark:text-white">
+            {p.etykieta}
+            {p.typ === "wybor" ? (
+              <select name={p.nazwa} required className={POLE} defaultValue="">
+                <option value="" disabled>
+                  Wybierz
+                </option>
+                {p.opcje?.map((o) => (
+                  <option key={o} value={o}>
+                    {o}
+                  </option>
+                ))}
+              </select>
+            ) : p.typ === "dlugi" ? (
+              <textarea name={p.nazwa} required rows={3} maxLength={600} placeholder={p.podpowiedz} className={POLE} />
+            ) : (
+              <input type="text" name={p.nazwa} required={!p.opcjonalne} maxLength={600} placeholder={p.podpowiedz} className={POLE} />
+            )}
+          </label>
+        ))}
+        <button type="submit" disabled={laduje} className="btn-primary disabled:opacity-60">
+          {laduje ? "Przygotowujemy dokumenty, to potrwa do 4 minut…" : "Przygotuj dokumenty"}
+        </button>
+        <p className="text-xs text-gray-500 dark:text-gray-400">Gdy dokumentów nie uda się przygotować, zwrócimy całą płatność. Dokumenty są automatyczne i nie zastępują porady prawnika; przeczytaj je i uzupełnij miejsca w nawiasach kwadratowych przed publikacją.</p>
+        {blad && (
+          <p role="alert" className="text-sm text-red-600 dark:text-red-400">
+            {blad}
+          </p>
+        )}
+      </form>
     );
 
   return (

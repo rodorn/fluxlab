@@ -55,7 +55,7 @@ export async function POST(req: Request) {
   }
   const id = String(sesja.metadata?.produkt ?? "");
   const tryb = OFERTA[id]?.wgraj;
-  if (!["paid", "no_payment_required"].includes(sesja.payment_status) || !tryb || tryb === "faktury" || tryb === "adres") return blad("Ta płatność nie jest opłacona albo nie dotyczy tego produktu.", 402);
+  if (!["paid", "no_payment_required"].includes(sesja.payment_status) || !tryb || tryb === "faktury" || tryb === "adres" || tryb === "ankieta") return blad("Ta płatność nie jest opłacona albo nie dotyczy tego produktu.", 402);
   const email: string = sesja.customer_details?.email ?? sesja.customer_email ?? "";
   if (!email) return blad("Brak adresu e-mail w płatności.", 400);
 
@@ -120,15 +120,16 @@ export async function GET(req: Request) {
     if (m.dok_status || m.dok_przyp || m.zwrot) continue;
     const email = s.customer_details?.email;
     if (!email) continue;
+    const ankieta = oferta.wgraj === "ankieta";
     const link = `https://fluxlab.pl/wgraj-umowe?p=${m.produkt}&sesja=${s.id}`;
     const ok = await wyslijWynik(
       email,
-      "Wgraj dokument do analizy",
+      ankieta ? "Wypełnij ankietę do dokumentów" : "Wgraj dokument do analizy",
       ramkaMaila(
-        "Wgraj dokument, a zrobimy analizę",
-        `<p style="margin:0 0 12px">Płatność za „${esc(oferta.nazwa)}” jest przyjęta, ale nie dostaliśmy jeszcze pliku.</p><p style="margin:0"><a href="${link}">Wgraj PDF tutaj</a>. Wynik pojawi się na ekranie i przyjdzie mailem.</p>`,
+        ankieta ? "Wypełnij ankietę, a przygotujemy dokumenty" : "Wgraj dokument, a zrobimy analizę",
+        `<p style="margin:0 0 12px">Płatność za „${esc(oferta.nazwa)}” jest przyjęta, ale nie dostaliśmy jeszcze ${ankieta ? "odpowiedzi" : "pliku"}.</p><p style="margin:0"><a href="${link}">${ankieta ? "Wypełnij ankietę tutaj" : "Wgraj PDF tutaj"}</a>. Wynik pojawi się na ekranie i przyjdzie mailem.</p>`,
       ),
-      `Płatność za ${oferta.nazwa} jest przyjęta, ale nie dostaliśmy jeszcze pliku. Wgraj PDF: ${link}`,
+      `Płatność za ${oferta.nazwa} jest przyjęta, ale nie dostaliśmy jeszcze ${ankieta ? "odpowiedzi" : "pliku"}. ${ankieta ? "Wypełnij ankietę" : "Wgraj PDF"}: ${link}`,
     );
     if (ok) {
       await ustaw(s.id, { dok_przyp: new Date().toISOString() });

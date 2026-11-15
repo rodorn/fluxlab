@@ -518,6 +518,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wgraj dwie wersje umowy w PDF, a dostaniesz listę zmian: co było, co jest i co to zmienia. Wynik po kilku minutach, 19 zł netto."
   },
   {
+    "url": "/regulamin-sklepu-z-ankiety",
+    "tytul": "Regulamin sklepu i polityka prywatności, 99 zł",
+    "opis": "Odpowiadasz na 15 pytań o sklep, a dostajesz regulamin i politykę prywatności gotowe do wklejenia na stronę. 99 zł netto jednorazowo."
+  },
+  {
     "url": "/tlumaczenie-strony-en-de",
     "tytul": "Tłumaczenie strony na angielski i niemiecki, 199 zł",
     "opis": "Podajesz adres strony, a dostajesz teksty przetłumaczone na angielski i niemiecki: arkusz Excel i pliki do wklejenia. Do 6 podstron, 199 zł netto."

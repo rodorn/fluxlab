@@ -7,7 +7,7 @@ export type Oferta = {
   strona: string;
   pole?: string;
   pole2?: string;
-  wgraj?: "umowa" | "porownanie" | "pytanie" | "faktury" | "adres";
+  wgraj?: "umowa" | "porownanie" | "pytanie" | "faktury" | "adres" | "ankieta";
   dostep?: string;
 };
 
@@ -76,6 +76,7 @@ export const OFERTA: Record<string, Oferta> = {
   "umowa-porownanie": { nazwa: "Porównanie dwóch wersji umowy", netto: 19, miesiecznie: false, strona: "/porownanie-umow", wgraj: "porownanie" },
   "faktury-excel": { nazwa: "Faktury PDF do Excela", netto: 49, miesiecznie: true, strona: "/faktury-pdf-do-excela", wgraj: "faktury" },
   "tlumaczenie-strony": { nazwa: "Tłumaczenie strony na angielski i niemiecki", netto: 199, miesiecznie: false, strona: "/tlumaczenie-strony-en-de", wgraj: "adres" },
+  "regulamin-ankieta": { nazwa: "Regulamin sklepu i polityka prywatności", netto: 99, miesiecznie: false, strona: "/regulamin-sklepu-z-ankiety", wgraj: "ankieta" },
   "tax-ai": { nazwa: "Wstępna odpowiedź podatkowa", netto: 29, miesiecznie: false, strona: "/odpowiedz-podatkowa", wgraj: "pytanie" },
   "opieka-300": { nazwa: "Opieka nad stroną: 2 poprawki na kwartał, monitoring", netto: 300, miesiecznie: true, strona: "/strony-www", pole: ADRES },
   "opieka-600": { nazwa: "Opieka nad stroną: 5 poprawek na kwartał, opinie w Google", netto: 600, miesiecznie: true, strona: "/strony-www", pole: ADRES },

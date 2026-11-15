@@ -20,7 +20,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ p
       <main className="pt-24 pb-16">
         <div className="container-wide">
           <div className="mx-auto max-w-2xl rounded-2xl border border-gray-100 bg-white p-8 shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:p-12">
-            <WgrajUmowe sesja={sesja} porownanie={OFERTA[p]?.wgraj === "porownanie"} pytanie={OFERTA[p]?.wgraj === "pytanie"} faktury={OFERTA[p]?.wgraj === "faktury"} adres={OFERTA[p]?.wgraj === "adres"} />
+            <WgrajUmowe sesja={sesja} porownanie={OFERTA[p]?.wgraj === "porownanie"} pytanie={OFERTA[p]?.wgraj === "pytanie"} faktury={OFERTA[p]?.wgraj === "faktury"} adres={OFERTA[p]?.wgraj === "adres"} ankieta={OFERTA[p]?.wgraj === "ankieta"} />
           </div>
         </div>
       </main>
