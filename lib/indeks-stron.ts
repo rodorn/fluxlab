@@ -373,6 +373,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Codzienne sprawdzanie statusu VAT i rachunków do 50 kontrahentów, alert mailem przy zmianie. 29 zł netto miesięcznie."
   },
   {
+    "url": "/raport-kontrahenta",
+    "tytul": "Raport o kontrahencie w PDF, 19 zł",
+    "opis": "Wpisujesz NIP, a w kilka minut dostajesz mailem PDF: status VAT, rachunki z białej listy, odpis z KRS i ogłoszenia w MSiG."
+  },
+  {
     "url": "/czujka-rejestrowa",
     "tytul": "Twój dłużnik może zniknąć z KRS w trzy miesiące",
     "opis": "Sąd wszczyna z urzędu postępowanie o rozwiązanie spółki i daje trzy miesiące na sprzeciw. Sprawdź za darmo, czy jest na niej kontrahent. Monitoring od 99 zł."

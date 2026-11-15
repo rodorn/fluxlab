@@ -92,7 +92,7 @@ const SYTUACJE: Sytuacja[] = [
   {
     klucz: "przelew",
     etykieta: "Mamy komuś zapłacić albo odzyskać pieniądze",
-    odpowiedz: "Sześć sprawdzeń, wszystkie przed przelewem, nie po nim.",
+    odpowiedz: "Siedem sprawdzeń, wszystkie przed przelewem, nie po nim.",
     wskazania: [
       {
         href: "/sprawdzenie-nip",
@@ -108,6 +108,11 @@ const SYTUACJE: Sytuacja[] = [
         href: "/monitoring-kontrahentow",
         powod:
           "Codzienne sprawdzanie statusu VAT i rachunków wskazanych kontrahentów, z mailem tylko wtedy, gdy coś się zmieni.",
+      },
+      {
+        href: "/raport-kontrahenta",
+        powod:
+          "Jeden PDF o nowym kontrahencie: status VAT, rachunki z białej listy, odpis z KRS i ogłoszenia w Monitorze Sądowym i Gospodarczym.",
       },
       {
         href: "/numer-ksef",

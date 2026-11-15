@@ -490,6 +490,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/raport-kontrahenta`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/czujka-rejestrowa`,
       changeFrequency: "monthly" as const,
       priority: 0.9,

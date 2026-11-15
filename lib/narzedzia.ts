@@ -345,6 +345,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "tarcza",
   },
   {
+    title: "Raport o kontrahencie w PDF",
+    pytanie: "Kim jest firma, której zaraz zapłacisz?",
+    description:
+      "Wpisujesz NIP, a dostajesz PDF z wykazu VAT, KRS i Monitora Sądowego i Gospodarczego. Podstawowe dane sprawdzisz za darmo.",
+    href: "/raport-kontrahenta",
+    ikona: "lupa",
+  },
+  {
     title: "Adresy do e-Doręczeń z listy NIP",
     description:
       "Wklej do 50 numerów NIP, a dostaniesz plik z adresami do e-Doręczeń wpisanymi do KRS i listę firm bez adresu.",

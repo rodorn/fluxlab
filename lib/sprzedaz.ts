@@ -209,3 +209,11 @@ OFERTA["monitoring-kontrahentow"] = {
   strona: "/monitoring-kontrahentow",
   dostep: "/monitoring-kontrahentow/panel",
 };
+
+OFERTA["raport-kontrahenta"] = {
+  nazwa: "Raport kontrahenta w PDF",
+  netto: 19,
+  miesiecznie: false,
+  strona: "/raport-kontrahenta",
+  pole: "NIP kontrahenta (10 cyfr)",
+};
