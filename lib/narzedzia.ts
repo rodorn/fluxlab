@@ -89,6 +89,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Opisy produktów z CSV",
+    pytanie: "Nie chce Ci się pisać opisów do sklepu?",
+    description:
+      "Wgraj plik z nazwami i cechami, a odeślemy go z opisem krótkim, długim i metatagami, za darmo do 25 produktów.",
+    href: "/opisy-produktow-z-csv",
+    ikona: "lista",
+  },
+  {
     title: "Naprawa ostrzeżenia o stronie",
     pytanie: "Czy przeglądarka straszy Twoją stroną?",
     description:

@@ -378,6 +378,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wpisz adres, a zmierzymy szybkość, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Bez rejestracji i bez e-maila."
   },
   {
+    "url": "/opisy-produktow-z-csv",
+    "tytul": "Opisy produktów do sklepu z pliku CSV, za darmo",
+    "opis": "Wgraj plik z nazwami i cechami produktów, a dostaniesz ten sam plik z opisem krótkim, długim i metatagami. Do 25 produktów, bez płatności."
+  },
+  {
     "url": "/pogotowie-automatyzacji",
     "tytul": "Pogotowie automatyzacji, naprawa n8n i Make",
     "opis": "Stanęła integracja i nie schodzą zamówienia. Czytamy logi wykonań, znajdujemy wygasłe poświadczenia i ciche awarie. Diagnoza 49 zł, naprawa od 490 zł."

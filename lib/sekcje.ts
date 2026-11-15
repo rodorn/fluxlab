@@ -99,6 +99,8 @@ export const SEKCJE: Sekcja[] = [
         strony: [
           s("/audyt-strony", "Darmowy audyt techniczny"),
           s("/czarne-listy", "Czarne listy spamowe"),
+||||||| parent of efff2668 (Produkt 30: darmowe opisy produktów z pliku CSV)
+          s("/opisy-produktow-z-csv", "Opisy produktów z CSV"),
           s("/naprawa-https", "Naprawa ostrzeżenia o stronie"),
           s("/kody-qr", "Kody QR z licznikiem skanów"),
           s("/naprawa-wordpress", "Naprawa WordPress"),
