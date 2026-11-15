@@ -279,3 +279,6 @@ charges
 refunds
 barracuda
 spamhaus
+description
+dlugi
+title
