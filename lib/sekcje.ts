@@ -44,6 +44,7 @@ export const SEKCJE: Sekcja[] = [
           s("/czas-reakcji-na-leada", "Czas reakcji na leada"),
           s("/crm-jako-system-pracy", "CRM jako system pracy"),
           s("/automatyzacja-raportowania", "Automatyzacja raportowania"),
+          s("/sprzedaz-stripe-codziennie", "Sprzedaż ze Stripe co dzień"),
           s("/raportowanie-z-pipedrive", "Raportowanie z Pipedrive"),
           s("/automatyzacja-ai", "Automatyzacja z AI"),
           s("/automatyzacja-pipedrive", "Automatyzacja Pipedrive"),
