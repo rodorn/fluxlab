@@ -55,6 +55,7 @@ export default function PanelLeadow({
   const [blad, setBlad] = useState("");
   const odpowiedz = produkty.includes("lead-odpowiedz");
   const nps = produkty.includes("lead-nps");
+  const kalk = produkty.includes("lead-kalkulator");
   const opinia = produkty.includes("lead-opinia");
   const [pr, setPr] = useState({ email: "", imie: "" });
   const [lista, setLista] = useState(opinie);
@@ -154,7 +155,7 @@ export default function PanelLeadow({
           )}
         </section>
       )}
-      {(odpowiedz || nps || opinia) && (
+      {(odpowiedz || nps || opinia || kalk) && (
         <section>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">{odpowiedz ? "Odpowiedź dla zgłaszającego" : "Ustawienia"}</h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
@@ -166,6 +167,7 @@ export default function PanelLeadow({
             <input className={POLE} placeholder="Nazwa firmy w podpisie" aria-label="Nazwa firmy" value={ust.firma ?? ""} onChange={(e) => setUst({ ...ust, firma: e.target.value })} />
             {odpowiedz && <textarea className={POLE} rows={5} placeholder="Krótka oferta: co robi firma, ile to kosztuje, kiedy nastąpi kontakt" aria-label="Treść oferty" value={ust.oferta ?? ""} onChange={(e) => setUst({ ...ust, oferta: e.target.value })} />}
             {odpowiedz && <input className={POLE} type="url" placeholder="Link do kalendarza, https://..." aria-label="Link do kalendarza" value={ust.kalendarz ?? ""} onChange={(e) => setUst({ ...ust, kalendarz: e.target.value })} />}
+            {kalk && <textarea className={POLE} rows={6} placeholder={"Pozycje kalkulatora, jedna w linii:\nMontaż okna | 450\nMalowanie ścian | 1200"} aria-label="Pozycje kalkulatora wyceny" value={ust.wycena ?? ""} onChange={(e) => setUst({ ...ust, wycena: e.target.value })} />}
             {opinia && <input className={POLE} type="url" placeholder="Link do opinii Google, https://..." aria-label="Link do opinii Google" value={ust.opinia ?? ""} onChange={(e) => setUst({ ...ust, opinia: e.target.value })} />}
             <div className="flex items-center gap-4">
               <button type="submit" disabled={stan === "zapis"} className="btn-primary disabled:opacity-50">

@@ -3,6 +3,7 @@ import { dane } from "@/lib/fl-dane";
 import { stripe } from "@/lib/stripe";
 import { daneFirmy, type Firma } from "@/lib/leady/dane-firmy";
 import { ocenaLeada, type Ocena } from "@/lib/leady/ocena";
+import { parsujWycene } from "@/lib/leady/wycena";
 import { PRODUKTY, mailKarta, mailNps, mailOpinia, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
 
 export type Klient = {
@@ -95,6 +96,14 @@ export async function odpowiedzNps(token: string, wej: Record<string, unknown>):
   return { kod: 202 };
 }
 
+export async function kalkulatorInfo(token: string) {
+  const k = await db.pobierz<Klient>("klienci", token);
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-kalkulator")) return null;
+  const poz = parsujWycene(k.dane.ustawienia.wycena ?? "");
+  if (typeof poz === "string" || !poz.length) return null;
+  return { firma: k.dane.ustawienia.firma || k.dane.nazwa || "", pozycje: poz };
+}
+
 export async function wyslijProsbeOpinia(p: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string }> {
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-opinia")) return { kod: 404, blad: "Nieznany albo wyłączony panel." };
@@ -127,9 +136,11 @@ export async function zapiszUstawienia(p: string, wej: Record<string, unknown>):
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k) return { kod: 404, blad: "Nie ma takiego panelu." };
   const u: Record<string, string> = {};
-  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
+  for (const [a, m] of [["firma", 120], ["oferta", 2000], ["kalendarz", 300], ["opinia", 500], ["wycena", 2000]] as const) u[a] = String(wej[a] ?? "").trim().slice(0, m);
   if (u.kalendarz && !u.kalendarz.startsWith("https://")) return { kod: 400, blad: "Link do kalendarza musi zaczynać się od https://." };
   if (u.opinia && !u.opinia.startsWith("https://")) return { kod: 400, blad: "Link do opinii musi zaczynać się od https://." };
+  const poz = parsujWycene(u.wycena);
+  if (typeof poz === "string") return { kod: 400, blad: poz };
   await db.zmien("klienci", k.id, { dane: { ustawienia: u } });
   return { kod: 200 };
 }

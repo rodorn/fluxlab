@@ -164,6 +164,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Kalkulator wyceny na stronę",
+    pytanie: "Jak pokazać klientowi cenę, zanim zadzwoni?",
+    description:
+      "Zaznacz usługi w przykładowym kalkulatorze i zobacz sumę. W abonamencie wpisujesz własne ceny, a zgłoszenia z wyceną trafiają do panelu.",
+    href: "/kalkulator-wyceny",
+    ikona: "lupa",
+  },
+  {
     title: "Formularz leadów z listą zgłoszeń",
     pytanie: "Gdzie lądują zgłoszenia ze strony?",
     description:

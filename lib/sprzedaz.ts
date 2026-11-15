@@ -56,6 +56,7 @@ export const OFERTA: Record<string, Oferta> = {
   "lead-formularz": { nazwa: "Formularz leadów z listą zgłoszeń", netto: 49, miesiecznie: true, strona: "/formularz-leadow" },
   "lead-odpowiedz": { nazwa: "Odpowiedź na leada w minutę", netto: 29, miesiecznie: true, strona: "/odpowiedz-na-leada" },
   "lead-opinia": { nazwa: "Prośba o opinię Google", netto: 29, miesiecznie: true, strona: "/prosba-o-opinie-google" },
+  "lead-kalkulator": { nazwa: "Kalkulator wyceny na stronę", netto: 49, miesiecznie: true, strona: "/kalkulator-wyceny" },
   "lead-nps": { nazwa: "Ankieta NPS", netto: 29, miesiecznie: true, strona: "/ankieta-nps" },
   "lead-ocena": { nazwa: "Ocena leada przez AI", netto: 29, miesiecznie: true, strona: "/ocena-leada-ai" },
   "lead-nip": { nazwa: "Dane firmy do leada z NIP", netto: 19, miesiecznie: true, strona: "/dane-firmy-z-nip" },

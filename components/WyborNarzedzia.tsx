@@ -194,6 +194,11 @@ const SYTUACJE: Sytuacja[] = [
           "Zadowolony klient dostaje mail z jednym przyciskiem do opinii w Google, więc Twoja wizytówka zbiera oceny bez przypominania się.",
       },
       {
+        href: "/kalkulator-wyceny",
+        powod:
+          "Klient widzi orientacyjną cenę od razu, a Ty dostajesz kontakt z wybranymi usługami zamiast pytania „ile to kosztuje”.",
+      },
+      {
         href: "/formularz-leadow",
         powod:
           "Zgłoszenia z Twojej strony trafiają od razu na mail i na listę w jednym miejscu, zamiast ginąć w skrzynce.",

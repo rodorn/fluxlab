@@ -10,6 +10,7 @@ const ETYKIETA: Record<string, string> = { imie: "Imię", email: "E-mail", telef
 
 export const PRODUKTY: Record<string, { nazwa: string; opis: string }> = {
   "lead-opinia": { nazwa: "Prośba o opinię Google", opis: "mail z prośbą o opinię Google wysyłany Twoim klientom z panelu albo z Zapier i Make" },
+  "lead-kalkulator": { nazwa: "Kalkulator wyceny na stronę", opis: "kalkulator wyceny do osadzenia na stronie, a zgłoszenia z wyceną trafiają do panelu i na Twój mail" },
   "lead-nps": { nazwa: "Ankieta NPS", opis: "ankieta NPS z linkiem dla Twoich klientów, wynik i odpowiedzi w panelu" },
   "lead-formularz": { nazwa: "Formularz leadów z listą zgłoszeń", opis: "formularz do osadzenia i lista zgłoszeń w panelu" },
   "lead-odpowiedz": { nazwa: "Odpowiedź na leada w minutę", opis: "natychmiastowy mail do każdego, kto zostawi zgłoszenie (uzupełnij ofertę i link do kalendarza w panelu)" },
@@ -87,6 +88,8 @@ export function mailPowitalny(token: string, panel: string, nowe: string[], nowy
     : `<p>Działa na tym samym formularzu co wcześniej. <a href='${PANEL_URL}${panel}'>Panel</a>.</p>`;
   if (nowe.includes("lead-opinia"))
     h += `<p><b>Prośba o opinię Google.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wklej link do wizytówki Google, a potem wpisuj adresy klientów, którym chcesz wysłać prośbę. Z Zapier i Make wyślij POST JSON (pola: email, imie) na <code>https://fluxlab.pl/api/opinia/${panel}</code>. Ten adres jest tajny.</p>`;
+  if (nowe.includes("lead-kalkulator"))
+    h += `<p><b>Kalkulator wyceny.</b> W <a href='${PANEL_URL}${panel}'>panelu</a> wpisz usługi i ceny (jedna linia: Nazwa | cena). Potem wklej na stronę: </p><pre style='white-space:pre-wrap;background:#f4f4f4;padding:10px;font-size:13px'>${esc(`<iframe src="https://fluxlab.pl/leady/kalkulator/${token}" title="Kalkulator wyceny" width="100%" height="640" style="border:0;max-width:520px"></iframe>`)}</pre><p>Klient zaznacza usługi, widzi sumę i zostawia kontakt. Zgłoszenie z wyceną dostajesz mailem i na liście w panelu.</p>`;
   if (nowe.includes("lead-nps"))
     h += `<p><b>Ankieta NPS.</b> Ten link wyślij swoim klientom: <a href='https://fluxlab.pl/ankieta/${token}'>https://fluxlab.pl/ankieta/${token}</a>. Każda odpowiedź przychodzi do Ciebie mailem, a wynik NPS jest w panelu. Nazwę firmy w pytaniu ustawisz w panelu.</p>`;
   return `${h}<p>Rezygnacja w dowolnym dniu w portalu płatności (link w potwierdzeniu płatności), za niewykorzystane dni zwracamy pieniądze. Dane zgłoszeń usuwamy 30 dni po rezygnacji. Pytania: odpisz na tego maila.</p><p>Zespół Fluxlab</p></div>`;
