@@ -463,6 +463,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Co 6 godzin sprawdzamy, czy znaczniki Google i Meta są na stronie i działają, i piszemy, gdy któregoś zabraknie."
   },
   {
+    "url": "/pilnowanie-wizytowki-google",
+    "tytul": "Pilnowanie wizytówki Google od 29 zł",
+    "opis": "Codzienna kontrola wizytówki firmy w Google: alert, gdy zmieni się nazwa, adres, godziny, kategoria lub status."
+  },
+  {
     "url": "/szybkosc-strony-co-miesiac",
     "tytul": "Szybkość strony co miesiąc od 19 zł",
     "opis": "Co miesiąc pomiar Core Web Vitals z telefonu i komputera w Google PageSpeed Insights, z porównaniem do poprzedniego miesiąca."
