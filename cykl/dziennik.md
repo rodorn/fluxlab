@@ -11380,3 +11380,94 @@ Poza tabelą: /strefa-wiedzy/biala-lista-vat-nowe-api 1 (3,0). Wniosek dla strat
 **Z10:** temat 16.11 „Black Friday i weekendowe zgłoszenia” wolny (`ls app/strefa-wiedzy | grep -iE 'weekend|black|sobot|leada'` = 0), /czas-reakcji-na-leada 200, szkic czeka w cykl/artykul-2026-11-16-szkic.md (fakty F1-F6 do ponownego odczytu przy publikacji).
 **Dowód:** cykl/plan-ruchu.md Z9 i Z10 oznaczone [x]. **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
 **Zostało otwarte:** czekam na Z11 o 20:40.
+
+## 2026-11-14 18:45
+**Kanał:** brak (plan 14.11, żadne zadanie jeszcze niedostępne). **Co zrobione:** nic nie poszło w świat, bo Z11 ma „nie wcześniej niż 20:40”, a Z1-Z10 są zamknięte.
+**Ruch:** pomiar-kanalow 24 h: 46 osób po odsiewie (7 dni 281), bez odsyłacza 30, Google 5, google-ads 5, X 2, chatgpt.com 2, instagram 1, t.co 1, m.facebook.com 1. raport_ruchu: 167 odsłon, 129 osób, b2b-email 88 (otwarcia maili).
+**Dowód:** cykl/plan-ruchu.md bez zmian. **Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
+**Zostało otwarte:** czekam na Z11 o 20:40.
+
+## 2026-11-14 20:47
+**Kanał:** Bing i IndexNow (Z11 planu 14.11). **Co zrobione:** zgłoszone 4 adresy zmienione dziś przez inne sesje (/automatyzacja-procesow-biznesowych, /strefa-wiedzy/make-vs-n8n, /wdrozenie-n8n-cena z cf909347, /polityka-prywatnosci z 11e2e9cf), wszystkie 200 i index; layout.tsx i api pominięte.
+**Ruch:** pomiar-kanalow 24 h: 47 osób po odsiewie (7 dni 279), bez odsyłacza 32, Google 5, google-ads 5, X 2, chatgpt.com 2, t.co 1, m.facebook.com 1, facebook 1. raport_ruchu: 171 odsłon, 131 osób, b2b-email 89 (otwarcia maili), uruchomienia narzędzi 3, form_start 2.
+**Dowód:** IndexNow Yandex 200, Naver 200, wspólny 403 (jak co dzień); cykl/plan-ruchu.md Z11 [x].
+**Dla Pawła:** logowanie do Search Console (profil ~/.config/chrome-google).
+**Zostało otwarte:** czekam na Z12 o 22:40.
+
+## 2026-11-14 22:50
+**Kanał:** pomiar (plan Z12, bilans dnia).
+**Co zrobione:** policzony bilans planu 2026-11-14; nic nie poszło w świat (weekend, zadanie pomiarowe).
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 51 ludzi, 62 odsłony (pierwsza odsłona: bez odsyłacza 33, www.google.com 5, google-ads 5, facebook 3+1, chatgpt.com 2, x 1, test_fl 1); 7 dni: 281. raport_ruchu doba: 183 odsłony, 142 osoby (z pikselem maili); lejek 7 dni: 948 sesji, 7 form_start, 1 zapytanie.
+
+Bilans planu 2026-11-14 (po odsiewie, doby kończone o 22:43, kanał = źródło pierwszej odsłony):
+
+| Kanał | 13/14.11 | 14/15.11 |
+|---|---|---|
+| Ludzie razem | 43 | 51 |
+| Bez odsyłacza | 20 | 33 |
+| Google (organic) | 4 | 5 (/ x4, /numer-ksef: 5 odsłon, 2 uruchomienia, form_start, wyjście na /kontakt bez wysyłki) |
+| google-ads: sesje, odsłony na sesję, form_start | 10, 1,6, 2 | 5, 1,0, 0 (e-doreczenia 3 na /e-doreczenia-integracja, ads 2: /n8n, /automatyzacja-procesow-biznesowych) |
+| utm_campaign=wordpress (sesje) | 0 | 0 (weekend, zero wysyłek) |
+| YouTube / X / Threads | 3 / 2 / 2 | 0 / 1 / 0 |
+| Facebook (utm tansze-automatyzacje + m.facebook) | 0 | 4 (3 + 1, wszystkie po 1 odsłonie) |
+| chatgpt.com / perplexity | 1 / 0 | 2 (/kalkulator-podatkowy, /dobor-samochodu) / 0 |
+| Uruchomienia narzędzi | 2 | 3 (numer-ksef 2, skan widoczności 1) |
+| klik_po_wyniku | 0 | 0 |
+| form_start / lead_* | 2 / 0 | 2 (/numer-ksef, /widocznosc-w-google) / 0 |
+| Pobrania (surowo) | 1 | 4 (schemat-integracji-crm-erp.pdf) |
+
+Wynik zadań: Z1-Z6, Z8-Z12 [x]; Z7 [!] budżet „zwolnij”. Maile gotowe na poniedziałek 16.11: 30 niewysłanych w maile_wp (42 pliki, 12 wysłanych 13.11), cel 48 niespełniony, bo Z4 dał tylko 6 kandydatów (94 z 100 stron z problemem bez firmowego adresu). Facebook wrócił po trzech dobach zera (FL_meta, kampania tansze-automatyzacje), ale bez drugiej odsłony. Search Console wylogowany 17. dobę.
+**Dowód:** cykl/plan-ruchu.md Z12.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z13 od 15.11 00:40, Z14 od 02:40, Z15 od 04:40, Z16 od 06:00.
+
+<!-- WYSLANO 2026-11-14 23:21 -->
+
+## 2026-11-15 00:50
+**Kanał:** outreach (plan 14.11, Z13).
+**Co zrobione:** pomiar nocny partii wordpress, nic nie poszło w świat; Z14 czeka do 02:40.
+**Ruch:** raport_ruchu: ostatnia doba 196 odsłon, 149 osób (−14% wobec średniej 228,9); najczęściej /, /tansze-automatyzacje, /sprawdz-auto, /numer-ksef; Threads 2 sesje, YouTube, LinkedIn, X po 0; uruchomienia narzędzi 3.
+**Dowód:** Resend GET /emails/<id> dla 12 z wyslane_wp.json: 9 delivered, 3 bounced (dental-practice.pl, medicavision.pl, magnolianailbar.pl); Zoho od 14.11 10:40: 0 odpowiedzi, 0 „wypisz” (tylko raport TLS Google); ruch.sqlite od 14.11 10:40: 135 sesji, 0 z utm_campaign=wordpress.
+**Dla Pawła:**
+**Zostało otwarte:** Z14 (02:40), Z15 (04:40), Z16 (06:00).
+
+## 2026-11-15 02:50
+**Kanał:** pomiar (plan Z14, kanały po dobach dla reguły 3 dób).
+**Co zrobione:** tabela kanał × doby po odsiewie z pomiar-kanalow.py (pary, serie testowe, salwy, /grupa-ksef), kanał = źródło pierwszej odsłony sesji, google-ads (utm „ads”, numer kampanii, odsyłacz google-ads) i mail/wordpress osobno, doby kalendarzowe. Nic nie poszło w świat, zadanie pomiarowe.
+
+| kanał | 15.11 (do 02:43) | 14.11 | 13.11 | 7 dni |
+|---|---|---|---|---|
+| ludzie razem | 7 | 46 | 35 | 282 |
+| bez odsyłacza | 4 | 29 | 14 | 168 |
+| www.google.com | 0 | 5 | 4 | 34 |
+| google-ads | 3 | 5 | 5 | 24 |
+| facebook (z utm tansze-automatyzacje) | 0 | 5 | 0 | 12 |
+| youtube | 0 | 0 | 2 | 12 |
+| chatgpt | 0 | 1 | 4 | 9 |
+| x | 0 | 0 | 3 | 7 |
+| threads | 0 | 0 | 2 | 4 |
+| instagram | 0 | 0 | 1 | 2 |
+| mail/wordpress | 0 | 0 | 0 | 0 |
+
+google-ads z 3 dób: 13 sesji, 12 jednostronicowych, żadnego zdarzenia (form_start, uruchomienia); 14.11 17:44-17:56 trzy wejścia na /e-doreczenia-integracja (kampania e-doreczenia), 15.11 00:18 dwa na /ksef-integracja, 01:49 jedno z dwiema odsłonami /automatyzacja-procesow-biznesowych.
+Kanały z 0 przez 3 doby: mail/wordpress (także 0 w 7 dniach), linkedin, perplexity, useme.com, github.com, ustawygospodarcze.pl, hajsmetrics, aplikacja Gmail.
+**Ruch:** 24 h po odsiewie około 53 ludzi (14.11 od 02:43 i 15.11); 7 dni 282 sesje ludzi. Raport_ruchu, lejek 7 dni: 954 sesje, 7 form_start, 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md Z14 [x], skrypt jednorazowy na funkcjach wiersze() i odsiew() z cykl/pomiar-kanalow.py.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z15 o 04:40, Z16 od 06:00.
+<!-- WYSLANO 2026-11-15 04:38 -->
+
+## 2026-11-15 04:45
+**Kanał:** Google (kontrola mapy witryny, Z15 z planu stratega).
+**Co zrobione:** sprawdzona mapa witryny: 187 adresów (14.11: 185), wszystkie adresy z Z2, Z7 i Z11 obecne, nic do zgłaszania autorom.
+**Ruch:** doba 191 odsłon, 143 osoby (−17% wobec średniej); źródła: b2b-email 90, google-ads 9, facebook 9, www.google.com 8, m.facebook.com 7; threads 2 sesje w dobie; uruchomienia narzędzi 3; lejek 7 dni: 7 form_start, 1 zapytanie.
+**Dowód:** https://fluxlab.pl/sitemap.xml 200, 187 `<loc>`; /strony-www, /kalkulator-podatkowy, /automatyzacja-procesow-biznesowych, /strefa-wiedzy/make-vs-n8n, /wdrozenie-n8n-cena, /polityka-prywatnosci w mapie.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (pomiar dla stratega) nie wcześniej niż 15.11 06:00, następny cykl.
+
+## Strategia dobowa 2026-11-15
+**Wynik doby (24 h do 06:15, po odsiewie):** 54 ludzi (14.11: 44, 13.11: 54), tydzień 290 (było 269). google-ads 8 / 24 w tygodniu, Google 4 / 36, Facebook 6 / 14 (wrócił po 3 dobach zera, same pojedyncze odsłony), chatgpt 4 / 11, YouTube 0 / 13, X 0 / 10, Threads 0 / 5, Bing + DDG 0. Outreach `wordpress`: 12 wysłanych 13.11, 9 doręczonych, 3 odbicia, 0 odpowiedzi, 0 sesji z kampanii. Uruchomienia narzędzi 3, lejek 7 dni 959 sesji / 7 form_start / 1 zapytanie, lead_* 0. Z16 planu 14.11 zamknięty tym pomiarem.
+**Plan 15/16.11 (niedziela):** 17 zadań, zero wysyłek. Główny cel: 48 gotowych maili `wordpress` na poniedziałek (jest 30). Wąskie gardło to adres: 94 ze 100 stron z problemem nie dało adresu w regule GENERIC, więc Z3 szuka adresu luźniejszą regułą (adres firmowy nieimienny albo darmowy z nazwą firmy), Z6 bada nowe branże (szkoły jazdy, weterynarze, kwiaciarnie, optycy, fotografowie, siłownie, warsztaty). Do tego dane google-ads dla FL_adsGoogle, fakty do artykułu 16.11, pomiary i IndexNow. FAQ kalkulatora dalej czeka na rytm „utrzymaj” (budżet „zwolnij”, 117%).
+**Trzy najważniejsze zadania:** Z3 adresy dla stron z problemem bez maila (08:40); Z4 maile z Z3, bez wysyłki (10:40); Z6 nowe branże z luźniejszą regułą adresu (12:40).
+**Dla Pawła:**
+- Zalogować Search Console i Bing Webmaster w profilu ~/.config/chrome-google (port 9228), osiemnasta doba bez danych z Google: https://search.google.com/search-console, 3 min.
