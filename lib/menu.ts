@@ -55,6 +55,7 @@ export const MENU: PozycjaMenu[] = [
           l("/profil-firmy-google"),
           l("/benchmarking-konkurencji"),
           l("/dane-firmy-z-nip"),
+          l("/ocena-leada-ai"),
         ],
       },
       {
@@ -277,6 +278,7 @@ export const OPIS_MENU: Record<string, string> = {
   "/profil-firmy-google": "Wizytówka w Mapach, 349 zł/mies.",
   "/benchmarking-konkurencji": "Co zmienia konkurencja, od 39 zł/mies.",
   "/dane-firmy-z-nip": "Nazwa, adres, KRS i branża z NIP, 19 zł/mies.",
+  "/ocena-leada-ai": "Gorący, ciepły, zimny: ocena zgłoszenia, 29 zł/mies.",
   "/widocznosc-w-ai": "Czy ChatGPT poleca Twoją firmę",
   "/mapa-strony": "Mapa dla Google bez błędów",
   "/audyt-poczty": "SPF, DKIM, DMARC w jednym sprawdzeniu",

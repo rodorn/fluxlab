@@ -148,6 +148,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Ocena leada przez AI",
+    pytanie: "Do którego zgłoszenia zadzwonić najpierw?",
+    description:
+      "Wklej treść zgłoszenia, a pokażemy ocenę gorący, ciepły albo zimny i podpowiedź na rozmowę. W abonamencie ocena jest przy każdym zgłoszeniu.",
+    href: "/ocena-leada-ai",
+    ikona: "lupa",
+  },
+  {
     title: "Rejestr cen w sklepie",
     description:
       "Sprawdzamy Twoje przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",

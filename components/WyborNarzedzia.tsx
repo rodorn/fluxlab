@@ -174,6 +174,11 @@ const SYTUACJE: Sytuacja[] = [
           "Dziesięć pytań tak lub nie i wskazanie obszaru, w którym automatyzacja da najwięcej.",
       },
       {
+        href: "/ocena-leada-ai",
+        powod:
+          "Każde zgłoszenie z formularza dostaje ocenę gorący, ciepły albo zimny i podpowiedź na rozmowę, więc kolejność telefonów nie zależy od przypadku.",
+      },
+      {
         href: "/dane-firmy-z-nip",
         powod:
           "Zgłoszenie z numerem NIP dostaje nazwę firmy, adres, status VAT i dane z KRS, bez przepisywania z rejestrów.",
