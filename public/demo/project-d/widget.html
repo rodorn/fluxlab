@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalkulator PV z magazynem energii (demo)</title>
+    <link rel="stylesheet" href="./calc-core.css" />
+    <style>
+      @font-face {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 300 900;
+        font-display: swap;
+        src: url(./fonts/latin-ext.woff2) format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 300 900;
+        font-display: swap;
+        src: url(./fonts/latin.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      body {
+        margin: 0;
+        background: #f6f6f6;
+        padding: 12px;
+      }
+      .fx-calc {
+        font-family: "Red Hat Display", -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        --fx-tekst: #0d1b48;
+        --fx-szary: #6b6b6b;
+        --fx-obwodka: #dbdbdb;
+      }
+      .fx-input,
+      .fx-btn {
+        font-family: inherit;
+      }
+      .fx-marka {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .fx-marka::after {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 3px;
+        margin-top: 6px;
+        background: #f77f00;
+        border-radius: 2px;
+      }
+      .fx-tytul {
+        font-weight: 600;
+        line-height: 1.15;
+      }
+      .fx-wynik-naglowek {
+        margin-top: 18px;
+        padding: 8px 10px;
+        background: #003049;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+      .fx-wynik-naglowek:first-child {
+        margin-top: 0;
+      }
+      .fx-wyroznij {
+        background: color-mix(in srgb, #f77f00 14%, transparent);
+        border-left: 3px solid #f77f00;
+      }
+      .fx-wyroznij .fx-wynik-wartosc {
+        color: #003049;
+      }
+      .fx-btn-akcent {
+        color: #003049;
+      }
+      .fx-ok {
+        color: #166534;
+      }
+      .fx-zalozenia {
+        border: 1px solid var(--fx-obwodka);
+        border-radius: 10px;
+        padding: 10px 12px;
+        background: #fafafa;
+      }
+      .fx-zalozenia summary {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .fx-zalozenia[open] summary {
+        margin-bottom: 10px;
+      }
+      .fx-zalozenia .fx-pole {
+        margin-top: 10px;
+      }
+      .fx-wykres {
+        margin: 18px 0 4px;
+      }
+      .fx-wykres-tytul {
+        font-weight: 700;
+        font-size: 15px;
+        margin: 0 0 2px;
+      }
+      .fx-wykres-opis {
+        margin: 0 0 10px;
+        font-size: 12px;
+        color: var(--fx-szary);
+      }
+      .fx-slupek {
+        margin-bottom: 9px;
+      }
+      .fx-slupek-opis {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 13px;
+        margin-bottom: 3px;
+      }
+      .fx-slupek-opis b {
+        white-space: nowrap;
+      }
+      .fx-slupek-tor {
+        height: 12px;
+        background: #ececec;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .fx-slupek-pasek {
+        height: 100%;
+        border-radius: 6px;
+        background: #003049;
+      }
+      .fx-slupek-bez .fx-slupek-pasek {
+        background: #9a9a9a;
+      }
+      .fx-slupek-wybrany .fx-slupek-pasek {
+        background: #f77f00;
+      }
+      .fx-przypisy {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        text-align: left;
+      }
+      .fx-przypisy li {
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="./pv-logic.js"></script>
+    <script src="./calc-core.js"></script>
+    <script>
+      var INWERTERY = {
+        1: "Deye SUN-5K-SG01LP1-EU (5 kW, jednofazowy)",
+        2: "Deye SUN-10K-SG04LP3-EU (10 kW, trójfazowy)",
+      };
+      var MAGAZYNY = {
+        1: {
+          nazwa: "Deye RW-M6.1-B",
+          kwh: 6.14,
+          pole: "liczbaMeri",
+          domyslnie: 2,
+          max: 4,
+        },
+        2: {
+          nazwa: "Ledvance LES-HV-4K",
+          kwh: 4.096,
+          pole: "liczbaBreeze",
+          domyslnie: 4,
+          max: 6,
+        },
+      };
+
+      function magazynZWejscia(v) {
+        var m = MAGAZYNY[v.magazynModel];
+        if (!m) return null;
+        var sztuk = Math.round(Number(v[m.pole]) || m.domyslnie);
+        sztuk = Math.min(Math.max(sztuk, 1), m.max);
+        return {
+          nazwa: m.nazwa,
+          sztuk: sztuk,
+          kwh: Math.round(sztuk * m.kwh * 10) / 10,
+        };
+      }
+
+      function fmtKWh(x) {
+        return FluxCalc.fmtNum(x, "kWh");
+      }
+      function fmtProc(x) {
+        return Math.round(x * 100) + "%";
+      }
+
+      var PRZYPISY =
+        '<ol class="fx-przypisy">' +
+        '<li>Produkcja 1057,9 kWh z 1 kWp rocznie: <a href="https://re.jrc.ec.europa.eu/pvg_tools/" target="_blank" rel="noopener">PVGIS v5.2 (JRC)</a>, Łódź, nachylenie 35°, południe, straty 14%, odczyt 15.11.2026.</li>' +
+        "<li>Cena prądu 0,98 zł/kWh brutto z dystrybucją i energia czynna 0,6187 zł/kWh brutto to wartości przykładowe dla taryfy G11. Firma wpisuje stawki taryfy klienta; w Łodzi dystrybutorem jest PGE Dystrybucja.</li>" +
+        "<li>Energia oddana do sieci 0,346 zł/kWh: RCEm za wrzesień 2026 (PSE), według gramwzielone.pl. Depozyt rozlicza tylko energię czynną, bez dystrybucji.</li>" +
+        "<li>Autokonsumpcja 30%, 250 cykli magazynu w roku, sprawność 90% oraz ceny instalacji i magazynów to założenia przykładowe do ustawienia przez firmę. Dotacji nie wliczamy: brak potwierdzonego trwającego naboru Mój Prąd.</li>" +
+        "<li>Podpowiedź pojemności zaczyna od zużycia domu, nie od mocy instalacji: wariant minimum pokrywa zużycie wieczorem i w nocy, wariant z zapasem średnie zużycie całej doby. Udział zużycia wieczorem i w nocy 50% to założenie przykładowe. W programie Przydomowe Magazyny Energii (NFOŚiGW) przyjęto około 2 kWh pojemności na 1 kWp mocy PV; to warunek programu, nie dobór do zużycia. Ostateczny dobór po audycie.</li>" +
+        "</ol>";
+
+      var TARYFY = { 1: "G11 (całodobowa)", 2: "G12 lub G12w (strefowa)", 3: "dynamiczna" };
+
+      function modulyNa(kwh) {
+        return [1, 2]
+          .map(function (nr) {
+            var m = MAGAZYNY[nr];
+            var szt = Math.max(1, Math.ceil(kwh / m.kwh - 0.05));
+            var nazwa = nr === 1 ? "Deye" : "Ledvance";
+            return szt > m.max
+              ? nazwa + ": ponad " + m.max + " moduły w kalkulatorze"
+              : nazwa + ": " + szt + " x " + FluxCalc.fmtNum(m.kwh, "kWh");
+          })
+          .join(", ");
+      }
+
+      function podpowiedzPojemnosci(values) {
+        var calosc =
+          (Number(values.zuzycieRoczne) || 0) +
+          (Number(values.dodatkoweZuzyciePompa) || 0) +
+          (Number(values.dodatkoweZuzycieEV) || 0);
+        var doba = calosc / 365;
+        var udzial = Math.min(Math.max(Number(values.udzialNoc) || 0, 0), 100) / 100;
+        var noc = doba * udzial;
+        var pme = (Number(values.mocPV) || 0) * 2;
+        var taryfa = Number(values.taryfa) || 1;
+        var r1 = function (x) { return Math.round(x * 10) / 10; };
+        var wiersze = [
+          { etykieta: "Podpowiedź pojemności magazynu", naglowek: true },
+          { etykieta: "Średnie zużycie na dobę", wartosc: r1(doba), jednostka: "kWh" },
+          {
+            etykieta: "Minimum: wieczór i noc",
+            tekst: FluxCalc.fmtNum(r1(noc), "kWh") + " (" + modulyNa(noc) + ")",
+            wyroznij: taryfa === 1,
+          },
+          {
+            etykieta: "Z zapasem: cała doba",
+            tekst: FluxCalc.fmtNum(r1(doba), "kWh") + " (" + modulyNa(doba) + ")",
+            wyroznij: taryfa !== 1,
+          },
+        ];
+        var mag = magazynZWejscia(values);
+        if (mag) {
+          var ocena =
+            mag.kwh + 0.05 >= doba
+              ? "pokrywa całą dobę"
+              : mag.kwh + 0.05 >= noc
+                ? "pokrywa wieczór i noc"
+                : "mniej niż zużycie wieczorem i w nocy";
+          wiersze.push({
+            etykieta: "Wybrany magazyn",
+            tekst: FluxCalc.fmtNum(mag.kwh, "kWh") + ": " + ocena,
+          });
+        }
+        wiersze.push({
+          etykieta: "Taryfa " + TARYFY[taryfa],
+          tekst:
+            taryfa === 1
+              ? "punktem wyjścia jest wariant minimum"
+              : "warto rozważyć wariant z zapasem: zimą magazyn można ładować tańszą energią z sieci",
+        });
+        if (pme > 0)
+          wiersze.push({
+            etykieta: "Program Przydomowe Magazyny Energii",
+            tekst: "około " + FluxCalc.fmtNum(r1(pme), "kWh") + " (2 kWh na 1 kWp), warunek programu, nie dobór",
+          });
+        return wiersze;
+      }
+
+      // ===== KONFIGURACJA FIRMY =====
+      var KONFIG = {
+        brand: {
+          nazwa: "Project Daylight",
+          logo: "",
+          kolor: "#0d1b48",
+          kolorAkcent: "#f8d049",
+          stopka:
+            "Wersja demonstracyjna FluxLab. Ceny sprzętu to przykładowe założenia do ustawienia przez firmę. Zapytanie z tej wersji trafia do demonstracyjnego CRM FluxLab, nie do Project Daylight; w wersji docelowej trafia na skrzynkę firmy i do jej CRM." +
+            PRZYPISY +
+            'Silnik: <a href="https://fluxlab.pl" target="_blank" rel="noopener">FluxLab</a>',
+        },
+        lead: {
+          tryb: "fluxcrm",
+          endpoint: "/api/demo-projectd",
+          slug: "",
+          token: "",
+          stronaZrodlowa: "https://fluxlab.pl/demo/project-d",
+          tekst:
+            "Zostaw kontakt, a przygotujemy dokładne wyliczenie i dobór sprzętu po audycie. Pełny wynik pokażemy od razu.",
+          cta: "Wyślij zapytanie",
+          uslugiEtykieta: "Czego dotyczy zapytanie?",
+          uslugi: [
+            { id: "projekt", etykieta: "Fotowoltaika" },
+            { id: "magazyn", etykieta: "Magazyn energii" },
+            { id: "ev", etykieta: "Ładowarka do auta" },
+            { id: "audyt", etykieta: "Audyt energetyczny" },
+          ],
+          kontakt: true,
+          zgoda:
+            "Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na to zapytanie.",
+          komunikatOk:
+            "Dziękujemy, zapytanie dotarło. Odezwiemy się z dokładnym wyliczeniem.",
+          zaznaczUslugi: function (v) {
+            var z = ["projekt"];
+            if (Number(v.magazynModel) > 0) z.push("magazyn");
+            return z;
+          },
+          wiadomosc: function (d) {
+            var v = d.wejscie || {};
+            var mag = magazynZWejscia(v);
+            var linie = [
+              "Zapytanie z kalkulatora PV z magazynem energii",
+              "Usługi: " +
+                (d.uslugi.length ? d.uslugi.join(", ") : "nie wybrano"),
+              "Roczne zużycie: " +
+                fmtKWh(v.zuzycieRoczne) +
+                ", moc PV: " +
+                FluxCalc.fmtNum(v.mocPV, "kWp"),
+              "Inwerter: " + (INWERTERY[v.inwerter] || "-"),
+              "Preferowany magazyn: " +
+                (mag
+                  ? mag.nazwa + " x " + mag.sztuk + " (" + fmtKWh(mag.kwh) + ")"
+                  : "bez magazynu"),
+              "Pompa ciepła: " +
+                fmtKWh(v.dodatkoweZuzyciePompa) +
+                ", auto elektryczne: " +
+                fmtKWh(v.dodatkoweZuzycieEV),
+              "Zużycie wieczorem i w nocy: " +
+                (Number(v.udzialNoc) || 0) +
+                "%, taryfa: " +
+                (TARYFY[v.taryfa] || "-"),
+            ];
+            (d.podsumowanie || []).concat(d.wynik || []).forEach(function (w) {
+              if (w.naglowek) return linie.push("", w.etykieta);
+              if (w.tekst !== undefined)
+                return linie.push("- " + w.etykieta + ": " + w.tekst);
+              linie.push(
+                "- " +
+                  w.etykieta +
+                  ": " +
+                  (w.pln
+                    ? FluxCalc.fmtPLN(w.wartosc)
+                    : FluxCalc.fmtNum(w.wartosc, w.jednostka)),
+              );
+            });
+            return linie.join("\n").slice(0, 4900);
+          },
+        },
+        params: {
+          oplataDystrybucyjnaZmienna: 0,
+          akcyza: 0,
+          vat: 0,
+          cykleMagazynuRocznie: 250,
+          sprawnoscMagazynu: 0.9,
+        },
+      };
+      // ===========================================================
+
+      function parametry(v) {
+        var cena = Number(v.z_cena) || 0.98;
+        return Object.assign({}, KONFIG.params, {
+          cenaEnergii: cena,
+          cenaEnergiiDepozyt: Number(v.z_energia) || 0.6187,
+          depozytStawka: (Number(v.z_rcem) || 0) / cena,
+          wspInstalacji: Number(v.z_produkcja) || 1057.9,
+          autokonsumpcja: (Number(v.z_auto) || 0) / 100,
+          cenaZaKwp: Number(v.z_kwp) || 0,
+          cenaZaKWhMagazynu: Number(v.z_mag) || 0,
+        });
+      }
+
+      var ostatnie = null;
+      function rysujWykres() {
+        var pods = document.querySelector(".fx-podsumowanie");
+        if (!pods || !ostatnie) return;
+        var box = document.getElementById("fx-wykres");
+        if (!box) {
+          box = document.createElement("div");
+          box.id = "fx-wykres";
+          box.className = "fx-wykres";
+          pods.parentNode.insertBefore(box, pods.nextSibling);
+        }
+        var maks = ostatnie.bezPV || 1;
+        var slupki = [
+          { nazwa: "Bez instalacji", kwota: ostatnie.bezPV, klasa: " fx-slupek-bez" },
+        ].concat(
+          ostatnie.warianty.map(function (v) {
+            return {
+              nazwa: v.krotko,
+              kwota: v.rachunek,
+              klasa: v.nr === ostatnie.wybrany ? " fx-slupek-wybrany" : "",
+            };
+          }),
+        );
+        box.innerHTML =
+          '<p class="fx-wykres-tytul">Rachunek za prąd w roku</p>' +
+          '<p class="fx-wykres-opis">Ile zostaje do zapłaty po rozliczeniu produkcji i depozytu.</p>' +
+          slupki
+            .map(function (s) {
+              var proc = Math.max(0, Math.min(100, (s.kwota / maks) * 100));
+              return (
+                '<div class="fx-slupek' + s.klasa + '">' +
+                '<div class="fx-slupek-opis"><span>' + s.nazwa + "</span><b>" +
+                FluxCalc.fmtPLN(s.kwota) + "</b></div>" +
+                '<div class="fx-slupek-tor"><div class="fx-slupek-pasek" style="width:' +
+                proc.toFixed(1) + '%"></div></div></div>'
+              );
+            })
+            .join("");
+      }
+
+      function pole(id, etykieta, wartosc, jednostka, krok, pomoc) {
+        return {
+          id: id,
+          etykieta: etykieta,
+          typ: "number",
+          wartosc: wartosc,
+          min: 0,
+          krok: krok,
+          jednostka: jednostka,
+          pomoc: pomoc,
+        };
+      }
+
+      FluxCalc.init({
+        mount: "#app",
+        brand: KONFIG.brand,
+        lead: KONFIG.lead,
+        tytul: "Ile zaoszczędzisz z fotowoltaiką i magazynem energii?",
+        opis: "Wpisz zużycie prądu, a podpowiemy pojemność magazynu i porównamy trzy warianty: koszt, oszczędność, autokonsumpcję i okres zwrotu.",
+        ctaOblicz: "Porównaj warianty",
+        pola: [
+          pole("zuzycieRoczne", "Roczne zużycie prądu", 6000, "kWh", 100, "Z rocznego rachunku za prąd."),
+          pole("mocPV", "Moc instalacji fotowoltaicznej", 5, "kWp", 0.5),
+          {
+            id: "inwerter",
+            etykieta: "Inwerter hybrydowy",
+            typ: "select",
+            wartosc: 1,
+            opcje: [
+              { wartosc: 1, etykieta: INWERTERY[1] },
+              { wartosc: 2, etykieta: INWERTERY[2] },
+            ],
+            pomoc: "Ostateczny dobór potwierdza projektant po audycie.",
+          },
+          {
+            id: "magazynModel",
+            etykieta: "Preferowany magazyn energii",
+            typ: "select",
+            wartosc: 1,
+            opcje: [
+              { wartosc: 0, etykieta: "Bez magazynu" },
+              { wartosc: 1, etykieta: "Deye RW-M6.1-B" },
+              { wartosc: 2, etykieta: "Ledvance LES-HV-4K" },
+            ],
+            pomoc: "Wyróżnimy ten wariant w wyniku i w zapytaniu.",
+          },
+          {
+            id: "liczbaMeri",
+            etykieta: "Moduły Deye RW-M6.1-B",
+            typ: "number",
+            wartosc: 2,
+            min: 1,
+            max: 4,
+            krok: 1,
+            jednostka: "szt.",
+            pomoc: "6,14 kWh na moduł, niskonapięciowy LiFePO4. W kalkulatorze 1-4 moduły, system rozbudowuje się do 32 modułów.",
+          },
+          {
+            id: "liczbaBreeze",
+            etykieta: "Moduły Ledvance LES-HV-4K",
+            typ: "number",
+            wartosc: 4,
+            min: 1,
+            max: 6,
+            krok: 1,
+            jednostka: "szt.",
+            pomoc: "4,096 kWh na moduł, wysokonapięciowy LiFePO4, do 6 modułów (24,6 kWh).",
+          },
+          pole("dodatkoweZuzyciePompa", "Dodatkowe zużycie: pompa ciepła", 0, "kWh", 100, "Szacunkowe roczne zużycie pompy. 0, jeśli brak."),
+          pole("dodatkoweZuzycieEV", "Dodatkowe zużycie: auto elektryczne", 0, "kWh", 100, "Około 15-20 kWh na 100 km. 0, jeśli brak."),
+          {
+            id: "udzialNoc",
+            etykieta: "Zużycie wieczorem i w nocy",
+            typ: "number",
+            wartosc: 50,
+            min: 0,
+            max: 100,
+            krok: 5,
+            jednostka: "%",
+            pomoc: "Część zużycia po zachodzie słońca. 50% to założenie przykładowe; dokładnie pokaże licznik lub aplikacja operatora.",
+          },
+          {
+            id: "taryfa",
+            etykieta: "Taryfa za prąd",
+            typ: "select",
+            wartosc: 1,
+            opcje: [
+              { wartosc: 1, etykieta: TARYFY[1] },
+              { wartosc: 2, etykieta: TARYFY[2] },
+              { wartosc: 3, etykieta: TARYFY[3] },
+            ],
+            pomoc: "Wpływa na podpowiedź pojemności. Rachunek liczymy według ceny z założeń.",
+          },
+          pole("z_produkcja", "Produkcja z 1 kWp w roku", 1057.9, "kWh", 0.1, "[1] PVGIS, Łódź."),
+          pole("z_cena", "Cena prądu z dystrybucją (brutto)", 0.98, "zł/kWh", 0.01, "[2] Przykład dla G11, firma wpisuje stawkę klienta."),
+          pole("z_energia", "Cena energii czynnej (brutto)", 0.6187, "zł/kWh", 0.0001, "[2] Do tej kwoty depozyt pokrywa rachunek."),
+          pole("z_rcem", "Wartość energii oddanej do sieci", 0.346, "zł/kWh", 0.001, "[3] RCEm wrzesień 2026, PSE."),
+          pole("z_auto", "Autokonsumpcja bez magazynu", 30, "%", 1, "[4] Założenie przykładowe."),
+          pole("z_kwp", "Cena instalacji za 1 kWp (brutto)", 4200, "zł", 50, "[4] Założenie przykładowe: z inwerterem i montażem."),
+          pole("z_mag", "Cena magazynu za 1 kWh (brutto)", 2500, "zł", 50, "[4] Założenie przykładowe."),
+          pole("z_dotacja", "Dotacja", 0, "zł", 500, "[4] Ustawia firma, gdy trwa nabór."),
+        ],
+        oblicz: function (values) {
+          var p = parametry(values);
+          var dotacja = Number(values.z_dotacja) || 0;
+          function licz(magazynModel) {
+            var mag = magazynZWejscia(
+              Object.assign({}, values, { magazynModel: magazynModel }),
+            );
+            var w = PVLogic.oblicz(
+              {
+                zuzycieRoczne: values.zuzycieRoczne,
+                mocPV: values.mocPV,
+                dodatkoweZuzyciePompa: values.dodatkoweZuzyciePompa,
+                dodatkoweZuzycieEV: values.dodatkoweZuzycieEV,
+                magazyn: mag ? 1 : 0,
+                magazynPojemnosc: mag ? mag.kwh : 0,
+              },
+              p,
+            );
+            return { mag: mag, w: w, m: w.magazyn };
+          }
+          var wybrany = Number(values.magazynModel) || 0;
+          var warianty = [
+            { nr: 0, nazwa: "Wariant 1: sama fotowoltaika", krotko: "Sama PV" },
+            { nr: 1, nazwa: "Wariant 2: PV + Deye RW-M6.1-B", krotko: "PV + Deye" },
+            { nr: 2, nazwa: "Wariant 3: PV + Ledvance LES-HV-4K", krotko: "PV + Ledvance" },
+          ].map(function (v) {
+            var r = licz(v.nr);
+            var w = r.w;
+            var oszcz = r.m ? r.m.oszczednoscRoczna : w.oszczednoscRoczna;
+            var koszt = Math.max(
+              (r.m ? r.m.kosztInstalacji : w.kosztInstalacji) - dotacja,
+              0,
+            );
+            var bezposrednio = Math.min(
+              w.produkcjaPV * p.autokonsumpcja,
+              w.zuzycieCalkowite,
+            );
+            var zMag = r.m ? r.m.energiaZMagazynuKWh / p.sprawnoscMagazynu : 0;
+            return {
+              nr: v.nr,
+              krotko: r.mag ? v.krotko + " " + fmtKWh(r.mag.kwh) : v.krotko,
+              nazwa: r.mag
+                ? v.nazwa + " x " + r.mag.sztuk + " (" + fmtKWh(r.mag.kwh) + ")"
+                : v.nazwa,
+              oszczednosc: oszcz,
+              koszt: koszt,
+              zwrot: oszcz > 0 ? Math.round((koszt / oszcz) * 10) / 10 : null,
+              auto: w.produkcjaPV > 0 ? (bezposrednio + zMag) / w.produkcjaPV : 0,
+              rachunek: Math.max(w.kosztBezPV - oszcz, 0),
+              energiaMag: r.m ? r.m.energiaZMagazynuKWh : 0,
+              w: w,
+            };
+          });
+          var baza = warianty[0].w;
+          ostatnie = { bezPV: baza.kosztBezPV, warianty: warianty, wybrany: wybrany };
+          setTimeout(rysujWykres, 0);
+
+          var podsumowanie = podpowiedzPojemnosci(values);
+          warianty.forEach(function (v) {
+            podsumowanie.push(
+              { etykieta: v.nazwa, naglowek: true },
+              { etykieta: "Koszt instalacji", wartosc: v.koszt, pln: true },
+              {
+                etykieta: "Oszczędność w roku",
+                wartosc: v.oszczednosc,
+                pln: true,
+                wyroznij: v.nr === wybrany,
+              },
+              { etykieta: "Autokonsumpcja", tekst: fmtProc(v.auto) },
+              {
+                etykieta: "Okres zwrotu",
+                tekst: v.zwrot === null ? "-" : FluxCalc.fmtNum(v.zwrot, "lat"),
+              },
+            );
+          });
+          var pelne = [
+            { etykieta: "Dane wyliczenia", naglowek: true },
+            { etykieta: "Inwerter", tekst: INWERTERY[values.inwerter] || "-" },
+            { etykieta: "Całkowite zużycie w roku", wartosc: baza.zuzycieCalkowite, jednostka: "kWh" },
+            { etykieta: "Produkcja PV w roku", wartosc: baza.produkcjaPV, jednostka: "kWh" },
+            { etykieta: "Rachunek bez instalacji", wartosc: baza.kosztBezPV, pln: true },
+          ];
+          warianty.forEach(function (v) {
+            pelne.push({ etykieta: "Rachunek: " + v.krotko, wartosc: v.rachunek, pln: true });
+            if (v.nr)
+              pelne.push({
+                etykieta: "Energia z magazynu: " + v.krotko,
+                wartosc: v.energiaMag,
+                jednostka: "kWh",
+              });
+          });
+          return { podsumowanie: podsumowanie, pelne: pelne };
+        },
+      });
+
+      (function () {
+        var form = document.querySelector(".fx-form");
+        var pierwsze = form.querySelector('[data-pole="z_produkcja"]');
+        if (!form || !pierwsze) return;
+        var det = document.createElement("details");
+        det.className = "fx-zalozenia";
+        det.innerHTML =
+          "<summary>Założenia obliczeń (ustawia firma)</summary>";
+        form.querySelectorAll('[data-pole^="z_"]').forEach(function (inp) {
+          det.appendChild(inp.closest(".fx-pole"));
+        });
+        form.insertBefore(det, form.querySelector(".fx-btn"));
+      })();
+    </script>
+  </body>
+</html>
