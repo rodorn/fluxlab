@@ -53,10 +53,14 @@ export function analizaTekstu(tekst: string) {
     }
   }
   const wszystkie = zd.join(" ");
-  for (const f of frazy as { fraza: string; zamiennik: string }[]) {
+  const zajete: string[] = [];
+  const posortowane = [...(frazy as { fraza: string; zamiennik: string }[])].sort((a, b) => b.fraza.length - a.fraza.length);
+  for (const f of posortowane) {
+    if (zajete.some((d) => d.includes(f.fraza))) continue;
     const rx = new RegExp(KRAWEDZIE + f.fraza.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + KONIEC, "i");
     const m = rx.exec(wszystkie);
     if (m) {
+      zajete.push(f.fraza);
       uwagi.push({ rodzaj: "fraza", tytul: `„${f.fraza}” → ${f.zamiennik}`, tekst: wokol(wszystkie, m.index, m[0].length) });
     }
   }
