@@ -103,7 +103,7 @@ function zloz(dom: string, k: Kontrola[]) {
   const zle = wiersze.filter((x) => x.et !== "W porządku").length;
   const podsumowanie = zle
     ? `Do uwagi: ${zle} z ${wiersze.length} kontroli.`
-    : `Wszystkie ${wiersze.length} kontrole bez uwag.`;
+    : `Bez uwag we wszystkich ${wiersze.length} kontrolach.`;
   const tekst = `Raport o firmie w internecie: ${dom} (${data})\n${podsumowanie}\n\n${wiersze.map((x) => `${x.et}. ${x.tytul}: ${x.naglowek}. ${x.opis}`).join("\n\n")}`;
   const cialo = `<div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:#111"><h1 style="font-size:24px;margin:0">Raport o firmie w internecie</h1><p style="margin:4px 0 6px;color:#555">${esc(dom)} · ${data}</p><p style="margin:0 0 22px;font-weight:700">${esc(podsumowanie)}</p>${sekcje}<p style="margin-top:26px;font-size:12px;color:#666">To automatyczne sprawdzenie publicznie dostępnych informacji, wykonane ${data}. Fluxlab, fluxlab.pl</p></div>`;
   return { tekst, cialo, podsumowanie };
