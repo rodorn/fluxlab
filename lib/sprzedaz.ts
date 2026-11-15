@@ -98,6 +98,15 @@ OFERTA["auto-alert"] = {
   pole: "Link do wyszukiwania na Otomoto (strona z wynikami i Twoimi filtrami)",
 };
 
+OFERTA["zdolnosc"] = {
+  nazwa: "Kalkulator zdolności kredytowej dla pośrednika",
+  netto: 49,
+  miesiecznie: true,
+  strona: "/kalkulator-zdolnosci-kredytowej",
+  pole: "Nazwa firmy i kontakt dla klientów (telefon lub e-mail)",
+  pole2: "Oprocentowanie kredytu w %, np. 7,5 (opcjonalnie)",
+};
+
 export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
 
 const OFERTY_POZYCJI: Record<string, string[]> = {

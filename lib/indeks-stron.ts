@@ -278,6 +278,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Wprost z danych operatora."
   },
   {
+    "url": "/kalkulator-zdolnosci-kredytowej",
+    "tytul": "Kalkulator zdolności kredytowej na stronę pośrednika, 49 zł/mies.",
+    "opis": "Kalkulator orientacyjnej zdolności kredytowej do wklejenia na stronę pośrednika: Twoja nazwa, kontakt i oprocentowanie. Kod w mailu po zamówieniu."
+  },
+  {
     "url": "/wycena-auta-z-ogloszen",
     "tytul": "Wycena auta z ogłoszeń Otomoto, 19 zł",
     "opis": "Raport cen podobnych aut z Otomoto dla Twojego ogłoszenia: mediana, zakres cen i najbardziej podobne oferty. Mail zaraz po zamówieniu."
