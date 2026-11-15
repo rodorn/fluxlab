@@ -41,7 +41,7 @@ export default function Page() {
       checks={[
         {
           title: "Jeden plik, wiele faktur",
-          desc: "Jeden wiersz to jedna pozycja. Wiersze o tym samym numerze tworzą jedną fakturę, więc w jednym pliku wysyłasz do 200 faktur. Plik może być .xlsx albo .csv, wzór kolumn pobierzesz po opłaceniu zamówienia.",
+          desc: "Jeden wiersz to jedna pozycja. Wiersze o tym samym numerze tworzą jedną fakturę, więc w jednym pliku wysyłasz do 200 faktur. Plik może być w formacie Excela albo CSV, wzór kolumn pobierzesz po opłaceniu zamówienia.",
         },
         {
           title: "Błąd w pliku nie wystawia nic",
@@ -59,7 +59,7 @@ export default function Page() {
           kup: "faktury-z-excela",
           desc: "Netto. Jedna firma, jeden NIP, dowolna liczba plików w miesiącu.",
           features: [
-            "wystawianie faktur FA(3) w KSeF z pliku .xlsx lub .csv",
+            "wystawianie faktur FA(3) w KSeF z pliku Excela lub CSV",
             "kontrola całego pliku przed wysyłką",
             "mail z numerami KSeF po wystawieniu",
             "rezygnacja w dowolnym dniu",

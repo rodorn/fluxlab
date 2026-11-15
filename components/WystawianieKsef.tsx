@@ -251,7 +251,7 @@ export default function WystawianieKsef({
           />
           <span className="text-sm text-gray-700 dark:text-gray-300">
             Fluxlab może wystawiać w KSeF faktury w imieniu mojej firmy, na
-            podstawie plików, które tu wgram, tym tokenem.
+            podstawie plików wgranych na tej stronie, tym tokenem.
           </span>
         </label>
       )}
