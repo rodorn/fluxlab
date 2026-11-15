@@ -35,7 +35,7 @@ export default function Page() {
         },
         {
           title: "Mail przy awarii i po naprawie",
-          desc: "Alert z godziną początku i przyczyną (brak DNS, timeout, odmowa połączenia, błąd serwera). Po naprawie podsumowanie przestoju.",
+          desc: "Alert z godziną początku i przyczyną (brak DNS, brak odpowiedzi w 15 sekund, odmowa połączenia, błąd serwera). Po naprawie podsumowanie przestoju.",
         },
         {
           title: "Raport miesięczny",
