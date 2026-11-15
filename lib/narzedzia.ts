@@ -32,6 +32,15 @@ export const businessTools: Narzedzie[] = [
     badge: "Nowość",
   },
   {
+    title: "Kursy NBP",
+    pytanie: "Jaki kurs NBP do faktury w walucie?",
+    description:
+      "Kurs średni NBP z dnia poprzedzającego fakturę i wzór do arkusza, który dopisuje kursy sam.",
+    href: "/kursy-nbp",
+    ikona: "faktura",
+    badge: "Nowość",
+  },
+  {
     title: "Raport e-Doręczeń",
     pytanie: "Czy firma musi mieć adres do e-Doręczeń?",
     description:

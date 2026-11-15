@@ -279,6 +279,11 @@ const SYTUACJE: Sytuacja[] = [
           "Terminy na adres do doręczeń elektronicznych wchodzą etapami i zależą od tego, gdzie i kiedy podmiot został zarejestrowany.",
       },
       {
+        href: "/kursy-nbp",
+        powod:
+          "Faktura w walucie obcej wymaga kursu NBP z dnia poprzedzającego, a narzędzie podaje go z numerem tabeli i dopisuje do arkusza.",
+      },
+      {
         href: "/raport-edoreczen",
         powod:
           "Raport po NIP albo KRS pokazuje, czy firma musi mieć adres do doręczeń elektronicznych, od kiedy i czy spółka już go ma.",
