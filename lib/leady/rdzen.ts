@@ -3,7 +3,7 @@ import { dane } from "@/lib/fl-dane";
 import { stripe } from "@/lib/stripe";
 import { daneFirmy, type Firma } from "@/lib/leady/dane-firmy";
 import { ocenaLeada, type Ocena } from "@/lib/leady/ocena";
-import { PRODUKTY, mailKarta, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
+import { PRODUKTY, mailKarta, mailNps, mailDoLeada, mailPowitalny, mailPrzeprosiny, wyslij } from "@/lib/leady/poczta";
 
 export type Klient = {
   email: string; nazwa: string; produkty: string[]; subskrypcje: Record<string, string>;
@@ -74,11 +74,32 @@ export async function przetworz(token: string, id: string) {
   }
 }
 
+export async function ankietaInfo(token: string): Promise<{ firma: string } | null> {
+  const k = await db.pobierz<Klient>("klienci", token);
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-nps")) return null;
+  return { firma: k.dane.ustawienia.firma ?? "" };
+}
+
+export async function odpowiedzNps(token: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string }> {
+  const k = await db.pobierz<Klient>("klienci", token);
+  if (!k || !k.dane.aktywny || !k.dane.produkty.includes("lead-nps")) return { kod: 404, blad: "Nieznana albo wyłączona ankieta." };
+  const ocena = Number(wej.ocena);
+  if (!Number.isInteger(ocena) || ocena < 0 || ocena > 10) return { kod: 400, blad: "Wybierz ocenę od 0 do 10." };
+  if ((await db.licz("ankiety", { klucz: token, od: new Date().toISOString().slice(0, 10) })) >= LIMIT_DOBA * 5)
+    return { kod: 429, blad: "Dzienny limit odpowiedzi wyczerpany." };
+  const komentarz = String(wej.komentarz ?? "").trim().slice(0, 1000);
+  await db.dodaj("ankiety", { klucz: token, dane: { ocena, komentarz } });
+  const panel = k.klucz!;
+  await wyslij({ do: k.dane.email, temat: `Ankieta NPS: ocena ${ocena}${ocena <= 6 ? " (krytyk)" : ""}`, html: mailNps(panel, ocena, komentarz) }).catch((e) => console.error("mail NPS", e));
+  return { kod: 202 };
+}
+
 export async function panel(p: string) {
   const [k] = await db.lista<Klient>("klienci", { klucz: p, limit: 1 });
   if (!k) return null;
   const leady = (await db.lista<Zgloszenie>("zgloszenia", { klucz: k.id, limit: 200 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
-  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady };
+  const ankiety = (await db.lista<{ ocena: number; komentarz: string }>("ankiety", { klucz: k.id, limit: 500 })).map((d) => ({ id: d.id, czas: d.utworzono, ...d.dane }));
+  return { token: k.id, aktywny: k.dane.aktywny, produkty: k.dane.produkty, ustawienia: k.dane.ustawienia, leady, ankiety };
 }
 
 export async function zapiszUstawienia(p: string, wej: Record<string, unknown>): Promise<{ kod: number; blad?: string }> {
@@ -176,11 +197,13 @@ export async function sprzatanie() {
       }
     } else if (d.wylaczono && teraz - Date.parse(d.wylaczono) > PO_REZYGNACJI_DNI * 86400000) {
       await db.usunKlucz(k.id, "zgloszenia");
+      await db.usunKlucz(k.id, "ankiety");
       await db.usun("klienci", k.id);
       await db.usun("indeks", d.email);
       raport.push(`${d.email}: usunięto dane po rezygnacji`);
     }
   }
   await db.usunPrzed("zgloszenia", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
+  await db.usunPrzed("ankiety", new Date(teraz - RETENCJA_DNI * 86400000).toISOString());
   return raport;
 }

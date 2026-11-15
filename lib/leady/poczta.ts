@@ -9,6 +9,7 @@ const STYL = "font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:
 const ETYKIETA: Record<string, string> = { imie: "Imię", email: "E-mail", telefon: "Telefon", firma: "Firma", nip: "NIP", wiadomosc: "Wiadomość" };
 
 export const PRODUKTY: Record<string, { nazwa: string; opis: string }> = {
+  "lead-nps": { nazwa: "Ankieta NPS", opis: "ankieta NPS z linkiem dla Twoich klientów, wynik i odpowiedzi w panelu" },
   "lead-formularz": { nazwa: "Formularz leadów z listą zgłoszeń", opis: "formularz do osadzenia i lista zgłoszeń w panelu" },
   "lead-odpowiedz": { nazwa: "Odpowiedź na leada w minutę", opis: "natychmiastowy mail do każdego, kto zostawi zgłoszenie (uzupełnij ofertę i link do kalendarza w panelu)" },
   "lead-ocena": { nazwa: "Ocena leada przez AI", opis: "ocena i streszczenie każdego zgłoszenia w mailu do Ciebie" },
@@ -51,6 +52,11 @@ export function mailKarta(panel: string, pola: Record<string, string>, firma: Fi
   return `${h}<p style='margin:0'><a href='${PANEL_URL}${esc(panel)}'>Wszystkie zgłoszenia i ustawienia</a></p></div>`;
 }
 
+export function mailNps(panel: string, ocena: number, komentarz: string) {
+  const typ = ocena >= 9 ? "promotor" : ocena >= 7 ? "neutralny" : "krytyk";
+  return `<div style='${STYL}'><p style='margin:0 0 4px'><b style='font-size:17px'>Ocena ${ocena}/10 (${typ})</b></p>${komentarz ? `<p style='margin:0 0 16px'>${esc(komentarz)}</p>` : "<p style='margin:0 0 16px;color:#666'>Bez komentarza.</p>"}<p style='margin:0'><a href='${PANEL_URL}${esc(panel)}'>Wynik NPS i wszystkie odpowiedzi</a></p></div>`;
+}
+
 export function mailDoLeada(ust: Record<string, string>, nazwaKlienta: string, pola: Record<string, string>) {
   const firma = ust.firma || nazwaKlienta || "Nasza firma";
   const imie = (pola.imie ?? "").split(" ")[0];
@@ -73,6 +79,8 @@ export function mailPowitalny(token: string, panel: string, nowe: string[], nowy
       `<p><b>3. Panel.</b> <a href='${PANEL_URL}${panel}'>Lista zgłoszeń i ustawienia</a>. Ten link jest tajny, nie udostępniaj go.</p>` +
       "<p>Każde nowe zgłoszenie trafia do Ciebie mailem na ten adres.</p>"
     : `<p>Działa na tym samym formularzu co wcześniej. <a href='${PANEL_URL}${panel}'>Panel</a>.</p>`;
+  if (nowe.includes("lead-nps"))
+    h += `<p><b>Ankieta NPS.</b> Ten link wyślij swoim klientom: <a href='https://fluxlab.pl/ankieta/${token}'>https://fluxlab.pl/ankieta/${token}</a>. Każda odpowiedź przychodzi do Ciebie mailem, a wynik NPS jest w panelu. Nazwę firmy w pytaniu ustawisz w panelu.</p>`;
   return `${h}<p>Rezygnacja w dowolnym dniu w portalu płatności (link w potwierdzeniu płatności), za niewykorzystane dni zwracamy pieniądze. Dane zgłoszeń usuwamy 30 dni po rezygnacji. Pytania: odpisz na tego maila.</p><p>Zespół Fluxlab</p></div>`;
 }
 

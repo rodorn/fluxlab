@@ -184,6 +184,11 @@ const SYTUACJE: Sytuacja[] = [
           "Klient, który zostawił zgłoszenie, w minutę dostaje ofertę i link do kalendarza, zanim zdąży zapytać kogoś innego.",
       },
       {
+        href: "/ankieta-nps",
+        powod:
+          "Klienci oceniają firmę jednym kliknięciem, a Ty widzisz wynik NPS i komentarze krytyków, zanim ktoś odejdzie.",
+      },
+      {
         href: "/formularz-leadow",
         powod:
           "Zgłoszenia z Twojej strony trafiają od razu na mail i na listę w jednym miejscu, zamiast ginąć w skrzynce.",

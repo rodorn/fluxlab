@@ -148,6 +148,14 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Ankieta NPS",
+    pytanie: "Czy klienci poleciliby Twoją firmę?",
+    description:
+      "Wybierz ocenę i zobacz mail z odpowiedzią klienta. W abonamencie dostajesz link do ankiety i wynik NPS w panelu.",
+    href: "/ankieta-nps",
+    ikona: "lupa",
+  },
+  {
     title: "Formularz leadów z listą zgłoszeń",
     pytanie: "Gdzie lądują zgłoszenia ze strony?",
     description:

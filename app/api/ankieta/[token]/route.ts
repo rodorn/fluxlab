@@ -1,0 +1,18 @@
+import { NextResponse } from "next/server";
+import { utworzLimit } from "@/lib/limit-ip";
+import { odpowiedzNps } from "@/lib/leady/rdzen";
+
+export const runtime = "nodejs";
+export const maxDuration = 60;
+
+const limit = utworzLimit();
+
+export async function POST(req: Request, ctx: { params: Promise<{ token: string }> }) {
+  const { token } = await ctx.params;
+  if (!/^[A-Za-z0-9_-]{16,64}$/.test(token)) return NextResponse.json({ error: "Nieznana ankieta." }, { status: 404 });
+  if (limit(req)) return NextResponse.json({ error: "Za dużo prób, spróbuj za minutę." }, { status: 429 });
+  const wej = await req.json().catch(() => null);
+  if (!wej || typeof wej !== "object") return NextResponse.json({ error: "Nieprawidłowe dane." }, { status: 400 });
+  const w = await odpowiedzNps(token, wej as Record<string, unknown>).catch(() => ({ kod: 502, blad: "Zapis chwilowo nie przeszedł. Spróbuj za chwilę." }));
+  return w.blad ? NextResponse.json({ error: w.blad }, { status: w.kod }) : NextResponse.json({ ok: true }, { status: 202 });
+}
