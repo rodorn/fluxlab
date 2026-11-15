@@ -63,9 +63,9 @@ const pricing = [
     description: "Katalog, płatności, kurier i faktury. Gotowy w 21 dni, cenę ustalamy po rozmowie.",
   },
   {
-    title: "Opieka: strona i Profil Google",
+    title: "Opieka nad stroną",
     price: "od 300 zł/mies.",
-    description: "300, 600 albo 1 280 zł miesięcznie: odpowiedzi na opinie, post co tydzień, 2, 5 albo 10 poprawek na kwartał, monitoring.",
+    description: "300, 600 albo 1 280 zł miesięcznie: 2, 5 albo 10 poprawek na kwartał i monitoring. Wizytówka Google to osobny pakiet za 349 zł/mies.",
   },
   {
     title: "Audyt strony",

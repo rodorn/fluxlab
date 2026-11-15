@@ -96,8 +96,8 @@ export const OFERTA: Record<string, Oferta> = {
   "regulamin-ankieta": { nazwa: "Regulamin sklepu i polityka prywatności", netto: 99, miesiecznie: false, strona: "/regulamin-sklepu-z-ankiety", wgraj: "ankieta" },
   "tax-ai": { nazwa: "Wstępna odpowiedź podatkowa", netto: 29, miesiecznie: false, strona: "/odpowiedz-podatkowa", wgraj: "pytanie" },
   "opieka-300": { nazwa: "Opieka nad stroną: 2 poprawki na kwartał, monitoring", netto: 300, miesiecznie: true, strona: "/strony-www", pole: ADRES },
-  "opieka-600": { nazwa: "Opieka nad stroną: 5 poprawek na kwartał, opinie w Google", netto: 600, miesiecznie: true, strona: "/strony-www", pole: ADRES },
-  "opieka-1280": { nazwa: "Opieka nad stroną: 10 poprawek na kwartał, post co tydzień", netto: 1280, miesiecznie: true, strona: "/strony-www", pole: ADRES },
+  "opieka-600": { nazwa: "Opieka nad stroną: 5 poprawek na kwartał, monitoring", netto: 600, miesiecznie: true, strona: "/strony-www", pole: ADRES },
+  "opieka-1280": { nazwa: "Opieka nad stroną: 10 poprawek na kwartał, monitoring", netto: 1280, miesiecznie: true, strona: "/strony-www", pole: ADRES },
 };
 
 const DLA_KOGO = "Dla kogo: dom czy firma";

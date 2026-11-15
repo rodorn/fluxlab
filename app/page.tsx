@@ -49,7 +49,7 @@ const OFERTA = [
       "naprawa i poprawki: 150 / 290 / 490 zł",
       "strona w tydzień, do 5 podstron: 2 900 zł",
       "strona z CMS: 3 900 albo 5 900 zł, sklep od 9 900 zł",
-      "opieka nad stroną i Profilem Google: od 300 zł/mies.",
+      "opieka nad stroną: od 300 zł/mies.",
     ],
     cta: "Zobacz strony",
     ikona: "strony" as NazwaIlustracji,

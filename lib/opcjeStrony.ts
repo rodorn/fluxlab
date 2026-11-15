@@ -172,12 +172,12 @@ export const OPIEKA = [
   {
     cena: 600,
     nazwa: "Opieka 600 zł/mies.",
-    opis: "5 poprawek na kwartał, opinie w Google",
+    opis: "5 poprawek na kwartał, monitoring",
   },
   {
     cena: 1280,
     nazwa: "Opieka 1 280 zł/mies.",
-    opis: "10 poprawek na kwartał, post co tydzień",
+    opis: "10 poprawek na kwartał, monitoring",
   },
 ] as const;
 
