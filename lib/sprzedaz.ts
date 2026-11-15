@@ -48,6 +48,10 @@ export const OFERTA: Record<string, Oferta> = {
   "opieka-1280": { nazwa: "Opieka nad stroną: 10 poprawek na kwartał, post co tydzień", netto: 1280, miesiecznie: true, strona: "/strony-www", pole: ADRES },
 };
 
+const DLA_KOGO = "Dla kogo: dom czy firma";
+
+OFERTA["dotacje-oze"] = { nazwa: "Nabory dotacji OZE: alert o zmianach na stronach programów", netto: 19, miesiecznie: true, strona: "/nabory-dotacji-oze", pole: DLA_KOGO };
+
 export const cenaOferty = (o: Oferta) => `${zl(o.netto)}${o.miesiecznie ? "/mies." : ""}`;
 
 const OFERTY_POZYCJI: Record<string, string[]> = {

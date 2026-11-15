@@ -273,6 +273,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Rynkowa cena energii na kolejną dobę: najtańsze i najdroższe cztery godziny, okna z ceną ujemną i średnia doby. Wprost z danych operatora."
   },
   {
+    "url": "/nabory-dotacji-oze",
+    "tytul": "Nabory dotacji OZE, alert o zmianach, 19 zł/mies.",
+    "opis": "Obserwujemy strony programów dotacji na fotowoltaikę, magazyny energii i pompy ciepła i piszemy, gdy pojawi się nowy tekst o naborze lub terminie."
+  },
+  {
     "url": "/ile-spolek-znika-z-krs",
     "tytul": "Ile spółek dziennie znika z KRS bez likwidacji",
     "opis": "Licznik liczony codziennie z Monitora Sądowego i Gospodarczego: ile podmiotów sąd skierował do rozwiązania bez likwidacji. Z ostatnich dni roboczych."
