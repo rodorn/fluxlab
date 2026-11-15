@@ -28,7 +28,9 @@ export async function POST(req: Request) {
     billing_address_collection: "required",
     "tax_id_collection[enabled]": "true",
     "phone_number_collection[enabled]": "true",
-    success_url: `https://fluxlab.pl/zakup/dziekujemy?p=${id}&sesja={CHECKOUT_SESSION_ID}`,
+    success_url: !koszyk && oferty[0].wgraj
+      ? `https://fluxlab.pl/wgraj-umowe?p=${id}&sesja={CHECKOUT_SESSION_ID}`
+      : `https://fluxlab.pl/zakup/dziekujemy?p=${id}&sesja={CHECKOUT_SESSION_ID}`,
     cancel_url: `https://fluxlab.pl${koszyk ? "/koszyk" : oferty[0].strona}`,
   });
   oferty.forEach((o, i) => {

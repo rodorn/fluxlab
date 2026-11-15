@@ -455,6 +455,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/streszczenie-umowy`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/pogotowie-automatyzacji`,
       changeFrequency: "monthly" as const,
       priority: 0.8,

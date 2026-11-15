@@ -398,6 +398,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Wpisz adres, a zmierzymy szybkość, certyfikat, widoczność w wyszukiwarce, dostęp dla asystentów AI i zabezpieczenia poczty. Bez rejestracji i bez e-maila."
   },
   {
+    "url": "/streszczenie-umowy",
+    "tytul": "Streszczenie umowy i ryzyk z PDF, 29 zł",
+    "opis": "Wgraj umowę w PDF, a dostaniesz kluczowe zapisy, terminy, kary, ryzyka i punkty do negocjacji. Wynik po kilku minutach, 29 zł netto."
+  },
+  {
     "url": "/opisy-produktow-z-csv",
     "tytul": "Opisy produktów do sklepu z pliku CSV, za darmo",
     "opis": "Wgraj plik z nazwami i cechami produktów, a dostaniesz ten sam plik z opisem krótkim, długim i metatagami. Do 25 produktów, bez płatności."

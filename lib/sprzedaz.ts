@@ -7,6 +7,7 @@ export type Oferta = {
   strona: string;
   pole?: string;
   pole2?: string;
+  wgraj?: "umowa" | "porownanie";
 };
 
 const ADRES = "Adres strony";
@@ -43,6 +44,8 @@ export const OFERTA: Record<string, Oferta> = {
   "n8n-przeplyw": { nazwa: "Wdrożenie pojedynczego przepływu n8n", netto: 790, miesiecznie: false, strona: "/wdrozenie-n8n-cena" },
   "n8n-opieka": { nazwa: "Opieka nad n8n", netto: 190, miesiecznie: true, strona: "/wdrozenie-n8n-cena" },
   "asystent-audyt": { nazwa: "Audyt asystenta AI", netto: 69, miesiecznie: false, strona: "/asystent-ai-na-stronie", pole: ADRES },
+  "umowa-streszczenie": { nazwa: "Streszczenie umowy i ryzyk", netto: 29, miesiecznie: false, strona: "/streszczenie-umowy", wgraj: "umowa" },
+  "umowa-porownanie": { nazwa: "Porównanie dwóch wersji umowy", netto: 19, miesiecznie: false, strona: "/porownanie-umow", wgraj: "porownanie" },
   "opieka-300": { nazwa: "Opieka nad stroną: 2 poprawki na kwartał, monitoring", netto: 300, miesiecznie: true, strona: "/strony-www", pole: ADRES },
   "opieka-600": { nazwa: "Opieka nad stroną: 5 poprawek na kwartał, opinie w Google", netto: 600, miesiecznie: true, strona: "/strony-www", pole: ADRES },
   "opieka-1280": { nazwa: "Opieka nad stroną: 10 poprawek na kwartał, post co tydzień", netto: 1280, miesiecznie: true, strona: "/strony-www", pole: ADRES },

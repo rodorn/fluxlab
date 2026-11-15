@@ -100,6 +100,7 @@ export const SEKCJE: Sekcja[] = [
           s("/audyt-strony", "Darmowy audyt techniczny"),
           s("/czarne-listy", "Czarne listy spamowe"),
           s("/opisy-produktow-z-csv", "Opisy produktów z CSV"),
+          s("/streszczenie-umowy", "Streszczenie umowy i ryzyk"),
           s("/naprawa-https", "Naprawa ostrzeżenia o stronie"),
           s("/pilnowanie-certyfikatu", "Pilnowanie certyfikatu i domeny"),
           s("/monitoring-dostepnosci", "Monitoring dostępności strony"),
