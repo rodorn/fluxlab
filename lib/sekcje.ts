@@ -77,6 +77,7 @@ export const SEKCJE: Sekcja[] = [
           s("/audyt-marz", "Audyt marż sklepu"),
           s("/omnibus-w-sklepie", "Omnibus w sklepie"),
           s("/raport-o-firmie-w-internecie", "Raport o firmie w internecie"),
+          s("/raport-dostepnosci-wcag", "Raport dostępności WCAG"),
           s("/kontrola-paliwa", "Kontrola paliwa we flocie"),
         ],
       },

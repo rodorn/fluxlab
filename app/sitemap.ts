@@ -110,6 +110,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/raport-dostepnosci-wcag`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/raport-o-firmie-w-internecie`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

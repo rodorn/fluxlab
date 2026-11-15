@@ -34,7 +34,7 @@ export default async function ZakupDziekujemy({
               {p === "koszyk" && <CzyscOplacone />}
               {o && <p className="mb-3 font-semibold text-gray-900 dark:text-white">{o.nazwa}</p>}
               <p className="text-gray-600 dark:text-gray-300">
-                {p === "omnibus-sklep" || p === "firma-raport"
+                {p === "omnibus-sklep" || p === "firma-raport" || p === "wcag-raport"
                   ? "Raport robi się sam. W ciągu kilku minut wyślemy go na adres e-mail podany przy płatności. Fakturę VAT wyślemy w ciągu 1 dnia roboczego."
                   : p === "sprzedaz-stripe-dzien" || p === "formularz-zgloszenia"
                   ? "Usługa uruchamia się sama. W ciągu kilku minut wyślemy na adres e-mail podany przy płatności wiadomość startową. Fakturę VAT wyślemy w ciągu 1 dnia roboczego."

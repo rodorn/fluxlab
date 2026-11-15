@@ -213,6 +213,9 @@ const nextConfig: NextConfig = {
   // Binarka Chromium jest czytana z dysku, a nie importowana, więc trzeba ją
   // dołączyć do funkcji wprost.
   outputFileTracingIncludes: {
+    "/api/wcag-raport/automat": [
+      "./node_modules/@sparticuz/chromium/bin/**",
+    ],
     "/api/firma-raport/automat": [
       "./node_modules/@sparticuz/chromium/bin/**",
     ],
