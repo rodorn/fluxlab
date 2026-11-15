@@ -410,6 +410,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/straznik-formularza`,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/kody-qr`,
       changeFrequency: "monthly" as const,
       priority: 0.8,

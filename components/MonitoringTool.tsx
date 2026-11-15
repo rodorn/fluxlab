@@ -198,3 +198,66 @@ export function PodgladDostepnosci() {
     </div>
   );
 }
+
+type Analiza = { ok: boolean; opis: string; error?: string };
+
+/** Sprawdza bez wysyłki zgłoszenia, czy Strażnik formularza obsłuży formularz pod podanym adresem. */
+export function PodgladFormularza() {
+  const [adres, setAdres] = useState("");
+  const [stan, setStan] = useState<"cisza" | "laduje" | "ok" | "blad">("cisza");
+  const [a, setA] = useState<Analiza | null>(null);
+  const [blad, setBlad] = useState("");
+
+  async function sprawdz(e: React.FormEvent) {
+    e.preventDefault();
+    setStan("laduje");
+    setBlad("");
+    zglosZdarzenie("straznik_formularza_analiza");
+    try {
+      const r = await fetch(`/api/monitoring/formularz?adres=${encodeURIComponent(adres)}`);
+      const d: Analiza = await r.json();
+      if (!r.ok) throw new Error(d.error || "Nie udało się sprawdzić strony.");
+      setA(d);
+      setStan("ok");
+    } catch (er) {
+      setBlad((er as Error).message);
+      setStan("blad");
+    }
+  }
+
+  return (
+    <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-5 sm:p-7 shadow-sm">
+      <form onSubmit={sprawdz} className="flex flex-col gap-3 sm:flex-row">
+        <input
+          aria-label="Adres strony z formularzem kontaktowym"
+          type="text"
+          inputMode="url"
+          required
+          value={adres}
+          onChange={(e) => setAdres(e.target.value)}
+          placeholder="twojafirma.pl/kontakt"
+          className={POLE}
+        />
+        <button type="submit" disabled={stan === "laduje"} className="btn-primary disabled:opacity-50">
+          {stan === "laduje" ? "Sprawdzamy..." : "Sprawdź mój formularz"}
+        </button>
+      </form>
+      {stan === "blad" && (
+        <p role="alert" className="mt-3 text-sm text-red-700 dark:text-red-400">
+          {blad}
+        </p>
+      )}
+      {stan === "ok" && a && (
+        <div role="status" className="mt-4">
+          <p className={`text-base font-semibold ${a.ok ? "text-emerald-700 dark:text-emerald-400" : "text-amber-700 dark:text-amber-400"}`}>
+            {a.ok ? "Możemy pilnować tego formularza" : "Tego formularza nie obsłużymy"}
+          </p>
+          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{a.opis}</p>
+          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+            To tylko sprawdzenie strony, nie wysyłamy żadnego zgłoszenia. Zgłoszenie testowe idzie dopiero po włączeniu usługi.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}

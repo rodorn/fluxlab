@@ -217,6 +217,11 @@ const SYTUACJE: Sytuacja[] = [
           "Strona, która pada w nocy albo w weekend, kosztuje zamówienia. Sprawdzenie co 5 minut i mail, zanim zadzwoni klient.",
       },
       {
+        href: "/straznik-formularza",
+        powod:
+          "Formularz kontaktowy, który po cichu przestał wysyłać, kosztuje zapytania. Zgłoszenie testowe raz na dobę i mail, gdy coś się zepsuje.",
+      },
+      {
         href: "/pilnowanie-certyfikatu",
         powod:
           "Mail 30, 14 i 3 dni przed końcem certyfikatu i domeny, żeby ostrzeżenie w przeglądarce nigdy się nie pojawiło.",

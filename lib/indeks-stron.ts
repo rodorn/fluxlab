@@ -343,6 +343,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Sprawdzamy stronę co 5 minut. Przy awarii dostajesz mail, po naprawie informację o przestoju, a co miesiąc raport z dostępnością."
   },
   {
+    "url": "/straznik-formularza",
+    "tytul": "Strażnik formularza kontaktowego od 19 zł",
+    "opis": "Raz na dobę wysyłamy zgłoszenie testowe przez formularz na Twojej stronie. Gdy przestanie przechodzić, dostajesz mail, zanim stracisz zapytania."
+  },
+  {
     "url": "/kody-qr",
     "tytul": "Kody QR z licznikiem skanów",
     "opis": "Kod QR na ulotkę albo auto, który liczy skany. Obraz do druku i comiesięczny wynik skanów przychodzą mailem. Bezpłatnie, bez konta."

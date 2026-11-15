@@ -164,6 +164,15 @@ export const businessTools: Narzedzie[] = [
     ikona: "lupa",
   },
   {
+    title: "Strażnik formularza kontaktowego",
+    pytanie: "Czy zgłoszenia z Twojego formularza naprawdę dochodzą?",
+    description:
+      "Sprawdzamy, czy obsłużymy Twój formularz. Po włączeniu wysyłamy raz na dobę zgłoszenie testowe i piszemy od razu, gdy przestanie przechodzić.",
+    href: "/straznik-formularza",
+    ikona: "tarcza",
+    badge: "Nowość",
+  },
+  {
     title: "Rejestr cen w sklepie",
     description:
       "Sprawdzamy Twoje przeceny i pokazujemy te, przy których brakuje najniższej ceny z 30 dni.",
