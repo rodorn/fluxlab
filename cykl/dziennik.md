@@ -11530,3 +11530,83 @@ Kanały z 0 przez 3 doby: mail/wordpress (także 0 w 7 dniach), linkedin, perple
 **Dowód:** `node scripts/indexnow.mjs` z 87 adresami: Yandex 200, Naver 200, wspólny 403 (znany, dochodzi mimo 403).
 **Dla Pawła:** pusto.
 **Zostało otwarte:** czekam na Z12 o 22:40 (bilans dnia).
+
+## 2026-11-15 22:50
+**Kanał:** pomiar (plan Z12, bilans dnia).
+**Co zrobione:** policzony bilans planu 2026-11-15; nic nie poszło w świat (niedziela, zadanie pomiarowe).
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 54 ludzi, 70 odsłon (pierwsza odsłona: bez odsyłacza 29, google-ads 12, chatgpt utm 5 + chatgpt.com 1, www.google.com 3, facebook 1 + m.facebook 1, checkout.stripe.com 2); 7 dni: 306. raport_ruchu doba: 209 odsłon, 141 osób (−6% wobec średniej 222,4); lejek 7 dni: 969 sesji, 8 form_start, 1 zapytanie.
+
+Bilans planu 2026-11-15 (po odsiewie, doby kończone o 22:43, kanał = źródło pierwszej odsłony):
+
+| Kanał | 14/15.11 | 15/16.11 |
+|---|---|---|
+| Ludzie razem | 51 | 54 |
+| Bez odsyłacza | 33 | 29 |
+| Google (organic) | 5 | 3 (/narzedzia/kalkulator-pit 2 odsłony, /strefa-wiedzy/faktura-do-paragonu-ksef, /strefa-wiedzy/biala-lista-vat-nowe-api) |
+| google-ads: sesje, odsłony na sesję, form_start | 5, 1,0, 0 | 12, 1,17, 0 (/ksef-integracja 7, /automatyzacja-procesow-biznesowych 4, /wdrozenie-n8n-cena 1; kampanie 24472439947 5, 24456876167 4, ads 2, n8n-procesy 1) |
+| utm_campaign=wordpress (sesje) | 0 | 0 (weekend, zero wysyłek) |
+| YouTube / X / Threads | 0 / 1 / 0 | 0 / 0 / 0 |
+| Facebook (utm tansze-automatyzacje + m.facebook) | 4 | 2 (/tansze-automatyzacje 3 odsłony, /wlasnosc-domeny 1) |
+| chatgpt (utm + chatgpt.com) / perplexity | 2 / 0 | 6 (/automatyzacja-procesow-biznesowych 3 odsłony, /integracje-api x2, /automatyzacja-raportowania, /scraping-danych, /kalkulator-podatkowy) / 0 |
+| Uruchomienia narzędzi | 3 | 0 (poza tym handlowiec_start/profil/pakiet 1 na /) |
+| klik_po_wyniku | 0 | 0 |
+| form_start / lead_* | 2 / 0 | 2 (/ x2, przy scena_leada_odbierz) / 0 |
+| Pobrania (surowo) | 4 | 29 (7 PDF-ów po 4-5, równy rozkład, wygląda na jeden automat, nie ludzi) |
+
+Wynik zadań: Z1-Z6, Z8-Z12 [x]; Z7 [!] budżet „wstrzymaj” (3 kandydatów czeka w kandydaci-wp-2026-11-15b.json). Maile gotowe na poniedziałek 16.11: 44 niewysłane w maile_wp (56 plików, 12 wysłanych 13.11), 4 partie w ~/Projekty/mail-audyt/partie-wp-2026-11-16.txt (12/11/11/10, 9:10-15:10). google-ads po 12 sesjach nadal bez form_start, chatgpt najlepsza doba tygodnia (6 sesji, 3 odsłony w jednej). Dwie sesje z checkout.stripe.com na /zakup/dziekujemy (10:18 i 10:24, Chrome Linux) to najpewniej test zakupu, nie klient. Zoho 24 h: jedno „Wypisz mnie” od barto28@op.pl (do sprawdzenia w Z13), zgłoszenie e-Doręczeń 6189461.
+**Dowód:** cykl/plan-ruchu.md Z12; /tmp/z12-pomiar.txt.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z13 od 16.11 00:40, Z14 od 02:40, Z15 od 04:40, Z16 od 05:40, Z17 od 06:00.
+
+## 2026-11-16 00:55
+**Kanał:** outreach (plan Z13, odpowiedzi nocne).
+**Co zrobione:** sprawdzone statusy i odpowiedzi partii 1 outreachu wordpress oraz domknięte „Wypisz mnie” od barto28@op.pl (nie outreach: odbiorca wyniku kalkulatora JDG z bramki 6.11, zgoda w kolektorze już wycofana, adres dopisany do mail-audyt/wypisani.txt); nic nie poszło w świat.
+**Ruch:** raport_ruchu doba: 221 odsłon, 149 osób (−1% wobec średniej 223,7); źródła: b2b-email 87, google-ads 12, chatgpt 10, www.facebook.com 10, m.facebook.com 6; uruchomienia narzędzi 0; lejek 7 dni: 986 sesji, 8 form_start, 1 zapytanie.
+**Dowód:** Resend GET /emails/<id> dla 12 z ~/Projekty/mail-audyt/wyslane_wp.json: 9 delivered, 3 bounced (te same); Zoho od 14.11 10:00: 0 odpowiedzi na „<domena>: …”, 0 pytań o wycenę; kolektor /zgody: barto28@op.pl bramka_kalkulator-podatkowy wycofana=True; ruch.sqlite od 14.11 10:00: 0 sesji z kampania='wordpress' (323 ogółem); cykl/plan-ruchu.md Z13 [x].
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z14 o 02:40, potem Z15 04:40, Z16 05:40, Z17 06:00.
+
+## 2026-11-16 02:43
+**Kanał:** pomiar (plan Z14, kanały po dobach dla reguły 3 dób).
+**Co zrobione:** tabela kanał × doby po odsiewie z pomiar-kanalow.py (pary, serie testowe, salwy, /grupa-ksef), kanał = źródło pierwszej odsłony sesji, google-ads, facebook (utm + m.facebook + www.facebook) i mail/wordpress osobno, doby kalendarzowe; nic nie poszło w świat, zadanie pomiarowe.
+
+| kanał | 16.11 (do 02:43) | 15.11 | 14.11 | 7 dni |
+|---|---|---|---|---|
+| ludzie razem | 7 | 60 | 46 | 320 |
+| bez odsyłacza | 7 | 32 | 29 | 195 |
+| www.google.com | 0 | 3 | 5 | 34 |
+| google-ads | 0 | 12 | 5 | 33 |
+| chatgpt (z utm i bez) | 0 | 10 | 1 | 18 |
+| facebook (utm + m. + www.) | 0 | 1 | 5 | 11 |
+| youtube | 0 | 0 | 0 | 8 |
+| x | 0 | 0 | 0 | 7 |
+| threads | 0 | 0 | 0 | 4 |
+| checkout.stripe.com | 0 | 2 | 0 | 2 |
+| instagram, linkedin, perplexity, github.com, useme.com, ustawygospodarcze.pl, hajsmetrics | 0 | 0 | 0 | po 1 |
+| mail/wordpress | 0 | 0 | 0 | 0 |
+
+google-ads 15.11: 12 sesji, 10 jednostronicowych, 0 zdarzeń (form_start, uruchomienia); kampanie 24472439947 (5), 24456876167 (4), ads (2), n8n-procesy (1). Od 11.11: 33 sesje, 30 jednostronicowych.
+chatgpt 15.11: 10 sesji z utm_source=chatgpt i kampanią równą stronie docelowej (strony-www 3, integracje-api 3, scraping 2, raportowanie 1, automatyzacja-procesow 1), 9 jednostronicowych, 0 zdarzeń; to nie są zwykłe odesłania z chatgpt.com (te miały 4 w 7 dniach).
+b2b-email z raport_ruchu (94 w dobie) to otwarcia maili (piksel /mail/<id>, zdarzenie otwarcie_maila), nie wejścia na stronę: 15.11 87 otwarć w 68 sesjach, 1 klik_maila; po odsiewie nie ma ich w tabeli.
+Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, github.com, useme.com, ustawygospodarcze.pl, hajsmetrics, mail/wordpress (0 także w 7 dniach).
+**Ruch:** raport_ruchu doba: 231 odsłon, 158 osób (+3% wobec średniej 223,6); źródła: b2b-email 94 (otwarcia maili), chatgpt 10, www.facebook.com 10, google-ads 10, m.facebook.com 6; uruchomienia narzędzi 0; lejek 7 dni: 995 sesji, 7 form_start, 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md Z14 [x]; skrypt jednorazowy /tmp/z14-1611/z14.py i tab.py na funkcjach wiersze() i odsiew() z cykl/pomiar-kanalow.py; ruch.sqlite zrodlo LIKE '%b2b%' 7 dni: 0 odsłon poza /mail/.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z15 o 04:40, potem Z16 05:40, Z17 06:00.
+<!-- WYSLANO 2026-11-16 03:00 -->
+
+## 2026-11-16 04:45
+**Kanał:** Google (mapa witryny), Z15 planu 15.11.
+**Co zrobione:** kontrola mapy witryny: 270 adresów (15.11 04:45: 187), wszystkie 6 adresów z Z2 i 87 z Z11 obecne, nic do zgłaszania autorom stron.
+**Ruch:** raport_ruchu doba: 235 odsłon, 156 osób (+5% wobec średniej 224,1); źródła: b2b-email 94 (otwarcia maili), chatgpt 11, www.facebook.com 10, google-ads 10, m.facebook.com 6; tydzień 1574 odsłony, 993 osoby.
+**Dowód:** cykl/plan-ruchu.md Z15 [x]; curl https://fluxlab.pl/sitemap.xml 04:44, 270 <loc> unikalnych; porównanie z /tmp/z11/zglos.txt bez braków.
+**Dla Pawła:** Search Console nadal wylogowany: https://search.google.com/search-console w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z16 o 05:40, potem Z17 06:00.
+
+## Strategia dobowa 2026-11-16
+**Wynik doby (24 h do 06:15, po odsiewie):** 65 ludzi (15.11: 54, 14.11: 44), tydzień 327. chatgpt 10 / 20 w tygodniu (najszybciej rośnie, 0 godzin cyklu), google-ads 9 / 33 (0 form_start), Google 3 / 36, Facebook 1 / 13, YouTube 0 / 9, X 0 / 10, Threads 0 / 5, Bing + DDG 0. Outreach `wordpress`: 12 wysłanych 13.11, 9 doręczonych, 3 odbite, 0 odpowiedzi, 0 sesji; gotowe 44 w 4 partiach. Uruchomienia narzędzi 5, lejek 7 dni 999 sesji / 9 form_start / 1 zapytanie, lead_* 0. Z16 planu 15.11 przechodzi do Z1.
+**Plan 16.11:** 23 zadania. Trzy najważniejsze: wysyłka 44 maili `wordpress` w 4 partiach 10:43-16:43 z bramką odbić (najwyżej 2 odbite dziś, 13.11 było 25%); artykuł z kalendarza „Lead w sobotę po Black Friday” 08:43 z kontrolą na telefonie i IndexNow; przyczyna 3 odbić z 13.11 przed pierwszą partią.
+**Dla Pawła:**
+- Search Console wylogowany 19. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez tego nie mierzymy zapytań Google ani nie zgłaszamy adresów do indeksu.
+- Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
+- W środę ocena outreachu `wordpress` po 56 wysłanych: przy 0 sesji i 0 odpowiedzi strateg zaproponuje kartę decyzji (zmiana segmentu albo stop).
