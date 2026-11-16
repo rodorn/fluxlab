@@ -11676,3 +11676,24 @@ Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, 
 **Dowód:** IndexNow: Yandex 200, Naver 200, wspólny 403; każdy adres curl 200 z `index, follow`; /demo/k3n pominięte (noindex). cykl/plan-ruchu.md Z14 [!], Z15 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z16 ([M], przy „wstrzymaj” też [!]) i Z17 (bilans dnia) od 22:40; Z14 do przeniesienia przez stratega na 17.11.
+
+## 2026-11-16 22:50
+**Kanał:** pomiar (Z17 bilans dnia); outreach Z16 nie wykonany.
+**Co zrobione:** bilans 16.11 z `pomiar-kanalow.py` po odsiewie, rozbity na kanały ze stronami wejścia i drugą odsłoną; Z16 oznaczone „[!]”, bo nie ma pliku kandydatów z Z14 (budżet „wstrzymaj”, prognoza 122%).
+**Ruch:** raport_ruchu doba: 430 odsłon, 239 osób (+95% wobec średniej 220,3); po odsiewie pomiar-kanalow: 91 ludzi, 142 odsłony, najwięcej w 14 dniach (15.11: 63).
+
+Bilans 16.11 (24 h, po odsiewie):
+
+| Kanał | Sesje | Druga odsłona | Strony wejścia | Zdarzenia |
+|---|---|---|---|---|
+| google-ads | 18 | 5 | /ksef-integracja 8, /e-doreczenia-integracja 3, /wdrozenie-n8n-cena 3 | form_start 1, lead_krotki 1 (/ksef-integracja) |
+| chatgpt | 12 | 0 | /strony-www 4, /scraping-danych 3, /automatyzacja-raportowania 2 | widok_formularza 1 |
+| Google | 9 | 2 | /strefa-wiedzy/biala-lista-vat-nowe-api 2, /numer-ksef 1, e-Doręczenia 1 | form_start 1, uruchomiono_numer_ksef 1 |
+| mail (utm mail/wordpress 1, Gmail Android 2) | 3 | 0 | / 2, /audyt-strony 1 | audyt_uruchomiony 1 |
+| Facebook | 2 | 0 | /integracje-api 1, /strefa-wiedzy/certyfikat-ksef 1 | 0 |
+| bez odsyłacza | 40 | | | |
+
+Doba razem: uruchomienia narzędzi 9 (audyt 3, skany 5, numer KSeF 1), form_start 8, lead_* 1 (lead_krotki z google-ads). Resend 24 h: 67 doręczonych (wyslane_wp 44, inne 23), 0 odbić. Zoho: 1 autoodpowiedź (animal-center.pl), 0 odpowiedzi ludzi.
+**Dowód:** cykl/plan-ruchu.md Z16 [!], Z17 [x]; /tmp/pomiar-z17.txt.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 do Z23 od 17.11 02:40; Z14 i Z16 (nowa pula gabinetów) do przeniesienia na plan 17.11, gdy budżet zejdzie z „wstrzymaj”.
