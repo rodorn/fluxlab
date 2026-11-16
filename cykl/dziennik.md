@@ -11652,3 +11652,11 @@ Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, 
 **Dowód:** cykl/plan-ruchu.md Z8 [x], Z9 [x]; wysłane 14:45-14:47 z pawel@fluxlab.pl do: biuro@stomatologia-smile.pl, rehabilitacja@multi-medyk.pl, rejestracja@fizjoter.pro, rejestracja@stomatologiakrawczyk.pl, kontakt@foryou.kielce.pl, hello@viktoriadomnawyspie.pl, kotwtarapatach@kot.krakow.pl, apdentpoznan@gmail.com, morskavet@gmail.com, poznan@solnagrota.com, optimed.kielce@o2.pl; Resend 11/11 delivered; wyslane_wp.json 46 wpisów (34 z 16.11).
 **Dla Pawła:**
 **Zostało otwarte:** Z10 (bramka odbić 3) i Z11 (partia 4, 10 maili) o 16:40, potem Z12-Z13 o 18:40.
+
+## 2026-11-16 16:43
+**Kanał:** outreach z gotowym raportem (Z10 bramka odbić 3, Z11 partia 4 `wordpress`, plan 16.11).
+**Co zrobione:** bramka przeszła (partie 1-3: 34/34 doręczone, 0 odbić), partia 4 wysłana: 10 maili do gabinetów i salonów z usterką potwierdzoną tuż przed wysyłką; dziś łącznie 44 maile, wszystkie doręczone.
+**Ruch:** raport_ruchu: doba 409 odsłon, 230 osób (b2b-email 208, github 24, google-ads 22, chatgpt 14, Google 12). Po odsiewie pomiar-kanalow 24 h: 87 sesji, 137 odsłon: bez odsyłacza 39, google-ads 20, chatgpt 14, Google 9, github 5, Gmail na Androidzie 2, mail 1, Facebook 1, threads 1. Kampania `wordpress` od 10:40: dalej 1 sesja (10:44, sprzed partii 1), nowych 0. Uruchomienia narzędzi 6, form_start 7.
+**Dowód:** cykl/plan-ruchu.md Z10 [x], Z11 [x]; wysłane 16:44-16:46 z pawel@fluxlab.pl do: recepcja@wojcikbeautymed.pl, kontakt@adadent.com.pl, rejestracja@medic-r.pl, kontakt@maestria.clinic, biuro@esmeclinic.pl, biuro@blackbeard.com.pl, wroclaw@dco.pl, cooldent@wp.pl, salon@beauty-club.com.pl, supervet.katowice@gmail.com; Resend 10/10 delivered; wyslane_wp.json 56 wpisów (44 z 16.11).
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (3 maile z kolejki 15.11) i Z13 (pierwsze reakcje: statusy, Zoho, sesje `wordpress`) o 18:40.
