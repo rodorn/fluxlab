@@ -340,6 +340,7 @@ export default function LandingForm({
     if (formStartedRef.current) return;
     formStartedRef.current = true;
     gaEvent("form_start", { form_id: formId });
+    zglosZdarzenie("form_start");
   }
 
   // Wpisany sam NIP zamieniamy na nazwę z wykazu VAT, żeby nikt nie musiał

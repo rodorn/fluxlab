@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 export default function PomiarFormularzy() {
+  const sciezka = usePathname();
+
   useEffect(() => {
     const zaczete = new WeakSet<HTMLFormElement>();
     const naFokus = (e: FocusEvent) => {
@@ -21,5 +24,41 @@ export default function PomiarFormularzy() {
     document.addEventListener("focusin", naFokus);
     return () => document.removeEventListener("focusin", naFokus);
   }, []);
+
+  useEffect(() => {
+    let polowa = false;
+    const naScroll = () => {
+      const d = document.documentElement;
+      if (polowa || d.scrollHeight <= innerHeight) return;
+      if ((scrollY + innerHeight) / d.scrollHeight < 0.5) return;
+      polowa = true;
+      zglosZdarzenie("przewiniecie_50");
+      removeEventListener("scroll", naScroll);
+    };
+    addEventListener("scroll", naScroll, { passive: true });
+
+    let widziany = false;
+    const obserwator = new IntersectionObserver(
+      (wpisy) => {
+        if (widziany || !wpisy.some((w) => w.isIntersecting)) return;
+        widziany = true;
+        zglosZdarzenie("widok_formularza");
+        obserwator.disconnect();
+      },
+      { threshold: 0.3 },
+    );
+    const obserwuj = () => {
+      if (!widziany) document.querySelectorAll("form").forEach((f) => obserwator.observe(f));
+    };
+    const t1 = setTimeout(obserwuj, 300);
+    const t2 = setTimeout(obserwuj, 2500);
+    return () => {
+      removeEventListener("scroll", naScroll);
+      obserwator.disconnect();
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [sciezka]);
+
   return null;
 }
