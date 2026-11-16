@@ -5,9 +5,9 @@
   "tytulKrotki": "Strona firmy: WordPress, Wix czy Next.js",
   "opis": "WordPress, Wix czy Next.js dla małej firmy? Czas startu, koszt przez trzy lata, plusy i minusy każdej drogi oraz trzy pytania, które rozstrzygają wybór.",
   "lead": "Zakładasz stronę firmy i każdy wykonawca poleca inną technologię. Na przykładzie gabinetu fizjoterapii zobaczysz trzy drogi: kreator typu Wix, WordPress i stronę w kodzie na Next.js, porównane w tym samym porządku, oraz prostą regułę wyboru.",
-  "youtubeId": "Ega6OhokrpE",
-  "dlugosc": 582,
-  "opublikowano": "2026-11-08T17:50:11-08:00",
+  "youtubeId": "c5DZOrLD-Uc",
+  "dlugosc": 559,
+  "opublikowano": "2026-11-16T02:25:19-08:00",
   "frazy": [
     "strona internetowa dla małej firmy",
     "WordPress czy Wix",
@@ -29,7 +29,7 @@
     },
     {
       "h2": "Zanim wybierzesz narzędzie: co strona ma robić",
-      "od": 61,
+      "od": 47,
       "akapity": [
         "Marta zaczyna od kartki, nie od technologii. Zapisuje, co strona ma robić, i dwie informacje o gabinecie. Ta kartka jest miarą, którą przykłada się do każdej z trzech dróg."
       ],
@@ -43,7 +43,7 @@
     },
     {
       "h2": "Droga 1: kreator stron, na przykład Wix",
-      "od": 103,
+      "od": 82,
       "akapity": [
         "Marta zakłada konto, wybiera szablon, wkleja zdjęcia i cennik, włącza moduł rezerwacji i podpina domenę. Start zajmuje jeden weekend jej pracy, a koszt startu jest najniższy z trzech dróg: pierwszy okres abonamentu i domena. Wykonawca jest opcjonalny.",
         "Plusy: cennik zmieniasz sama w kilka minut, a hosting, kopie zapasowe i aktualizacje są po stronie dostawcy. Koszt przez trzy lata to równy abonament, wyższy w planie z rezerwacjami. Suma abonamentów często kilka razy przewyższa koszt startu, choć przy prostej stronie i tak bywa najniższa.",
@@ -52,7 +52,7 @@
     },
     {
       "h2": "Droga 2: WordPress z wtyczkami",
-      "od": 196,
+      "od": 187,
       "akapity": [
         "WordPress to najpopularniejszy system stron: według W3Techs działa na nim mniej więcej 40% wszystkich stron internetowych. Zwykle zleca się go wykonawcy, który kupuje hosting, dobiera motyw i dodaje wtyczki: rezerwacje, formularz, kopie zapasowe, ochronę przed spamem. Start trwa zwykle od dwóch do sześciu tygodni, koszt startu jest wyższy niż w kreatorze, a hosting potem kosztuje mało.",
         "Plusy: panel, w którym sama dopiszesz aktualność i podmienisz cennik, swoboda rozbudowy (drugi gabinet to nowa podstrona i drugi kalendarz) oraz pełna własność: pliki i bazę przeniesiesz do dowolnego hostingu i wykonawcy.",
@@ -61,7 +61,7 @@
     },
     {
       "h2": "Droga 3: strona w kodzie na Next.js",
-      "od": 330,
+      "od": 314,
       "akapity": [
         "Next.js to framework, czyli szkielet, z którego programista składa stronę jak dom z prefabrykatów. Wykonawca projektuje ją dokładnie pod firmę: cennik, zespół, dojazd i przycisk rezerwacji na górze ekranu telefonu, a do zmian treści dodaje prosty panel. Rezerwacje podpina z gotowego systemu. U typowego wykonawcy start trwa zwykle od czterech do ośmiu tygodni, a koszt startu jest najwyższy, bo każdy element powstaje pod jedną firmę. Hosting często mieści się w darmowym albo tanim planie.",
         "Plusy: strona to w dużej mierze gotowe pliki, które serwer tylko podaje, więc otwiera się szybko także na starszym telefonie, a Google bierze szybkość pod uwagę. Mało wtyczek oznacza mało aktualizacji, opieka to drobne poprawki kilka razy w roku. Kod i domena są zapisane na Ciebie, więc zmiana wykonawcy to przekazanie kluczy.",
@@ -70,7 +70,7 @@
     },
     {
       "h2": "Rachunek trzech lat i co wybrała Marta",
-      "od": 483,
+      "od": 428,
       "akapity": [
         "Wszystkie trzy drogi dają stronę w Google, cennik na telefonie i przycisk rezerwacji. Różnią się tym, kiedy płacisz, kto pracuje i co się dzieje, gdy firma rośnie. Kreator to mały start i równy abonament, WordPress to średni start i stała opieka, kod to duży start i niskie koszty potem. Konkretne kwoty sprawdź w aktualnych cennikach, bo zmieniają się co roku. Liczy się suma trzech lat, nie pierwsza faktura.",
         "Marta ma dziś jeden adres, rzadkie zmiany i mały budżet, więc wybiera kreator. Domenę rejestruje na siebie i zapisuje w kalendarzu datę: za rok sprawdzić, czy ta droga dalej pasuje. Gdy drugi gabinet staje się pewny, a pacjenci coraz częściej szukają jej w Google na telefonie, zamawia stronę w kodzie albo na WordPressie, a domena przechodzi razem z nią."
@@ -78,7 +78,7 @@
     },
     {
       "h2": "Prosta reguła wyboru dla Twojej firmy",
-      "od": 540,
+      "od": 498,
       "akapity": [
         "Zadaj sobie trzy pytania: kto zmienia treść i jak często, ile możesz płacić co miesiąc przez kolejne trzy lata i jak ważni są klienci, którzy szukają Cię w Google na telefonie. Odpowiedzi prowadzą do jednej z trzech dróg.",
         "Niezależnie od drogi strona ma być Twoja: domena zapisana na Ciebie, dostęp do panelu w Twoich rękach i kopia, którą możesz pobrać. Gdy wykonawca mówi „tylko ta technologia”, zapytaj o te trzy rzeczy i poproś o koszt całych trzech lat razem ze startem."
