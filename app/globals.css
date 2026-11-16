@@ -1207,6 +1207,10 @@ p {
 @media (max-width: 767px) {
   body[data-pasek-akcji] .cookie-consent { bottom: 5.5rem; }
 }
+/* Wejście z reklamy: okno zgody pod nagłówkiem, żeby nie zasłaniało przycisku Wyślij krótkiego formularza */
+@media (max-width: 767px) {
+  html[data-reklama] body .cookie-consent { top: 4.5rem; bottom: auto; }
+}
 @media (max-width: 767px) {
   body[data-zgoda] .przycisk-czatu,
   body[data-zgoda] .przycisk-do-gory { display: none; }
