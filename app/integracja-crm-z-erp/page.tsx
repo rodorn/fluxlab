@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
@@ -114,6 +115,14 @@ export default function IntegracjaCrmZErp() {
           ],
         },
       ]}
+      poCenniku={
+        <>
+          Samo wpięcie formularza ze strony w CRM kosztuje 299 zł netto:{" "}
+          <Link href="/integracje-api" className="font-semibold text-accent underline">
+            integracje
+          </Link>
+        </>
+      }
       faq={[
         {
           q: "Kto wdraża integrację CRM z ERP?",

@@ -298,6 +298,12 @@ export default function AutomatyzacjaLeadowCRM() {
                           </div>
                         ))}
                       </div>
+                      <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                        Samo wpięcie formularza ze strony w CRM kosztuje 299 zł netto:{" "}
+                        <Link href="/integracje-api" className="font-semibold text-accent hover:underline">
+                          integracje
+                        </Link>
+                      </p>
                       <p className="mt-6 text-sm text-gray-500 dark:text-gray-500">
                         <Link
                           href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
