@@ -93,28 +93,29 @@ export async function POST(req: Request) {
   if (produkty.some((p) => !p.nazwa)) return blad("Każdy wiersz musi mieć wypełnioną nazwę produktu.");
   if (produkty.some((p) => !p.cechy)) return blad("Każdy produkt musi mieć co najmniej jedną cechę, inaczej opis byłby zmyślony.");
 
-  let klient: Klient;
+  let klient: Klient | null = null;
   try {
     klient = await klientRejestru(email);
   } catch (e) {
-    console.error("[opisy-csv] rejestr", e);
-    return blad("Usługa chwilowo niedostępna. Spróbuj za kilka minut.", 502);
+    console.error("[opisy-csv] rejestr pominięty, Stripe niedostępny", e);
   }
-  const wolneOd = klient.ostatni + DNI_LIMITU * 86_400;
   const teraz = Math.floor(Date.now() / 1000);
-  if (klient.ostatni && teraz < wolneOd)
-    return blad(
-      `Z jednego adresu przetwarzamy jeden plik na ${DNI_LIMITU} dni. Kolejny możesz wysłać po ${new Date(wolneOd * 1000).toLocaleDateString("pl-PL")}.`,
-      429,
-    );
-  await ustawZnacznik(klient.id, teraz).catch(() => null);
+  if (klient) {
+    const wolneOd = klient.ostatni + DNI_LIMITU * 86_400;
+    if (klient.ostatni && teraz < wolneOd)
+      return blad(
+        `Z jednego adresu przetwarzamy jeden plik na ${DNI_LIMITU} dni. Kolejny możesz wysłać po ${new Date(wolneOd * 1000).toLocaleDateString("pl-PL")}.`,
+        429,
+      );
+    await ustawZnacznik(klient.id, teraz).catch(() => null);
+  }
 
   let opisy;
   try {
     opisy = await opiszProdukty(produkty);
   } catch (e) {
     console.error("[opisy-csv] model", e);
-    await ustawZnacznik(klient.id, 0).catch(() => null);
+    if (klient) await ustawZnacznik(klient.id, 0).catch(() => null);
     return blad("Nie udało się napisać opisów. Limit na adres nie został zużyty, spróbuj za kilka minut.", 502);
   }
 

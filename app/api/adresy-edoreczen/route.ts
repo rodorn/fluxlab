@@ -246,11 +246,7 @@ export async function POST(request: Request) {
       );
     }
   } catch (e) {
-    console.error("adresy-edoreczen limit", e);
-    return NextResponse.json(
-      { error: "Usługa chwilowo niedostępna. Spróbuj za kilka minut." },
-      { status: 502 },
-    );
+    console.error("adresy-edoreczen limit pominięty, Stripe niedostępny", e);
   }
 
   const zgoda = await zapiszZgode(
