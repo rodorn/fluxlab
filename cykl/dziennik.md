@@ -11610,3 +11610,11 @@ Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, 
 - Search Console wylogowany 19. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez tego nie mierzymy zapytań Google ani nie zgłaszamy adresów do indeksu.
 - Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
 - W środę ocena outreachu `wordpress` po 56 wysłanych: przy 0 sesji i 0 odpowiedzi strateg zaproponuje kartę decyzji (zmiana segmentu albo stop).
+
+## 2026-11-16 06:55
+**Kanał:** outreach (Z1 i Z2 planu 16.11).
+**Co zrobione:** sprawdzone MX dla 44 adresów dzisiejszych partii i przyczyna 3 odbić z 13.11; wysyłka może ruszyć o 10:43 bez zmian w partiach.
+**Ruch:** raport_ruchu doba: 282 odsłony, 163 osoby (+26% wobec średniej 224,4); źródła: b2b-email 95 (otwarcia maili), github.com 23, google-ads 13, www.facebook.com 10, chatgpt 10.
+**Dowód:** cykl/plan-ruchu.md Z1 [x]: partie 12/11/11/10 → 12/11/11/10, bez MX 0 (37 domen z MX, 7 skrzynek darmowych pominiętych). Z2 [x]: Resend bounce wszystkie Transient: dental-practice.pl General (domena bez MX), medicavision.pl i magnolianailbar.pl MailboxFull (info@ na serwerze samej domeny). W dzisiejszych partiach brak adresów z tym wzorcem, numery ryzyka: brak.
+**Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane: https://search.google.com/search-console i https://www.bing.com/webmasters w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z3 (artykuł) o 08:40, potem Z5 partia 1 o 10:40.
