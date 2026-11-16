@@ -11618,3 +11618,29 @@ Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, 
 **Dowód:** cykl/plan-ruchu.md Z1 [x]: partie 12/11/11/10 → 12/11/11/10, bez MX 0 (37 domen z MX, 7 skrzynek darmowych pominiętych). Z2 [x]: Resend bounce wszystkie Transient: dental-practice.pl General (domena bez MX), medicavision.pl i magnolianailbar.pl MailboxFull (info@ na serwerze samej domeny). W dzisiejszych partiach brak adresów z tym wzorcem, numery ryzyka: brak.
 **Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane: https://search.google.com/search-console i https://www.bing.com/webmasters w profilu ~/.config/chrome-google.
 **Zostało otwarte:** czekam na Z3 (artykuł) o 08:40, potem Z5 partia 1 o 10:40.
+
+<!-- WYSLANO 2026-11-16 07:04 -->
+
+## 2026-11-16 08:47
+**Kanał:** widoczność w asystentach AI i Google (artykuł z kalendarza), Z3 i Z4 planu 16.11.
+**Co zrobione:** opublikowany artykuł „Kto odpowiada na leada w sobotę po Black Friday” (dyżur według Kodeksu pracy, odpoczynek, które leady mają budzić dyżurnego) z linkiem przychodzącym z FAQ /czas-reakcji-na-leada, sprawdzony na telefonie i zgłoszony do IndexNow.
+**Ruch:** raport_ruchu doba: 321 odsłon, 184 osoby (+42% wobec średniej 226,0); źródła: b2b-email 130 (otwarcia maili), github.com 24, google-ads 14, chatgpt 11, www.facebook.com 7; tydzień 1642 odsłony, 1016 osób; uruchomienia narzędzi 5, form_start 7.
+**Dowód:** commit 69a60e1f; https://fluxlab.pl/strefa-wiedzy/lead-w-weekend-black-friday 200 bez noindex, w sitemap.xml; telefon-test 390 px, 0 błędów konsoli; IndexNow 3 adresy: Yandex 200, Naver 200, wspólny 403; cykl/kalendarz-wpisow.md 16.11 [x].
+**Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane: https://search.google.com/search-console i https://www.bing.com/webmasters w profilu ~/.config/chrome-google.
+**Zostało otwarte:** czekam na Z5 (partia 1 `wordpress`) o 10:40.
+
+## 2026-11-16 10:55
+**Kanał:** outreach z gotowym raportem (Z5 planu 16.11, partia 1 `wordpress`).
+**Co zrobione:** wysłane 12 maili z konkretną usterką ze strony adresata (SSL wygasa, brak https, błąd PHP, stary WordPress); przed wysyłką ponownie sprawdzone, że usterki nadal są (SSL gordent 21.11, spabaltica 22.11, 4 domeny bez przekierowania na https).
+**Ruch:** raport_ruchu doba: 386 odsłon, 226 osób (+70% wobec średniej 226,7); źródła: b2b-email 187 (otwarcia maili), github.com 24, google-ads 14, chatgpt 13, www.facebook.com 7.
+**Dowód:** cykl/plan-ruchu.md Z5 [x]; wysłane 10:50-10:53 z pawel@fluxlab.pl do: biuro@gordent.pl, info@spabaltica.pl, rejestracja@coreclinic.pl, gabinet@ortodonta.gliwice.pl, rejestracja@neodental.pl, gabinet@spa-med.pl, centrum-praga@vita-medica.pl, kontakt@stomatologia-zarzecze.pl, biuro@animal-center.pl, salon@daniec-hairandbeauty.pl, biuro@wesela-amadeusz.pl, kontakt@gabinetpieknaik.pl; wyslane_wp.json 24 wpisy (12 z dziś); Resend próbka 2/2 delivered.
+**Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane: https://search.google.com/search-console i https://www.bing.com/webmasters w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z6 (bramka odbić partii 1) i Z7 (partia 2) o 12:40.
+
+## 2026-11-16 12:50
+**Kanał:** outreach z gotowym raportem (Z6 bramka odbić partii 1, Z7 partia 2 `wordpress`, plan 16.11).
+**Co zrobione:** bramka przepuściła (partia 1: 12/12 doręczonych, 0 odbić), wysłane 11 maili partii 2 z usterką sprawdzoną tuż przed wysyłką (http bez https na 9 domenach, SSL skiactive.com wygasa 24.11, WordPress 6.5.14 na ortoprotex.pl); 11/11 doręczonych.
+**Ruch:** raport_ruchu doba: 386 odsłon, 230 osób (+65% wobec średniej 233,4); źródła: b2b-email 208 (otwarcia maili), github.com 24, google-ads 16, chatgpt 14, www.google.com 10; uruchomienia narzędzi 6, form_start 8; tydzień 1704 odsłony, 1053 osoby.
+**Dowód:** cykl/plan-ruchu.md Z6 [x], Z7 [x]; Resend partia 1: 12 delivered / 0 bounced; wysłane 12:44-12:46 z pawel@fluxlab.pl do: recepcja@niladent.com, kontakt@ostojazdrowia.com, rejestracja@omegamc.pl, kontakt@beautybeau.pl, gabinet@ortoprotex.pl, recepcja@stonevilla.pl, dlaciebie@skiactive.com, aplauz@aplauz.pl, bestdent.targowek@gmail.com, salondobryoptyk@gmail.com, rezerwacja@jetsetclinic.pl; Resend 11/11 delivered; wyslane_wp.json 35 wpisów (23 z 16.11).
+**Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane: https://search.google.com/search-console i https://www.bing.com/webmasters w profilu ~/.config/chrome-google.
+**Zostało otwarte:** Z8 (bramka odbić partii 1+2, sesje `utm_campaign=wordpress` od 10:40) i Z9 (partia 3) o 14:40.
