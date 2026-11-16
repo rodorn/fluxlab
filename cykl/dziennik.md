@@ -11644,3 +11644,11 @@ Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, 
 **Dowód:** cykl/plan-ruchu.md Z6 [x], Z7 [x]; Resend partia 1: 12 delivered / 0 bounced; wysłane 12:44-12:46 z pawel@fluxlab.pl do: recepcja@niladent.com, kontakt@ostojazdrowia.com, rejestracja@omegamc.pl, kontakt@beautybeau.pl, gabinet@ortoprotex.pl, recepcja@stonevilla.pl, dlaciebie@skiactive.com, aplauz@aplauz.pl, bestdent.targowek@gmail.com, salondobryoptyk@gmail.com, rezerwacja@jetsetclinic.pl; Resend 11/11 delivered; wyslane_wp.json 35 wpisów (23 z 16.11).
 **Dla Pawła:** Search Console i Bing Webmaster nadal wylogowane: https://search.google.com/search-console i https://www.bing.com/webmasters w profilu ~/.config/chrome-google.
 **Zostało otwarte:** Z8 (bramka odbić partii 1+2, sesje `utm_campaign=wordpress` od 10:40) i Z9 (partia 3) o 14:40.
+
+## 2026-11-16 14:43
+**Kanał:** outreach z gotowym raportem (Z8 bramka odbić 2, Z9 partia 3 `wordpress`, plan 16.11).
+**Co zrobione:** bramka przeszła (partie 1+2: 23/23 doręczone, 0 odbić), partia 3 wysłana: 11 maili do gabinetów i firm z usterką potwierdzoną tuż przed wysyłką.
+**Ruch:** 24 h po odsiewie 82 sesje, 133 odsłony: bez odsyłacza 37, google-ads 19, chatgpt 15, Google 9, github 5, Gmail na Androidzie 2, mail 1. Kampania `wordpress`: 1 sesja (10:44 /audyt-strony, Chrome Windows, 1 odsłona, przed wysyłką dzisiejszej partii 1, czyli odbiorca z 13.11).
+**Dowód:** cykl/plan-ruchu.md Z8 [x], Z9 [x]; wysłane 14:45-14:47 z pawel@fluxlab.pl do: biuro@stomatologia-smile.pl, rehabilitacja@multi-medyk.pl, rejestracja@fizjoter.pro, rejestracja@stomatologiakrawczyk.pl, kontakt@foryou.kielce.pl, hello@viktoriadomnawyspie.pl, kotwtarapatach@kot.krakow.pl, apdentpoznan@gmail.com, morskavet@gmail.com, poznan@solnagrota.com, optimed.kielce@o2.pl; Resend 11/11 delivered; wyslane_wp.json 46 wpisów (34 z 16.11).
+**Dla Pawła:**
+**Zostało otwarte:** Z10 (bramka odbić 3) i Z11 (partia 4, 10 maili) o 16:40, potem Z12-Z13 o 18:40.
