@@ -11660,3 +11660,11 @@ Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, 
 **Dowód:** cykl/plan-ruchu.md Z10 [x], Z11 [x]; wysłane 16:44-16:46 z pawel@fluxlab.pl do: recepcja@wojcikbeautymed.pl, kontakt@adadent.com.pl, rejestracja@medic-r.pl, kontakt@maestria.clinic, biuro@esmeclinic.pl, biuro@blackbeard.com.pl, wroclaw@dco.pl, cooldent@wp.pl, salon@beauty-club.com.pl, supervet.katowice@gmail.com; Resend 10/10 delivered; wyslane_wp.json 56 wpisów (44 z 16.11).
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (3 maile z kolejki 15.11) i Z13 (pierwsze reakcje: statusy, Zoho, sesje `wordpress`) o 18:40.
+
+## 2026-11-16 18:43
+**Kanał:** outreach z gotowym raportem (Z12 kolejka 15.11, Z13 pierwsze reakcje, plan 16.11).
+**Co zrobione:** z 5 kandydatów z 15.11 po ponownym sprawdzeniu został 1 mail gotowy na wtorek (duncan-scania.pl, wygasły certyfikat); 4 odrzucone, bo usterka zniknęła albo dotyczyła tylko domeny-aliasu. Dzisiejsze 44 maile: wszystkie doręczone, 0 odpowiedzi, 0 wypisań.
+**Ruch:** raport_ruchu: doba 419 odsłon, 236 osób (b2b-email 216, github 24, google-ads 22, chatgpt 14, Google 12); uruchomienia narzędzi 6, form_start 7, lejek 7 dni 1039 sesji / 11 form_start / 1 zapytanie. Kampania `wordpress` od 10:40 po odsiewie: 1 sesja (10:44 /audyt-strony), nowych 0.
+**Dowód:** cykl/plan-ruchu.md Z12 [x], Z13 [x]; ~/Projekty/mail-audyt/maile_wp/057.txt (kontakt@duncan-scania.pl, próba: 2 linki utm wordpress); pomijane.json +4 (dagmara@autoserwisquickkatowice.pl, altusfitness@gmail.com, kontakt@endorfina-kielce.pl, sekretariat@interoptyk.com.pl); Resend 44/44 delivered; Zoho od 10:00: tylko autoreply animal-center.pl.
+**Dla Pawła:**
+**Zostało otwarte:** Z14 (pula gabinetów z OSM) i Z15 (IndexNow zmian z 16.11) od 20:40, Z16-Z17 od 22:40.
