@@ -31,6 +31,7 @@ async function zadania() {
     }
     if (!aktywna) {
       await db().usunKlucz(d.id);
+      await db().usunKlucz(d.id, "pozycje");
       continue;
     }
     wynik.push({ ...d.dane, sesja: d.id });
@@ -91,7 +92,10 @@ async function streszczenie(frazy: string[], tytuly: string[]) {
         },
         {
           role: "user",
-          content: `Frazy: ${frazy.join(", ")}\nTytuły:\n${tytuly.slice(0, 60).map((t) => `- ${t}`).join("\n")}`,
+          content: `Frazy: ${frazy.join(", ")}\nTytuły:\n${tytuly
+            .slice(0, 60)
+            .map((t) => `- ${t}`)
+            .join("\n")}`,
         },
       ],
     }),
