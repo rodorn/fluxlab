@@ -11668,3 +11668,11 @@ Kanały z 0 przez 3 doby: youtube, x, threads, instagram, linkedin, perplexity, 
 **Dowód:** cykl/plan-ruchu.md Z12 [x], Z13 [x]; ~/Projekty/mail-audyt/maile_wp/057.txt (kontakt@duncan-scania.pl, próba: 2 linki utm wordpress); pomijane.json +4 (dagmara@autoserwisquickkatowice.pl, altusfitness@gmail.com, kontakt@endorfina-kielce.pl, sekretariat@interoptyk.com.pl); Resend 44/44 delivered; Zoho od 10:00: tylko autoreply animal-center.pl.
 **Dla Pawła:**
 **Zostało otwarte:** Z14 (pula gabinetów z OSM) i Z15 (IndexNow zmian z 16.11) od 20:40, Z16-Z17 od 22:40.
+
+## 2026-11-16 20:47
+**Kanał:** Bing i IndexNow (Z15 planu 16.11); Z14 wstrzymane budżetem.
+**Co zrobione:** zgłoszone do IndexNow 3 strony zmienione dziś przez inne sesje (automatyzacja leadów w CRM, integracja CRM z ERP, FAQ faktur kosztowych z KSeF); Z14 (nowa pula gabinetów z OSM) oznaczone „[!] budżet”, bo rytm „wstrzymaj” (prognoza 123% tygodnia, hamulec alarm) wyklucza zadania [M].
+**Ruch:** raport_ruchu doba: 417 odsłon, 232 osoby (+89% wobec średniej 220,6); źródła: b2b-email 208 (otwarcia maili), github.com 24, google-ads 19, chatgpt 14, www.google.com 13; uruchomienia narzędzi 6, form_start 8, lejek 7 dni 1023 sesji / 12 form_start / 1 zapytanie.
+**Dowód:** IndexNow: Yandex 200, Naver 200, wspólny 403; każdy adres curl 200 z `index, follow`; /demo/k3n pominięte (noindex). cykl/plan-ruchu.md Z14 [!], Z15 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z16 ([M], przy „wstrzymaj” też [!]) i Z17 (bilans dnia) od 22:40; Z14 do przeniesienia przez stratega na 17.11.
