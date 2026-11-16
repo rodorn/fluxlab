@@ -1209,7 +1209,14 @@ p {
 }
 /* Wejście z reklamy: okno zgody pod nagłówkiem, żeby nie zasłaniało przycisku Wyślij krótkiego formularza */
 @media (max-width: 767px) {
-  html[data-reklama] body .cookie-consent { top: 4.5rem; bottom: auto; }
+  html[data-reklama] body .cookie-consent:not([hidden]) {
+    top: 4.5rem; bottom: auto; display: flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0.5rem;
+  }
+  html[data-reklama] body .cookie-consent p { flex: 1 1 auto; min-width: 0; line-height: 1.25; }
+  html[data-reklama] body .cookie-consent .zgoda-krotko { display: inline; }
+  html[data-reklama] body .cookie-consent .zgoda-dlugo { display: none; }
+  html[data-reklama] body .cookie-consent .zgoda-przyciski { margin-top: 0; flex: none; gap: 0.375rem; }
+  html[data-reklama] body .cookie-consent .zgoda-przyciski button { flex: none; padding: 0.375rem 0.625rem; }
 }
 @media (max-width: 767px) {
   body[data-zgoda] .przycisk-czatu,

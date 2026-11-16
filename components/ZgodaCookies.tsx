@@ -62,7 +62,8 @@ export default function ZgodaCookies() {
       className="cookie-consent print:hidden fixed bottom-2 left-2 right-2 z-[45] rounded-xl border border-gray-200 bg-white p-3 text-xs shadow-2xl dark:border-white/10 dark:bg-gray-900 md:bottom-4 md:left-4 md:right-auto md:max-w-sm md:rounded-2xl md:p-4 md:text-sm"
     >
       <p className="text-gray-700 dark:text-gray-300">
-        <span className="md:hidden">
+        <span className="zgoda-krotko hidden">Ciasteczka tylko po zgodzie.</span>
+        <span className="zgoda-dlugo md:hidden">
           Ciasteczka Google Analytics oraz reklam Google i Meta (w tym remarketing) zapisujemy tylko po „Akceptuj”.
         </span>
         <span className="hidden md:inline">
@@ -72,7 +73,7 @@ export default function ZgodaCookies() {
           Szczegóły
         </Link>
       </p>
-      <div className="mt-2 flex gap-2 md:mt-3">
+      <div className="zgoda-przyciski mt-2 flex gap-2 md:mt-3">
         <button type="button" onClick={() => zapisz(true)} className="btn-primary flex-1 px-3 py-2 text-xs md:px-4 md:py-2 md:text-sm">
           Akceptuj
         </button>
