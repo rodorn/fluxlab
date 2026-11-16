@@ -41,8 +41,8 @@ const faq = [
     a: "Nie. Faktura jest otrzymana w chwili, gdy KSeF nada jej numer, a datę przyjęcia widać w UPO.",
   },
   {
-    q: "Czy KSeF wyśle mi maila o nowej fakturze?",
-    a: "Nie, system nie wysyła powiadomień. Nowe faktury sprawdza program albo Ty.",
+    q: "Jak automatycznie pobierać faktury kosztowe z KSeF?",
+    a: "Program z tokenem pyta API KSeF o nowe faktury co 15 minut.",
   },
   {
     q: "Czy biuro rachunkowe może pobierać faktury kosztowe firmy?",
