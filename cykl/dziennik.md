@@ -11697,3 +11697,12 @@ Doba razem: uruchomienia narzędzi 9 (audyt 3, skany 5, numer KSeF 1), form_star
 **Dowód:** cykl/plan-ruchu.md Z16 [!], Z17 [x]; /tmp/pomiar-z17.txt.
 **Dla Pawła:**
 **Zostało otwarte:** Z18 do Z23 od 17.11 02:40; Z14 i Z16 (nowa pula gabinetów) do przeniesienia na plan 17.11, gdy budżet zejdzie z „wstrzymaj”.
+<!-- WYSLANO 2026-11-16 23:12 -->
+
+## 2026-11-17 00:43
+**Kanał:** outreach z gotowym raportem (Z18 odpowiedzi nocne) i pomiar (Z19 powroty ze Stripe), plan 16.11.
+**Co zrobione:** pomiar nocnych reakcji na 44 maile `wordpress` z 16.11 i rozstrzygnięcie, że dwa powroty ze Stripe 15.11 to testy innej sesji, nie zakupy.
+**Ruch:** ostatnia doba 406 odsłon, 222 osoby (raport_ruchu); źródła: b2b-email 193 (piksel otwarć, nie ludzie), github.com 24, google-ads 19, www.google.com 13, chatgpt 8; uruchomienia narzędzi 6, form_start 8.
+**Dowód:** cykl/plan-ruchu.md Z18 [x], Z19 [x]. Z18: Resend 44/44 delivered, 0 odbić; Zoho od 16.11 18:40: tylko wątek FINREAL (poza outreachem), 0 odpowiedzi na outreach, 0 „wypisz”; sesje utm_campaign=wordpress od 18:40: 0. Z19: sesje 65p3v38vb3qmwhotgt6 i e6fpnbzg6mhmwholxs1 (15.11 11:18 i 11:24, /zakup/dziekujemy, Chrome Linux, 1 odsłona), maile produkty@ w tej godzinie tylko na delivered@resend.dev.
+**Dla Pawła:**
+**Zostało otwarte:** Z20 i Z21 od 02:40, Z22 i Z23 od 04:40.
