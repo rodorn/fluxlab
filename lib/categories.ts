@@ -96,6 +96,13 @@ export const categories: Category[] = [
         description:
           "Starter Suite, Enterprise, koszty wdrożenia i typowe pułapki w MŚP.",
       },
+      {
+        href: "/strefa-wiedzy/lead-w-weekend-black-friday",
+        title: "Lead w weekend po Black Friday",
+        description:
+          "Dyżur handlowca w domu, odpoczynek i które leady mają kogoś budzić.",
+        bezOkladki: true,
+      },
     ],
   },
   {

@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrackedCTA from "@/components/TrackedCTA";
 import GraZlapLeada from "@/components/GraZlapLeada";
+import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 export const metadata: Metadata = {
   title: "Jak skrócić czas reakcji na leada do kilku minut | Fluxlab",
@@ -61,7 +62,7 @@ const workflowSteps = [
   },
 ];
 
-const faq = [
+const faq: { question: string; answer: string; linki?: LinkWTekscie[] }[] = [
   {
     question: "Jaki czas reakcji na leada jest realistyczny w B2B?",
     answer:
@@ -71,6 +72,12 @@ const faq = [
     question: "Co z leadami po godzinach pracy?",
     answer:
       "Auto-odpowiedź z konkretnym czasem oddzwonienia i zadanie z priorytetem na początek następnego dnia.",
+    linki: [
+      {
+        fraza: "następnego dnia",
+        href: "/strefa-wiedzy/lead-w-weekend-black-friday",
+      },
+    ],
   },
   {
     question: "Jak mierzyć czas reakcji?",
@@ -260,7 +267,7 @@ export default function CzasReakcjiNaLeada() {
                     </svg>
                   </summary>
                   <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {item.answer}
+                    {zLinkami(item.answer, item.linki)}
                   </div>
                 </details>
               ))}

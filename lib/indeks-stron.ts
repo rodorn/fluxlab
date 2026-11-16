@@ -763,6 +763,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Przedsiębiorca z CEIDG może mieć dwa adresy do e-Doręczeń: prywatny i firmowy. To dwie osobne skrzynki, adres prywatny nie zastępuje firmowego."
   },
   {
+    "url": "/strefa-wiedzy/lead-w-weekend-black-friday",
+    "tytul": "Lead w sobotę po Black Friday: kto odpowie",
+    "opis": "Black Friday 2026 wypada 27.11, a leady przyjdą też w sobotę. Kto ma je odebrać, ile kosztuje dyżur handlowca w domu i co może zrobić automat."
+  },
+  {
     "url": "/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen",
     "tytul": "Czy firma ma adres do e-Doręczeń? Jak to sprawdzić",
     "opis": "Adres firmy znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma, i czego sprawdzić się nie da."
