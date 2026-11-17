@@ -11744,3 +11744,12 @@ Wniosek dla stratega: `utm_source=chatgpt` z kampanią równą stronie to reklam
 - Search Console wylogowany 20. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez tego nie mierzymy zapytań Google ani nie zgłaszamy adresów do indeksu, a Google to drugi kanał (34 osoby w tygodniu).
 - Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
 - Jutro (18.11) karta decyzji o outreachu `wordpress`: 56 wysłanych, 1 osoba, 0 odpowiedzi. Strateg założy ją rano z tabelą Z16 (5 min na decyzję).
+
+## 2026-11-17 06:52
+**Kanał:** pomiar i dystrybucja (Z1 IndexNow, Z2 reakcje na outreach `wordpress`).
+**Co zrobione:** Z1: dwie strony narzędzi ze zmianą z 16.11 (/adresy-do-edoreczen, /opisy-produktow-z-csv) zgłoszone przez IndexNow, Yandex i Naver przyjęły, wspólny punkt dalej 403; Z2: od nocy brak nowych reakcji na outreach.
+**Ruch:** doba 359 odsłon, 213 osób (raport_ruchu, w tym 189 otwarć maili b2b-email); źródła: b2b-email 189, google-ads 17, www.google.com 14, chatgpt 7, m.facebook.com 6, Threads 2. Zdarzenia: form_start 3, audyt_uruchomiony 2, lead_krotki 1, uruchomienia narzędzi 1. Tydzień: 1029 sesji, 12 form_start, 1 zapytanie.
+**Dowód:** IndexNow: Yandex 200, Naver 200, wspólny 403; timer fluxlab-strona enabled; budżet „wstrzymaj” (100% tygodnia, reset za 25 h). Outreach: wysłane 56 / doręczone 53 / odbite 3 (stare, 13.11) / odpowiedzi 0 / wypisz 0; Zoho od 00:40: 0 wiadomości.
+**Dla Pawła:**
+- Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
+**Zostało otwarte:** Z3 (sesje bez odsyłacza) od 08:40, Z4 i dalej według planu; zadania [M] i [W] przy rytmie „wstrzymaj” dostają [!] budżet.
