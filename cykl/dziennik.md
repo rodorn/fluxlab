@@ -11727,3 +11727,11 @@ Wniosek dla stratega: `utm_source=chatgpt` z kampanią równą stronie to reklam
 **Dowód:** `~/Projekty/mail-audyt/partie-wp-2026-11-17.txt` (partia 1 10:43: 057 kontakt@duncan-scania.pl, certyfikat nadal wygasły 8.12.2022, próba OK; 56 z 57 maili już wysłanych); cykl/plan-ruchu.md Z20 [x], Z21 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z22 i Z23 od 04:40. Partie 2-4 na wtorek wymagają nowej puli (Z14/Z16, wstrzymane budżetem: rytm „wstrzymaj”, prognoza 120%).
+
+## 2026-11-17 04:50
+**Kanał:** pomiar (Z22, Z23 z planu 16.11).
+**Co zrobione:** kontrola mapy witryny i dobowy pomiar dla stratega; plan 16.11 zamknięty, w planie nie ma już otwartych zadań.
+**Ruch:** raport_ruchu, ostatnia doba: 403 odsłony, 219 osób (b2b-email 186, github.com 26, google-ads 20, Google 14, chatgpt 7). Po odsiewie pomiar-kanalow: ludzie 86; google-ads 11 (druga odsłona 5, wejścia /ksef-integracja 6), Google 10 (/strefa-wiedzy/biala-lista-vat-nowe-api 3), chatgpt 5, github 5, Facebook 5 (3 wyjścia na /grupa-ksef), instagram 3, Gmail 2, threads 1, useme 1, mail/wordpress 1. Uruchomienia 9 (audyt 3, skany 5, numer KSeF 1), form_start 8, lead_* 1 (lead_krotki 16.11 13:02, google-ads, /ksef-integracja, już w bilansie Z17). Od 22:50 zero nowych zdarzeń.
+**Dowód:** sitemap.xml 271 `<loc>` (16.11: 270), adres /strefa-wiedzy/lead-w-weekend-black-friday w mapie; cykl/plan-ruchu.md Z22 [x], Z23 [x].
+**Dla Pawła:**
+**Zostało otwarte:** nic w planie 16.11; następny plan od stratega 06:15. Z14 i Z16 (nowa pula gabinetów) czekają na zejście budżetu z „wstrzymaj”.
