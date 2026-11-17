@@ -11753,3 +11753,36 @@ Wniosek dla stratega: `utm_source=chatgpt` z kampanią równą stronie to reklam
 **Dla Pawła:**
 - Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
 **Zostało otwarte:** Z3 (sesje bez odsyłacza) od 08:40, Z4 i dalej według planu; zadania [M] i [W] przy rytmie „wstrzymaj” dostają [!] budżet.
+<!-- WYSLANO 2026-11-17 07:04 -->
+
+## 2026-11-17 08:55
+**Kanał:** pomiar (Z3 sesje bez odsyłacza, Z4 wejścia z Google 7 dni).
+**Co zrobione:** policzone, ile z koszyka „bez odsyłacza” to ludzie, i wybrany artykuł z największym ruchem z Google jako temat dla Z10.
+**Ruch:** doba 318 odsłon, 189 osób (raport_ruchu, w tym 149 otwarć maili b2b-email); źródła: b2b-email 149, google-ads 16, www.google.com 14, chatgpt 8, m.facebook.com 6. Tydzień: 1012 sesji, 12 form_start, 1 zapytanie.
+**Dowód:**
+
+Z3, sesje bez odsyłacza po odsiewie (pomiar-kanalow `wiersze()` + `odsiew()`):
+
+| okres | sesje | druga odsłona | przewinięcie 50% bez drugiej | aktywni | czas 0 s | ≥60 s | form_start |
+|---|---|---|---|---|---|---|---|
+| 24 h | 29 | 2 | 7 | 9 | 21 | 0 | 0 |
+| 7 dni | 201 | 29 | 9 | 38 | 164 | 21 | 3 |
+
+24 h, strony wejścia: / 14, /asystent-ai-na-stronie 8, /automatyzacja-procesow-biznesowych 2, po 1: /automatyzacja-leadow-crm, /cv, /ksef-integracja, /automatyzacja-dla-biur-rachunkowych, /strefa-wiedzy/zapier-make-n8n-porownanie. Przeglądarki: Chrome Windows 7, Chrome macOS 6, Safari iOS 4 (+2 iPad), Chrome Linux 4, Chrome Android 2, Firefox Windows 2, Edge 1. Godziny: 02:00-03:00 8 (cała seria /asystent-ai-na-stronie, 02:32-02:57, Safari iOS i Chrome macOS na zmianę, każda 1 odsłona i 0 s), 08:00 4, 10:00 4, 16:00 4, reszta po 1-2.
+Wniosek: z 29 sesji bez odsyłacza w dobie ludźmi są najwyżej 9 (druga odsłona albo przewinięcie), w 7 dniach 38 z 201; reszta to pojedyncze odsłony z czasem 0 s, czyli głównie podglądy linków w komunikatorach i skanery (seria nocna na /asystent-ai-na-stronie), a ludzie to wpisany adres lub zakładka na / oraz linki z maili bez utm.
+
+Z4, wejścia z `www.google.com` (bez utm) po odsiewie, 7 dni: 32 sesje, 10 z drugą odsłoną.
+
+| strona wejścia | sesje | druga odsłona | zdarzenie | artykuł z kalendarza |
+|---|---|---|---|---|
+| / | 12 | 4 | 2 | |
+| /strefa-wiedzy/biala-lista-vat-nowe-api | 5 | 1 | 0 | |
+| /numer-ksef | 3 | 1 | 3 | |
+| /kalkulator-oze-demo | 2 | 1 | 0 | |
+| /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen | 1 | 1 | 0 | tak (9.11) |
+| po 1: gutschrift-ksef, kiedy-odliczyc-vat-z-faktury-ksef, faktura-do-paragonu-ksef, numer-ksef-w-przelewie, blad-w-fakturze-ksef (strefa wiedzy), /analiza-lokalizacji, /narzedzia/kalkulator-pit, /dla-zespolu, /kalkulator-podatkowy | 9 | 3 | 1 | nie |
+
+3 najlepsze bez CRM: /, /strefa-wiedzy/biala-lista-vat-nowe-api, /numer-ksef. Pozostałe artykuły z kalendarza (limit-10-tys-poza-ksef, certyfikat-ksef, faktury-kosztowe-z-ksef, lead-w-weekend-black-friday): 0 wejść z Google w 7 dni. Temat dla Z10: /strefa-wiedzy/biala-lista-vat-nowe-api (5 wejść).
+**Dla Pawła:**
+- Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
+**Zostało otwarte:** Z5 (wysyłka 1 maila, bramka budżetu) i Z6 od 10:40.
