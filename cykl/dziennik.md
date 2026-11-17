@@ -11706,3 +11706,24 @@ Doba razem: uruchomienia narzędzi 9 (audyt 3, skany 5, numer KSeF 1), form_star
 **Dowód:** cykl/plan-ruchu.md Z18 [x], Z19 [x]. Z18: Resend 44/44 delivered, 0 odbić; Zoho od 16.11 18:40: tylko wątek FINREAL (poza outreachem), 0 odpowiedzi na outreach, 0 „wypisz”; sesje utm_campaign=wordpress od 18:40: 0. Z19: sesje 65p3v38vb3qmwhotgt6 i e6fpnbzg6mhmwholxs1 (15.11 11:18 i 11:24, /zakup/dziekujemy, Chrome Linux, 1 odsłona), maile produkty@ w tej godzinie tylko na delivered@resend.dev.
 **Dla Pawła:**
 **Zostało otwarte:** Z20 i Z21 od 02:40, Z22 i Z23 od 04:40.
+
+## 2026-11-17 02:55
+**Kanał:** outreach z gotowym raportem (Z20 partie na wtorek) i widoczność w asystentach AI (Z21 pomiar ChatGPT), plan 16.11.
+**Co zrobione:** plik partii na wtorek gotowy (1 mail, bo pula wyczerpana), a pomiar ChatGPT pokazał, że 23 z 27 sesji „chatgpt” w 7 dniach to płatna kampania OpenAI Ads, nie odpowiedzi asystenta.
+**Ruch:** ostatnia doba 399 odsłon, 214 osób (raport_ruchu); źródła: b2b-email 186 (piksel otwarć), github.com 24, google-ads 20, www.google.com 14, chatgpt 9; uruchomienia narzędzi 6, form_start 8.
+
+Z21, sesje ChatGPT z 7 dni po odsiewie (27: `utm_source=chatgpt` 23, chatgpt.com 4):
+
+| Strona wejścia | Sesje | Odsłony na sesję | form_start | Uruchomienia | utm_campaign |
+|---|---|---|---|---|---|
+| /strony-www | 9 | 1,22 | 1 | 1 (audyt) | landing-test1 4, strony-www 5 |
+| /scraping-danych | 5 | 1,00 | 0 | 0 | scraping 5 |
+| /automatyzacja-raportowania | 3 | 1,00 | 0 | 0 | raportowanie 3 |
+| /integracje-api | 3 | 1,00 | 0 | 0 | integracje-api 3 |
+| /kalkulator-podatkowy | 2 | 3,50 | 0 | 3 | brak (chatgpt.com) |
+
+Pozostałe po 1: /audyt-kurierski i /dobor-samochodu (chatgpt.com), /automatyzacja-procesow-biznesowych, /ksef-integracja, /e-doreczenia-integracja (utm). Lead_* 0.
+Wniosek dla stratega: `utm_source=chatgpt` z kampanią równą stronie to reklama OpenAI Ads „FluxLab landing page test 1” (rejestr FL_marketing 00:50: 201 zł, 33 kliknięcia, 0 zapytań). Naturalny kanał asystentów to tylko 4 sesje chatgpt.com, ale najlepiej zaangażowane: /kalkulator-podatkowy ma 3,5 odsłony i 3 uruchomienia. Strony do wzmocnienia pod asystentów: /kalkulator-podatkowy; strony reklamowe /scraping-danych, /automatyzacja-raportowania, /integracje-api nie dają drugiej odsłony (1,00).
+**Dowód:** `~/Projekty/mail-audyt/partie-wp-2026-11-17.txt` (partia 1 10:43: 057 kontakt@duncan-scania.pl, certyfikat nadal wygasły 8.12.2022, próba OK; 56 z 57 maili już wysłanych); cykl/plan-ruchu.md Z20 [x], Z21 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z22 i Z23 od 04:40. Partie 2-4 na wtorek wymagają nowej puli (Z14/Z16, wstrzymane budżetem: rytm „wstrzymaj”, prognoza 120%).
