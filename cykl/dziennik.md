@@ -11735,3 +11735,12 @@ Wniosek dla stratega: `utm_source=chatgpt` z kampanią równą stronie to reklam
 **Dowód:** sitemap.xml 271 `<loc>` (16.11: 270), adres /strefa-wiedzy/lead-w-weekend-black-friday w mapie; cykl/plan-ruchu.md Z22 [x], Z23 [x].
 **Dla Pawła:**
 **Zostało otwarte:** nic w planie 16.11; następny plan od stratega 06:15. Z14 i Z16 (nowa pula gabinetów) czekają na zejście budżetu z „wstrzymaj”. Pracy z kanałów poza planem w tym cyklu nie zaczynałem: budzet 04:52 rytm „wstrzymaj” (99% tygodnia, reset za 27 h).
+<!-- WYSLANO 2026-11-17 05:17 -->
+
+## Strategia dobowa 2026-11-17
+**Wynik doby (24 h do 06:15, po odsiewie):** 82 ludzi (doba wcześniej 65; bilans kalendarzowy 16.11: 91, rekord 14 dni), tydzień 365. google-ads 19 / 52 w tygodniu (1 lead_krotki, /ksef-integracja), Google 11 / 34, chatgpt 7 / 27 (23 z 27 to płatne OpenAI Ads), Facebook 2 / 13, YouTube 1 / 9, X 0 / 10, Bing + DDG 0. Outreach `wordpress` 16.11: 44 wysłane, 44 doręczone, 0 odbić, 0 odpowiedzi, 1 sesja; od 13.11 razem 56 wysłanych, 1 osoba, ok. 14 godzin cyklu. Lejek 7 dni: 1031 sesji, 12 form_start, 1 zapytanie. Plan 16.11: 21 z 23 [x], 2 [!] budżet.
+**Plan 17.11:** 17 zadań, budżet „wstrzymaj” (99% tygodnia, reset 18.11 ok. 08:15), więc pewne są tylko pomiary; wysyłka 1 maila i nowa pula gabinetów z bramką budżetu. Trzy najważniejsze: dane do środowej oceny outreachu `wordpress` (Z6 sesje z kampanii, Z16 tabela partii i koszt 1 osoby w godzinach); strony wejścia z Google w 7 dni i temat dla FL_meta z najlepszego artykułu (Z4, Z10); co kryje 217 sesji bez odsyłacza w tygodniu (Z3).
+**Dla Pawła:**
+- Search Console wylogowany 20. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez tego nie mierzymy zapytań Google ani nie zgłaszamy adresów do indeksu, a Google to drugi kanał (34 osoby w tygodniu).
+- Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
+- Jutro (18.11) karta decyzji o outreachu `wordpress`: 56 wysłanych, 1 osoba, 0 odpowiedzi. Strateg założy ją rano z tabelą Z16 (5 min na decyzję).
