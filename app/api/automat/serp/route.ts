@@ -55,14 +55,38 @@ async function pobierz(url: string, klucz: string) {
   return Buffer.from(d.httpResponseBody ?? "", "base64").toString("utf8");
 }
 
+async function serper(fraza: string, klucz: string): Promise<Wynik[]> {
+  const odp = await fetch("https://google.serper.dev/search", {
+    method: "POST",
+    signal: AbortSignal.timeout(30_000),
+    headers: { "X-API-KEY": klucz, "content-type": "application/json" },
+    body: JSON.stringify({ q: fraza, gl: "pl", hl: "pl", num: 20 }),
+  });
+  if (!odp.ok) throw new Error(`serper ${odp.status}`);
+  const d = (await odp.json()) as { organic?: { title?: string; link?: string }[] };
+  return (d.organic ?? [])
+    .filter((x) => x.link)
+    .map((x, i) => ({ pozycja: i + 1, url: x.link!, tytul: tekst(x.title ?? "").slice(0, 160) }));
+}
+
 export async function POST(req: Request) {
   if (!automatDozwolony(req))
     return NextResponse.json({ error: "brak dostępu" }, { status: 401 });
+  const kluczSerper = process.env.SERPER_API_KEY;
   const klucz = process.env.ZYTE_API_KEY;
-  if (!klucz) return NextResponse.json({ error: "brak klucza" }, { status: 500 });
+  if (!klucz && !kluczSerper) return NextResponse.json({ error: "brak klucza" }, { status: 500 });
   const dane = (await req.json().catch(() => null)) as { fraza?: string } | null;
   const fraza = String(dane?.fraza ?? "").trim().slice(0, 100);
   if (fraza.length < 2) return NextResponse.json({ error: "fraza" }, { status: 400 });
+  if (kluczSerper) {
+    try {
+      const w = await serper(fraza, kluczSerper);
+      if (w.length >= 3) return NextResponse.json({ fraza, wyniki: w.slice(0, 20) });
+    } catch {
+      if (!klucz) return NextResponse.json({ error: "serper" }, { status: 502 });
+    }
+    if (!klucz) return NextResponse.json({ error: "za mało wyników" }, { status: 502 });
+  }
   const q = encodeURIComponent(fraza);
   const adresy = [
     `https://www.google.pl/search?q=${q}&hl=pl&gl=pl&num=20&pws=0`,
@@ -71,7 +95,7 @@ export async function POST(req: Request) {
   let ostatni = "";
   for (const url of adresy) {
     try {
-      const w = wyniki(await pobierz(url, klucz));
+      const w = wyniki(await pobierz(url, klucz!));
       if (w.length >= 3) return NextResponse.json({ fraza, wyniki: w.slice(0, 20) });
       ostatni = `za mało wyników (${w.length})`;
     } catch (e) {
