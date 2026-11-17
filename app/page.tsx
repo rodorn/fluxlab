@@ -5,6 +5,7 @@ import TloHero from "@/components/TloHero";
 import HeroNic from "@/components/HeroNic";
 import Nic from "@/components/Nic";
 import LandingForm from "@/components/LandingForm";
+import TrackedCTA from "@/components/TrackedCTA";
 import WirtualnyHandlowiec from "@/components/WirtualnyHandlowiec";
 import WitajPonownie from "@/components/WitajPonownie";
 import EtykietaNocna from "@/components/EtykietaNocna";
@@ -483,6 +484,23 @@ export default function Home() {
                 intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
                 submitLabel="Wyślij i sprawdź cenę"
               />
+              <div className="mx-auto mt-5 flex max-w-2xl flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white/70 p-5 text-center sm:flex-row sm:justify-between sm:text-left dark:border-white/10 dark:bg-white/5">
+                <p className="text-sm text-gray-700 dark:text-white/75">
+                  <span className="font-semibold text-gray-900 dark:text-white">
+                    Wiesz, czego potrzebujesz?
+                  </span>{" "}
+                  Usługi ze stałą ceną kupisz od razu w sklepie, płatność
+                  online.
+                </p>
+                <TrackedCTA
+                  href="/produkty"
+                  location="kontakt_sklep"
+                  label="Kup online"
+                  className="btn-primary shrink-0"
+                >
+                  Kup online →
+                </TrackedCTA>
+              </div>
             </RevealOnScroll>
             <KrokiSticky
               kroki={KROKI_KONTAKTU.meet}
