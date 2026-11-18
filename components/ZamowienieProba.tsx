@@ -129,7 +129,7 @@ export default function ZamowienieProba({
           roboczy.
         </li>
         <li>
-          Po {dniGratis} dniach link do płatności. Nie płacisz, kalkulator się
+          Po {dniGratis} dniach proforma na tę kwotę. Nie płacisz, kalkulator się
           wyłącza. Rezygnacja w dowolnym dniu.
         </li>
       </ul>
