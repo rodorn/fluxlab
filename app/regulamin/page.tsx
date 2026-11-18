@@ -38,15 +38,9 @@ export default function Regulamin() {
         {/* Hero, kompaktowy */}
         <section className="pt-24 pb-12">
           <div className="container-wide">
-            <Breadcrumbs href="/regulamin"
-              items={[
-                { label: "Regulamin" },
-              ]}
-            />
+            <Breadcrumbs href="/regulamin" items={[{ label: "Regulamin" }]} />
 
-            <h1 className="h1-strony mt-8 mb-4">
-              Regulamin
-            </h1>
+            <h1 className="h1-strony mt-8 mb-4">Regulamin</h1>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Ostatnia aktualizacja: 4 listopada 2026
             </p>
@@ -131,7 +125,10 @@ export default function Regulamin() {
                           <li>
                             Zakup online jest przeznaczony dla firm. Ceny na
                             stronach są cenami netto, do których doliczany jest
-                            VAT 23%. Kwotę brutto pokazuje strona płatności. Kilka usług z koszyka można opłacić jedną płatnością: usługi jednorazowe są wtedy płatne razem z pierwszym miesiącem abonamentu.
+                            VAT 23%. Kwotę brutto pokazuje strona płatności.
+                            Kilka usług z koszyka można opłacić jedną
+                            płatnością: usługi jednorazowe są wtedy płatne razem
+                            z pierwszym miesiącem abonamentu.
                           </li>
                           <li>
                             Płatności obsługuje Stripe Payments Europe Ltd.
@@ -140,8 +137,8 @@ export default function Regulamin() {
                           <li>
                             Umowa zostaje zawarta z chwilą przyjęcia płatności.
                             W ciągu 1 dnia roboczego Usługodawca wysyła fakturę
-                            VAT na adres e-mail podany przy płatności i kontaktuje
-                            się w sprawie rozpoczęcia pracy.
+                            VAT na adres e-mail podany przy płatności i
+                            kontaktuje się w sprawie rozpoczęcia pracy.
                           </li>
                           <li>
                             Abonament jest opłacany z góry za każdy miesiąc i
@@ -162,9 +159,8 @@ export default function Regulamin() {
                             umowy w ciągu 14 dni od jej zawarcia bez podania
                             przyczyny. Prawo to wygasa, gdy na jej wyraźne
                             żądanie usługa zostanie w tym czasie wykonana w
-                            całości. Przy odstąpieniu w trakcie realizacji
-                            płaci ona za część usługi wykonaną do chwili
-                            odstąpienia.
+                            całości. Przy odstąpieniu w trakcie realizacji płaci
+                            ona za część usługi wykonaną do chwili odstąpienia.
                           </li>
                         </ul>
                       </section>
@@ -207,9 +203,9 @@ export default function Regulamin() {
                           4. Własność intelektualna
                         </h2>
                         <p>
-                          Wszelkie treści zamieszczone w Serwisie, w tym
-                          teksty, grafiki, układ strony, logotypy i kod źródłowy
-                         , stanowią własność intelektualną Usługodawcy i są
+                          Wszelkie treści zamieszczone w Serwisie, w tym teksty,
+                          grafiki, układ strony, logotypy i kod źródłowy ,
+                          stanowią własność intelektualną Usługodawcy i są
                           chronione przepisami prawa autorskiego oraz prawa
                           własności przemysłowej.
                         </p>
@@ -269,6 +265,27 @@ export default function Regulamin() {
                             Polityka prywatności
                           </Link>
                           , stanowiąca integralną część niniejszego Regulaminu.
+                        </p>
+                        <p>
+                          Dla usług FluxCRM, w których FluxLab przetwarza dane
+                          osobowe na zlecenie klienta, zawieramy umowę
+                          powierzenia przetwarzania danych (art. 28 RODO). Wzór:{" "}
+                          <a
+                            href="https://panel.fluxlab.pl/crm/podprocesory/umowa"
+                            className="text-accent hover:underline"
+                          >
+                            umowa powierzenia przetwarzania danych
+                          </a>
+                          ; wersję z danymi firmy klient pobiera w panelu
+                          FluxCRM (Ustawienia &gt; Umowa powierzenia danych).
+                          Aktualna lista podprocesorów:{" "}
+                          <a
+                            href="https://panel.fluxlab.pl/crm/podprocesory"
+                            className="text-accent hover:underline"
+                          >
+                            panel.fluxlab.pl/crm/podprocesory
+                          </a>
+                          .
                         </p>
                       </section>
                     </div>
