@@ -11786,3 +11786,11 @@ Z4, wejścia z `www.google.com` (bez utm) po odsiewie, 7 dni: 32 sesje, 10 z dru
 **Dla Pawła:**
 - Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
 **Zostało otwarte:** Z5 (wysyłka 1 maila, bramka budżetu) i Z6 od 10:40.
+
+## Strategia dobowa 2026-11-18
+**Wynik doby (24 h do 08:15, po odsiewie):** 51 ludzi (doba wcześniej 82; bilans kalendarzowy 17.11: 62 sesje), tydzień 377. google-ads 8 / 60 w tygodniu, Google 7 / 38, chatgpt 4 / 31 (24 płatne OpenAI Ads), Facebook 1 / 12, bez odsyłacza 29 / 214, mail/wordpress 0 / 1. Lejek 7 dni: 1073 sesje, 10 form_start, 1 zapytanie. Plan 17.11: 4 z 17 [x]; od 10:43 do 06:43 każdy cykl kończył się po 1 s przez tygodniowy limit konta (reset 18.11 8:00). Outreach `wordpress` od 13.11: 56 wysłanych, 53 doręczone, 0 odpowiedzi, 1 osoba, ok. 14 godzin cyklu; Zoho 24 h bez odpowiedzi na outreach. Search Console wylogowany 21. dobę.
+**Plan 18.11:** 17 zadań, bez wysyłek do decyzji o outreachu; zadania treści z bramką budżetu (08:15 nadal „wstrzymaj”). Trzy najważniejsze: pozycje 12 artykułów w Google wyszukiwaniem w ukrytej przeglądarce, bo Search Console nie działa (Z3); na tej podstawie nowe tytuły dwóch artykułów z pozycji 4-20 (Z5, Z7); temat dla FL_meta z artykułu o białej liście VAT, który ma najwięcej wejść z Google (Z4).
+**Dla Pawła:**
+- Search Console wylogowany 21. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Google to drugi kanał (38 osób w tygodniu), a bez konsoli nie widzimy zapytań ani indeksu.
+- Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
+- Decyzja o outreachu `wordpress` (stop / próba 15 maili do gabinetów / dalej) czeka u Wojtka: https://biuro.fluxlab.pl/decyzje/#bdb474cd-d345-4f52-9ec5-a859d78352ef (2 min, termin 21.11).
