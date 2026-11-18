@@ -9,14 +9,14 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 const ADRES = "/strefa-wiedzy/numer-ksef-w-przelewie";
 
 const OPIS =
-  "Od 1 stycznia 2027 płacąc innemu czynnemu podatnikowi VAT za fakturę z KSeF, podajesz w tytule przelewu jej numer KSeF, także w MPP. Co zmienić w płatnościach.";
+  "Numer KSeF w przelewie od 1 stycznia 2027: płacąc czynnemu podatnikowi VAT za fakturę z KSeF, podajesz go w tytule, także w MPP. Co zmienić w płatnościach.";
 
 export const metadata: Metadata = {
-  title: "Numer KSeF w tytule przelewu od 2027 | Fluxlab",
+  title: "Numer KSeF w przelewie od 1.01.2027 | Fluxlab",
   description:
-    "Od 1 stycznia 2027 płacąc innemu czynnemu podatnikowi VAT za fakturę z KSeF, podajesz w tytule przelewu jej numer KSeF, także w MPP. Co zmienić w płatnościach.",
+    "Numer KSeF w przelewie od 1 stycznia 2027: płacąc czynnemu podatnikowi VAT za fakturę z KSeF, podajesz go w tytule, także w MPP. Co zmienić w płatnościach.",
   openGraph: {
-    title: "Numer KSeF w tytule przelewu od 1 stycznia 2027",
+    title: "Numer KSeF w przelewie od 1 stycznia 2027",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
