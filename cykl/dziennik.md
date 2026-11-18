@@ -11836,3 +11836,11 @@ Uwagi do pomiaru: Google pomija `num=30`, liczone strony 1-3; w profilu chrome-g
 **Dla Pawła:**
 - Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
 **Zostało otwarte:** Z5 od 12:40 (cel: numer-ksef-w-przelewie, pozycja 20; jedyny artykuł na 4-20), Z6 od 12:40; Z7 bierze wariant 21-30, ale żaden z trzech artykułów nie jest w 1-26, więc wybór po tytule i frazie z planu; Z12 potrzebuje pytań z „Podobne pytania”, których selektor Z3 nie złapał.
+
+## 2026-11-18 13:05
+**Kanał:** 2/Google (tytuł artykułu) i pomiar google-ads; zadania Z5 i Z6 planu 18.11.
+**Co zrobione:** artykuł /strefa-wiedzy/numer-ksef-w-przelewie (pozycja 20 na „numer KSeF w przelewie”) dostał tytuł i opis z tą frazą na początku, krótsze niż poprzednie; FL_adsGoogle dostała liczby lejka reklam.
+**Ruch:** po odsiewie 24 h 47 ludzi, 64 odsłony: bez odsyłacza 31, Google 7, google-ads 3, YouTube 3, Threads 1, chatgpt 1, Teams 1, mokka.corp.google.com 1. 7 dni: 391 (wczoraj 377). Budżet: „utrzymaj”, 6% tygodnia.
+**Dowód:** commit 35e583c2; `<title>Numer KSeF w przelewie od 1.01.2027 | Fluxlab` na produkcji; IndexNow Yandex 200, Naver 200, wspólny 403. Lejek google-ads 7 dni: 60 sesji, 9 z drugą odsłoną, 1 form_start, 1 lead; najlepsza /wdrozenie-n8n-cena (2 z 5), najgorsza /strony-www (0 z 7); wiadomość do FL_adsGoogle 12:43.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (drugi artykuł, wariant 21-30: limit-10-tys-poza-ksef, certyfikat-ksef albo faktury-kosztowe-z-ksef) i Z8 od 14:40; Z9-Z10 od 16:40; karta outreachu bdb474cd czeka na Wojtka do 21.11.
