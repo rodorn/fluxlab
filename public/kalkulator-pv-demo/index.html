@@ -9,8 +9,35 @@
     <style>
       body {
         margin: 0;
-        background: #f3f4f6;
-        padding: 16px;
+        background: #fff;
+      }
+      .fx-calc {
+        max-width: none;
+        padding: 20px;
+      }
+      .fx-input {
+        border-color: #d1d5db;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      .fx-input:focus {
+        outline: 2px solid rgb(79 70 229 / 0.25);
+        border-color: #4f46e5;
+      }
+      .fx-btn,
+      .fx-btn-akcent {
+        border-radius: 16px;
+        padding: 14px 20px;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+        box-shadow: 0 6px 16px -6px rgb(79 70 229 / 0.55);
+      }
+      .fx-wynik {
+        scroll-margin-top: 80px;
+      }
+      .fx-brama {
+        background: #eef2ff;
       }
     </style>
   </head>
@@ -26,7 +53,7 @@
         brand: {
           nazwa: "Przykładowa Firma PV",
           logo: "", // np. "https://klient.pl/logo.png"
-          kolor: "#1f6feb",
+          kolor: "#4f46e5",
           kolorAkcent: "#16a34a",
           stopka:
             'Przykład: dane i założenia demonstracyjne. Silnik: <a href="https://fluxlab.pl" target="_blank" rel="noopener">FluxLab</a>',

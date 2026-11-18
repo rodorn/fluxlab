@@ -352,7 +352,7 @@
         pelneBox.hidden = true;
         brama.classList.remove("fx-brama-zamknieta");
       }
-      sekcja.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      sekcja.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     return { mount: mount };

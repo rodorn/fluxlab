@@ -27,6 +27,7 @@ export default function PasekAkcji() {
   );
   const [widoczny, setWidoczny] = useState(false);
   const [cel, setCel] = useState("/kontakt");
+  const [napis, setNapis] = useState("Bezpłatna wycena");
 
   useEffect(() => {
     if (wylaczony) return;
@@ -40,6 +41,7 @@ export default function PasekAkcji() {
         ?.closest<HTMLElement>("[id]") ??
       null;
     setCel(formularz ? `#${formularz.id}` : "/kontakt");
+    setNapis(formularz?.dataset.pasek ?? "Bezpłatna wycena");
     const ctaHero = document.getElementById("cta-hero");
     let przyFormularzu = false;
     let ctaWidoczne = !!ctaHero;
@@ -57,9 +59,16 @@ export default function PasekAkcji() {
         })
       : null;
     if (formularz) obs?.observe(formularz);
+    // Kalkulator (data-bez-paska) na ekranie: pasek nie zasłania jego pól ani wyniku.
+    const bezPaska = new Set<Element>();
+    const obsBez = new IntersectionObserver((wpisy) => {
+      for (const w of wpisy) w.isIntersecting ? bezPaska.add(w.target) : bezPaska.delete(w.target);
+      sprawdz();
+    });
+    document.querySelectorAll("[data-bez-paska]").forEach((el) => obsBez.observe(el));
 
     function sprawdz() {
-      const w = window.scrollY > window.innerHeight * 0.6 && !przyFormularzu && !ctaWidoczne;
+      const w = window.scrollY > window.innerHeight * 0.6 && !przyFormularzu && !ctaWidoczne && !bezPaska.size;
       setWidoczny(w);
       document.body.toggleAttribute("data-pasek-akcji", w);
     }
@@ -69,6 +78,7 @@ export default function PasekAkcji() {
       window.removeEventListener("scroll", sprawdz);
       obs?.disconnect();
       obsCta?.disconnect();
+      obsBez.disconnect();
       document.body.removeAttribute("data-pasek-akcji");
       setWidoczny(false);
     };
@@ -113,7 +123,7 @@ export default function PasekAkcji() {
         tabIndex={widoczny ? 0 : -1}
         className="btn-primary btn-lg w-full"
       >
-        Bezpłatna wycena
+        {napis}
       </a>
     </div>
   );

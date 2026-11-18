@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import KalkulatorIframe from "@/components/KalkulatorIframe";
+import FilmYoutube from "@/components/FilmYoutube";
+import ZamowienieProba from "@/components/ZamowienieProba";
+import { OFERTA } from "@/lib/sprzedaz";
+import { zl } from "@/lib/wycena";
 
 const TYTUL = "Przykładowy kalkulator PV z magazynem energii";
 const OPIS =
@@ -42,7 +45,7 @@ export default function KalkulatorOzeDemoPage() {
           items={[{ label: "Przykładowy kalkulator PV" }]}
         />
 
-        <section className="pt-16 pb-6">
+        <section className="pt-8 pb-6 sm:pt-16">
           <div className="container-wide max-w-3xl mx-auto">
             <p className="section-label mb-3">Przykład dla firm OZE</p>
             <h1 className="h1-strony">{TYTUL}</h1>
@@ -67,6 +70,22 @@ export default function KalkulatorOzeDemoPage() {
               </strong>{" "}
               Formularz w tej wersji niczego nie wysyła.
             </p>
+            <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-accent/30 bg-accent/5 p-5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="font-semibold text-gray-900 dark:text-white">
+                  Taki kalkulator na Twojej stronie
+                </p>
+                <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
+                  <span className="text-lg font-bold text-gray-900 dark:text-white">
+                    {zl(OFERTA["pv"].netto)}/mies.
+                  </span>{" "}
+                  netto, pierwsze 10 dni gratis, bez karty.
+                </p>
+              </div>
+              <a href="#zamow" className="btn-primary btn-lg shrink-0 text-center">
+                Zamów, 10 dni gratis
+              </a>
+            </div>
           </div>
         </section>
 
@@ -112,14 +131,11 @@ export default function KalkulatorOzeDemoPage() {
             <h2 className="text-xl font-semibold">
               Film: kalkulator zamiast formularza
             </h2>
-            <div className="mt-3 aspect-video overflow-hidden rounded-xl border border-gray-200 dark:border-white/10">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube-nocookie.com/embed/JHoRn2us-TI"
-                title="Kalkulator OZE: formularz, wycena czy kalkulator"
-                loading="lazy"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+            <div className="mt-3">
+              <FilmYoutube
+                id="JHoRn2us-TI"
+                tytul="Kalkulator OZE: formularz, wycena czy kalkulator"
+                okladka="/okladki/film-kalkulator-oze.webp"
               />
             </div>
             <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
@@ -135,7 +151,11 @@ export default function KalkulatorOzeDemoPage() {
           </div>
         </section>
 
-        <CTA />
+        <section className="py-10">
+          <div className="container-wide max-w-3xl mx-auto">
+            <ZamowienieProba id="pv" />
+          </div>
+        </section>
       </main>
       <Footer />
     </>

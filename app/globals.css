@@ -1207,16 +1207,16 @@ p {
 @media (max-width: 767px) {
   body[data-pasek-akcji] .cookie-consent { bottom: 5.5rem; }
 }
-/* Wejście z reklamy: okno zgody pod nagłówkiem, przewija się ze stroną, żeby nie zasłaniało formularza ani przycisku Wyślij */
+/* Wejście z reklamy i strony z kalkulatorem: okno zgody pod nagłówkiem, przewija się ze stroną, żeby nie zasłaniało formularza, kalkulatora ani przycisku Wyślij */
 @media (max-width: 767px) {
-  html[data-reklama] body .cookie-consent:not([hidden]) {
+  html:is([data-reklama], :has(iframe[data-kalkulator])) body .cookie-consent:not([hidden]) {
     position: absolute; top: 4.5rem; bottom: auto; display: flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0.5rem;
   }
-  html[data-reklama] body .cookie-consent p { flex: 1 1 auto; min-width: 0; line-height: 1.25; }
-  html[data-reklama] body .cookie-consent .zgoda-krotko { display: inline; }
-  html[data-reklama] body .cookie-consent .zgoda-dlugo { display: none; }
-  html[data-reklama] body .cookie-consent .zgoda-przyciski { margin-top: 0; flex: none; gap: 0.375rem; }
-  html[data-reklama] body .cookie-consent .zgoda-przyciski button { flex: none; padding: 0.375rem 0.625rem; }
+  html:is([data-reklama], :has(iframe[data-kalkulator])) body .cookie-consent p { flex: 1 1 auto; min-width: 0; line-height: 1.25; }
+  html:is([data-reklama], :has(iframe[data-kalkulator])) body .cookie-consent .zgoda-krotko { display: inline; }
+  html:is([data-reklama], :has(iframe[data-kalkulator])) body .cookie-consent .zgoda-dlugo { display: none; }
+  html:is([data-reklama], :has(iframe[data-kalkulator])) body .cookie-consent .zgoda-przyciski { margin-top: 0; flex: none; gap: 0.375rem; }
+  html:is([data-reklama], :has(iframe[data-kalkulator])) body .cookie-consent .zgoda-przyciski button { flex: none; padding: 0.375rem 0.625rem; }
 }
 @media (max-width: 767px) {
   body[data-zgoda] .przycisk-czatu,
