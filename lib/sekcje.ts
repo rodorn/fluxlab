@@ -101,6 +101,7 @@ export const SEKCJE: Sekcja[] = [
           s("/kalkulator-ogrodzen-demo", "Przykładowy kalkulator ogrodzeń dla firm"),
           s("/kalkulator-garazy-demo", "Przykładowy kalkulator garaży i wiat"),
           s("/kalkulator-klimatyzacji-demo", "Przykładowy kalkulator klimatyzacji"),
+          s("/kalkulator-zadaszen-demo", "Przykładowy kalkulator zadaszeń i pergoli"),
         ],
       },
     ],

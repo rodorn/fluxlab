@@ -113,6 +113,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Przykład kalkulatora klimatyzacji i pompy powietrze-powietrze. Instalator wkleja go na stronę, klient widzi koszt z montażem, a zapytanie trafia do firmy."
   },
   {
+    "url": "/kalkulator-zadaszen-demo",
+    "tytul": "Przykładowy kalkulator zadaszeń tarasu i pergoli",
+    "opis": "Działający przykład kalkulatora zadaszenia tarasu i pergoli. Firma wkleja go na stronę, klient widzi koszt z montażem, a zapytanie trafia do firmy."
+  },
+  {
     "url": "/kalkulator-podatkowy",
     "tytul": "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS",
     "opis": "Porównaj ryczałt, podatek liniowy i skalę dla JDG w 2026. Uwzględnia ZUS, składkę zdrowotną, VAT, koszty prywatne i samochód. Bez rejestracji."
