@@ -11844,3 +11844,13 @@ Uwagi do pomiaru: Google pomija `num=30`, liczone strony 1-3; w profilu chrome-g
 **Dowód:** commit 35e583c2; `<title>Numer KSeF w przelewie od 1.01.2027 | Fluxlab` na produkcji; IndexNow Yandex 200, Naver 200, wspólny 403. Lejek google-ads 7 dni: 60 sesji, 9 z drugą odsłoną, 1 form_start, 1 lead; najlepsza /wdrozenie-n8n-cena (2 z 5), najgorsza /strony-www (0 z 7); wiadomość do FL_adsGoogle 12:43.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (drugi artykuł, wariant 21-30: limit-10-tys-poza-ksef, certyfikat-ksef albo faktury-kosztowe-z-ksef) i Z8 od 14:40; Z9-Z10 od 16:40; karta outreachu bdb474cd czeka na Wojtka do 21.11.
+
+## 2026-11-18 15:22
+**Kanał:** Google i outreach (Z7 opis artykułu z frazą, Z8 reakcje na outreach `wordpress`).
+**Co zrobione:** Z7: artykuł o limicie 10 tys. zł poza KSeF ma na produkcji opis zaczynający się frazą z Google „Limit 10 tys. zł poza KSeF” (Z3: brak w 1-29); Z8: od rana brak reakcji na 56 maili, karta decyzji nadal u Wojtka.
+**Ruch:** doba 498 odsłon, 288 osób (raport_ruchu, w tym 276 otwarć maili b2b-email); źródła: b2b-email 276, www.google.com 12, google-ads 6, www.facebook.com 4, youtube 4; Threads 2. Najczęściej: / 125, /automatyzacja-leadow-crm 20, /strefa-wiedzy/biala-lista-vat-nowe-api 8. Uruchomienia narzędzi 1 (numer KSeF). Tydzień: 1227 sesji, 11 form_start, 1 zapytanie.
+**Dowód:** commity db05dbd6, 795d26bd, dd8d7d69; https://fluxlab.pl/strefa-wiedzy/limit-10-tys-poza-ksef (200, index,follow, nowy meta description); IndexNow Yandex 200, Naver 200, wspólny 403. Resend: 53 delivered, 3 bounced, bez zmian; Zoho od 18.11: 1 wiadomość (OLX), 0 odpowiedzi; sesje wordpress po odsiewie: 1 od 13.11, nowych 0; karta bdb474cd to_do.
+**Dla Pawła:**
+- Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
+- Decyzja o outreachu `wordpress` czeka u Wojtka: https://biuro.fluxlab.pl/decyzje/#bdb474cd-d345-4f52-9ec5-a859d78352ef (termin 21.11).
+**Zostało otwarte:** Z9 i Z10 (linki wewnętrzne) od 16:40, Z11 pomiar o 18:40, Z12 FAQ o 20:40.
