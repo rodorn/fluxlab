@@ -1063,6 +1063,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Praktyczne zastosowania AI w firmie, klasyfikacja, streszczenia, wsparcie obsługi i framework decyzji."
   },
   {
+    "url": "/strefa-wiedzy/kategoria/ksef",
+    "tytul": "KSeF, Strefa wiedzy",
+    "opis": "Faktury w KSeF krok po kroku: wystawianie, faktury kosztowe, korekty, numer KSeF w przelewie i terminy na 2026 i 2027 rok."
+  },
+  {
     "url": "/strefa-wiedzy/kategoria/jdg-i-podatki",
     "tytul": "JDG i podatki, Strefa wiedzy",
     "opis": "Formy opodatkowania JDG, składka zdrowotna, mały ZUS Plus i VAT, porównania i kalkulacje na 2026 rok."

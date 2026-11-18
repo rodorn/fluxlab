@@ -209,7 +209,9 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             ]}
           />
         </div>
-      <CTA />
+      <CTA
+        naglowek="Sprawdź, ile godzin w tygodniu zwróci Ci automatyzacja"
+      />
       </main>
 
       {/* Service Schema */}

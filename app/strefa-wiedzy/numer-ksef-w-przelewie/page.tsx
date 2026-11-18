@@ -205,7 +205,12 @@ export default function NumerKsefWPrzelewieArticle() {
             <PrevNextArticle currentHref={ADRES} />
           </div>
         </div>
-        <CTA naglowek="Chcesz, żeby numer KSeF sam trafiał do przelewu?" />
+        <CTA
+          naglowek="Sprawdź, czy numery KSeF do przelewów mogą przychodzić same na maila"
+          opis="Codziennie rano mail z nowymi fakturami kosztowymi z KSeF: XML, PDF i zestawienie CSV. Pierwszy mail od razu, 29 zł netto miesięcznie, rezygnacja w dowolnym dniu."
+          etykieta="Faktury kosztowe na maila"
+          href="/faktury-kosztowe-z-ksef-na-mail"
+        />
       </main>
       <Footer />
 

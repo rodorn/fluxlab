@@ -137,7 +137,12 @@ export default function ZawFaKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/zaw-fa-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA
+          naglowek="Sprawdź, czy uprawnienia i faktury w KSeF da się obsłużyć bez ręcznej pracy"
+          opis="Sprawdzamy, czy Twój program da się spiąć z KSeF i czy nie wystarczy gotowe narzędzie. Rozpoznanie 0 zł, odpowiedź w 1 dzień roboczy, wdrożenie od 1 900 zł."
+          etykieta="Sprawdź za 0 zł"
+          href="/ksef-integracja"
+        />
       </main>
       <Footer />
 

@@ -144,7 +144,12 @@ export default function KiedyOdliczycVatKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA
+          naglowek="Sprawdź, czy faktury kosztowe z KSeF mogą same trafiać do księgowej"
+          opis="Codziennie rano mail z nowymi fakturami kosztowymi z KSeF: XML, PDF i zestawienie CSV. Pierwszy mail od razu, 29 zł netto miesięcznie, rezygnacja w dowolnym dniu."
+          etykieta="Faktury kosztowe na maila"
+          href="/faktury-kosztowe-z-ksef-na-mail"
+        />
       </main>
       <Footer />
 

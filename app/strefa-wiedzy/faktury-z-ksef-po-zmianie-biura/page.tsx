@@ -147,7 +147,12 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura" />
           </div>
         </div>
-        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do Twojego systemu?" />
+        <CTA
+          naglowek="Sprawdź, czy nowe biuro może dostawać faktury kosztowe bez logowania do KSeF"
+          opis="Codziennie rano mail z nowymi fakturami kosztowymi z KSeF: XML, PDF i zestawienie CSV. Pierwszy mail od razu, 29 zł netto miesięcznie, rezygnacja w dowolnym dniu."
+          etykieta="Faktury kosztowe na maila"
+          href="/faktury-kosztowe-z-ksef-na-mail"
+        />
       </main>
       <Footer />
 

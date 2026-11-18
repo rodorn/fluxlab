@@ -146,7 +146,12 @@ export default function BladWFakturzeKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/blad-w-fakturze-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA
+          naglowek="Sprawdź, czy korekty faktur mogą iść do KSeF z Twojego programu"
+          opis="Sprawdzamy, czy Twój program da się spiąć z KSeF i czy nie wystarczy gotowe narzędzie. Rozpoznanie 0 zł, odpowiedź w 1 dzień roboczy, wdrożenie od 1 900 zł."
+          etykieta="Sprawdź za 0 zł"
+          href="/ksef-integracja"
+        />
       </main>
       <Footer />
 

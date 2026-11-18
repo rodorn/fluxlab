@@ -289,45 +289,15 @@ export const categories: Category[] = [
     ],
   },
   {
-    name: "JDG i podatki",
-    slug: "jdg-i-podatki",
+    name: "KSeF",
+    slug: "ksef",
     description:
-      "Formy opodatkowania JDG, składka zdrowotna, mały ZUS Plus i VAT, porównania i kalkulacje na 2026 rok.",
+      "Faktury w KSeF krok po kroku: wystawianie, faktury kosztowe, korekty, numer KSeF w przelewie i terminy na 2026 i 2027 rok.",
+    wstep: [
+      "Od 2026 roku faktury między firmami przechodzą przez KSeF (duże firmy od 1 lutego, pozostałe od 1 kwietnia), a od 1 stycznia 2027 obowiązek obejmuje też najmniejsze firmy i faktury z kas. Artykuły poniżej odpowiadają na pytania, które padają przy konkretnej fakturze: kiedy odliczyć VAT, jak wystawić zaliczkową albo korektę, co zrobić, gdy KSeF nie działa.",
+      "Gdy faktur jest kilka miesięcznie, wystarczy darmowa Aplikacja Podatnika KSeF. Gdy ktoś przenosi je ręcznie, pomaga mail z fakturami kosztowymi za 29 zł miesięcznie, wystawianie z Excela za 49 zł albo integracja z programem od 1 900 zł.",
+    ],
     articles: [
-      {
-        href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
-        title: "Jaka forma opodatkowania JDG w 2026?",
-        description:
-          "Porównanie skali, liniowego i ryczałtu, kryteria wyboru, progi, pułapki.",
-      },
-      {
-        href: "/strefa-wiedzy/ryczalt-czy-liniowy",
-        title: "Ryczałt czy liniowy, co się bardziej opłaca",
-        description:
-          "Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć.",
-      },
-      {
-        href: "/strefa-wiedzy/skala-czy-liniowy-jdg",
-        title: "Skala czy liniowy, porównanie dla JDG",
-        description: "Kwota wolna, progi, zdrowotna i realne scenariusze.",
-      },
-      {
-        href: "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",
-        title: "Jak liczyć składkę zdrowotną w JDG",
-        description: "Zasady 2026 dla skali, liniowego i ryczałtu.",
-      },
-      {
-        href: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",
-        title: "Mały ZUS Plus, kiedy się opłaca",
-        description:
-          "Warunki, limity, oszczędności i kiedy lepiej z niego nie korzystać.",
-      },
-      {
-        href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
-        title: "VAT w JDG, kiedy warto być vatowcem",
-        description:
-          "Zwolnienie podmiotowe, próg 240 000 zł i wpływ na cashflow.",
-      },
       {
         href: "/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef",
         title: "Kiedy odliczyć VAT z faktury z KSeF",
@@ -431,20 +401,6 @@ export const categories: Category[] = [
         bezOkladki: true,
       },
       {
-        href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
-        title: "e-Doręczenia: adres prywatny i firmowy",
-        description:
-          "W JDG to dwie osobne skrzynki, prywatna nie zastąpi firmowej.",
-        bezOkladki: true,
-      },
-      {
-        href: "/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen",
-        title: "Czy firma ma adres do e-Doręczeń",
-        description:
-          "Adres firmy jest we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce gov.pl.",
-        bezOkladki: true,
-      },
-      {
         href: "/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura",
         title: "Faktury z KSeF po zmianie biura",
         description:
@@ -495,6 +451,62 @@ export const categories: Category[] = [
         title: "Faktura dla osoby prywatnej a KSeF",
         description:
           "Dla konsumenta KSeF jest dobrowolny; jak przekazać fakturę z KSeF.",
+        bezOkladki: true,
+      },
+    ],
+  },
+  {
+    name: "JDG i podatki",
+    slug: "jdg-i-podatki",
+    description:
+      "Formy opodatkowania JDG, składka zdrowotna, mały ZUS Plus i VAT, porównania i kalkulacje na 2026 rok.",
+    articles: [
+      {
+        href: "/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026",
+        title: "Jaka forma opodatkowania JDG w 2026?",
+        description:
+          "Porównanie skali, liniowego i ryczałtu, kryteria wyboru, progi, pułapki.",
+      },
+      {
+        href: "/strefa-wiedzy/ryczalt-czy-liniowy",
+        title: "Ryczałt czy liniowy, co się bardziej opłaca",
+        description:
+          "Kiedy ryczałt wygrywa, kiedy przegrywa i jak to policzyć.",
+      },
+      {
+        href: "/strefa-wiedzy/skala-czy-liniowy-jdg",
+        title: "Skala czy liniowy, porównanie dla JDG",
+        description: "Kwota wolna, progi, zdrowotna i realne scenariusze.",
+      },
+      {
+        href: "/strefa-wiedzy/jak-liczyc-zdrowotna-jdg",
+        title: "Jak liczyć składkę zdrowotną w JDG",
+        description: "Zasady 2026 dla skali, liniowego i ryczałtu.",
+      },
+      {
+        href: "/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca",
+        title: "Mały ZUS Plus, kiedy się opłaca",
+        description:
+          "Warunki, limity, oszczędności i kiedy lepiej z niego nie korzystać.",
+      },
+      {
+        href: "/strefa-wiedzy/vat-w-jdg-kiedy-warto",
+        title: "VAT w JDG, kiedy warto być vatowcem",
+        description:
+          "Zwolnienie podmiotowe, próg 240 000 zł i wpływ na cashflow.",
+      },
+      {
+        href: "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
+        title: "e-Doręczenia: adres prywatny i firmowy",
+        description:
+          "W JDG to dwie osobne skrzynki, prywatna nie zastąpi firmowej.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen",
+        title: "Czy firma ma adres do e-Doręczeń",
+        description:
+          "Adres firmy jest we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce gov.pl.",
         bezOkladki: true,
       },
     ],

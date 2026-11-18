@@ -153,7 +153,12 @@ export default function DataWystawieniaFakturyKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/data-wystawienia-faktury-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA
+          naglowek="Sprawdź, czy możesz wystawiać faktury w KSeF prosto z arkusza"
+          opis="Wgrywasz arkusz z pozycjami, a my wystawiamy faktury w KSeF i odsyłamy numery na maila. Bez programu fakturującego, 49 zł netto miesięcznie, rezygnacja w dowolnym dniu."
+          etykieta="Faktury z Excela do KSeF"
+          href="/faktury-z-excela-do-ksef"
+        />
       </main>
       <Footer />
 

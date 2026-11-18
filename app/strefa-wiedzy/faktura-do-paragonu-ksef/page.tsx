@@ -130,7 +130,12 @@ export default function FakturaDoParagonuKsefArticle() {
             <PrevNextArticle currentHref="/strefa-wiedzy/faktura-do-paragonu-ksef" />
           </div>
         </div>
-        <CTA naglowek="Chcesz, żeby faktury z KSeF same trafiały do księgowości?" />
+        <CTA
+          naglowek="Sprawdź, czy faktury do paragonów możesz wystawiać w KSeF z arkusza"
+          opis="Wgrywasz arkusz z pozycjami, a my wystawiamy faktury w KSeF i odsyłamy numery na maila. Bez programu fakturującego, 49 zł netto miesięcznie, rezygnacja w dowolnym dniu."
+          etykieta="Faktury z Excela do KSeF"
+          href="/faktury-z-excela-do-ksef"
+        />
       </main>
       <Footer />
 

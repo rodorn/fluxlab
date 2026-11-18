@@ -136,7 +136,12 @@ export default function Ksef2027Page() {
           </div>
         </section>
       </main>
-      <CTA />
+      <CTA
+        naglowek="Sprawdź, czy od 2027 wystarczy Ci arkusz zamiast programu do faktur"
+        opis="Wgrywasz arkusz z pozycjami, a my wystawiamy faktury w KSeF i odsyłamy numery na maila. Bez programu fakturującego, 49 zł netto miesięcznie, rezygnacja w dowolnym dniu."
+        etykieta="Faktury z Excela do KSeF"
+        href="/faktury-z-excela-do-ksef"
+      />
 
       <script
         type="application/ld+json"
