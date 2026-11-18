@@ -45,7 +45,8 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   },
   {
     q: "A faktura wystawiona w trybie offline?",
-    a: "Też liczy się dzień nadania numeru po jej przesłaniu do KSeF, nie dzień, w którym dostajesz wizualizację z kodem QR.",
+    a: "Też liczy się dzień nadania numeru po przesłaniu do KSeF, nie dzień odebrania wizualizacji z kodem QR podpisanym certyfikatem KSeF.",
+    linki: [{ fraza: "certyfikatem KSeF", href: "/strefa-wiedzy/certyfikat-ksef" }],
   },
   {
     q: "Gdzie sprawdzić datę nadania numeru?",
