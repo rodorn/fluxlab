@@ -11854,3 +11854,20 @@ Uwagi do pomiaru: Google pomija `num=30`, liczone strony 1-3; w profilu chrome-g
 - Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
 - Decyzja o outreachu `wordpress` czeka u Wojtka: https://biuro.fluxlab.pl/decyzje/#bdb474cd-d345-4f52-9ec5-a859d78352ef (termin 21.11).
 **Zostało otwarte:** Z9 i Z10 (linki wewnętrzne) od 16:40, Z11 pomiar o 18:40, Z12 FAQ o 20:40.
+
+## 2026-11-18 17:00
+**Kanał:** 2 (widoczność, linki wewnętrzne), Z9 i Z10 planu 18.11.
+**Co zrobione:** artykuł /strefa-wiedzy/certyfikat-ksef (1 link wewnętrzny) dostał drugi link, z FAQ artykułu kiedy-odliczyc-vat-z-faktury-ksef, który ma wejścia z Google.
+**Ruch:** doba 503 odsłony, 293 osoby, ale 287 to b2b-email (piksel otwarć, nie ludzie); www.google.com 11, youtube 4, google-ads 4, m.facebook.com 3, threads 2; uruchomienia narzędzi 1; lejek 7 dni: 11 form_start, 1 zapytanie.
+**Dowód:** commit fa7a7878; https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef zawiera href="/strefa-wiedzy/certyfikat-ksef"; IndexNow 2 adresy (Yandex 200, Naver 200).
+
+| Artykuł (Z9) | Stron linkujących | W sitemap.xml |
+|---|---|---|
+| limit-10-tys-poza-ksef | 3 | tak |
+| faktury-kosztowe-z-ksef | 2 | tak |
+| certyfikat-ksef | 1 → 2 po Z10 | tak |
+| lead-w-weekend-black-friday | 1 | tak |
+
+Wybór certyfikat-ksef zamiast lead-w-weekend (remis po 1): wszystkie trzy artykuły źródłowe z planu są o KSeF/VAT, link do Black Friday byłby nie na temat. biala-lista-vat-nowe-api pominięta, bo zmieniał ją FL_SEO 12.11 (mniej niż 7 dni).
+**Dla Pawła:** 
+**Zostało otwarte:** Z11 pomiar od 18:40, Z12 FAQ z „Podobnych pytań” od 20:40, Z13 bilans od 22:40, Z14-Z17 w nocy 19.11.
