@@ -38,6 +38,7 @@ export default function KsefIntegracja() {
       h1="Integracja z KSeF"
       lead="KSeF jest obowiązkowy, ale faktur nie trzeba przeklejać ręcznie. Spinamy z nim system, którego już używasz: wystawiasz faktury i odbierasz je w jednym miejscu, a numer KSeF i UPO zapisują się przy dokumencie."
       ctaLabel="Sprawdź, co cię obowiązuje"
+      ctaZamow="Wycena w 1 dzień roboczy, 0 zł"
       ctaNote="Dwa kliknięcia, bez wpisywania czegokolwiek"
       powiazane={[
         {
@@ -149,6 +150,14 @@ export default function KsefIntegracja() {
               fraza: "faktury kosztowe trzeba pobierać ręcznie",
               href: "/strefa-wiedzy/faktury-kosztowe-z-ksef",
             },
+          ],
+        },
+        {
+          q: "Ile kosztuje integracja z KSeF?",
+          a: "Rozpoznanie jest bezpłatne, odpowiedź z wyceną wysyłamy w 1 dzień roboczy. Wdrożenie kosztuje od 1 900 zł netto. Gdy wystarczy gotowe narzędzie, faktury kosztowe na maila kosztują 29 zł, a wystawianie faktur z Excela 49 zł netto miesięcznie.",
+          linki: [
+            { fraza: "faktury kosztowe na maila", href: "/faktury-kosztowe-z-ksef-na-mail" },
+            { fraza: "wystawianie faktur z Excela", href: "/faktury-z-excela-do-ksef" },
           ],
         },
         {

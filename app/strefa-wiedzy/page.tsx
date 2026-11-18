@@ -100,7 +100,7 @@ export default function StrefaWiedzy() {
               {categories.map((c, i) => (
                 <li key={c.slug}>
                   <a href={`#${c.slug}`} className="text-gray-700 dark:text-gray-300 hover:text-accent">
-                    <span className="tabular-nums text-gray-400 dark:text-gray-500 mr-1.5">
+                    <span className="tabular-nums text-gray-600 dark:text-gray-400 mr-1.5">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     {c.name}

@@ -43,7 +43,7 @@ export default function TabelaCennika() {
       <p className="mb-2 text-right text-xs text-gray-500 dark:text-gray-400 md:hidden" aria-hidden="true">
         Przesuń tabelę w bok →
       </p>
-      <div className="overflow-x-auto overscroll-x-contain border-y border-gray-300 dark:border-gray-600 [-webkit-overflow-scrolling:touch]">
+      <div tabIndex={0} role="region" aria-label="Porównanie pakietów" className="overflow-x-auto overscroll-x-contain border-y border-gray-300 dark:border-gray-600 [-webkit-overflow-scrolling:touch]">
         <table className="w-full min-w-[48rem] border-collapse text-sm text-gray-900 dark:text-gray-100 [font-variant-numeric:tabular-nums]">
           <caption className="sr-only">
             Porównanie pakietów stron WWW: cena netto, liczba podstron, czas realizacji, zakres i płatność.

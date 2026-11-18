@@ -23,6 +23,7 @@ export default function Page() {
       h1="Faktury kosztowe z KSeF same przychodzą na maila"
       lead="Od 2026 roku faktury od dostawców trafiają do KSeF, a nie do Twojej skrzynki. Podajesz NIP i token, a my codziennie rano wysyłamy Ci nowe faktury kosztowe jako XML i PDF z zestawieniem w CSV. Nie logujesz się do KSeF i nie pilnujesz, czy coś przyszło."
       ctaLabel="Włącz faktury na maila"
+      ctaZamow="Włącz faktury na maila, 29 zł/mies."
       ctaNote="29 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
         {
@@ -68,6 +69,11 @@ export default function Page() {
         },
       ]}
       faq={[
+        {
+          q: "Ile to kosztuje?",
+          a: "29 zł netto miesięcznie, bez opłaty na start i bez umowy na czas określony. Rezygnujesz w dowolnym dniu. Więcej o tym, co zmienia KSeF, piszemy w artykułach o KSeF.",
+          linki: [{ fraza: "artykułach o KSeF", href: "/strefa-wiedzy/kategoria/ksef" }],
+        },
         {
           q: "Skąd wziąć token KSeF?",
           a: "W Aplikacji Podatnika KSeF, w zakładce Tokeny, wybierz Generuj token i zaznacz uprawnienie do przeglądania faktur. Po opłaceniu zamówienia na stronie z formularzem znajdziesz krótką instrukcję.",

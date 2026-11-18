@@ -23,6 +23,7 @@ export default function Page() {
       h1="Faktury z Excela wystawiane prosto w KSeF"
       lead="Prowadzisz sprzedaż w arkuszu i nie chcesz kupować programu do fakturowania tylko dlatego, że KSeF jest obowiązkowy. Wgrywasz plik z pozycjami, my budujemy z niego faktury FA(3), wystawiamy je w KSeF Twoim tokenem i odsyłamy na maila zestawienie z numerami KSeF."
       ctaLabel="Włącz wystawianie z Excela"
+      ctaZamow="Włącz wystawianie z Excela, 49 zł/mies."
       ctaNote="49 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
         {
@@ -68,6 +69,11 @@ export default function Page() {
         },
       ]}
       faq={[
+        {
+          q: "Ile to kosztuje?",
+          a: "49 zł netto miesięcznie, bez opłaty na start i bez umowy na czas określony. Rezygnujesz w dowolnym dniu. Więcej o tym, co zmienia KSeF, piszemy w artykułach o KSeF.",
+          linki: [{ fraza: "artykułach o KSeF", href: "/strefa-wiedzy/kategoria/ksef" }],
+        },
         {
           q: "Skąd wziąć token KSeF?",
           a: "W Aplikacji Podatnika KSeF, w zakładce Tokeny, wybierz Generuj token i zaznacz uprawnienia do wystawiania i przeglądania faktur. Po opłaceniu zamówienia na stronie z formularzem znajdziesz krótką instrukcję.",

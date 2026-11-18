@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import ZnakFl from "./ZnakFl";
@@ -133,11 +133,14 @@ export default function HeaderKlient({
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  const przyciskMenu = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
       setOpen(false);
+      przyciskMenu.current?.focus();
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -265,6 +268,7 @@ export default function HeaderKlient({
           <LicznikKoszyka />
           <button
             type="button"
+            ref={przyciskMenu}
             data-poza-reklama=""
             onClick={() => setOpen(!open)}
             aria-label={open ? "Zamknij menu" : "Otwórz menu"}

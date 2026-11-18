@@ -51,6 +51,7 @@ export interface ProductLandingProps {
   podLeadem?: ReactNode;
   ctaLabel: string;
   ctaNote?: string;
+  ctaZamow?: string;
   bezPrzyciskowHero?: boolean;
   checks: { title: string; desc: ReactNode }[];
   /** Zdania z odnosnikiem do pokrewnej strony, wstawiane pod opisem zakresu. */
@@ -187,14 +188,14 @@ export default function ProductLanding(p: ProductLandingProps) {
             {!p.bezPrzyciskowHero && (
             <div data-poza-reklama="" className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <a href={narzedzieNajpierw ? "#narzedzie" : "#zamow"} className="btn-primary">
-                {narzedzieNajpierw ? p.ctaLabel : "Napisz do nas"}
+                {narzedzieNajpierw ? p.ctaLabel : p.ctaZamow ?? "Napisz do nas"}
               </a>
               {p.tool && (
                 <a
                   href={narzedzieNajpierw ? "#zamow" : "#narzedzie"}
                   className="text-sm font-semibold text-accent hover:underline"
                 >
-                  {narzedzieNajpierw ? "Napisz do nas" : p.ctaLabel} ↓
+                  {narzedzieNajpierw ? p.ctaZamow ?? "Napisz do nas" : p.ctaLabel} ↓
                 </a>
               )}
             </div>

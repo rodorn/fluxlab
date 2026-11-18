@@ -25,7 +25,7 @@ export default function BlogDzial({
       <header className="grid gap-3 lg:grid-cols-12 lg:gap-8 mb-8 lg:mb-10">
         <p
           aria-hidden="true"
-          className="lg:col-span-2 text-5xl lg:text-6xl font-light leading-none tabular-nums text-gray-300 dark:text-gray-600"
+          className="lg:col-span-2 text-5xl lg:text-6xl font-light leading-none tabular-nums text-gray-500"
         >
           {dwie(numer)}
         </p>
@@ -89,7 +89,7 @@ export default function BlogDzial({
                     href={a.href}
                     className="group grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-4"
                   >
-                    <span className="text-sm tabular-nums text-gray-400 dark:text-gray-500 pt-0.5">
+                    <span className="text-sm tabular-nums text-gray-600 dark:text-gray-400 pt-0.5">
                       {dwie(i + 2)}
                     </span>
                     <span className="min-w-0">

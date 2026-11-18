@@ -6,6 +6,7 @@ import PomiarFormularzy from "@/components/PomiarFormularzy";
 import PomiarAds from "@/components/PomiarAds";
 import PikselMeta from "@/components/PikselMeta";
 import Clarity from "@/components/Clarity";
+import PrzejdzDoTresci from "@/components/PrzejdzDoTresci";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import PasekAkcji from "@/components/PasekAkcji";
 import TloKursora from "@/components/TloKursora";
@@ -251,6 +252,7 @@ export default function RootLayout({
       <body
         className={`${instrumentSans.variable} ${fraunces.variable} font-sans`}
       >
+        <PrzejdzDoTresci />
         <div
           hidden
           dangerouslySetInnerHTML={{

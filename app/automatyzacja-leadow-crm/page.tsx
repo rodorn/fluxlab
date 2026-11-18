@@ -163,7 +163,7 @@ export default function AutomatyzacjaLeadowCRM() {
                   eventName="cta_click_landing_audit"
                   className="btn-primary"
                 >
-                  Bezpłatna diagnoza
+                  Diagnoza 0 zł, pierwszy krok od 900 zł w 5 dni
                 </TrackedCTA>
               </div>
               <FormularzKrotki formId="krotki_leadow" />
