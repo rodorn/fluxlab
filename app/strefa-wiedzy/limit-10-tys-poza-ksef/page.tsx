@@ -13,7 +13,8 @@ const OPIS =
 
 export const metadata: Metadata = {
   title: "Limit 10 tys. zł poza KSeF: co po przekroczeniu | Fluxlab",
-  description: OPIS,
+  description:
+    "Limit 10 tys. zł poza KSeF liczysz brutto w miesiącu. Po przekroczeniu ta faktura i wszystkie kolejne idą już przez KSeF. Sprawdź, co się wlicza.",
   openGraph: {
     title: "Limit 10 tys. zł poza KSeF: co po przekroczeniu | Fluxlab",
     description: OPIS,
