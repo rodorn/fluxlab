@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 export default function EDoreczeniaIntegracja() {
   return (
     <ProductLanding
+      formularzDwaPola
       slug="e-doreczenia-integracja"
       tool={
         <>

@@ -10,9 +10,16 @@ const pole =
   "w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-base text-gray-900 placeholder-gray-500 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 aria-[invalid=true]:border-red-600 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-400";
 
 /** Krótki formularz w hero dla wejść z reklamy (html[data-reklama]):
- *  imię, e-mail, telefon opcjonalnie i jedno zdanie potrzeby. Temat
+ *  imię, e-mail, telefon opcjonalnie i jedno zdanie potrzeby (z dwaPola
+ *  tylko imię i e-mail, żeby przycisk był na pierwszym ekranie). Temat
  *  zgłoszenia to nazwa strony, jak w components/LandingForm.tsx. */
-export default function FormularzKrotki({ formId }: { formId: string }) {
+export default function FormularzKrotki({
+  formId,
+  dwaPola = false,
+}: {
+  formId: string;
+  dwaPola?: boolean;
+}) {
   const router = useRouter();
   const [wysylka, setWysylka] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
@@ -142,26 +149,30 @@ export default function FormularzKrotki({ formId }: { formId: string }) {
           placeholder="E-mail *"
           className={pole}
         />
-        <label className="sr-only" htmlFor={`krotki-tel-${formId}`}>
-          Telefon, jeśli wolisz rozmowę
-        </label>
-        <input
-          id={`krotki-tel-${formId}`}
-          name="phone"
-          type="tel"
-          autoComplete="tel"
-          placeholder="Telefon, jeśli wolisz rozmowę"
-          className={pole}
-        />
-        <label className="sr-only" htmlFor={`krotki-msg-${formId}`}>
-          Czego potrzebujesz
-        </label>
-        <input
-          id={`krotki-msg-${formId}`}
-          name="message"
-          placeholder="Czego potrzebujesz? (jedno zdanie)"
-          className={pole}
-        />
+        {!dwaPola && (
+          <>
+            <label className="sr-only" htmlFor={`krotki-tel-${formId}`}>
+              Telefon, jeśli wolisz rozmowę
+            </label>
+            <input
+              id={`krotki-tel-${formId}`}
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              placeholder="Telefon, jeśli wolisz rozmowę"
+              className={pole}
+            />
+            <label className="sr-only" htmlFor={`krotki-msg-${formId}`}>
+              Czego potrzebujesz
+            </label>
+            <input
+              id={`krotki-msg-${formId}`}
+              name="message"
+              placeholder="Czego potrzebujesz? (jedno zdanie)"
+              className={pole}
+            />
+          </>
+        )}
       </div>
       <button
         type="submit"

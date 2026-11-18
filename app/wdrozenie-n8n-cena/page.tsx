@@ -28,6 +28,7 @@ export default function WdrozenieN8nCena() {
   return (
     <>
       <ProductLanding
+        formularzDwaPola
         slug="wdrozenie-n8n-cena"
         breadcrumb="Wdrożenie n8n, cena"
         eyebrow="n8n"

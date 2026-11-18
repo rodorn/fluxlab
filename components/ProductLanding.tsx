@@ -58,6 +58,8 @@ export interface ProductLandingProps {
   pricing: Tier[];
   faq: { q: string; a: string; linki?: LinkWTekscie[] }[];
   formId: string;
+  /** Krótki formularz z reklamy tylko z imieniem i e-mailem. */
+  formularzDwaPola?: boolean;
   /** Dodatkowy blok pod formularzem, na przykład płatny wariant narzędzia. */
   poFormularzu?: ReactNode;
   /** Linijka pod kartami cennika, na przykład odnośnik do pełnego cennika produktu. */
@@ -197,7 +199,7 @@ export default function ProductLanding(p: ProductLandingProps) {
               )}
             </div>
             )}
-            <FormularzKrotki formId={`krotki_${p.formId}`} />
+            <FormularzKrotki formId={`krotki_${p.formId}`} dwaPola={p.formularzDwaPola} />
           </div>
 
           {narzedzieNajpierw && narzedzie}

@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 export default function KsefIntegracja() {
   return (
     <ProductLanding
+      formularzDwaPola
       slug="ksef-integracja"
       tool={
         <>

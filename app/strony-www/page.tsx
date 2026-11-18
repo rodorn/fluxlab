@@ -150,7 +150,7 @@ export default function StronyWww() {
                   Odpisujemy w 1 dzień roboczy, z ceną i terminem.
                 </span>
               </div>
-              <FormularzKrotki formId="krotki_web" />
+              <FormularzKrotki formId="krotki_web" dwaPola />
             </div>
           </div>
         </section>
