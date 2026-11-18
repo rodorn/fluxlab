@@ -22,8 +22,29 @@ export default function PomiarFormularzy() {
       zglosZdarzenie("form_start");
     };
     document.addEventListener("focusin", naFokus);
-    return () => document.removeEventListener("focusin", naFokus);
+    const naKlik = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement | null)?.closest?.("a");
+      if (a?.getAttribute("href")?.startsWith("tel:")) zglosZdarzenie("klik_tel");
+    };
+    document.addEventListener("click", naKlik, true);
+    return () => {
+      document.removeEventListener("focusin", naFokus);
+      document.removeEventListener("click", naKlik, true);
+    };
   }, []);
+
+  // Czas na stronie liczony tylko przy karcie na wierzchu: otwarta w tle
+  // karta nie jest czytaniem.
+  useEffect(() => {
+    let sekundy = 0;
+    const zegar = setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      if (++sekundy < 30) return;
+      clearInterval(zegar);
+      zglosZdarzenie("aktywny_30s", sciezka);
+    }, 1000);
+    return () => clearInterval(zegar);
+  }, [sciezka]);
 
   useEffect(() => {
     let polowa = false;

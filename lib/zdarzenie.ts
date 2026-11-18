@@ -36,6 +36,12 @@ export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
   } catch {
     sesja = "";
   }
+  let wejscie: { zrodlo?: string; kampania?: string } = {};
+  try {
+    wejscie = JSON.parse(sessionStorage.getItem("fl_wejscie") ?? "{}");
+  } catch {
+    wejscie = {};
+  }
   // Licznik nigdy nie moze popsuc dzialania narzedzia, wiec bledy sa
   // pomijane i nie ma tu zadnego await.
   fetch("/api/wizyta", {
@@ -44,6 +50,8 @@ export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
     body: JSON.stringify({
       sciezka: sciezka ?? window.location.pathname,
       sesja,
+      zrodlo: wejscie.zrodlo ?? "",
+      kampania: wejscie.kampania ?? "",
       telefon: window.matchMedia("(max-width: 640px)").matches,
       zdarzenie,
     }),

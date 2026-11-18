@@ -105,6 +105,18 @@ function Zliczanie() {
       przegladarka: rodzinaPrzegladarki(),
       system: rodzinaSystemu(),
     };
+    // Zdarzenia (form_start, klik_tel, aktywny_30s) maja to samo zrodlo co
+    // wejscie, ktore otworzylo sesje, choc w ich adresie nie ma juz utm.
+    if (dane.zrodlo || dane.kampania) {
+      try {
+        sessionStorage.setItem(
+          "fl_wejscie",
+          JSON.stringify({ zrodlo: dane.zrodlo, kampania: dane.kampania }),
+        );
+      } catch {
+        /* zablokowana pamięć: zdarzenia bez źródła */
+      }
+    }
     fetch("/api/wizyta", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
