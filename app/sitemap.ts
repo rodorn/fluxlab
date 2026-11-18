@@ -225,6 +225,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/kalkulator-ogrodzen-demo`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/kalkulator-garazy-demo`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/kalkulator-klimatyzacji-demo`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/kalkulator-podatkowy`,
       changeFrequency: "monthly" as const,
       priority: 0.7,

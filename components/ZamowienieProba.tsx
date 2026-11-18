@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { OFERTA } from "@/lib/sprzedaz";
@@ -16,11 +16,23 @@ const pole =
 export default function ZamowienieProba({
   id,
   dniGratis = 10,
+  waznoscDni,
+  pole: poleDane,
+  pole2: poleDane2,
 }: {
   id: string;
   dniGratis?: number;
+  waznoscDni?: number;
+  pole?: string;
+  pole2?: string;
 }) {
-  const o = OFERTA[id];
+  const o = { ...OFERTA[id], ...(poleDane && { pole: poleDane }), ...(poleDane2 && { pole2: poleDane2 }) };
+  const [wazneDo, setWazneDo] = useState<string | null>(null);
+  useEffect(() => {
+    if (!waznoscDni) return;
+    const d = new Date(Date.now() + waznoscDni * 864e5);
+    setWazneDo(d.toLocaleDateString("pl-PL", { day: "numeric", month: "numeric", year: "numeric" }));
+  }, [waznoscDni]);
   const router = useRouter();
   const [wysylka, setWysylka] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
@@ -44,6 +56,7 @@ export default function ZamowienieProba({
     const telefon = wartosc("phone");
     const opis = [
       `Zamówienie: ${o.nazwa}, ${cena} netto, pierwsze ${dniGratis} dni bez opłat.`,
+      wazneDo && `Cena z oferty ważnej do ${wazneDo}.`,
       o.pole && `${o.pole}: ${wartosc("dane") || "-"}`,
       o.pole2 && `${o.pole2}: ${wartosc("dane2") || "-"}`,
       `Strona: ${location.pathname}`,
@@ -132,6 +145,11 @@ export default function ZamowienieProba({
           Po {dniGratis} dniach proforma na tę kwotę. Nie płacisz, kalkulator się
           wyłącza. Rezygnacja w dowolnym dniu.
         </li>
+        {waznoscDni && (
+          <li>
+            Oferta ważna {waznoscDni} dni{wazneDo && `, do ${wazneDo}`}.
+          </li>
+        )}
       </ul>
       <div
         aria-hidden="true"

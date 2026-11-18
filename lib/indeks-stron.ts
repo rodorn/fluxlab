@@ -98,6 +98,21 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Działający przykład kalkulatora oszczędności PV z opcją magazynu energii, który firma OZE osadza na swojej stronie jednym iframe. Dane demonstracyjne."
   },
   {
+    "url": "/kalkulator-ogrodzen-demo",
+    "tytul": "Przykładowy kalkulator ogrodzeń i bram",
+    "opis": "Działający przykład kalkulatora ogrodzenia i bramy. Firma ogrodzeniowa wkleja go na swoją stronę, klient widzi koszt z montażem, a zapytanie trafia do firmy."
+  },
+  {
+    "url": "/kalkulator-garazy-demo",
+    "tytul": "Przykładowy kalkulator garaży, wiat i hal",
+    "opis": "Działający przykład kalkulatora garażu blaszanego, wiaty lub hali. Producent wkleja go na stronę, klient widzi koszt z montażem, a zapytanie trafia do firmy."
+  },
+  {
+    "url": "/kalkulator-klimatyzacji-demo",
+    "tytul": "Przykładowy kalkulator klimatyzacji",
+    "opis": "Przykład kalkulatora klimatyzacji i pompy powietrze-powietrze. Instalator wkleja go na stronę, klient widzi koszt z montażem, a zapytanie trafia do firmy."
+  },
+  {
     "url": "/kalkulator-podatkowy",
     "tytul": "Kalkulator JDG 2026: ryczałt, liniowy, skala i ZUS",
     "opis": "Porównaj ryczałt, podatek liniowy i skalę dla JDG w 2026. Uwzględnia ZUS, składkę zdrowotną, VAT, koszty prywatne i samochód. Bez rejestracji."
