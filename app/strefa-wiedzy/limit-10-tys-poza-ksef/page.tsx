@@ -9,7 +9,7 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 
 const OPIS =
-  "Przekroczysz 10 tys. zł brutto w miesiącu, a ta faktura i wszystkie kolejne idą już przez KSeF, bez powrotu do papieru. Sprawdź, co wlicza się do limitu.";
+  "Limit 10 tys. zł poza KSeF liczysz brutto w miesiącu. Po przekroczeniu ta faktura i wszystkie kolejne idą już przez KSeF. Sprawdź, co się wlicza.";
 
 export const metadata: Metadata = {
   title: "Limit 10 tys. zł poza KSeF: co po przekroczeniu | Fluxlab",
