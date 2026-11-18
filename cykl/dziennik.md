@@ -11810,3 +11810,29 @@ Zoho od 17.11 06:40: INBOX 8, Spam 0, żadna wiadomość z 56 domen (Re: FINREAL
 **Dla Pawła:**
 - Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
 **Zostało otwarte:** Z3 (pozycje w Google) i Z4 od 10:40; decyzja o outreachu `wordpress` na karcie bdb474cd (Wojtek, do 21.11).
+
+## 2026-11-18 11:01
+**Kanał:** Google i dystrybucja (Z3 pozycje bez Search Console, Z4 temat dla FL_meta).
+**Co zrobione:** Z3: zmierzone pozycje 12 artykułów w Google wyszukiwaniem w ukrytej przeglądarce (fluxlab.pl na 1. miejscu dla „gutschrift KSeF”, 3. dla „biała lista VAT nowe API”, 20. dla „numer KSeF w przelewie”); Z4: FL_meta dostała zlecenie posta o białej liście VAT z linkiem utm.
+**Ruch:** doba 369 odsłon, 210 osób (raport_ruchu, w tym 224 otwarcia maili b2b-email); źródła: b2b-email 224, www.google.com 10, google-ads 4, www.facebook.com 3, www.bing.com 1; Threads 1, YouTube 1. Najczęściej: / 77, /e-doreczenia-integracja 9, /strefa-wiedzy/biala-lista-vat-nowe-api 8. Uruchomienia narzędzi 1. Tydzień: 1129 sesji, 10 form_start, 1 zapytanie.
+**Dowód:** cykl/z3-pozycje-2026-11-18.txt; `sesja napisz FL_meta` doręczono 10:44 (artykuł po odsiewie: 8 wejść z Google w 7 dni, 5 odsłon w dobie).
+
+| fraza | pozycja | 3 pierwsze domeny |
+|---|---|---|
+| gutschrift KSeF | 1 | fluxlab.pl, biuroprecyzja.pl, firetms.com |
+| biała lista VAT nowe API | 3 | gov.pl, podatki-arch.mf.gov.pl, fluxlab.pl |
+| numer KSeF w przelewie | 20 | poradnikprzedsiebiorcy.pl, mddp.pl, spksiegowosc.pl |
+| kiedy odliczyć VAT z faktury KSeF | brak w 1-29 | poradnikprzedsiebiorcy.pl, ksiegowosc.infor.pl, kursy-rachunkowosci.pl |
+| faktura do paragonu KSeF | brak w 1-27 | mizzox.com, sklep.infor.pl, kancelariawyrzykowscy.pl |
+| błąd w fakturze KSeF | brak w 1-25 | 360ksiegowosc.pl, ifirma.pl, businessinsider.com.pl |
+| czy firma ma adres do e-doręczeń | brak w 1-28 | gov.pl, biznes.gov.pl, podpisano.pl |
+| limit 10 tys poza KSeF | brak w 1-29 | ksef.podatki.gov.pl, poradnikprzedsiebiorcy.pl, rynekzdrowia.pl |
+| certyfikat KSeF | brak w 1-26 | ksef.podatki.gov.pl, ap.ksef.mf.gov.pl, eurocert.pl |
+| faktury kosztowe z KSeF | brak w 1-28 | ksef.podatki.gov.pl, poradnikprzedsiebiorcy.pl, fakturownia.pl |
+| lead w weekend | brak w 1-26 | (wynik bez adresu), semcore.pl, vilaro.pl |
+| kalkulator OZE | brak w 1-20, captcha na stronie 3 | - |
+
+Uwagi do pomiaru: Google pomija `num=30`, liczone strony 1-3; w profilu chrome-google odrzucone ciasteczka („Odrzuć wszystko”), linki wyników są szyfrowane (`/goto?url=`), adres brany z widocznej ścieżki. „Podobne pytania” nie odczytane.
+**Dla Pawła:**
+- Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
+**Zostało otwarte:** Z5 od 12:40 (cel: numer-ksef-w-przelewie, pozycja 20; jedyny artykuł na 4-20), Z6 od 12:40; Z7 bierze wariant 21-30, ale żaden z trzech artykułów nie jest w 1-26, więc wybór po tytule i frazie z planu; Z12 potrzebuje pytań z „Podobne pytania”, których selektor Z3 nie złapał.
