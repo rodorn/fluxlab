@@ -5,6 +5,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import PomiarFormularzy from "@/components/PomiarFormularzy";
 import PomiarAds from "@/components/PomiarAds";
 import PikselMeta from "@/components/PikselMeta";
+import Clarity from "@/components/Clarity";
 import ZgodaCookies from "@/components/ZgodaCookies";
 import PasekAkcji from "@/components/PasekAkcji";
 import TloKursora from "@/components/TloKursora";
@@ -263,6 +264,7 @@ export default function RootLayout({
         <PomiarFormularzy />
         <PomiarAds />
         <PikselMeta />
+        <Clarity />
         <ZgodaCookies />
         <CiszaPrzyPrzewijaniu />
         <ViewTransition default="vt-page">{children}</ViewTransition>

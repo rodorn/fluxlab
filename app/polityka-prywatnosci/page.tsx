@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
+import { CLARITY_ID } from "@/lib/clarity";
 
 export const metadata: Metadata = {
   title: "Polityka prywatności | Fluxlab",
@@ -274,7 +275,10 @@ export default function PolitykaPrywatnosci() {
                           po kliknięciu „Akceptuj”: zlicza odwiedziny i wysłane
                           zgłoszenia z reklam Meta oraz pozwala Meta pokazywać
                           reklamy Fluxlab osobom, które odwiedziły Serwis. Bez
-                          zgody skrypt Meta nie jest wczytywany. Wybór można
+                          zgody skrypt Meta nie jest wczytywany.
+                          {CLARITY_ID &&
+                            " Microsoft Clarity ładuje się również wyłącznie po kliknięciu „Akceptuj”: zapisuje przebieg wizyty (kliknięcia, przewijanie, ruch kursora) i mapy cieplne, z ukrytą treścią wpisywaną w pola formularzy, żeby poprawiać czytelność Serwisu. Nie działa w panelu klienta."}{" "}
+                          Wybór można
                           zmienić, czyszcząc dane strony w przeglądarce. Poza
                           tym pliki cookie służą wyłącznie prawidłowemu
                           działaniu Serwisu (pliki techniczne).
@@ -308,6 +312,13 @@ export default function PolitykaPrywatnosci() {
                             piksel Meta, wyłącznie po zgodzie w oknie cookie
                             (§4).
                           </li>
+                          {CLARITY_ID && (
+                            <li>
+                              <strong>Microsoft Ireland Operations Limited</strong>{" "}
+                              – Microsoft Clarity, wyłącznie po zgodzie w oknie
+                              cookie (§4).
+                            </li>
+                          )}
                           <li>
                             Podmiotom uprawnionym na podstawie obowiązujących
                             przepisów prawa.

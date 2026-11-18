@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CLARITY_ID } from "@/lib/clarity";
 
 /** Okno zgody na Google Analytics, Google Ads i piksel Meta (z reklamami dopasowanymi;
  *  fluxlab_zgoda_rem odróżnia ją od zgód sprzed 14.11.2026, które remarketingu nie obejmowały). Bez zgody oba działają w trybie
@@ -41,6 +42,7 @@ export default function ZgodaCookies() {
       localStorage.setItem("fluxlab_zgoda", tak ? "tak" : "nie");
       localStorage.setItem("fluxlab_zgoda_rem", tak ? "tak" : "nie");
       localStorage.setItem("fluxlab_zgoda_meta", tak ? "tak" : "nie");
+      if (CLARITY_ID) localStorage.setItem("fluxlab_zgoda_clarity", tak ? "tak" : "nie");
     } catch {}
     window.gtag?.("consent", "update", {
       analytics_storage: tak ? "granted" : "denied",
@@ -64,10 +66,10 @@ export default function ZgodaCookies() {
       <p className="text-gray-700 dark:text-gray-300">
         <span className="zgoda-krotko hidden">Ciasteczka tylko po zgodzie.</span>
         <span className="zgoda-dlugo md:hidden">
-          Ciasteczka Google Analytics oraz reklam Google i Meta (w tym remarketing) zapisujemy tylko po „Akceptuj”.
+          Ciasteczka Google Analytics{CLARITY_ID ? ", Microsoft Clarity" : ""} oraz reklam Google i Meta (w tym remarketing) zapisujemy tylko po „Akceptuj”.
         </span>
         <span className="hidden md:inline">
-          Liczymy odwiedziny w Google Analytics i skuteczność reklam Google i Meta. „Akceptuj” oznacza zgodę na ciasteczka analityczne i reklamowe, w tym na reklamy Google i Meta (Facebook, Instagram) dopasowane do tej wizyty (remarketing). Bez zgody nic nie zapisujemy.
+          Liczymy odwiedziny w Google Analytics i skuteczność reklam Google i Meta. „Akceptuj” oznacza zgodę na ciasteczka analityczne i reklamowe, w tym na reklamy Google i Meta (Facebook, Instagram) dopasowane do tej wizyty (remarketing){CLARITY_ID ? " oraz na zapis przebiegu wizyty w Microsoft Clarity" : ""}. Bez zgody nic nie zapisujemy.
         </span>{" "}
         <Link href="/polityka-prywatnosci" className="text-accent underline underline-offset-2">
           Szczegóły
