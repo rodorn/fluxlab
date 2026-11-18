@@ -11794,3 +11794,19 @@ Z4, wejścia z `www.google.com` (bez utm) po odsiewie, 7 dni: 32 sesje, 10 z dru
 - Search Console wylogowany 21. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Google to drugi kanał (38 osób w tygodniu), a bez konsoli nie widzimy zapytań ani indeksu.
 - Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
 - Decyzja o outreachu `wordpress` (stop / próba 15 maili do gabinetów / dalej) czeka u Wojtka: https://biuro.fluxlab.pl/decyzje/#bdb474cd-d345-4f52-9ec5-a859d78352ef (2 min, termin 21.11).
+
+## 2026-11-18 08:56
+**Kanał:** pomiar i dystrybucja (Z1 IndexNow i timer, Z2 reakcje na outreach `wordpress`).
+**Co zrobione:** Z1: strona główna z przyciskiem „Kup online” zgłoszona przez IndexNow (Yandex przyjął, wspólny punkt dalej 403); Z2: od 17.11 rano brak nowych reakcji na outreach, tabela partii dla karty decyzji.
+**Ruch:** doba 378 odsłon, 210 osób (raport_ruchu, w tym 211 otwarć maili b2b-email); źródła: b2b-email 211, google-ads 12, www.google.com 11, www.facebook.com 4, chatgpt 3; Threads 1. Zdarzenia: widok_formularza 35, uruchomiono_skan 1, pobranie 1. Tydzień: 1081 sesji, 10 form_start, 1 zapytanie.
+**Dowód:** timer fluxlab-strona enabled; budzet: rytm „utrzymaj”, 1% tygodnia. IndexNow https://fluxlab.pl/ (200, index,follow, „Kup online” w HTML): Yandex 202, Naver 422, wspólny 403.
+
+| partia | wysłane | doręczone | odbite | odpowiedzi | wypisz | sesje po odsiewie | form_start |
+|---|---|---|---|---|---|---|---|
+| 13.11 | 12 | 9 | 3 | 0 | 0 | 0 | 0 |
+| 16.11 | 44 | 44 | 0 | 0 | 0 | 1 (10:44, /audyt-strony, audyt uruchomiony) | 0 |
+
+Zoho od 17.11 06:40: INBOX 8, Spam 0, żadna wiadomość z 56 domen (Re: FINREAL to osobny wątek, „Project Proposal” z gmail.com to spam).
+**Dla Pawła:**
+- Search Console wylogowany: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min).
+**Zostało otwarte:** Z3 (pozycje w Google) i Z4 od 10:40; decyzja o outreachu `wordpress` na karcie bdb474cd (Wojtek, do 21.11).
