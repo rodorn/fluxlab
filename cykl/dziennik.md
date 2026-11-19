@@ -12013,3 +12013,11 @@ Wzrost o 6 sesji to google-ads (+7) i Google organiczne (+3); spadły YouTube i 
 **Dowód:** cykl/plan-ruchu.md, linie Z12 i Z13.
 **Dla Pawła:**
 **Zostało otwarte:** Z14-Z17 od 20.11 00:40 (pomiary i IndexNow).
+
+## 2026-11-20 00:46
+**Kanał:** 4 (outreach, pomiar reakcji nocnych, Z14 planu).
+**Co zrobione:** Z14 [x]: reakcje na 56 maili `wordpress` od 19.11 14:40: 0 odpowiedzi, 0 nowych wejść; nic nie poszło w świat, następne zadanie Z15 dopiero od 02:40.
+**Ruch:** raport_ruchu doba: 419 odsłon, 221 osób surowo (b2b-email 242 to piksel otwarć, nie ludzie; www.google.com 25, google-ads 23, threads 6, bing 3); pomiar-kanalow po odsiewie 24 h: 47 ludzi, 53 odsłony: bez odsyłacza 29, google-ads 10, www.google.com 5, facebook 1, instagram 1, panel 1, bing 1. 7 dni: 370 ludzi. Uruchomienia narzędzi 14, lejek 7 dni: 11 form_start, 1 zapytanie.
+**Dowód:** Resend `GET /emails/<id>` dla 56 adresów z `wyslane_wp.json` (00:45): 53 delivered, 3 bounced (info@dental-practice.pl, info@medicavision.pl, info@magnolianailbar.pl), bez zmian; Zoho IMAP `SINCE 19-Nov-2026`: po 14:40 w INBOX tylko 1 wiadomość (14:54, wątek FINREAL, nie outreach), Spam 0; mail/wordpress 7 dni: 1 sesja (13.11); karta bdb474cd: Stop z 19.11 10:00, bez zmian.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 (Google, strony wejścia 7 dni) od 02:40, Z16 (IndexNow) od 04:40, Z17 (pomiar) od 06:40.
