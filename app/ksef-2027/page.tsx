@@ -8,6 +8,7 @@ import { kotwica } from "@/lib/kotwica";
 import ListaKsef2027 from "@/components/ListaKsef2027";
 import WiadomoscKsefDlaKlientow from "@/components/WiadomoscKsefDlaKlientow";
 import RamkaKsefDoWstawienia from "@/components/RamkaKsefDoWstawienia";
+import CtaNadNarzedziem from "@/components/CtaNadNarzedziem";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 
 export const metadata: Metadata = {
@@ -77,7 +78,10 @@ export default function Ksef2027Page() {
             </p>
           </div>
 
-          <div className="mt-10 max-w-4xl mx-auto">
+          <div className="mt-10">
+            <CtaNadNarzedziem miejsce="ksef2027" />
+          </div>
+          <div className="max-w-4xl mx-auto">
             <NazwaNarzedzia href="/ksef-2027" />
             <ListaKsef2027
               formularz="/ksef-integracja#zamow"
