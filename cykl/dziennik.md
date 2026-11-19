@@ -11976,3 +11976,11 @@ Cele dla Z5 i Z12 (pozycja 4-20): e-Doręczenia adres prywatny i firmowy (4), fa
 **Dowód:** cykl/plan-ruchu.md, linie Z9 i Z10.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 od 20:40 i Z12 od 22:40 zależą od budżetu (sprawdzić `budzet --json` ponownie); Z13 od 22:40, Z14-Z17 w nocy.
+
+## 2026-11-19 20:44
+**Kanał:** linki wewnętrzne (Z11 planu ruchu), wstrzymane budżetem.
+**Co zrobione:** nic nie poszło w świat; Z11 oznaczone [!], bo budżet ma rytm „wstrzymaj” (prognoza 193% tygodnia, hamulec krytyczny, nowyCykl false). Czekam na Z12 o 22:40 (też z bramką budżetu) i Z13 (pomiar) o 22:40.
+**Ruch:** doba 447 odsłon, 238 osób; źródła: b2b-email 253, www.google.com 26, google-ads 25, threads 6, panel.fluxlab.pl 3. Uruchomienia narzędzi 14, lejek 7 dni: 11 form_start, 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md, linia Z11.
+**Dla Pawła:**
+**Zostało otwarte:** Z12 od 22:40 (bramka budżetu), Z13 od 22:40, Z14-Z17 od 20.11 00:40.
