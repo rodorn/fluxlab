@@ -11984,3 +11984,32 @@ Cele dla Z5 i Z12 (pozycja 4-20): e-Doręczenia adres prywatny i firmowy (4), fa
 **Dowód:** cykl/plan-ruchu.md, linia Z11.
 **Dla Pawła:**
 **Zostało otwarte:** Z12 od 22:40 (bramka budżetu), Z13 od 22:40, Z14-Z17 od 20.11 00:40.
+
+## 2026-11-19 22:50
+**Kanał:** pomiar (Z12, Z13 planu).
+**Co zrobione:** Z12 (drugi artykuł pod Google) oznaczone [!], bo budżet ma rytm „wstrzymaj” (prognoza 194% tygodnia, hamulec krytyczny, nowyCykl false); Z13 bilans dnia policzony.
+**Ruch:** doba 432 odsłony, 230 osób w raporcie; źródła: b2b-email 251, google-ads 25, www.google.com 25, threads 6, panel.fluxlab.pl 3. Po odsiewie `pomiar-kanalow.py` 24 h: 50 ludzi.
+
+Bilans 19.11 (kalendarzowo, do 22:45, po odsiewie, bez sesji testowej PAW_wags `test_w`):
+
+| Kanał | 19.11 | 18.11 (pełna doba) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 48 / 54 | 42 / 55 |
+| www.google.com | 6 (biala-lista-vat-nowe-api 2, /, kalkulator-podatkowy, numer-ksef, czy-firma-ma-adres-do-e-doreczen) | 3 |
+| google-ads | 10 (24472439947) | 3 |
+| chatgpt płatne / naturalne | 0 / 0 | 0 / 1 |
+| Facebook | 0 | 1 |
+| Instagram | 1 (rolka-ryczalt-dowody) | 0 |
+| YouTube / Threads | 0 / 0 | 3 / 1 |
+| GitHub | 0 | 0 |
+| Bing | 1 | 1 |
+| Bez odsyłacza | 30 | 27 |
+| Uruchomienia narzędzi | 14 (numer_ksef 11 w jednej sesji z Google, kalkulator_podatkowy 3) | 5 |
+| Pobrania PDF | 7 | 1 |
+| form_start | 1 (/numer-ksef, ta sama sesja z Google) | 1 |
+| lead_* | 0 | 0 |
+
+Wzrost o 6 sesji to google-ads (+7) i Google organiczne (+3); spadły YouTube i Threads do zera. Najmocniejsza sesja dnia przyszła z Google na /numer-ksef: 11 sprawdzeń i rozpoczęty formularz, bez wysyłki. Zoho 24 h: 0 odpowiedzi na outreach; Resend 9 wysłanych, 1 odbity to adres testowy `test-utm-1911+test@fluxlab.pl`.
+**Dowód:** cykl/plan-ruchu.md, linie Z12 i Z13.
+**Dla Pawła:**
+**Zostało otwarte:** Z14-Z17 od 20.11 00:40 (pomiary i IndexNow).
