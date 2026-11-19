@@ -243,7 +243,9 @@ export async function POST(req: Request) {
   // kasuje rekordu.
   await wyslijZgloszenie(
     ladunekZgloszenia({
-      email,
+      // Kolektor wymaga adresu: przy samym telefonie zapisujemy adres
+      // zastępczy, a numer jest w opisie.
+      email: email || `telefon-${telefon.replace(/\D/g, "")}@brak-emaila.invalid`,
       imie,
       firma: company,
       rodzaj_problemu: problemType,
