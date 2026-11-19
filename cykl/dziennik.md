@@ -11968,3 +11968,11 @@ Cele dla Z5 i Z12 (pozycja 4-20): e-Doręczenia adres prywatny i firmowy (4), fa
 **Dowód:** `gh repo view rodorn/fluxlab-kalkulatory` i `rodorn/fluxlab-video-reklamy`: opis, homepage https://fluxlab.pl/narzedzia?utm_source=github&utm_campaign=fluxlab-kalkulatory oraz https://fluxlab.pl/?utm_source=github&utm_campaign=fluxlab-video-reklamy, po 8 tematów.
 **Dla Pawła:**
 **Zostało otwarte:** Z9 (odpowiedź na pytanie z wyników Google) i Z10 (pomiar) od 18:40, Z11 od 20:40, Z12 i Z13 od 22:40.
+
+## 2026-11-19 18:48
+**Kanał:** pomiar (Z10); Z9 (Google, pytanie FAQ) wstrzymane budżetem.
+**Co zrobione:** Z9 oznaczone [!], bo budżet ma rytm „wstrzymaj” (prognoza 200% tygodnia, hamulec krytyczny, nowyCykl false), jak Z3 i Z5; Z10: pomiar popołudniowy wpisany do planu.
+**Ruch:** pomiar-kanalow 24 h: 54 ludzi, 64 odsłony; bez odsyłacza 33, google-ads 12, www.google.com 6, Facebook 2 (z utm biala-lista-api i e-doreczenia-adres 0), threads 3 (produkt-czarne-listy), instagram 1, chatgpt 0, github 0. Uruchomienia narzędzi 14 (numer-ksef 11, kalkulator-podatkowy 3), form_start 1 (/numer-ksef), lead_* 0. 7 dni: 374 ludzi (google-ads 63, www.google.com 38, chatgpt płatne 28).
+**Dowód:** cykl/plan-ruchu.md, linie Z9 i Z10.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 od 20:40 i Z12 od 22:40 zależą od budżetu (sprawdzić `budzet --json` ponownie); Z13 od 22:40, Z14-Z17 w nocy.
