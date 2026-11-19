@@ -36,7 +36,7 @@ export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
   } catch {
     sesja = "";
   }
-  let wejscie: { zrodlo?: string; kampania?: string } = {};
+  let wejscie: { zrodlo?: string; kampania?: string; tresc?: string; medium?: string } = {};
   try {
     wejscie = JSON.parse(sessionStorage.getItem("fl_wejscie") ?? "{}");
   } catch {
@@ -52,6 +52,8 @@ export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
       sesja,
       zrodlo: wejscie.zrodlo ?? "",
       kampania: wejscie.kampania ?? "",
+      tresc: wejscie.tresc ?? "",
+      medium: wejscie.medium ?? "",
       telefon: window.matchMedia("(max-width: 640px)").matches,
       zdarzenie,
     }),

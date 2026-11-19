@@ -99,6 +99,8 @@ function Zliczanie() {
       sciezka,
       zrodlo: zReklamy ? "google-ads" : parametry.get("utm_source") || zrodlo,
       kampania: parametry.get("utm_campaign") ?? (zReklamy ? "ads" : ""),
+      tresc: parametry.get("utm_content") ?? "",
+      medium: parametry.get("utm_medium") ?? "",
       sesja: idSesji(),
       telefon: window.matchMedia("(max-width: 640px)").matches,
       zdarzenie: "odslona",
@@ -107,11 +109,16 @@ function Zliczanie() {
     };
     // Zdarzenia (form_start, klik_tel, aktywny_30s) maja to samo zrodlo co
     // wejscie, ktore otworzylo sesje, choc w ich adresie nie ma juz utm.
-    if (dane.zrodlo || dane.kampania) {
+    if (dane.zrodlo || dane.kampania || dane.tresc) {
       try {
         sessionStorage.setItem(
           "fl_wejscie",
-          JSON.stringify({ zrodlo: dane.zrodlo, kampania: dane.kampania }),
+          JSON.stringify({
+            zrodlo: dane.zrodlo,
+            kampania: dane.kampania,
+            tresc: dane.tresc,
+            medium: dane.medium,
+          }),
         );
       } catch {
         /* zablokowana pamięć: zdarzenia bez źródła */

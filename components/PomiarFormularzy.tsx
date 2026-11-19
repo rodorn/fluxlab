@@ -24,7 +24,9 @@ export default function PomiarFormularzy() {
     document.addEventListener("focusin", naFokus);
     const naKlik = (e: MouseEvent) => {
       const a = (e.target as HTMLElement | null)?.closest?.("a");
-      if (a?.getAttribute("href")?.startsWith("tel:")) zglosZdarzenie("klik_tel");
+      const href = a?.getAttribute("href") ?? "";
+      if (href.startsWith("tel:")) zglosZdarzenie("klik_telefon");
+      else if (/^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(href)) zglosZdarzenie("klik_whatsapp");
     };
     document.addEventListener("click", naKlik, true);
     return () => {

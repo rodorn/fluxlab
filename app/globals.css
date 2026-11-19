@@ -1206,6 +1206,9 @@ p {
 /* Okno zgody nad paskiem akcji w telefonie */
 @media (max-width: 767px) {
   body[data-pasek-akcji] .cookie-consent { bottom: 5.5rem; }
+  /* Okno zgody otwarte: pasek stoi nad nim, nic nie zasłania „Bezpłatnej wyceny” */
+  body[data-zgoda][data-pasek-akcji] .cookie-consent { bottom: 0.5rem; }
+  body[data-zgoda] .pasek-akcji { bottom: var(--zgoda-h, 0px); }
 }
 /* Wejście z reklamy i strony z kalkulatorem: okno zgody pod nagłówkiem, przewija się ze stroną, żeby nie zasłaniało formularza, kalkulatora ani przycisku Wyślij */
 @media (max-width: 767px) {

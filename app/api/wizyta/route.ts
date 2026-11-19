@@ -18,6 +18,8 @@ export async function POST(request: Request) {
     sciezka: String(dane.sciezka ?? "").slice(0, 300),
     zrodlo: String(dane.zrodlo ?? "").slice(0, 200),
     kampania: String(dane.kampania ?? "").slice(0, 120),
+    tresc: String(dane.tresc ?? "").slice(0, 120),
+    medium: String(dane.medium ?? "").slice(0, 60),
     sesja: String(dane.sesja ?? "").slice(0, 40),
     telefon: Boolean(dane.telefon),
     zdarzenie: String(dane.zdarzenie ?? "odslona").slice(0, 40),

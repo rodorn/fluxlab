@@ -37,6 +37,23 @@ export default function ZgodaCookies() {
     else delete document.body.dataset.zgoda;
   }, [widoczne]);
 
+  // Pasek „Bezpłatna wycena” w telefonie staje nad oknem zgody, więc okno nie zasłania CTA.
+  useEffect(() => {
+    const el = document.querySelector<HTMLElement>(".cookie-consent");
+    if (!el || !widoczne) {
+      document.body.style.removeProperty("--zgoda-h");
+      return;
+    }
+    const mierz = () => document.body.style.setProperty("--zgoda-h", `${el.offsetHeight + 8}px`);
+    mierz();
+    const obs = new ResizeObserver(mierz);
+    obs.observe(el);
+    return () => {
+      obs.disconnect();
+      document.body.style.removeProperty("--zgoda-h");
+    };
+  }, [widoczne]);
+
   const zapisz = (tak: boolean) => {
     try {
       localStorage.setItem("fluxlab_zgoda", tak ? "tak" : "nie");
