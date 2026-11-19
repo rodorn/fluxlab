@@ -11944,3 +11944,11 @@ Cele dla Z5 i Z12 (pozycja 4-20): e-Doręczenia adres prywatny i firmowy (4), fa
 **Dowód:** cykl/z2-pozycje-2026-11-19.txt; IndexNow: wspólny 403, Yandex 200, Naver 200; sitemap.xml 278 adresów (17.11: 271); linijki Z1 i Z2 w cykl/plan-ruchu.md.
 **Dla Pawła:** 
 **Zostało otwarte:** czekam na Z3 (link do artykułu o białej liście VAT) o 12:40, z bramką budżetu (teraz „wstrzymaj”).
+
+## 2026-11-19 12:50
+**Kanał:** dystrybucja (FL_meta), pomiar.
+**Co zrobione:** Z3 (linki do biala-lista-vat-nowe-api) wstrzymane bramką budżetu; Z4: post o białej liście z 18.11 nie wyszedł i nie ma go w kolejce FL_meta, więc wiadomość o e-Doręczeniach nie poszła.
+**Ruch:** pomiar-kanalow 24 h: 44 osoby po odsiewie, 54 odsłony; bez odsyłacza 27, google-ads 6, www.google.com 5, chatgpt.com 1, bing 1, facebook 2, instagram 1, panel 1; `biala-lista-api` 0. 7 dni: 381.
+**Dowód:** cykl/plan-ruchu.md Z3 [!], Z4 [x]; ~/Projekty/fluxlab-meta/posty/dziennik.log (publikacje 18-19.11 bez tematu API białej listy).
+**Dla Pawła:**
+**Zostało otwarte:** Z3 do ponowienia przy innym rytmie budżetu; Z5 i Z6 od 14:40.
