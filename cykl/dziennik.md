@@ -11924,3 +11924,23 @@ Spadek o 22 sesje to głównie płatne kanały: google-ads −7 i OpenAI Ads −
 - Search Console wylogowany 22. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez niego nie widać zapytań ani indeksu, a Google to 37 osób tygodniowo.
 - Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
 - Decyzja o outreachu (stop / 15 maili do gabinetów / dalej wordpress) nadal u Wojtka: https://biuro.fluxlab.pl/decyzje/#bdb474cd-d345-4f52-9ec5-a859d78352ef (2 min, termin 21.11).
+
+## 2026-11-19 11:08
+**Kanał:** pomiar i wyszukiwarka (Z1 i Z2 planu 19.11).
+**Co zrobione:** 74 adresy zmienione od 18.11 08:40 zgłoszone przez IndexNow (wszystkie 200, bez noindex) i zmierzone pozycje fluxlab.pl w Google dla 12 nowych fraz KSeF i e-Doręczeń wraz z „Podobnymi pytaniami”.
+**Ruch:** raport_ruchu doba: 471 odsłon, 297 „osób”, z tego 230 to piksel b2b-email; po odsiewie (pomiar-kanalow, 24 h do 10:45): 45 ludzi, 55 odsłon. Źródła: bez odsyłacza 29, www.google.com 5, google-ads 4, youtube 2, chatgpt.com 1, bing 1, facebook 2, panel.fluxlab.pl 1. 7 dni: 383 (google-ads 57, www.google.com 38, chatgpt płatne 28). Uruchomienia narzędzi 7. Timer fluxlab-strona enabled, budżet „wstrzymaj” (31% tygodnia).
+
+Pozycje Google 19.11 (Z2, strony 1-3, bez captchy):
+
+| Fraza | Pozycja | Pierwsza domena |
+|---|---|---|
+| numeracja faktur KSeF 2027 | 3 | mddp.pl |
+| e-Doręczenia adres prywatny i firmowy | 4 | biznes.gov.pl |
+| faktura wewnętrzna KSeF | 10 | poradnikprzedsiebiorcy.pl |
+| faktura VAT RR KSeF | 18 | poradnikprzedsiebiorcy.pl |
+| data wystawienia faktury KSeF, faktura zaliczkowa KSeF, proforma KSeF, samofakturowanie KSeF, załącznik do faktury KSeF, faktura gdy KSeF nie działa, oznaczenia JPK KSeF, KSeF JDG zwolniona z VAT | brak w 1-26..29 | poradnikprzedsiebiorcy.pl na 1. miejscu w 6 z 8 |
+
+Cele dla Z5 i Z12 (pozycja 4-20): e-Doręczenia adres prywatny i firmowy (4), faktura wewnętrzna KSeF (10), faktura VAT RR KSeF (18). Pytania z ramki „Podobne pytania” dla Z9 są w pliku.
+**Dowód:** cykl/z2-pozycje-2026-11-19.txt; IndexNow: wspólny 403, Yandex 200, Naver 200; sitemap.xml 278 adresów (17.11: 271); linijki Z1 i Z2 w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** czekam na Z3 (link do artykułu o białej liście VAT) o 12:40, z bramką budżetu (teraz „wstrzymaj”).
