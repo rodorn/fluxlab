@@ -129,7 +129,6 @@ export default function EDoreczeniaDlaFirm() {
         etykieta: "Ile pism miesięcznie",
         placeholder: "np. 2000, w przybliżeniu",
       }}
-      kontaktDomyslny="phone"
       serviceName="Integracja e-Doręczeń dla dużych firm"
       serviceDesc="Konektor wpinający skrzynkę do doręczeń elektronicznych w obieg dokumentów, EZD lub system przez API: odbiór pism i dowodów doręczenia, rozdział do działów."
       serviceType="Integracja systemów informatycznych"

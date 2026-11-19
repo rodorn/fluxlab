@@ -10,15 +10,12 @@ const pole =
   "w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-base text-gray-900 placeholder-gray-500 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 aria-[invalid=true]:border-red-600 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-400";
 
 /** Krótki formularz w hero dla wejść z reklamy (html[data-reklama]):
- *  imię, e-mail, telefon opcjonalnie i jedno zdanie potrzeby (z dwaPola
- *  tylko imię i e-mail, żeby przycisk był na pierwszym ekranie). Temat
+ *  dwa pola: telefon albo e-mail i jedno zdanie potrzeby. Temat
  *  zgłoszenia to nazwa strony, jak w components/LandingForm.tsx. */
 export default function FormularzKrotki({
   formId,
-  dwaPola = false,
 }: {
   formId: string;
-  dwaPola?: boolean;
 }) {
   const router = useRouter();
   const [wysylka, setWysylka] = useState(false);
@@ -31,23 +28,37 @@ export default function FormularzKrotki({
       (
         (f.elements.namedItem(n) as HTMLInputElement | null)?.value ?? ""
       ).trim();
-    const email = f.elements.namedItem("email") as HTMLInputElement;
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-      email.setAttribute("aria-invalid", "true");
-      email.focus();
-      setBlad("Wpisz adres e-mail, na który odpiszemy.");
+    const polaKontakt = f.elements.namedItem("kontakt") as HTMLInputElement;
+    const polaOpis = f.elements.namedItem("message") as HTMLInputElement;
+    const kontakt = polaKontakt.value.trim();
+    const maEmail = kontakt.includes("@");
+    if (!maEmail && kontakt.replace(/\D/g, "").length < 9) {
+      polaKontakt.setAttribute("aria-invalid", "true");
+      polaKontakt.focus();
+      setBlad("Wpisz telefon albo e-mail, na który odpiszemy.");
       return;
     }
-    const telefon = wartosc("phone");
+    if (maEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(kontakt)) {
+      polaKontakt.setAttribute("aria-invalid", "true");
+      polaKontakt.focus();
+      setBlad("Sprawdź adres e-mail, wygląda na niepełny.");
+      return;
+    }
+    if (!polaOpis.value.trim()) {
+      polaOpis.setAttribute("aria-invalid", "true");
+      polaOpis.focus();
+      setBlad("Napisz jednym zdaniem, czego potrzebujesz.");
+      return;
+    }
     const dane = {
-      imie: wartosc("imie"),
-      email: email.value.trim(),
+      imie: "",
+      email: maEmail ? kontakt : "",
       company: "",
       problemType: document.title.split("|")[0].trim() || formId,
       problemScale: "nie-wiemy",
       message: wartosc("message"),
-      contactPref: telefon ? "phone" : "email",
-      phone: telefon,
+      contactPref: maEmail ? "email" : "phone",
+      phone: maEmail ? "" : kontakt,
       termin: "",
       website: wartosc("website"),
       skad: "",
@@ -126,53 +137,31 @@ export default function FormularzKrotki({
           defaultValue=""
         />
       </div>
-      <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-        <label className="sr-only" htmlFor={`krotki-imie-${formId}`}>
-          Imię
+      <div className="mt-3 grid gap-2.5">
+        <label className="sr-only" htmlFor={`krotki-kontakt-${formId}`}>
+          Telefon albo e-mail (wymagane)
         </label>
         <input
-          id={`krotki-imie-${formId}`}
-          name="imie"
-          autoComplete="given-name"
-          placeholder="Imię"
-          className={pole}
-        />
-        <label className="sr-only" htmlFor={`krotki-email-${formId}`}>
-          E-mail (wymagany)
-        </label>
-        <input
-          id={`krotki-email-${formId}`}
-          name="email"
-          type="email"
+          id={`krotki-kontakt-${formId}`}
+          name="kontakt"
+          type="text"
+          inputMode="email"
           required
           autoComplete="email"
-          placeholder="E-mail *"
+          placeholder="Telefon albo e-mail *"
           className={pole}
         />
-        {!dwaPola && (
-          <>
-            <label className="sr-only" htmlFor={`krotki-tel-${formId}`}>
-              Telefon, jeśli wolisz rozmowę
-            </label>
-            <input
-              id={`krotki-tel-${formId}`}
-              name="phone"
-              type="tel"
-              autoComplete="tel"
-              placeholder="Telefon, jeśli wolisz rozmowę"
-              className={pole}
-            />
-            <label className="sr-only" htmlFor={`krotki-msg-${formId}`}>
-              Czego potrzebujesz
-            </label>
-            <input
-              id={`krotki-msg-${formId}`}
-              name="message"
-              placeholder="Czego potrzebujesz? (jedno zdanie)"
-              className={pole}
-            />
-          </>
-        )}
+        <label className="sr-only" htmlFor={`krotki-msg-${formId}`}>
+          Czego potrzebujesz (wymagane)
+        </label>
+        <input
+          id={`krotki-msg-${formId}`}
+          name="message"
+          required
+          maxLength={500}
+          placeholder="Czego potrzebujesz? Jedno zdanie *"
+          className={pole}
+        />
       </div>
       <button
         type="submit"

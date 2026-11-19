@@ -179,13 +179,15 @@ export async function POST(req: Request) {
   const telefon = str(body.phone, 40);
   const termin = str(body.termin, 20);
 
-  if (!email || !problemType || !problemScale) {
+  // Telefon zamiast e-maila wystarcza (formularz „telefon albo e-mail”).
+  const telefonWystarcza = telefon.replace(/\D/g, "").length >= 9;
+  if ((!email && !telefonWystarcza) || !problemType || !problemScale) {
     return NextResponse.json(
       { error: "Wypełnij wymagane pola." },
       { status: 400 },
     );
   }
-  if (!EMAIL_RX.test(email)) {
+  if (email && !EMAIL_RX.test(email)) {
     return NextResponse.json(
       { error: "Nieprawidłowy adres e-mail." },
       { status: 400 },
@@ -316,7 +318,7 @@ export async function POST(req: Request) {
     wejscie ? `Ścieżka: ${wejscie}` : "",
     "",
     `Imię: ${imie || "-"}`,
-    `E-mail: ${email}`,
+    `E-mail: ${email || "-"}`,
     `Firma: ${company || "-"}`,
     `Co chce usprawnić: ${problemTypeLabel}`,
     `Skala: ${problemScaleLabel}`,
@@ -343,7 +345,7 @@ export async function POST(req: Request) {
   const { error } = await resendKlient().emails.send({
     from: FROM_FORMULARZ,
     to: testowe ? [KOPIA_DO] : [DO_PAWLA, KOPIA_DO],
-    replyTo: email,
+    ...(email ? { replyTo: email } : {}),
     subject: `${
       contactPref === "meet" && termin
         ? `MEET ${termin}: `
@@ -361,6 +363,9 @@ export async function POST(req: Request) {
       { status: 500 },
     );
   }
+
+  // Klient podał sam telefon: nie ma dokąd wysłać potwierdzenia.
+  if (!email) return NextResponse.json({ ok: true });
 
   // Auto-potwierdzenie do klienta. Nie blokuje sukcesu zgloszenia, ale gdy sie
   // nie uda (np. nadawca z piaskownicy Resend moze pisac tylko do wlasciciela

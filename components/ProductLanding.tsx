@@ -59,8 +59,6 @@ export interface ProductLandingProps {
   pricing: Tier[];
   faq: { q: string; a: string; linki?: LinkWTekscie[] }[];
   formId: string;
-  /** Krótki formularz z reklamy tylko z imieniem i e-mailem. */
-  formularzDwaPola?: boolean;
   /** Dodatkowy blok pod formularzem, na przykład płatny wariant narzędzia. */
   poFormularzu?: ReactNode;
   /** Linijka pod kartami cennika, na przykład odnośnik do pełnego cennika produktu. */
@@ -72,7 +70,6 @@ export interface ProductLandingProps {
   /** Dodatkowe pole formularza, np. liczba pism miesięcznie. */
   poleFormularza?: { etykieta: string; placeholder: string };
   /** Domyślna forma kontaktu w formularzu. */
-  kontaktDomyslny?: "meet" | "phone" | "email";
   serviceName: string;
   serviceDesc: string;
   serviceType: string;
@@ -200,7 +197,7 @@ export default function ProductLanding(p: ProductLandingProps) {
               )}
             </div>
             )}
-            <FormularzKrotki formId={`krotki_${p.formId}`} dwaPola={p.formularzDwaPola} />
+            <FormularzKrotki formId={`krotki_${p.formId}`} />
           </div>
 
           {narzedzieNajpierw && narzedzie}
@@ -384,7 +381,6 @@ export default function ProductLanding(p: ProductLandingProps) {
               submitLabel={p.submitLabel}
               microCopy={p.microCopy}
               pole={p.poleFormularza}
-              kontaktDomyslny={p.kontaktDomyslny}
             />
             {p.poFormularzu && <div className="mt-8">{p.poFormularzu}</div>}
           </div>
