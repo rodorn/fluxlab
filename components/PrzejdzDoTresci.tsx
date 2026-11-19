@@ -1,6 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
 export default function PrzejdzDoTresci() {
+  const sciezka = usePathname();
+  useEffect(() => {
+    const main = document.querySelector("main");
+    if (main && !main.id) main.id = "tresc";
+  }, [sciezka]);
   return (
     <a
       href="#tresc"

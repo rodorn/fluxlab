@@ -8,6 +8,9 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const PLIK = "lib/daty-stron.json";
 const RECZNE = "lib/daty-stron-komponenty.json";
+// Commity bez zmiany tresci (dane strukturalne, masowe poprawki kodu) nie podbijaja dat:
+// pelny SHA tutaj albo "[bez daty]" w temacie commita.
+const BEZ_DATY = new Set(["e33bb2b1a695742b773ce05c13a6615f9cbf666a"]);
 const run = (c) => execSync(c, { encoding: "utf8", maxBuffer: 1 << 28 }).trim();
 const wynik = existsSync(PLIK) ? JSON.parse(readFileSync(PLIK, "utf8")) : {};
 const pozniejsza = (trasa, data) => {
@@ -20,10 +23,10 @@ try {
     existsSync(sciezkaShallow) ? readFileSync(sciezkaShallow, "utf8").split("\n").filter(Boolean) : [],
   );
   let data = null;
-  for (const linia of run("git log --format=@%H%x09%cI --name-only --no-renames -- app").split("\n")) {
+  for (const linia of run("git log --format=@%H%x09%cI%x09%s --name-only --no-renames -- app").split("\n")) {
     if (linia.startsWith("@")) {
-      const [sha, d] = linia.slice(1).split("\t");
-      data = graniczne.has(sha) ? null : d;
+      const [sha, d, temat = ""] = linia.slice(1).split("\t");
+      data = graniczne.has(sha) || BEZ_DATY.has(sha) || temat.includes("[bez daty]") ? null : d;
       continue;
     }
     if (!data || !linia.endsWith("/page.tsx") || linia.includes("[")) continue;
