@@ -112,6 +112,20 @@ export const categories: Category[] = [
       "Porównania narzędzi automatyzacji, Zapier, Make, n8n. Kiedy co wybrać w praktyce MŚP.",
     articles: [
       {
+        href: "/strefa-wiedzy/wygasajace-domeny-jak-znalezc",
+        title: "Wygasające domeny: jak znaleźć dobrą",
+        description:
+          "Skąd wiadomo, że domena wygasa, co sprawdzić w jej historii i kiedy lepiej wybrać wolną.",
+        bezOkladki: true,
+      },
+      {
+        href: "/strefa-wiedzy/monitoring-konkurencji-co-sprawdzac",
+        title: "Monitoring konkurencji: co sprawdzać",
+        description:
+          "Ceny, nowe usługi, opinie i szybkość stron: co obserwować i jak często.",
+        bezOkladki: true,
+      },
+      {
         href: "/strefa-wiedzy/zapier-vs-make",
         title: "Zapier vs Make, co wybrać w 2026",
         description:

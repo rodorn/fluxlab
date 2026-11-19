@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Skaner domen: wolne i wygasające adresy od 29 zł | Fluxlab",
+  title: "Wygasające domeny .pl i monitoring domeny od 9 zł/mies. | Fluxlab",
   description:
-    "Szukamy wolnych i wygasających domen pod frazy Twojej branży albo nazwę firmy. Raport do 48 godzin za 29 zł netto, pilnowanie do 20 domen za 9 zł miesięcznie.",
+    "Sprawdzamy, które domeny wygasają i które są wolne pod frazy Twojej branży. Raport do 48 godzin za 29 zł netto, monitoring domeny (do 20 adresów) za 9 zł miesięcznie.",
   alternates: { canonical: "/skaner-domen" },
   openGraph: {
-    title: "Skaner domen: wolne i wygasające adresy od 29 zł | Fluxlab",
+    title: "Wygasające domeny .pl i monitoring domeny od 9 zł/mies. | Fluxlab",
     description:
-      "Wolne i wygasające domeny pod Twoje frazy w jednym raporcie, a do tego codzienne pilnowanie wybranych adresów.",
+      "Wygasające i wolne domeny .pl pod Twoje frazy w jednym raporcie, a do tego codzienny monitoring wybranych domen.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -28,9 +28,9 @@ export default function Page() {
     <ProductLanding
       slug="skaner-domen"
       breadcrumb="Skaner domen"
-      eyebrow="Domeny pod Twoje frazy"
-      h1="Dobry adres dla Twojej firmy może właśnie się zwalniać"
-      lead="Podajesz frazy, pod którymi szukają Cię klienci, albo nazwę firmy. My sprawdzamy, które domeny są wolne, które wygasają w najbliższych dniach i co było na nich wcześniej. Wybrane adresy możemy też pilnować codziennie."
+      eyebrow="Wygasające domeny i monitoring domeny"
+      h1="Wygasające i wolne domeny pod Twoją branżę, zanim ktoś je przejmie"
+      lead="Podajesz frazy, pod którymi szukają Cię klienci, albo nazwę firmy. My sprawdzamy, które domeny są wolne, kiedy wygasają te zajęte i co było na nich wcześniej. Wybrane adresy objęte monitoringiem domeny sprawdzamy codziennie."
       ctaLabel="Zamów wyszukiwanie"
       ctaNote="Raport do 48 godzin za 29 zł netto, pilnowanie od 9 zł miesięcznie"
       powiazane={[

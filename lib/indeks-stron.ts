@@ -788,6 +788,16 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Black Friday 2026 wypada 27.11, a leady przyjdą też w sobotę. Kto ma je odebrać, ile kosztuje dyżur handlowca w domu i co może zrobić automat."
   },
   {
+    "url": "/strefa-wiedzy/wygasajace-domeny-jak-znalezc",
+    "tytul": "Wygasające domeny: jak znaleźć dobrą i nie przepłacić",
+    "opis": "Wygasające domeny .pl to tani sposób na dobry adres, ale nie każda jest warta zachodu. Jak je znaleźć, co sprawdzić w historii i kiedy lepiej wybrać wolną."
+  },
+  {
+    "url": "/strefa-wiedzy/monitoring-konkurencji-co-sprawdzac",
+    "tytul": "Monitoring konkurencji: co sprawdzać i jak często",
+    "opis": "Monitoring konkurencji bez arkusza: które sygnały naprawdę coś zmieniają (ceny, nowe usługi, opinie, szybkość strony) i jak często je sprawdzać."
+  },
+  {
     "url": "/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen",
     "tytul": "Czy firma ma adres do e-Doręczeń? Jak to sprawdzić",
     "opis": "Adres firmy znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma, i czego sprawdzić się nie da."

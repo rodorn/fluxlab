@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Benchmarking konkurencji od 39 zł/mies. | Fluxlab",
+  title: "Monitoring i analiza konkurencji od 39 zł/mies. | Fluxlab",
   description:
-    "Śledzimy konkurencję: ceny, nowe usługi, social media, szybkość stron i opinie Google. Raport codziennie, co tydzień albo co miesiąc, od 39 zł netto.",
+    "Monitoring konkurencji: ceny, nowe usługi, social media, szybkość stron i opinie Google. Analiza konkurencji w raporcie codziennie, co tydzień albo co miesiąc, od 39 zł netto.",
   alternates: { canonical: "/benchmarking-konkurencji" },
   openGraph: {
-    title: "Benchmarking konkurencji od 39 zł/mies. | Fluxlab",
+    title: "Monitoring i analiza konkurencji od 39 zł/mies. | Fluxlab",
     description:
-      "Ceny, nowe usługi, social media, szybkość stron i opinie Google Twojej konkurencji w jednym raporcie.",
+      "Monitoring cen konkurencji, nowych usług, social mediów, szybkości stron i opinii Google w jednym raporcie.",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -28,9 +28,9 @@ export default function Page() {
     <ProductLanding
       slug="benchmarking-konkurencji"
       breadcrumb="Benchmarking konkurencji"
-      eyebrow="Raport o konkurencji"
-      h1="Wiesz, co zmienia konkurencja, zanim zauważą to Twoi klienci"
-      lead="Wskazujesz firmy, z którymi walczysz o klientów. My sprawdzamy ich ceny, nowe usługi, social media, szybkość stron i opinie w Google, a Ty dostajesz krótki raport z tym, co się zmieniło i co z tego wynika dla Ciebie."
+      eyebrow="Analiza konkurencji strony i cen"
+      h1="Monitoring konkurencji: wiesz, co zmienia, zanim zauważą to Twoi klienci"
+      lead="Wskazujesz firmy, z którymi walczysz o klientów. To benchmarking konkurencji bez arkusza: my sprawdzamy ich ceny, nowe usługi, social media, szybkość stron i opinie w Google, a Ty dostajesz krótki raport z tym, co się zmieniło i co z tego wynika dla Ciebie."
       ctaLabel="Zamów raport"
       ctaNote="Od 39 zł netto miesięcznie, rezygnacja w dowolnym dniu"
       powiazane={[
