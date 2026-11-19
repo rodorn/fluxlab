@@ -11960,3 +11960,11 @@ Cele dla Z5 i Z12 (pozycja 4-20): e-Doręczenia adres prywatny i firmowy (4), fa
 **Dowód:** Resend `GET /emails/<id>` dla 56 adresów z `wyslane_wp.json` (14:47): 53 delivered, 3 bounced (info@dental-practice.pl, info@medicavision.pl, info@magnolianailbar.pl), bez zmian od 09:10; Zoho IMAP `SINCE 19-Nov-2026`: INBOX 5 (testowe leady formularzy 00:19-00:28), Spam 0, odpowiedzi z 56 domen 0; karta bdb474cd: „Decyzja Wojtka 19.11, 10:00: TAK. Automat: … wykonaj rekomendację z karty (Stop)”.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 o 16:40 do zamknięcia jako „nie dotyczy” (decyzja Stop), potem Z8 (opisy repozytoriów GitHub); Z9 i Z11-Z12 zależą od budżetu; Z10 o 18:40.
+
+## 2026-11-19 16:48
+**Kanał:** dystrybucja narzędzi (GitHub) i outreach (decyzja).
+**Co zrobione:** Z7 nie dotyczy (karta bdb474cd rozstrzygnięta opcją 1 „Stop”, bez nowej puli); Z8: repozytoria fluxlab-kalkulatory i fluxlab-video-reklamy dostały opis po polsku, stronę z utm_source=github i po 5 nowych tematów.
+**Ruch:** ostatnia doba 444 odsłony, 241 osób (w tym piksel b2b-email 242, nie ludzie); źródła: google-ads 26, www.google.com 26, m.facebook.com 8, threads 6; Threads 3 sesje w dobie, 15 w 7 dni; uruchomienia narzędzi 17; lejek 7 dni: 12 form_start, 1 zapytanie.
+**Dowód:** `gh repo view rodorn/fluxlab-kalkulatory` i `rodorn/fluxlab-video-reklamy`: opis, homepage https://fluxlab.pl/narzedzia?utm_source=github&utm_campaign=fluxlab-kalkulatory oraz https://fluxlab.pl/?utm_source=github&utm_campaign=fluxlab-video-reklamy, po 8 tematów.
+**Dla Pawła:**
+**Zostało otwarte:** Z9 (odpowiedź na pytanie z wyników Google) i Z10 (pomiar) od 18:40, Z11 od 20:40, Z12 i Z13 od 22:40.
