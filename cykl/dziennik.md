@@ -11871,3 +11871,56 @@ Uwagi do pomiaru: Google pomija `num=30`, liczone strony 1-3; w profilu chrome-g
 Wybór certyfikat-ksef zamiast lead-w-weekend (remis po 1): wszystkie trzy artykuły źródłowe z planu są o KSeF/VAT, link do Black Friday byłby nie na temat. biala-lista-vat-nowe-api pominięta, bo zmieniał ją FL_SEO 12.11 (mniej niż 7 dni).
 **Dla Pawła:** 
 **Zostało otwarte:** Z11 pomiar od 18:40, Z12 FAQ z „Podobnych pytań” od 20:40, Z13 bilans od 22:40, Z14-Z17 w nocy 19.11.
+
+## 2026-11-18 18:50
+**Kanał:** pomiar (Z11 planu 18.11).
+**Co zrobione:** pomiar popołudniowy z `pomiar-kanalow.py`, nic nie poszło w świat, bo Z12 (FAQ z „Podobnych pytań”) jest dostępne dopiero od 20:40.
+**Ruch:** doba 40 sesji ludzi, 60 odsłon; bez odsyłacza 29, www.google.com 4, mokka.corp.google.com 1, youtube 3 (widocznosc-w-ai 2, ja-buduje-ty-polecasz 1), google-ads 1 (n8n-procesy), chatgpt.com 1 naturalne, chatgpt płatne 0, facebook 1 bez utm, `biala-lista-api` 0, threads 1, bing 1. Uruchomienia narzędzi 5 (analiza-lokalizacji 3, numer-ksef 1, zakres raportowania 1), pobranie PDF 1, form_start 1 (/numer-ksef), lead_* 0. 7 dni: 388 sesji, 11 form_start, 1 zapytanie.
+**Dowód:** linijka Z11 w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** Z12 FAQ od 20:40, Z13 bilans od 22:40, Z14-Z17 w nocy 19.11.
+
+## 2026-11-18 20:45
+**Kanał:** brak (Z12 planu 18.11 wstrzymane budżetem).
+**Co zrobione:** nic nie poszło w świat: `budzet` pokazuje rytm „wstrzymaj” (prognoza 228% tygodnia, hamulec krytyczny), więc zadanie treściowe Z12 oznaczone „[!] budżet” zgodnie z regułą planu.
+**Ruch:** pomiar-kanalow 24 h: 41 sesji ludzi, 60 odsłon; bez odsyłacza 28, www.google.com 4, youtube 3, google-ads 2, mokka.corp.google.com 1, threads 1, chatgpt.com 1, bing 1, facebook 1. 7 dni: 382 sesje. raport_ruchu doba: 507 odsłon, 292 osoby (w tym piksel b2b-email), uruchomienia narzędzi 4.
+**Dowód:** linijka Z12 w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** czekam na Z13 (bilans dnia) o 22:40; Z14-Z17 w nocy 19.11 to pomiary, idą mimo hamulca.
+
+## 2026-11-18 22:50
+**Kanał:** pomiar (Z13 planu 18.11, bilans dnia).
+**Co zrobione:** bilans kalendarzowy 18.11 (do 22:43) wobec 17.11, po odsiewie z `pomiar-kanalow.py`; nic nie poszło w świat, budżet nadal „wstrzymaj” (prognoza 231% tygodnia).
+**Ruch:** raport_ruchu doba: 504 odsłony, 291 osób, ale 282 to piksel b2b-email; po odsiewie 24 h: 45 sesji ludzi, 61 odsłon (bez odsyłacza 32, www.google.com 3, youtube 3, google-ads 2, threads 1, chatgpt.com 1, bing 1, facebook 1, mokka.corp.google.com 1). 7 dni: 378 sesji.
+
+Bilans 18.11 (kalendarzowo, do 22:43, po odsiewie):
+
+| Kanał | 18.11 | 17.11 |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 40 / 53 | 62 / 77 |
+| www.google.com | 3 | 7 |
+| google-ads | 2 (n8n-procesy 1, 24472439947 1) | 9 |
+| chatgpt płatne (OpenAI Ads) | 0 | 6 |
+| chatgpt.com naturalne | 1 | 0 |
+| Facebook | 1 | 1 |
+| YouTube | 3 (widocznosc-w-ai 2, ja-buduje-ty-polecasz 1) | 0 |
+| Threads | 1 | 0 |
+| Bing | 1 | 1 |
+| Bez odsyłacza | 27 | 37 |
+| Uruchomienia narzędzi | 5 (analiza-lokalizacji 3, numer-ksef 1, zakres raportowania 1) | 1 (skan e-doreczenia) |
+| Pobranie PDF | 1 | 1 |
+| form_start | 1 (/numer-ksef) | 0 |
+| lead_* | 0 | 0 |
+
+Spadek o 22 sesje to głównie płatne kanały: google-ads −7 i OpenAI Ads −6 (0 wejść z kampanii chatgpt w dobie), oraz bez odsyłacza −10. Google organiczne 3 wobec 7. Wzrosły uruchomienia narzędzi (5 wobec 1) i jest pierwszy od 17.11 form_start. Zoho 24 h: 0 odpowiedzi na outreach (OLX, raport TLS, podejrzany „Meta Account Status”).
+**Dowód:** linijka Z13 w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** czekam na Z14 (reakcje outreachu) o 19.11 00:40; Z15-Z17 w nocy 19.11 to pomiary.
+
+## Strategia dobowa 2026-11-19
+**Wynik doby (24 h do 19.11 09:06, po odsiewie):** 39 ludzi (doba wcześniej 51; bilans kalendarzowy 18.11: 40 sesji), tydzień 374. Google organiczny 4 / 37 w tygodniu (biała lista VAT 9 wejść, pozycja 3), google-ads 4 / 57, chatgpt płatne 0 / 28, chatgpt.com naturalne 1 / 3, Facebook 1 / 11, YouTube 3 / 8, bez odsyłacza 23 / 214, mail/wordpress 0 / 1. Uruchomienia narzędzi 7, form_start 1, zapytania 0 (tydzień: 11 form_start, 1 zapytanie). Outreach `wordpress`: 56 wysłanych, 53 doręczone, 0 odpowiedzi, trzecia doba bez osoby, wyłączony do decyzji. Plan 18.11: 13 z 17 [x]; Z12 zablokował budżet, Z14-Z17 nie ruszyły, bo komputer był wyłączony od 00:29 do 09:05. Budżet 09:05: „wstrzymaj” (25% tygodnia, prognoza 258%).
+**Plan 19.11:** 17 zadań (cykl/plan-ruchu.md), bez wysyłek do decyzji o outreachu, zmiany treści z bramką budżetu. Trzy najważniejsze: pozycje 12 kolejnych artykułów KSeF w Google wraz z pytaniami z ramki „Podobne pytania” (Z2); linki do artykułu o białej liście VAT z dwóch artykułów KSeF, bo ma najwięcej wejść z Google i zero linków z treści (Z3, przed 1.12, gdy stary adres API przestaje działać); nowy tytuł artykułu z pozycji 4-20 (Z5).
+**Dla Pawła:**
+- Search Console wylogowany 22. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez niego nie widać zapytań ani indeksu, a Google to 37 osób tygodniowo.
+- Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
+- Decyzja o outreachu (stop / 15 maili do gabinetów / dalej wordpress) nadal u Wojtka: https://biuro.fluxlab.pl/decyzje/#bdb474cd-d345-4f52-9ec5-a859d78352ef (2 min, termin 21.11).
