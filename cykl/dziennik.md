@@ -11952,3 +11952,11 @@ Cele dla Z5 i Z12 (pozycja 4-20): e-Doręczenia adres prywatny i firmowy (4), fa
 **Dowód:** cykl/plan-ruchu.md Z3 [!], Z4 [x]; ~/Projekty/fluxlab-meta/posty/dziennik.log (publikacje 18-19.11 bez tematu API białej listy).
 **Dla Pawła:**
 **Zostało otwarte:** Z3 do ponowienia przy innym rytmie budżetu; Z5 i Z6 od 14:40.
+
+## 2026-11-19 14:43
+**Kanał:** 4 (outreach, pomiar reakcji); Z5 (Google, tytuł) wstrzymane budżetem.
+**Co zrobione:** Z5 [!] budżet („wstrzymaj”, prognoza 180% tygodnia, nowyCykl false); Z6 [x] pomiar reakcji na 56 maili `wordpress`: 0 odpowiedzi, 0 nowych wejść, decyzja na karcie bdb474cd zapadła automatem (Stop).
+**Ruch:** raport_ruchu doba: 415 odsłon, 236 osób (surowo); pomiar-kanalow po odsiewie 24 h: 50 sesji, 60 odsłon: bez odsyłacza 31, google-ads 10, www.google.com 5, Facebook 2 (www.facebook.com 1, facebook 1), instagram 1, panel 1. 7 dni: 386 sesji, google.com 38, chatgpt 28+3, github 5+2, mail/wordpress 1.
+**Dowód:** Resend `GET /emails/<id>` dla 56 adresów z `wyslane_wp.json` (14:47): 53 delivered, 3 bounced (info@dental-practice.pl, info@medicavision.pl, info@magnolianailbar.pl), bez zmian od 09:10; Zoho IMAP `SINCE 19-Nov-2026`: INBOX 5 (testowe leady formularzy 00:19-00:28), Spam 0, odpowiedzi z 56 domen 0; karta bdb474cd: „Decyzja Wojtka 19.11, 10:00: TAK. Automat: … wykonaj rekomendację z karty (Stop)”.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 o 16:40 do zamknięcia jako „nie dotyczy” (decyzja Stop), potem Z8 (opisy repozytoriów GitHub); Z9 i Z11-Z12 zależą od budżetu; Z10 o 18:40.
