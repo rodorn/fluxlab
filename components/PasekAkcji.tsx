@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 const BEZ_PASKA = [
   "/kontakt",
@@ -14,6 +15,16 @@ const BEZ_PASKA = [
   "/demo",
   "/polityka",
   "/regulamin",
+];
+
+// Landingi z reklam: pasek z trzema drogami kontaktu zamiast jednego przycisku.
+const LANDINGI_REKLAM = [
+  "/ksef-integracja",
+  "/e-doreczenia-integracja",
+  "/wdrozenie-n8n-cena",
+  "/automatyzacja-procesow-biznesowych",
+  "/strony-www",
+  "/tansze-automatyzacje",
 ];
 
 /* Pasek „Bezpłatna wycena” w telefonie na każdej stronie: pokazuje się po
@@ -110,6 +121,39 @@ export default function PasekAkcji() {
   }, []);
 
   if (wylaczony) return null;
+
+  if (LANDINGI_REKLAM.includes(sciezka)) {
+    const przycisk = "btn-lg flex-1 justify-center px-2";
+    return (
+      <div
+        className={`pasek-akcji fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-gray-200 bg-white px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden dark:border-white/10 dark:bg-gray-950 ${
+          widoczny ? "translate-y-0" : "translate-y-full"
+        }`}
+        aria-hidden={!widoczny}
+      >
+        <a href="tel:+48665466565" tabIndex={widoczny ? 0 : -1} className={`${przycisk} btn-secondary`}>
+          Zadzwoń
+        </a>
+        <a
+          href="https://wa.me/48665466565"
+          target="_blank"
+          rel="noopener"
+          tabIndex={widoczny ? 0 : -1}
+          className={`${przycisk} btn-secondary`}
+        >
+          WhatsApp
+        </a>
+        <a
+          href={cel}
+          tabIndex={widoczny ? 0 : -1}
+          onClick={() => zglosZdarzenie("klik_wycena")}
+          className={`${przycisk} btn-primary`}
+        >
+          Wycena
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div
