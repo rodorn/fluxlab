@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Limit 10 tys. zł poza KSeF liczysz brutto w miesiącu. Po przekroczeniu ta faktura i wszystkie kolejne idą już przez KSeF. Sprawdź, co się wlicza.";
@@ -165,6 +166,7 @@ export default function Limit10TysPozaKsefArticle() {
               headline: "Limit 10 tys. zł poza KSeF: co po pierwszym przekroczeniu",
               description: OPIS,
               datePublished: "2026-10-19",
+              dateModified: dataZmiany("/strefa-wiedzy/limit-10-tys-poza-ksef", "2026-10-19"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

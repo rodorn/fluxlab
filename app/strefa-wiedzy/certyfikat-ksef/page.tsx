@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Bez certyfikatu KSeF typu offline nie wystawisz faktury, gdy KSeF nie działa. Wyrobisz go w Aplikacji Podatnika KSeF, a ważny jest najwyżej 2 lata.";
@@ -158,6 +159,7 @@ export default function CertyfikatKsefArticle() {
               headline: "Certyfikat KSeF: do czego służy i kiedy go wyrobić",
               description: OPIS,
               datePublished: "2026-10-26",
+              dateModified: dataZmiany("/strefa-wiedzy/certyfikat-ksef", "2026-10-26"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

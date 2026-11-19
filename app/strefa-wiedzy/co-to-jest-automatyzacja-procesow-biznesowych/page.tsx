@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Automatyzacja procesów biznesowych: co to jest | Fluxlab",
@@ -222,6 +223,7 @@ export default function AutomatyzacjaProcesowArticle() {
             description:
               "Czym jest automatyzacja procesów biznesowych, gdzie daje największy efekt i od czego zacząć wdrożenie w firmie. Przykłady, błędy, ROI i praktyczne wskazówki.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/co-to-jest-automatyzacja-procesow-biznesowych", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

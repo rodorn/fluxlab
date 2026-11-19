@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Salesforce dla małej firmy, czy warto | Fluxlab",
@@ -294,6 +295,7 @@ export default function SalesforceDlaMalejFirmyArticle() {
             description:
               "Starter od 25 USD, Enterprise od ok. 165 USD za użytkownika, dla 10 osób 30 do 50 tys. USD w pierwszym roku. Kiedy Salesforce ma sens, kiedy wygrywa Pipedrive.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/salesforce-dla-malej-firmy", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

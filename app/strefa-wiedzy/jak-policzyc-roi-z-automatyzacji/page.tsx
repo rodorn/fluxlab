@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Jak policzyć ROI z automatyzacji | Fluxlab",
@@ -215,6 +216,7 @@ export default function RoiAutomatyzacjiArticle() {
             description:
               "Zobacz, jak policzyć ROI z automatyzacji procesów biznesowych. Oszczędność czasu, koszt pracy, błędy, opóźnienia i wpływ na sprzedaż, bez marketingowej mgły.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

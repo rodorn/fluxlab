@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Integracje API w firmie, kiedy warto | Fluxlab",
@@ -346,6 +347,7 @@ export default function IntegracjeApiArticle() {
             description:
               "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

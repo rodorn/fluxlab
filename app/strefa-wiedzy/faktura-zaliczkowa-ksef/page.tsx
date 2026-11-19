@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "W KSeF zaliczka to faktura zaliczkowa, a rozliczenie to faktura rozliczeniowa z numerami KSeF zaliczek. Gdy zaliczki pokryły całość, ostatnia zamyka sprzedaż.";
@@ -149,6 +150,7 @@ export default function FakturaZaliczkowaKsefArticle() {
               headline: "Faktura zaliczkowa w KSeF",
               description: OPIS,
               datePublished: "2026-10-11",
+              dateModified: dataZmiany("/strefa-wiedzy/faktura-zaliczkowa-ksef", "2026-10-11"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

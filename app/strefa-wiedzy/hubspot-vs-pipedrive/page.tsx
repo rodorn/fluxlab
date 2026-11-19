@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "HubSpot vs Pipedrive, który CRM dla małej firmy | Fluxlab",
@@ -165,6 +166,7 @@ export default function HubspotVsPipedriveArticle() {
             description:
               "HubSpot vs Pipedrive w 2026 roku: ceny, funkcje, marketing, lock-in i koszt skalowania. Konkretne wskazówki dla małej firmy B2B wybierającej CRM.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/hubspot-vs-pipedrive", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

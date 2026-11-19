@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Rejestr hoteli gubi Kraków i Warszawę. Nasz pomiar | Fluxlab",
@@ -238,6 +239,7 @@ export default function Page() {
               description:
                 "W Centralnym Wykazie Obiektów Hotelarskich 504 wpisy mają województwo zapisane jako liczba, a przy pobieraniu znika nawet co piąty obiekt mimo poprawnego licznika.",
               datePublished: "2026-09-20",
+              dateModified: dataZmiany("/strefa-wiedzy/bledy-w-rejestrze-obiektow-hotelarskich", "2026-09-20"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

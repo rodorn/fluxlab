@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Dlaczego firmowe maile trafiają do spamu | Fluxlab",
@@ -217,6 +218,7 @@ export default function MaileSpamArticle() {
               description:
                 "Twoje oferty i faktury trafiają do spamu klientów? Najczęstsze przyczyny (SPF, DKIM, DMARC, reputacja) i konkretne kroki naprawy. Plus darmowy audyt domeny.",
               datePublished: "2026-09-16",
+              dateModified: dataZmiany("/strefa-wiedzy/maile-trafiaja-do-spamu", "2026-09-16"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

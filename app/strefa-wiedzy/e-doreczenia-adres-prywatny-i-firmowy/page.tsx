@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Tak, przedsiębiorca z CEIDG może mieć oba adresy do e-Doręczeń. Firmowy jest obowiązkowy od 1 października 2026 i prywatny go nie zastępuje. Gdzie go założyć.";
@@ -139,6 +140,7 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
               headline: "e-Doręczenia w JDG: adres prywatny i firmowy",
               description: OPIS,
               datePublished: "2026-10-10",
+              dateModified: dataZmiany("/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy", "2026-10-10"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

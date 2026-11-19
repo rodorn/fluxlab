@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Jak połączyć CRM z innymi systemami w firmie | Fluxlab",
@@ -186,6 +187,7 @@ export default function CrmIntegracjaArticle() {
             description:
               "Jak połączyć CRM z formularzami, ERP, mailami i raportowaniem bez chaosu. Praktyczny model wdrożenia i najczęstsze błędy.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

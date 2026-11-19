@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Fakturę dla firmy zagranicznej wystawiasz w KSeF jak każdą inną, a klientowi wysyłasz ją mailem jako PDF z kodem QR. Klient nie zakłada konta w KSeF.";
@@ -164,6 +165,7 @@ export default function FakturaKontrahentZagranicznyKsefArticle() {
               headline: "Faktura dla kontrahenta zagranicznego w KSeF",
               description: OPIS,
               datePublished: "2026-10-17",
+              dateModified: dataZmiany("/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef", "2026-10-17"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

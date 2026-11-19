@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Faktura online w KSeF jest wystawiona w dniu przesłania pliku, nie nadania numeru. Data w P_1 musi się z nim zgadzać, a wysyłka później to tryb offline24.";
@@ -172,6 +173,7 @@ export default function DataWystawieniaFakturyKsefArticle() {
               headline: "Data wystawienia faktury w KSeF",
               description: OPIS,
               datePublished: "2026-10-17",
+              dateModified: dataZmiany("/strefa-wiedzy/data-wystawienia-faktury-ksef", "2026-10-17"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

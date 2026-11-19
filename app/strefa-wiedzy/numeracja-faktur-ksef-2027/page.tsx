@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "KSeF odrzuca fakturę z błędem 440, gdy ten sam sprzedawca wysłał już taki numer. Numeracja bez roku w numerze zacznie się powtarzać w 2027.";
@@ -161,6 +162,7 @@ export default function NumeracjaFakturKsef2027Article() {
               headline: "Numeracja faktur w KSeF w 2027: błąd 440 Duplikat faktury",
               description: OPIS,
               datePublished: "2026-10-10",
+              dateModified: dataZmiany("/strefa-wiedzy/numeracja-faktur-ksef-2027", "2026-10-10"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

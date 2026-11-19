@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Mail firmowy: czy ktoś może się pod niego podszyć | Fluxlab",
@@ -207,6 +208,7 @@ export default function PodszywanieEmailArticle() {
               description:
                 "Mail firmowy na własnej domenie: co jest potrzebne, ile kosztuje skrzynka w Google i Microsoft oraz jak SPF, DKIM i DMARC chronią przed podszywaniem.",
               datePublished: "2026-09-08",
+              dateModified: dataZmiany("/strefa-wiedzy/podszywanie-sie-pod-firmowy-email", "2026-09-08"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

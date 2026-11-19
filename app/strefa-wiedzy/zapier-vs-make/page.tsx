@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Zapier cennik 2026 i porównanie z Make: co wybrać | Fluxlab",
@@ -388,6 +389,7 @@ export default function ZapierVsMakeArticle() {
             description:
               "Zapier cennik 2026: Free 100 tasków, Professional od ok. 19,99 USD, Team od 69 USD miesięcznie. Porównanie z Make i koszt przy 100 leadach dziennie.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/zapier-vs-make", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

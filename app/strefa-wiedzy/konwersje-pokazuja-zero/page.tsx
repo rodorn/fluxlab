@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Licznik konwersji pokazuje zero, a zgłoszenia są | Fluxlab",
@@ -164,6 +165,7 @@ export default function Page() {
               description:
                 "Cztery przyczyny, przez które analityka nie widzi zgłoszeń docierających na skrzynkę, i sposób na rozstrzygnięcie, która z nich zachodzi.",
               datePublished: "2026-09-21",
+              dateModified: dataZmiany("/strefa-wiedzy/konwersje-pokazuja-zero", "2026-09-21"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

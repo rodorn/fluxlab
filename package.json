@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node skrypty/zmiany.mjs",
+    "prebuild": "node skrypty/zmiany.mjs && node scripts/daty-stron.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

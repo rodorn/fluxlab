@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Fakturę dla osoby prywatnej nie trzeba wystawiać w KSeF. Wolno na papierze albo w PDF; wystawiona w KSeF trafia do klienta jako PDF lub wydruk z kodem QR.";
@@ -145,6 +146,7 @@ export default function FakturaDlaOsobyPrywatnejKsefArticle() {
               headline: "Faktura dla osoby prywatnej a KSeF",
               description: OPIS,
               datePublished: "2026-10-10",
+              dateModified: dataZmiany("/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef", "2026-10-10"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

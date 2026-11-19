@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Samofakturowanie w KSeF wymaga umowy, uprawnienia nadanego nabywcy przez sprzedawcę w KSeF i oznaczenia P_17 w pliku. Bez uprawnienia KSeF odrzuci fakturę.";
@@ -154,6 +155,7 @@ export default function SamofakturowanieKsefArticle() {
               headline: "Samofakturowanie w KSeF",
               description: OPIS,
               datePublished: "2026-10-11",
+              dateModified: dataZmiany("/strefa-wiedzy/samofakturowanie-ksef", "2026-10-11"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Automatyzacja AI w firmie: gdzie działa, gdzie nie | Fluxlab",
@@ -173,6 +174,7 @@ export default function AiWAutomatyzacjiFirmPage() {
             description:
               "Automatyzacja AI w firmie: model sortuje zapytania i streszcza dokumenty, a człowiek zatwierdza ryzykowne decyzje. Zobacz, jak wdrażamy AI w procesach.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/ai-w-automatyzacji-firm", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

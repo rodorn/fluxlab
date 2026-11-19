@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Proforma nie idzie do KSeF, także po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.";
@@ -158,6 +159,7 @@ export default function ProformaKsefArticle() {
               headline: "Proforma a KSeF: czy wystawiać ją w systemie",
               description: OPIS,
               datePublished: "2026-10-19",
+              dateModified: dataZmiany("/strefa-wiedzy/proforma-ksef", "2026-10-19"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

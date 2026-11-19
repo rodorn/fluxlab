@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const ADRES = "/strefa-wiedzy/numer-ksef-w-przelewie";
 
@@ -225,6 +226,7 @@ export default function NumerKsefWPrzelewieArticle() {
                 "Numer KSeF w tytule przelewu od 1 stycznia 2027: co zmienić w płatnościach firmy",
               description: OPIS,
               datePublished: "2026-11-02",
+              dateModified: dataZmiany("/strefa-wiedzy/numer-ksef-w-przelewie", "2026-11-02"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

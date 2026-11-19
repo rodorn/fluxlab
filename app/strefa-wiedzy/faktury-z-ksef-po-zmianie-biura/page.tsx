@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Biuro, które przejmuje firmę bez dokumentów, pobierze faktury z 2026 z KSeF. Wystarczy, że firma nada mu uprawnienie do przeglądania faktur.";
@@ -166,6 +167,7 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
               headline: "Faktury z KSeF po zmianie biura rachunkowego",
               description: OPIS,
               datePublished: "2026-10-10",
+              dateModified: dataZmiany("/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura", "2026-10-10"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Załącznik do faktury w KSeF to dodatkowy plik XML, nie PDF ani zdjęcie. Wystawisz go dopiero po zgłoszeniu w e-Urzędzie Skarbowym; odbiór nie wymaga zgłoszenia.";
@@ -155,6 +156,7 @@ export default function ZalacznikDoFakturyKsefArticle() {
               headline: "Załącznik do faktury w KSeF",
               description: OPIS,
               datePublished: "2026-10-17",
+              dateModified: dataZmiany("/strefa-wiedzy/zalacznik-do-faktury-ksef", "2026-10-17"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

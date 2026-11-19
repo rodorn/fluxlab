@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Gdy KSeF nie działa, fakturę wystawia się offline i dosyła następnego dnia roboczego albo w 7 dni roboczych po awarii. Poza KSeF idzie z dwoma kodami QR.";
@@ -194,6 +195,7 @@ export default function FakturaGdyKsefNieDzialaArticle() {
               headline: "Faktura, gdy KSeF nie działa",
               description: OPIS,
               datePublished: "2026-10-10",
+              dateModified: dataZmiany("/strefa-wiedzy/faktura-gdy-ksef-nie-dziala", "2026-10-10"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

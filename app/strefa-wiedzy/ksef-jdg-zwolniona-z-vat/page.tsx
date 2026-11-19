@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import { PODATNICY } from "@/lib/terminy-ksef";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "JDG zwolniona z VAT wystawia faktury dla firm w KSeF od 1 kwietnia 2026, do końca 2026 do 10 tys. zł brutto miesięcznie także poza KSeF.";
@@ -171,6 +172,7 @@ export default function KsefJdgZwolnionaZVatArticle() {
               headline: "KSeF w JDG zwolnionej z VAT: czy musisz?",
               description: OPIS,
               datePublished: "2026-10-17",
+              dateModified: dataZmiany("/strefa-wiedzy/ksef-jdg-zwolniona-z-vat", "2026-10-17"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

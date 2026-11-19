@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { PODATNICY } from "@/lib/terminy-ksef";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const ADRES = "/strefa-wiedzy/faktury-kosztowe-z-ksef";
 
@@ -215,6 +216,7 @@ export default function FakturyKosztoweZKsefArticle() {
                 "Faktury kosztowe z KSeF do programu księgowego: jak pobierać je automatycznie",
               description: OPIS,
               datePublished: "2026-11-02",
+              dateModified: dataZmiany("/strefa-wiedzy/faktury-kosztowe-z-ksef", "2026-11-02"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

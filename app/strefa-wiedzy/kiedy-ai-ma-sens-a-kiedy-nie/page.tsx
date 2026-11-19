@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Kiedy AI ma sens w firmie, a kiedy nie | Fluxlab",
@@ -122,6 +123,7 @@ export default function KiedyAiMaSensPage() {
             description:
               "Jak ocenić, czy AI ma sens w Twojej firmie. Prosty framework decyzji: wolumen, powtarzalność, jakość danych, koszt błędu i rola człowieka.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

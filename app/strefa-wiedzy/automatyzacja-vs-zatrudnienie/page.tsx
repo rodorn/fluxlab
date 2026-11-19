@@ -8,6 +8,7 @@ import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import KalkulatorDecyzji from "@/components/KalkulatorDecyzji";
 import NazwaNarzedzia from "@/components/NazwaNarzedzia";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Porównanie kosztów: etat 7 240 zł vs automat",
@@ -351,6 +352,7 @@ export default function AutomatyzacjaVsZatrudnienieArticle() {
             description:
               "Kiedy zatrudnić kolejną osobę, a kiedy zautomatyzować proces. Realne koszty, ryzyka, framework decyzji i praktyczne scenariusze dla firm B2B w 2026.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/automatyzacja-vs-zatrudnienie", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

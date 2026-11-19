@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Oznaczenia w JPK_VAT od lutego 2026: numer KSeF albo OFF przy awarii KSeF, BFK dla faktury spoza KSeF, DI dla paragonu i faktury offline bez numeru.";
@@ -163,6 +164,7 @@ export default function OznaczeniaJpkKsefArticle() {
               headline: "Numer KSeF, OFF, BFK czy DI w JPK_VAT",
               description: OPIS,
               datePublished: "2026-10-11",
+              dateModified: dataZmiany("/strefa-wiedzy/oznaczenia-jpk-ksef", "2026-10-11"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Spółka bez pieczęci kwalifikowanej wskazuje w ZAW-FA jedną osobę do KSeF. Ona nadaje uprawnienia innym. Gdy odejdzie, składasz nowe ZAW-FA z następcą.";
@@ -156,6 +157,7 @@ export default function ZawFaKsefArticle() {
               headline: "ZAW-FA w spółce: kto ma dostęp do KSeF",
               description: OPIS,
               datePublished: "2026-10-17",
+              dateModified: dataZmiany("/strefa-wiedzy/zaw-fa-ksef", "2026-10-17"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

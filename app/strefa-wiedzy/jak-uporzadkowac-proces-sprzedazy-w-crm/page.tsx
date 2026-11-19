@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Jak uporządkować proces sprzedaży w CRM | Fluxlab",
@@ -169,6 +170,7 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
             description:
               "Jak uporządkować proces sprzedaży w CRM: etapy, kryteria przejścia, pola obowiązkowe, follow-up i raportowanie.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

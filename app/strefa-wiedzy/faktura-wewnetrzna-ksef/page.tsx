@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Czy fakturę wewnętrzną wysyła się do KSeF? Nie, od 2014 roku nie jest fakturą w rozumieniu ustawy o VAT, zostaje w ewidencji jako dokument WEW.";
@@ -143,6 +144,7 @@ export default function FakturaWewnetrznaKsefArticle() {
               headline: "Faktura wewnętrzna a KSeF: czy ją wysyłać",
               description: OPIS,
               datePublished: "2026-10-19",
+              dateModified: dataZmiany("/strefa-wiedzy/faktura-wewnetrzna-ksef", "2026-10-19"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

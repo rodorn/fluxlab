@@ -5,6 +5,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Do końca 2026 fakturę z kasy wystawiasz poza KSeF. Od 2027 fakturę do paragonu dla firmy wystawiasz już w KSeF, a dla osoby prywatnej nadal nie musisz.";
@@ -149,6 +150,7 @@ export default function FakturaDoParagonuKsefArticle() {
               headline: "Faktura do paragonu a KSeF w 2026 i 2027",
               description: OPIS,
               datePublished: "2026-10-19",
+              dateModified: dataZmiany("/strefa-wiedzy/faktura-do-paragonu-ksef", "2026-10-19"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Faktura RR w KSeF nie jest obowiązkowa: od 1.04.2026 możesz ją tam wystawić, a gdy rolnik wskaże Cię w KSeF, wystawiasz tam wszystkie, aż cofnie wskazanie.";
@@ -153,6 +154,7 @@ export default function FakturaVatRrKsefArticle() {
               headline: "Faktura VAT RR w KSeF: kiedy trzeba",
               description: OPIS,
               datePublished: "2026-10-18",
+              dateModified: dataZmiany("/strefa-wiedzy/faktura-vat-rr-ksef", "2026-10-18"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

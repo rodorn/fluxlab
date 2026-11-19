@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Prawo do odliczenia VAT z faktury KSeF powstaje w dniu nadania numeru KSeF, nie wystawienia. Wklej numer i zobacz miesiąc odliczenia, bez logowania.";
@@ -163,6 +164,7 @@ export default function KiedyOdliczycVatKsefArticle() {
               headline: "Kiedy odliczyć VAT z faktury z KSeF",
               description: OPIS,
               datePublished: "2026-10-10",
+              dateModified: dataZmiany("/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef", "2026-10-10"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

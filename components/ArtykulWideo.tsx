@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export type ArtykulWideoDane = {
   slug: string;
@@ -248,6 +249,7 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
               headline: d.h1,
               description: d.opis,
               datePublished: d.opublikowano,
+              dateModified: dataZmiany(adres(d), d.opublikowano),
               mainEntityOfPage: url,
               author: {
                 "@type": "Organization",

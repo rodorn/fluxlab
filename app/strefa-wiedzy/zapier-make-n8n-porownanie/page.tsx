@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Zapier vs Make vs n8n, wielkie porównanie 2026 | Fluxlab",
@@ -359,6 +360,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
             description:
               "Pełne porównanie Zapier, Make i n8n w 2026: pricing, integracje, krzywa nauki, skalowalność, compliance i koszt na różną skalę. Konkretne kryteria wyboru.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/zapier-make-n8n-porownanie", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

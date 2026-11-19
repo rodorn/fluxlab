@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Fakturę przyjętą przez KSeF poprawia tylko sprzedawca, fakturą korygującą. Przy złym NIP robi korektę do zera i nową fakturę, a odrzucony plik wysyła od nowa.";
@@ -165,6 +166,7 @@ export default function BladWFakturzeKsefArticle() {
               headline: "Błąd w fakturze w KSeF",
               description: OPIS,
               datePublished: "2026-10-11",
+              dateModified: dataZmiany("/strefa-wiedzy/blad-w-fakturze-ksef", "2026-10-11"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

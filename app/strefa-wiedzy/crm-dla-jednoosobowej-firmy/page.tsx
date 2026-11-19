@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Tabs from "@/components/Tabs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "CRM dla jednoosobowej firmy, co wybrać | Fluxlab",
@@ -279,6 +280,7 @@ export default function CrmDlaJednoosobowejFirmyArticle() {
             description:
               "Porównanie CRM dla jednoosobowych firm: Pipedrive, HubSpot Free, Folk, Attio, Notion, Monday CRM i Arkusze Google. Co wybrać, a czego unikać.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/crm-dla-jednoosobowej-firmy", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

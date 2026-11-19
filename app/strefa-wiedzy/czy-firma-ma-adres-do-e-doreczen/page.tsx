@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Adres firmy znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma, i czego sprawdzić się nie da.";
@@ -180,6 +181,7 @@ export default function CzyFirmaMaAdresArticle() {
                 "Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń",
               description: OPIS,
               datePublished: "2026-11-09",
+              dateModified: dataZmiany("/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen", "2026-11-09"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

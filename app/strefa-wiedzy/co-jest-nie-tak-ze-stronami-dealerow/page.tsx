@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Sprawdziliśmy 386 stron dealerów, wyniki | Fluxlab",
@@ -225,6 +226,7 @@ export default function Page() {
               description:
                 "Ile stron nie pozwala ustalić sprzedawcy, ile nie ma mapy strony i ile domen jest zapisanych na obce firmy. Pomiar na 386 domenach, z metodą i zastrzeżeniami.",
               datePublished: "2026-09-20",
+              dateModified: dataZmiany("/strefa-wiedzy/co-jest-nie-tak-ze-stronami-dealerow", "2026-09-20"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

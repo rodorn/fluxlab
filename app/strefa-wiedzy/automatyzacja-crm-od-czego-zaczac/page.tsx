@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Automatyzacja CRM z AI, od czego zacząć | Fluxlab",
@@ -131,6 +132,7 @@ export default function AutomatyzacjaCrmOdCzegoZaczacArticle() {
             description:
               "Jak zacząć automatyzację CRM, także z AI: proces, leady, zadania, walidacja danych i pierwsze wdrożenia o największym zwrocie.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

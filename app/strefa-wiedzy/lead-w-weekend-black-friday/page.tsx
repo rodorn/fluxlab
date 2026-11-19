@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Black Friday 2026 wypada 27.11, a leady przyjdą też w sobotę. Kto ma je odebrać, ile kosztuje dyżur handlowca w domu i co może zrobić automat.";
@@ -155,6 +156,7 @@ export default function LeadWWeekendBlackFriday() {
               headline: "Kto odpowiada na leada w sobotę po Black Friday",
               description: OPIS,
               datePublished: "2026-11-16",
+              dateModified: dataZmiany("/strefa-wiedzy/lead-w-weekend-black-friday", "2026-11-16"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

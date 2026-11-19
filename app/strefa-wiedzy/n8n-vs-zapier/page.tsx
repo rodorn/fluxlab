@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "n8n vs Zapier: ile kosztuje n8n i kiedy się opłaca | Fluxlab",
@@ -342,6 +343,7 @@ export default function N8nVsZapierArticle() {
             description:
               "n8n vs Zapier: n8n na własnym serwerze od ok. 25 zł miesięcznie bez limitu wykonań, Zapier od 19,99 USD za 750 tasków. Kiedy self-hosting opłaca się firmie.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/n8n-vs-zapier", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

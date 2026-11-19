@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Pipedrive vs Salesforce, CRM dla MŚP w 2026 | Fluxlab",
@@ -216,6 +217,7 @@ export default function PipedriveVsSalesforceArticle() {
             description:
               "Pipedrive od ok. 14 USD, Salesforce od 25 USD za użytkownika. Wdrożenie 1 do 2 tygodni albo 3 do 6 miesięcy. Który CRM dla zespołu do 30 osób, który dla dużej.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/pipedrive-vs-salesforce", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

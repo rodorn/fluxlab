@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Automatyzacja raportowania w firmie | Fluxlab",
@@ -353,6 +354,7 @@ export default function AutomatyzacjaRaportowaniaArticle() {
             description:
               "Jak zautomatyzować raportowanie w firmie: dane z CRM, kampanii i arkuszy w jednym źródle, raport sprzedaży bez ręcznego sklejania.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

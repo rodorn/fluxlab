@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
   "Czy Gutschrift trafia do KSeF? Bez umowy o samofakturowanie to nie faktura: fakturę za usługę wystawiasz w KSeF sam, korektę tylko przy zmianie ceny.";
@@ -156,6 +157,7 @@ export default function GutschriftKsefArticle() {
               headline: "Gutschrift od klienta z Niemiec a KSeF",
               description: OPIS,
               datePublished: "2026-10-18",
+              dateModified: dataZmiany("/strefa-wiedzy/gutschrift-ksef", "2026-10-18"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

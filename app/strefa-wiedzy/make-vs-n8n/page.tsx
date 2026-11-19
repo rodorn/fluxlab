@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "n8n vs Make 2026: ceny i co wybrać w firmie | Fluxlab",
@@ -333,6 +334,7 @@ export default function MakeVsN8nArticle() {
             description:
               "n8n vs Make 2026: Make Core od 9 USD za 10 tys. operacji, n8n na własnym serwerze od 30 zł miesięcznie. Co wybrać w małej firmie.",
             datePublished: "2026-04-19",
+            dateModified: dataZmiany("/strefa-wiedzy/make-vs-n8n", "2026-04-19"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

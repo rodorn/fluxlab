@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Pod 84 procent salonów można się podszyć | Fluxlab",
@@ -211,6 +212,7 @@ export default function Page() {
               description:
                 "Badanie zabezpieczeń poczty na 386 domenach dealerskich. Komplet SPF, DKIM i DMARC w trybie, który cokolwiek blokuje, ma tylko szesnaście procent.",
               datePublished: "2026-09-20",
+              dateModified: dataZmiany("/strefa-wiedzy/podszywanie-pod-salony-samochodowe", "2026-09-20"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

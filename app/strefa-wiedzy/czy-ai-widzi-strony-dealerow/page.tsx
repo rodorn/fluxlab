@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WykresSlupkowy from "@/components/WykresSlupkowy";
 import SprawdzPoBadaniu from "@/components/SprawdzPoBadaniu";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Czy asystenci AI widzą strony dealerów | Fluxlab",
@@ -237,6 +238,7 @@ export default function Page() {
               description:
                 "Badanie 386 domen dealerskich. Roboty AI blokuje 0,8 procent stron, ale 54 procent nie ma danych uporządkowanych, a 16 procent jest pustych bez uruchomienia skryptów.",
               datePublished: "2026-09-21",
+              dateModified: dataZmiany("/strefa-wiedzy/czy-ai-widzi-strony-dealerow", "2026-09-21"),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",

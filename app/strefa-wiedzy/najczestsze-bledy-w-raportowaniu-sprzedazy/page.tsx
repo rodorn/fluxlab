@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
   title: "Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab",
@@ -117,6 +118,7 @@ export default function BledyRaportowanieArticle() {
             description:
               "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
             datePublished: "2026-03-30",
+            dateModified: dataZmiany("/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy", "2026-03-30"),
             author: {
               "@type": "Organization",
               name: "Fluxlab",
