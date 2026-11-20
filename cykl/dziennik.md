@@ -12079,3 +12079,24 @@ Z4: fluxlab.pl jest tylko na „faktury KSeF zmiana biura rachunkowego” (pozyc
 **Dowód:** Resend `GET /emails/<id>` dla 56 adresów z `wyslane_wp.json`: 53 delivered, 3 bounced (info@dental-practice.pl, info@medicavision.pl, info@magnolianailbar.pl), bez zmian; lista domen 52 (56 adresów). Zoho IMAP od 20.11 00:40: INBOX 2 (08:00 raport social media FluxLab, 09:59 Thulium „Współpraca Fluxlab x Thulium”, domena spoza listy), Spam 0. mail/wordpress 7 dni: 1 sesja (13.11).
 **Dla Pawła:** pusto (Thulium, oferta partnerska z 20.11 09:59, ma już odpowiedź z Wysłanych 20.11 10:31).
 **Zostało otwarte:** Z7 (lejek google-ads dla FL_adsGoogle) od 14:40; Z3 i Z5 do ponowienia przy innym rytmie budżetu.
+
+## 2026-11-20 14:58
+**Kanał:** pomiar (google-ads dla FL_adsGoogle, GitHub).
+**Co zrobione:** Z7: lejek google-ads z 7 dni policzony i wysłany do FL_adsGoogle; Z8: opisy repozytoriów GitHub od 19.11 16:47 nie dały ani jednej sesji. Nic nie poszło w świat.
+**Ruch:** raport_ruchu doba: 427 odsłon, 219 osób (surowo; b2b-email 268, google.com 30, b2b 13, linkedin 13, google-ads 10); uruchomienia narzędzi 11; lejek 7 dni: 11 form_start, 1 zapytanie.
+
+Lejek google-ads, 13-20.11, po odsiewie:
+
+| kampania | strona wejścia | sesje | 2. odsłona | aktywny_30s | przewinięcie_50 | widok_formularza | form_start | zapytania |
+|---|---|---|---|---|---|---|---|---|
+| 24472439947 | /ksef-integracja | 32 | 2 | 3 | 2 | 23 | 0 | 0 |
+| e-doreczenia | /e-doreczenia-integracja | 10 | 1 | 0 | 1 | 6 | 0 | 0 |
+| 24456876167 | /automatyzacja-procesow-biznesowych, /wdrozenie-n8n-cena | 6 | 3 | 0 | 1 | 1 | 0 | 0 |
+| n8n-procesy | /wdrozenie-n8n-cena, /automatyzacja-procesow-biznesowych | 6 | 0 | 0 | 3 | 5 | 0 | 0 |
+| ads | 5 różnych stron | 6 | 2 | 0 | 0 | 0 | 0 | 0 |
+| test | /ksef-integracja | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+
+Jedyne zapytanie z google-ads („1 zapytanie 16.11” z planu) to test: utm_campaign=test, Chrome Android, od wejścia do lead_krotki 12 s. Realnie 60 sesji, 0 form_start, 0 zapytań; 25 z 61 sesji to jedna odsłona bez żadnego zdarzenia.
+**Dowód:** meldunek do FL_adsGoogle przez `sesja napisz` (w skrzynce, dojdzie z najbliższą turą); github: 0 sesji z github.com ani utm_source=github od 19.11 16:47, homepageUrl obu repozytoriów nadal z utm (fluxlab-kalkulatory → /narzedzia, fluxlab-video-reklamy → /).
+**Dla Pawła:** pusto.
+**Zostało otwarte:** Z9 (odpowiedź na pytanie z Google, bramka budżetu) i Z10 (pomiar) od 16:40; Z11 od 18:40, Z12 od 20:40, oba zależne od budżetu.
