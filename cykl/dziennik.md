@@ -12124,3 +12124,34 @@ Jedyne zapytanie z google-ads („1 zapytanie 16.11” z planu) to test: utm_cam
 **Dowód:** cykl/plan-ruchu.md, linia Z12.
 **Dla Pawła:** 
 **Zostało otwarte:** Z13 bilans dnia (22:40), Z14 stan kolejki FL_meta (22:40), Z15-Z17 w nocy i rano 21.11.
+
+## 2026-11-20 22:53
+**Kanał:** pomiar (Z13 bilans dnia, Z14 stan kolejki FL_meta).
+**Co zrobione:** nic nie poszło w świat; policzony bilans 20.11 i sprawdzona kolejka FL_meta: trzy posty o białej liście wyszły dawno (ostatni 10.11), a kampanie biala-lista-15k i biala-lista-api nie dały od 18.11 ani jednej sesji.
+**Ruch:** raport_ruchu doba 460 odsłon, 233 osoby (b2b-email 264 to piksel otwarć); pomiar-kanalow 24 h po odsiewie 59 ludzi, 74 odsłony.
+
+Bilans 20.11 (kalendarzowo, do 22:45, po odsiewie, bez /mail/, b2b-email i sesji testowych):
+
+| Kanał | 20.11 | 19.11 (do 22:45) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 59 / 74 | 48 / 54 |
+| www.google.com | 7 (/ 4, czy-firma-ma-adres-do-e-doreczen 1 z 3 odsłonami, faktury-kosztowe-z-ksef-na-mail 1, wlasny-crm 1) | 6 |
+| google-ads | 7 (24472439947, wszystkie /ksef-integracja) | 10 |
+| b2b (b2b-firmy, /) | 6 | brak w tabeli |
+| useme.com | 3 | brak w tabeli |
+| chatgpt płatne / naturalne | 0 / 0 | 0 / 0 |
+| Facebook / Instagram | 0 / 0 | 0 / 1 |
+| YouTube / Threads | 0 / 0 | 0 / 0 |
+| GitHub | 0 | 0 |
+| Bing / LinkedIn | 1 / 1 | 1 / 0 |
+| Bez odsyłacza | 33 | 30 |
+| Uruchomienia narzędzi | 0 | 14 |
+| Pobrania PDF | 3 (ebook-ksef-2027, checklista-ksef-2027, schemat-integracji-crm-erp) | 7 |
+| form_start | 0 | 1 |
+| lead_* | 0 | 0 |
+
+Wzrost o 11 sesji przyszedł z b2b (6) i useme (3), Google organiczne bez zmian, google-ads mniej o 3 i nadal tylko /ksef-integracja z 7 widokami formularza bez rozpoczęcia. Narzędzia: zero uruchomień w całej dobie. Resend 24 h: 5 wysłanych, 1 odbity to adres testowy fl+test@fluxlab.pl. Zoho 24 h: 0 odpowiedzi na outreach; przyszły m.in. 2 maile Thulium („Współpraca Fluxlab x Thulium”) i „Wezwanie do złożenia uzupełnień FluxLab” z doresgastronomia.pl (nie otwierany, wzór na phishing).
+Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-lista-15k-sprawdz-nip 10.11 13:18 (Facebook fbid=122122438095504058); utm biala-lista-15k 0 i biala-lista-api 0 sesji od 18.11, także przed odsiewem. Wcześniejszy zapis „324 nadal niewydany” był błędny, więc wstrzymanie nowych tematów FL_meta do jego publikacji nie ma już podstawy.
+**Dowód:** cykl/plan-ruchu.md, linie Z13 i Z14.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 reakcje nocne outreachu (21.11 00:40), Z16 IndexNow dnia (04:40), Z17 pomiar dla stratega (06:40).
