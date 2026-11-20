@@ -22,7 +22,6 @@ const POLA = ["imie", "email", "telefon", "firma", "nip", "wiadomosc"];
 const AKTYWNE = new Set(["active", "trialing", "past_due"]);
 const ZNACZNIK = "przyjete_lead";
 const RETENCJA_DNI = 365;
-const OPINIA_BLOKADA_DNI = 90;
 const PO_REZYGNACJI_DNI = 30;
 const tajny = (n: number) => randomBytes(n).toString("base64url");
 
@@ -178,9 +177,9 @@ export async function wyslijProsbeOpinia(p: string, wej: Record<string, unknown>
   const email = String(wej.email ?? "").trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { kod: 400, blad: "Adres e-mail wygląda na błędny." };
   const imie = String(wej.imie ?? "").trim().slice(0, 120);
-  const wyslane = await db.lista<{ email: string; imie: string }>("opinie", { klucz: k.id, limit: 500 });
-  if (wyslane.some((o) => o.dane.email === email && Date.now() - Date.parse(o.utworzono) < OPINIA_BLOKADA_DNI * 86400000))
-    return { kod: 409, blad: `Do tego adresu prośba poszła w ciągu ostatnich ${OPINIA_BLOKADA_DNI} dni.` };
+  const wyslane = await db.lista<{ email: string; imie: string }>("opinie", { klucz: k.id, limit: 5000 });
+  if (wyslane.some((o) => o.dane.email === email))
+    return { kod: 409, blad: "Do tego adresu prośba już poszła, drugiej nie wysyłamy." };
   if ((await db.licz("opinie", { klucz: k.id, od: new Date().toISOString().slice(0, 10) })) >= LIMIT_DOBA)
     return { kod: 429, blad: "Dzienny limit próśb wyczerpany." };
   const nazwa = (k.dane.ustawienia.firma || k.dane.nazwa || "Fluxlab").replace(/["<>]/g, "");

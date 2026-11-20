@@ -31,7 +31,7 @@ export default function Page() {
       checks={[
         { title: "Mail z Twoją nazwą i jednym przyciskiem", desc: "Klient klika i trafia prosto na formularz opinii Twojej firmy w Google. Odpowiedzi trafiają do Twojej skrzynki." },
         { title: "Z panelu albo z automatu", desc: "Adres klienta wpiszesz w panelu albo wyślesz z Zapier i Make żądaniem POST na tajny adres z maila powitalnego." },
-        { title: "Bez zalewania klientów", desc: "Na ten sam adres prośba nie wyjdzie drugi raz w ciągu 90 dni, a dzienny limit chroni przed pomyłką. Lista wysłanych próśb jest w panelu." },
+        { title: "Bez zalewania klientów", desc: "Na ten sam adres prośba wychodzi tylko raz (pamiętamy go przez rok, potem dane z listy są kasowane), a dzienny limit chroni przed pomyłką. Lista wysłanych próśb jest w panelu." },
       ]}
       pricing={[
         {
