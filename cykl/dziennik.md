@@ -12071,3 +12071,11 @@ Z4: fluxlab.pl jest tylko na „faktury KSeF zmiana biura rachunkowego” (pozyc
 **Dowód:** cykl/z4-pozycje-2026-11-20.txt (12 wierszy z 3 pierwszymi domenami i pytaniami z ramki), plan Z3 [!], Z4 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (tytuł e-Doręczeń, [T], bramka budżetu) i Z6 (reakcje na outreach) od 12:40.
+
+## 2026-11-20 12:50
+**Kanał:** 4 (outreach, pomiar reakcji); Z5 zablokowany budżetem.
+**Co zrobione:** Z5 [!] budżet „wstrzymaj” (50% tygodnia, prognoza 149%); Z6 [x] reakcje na 56 maili `wordpress`: 0 odpowiedzi, 0 nowych wejść, nic nie poszło w świat.
+**Ruch:** raport_ruchu doba: 453 odsłony, 233 osoby (surowo; b2b-email 281, google.com 23, google-ads 21, linkedin 13). pomiar-kanalow po odsiewie 24 h: 50 ludzi, 63 odsłony: bez odsyłacza 30, google-ads 10, b2b 6, www.google.com 4, Bing 2, panel 1, linkedin 1, useme 1. 7 dni: 379 sesji, google-ads 60, google.com 36, chatgpt 25. Uruchomienia narzędzi 11 na dobę.
+**Dowód:** Resend `GET /emails/<id>` dla 56 adresów z `wyslane_wp.json`: 53 delivered, 3 bounced (info@dental-practice.pl, info@medicavision.pl, info@magnolianailbar.pl), bez zmian; lista domen 52 (56 adresów). Zoho IMAP od 20.11 00:40: INBOX 2 (08:00 raport social media FluxLab, 09:59 Thulium „Współpraca Fluxlab x Thulium”, domena spoza listy), Spam 0. mail/wordpress 7 dni: 1 sesja (13.11).
+**Dla Pawła:** pusto (Thulium, oferta partnerska z 20.11 09:59, ma już odpowiedź z Wysłanych 20.11 10:31).
+**Zostało otwarte:** Z7 (lejek google-ads dla FL_adsGoogle) od 14:40; Z3 i Z5 do ponowienia przy innym rytmie budżetu.
