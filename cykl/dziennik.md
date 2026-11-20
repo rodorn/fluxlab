@@ -12155,3 +12155,12 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dowód:** cykl/plan-ruchu.md, linie Z13 i Z14.
 **Dla Pawła:**
 **Zostało otwarte:** Z15 reakcje nocne outreachu (21.11 00:40), Z16 IndexNow dnia (04:40), Z17 pomiar dla stratega (06:40).
+<!-- WYSLANO 2026-11-21 00:09 -->
+
+## 2026-11-21 00:52
+**Kanał:** 4, outreach (tylko pomiar, kanał zatrzymany decyzją 19.11 „Stop”).
+**Co zrobione:** Z15 [x]: reakcje na 56 maili `wordpress` od 20.11 12:40: 0 odpowiedzi, 0 nowych wejść; nic nie poszło w świat. Z16 (od 04:40) i Z17 (od 06:40) jeszcze niedostępne, a budżet stoi na „wstrzymaj” (prognoza 124% tygodnia, hamulec alarm), więc bez pracy poza planem.
+**Ruch:** raport_ruchu: doba 468 odsłon, 236 osób; źródła b2b-email 269, www.google.com 17, useme.com 16, b2b 15, google-ads 14. Po odsiewie (pomiar-kanalow, 24 h): 59 ludzi; bez odsyłacza 36, google-ads 7, www.google.com 7, b2b 6, useme.com 3, linkedin 1, bing 1.
+**Dowód:** Resend `GET /emails/<id>` dla 56 adresów z `wyslane_wp.json` (00:45): 53 delivered, 3 bounced (info@dental-practice.pl, info@medicavision.pl, info@magnolianailbar.pl), bez zmian; lista domen 52. Zoho IMAP od 20.11 12:40: INBOX 7 (Clarity, Thulium, raport TLS Google, doresgastronomia.pl „Wezwanie do złożenia uzupełnień FluxLab” 18:51, 2× dns.pl o marketingseo.pl, test z pawel@fluxlab.pl), żadna z domen listy; Spam 0. mail/wordpress 7 dni: 1 sesja (16.11 10:44, /audyt-strony).
+**Dla Pawła:** 
+**Zostało otwarte:** Z16 IndexNow dnia (od 04:40), Z17 pomiar dla stratega (od 06:40).
