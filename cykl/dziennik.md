@@ -12043,3 +12043,11 @@ Artykuły zmienione 18.11: kiedy-odliczyc-vat-z-faktury-ksef 2/1, numer-ksef-w-p
 **Dowód:** Z16: https://fluxlab.pl/e-doreczenia-dla-firm, /e-doreczenia-integracja, /ksef-integracja, /strony-www, /wdrozenie-n8n-cena, wszystkie 200 bez noindex; IndexNow wspólny 403 (znane, zgłoszenie i tak dochodzi), Yandex 200, Naver 200; sitemap.xml 278 adresów. Budżet: rytm „wstrzymaj”, prognoza 159% tygodnia, nowyCykl false.
 **Dla Pawła:**
 **Zostało otwarte:** Z17 (pomiar dla stratega) od 06:40, do wzięcia w następnym cyklu.
+
+## Strategia dobowa 2026-11-20
+**Wynik doby (24 h do 20.11 07:56, po odsiewie):** 48 ludzi (doba wcześniej 39), tydzień 369. google-ads 10 / 59 w tygodniu, Google organiczny 5 / 38, chatgpt płatne 0 / 28, chatgpt.com 0 / 3, Facebook 1 / 12, github 0 / 6, Bing 1 / 3, bez odsyłacza 30 / 207. Uruchomienia narzędzi 12, form_start w tygodniu 11, zapytania 1 (16.11), lead_* 0. Outreach `wordpress` zatrzymany decyzją 19.11 10:00 (56 maili, 0 odpowiedzi, 1 osoba). Plan 19.11: 9 z 17 [x], 5 zmian treści zablokował budżet („wstrzymaj”, 45% tygodnia, prognoza 159%), 3 pomiary nocne nie ruszyły, bo komputer był uśpiony 00:48-07:54.
+**Plan 20.11:** 17 zadań (cykl/plan-ruchu.md), bez wysyłek, zmiany treści z bramką budżetu. Trzy najważniejsze: linki do artykułu o białej liście VAT z dwóch artykułów KSeF, bo ma najwięcej wejść z Google i zero linków z treści (Z3); pozycje 12 kolejnych artykułów w Google z „Podobnymi pytaniami” (Z4); nowy tytuł artykułu o adresie e-Doręczeń z pozycji 4 (Z5). Nowe: lejek google-ads dla FL_adsGoogle (Z7), bo to największe źródło (59 z 369 sesji, 1 zapytanie).
+**Dla Pawła:**
+- Search Console wylogowany 23. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez niego nie widać zapytań ani indeksu, a Google to 38 osób tygodniowo.
+- Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
+- Kolejka FL_meta: posty o białej liście zlecone 8.11 (324-biala-lista-15k-sprawdz-nip, wyjście 10.11) nadal niewydane; nowe tematy wstrzymane do ich publikacji. Sprawdzenie w sesji FL_meta (5 min).
