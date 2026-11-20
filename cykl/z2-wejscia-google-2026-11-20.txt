@@ -1,0 +1,18 @@
+Wejścia z Google 7 dni (do 2026-11-20 08:43): 36 sesji, 10 z drugą odsłoną
+strona wejścia                                               sesje  z_drugą
+/strefa-wiedzy/biala-lista-vat-nowe-api                         11       2
+/                                                                9       2
+/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen                  4       2
+/numer-ksef                                                      3       1
+/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef                 2       1
+/kalkulator-podatkowy                                            2       0
+/narzedzia/kalkulator-pit                                        1       1
+/strefa-wiedzy/faktura-do-paragonu-ksef                          1       0
+/strefa-wiedzy/numer-ksef-w-przelewie                            1       0
+/strefa-wiedzy/blad-w-fakturze-ksef                              1       0
+/dla-zespolu                                                     1       1
+
+Artykuły zmienione 16-19.11:
+/strefa-wiedzy/numer-ksef-w-przelewie                            1       0
+/strefa-wiedzy/limit-10-tys-poza-ksef                            0       0
+/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef                 2       1

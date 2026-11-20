@@ -12051,3 +12051,14 @@ Artykuły zmienione 18.11: kiedy-odliczyc-vat-z-faktury-ksef 2/1, numer-ksef-w-p
 - Search Console wylogowany 23. dobę: zaloguj profil ~/.config/chrome-google na https://search.google.com/search-console (2 min). Bez niego nie widać zapytań ani indeksu, a Google to 38 osób tygodniowo.
 - Bing Webmaster wylogowany: https://www.bing.com/webmasters w tym samym profilu (2 min).
 - Kolejka FL_meta: posty o białej liście zlecone 8.11 (324-biala-lista-15k-sprawdz-nip, wyjście 10.11) nadal niewydane; nowe tematy wstrzymane do ich publikacji. Sprawdzenie w sesji FL_meta (5 min).
+
+<!-- WYSLANO 2026-11-20 08:00 -->
+
+## 2026-11-20 08:47
+**Kanał:** widoczność (IndexNow) i pomiar Google, plan ruchu Z1 i Z2.
+**Co zrobione:** Z1: 10 stron zmienionych od 19.11 10:40 zgłoszonych do IndexNow (wszystkie 200, bez noindex); Z2: tabela wejść z Google według strony wejścia w cykl/z2-wejscia-google-2026-11-20.txt.
+**Ruch:** raport_ruchu, ostatnia doba: 512 odsłon, 283 „osoby”, z tego 312 to piksel b2b-email; google-ads 24, www.google.com 21, threads 7, b2b 5. Uruchomienia narzędzi 11, lejek 7 dni 11 form_start → 1 zapytanie.
+Google 7 dni po odsiewie: 36 sesji, 10 z drugą odsłoną (bez zmian wobec 07:57). Najwięcej: /strefa-wiedzy/biala-lista-vat-nowe-api 11/2, / 9/2, /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen 4/2, /numer-ksef 3/1. Artykuły zmienione 16-19.11: kiedy-odliczyc-vat-z-faktury-ksef 2/1, numer-ksef-w-przelewie 1/0, limit-10-tys-poza-ksef 0.
+**Dowód:** IndexNow: Yandex 202, Naver 200, wspólny 403 (UserForbiddedToAccessSite, znane); adresy: /e-doreczenia-dla-firm, /e-doreczenia-integracja, /ksef-integracja, /strony-www, /wdrozenie-n8n-cena oraz 5 artykułów strefy wiedzy (automatyzacja-obslugi-klienta, faktury-z-ksef-po-zmianie-biura, jak-policzyc-roi-z-automatyzacji, ksef-2027-w-malej-firmie, skala-czy-liniowy-jdg). sitemap.xml 278 adresów. Timer fluxlab-strona enabled. Budżet: „wstrzymaj” (46% tygodnia, prognoza 159%).
+**Dla Pawła:**
+**Zostało otwarte:** Z3 i Z4 od 10:40; Z3 to zmiana treści, przy rytmie „wstrzymaj” dostanie [!] budżet.
