@@ -10,6 +10,7 @@ import WyborNarzedzia from "@/components/WyborNarzedzia";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CtaNadNarzedziem from "@/components/CtaNadNarzedziem";
 import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -255,6 +256,7 @@ export default function Narzedzia() {
 
         <div id="sekcje" className="scroll-mt-20 container-wide py-12 pb-20">
           <div className="max-w-5xl mx-auto">
+            <CtaNadNarzedziem miejsce="narzedzia" />
             {/* Na telefonie pastylki idą w jednym rzędzie z przewijaniem, żeby
                 nie spychały kafli pod krawędź ekranu. */}
             <div className="max-sm:[&_div.flex-wrap]:flex-nowrap max-sm:[&_div.flex-wrap]:overflow-x-auto max-sm:[&_button]:shrink-0 max-sm:[&_button]:whitespace-nowrap">
