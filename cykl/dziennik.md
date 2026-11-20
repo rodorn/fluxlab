@@ -12062,3 +12062,12 @@ Google 7 dni po odsiewie: 36 sesji, 10 z drugą odsłoną (bez zmian wobec 07:57
 **Dowód:** IndexNow: Yandex 202, Naver 200, wspólny 403 (UserForbiddedToAccessSite, znane); adresy: /e-doreczenia-dla-firm, /e-doreczenia-integracja, /ksef-integracja, /strony-www, /wdrozenie-n8n-cena oraz 5 artykułów strefy wiedzy (automatyzacja-obslugi-klienta, faktury-z-ksef-po-zmianie-biura, jak-policzyc-roi-z-automatyzacji, ksef-2027-w-malej-firmie, skala-czy-liniowy-jdg). sitemap.xml 278 adresów. Timer fluxlab-strona enabled. Budżet: „wstrzymaj” (46% tygodnia, prognoza 159%).
 **Dla Pawła:**
 **Zostało otwarte:** Z3 i Z4 od 10:40; Z3 to zmiana treści, przy rytmie „wstrzymaj” dostanie [!] budżet.
+
+## 2026-11-20 10:58
+**Kanał:** pomiar Google (plan ruchu Z3, Z4).
+**Co zrobione:** Z3 (linki do artykułu o białej liście) dostał [!] budżet, rytm „wstrzymaj” (48% tygodnia, prognoza 146%); Z4: pozycje 12 nowych fraz w Google z „Podobnymi pytaniami” w cykl/z4-pozycje-2026-11-20.txt.
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 53 ludzi (google-ads 10, Google organiczny 4, b2b 6, Instagram 1, Bing 1, LinkedIn 1, bez odsyłacza 33); 7 dni 379. raport_ruchu doba: 506 odsłon, 270 „osób”, z tego 333 to piksel b2b-email; uruchomienia narzędzi 11, lejek 7 dni 11 form_start → 1 zapytanie.
+Z4: fluxlab.pl jest tylko na „faktury KSeF zmiana biura rachunkowego” (pozycja 21). Brak w pierwszych 30 dla 11 fraz: e-Doręczenia w firmie, faktura dla kontrahenta zagranicznego KSeF, faktura dla osoby prywatnej KSeF, KSeF 2027 mała firma, ZAW-FA spółka, firmowe maile w spamie, podszywanie pod mail firmowy, składka zdrowotna JDG 2026, ryczałt czy liniowy 2026, mały ZUS plus 2026, VAT w JDG kiedy warto. Żadna fraza nie wypadła na 4-9, więc Z12 zostaje przy fakturze wewnętrznej. Bez captchy.
+**Dowód:** cykl/z4-pozycje-2026-11-20.txt (12 wierszy z 3 pierwszymi domenami i pytaniami z ramki), plan Z3 [!], Z4 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (tytuł e-Doręczeń, [T], bramka budżetu) i Z6 (reakcje na outreach) od 12:40.
