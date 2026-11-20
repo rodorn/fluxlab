@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
+import RamkaOferty from "@/components/RamkaOferty";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { dataZmiany } from "@/lib/data-zmiany";
@@ -109,6 +110,11 @@ export default function FakturyZKsefPoZmianieBiuraArticle() {
                 .
               </p>
             </section>
+            <RamkaOferty
+              tytul="Faktury z KSeF mają trafiać do programu księgowego?"
+              tekst="Podepniemy pobieranie faktur pod Twój system. Cena w 1 dzień."
+              href="/ksef-integracja"
+            />
             <section>
               <h2 className="mb-4 h2-sekcji">Czego w KSeF nie ma</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">

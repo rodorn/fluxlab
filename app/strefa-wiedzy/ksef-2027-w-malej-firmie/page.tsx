@@ -6,5 +6,12 @@ export async function generateMetadata() {
 }
 
 export default function Page() {
-  return <ArtykulWideo d={d} />;
+  return <ArtykulWideo
+      d={d}
+      ramka={{
+        tytul: "Masz już system do faktur?",
+        tekst: "Podepniemy go pod KSeF. Cena w 1 dzień.",
+        href: "/ksef-integracja",
+      }}
+    />;
 }

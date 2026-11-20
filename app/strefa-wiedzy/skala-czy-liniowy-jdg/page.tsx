@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
+import RamkaOferty from "@/components/RamkaOferty";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import Tabs from "@/components/Tabs";
@@ -160,6 +161,11 @@ export default function SkalaCzyLiniowyJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
+                      <RamkaOferty
+                        tytul="Rozliczenia w JDG zabierają Ci czas?"
+                        tekst="Zautomatyzujemy fakturowanie i raporty. Cena w 1 dzień."
+                        href="/ksef-integracja"
+                      />
                       <h2 className="h2-sekcji mb-6">
                         Podatek i składka zdrowotna łącznie
                       </h2>

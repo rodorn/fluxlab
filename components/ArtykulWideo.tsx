@@ -1,8 +1,10 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
+import RamkaOferty from "@/components/RamkaOferty";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { dataZmiany } from "@/lib/data-zmiany";
@@ -59,7 +61,13 @@ export function metadaneArtykuluWideo(d: ArtykulWideoDane): Metadata {
   };
 }
 
-export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
+export default function ArtykulWideo({
+  d,
+  ramka,
+}: {
+  d: ArtykulWideoDane;
+  ramka?: { tytul: string; tekst: string; href: string; przycisk?: string };
+}) {
   const url = `https://fluxlab.pl${adres(d)}`;
   const film = d.youtubeId && `https://www.youtube.com/watch?v=${d.youtubeId}`;
   const kat = d.kategoria ?? { nazwa: "Wideo", slug: "wideo" };
@@ -132,77 +140,94 @@ export default function ArtykulWideo({ d }: { d: ArtykulWideoDane }) {
 
             <article className="mt-12 space-y-12 prose-justify">
               {d.sekcje.map((s, i) => (
-                <section key={s.h2} id={`s${i + 1}`} className="scroll-mt-24">
-                  <h2 className="mb-4 h2-sekcji">{s.h2}</h2>
-                  {s.akapity.map((a, j) => (
-                    <p
-                      key={j}
-                      className="mt-4 first:mt-0 text-gray-600 dark:text-gray-400 leading-relaxed"
-                    >
-                      {a}
-                    </p>
-                  ))}
-                  {s.lista && (
-                    <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-600 dark:text-gray-400">
-                      {s.lista.map((p) => (
-                        <li key={p}>{p}</li>
-                      ))}
-                    </ul>
-                  )}
-                  {s.linki && (
-                    <ul className="mt-4 space-y-2">
-                      {s.linki.map((l) => (
-                        <li key={l.href}>
-                          <Link href={l.href} className="font-semibold text-accent hover:underline">
-                            {l.tekst}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {s.tabela && (
-                    <div className="mt-6 overflow-x-auto">
-                      <table className="w-full min-w-[36rem] text-left text-sm text-gray-600 dark:text-gray-400">
-                        <thead className="text-gray-900 dark:text-white">
-                          <tr className="border-b border-gray-200 dark:border-gray-700">
-                            {s.tabela.naglowki.map((h, k) => (
-                              <th key={k} className="py-2 pr-4 font-semibold align-bottom">
-                                {h}
-                              </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {s.tabela.wiersze.map((w) => (
-                            <tr key={w[0]} className="border-b border-gray-100 dark:border-gray-800">
-                              {w.map((k, n) =>
-                                n === 0 ? (
-                                  <th key={n} className="py-2 pr-4 font-semibold text-gray-900 dark:text-white align-top">
-                                    {k}
-                                  </th>
-                                ) : (
-                                  <td key={n} className="py-2 pr-4 align-top">
-                                    {k}
-                                  </td>
-                                ),
-                              )}
+                <Fragment key={s.h2}>
+                  <section id={`s${i + 1}`} className="scroll-mt-24">
+                    <h2 className="mb-4 h2-sekcji">{s.h2}</h2>
+                    {s.akapity.map((a, j) => (
+                      <p
+                        key={j}
+                        className="mt-4 first:mt-0 text-gray-600 dark:text-gray-400 leading-relaxed"
+                      >
+                        {a}
+                      </p>
+                    ))}
+                    {s.lista && (
+                      <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-600 dark:text-gray-400">
+                        {s.lista.map((p) => (
+                          <li key={p}>{p}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {s.linki && (
+                      <ul className="mt-4 space-y-2">
+                        {s.linki.map((l) => (
+                          <li key={l.href}>
+                            <Link
+                              href={l.href}
+                              className="font-semibold text-accent hover:underline"
+                            >
+                              {l.tekst}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {s.tabela && (
+                      <div className="mt-6 overflow-x-auto">
+                        <table className="w-full min-w-[36rem] text-left text-sm text-gray-600 dark:text-gray-400">
+                          <thead className="text-gray-900 dark:text-white">
+                            <tr className="border-b border-gray-200 dark:border-gray-700">
+                              {s.tabela.naglowki.map((h, k) => (
+                                <th
+                                  key={k}
+                                  className="py-2 pr-4 font-semibold align-bottom"
+                                >
+                                  {h}
+                                </th>
+                              ))}
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
+                          </thead>
+                          <tbody>
+                            {s.tabela.wiersze.map((w) => (
+                              <tr
+                                key={w[0]}
+                                className="border-b border-gray-100 dark:border-gray-800"
+                              >
+                                {w.map((k, n) =>
+                                  n === 0 ? (
+                                    <th
+                                      key={n}
+                                      className="py-2 pr-4 font-semibold text-gray-900 dark:text-white align-top"
+                                    >
+                                      {k}
+                                    </th>
+                                  ) : (
+                                    <td key={n} className="py-2 pr-4 align-top">
+                                      {k}
+                                    </td>
+                                  ),
+                                )}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                    {film && s.od !== undefined && (
+                      <a
+                        href={`${film}&t=${s.od}s`}
+                        target="_blank"
+                        rel="noopener"
+                        className="mt-4 inline-flex text-sm text-accent hover:underline"
+                      >
+                        Ta część w filmie od {czas(s.od)}
+                      </a>
+                    )}
+                  </section>
+                  {ramka && i === Math.ceil(d.sekcje.length / 2) - 1 && (
+                    <RamkaOferty {...ramka} />
                   )}
-                  {film && s.od !== undefined && (
-                    <a
-                      href={`${film}&t=${s.od}s`}
-                      target="_blank"
-                      rel="noopener"
-                      className="mt-4 inline-flex text-sm text-accent hover:underline"
-                    >
-                      Ta część w filmie od {czas(s.od)}
-                    </a>
-                  )}
-                </section>
+                </Fragment>
               ))}
 
               <section>

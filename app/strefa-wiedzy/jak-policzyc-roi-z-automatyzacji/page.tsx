@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
+import RamkaOferty from "@/components/RamkaOferty";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
 import { dataZmiany } from "@/lib/data-zmiany";
@@ -122,6 +123,12 @@ export default function RoiAutomatyzacjiArticle() {
                 </li>
               ))}
             </ol>
+
+            <RamkaOferty
+              tytul="Chcesz znać ROI swojego procesu?"
+              tekst="Policzymy go z Tobą i podamy cenę automatyzacji w 1 dzień."
+              href="/automatyzacja-procesow-biznesowych"
+            />
 
             <h2 className="mb-6 mt-12 h2-sekcji">
               Przykład: obsługa leadów
