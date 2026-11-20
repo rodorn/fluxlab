@@ -12021,3 +12021,25 @@ Wzrost o 6 sesji to google-ads (+7) i Google organiczne (+3); spadły YouTube i 
 **Dowód:** Resend `GET /emails/<id>` dla 56 adresów z `wyslane_wp.json` (00:45): 53 delivered, 3 bounced (info@dental-practice.pl, info@medicavision.pl, info@magnolianailbar.pl), bez zmian; Zoho IMAP `SINCE 19-Nov-2026`: po 14:40 w INBOX tylko 1 wiadomość (14:54, wątek FINREAL, nie outreach), Spam 0; mail/wordpress 7 dni: 1 sesja (13.11); karta bdb474cd: Stop z 19.11 10:00, bez zmian.
 **Dla Pawła:**
 **Zostało otwarte:** Z15 (Google, strony wejścia 7 dni) od 02:40, Z16 (IndexNow) od 04:40, Z17 (pomiar) od 06:40.
+
+## 2026-11-20 07:57
+**Kanał:** 2 (widoczność, Google i IndexNow), pomiar Z15 i Z16 z planu 19.11.
+**Co zrobione:** Z15 tabela wejść z Google w 7 dni według strony wejścia; Z16 zgłoszenie 5 stron zmienionych formularzem jednokrokowym do IndexNow.
+**Ruch:** doba 424 odsłony, 226 osób; źródła: b2b-email 252 (piksel otwarć, nie ludzie), www.google.com 25, google-ads 23, threads 6, www.bing.com 3. Uruchomienia narzędzi 12. Lejek 7 dni: 1270 sesji, 11 form_start, 1 zapytanie.
+
+Z15, wejścia z `www.google.com` (bez utm) po odsiewie, 7 dni: 36 sesji, 10 z drugą odsłoną (19.11: 35/11).
+
+| strona wejścia | sesje | druga odsłona | zdarzenie |
+|---|---|---|---|
+| /strefa-wiedzy/biala-lista-vat-nowe-api | 11 | 2 | 2 |
+| / | 9 | 2 | 3 |
+| /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen | 4 | 2 | 1 |
+| /numer-ksef | 3 | 1 | 3 (w tym form_start) |
+| /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef | 2 | 1 | 1 |
+| /kalkulator-podatkowy | 2 | 0 | 1 (uruchomienie) |
+| po 1: /narzedzia/kalkulator-pit, /dla-zespolu, faktura-do-paragonu-ksef, numer-ksef-w-przelewie, blad-w-fakturze-ksef | 5 | 2 | 1 |
+
+Artykuły zmienione 18.11: kiedy-odliczyc-vat-z-faktury-ksef 2/1, numer-ksef-w-przelewie 1/0, limit-10-tys-poza-ksef 0. Z3, Z5, Z9, Z11, Z12 wstrzymane budżetem, więc nie ma ich zmian do oceny. biala-lista-vat-nowe-api wzrosła z 9 do 11 wejść i nadal nie ma linku z treści żadnego artykułu (Z3 do powtórzenia, gdy budżet pozwoli).
+**Dowód:** Z16: https://fluxlab.pl/e-doreczenia-dla-firm, /e-doreczenia-integracja, /ksef-integracja, /strony-www, /wdrozenie-n8n-cena, wszystkie 200 bez noindex; IndexNow wspólny 403 (znane, zgłoszenie i tak dochodzi), Yandex 200, Naver 200; sitemap.xml 278 adresów. Budżet: rytm „wstrzymaj”, prognoza 159% tygodnia, nowyCykl false.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (pomiar dla stratega) od 06:40, do wzięcia w następnym cyklu.
