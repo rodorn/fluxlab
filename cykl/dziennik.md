@@ -12100,3 +12100,27 @@ Jedyne zapytanie z google-ads („1 zapytanie 16.11” z planu) to test: utm_cam
 **Dowód:** meldunek do FL_adsGoogle przez `sesja napisz` (w skrzynce, dojdzie z najbliższą turą); github: 0 sesji z github.com ani utm_source=github od 19.11 16:47, homepageUrl obu repozytoriów nadal z utm (fluxlab-kalkulatory → /narzedzia, fluxlab-video-reklamy → /).
 **Dla Pawła:** pusto.
 **Zostało otwarte:** Z9 (odpowiedź na pytanie z Google, bramka budżetu) i Z10 (pomiar) od 16:40; Z11 od 18:40, Z12 od 20:40, oba zależne od budżetu.
+
+## 2026-11-20 16:43
+**Kanał:** pomiar (Z10); Z9 zablokowany budżetem.
+**Co zrobione:** Z9 (pytanie FAQ z wyników Google) oznaczone [!], bo budżet „wstrzymaj” (52% tygodnia, prognoza 134%, nowyCykl false); Z10 pomiar popołudniowy zapisany w planie.
+**Ruch:** raport_ruchu doba: 426 odsłon, 215 osób surowo (w tym piksel b2b-email). pomiar-kanalow po odsiewie 24 h: 48 ludzi, 64 odsłony: bez odsyłacza 26, www.google.com 8, google-ads 6, b2b 6, Bing 2, useme 2, LinkedIn 1, Gmail 1. chatgpt 0, Facebook 0, github 0. Uruchomienia narzędzi 0, form_start 0, lead_* 0; widok_formularza 22 (/ksef-integracja 6, / 6). 7 dni: 384 ludzi, lejek 11 form_start → 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md linie Z9, Z10.
+**Dla Pawła:** 
+**Zostało otwarte:** Z11 od 18:40 (link do e-doreczenia-w-firmie, bramka budżetu), Z12 od 20:40 (tytuł „faktura wewnętrzna KSeF”, bramka budżetu), Z13 i Z14 od 22:40.
+
+## 2026-11-20 18:45
+**Kanał:** brak; Z11 zablokowany budżetem.
+**Co zrobione:** Z11 (link do /strefa-wiedzy/e-doreczenia-w-firmie) oznaczone [!], bo budżet „wstrzymaj” (53% tygodnia, prognoza 133%, nowyCykl false); czekam na Z12 o 20:40.
+**Ruch:** raport_ruchu doba: 421 odsłon, 210 osób surowo (b2b-email 253, google.com 19, b2b 15, useme 14, linkedin 13); uruchomienia narzędzi 0; lejek 7 dni: 1322 sesje, 10 form_start, 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md linia Z11.
+**Dla Pawła:** 
+**Zostało otwarte:** Z12 od 20:40 (tytuł „faktura wewnętrzna KSeF”, bramka budżetu), Z13 i Z14 od 22:40, Z15 od 21.11 00:40.
+
+## 2026-11-20 20:45
+**Kanał:** Google (Z12 planu ruchu).
+**Co zrobione:** nic nie poszło w świat, Z12 (tytuł artykułu „faktura wewnętrzna KSeF”) oznaczone [!], bo budżet „wstrzymaj” (55% tygodnia, prognoza 138%, nowyCykl false), jak Z3, Z5, Z9 i Z11; czekam na Z13 o 22:40.
+**Ruch:** ostatnia doba 433 odsłony, 214 osób; źródła: b2b-email 253 (piksel otwarć, nie ludzie), google 19, b2b 15, useme.com 14, linkedin 13; uruchomienia narzędzi 0; lejek 7 dni: 10 form_start, 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md, linia Z12.
+**Dla Pawła:** 
+**Zostało otwarte:** Z13 bilans dnia (22:40), Z14 stan kolejki FL_meta (22:40), Z15-Z17 w nocy i rano 21.11.
