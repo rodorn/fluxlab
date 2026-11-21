@@ -74,7 +74,7 @@ export default function KsefIntegracjaErp() {
             zawsze
             formId="ksef_erp"
             naglowek="Wycena w 1 dzień roboczy, 0 zł"
-            opisPlaceholder="W czym wystawiasz faktury? np. własny ERP *"
+            opisPlaceholder="Twój system do faktur *"
             opisEtykieta="Nazwa systemu, w którym wystawiasz faktury (wymagane)"
             przycisk="Odbierz wycenę w 1 dzień roboczy"
           />
