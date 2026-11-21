@@ -14,6 +14,9 @@ export interface UtmFields {
   utm_content: string;
   landing_page: string;
   referrer: string;
+  gclid: string;
+  gbraid: string;
+  wbraid: string;
 }
 
 const KLUCZ = "fl_zrodlo";
@@ -37,6 +40,9 @@ export const PUSTE_UTM: UtmFields = {
   utm_content: "",
   landing_page: "",
   referrer: "",
+  gclid: "",
+  gbraid: "",
+  wbraid: "",
 };
 
 function zAdresu(): UtmFields {
@@ -49,13 +55,32 @@ function zAdresu(): UtmFields {
     utm_content: p.get("utm_content") ?? "",
     landing_page: window.location.pathname,
     referrer: document.referrer ?? "",
+    gclid: p.get("gclid") ?? "",
+    gbraid: p.get("gbraid") ?? "",
+    wbraid: p.get("wbraid") ?? "",
   };
 }
 
 export function zapamietajZrodlo(): void {
   if (typeof window === "undefined") return;
   const teraz = zAdresu();
-  if (!teraz.utm_source) return;
+  if (!teraz.utm_source) {
+    if (teraz.gclid || teraz.gbraid || teraz.wbraid)
+      try {
+        const z = JSON.parse(localStorage.getItem(KLUCZ) ?? "{}");
+        localStorage.setItem(
+          KLUCZ,
+          JSON.stringify({
+            ...z,
+            gclid: teraz.gclid,
+            gbraid: teraz.gbraid,
+            wbraid: teraz.wbraid,
+            czas: z.czas ?? Date.now(),
+          }),
+        );
+      } catch {}
+    return;
+  }
   if (!teraz.utm_medium && WEWNETRZNE.has(teraz.utm_source)) return;
   // Kopia w ciasteczku dla formularzy, ktore nie wysylaja utm w tresci
   // (narzedzia, koszyk): /api/contact czyta ja, gdy body nie ma zrodla.
@@ -100,5 +125,8 @@ export function readUtm(): UtmFields {
     ...z,
     utm_content: [z.utm_content, wewn].filter(Boolean).join(" "),
     referrer: z.referrer || teraz.referrer,
+    gclid: teraz.gclid || z.gclid,
+    gbraid: teraz.gbraid || z.gbraid,
+    wbraid: teraz.wbraid || z.wbraid,
   };
 }

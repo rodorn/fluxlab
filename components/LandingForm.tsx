@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
-import { readUtm, type UtmFields } from "@/lib/zrodlo";
+import { readUtm, PUSTE_UTM, type UtmFields } from "@/lib/zrodlo";
 
 const inputClass =
   "w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-3.5 py-2.5 text-base text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-colors aria-[invalid=true]:border-red-600";
@@ -62,15 +62,7 @@ export default function LandingForm({
   const szkicTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const [utm, setUtm] = useState<UtmFields>(() => ({
-    utm_source: "",
-    utm_medium: "",
-    utm_campaign: "",
-    utm_term: "",
-    utm_content: "",
-    landing_page: "",
-    referrer: "",
-  }));
+  const [utm, setUtm] = useState<UtmFields>(() => ({ ...PUSTE_UTM }));
 
   useEffect(() => {
     setUtm(readUtm());
