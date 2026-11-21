@@ -172,16 +172,16 @@ export default function KsefIntegracjaErp() {
         <section id="kroki" className="container-wide scroll-mt-16 py-4">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Trzy kroki</h2>
-            <ol className="mt-4 grid gap-4">
+            <ol className="mt-3 grid gap-2">
               {KROKI.map((k, i) => (
-                <li
-                  key={k.t}
-                  className="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800"
-                >
-                  <p className="font-semibold text-gray-900 dark:text-white">
-                    {i + 1}. {k.t}
-                  </p>
-                  <p className="mt-1 text-gray-700 dark:text-gray-300">{k.d}</p>
+                <li key={k.t}>
+                  <details className="group rounded-xl border border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-gray-900 dark:text-white">
+                      <span>{i + 1}. {k.t}</span>
+                      <span aria-hidden className="text-accent transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <p className="mt-2 text-gray-700 dark:text-gray-300">{k.d}</p>
+                  </details>
                 </li>
               ))}
             </ol>
