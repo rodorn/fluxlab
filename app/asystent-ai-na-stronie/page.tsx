@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import ProductLanding from "@/components/ProductLanding";
 
 export const metadata: Metadata = {
-  title: "Asystent AI na stronie: co robi, ile kosztuje, jak zacząć",
+  title: "Asystent AI dla firmy na stronę: co robi, ile kosztuje | Fluxlab",
   description:
     "Asystent AI na stronę odpowiada z Twojego cennika i regulaminu, nie tylko z listy FAQ. Wdrożenie od 790 zł, opieka 190 zł miesięcznie, audyt bota 69 zł.",
   alternates: { canonical: "/asystent-ai-na-stronie" },
   openGraph: {
-    title: "Asystent AI na stronie: co robi, ile kosztuje, jak zacząć",
+    title: "Asystent AI dla firmy na stronę: co robi, ile kosztuje",
     description:
       "Czym asystent AI różni się od chatbota z FAQ, ile kosztuje wdrożenie i jak sprawdzić, co mówi klientom.",
     locale: "pl_PL",
