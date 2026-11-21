@@ -12213,3 +12213,11 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dowód:** Bing submiturl „URLs submitted today 81”, „Quota left 19”, lista cykl/z5-bing-2026-11-21.txt; commit d9f98aaf, https://fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie (title i description na produkcji, IndexNow Yandex 200, Naver 200).
 **Dla Pawła:** 
 **Zostało otwarte:** Z7 od 12:40. Lokalny `next build` nie działa: Turbopack odrzuca dowiązanie node_modules → /mnt/xpg/dane/zaleznosci (od 19.11 21:33), `--webpack` pada na typie app/api/automat/serp/route.ts (eksport „wyniki”, commit 419a8a89 z 17.11); Vercel buduje poprawnie. `spojnosc.mjs` zgłasza 2 uwagi w plikach innych sesji: components/LandingForm.tsx:21 „doradźcie” (forma wy), monitoring-konkurencji-co-sprawdzac:35 „wyciągnięcie” (fałszywy alarm).
+
+## 2026-11-21 12:47
+**Kanał:** plan stratega Z7 (outreach, reakcje) i Z8 (Google, CTR).
+**Co zrobione:** tytuł artykułu /strefa-wiedzy/faktura-wewnetrzna-ksef (zapytanie „faktura wewnętrzna a ksef”, 26 wyśw., poz. 6,8) odpowiada teraz wprost: „Faktura wewnętrzna a KSeF: nie wysyłaj jej”; outreach wordpress bez reakcji.
+**Ruch:** doba 288 odsłon, 179 osób (−18% do średniej 7 dni); źródła: b2b-email 131, google-ads 22, useme.com 15, Google 11, instagram 4; Threads 1, YouTube 1; uruchomienia narzędzi 0; lejek 7 dni: 1365 sesji, 8 form_start, 1 zapytanie.
+**Dowód:** commit a5ecef77, `<title>` na produkcji od 12:46, IndexNow Yandex 200, Naver 200. Z7: Resend 56 adresów 53 delivered, 3 bounced, bez zmian; Zoho od 21.11 INBOX 3, żadna z domen listy, Spam 0; kampania wordpress od 13.11: 1 sesja (16.11).
+**Dla Pawła:** 
+**Zostało otwarte:** Z9 i Z10 od 14:40, Z11 i Z12 od 16:40, Z13 od 18:40. Odpowiedź OpenAI Support (sprawa 20656857, 10:57: proszą o odpowiedź z adresu członka konta Ads) przekazana sesji FL_adsChatGPT.
