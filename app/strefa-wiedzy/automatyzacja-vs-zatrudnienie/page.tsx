@@ -11,13 +11,13 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
-  title: "Porównanie kosztów: etat 7 240 zł vs automat",
+  title: "Automatyzacja czy zatrudnienie: etat 7240 zł",
   description:
-    "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 900 zł netto.",
+    "Automatyzacja czy zatrudnienie, porównanie kosztów: pensja 6 000 zł to ok. 7 240 zł miesięcznie, automat od 900 zł netto.",
   openGraph: {
-    title: "Porównanie kosztów: etat 7 240 zł vs automat",
+    title: "Automatyzacja czy zatrudnienie: etat 7240 zł",
     description:
-      "Porównanie kosztów automatyzacji vs zatrudniania: pensja 6 000 zł to ok. 7 240 zł kosztu miesięcznie, automat od 900 zł netto.",
+      "Automatyzacja czy zatrudnienie, porównanie kosztów: pensja 6 000 zł to ok. 7 240 zł miesięcznie, automat od 900 zł netto.",
     locale: "pl_PL",
     type: "article",
     images: [
