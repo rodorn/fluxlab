@@ -12205,3 +12205,11 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dowód:** GSC 16.11: „zeskanowana, nie zindeksowana” 147 (2 z mapy witryny, reszta to subdomeny, chunki _next, pliki), „wykryta, nie zindeksowana” 8 (wszystkie z mapy, artykuły strefy wiedzy). Sprawdzenie adresu dziś: 7 z 10 nie ma w Google, 3 (faktury-kosztowe-z-ksef, integracje-api, maly-zus-plus-kiedy-sie-oplaca) już są. Log cykl/z4-indeksowanie-2026-11-21.log; komunikat GSC „Przekroczono limit… Spróbuj ponownie jutro”.
 **Dla Pawła:**
 **Zostało otwarte:** 7 adresów do ponownej prośby 22.11 (lista w Z4); w logach repo brak próśb od 20.11, więc limit zużywa ktoś inny na tej usłudze (do sprawdzenia przez FL_SEO). Następne: Z5 Bing i Z6 od 10:40.
+
+## 2026-11-21 11:15
+**Kanał:** wyszukiwarki (plan ruchu Z5, Z6).
+**Co zrobione:** 81 adresów zgłoszonych w Bing (10 niezindeksowanych w Google + 71 artykułów strefy wiedzy) i nowy tytuł artykułu z pozycji 1,6 bez kliknięć: „Automatyzacja czy zatrudnienie: etat 7240 zł”.
+**Ruch:** ostatnia doba 326 odsłon, 194 osoby (−6% wobec średniej); źródła: b2b-email 172, useme.com 16, google.com 16, google-ads 14, bing.com 6; uruchomienia narzędzi 0; lejek 7 dni: 9 form_start, 1 zapytanie.
+**Dowód:** Bing submiturl „URLs submitted today 81”, „Quota left 19”, lista cykl/z5-bing-2026-11-21.txt; commit d9f98aaf, https://fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie (title i description na produkcji, IndexNow Yandex 200, Naver 200).
+**Dla Pawła:** 
+**Zostało otwarte:** Z7 od 12:40. Lokalny `next build` nie działa: Turbopack odrzuca dowiązanie node_modules → /mnt/xpg/dane/zaleznosci (od 19.11 21:33), `--webpack` pada na typie app/api/automat/serp/route.ts (eksport „wyniki”, commit 419a8a89 z 17.11); Vercel buduje poprawnie. `spojnosc.mjs` zgłasza 2 uwagi w plikach innych sesji: components/LandingForm.tsx:21 „doradźcie” (forma wy), monitoring-konkurencji-co-sprawdzac:35 „wyciągnięcie” (fałszywy alarm).
