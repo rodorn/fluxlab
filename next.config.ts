@@ -308,6 +308,13 @@ const nextConfig: NextConfig = {
           "/hajs?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
         permanent: false,
       },
+      // Facebook skleja link z kolejnym slowem posta (21.11: /narzedziaprzepisanie
+      // i /narzedziaspotkań z m.facebook.com konczyly sie 404).
+      {
+        source: "/narzedzia:reszta([^/?#][^/]*)",
+        destination: "/narzedzia",
+        permanent: false,
+      },
       // Filmy maja teraz pelne artykuly w strefie wiedzy (kategoria Wideo);
       // stare strony z surowa transkrypcja dublowalyby te sama tresc.
       {
