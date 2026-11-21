@@ -11,13 +11,13 @@ const OPIS =
   "KSeF odrzuca fakturę z błędem 440, gdy ten sam sprzedawca wysłał już taki numer. Numeracja bez roku w numerze zacznie się powtarzać w 2027.";
 
 export const metadata: Metadata = {
-  title: "Numeracja faktur w KSeF od 2027: jak numerować | Fluxlab",
+  title: "Błąd 440 w KSeF (duplikat faktury): co zrobić | Fluxlab",
   description:
-    "Dopisz rok do wzoru numeru faktury przed styczniem 2027, np. 1/01/2027. Numer bez roku powtórzy się, a KSeF odrzuci duplikat błędem 440.",
+    "KSeF odrzuca fakturę błędem 440, gdy ten numer już wysłano. Nadaj nowy numer i wyślij ponownie, a do wzoru numeru dopisz rok, np. 1/01/2027.",
   openGraph: {
-    title: "Numeracja faktur w KSeF od 2027: jak numerować",
+    title: "Błąd 440 w KSeF (duplikat faktury): co zrobić",
     description:
-      "Dopisz rok do wzoru numeru faktury przed styczniem 2027, np. 1/01/2027. Numer bez roku powtórzy się, a KSeF odrzuci duplikat błędem 440.",
+      "KSeF odrzuca fakturę błędem 440, gdy ten numer już wysłano. Nadaj nowy numer i wyślij ponownie, a do wzoru numeru dopisz rok, np. 1/01/2027.",
     locale: "pl_PL",
     type: "article",
     images: [
