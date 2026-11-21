@@ -52,6 +52,7 @@ const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Gdzie sprawdzić datę nadania numeru?",
     a: "W samym numerze: po 10 cyfrach NIP sprzedawcy stoi 8 cyfr w układzie RRRRMMDD.",
+    linki: [{ fraza: "NIP sprzedawcy", href: "/strefa-wiedzy/biala-lista-vat-nowe-api" }],
   },
 ];
 

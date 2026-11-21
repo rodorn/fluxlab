@@ -127,8 +127,11 @@ export default function NumerKsefWPrzelewieArticle() {
               <p className={akapit}>
                 Gdy faktura wystawiona offline nie trafiła do KSeF z powodu
                 ogłoszonej awarii systemu. Obowiązek nie obejmuje też płatności
-                dla konsumenta ani dla kontrahenta, który nie jest czynnym
-                podatnikiem VAT.
+                dla konsumenta ani dla kontrahenta, który nie jest{" "}
+                <Link href="/strefa-wiedzy/biala-lista-vat-nowe-api" className={link}>
+                  czynnym podatnikiem VAT
+                </Link>
+                .
               </p>
             </section>
 
