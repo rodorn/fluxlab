@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import FormularzKrotki from "@/components/FormularzKrotki";
 import TrybReklamy from "@/components/TrybReklamy";
+import AnkietaWyjscia from "@/components/AnkietaWyjscia";
 
 export const metadata: Metadata = {
   title: "Integracja systemu z KSeF dla firm z własnym ERP | Fluxlab",
@@ -132,7 +133,8 @@ export default function KsefIntegracjaErp() {
           <div className="mx-auto mt-3 flex max-w-xl items-center justify-center gap-3 text-sm text-gray-700 dark:text-gray-300">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/pawel.webp"
+              src="/pawel-96.webp"
+              loading="lazy"
               alt="Paweł Iwanek"
               width={44}
               height={44}
@@ -305,6 +307,7 @@ export default function KsefIntegracjaErp() {
             </p>
           </div>
         </section>
+        <AnkietaWyjscia />
       </main>
       <footer className="container-wide py-8 text-center text-sm text-gray-700 dark:text-gray-300">
         <p>
