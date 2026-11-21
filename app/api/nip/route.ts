@@ -10,7 +10,7 @@ export async function GET(req: Request) {
   const data = new Date().toISOString().slice(0, 10);
   try {
     const r = await fetch(
-      `https://wl-api.mf.gov.pl/api/search/nip/${nip}?date=${data}`,
+      `https://wykazpodatnikowvat.mf.gov.pl/api/search/nip/${nip}?date=${data}`,
       { signal: AbortSignal.timeout(4000), cache: "no-store" },
     );
     if (!r.ok) return NextResponse.json({ nazwa: null });
