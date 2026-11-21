@@ -6,7 +6,7 @@ export default function HeaderReklamy() {
   return (
     <header className="naglowek-szklo fixed top-0 left-0 right-0 z-50 border-b border-gray-200/60 dark:border-white/10">
       <div className="flex h-16 items-center justify-between gap-2 px-4 sm:px-5 lg:px-8">
-        <span className="flex shrink-0 items-center gap-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <span className="flex shrink-0 items-center gap-2 text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">
           <ZnakFl className="znak-ikona h-7 w-7" />
           <span translate="no" className="max-[359px]:hidden">
             flux<span className="text-accent">lab</span>

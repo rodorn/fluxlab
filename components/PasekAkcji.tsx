@@ -125,7 +125,7 @@ export default function PasekAkcji() {
   if (wylaczony) return null;
 
   if (LANDINGI_REKLAM.includes(sciezka)) {
-    const przycisk = "btn-lg flex-1 justify-center px-2";
+    const przycisk = "btn-lg flex-1 justify-center px-2 !text-[15px]";
     return (
       <div
         className={`pasek-akcji fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-gray-200 bg-white px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden dark:border-white/10 dark:bg-gray-950 ${
