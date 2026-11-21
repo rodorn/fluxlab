@@ -39,7 +39,7 @@ export default function PasekAkcji() {
     (p) => sciezka === p || sciezka.startsWith(`${p}/`) || sciezka.startsWith(`${p}-`),
   );
   const [widoczny, setWidoczny] = useState(false);
-  const [cel, setCel] = useState("/kontakt");
+  const [cel, setCel] = useState(sciezka === "/ksef-integracja-erp" ? "#wycena" : "/kontakt");
   const [napis, setNapis] = useState("Bezpłatna wycena");
 
   useEffect(() => {
