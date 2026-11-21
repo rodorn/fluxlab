@@ -12258,3 +12258,11 @@ Z10: „automatyzacja podatków” trafia w 9 z 14 wyświetleń na /automatyzacj
 **Dowód:** `sesja napisz FL_SEO` → „Doręczono do FL_SEO (18:43)”; kandydaci do tytułu z odpowiedzią wprost: „ksef błąd 440” 15 wyśw. poz. 8,3 (/strefa-wiedzy/numeracja-faktur-ksef-2027) i „gutschrift co to” 12 wyśw. poz. 2,2 (/strefa-wiedzy/gutschrift-ksef). Budżet „utrzymaj”.
 **Dla Pawła:**
 **Zostało otwarte:** Z15 kalendarz wpisów od 20:40, Z16 bilans dnia od 22:40.
+
+## 2026-11-21 20:50
+**Kanał:** Google (tematy z zapytań), plan Z15.
+**Co zrobione:** do kalendarza wpisów weszły dwa tematy z zapytań GSC bez żadnego artykułu: 18.01 „OCR faktur po KSeF” (ocr dla biur rachunkowych 34 wyśw., poz. 44,8; ksef ocr 20 wyśw., poz. 69,9) i 25.01 „System ticketowy w sklepie” (31 wyśw., poz. 68,7); pod 23.11 notka bramki CRM.
+**Ruch:** raport_ruchu doba: 360 odsłon, 185 osób (b2b-email 113, Facebook 59+11, google-ads 51, YouTube 19); lejek 7 dni 1380 sesji → 8 form_start → 1 zapytanie.
+**Dowód:** commit niżej (cykl/kalendarz-wpisow.md); grep „ocr” i „ticket” w app/strefa-wiedzy = 0 plików. Daty 14.12 i 21.12 z planu były już zajęte, więc tematy dopisane na końcu listy (18.01, 25.01); strateg może je przesunąć.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 bilans dnia od 22:40, Z17-Z19 od 22.11 02:40; Z4 do ponowienia 22.11.

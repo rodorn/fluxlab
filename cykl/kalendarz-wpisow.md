@@ -15,8 +15,9 @@ Zasady dla każdego wpisu:
 - [x] 26.10 | KSeF | Certyfikat KSeF: do czego jest potrzebny, gdzie go wyrobić i dlaczego przed pierwszą awarią. Link: /strefa-wiedzy/faktura-gdy-ksef-nie-dziala. => 26.10 https://fluxlab.pl/strefa-wiedzy/certyfikat-ksef
 - [x] 02.11 | KSeF | Faktury kosztowe z KSeF prosto do programu księgowego: jak to zautomatyzować i ile pracy zdejmuje. Link: /ksef-integracja. => 2.11 https://fluxlab.pl/strefa-wiedzy/faktury-kosztowe-z-ksef
 - [x] 09.11 | e-Doręczenia | Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń (BAE) i co, gdy go nie ma. Link: /e-doreczenia-integracja, /slownik#bae. => 9.11 https://fluxlab.pl/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen
-- [ ] 16.11 | leady | Black Friday i weekendowe zgłoszenia: kto odpowiada na leada w sobotę i jak to ustawić automatem. Link: /czas-reakcji-na-leada.
+- [x] 16.11 | leady | Black Friday i weekendowe zgłoszenia: kto odpowiada na leada w sobotę i jak to ustawić automatem. Link: /czas-reakcji-na-leada. => 16.11 https://fluxlab.pl/strefa-wiedzy/lead-w-weekend-black-friday
 - [ ] 23.11 | CRM | Zamknięcie roku w CRM: porządek w lejku i dane do raportu rocznego w jeden dzień. Link: /automatyzacja-raportowania.
+  (bramka CRM 11.11: strateg 23.11 decyduje, czy zamienić z 30.11)
 - [ ] 30.11 | KSeF | Kasa fiskalna i KSeF od 1 stycznia 2027: faktura do paragonu po końcu przepisów przejściowych. Link: /ksef-2027.
 - [ ] 07.12 | KSeF | Numer KSeF w przelewie od 2027: kiedy trzeba go podać i jak program bankowy ma go wziąć sam. Link: /numer-ksef.
 - [ ] 14.12 | podatki | Zmiana formy opodatkowania na 2027: do kiedy i jak policzyć, czy się opłaca (nie dubluj ryczalt-czy-liniowy, tylko termin i decyzja). Link: /kalkulator-podatkowy.
@@ -24,3 +25,5 @@ Zasady dla każdego wpisu:
 - [ ] 28.12 | KSeF | Pięć rzeczy do sprawdzenia w programie do faktur przed 1 stycznia 2027 (skrót z listy kontrolnej, nie kopia). Link: /ksef-2027, /strefa-wiedzy/numeracja-faktur-ksef-2027.
 - [ ] 04.01 | KSeF | Sankcje KSeF: co obowiązuje od 2027, a co przesunięto (stan projektu ustawy z dnia pisania). Link: /ksef-2027.
 - [ ] 11.01 | raporty | Raport sprzedaży za 2026 z CRM: pięć liczb, które warto policzyć na start roku. Link: /raportowanie-z-pipedrive.
+- [ ] 18.01 | KSeF | OCR faktur po KSeF: co jeszcze trzeba skanować, a co przychodzi gotowe w XML (zapytania „ocr dla biur rachunkowych” 34 wyśw., poz. 44,8 i „ksef ocr” 20 wyśw., poz. 69,9; GSC 21.11). Link: /ksef-integracja, /strefa-wiedzy/faktury-kosztowe-z-ksef.
+- [ ] 25.01 | e-commerce | System ticketowy w sklepie internetowym: kiedy jest potrzebny, a kiedy zwroty i reklamacje obsłuży formularz z automatem (zapytanie „system ticketowy dla e-commerce” 31 wyśw., poz. 68,7; GSC 21.11). Link: /automatyzacja-dla-ecommerce.
