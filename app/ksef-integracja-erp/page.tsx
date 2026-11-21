@@ -191,11 +191,12 @@ export default function KsefIntegracjaErp() {
         <section className="container-wide py-4">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Co dostajesz</h2>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
-                <p className="font-semibold text-gray-900 dark:text-white">
-                  Odbiór faktur, 1 900 zł netto
-                </p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2 sm:items-start">
+              <details className="group rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-gray-900 dark:text-white">
+                  <span>Odbiór faktur, 1 900 zł netto</span>
+                  <span aria-hidden className="text-accent transition-transform group-open:rotate-45">+</span>
+                </summary>
                 <ul className="mt-3 grid gap-2">
                   <li className={wiersz}>
                     Faktury zakupowe pobierane z KSeF automatycznie
@@ -207,11 +208,12 @@ export default function KsefIntegracjaErp() {
                     Numer KSeF i UPO przy każdym dokumencie
                   </li>
                 </ul>
-              </div>
-              <div className="rounded-2xl border border-accent/60 bg-white p-4 dark:bg-gray-800">
-                <p className="font-semibold text-gray-900 dark:text-white">
-                  Wystawianie i odbiór, 3 900 zł netto
-                </p>
+              </details>
+              <details className="group rounded-2xl border border-accent/60 bg-white p-4 dark:bg-gray-800">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-gray-900 dark:text-white">
+                  <span>Wystawianie i odbiór, 3 900 zł netto</span>
+                  <span aria-hidden className="text-accent transition-transform group-open:rotate-45">+</span>
+                </summary>
                 <ul className="mt-3 grid gap-2">
                   <li className={wiersz}>Wszystko z odbioru faktur</li>
                   <li className={wiersz}>
@@ -222,7 +224,7 @@ export default function KsefIntegracjaErp() {
                   </li>
                   <li className={wiersz}>Pierwszy miesiąc opieki w cenie</li>
                 </ul>
-              </div>
+              </details>
             </div>
             <p className="mt-4 text-sm text-gray-700 dark:text-gray-300">
               Rozpoznanie jest bezpłatne. Rozliczamy fakturą VAT, formę umowy
