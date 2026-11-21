@@ -12221,3 +12221,32 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dowód:** commit a5ecef77, `<title>` na produkcji od 12:46, IndexNow Yandex 200, Naver 200. Z7: Resend 56 adresów 53 delivered, 3 bounced, bez zmian; Zoho od 21.11 INBOX 3, żadna z domen listy, Spam 0; kampania wordpress od 13.11: 1 sesja (16.11).
 **Dla Pawła:** 
 **Zostało otwarte:** Z9 i Z10 od 14:40, Z11 i Z12 od 16:40, Z13 od 18:40. Odpowiedź OpenAI Support (sprawa 20656857, 10:57: proszą o odpowiedź z adresu członka konta Ads) przekazana sesji FL_adsChatGPT.
+
+## 2026-11-21 14:55
+**Kanał:** Google (pomiar efektu zmian 16-19.11) i CTR, zadania Z9 i Z10 planu stratega.
+**Co zrobione:** Z9: odczyt GSC 28 dni dla 6 artykułów z filtrem strony; Z10 pominięte, bo obie frazy kandydackie lądują na stronach z reklam z listy „nie ruszać”.
+**Ruch:** ostatnia doba 335 odsłon, 196 osób (−5% wobec średniej 351,6); źródła: b2b-email 131, google-ads 28, youtube 18, useme.com 15, www.facebook.com 14. Lejek 7 dni: 1369 sesji, 8 form_start, 1 zapytanie.
+**Dowód:** `cykl/z9-strony-gsc-2026-11-21.txt`:
+
+| strona | klik. | wyśw. | poz. | pierwsze zapytania |
+|---|---|---|---|---|
+| biala-lista-vat-nowe-api | 10 | 217 | 4,5 | biała lista vat api, wykaz podatników vat api, api mf |
+| numer-ksef-w-przelewie | 3 | 213 | 7,1 | numer ksef w przelewie od kiedy, w tytule przelewu |
+| limit-10-tys-poza-ksef | 0 | 0 | – | brak |
+| kiedy-odliczyc-vat-z-faktury-ksef | 7 | 625 | 4,2 | reszta zapytań ukryta (jawne: 2 po 1 wyśw.) |
+| czy-firma-ma-adres-do-e-doreczen | 3 | 279 | 6,8 | numer adresu AE (6), jak sprawdzić czy mam adres do e doręczeń (6) |
+| faktury-z-ksef-po-zmianie-biura | 0 | 2 | 1,0 | brak |
+
+Z10: „automatyzacja podatków” trafia w 9 z 14 wyświetleń na /automatyzacja-raportowania, a „n8n ile kosztuje” na /wdrozenie-n8n-cena; obie strony są pod reklamy (FL_adsGoogle), bez zmian.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 i Z12 od 16:40, Z13 i Z14 od 18:40, Z15 od 20:40, Z16 od 22:40, Z17–Z19 22.11. limit-10-tys-poza-ksef ma 0 wyświetleń w 28 dniach: do sprawdzenia przy Z17, czy jest w indeksie.
+
+<!-- WYSLANO 2026-11-21 16:06 -->
+
+## 2026-11-21 17:43
+**Kanał:** Google (linki wewnętrzne) i pomiar; plan 21.11 Z11, Z12.
+**Co zrobione:** dwa linki wewnętrzne do /strefa-wiedzy/biala-lista-vat-nowe-api (artykuł z największą liczbą wejść z Google) z artykułów o numerze KSeF w przelewie i o odliczeniu VAT, w istniejących zdaniach, bez nowego tekstu.
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 56 ludzi (bez odsyłacza 37, google-ads 11, Facebook 3, YouTube 2, useme 1, Threads 1, Instagram 1, b2b 1); Google organiczny 0, chatgpt 0, github 0, Bing 0; uruchomienia 0, form_start 0, lead_* 0. 7 dni: 396 ludzi.
+**Dowód:** commit a7a8e14e; produkcja `grep -c biala-lista-vat-nowe-api` = 1 na /strefa-wiedzy/numer-ksef-w-przelewie i 1 na /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef; IndexNow 3 adresów: Yandex 200, Naver 200, wspólny 403 (jak zwykle).
+**Dla Pawła:**
+**Zostało otwarte:** Z13 (dane GSC dla FL_SEO) od 18:40, Z14 od 18:40, Z15 od 20:40, Z16 od 22:40; Z4 do ponowienia 22.11 (7 adresów, limit GSC zużyty 21.11).
