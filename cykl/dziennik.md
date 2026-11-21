@@ -12180,3 +12180,10 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dowód:** IndexNow wspólny 403 (UserForbiddedToAccessSite, jak w poprzednich zgłoszeniach), Yandex 200, Naver 200; sitemap.xml 278 `<loc>`.
 **Dla Pawła:** 
 **Zostało otwarte:** Z17 pomiar dla stratega (nie wcześniej niż 06:40).
+
+## Strategia dobowa 2026-11-21
+**Wynik doby (24 h do 21.11 06:15, po odsiewie):** 69 ludzi (doba wcześniej 48), tydzień 392 (wczoraj 369). google-ads 7 / 64 w tygodniu, Google organiczny 7 / 40, chatgpt płatne 0 / 24, chatgpt.com 0 / 3, Facebook 0 / 12, github 0 / 6 (trzecia doba z zerem), Bing 1 / 4, useme 3 / 4, bez odsyłacza 46 / 224. Uruchomienia narzędzi 0, form_start w tygodniu 10, zapytania 1, lead_* 0. Outreach `wordpress` zatrzymany: 0 odpowiedzi po 8 dniach. Search Console znowu zalogowane: 3 mies. 170 kliknięć, 7,86 tys. wyświetleń, poz. 17,5; zindeksowane 184, niezindeksowane 347 (16.11); mapa 278 adresów, odczyt 20.11. Plan 20.11: 12 z 17 [x], 5 zmian treści zablokował budżet („wstrzymaj”, 57% tygodnia, prognoza 124%).
+**Plan 21.11:** 19 zadań (cykl/plan-ruchu.md), bez wysyłek, zmiany treści z bramką budżetu. Trzy najważniejsze: 10 żądań indeksowania w Google dla niezindeksowanych artykułów o e-Doręczeniach, białej liście i KSeF (Z3, Z4; 347 stron poza indeksem); wsad do 100 adresów w Bing (Z5); nowy tytuł artykułu „automatyzacja vs zatrudnienie”, który jest na pozycji 2,1 przy 74 wyświetleniach i 0 kliknięciach (Z6). Wyszukiwanie w Google w ukrytej przeglądarce zastąpione danymi z GSC.
+**Dla Pawła:**
+- Budżet tygodnia „wstrzymaj” trzecią dobę blokuje każdą zmianę treści (5 z 17 zadań 20.11, w planie 21.11 sześć). Jeśli zmiany tytułów z danych GSC mają iść mimo hamulca, wystarczy zdanie w panelu, że plany ruchu mogą robić [T] przy „wstrzymaj” (1 min); inaczej ruszą po resecie około 25.11.
+- Temat artykułu z kalendarza na 23.11 dotyczy CRM, a bramka 11.11 zabrania promocji CRM nowym odbiorcom. Strateg 23.11 weźmie zamiast niego temat KSeF z 30.11, chyba że w panelu będzie inaczej (1 min).
