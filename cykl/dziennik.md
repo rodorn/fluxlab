@@ -12206,7 +12206,7 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dla Pawła:**
 **Zostało otwarte:** 7 adresów do ponownej prośby 22.11 (lista w Z4); w logach repo brak próśb od 20.11, więc limit zużywa ktoś inny na tej usłudze (do sprawdzenia przez FL_SEO). Następne: Z5 Bing i Z6 od 10:40.
 
-## 2026-11-21 11:15
+## 2026-11-21 10:48
 **Kanał:** wyszukiwarki (plan ruchu Z5, Z6).
 **Co zrobione:** 81 adresów zgłoszonych w Bing (10 niezindeksowanych w Google + 71 artykułów strefy wiedzy) i nowy tytuł artykułu z pozycji 1,6 bez kliknięć: „Automatyzacja czy zatrudnienie: etat 7240 zł”.
 **Ruch:** ostatnia doba 326 odsłon, 194 osoby (−6% wobec średniej); źródła: b2b-email 172, useme.com 16, google.com 16, google-ads 14, bing.com 6; uruchomienia narzędzi 0; lejek 7 dni: 9 form_start, 1 zapytanie.
