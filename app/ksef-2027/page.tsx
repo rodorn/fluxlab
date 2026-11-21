@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
+import LandingForm from "@/components/LandingForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { kotwica } from "@/lib/kotwica";
 import ListaKsef2027 from "@/components/ListaKsef2027";
@@ -18,7 +19,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/ksef-2027" },
   openGraph: {
     title: "KSeF od 1 stycznia 2027: co musisz mieć domknięte",
-    images: ["/og?t=KSeF%20od%201%20stycznia%202027%3A%20co%20musisz%20mie%C4%87%20domkni%C4%99te"],
+    images: [
+      "/og?t=KSeF%20od%201%20stycznia%202027%3A%20co%20musisz%20mie%C4%87%20domkni%C4%99te",
+    ],
     description:
       "Darmowa lista kontrolna na koniec przepisów przejściowych KSeF. Na końcu wykaz braków gotowy do wysłania księgowej, bez rejestracji.",
     locale: "pl_PL",
@@ -140,6 +143,16 @@ export default function Ksef2027Page() {
           </div>
         </section>
       </main>
+      <section id="kontakt" className="scroll-mt-16 py-4 lg:py-7">
+        <div className="container-wide">
+          <LandingForm
+            formId="ksef_2027_wycena"
+            heading="Chcesz, żebyśmy zrobili to za Ciebie?"
+            intro="Napisz, czego potrzebujesz. Odpiszemy z ceną i terminem, w 1 dzień roboczy."
+            submitLabel="Poproś o wycenę"
+          />
+        </div>
+      </section>
       <CTA
         naglowek="Sprawdź, czy od 2027 wystarczy Ci arkusz zamiast programu do faktur"
         opis="Wgrywasz arkusz z pozycjami, a my wystawiamy faktury w KSeF i odsyłamy numery na maila. Bez programu fakturującego, 49 zł netto miesięcznie, rezygnacja w dowolnym dniu."

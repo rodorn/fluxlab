@@ -12,18 +12,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CtaNadNarzedziem from "@/components/CtaNadNarzedziem";
 import CTA from "@/components/CTA";
+import LandingForm from "@/components/LandingForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const NAJCZESCIEJ = ["/kalkulator-podatkowy", "/sprawdzenie-nip"];
 const pierwsze = (lista: Narzedzie[]) =>
   [...lista].sort(
     (a, b) =>
-      Number(NAJCZESCIEJ.includes(b.href)) - Number(NAJCZESCIEJ.includes(a.href)),
+      Number(NAJCZESCIEJ.includes(b.href)) -
+      Number(NAJCZESCIEJ.includes(a.href)),
   );
 const GRUPY_KOLEJNOSC = [
   "Dla osób prywatnych",
   "Firma i rejestry",
-  ...GRUPY_NARZEDZI.filter((g) => g !== "Dla osób prywatnych" && g !== "Firma i rejestry"),
+  ...GRUPY_NARZEDZI.filter(
+    (g) => g !== "Dla osób prywatnych" && g !== "Firma i rejestry",
+  ),
 ];
 
 export const metadata: Metadata = {
@@ -245,7 +249,10 @@ export default function Narzedzia() {
               <p className="hero-lead">
                 Każde kończy się liczbą albo werdyktem, bez rejestracji i
                 adresu.{" "}
-                <Link href="/realizacje" className="text-accent hover:underline">
+                <Link
+                  href="/realizacje"
+                  className="text-accent hover:underline"
+                >
                   Część kodu jest otwarta
                 </Link>
                 .
@@ -281,6 +288,16 @@ export default function Narzedzia() {
             })}
           </div>
         </div>
+        <section id="kontakt" className="scroll-mt-16 py-4 lg:py-7">
+          <div className="container-wide">
+            <LandingForm
+              formId="narzedzia_wycena"
+              heading="Chcesz, żebyśmy zrobili to za Ciebie?"
+              intro="Napisz, czego potrzebujesz. Odpiszemy z ceną i terminem, w 1 dzień roboczy."
+              submitLabel="Poproś o wycenę"
+            />
+          </div>
+        </section>
         <CTA naglowek="Nie ma tu Twojego problemu? Opisz go, wycenimy rozwiązanie" />
       </main>
       <Footer />
