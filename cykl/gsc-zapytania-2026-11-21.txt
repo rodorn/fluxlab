@@ -1,0 +1,112 @@
+# GSC fluxlab.pl, zakładka Zapytania, stan 21.11.2026 06:55, okres 22.10-18.11 (28 dni): suma 122 klik. / 5,44 tys. wyśw., CTR 2,2%, poz. 15,9: zapytanie	kliknięcia	wyświetlenia	pozycja (476 wierszy w tabeli, zapisane pierwsze 100)
+fluxlab	45	75	1,1
+flux lab	5	8	1,0
+wdrożenie n8n wrocław	3	4	9,2
+faktura wewnętrzna a ksef	1	24	6,7
+czy to dobra firma?	1	1	2,0
+fluxlab.io	1	1	3,0
+numer ksef w tytule przelewu od kiedy	1	1	10,0
+porównanie kosztów automatyzacji vs zatrudniania	0	58	1,6
+automatyzacja raportowania	0	52	14,8
+automatyzacja procesów biznesowych firmy	0	41	72,0
+automatyzacja crm ai	0	38	31,1
+integracja crm	0	36	59,4
+ocr dla biur rachunkowych	0	34	44,8
+automatyzacja crm	0	33	25,2
+automatyzacja procesów biznesowych	0	31	64,6
+system ticketowy dla e-commerce	0	31	68,7
+wdrożenie n8n	0	28	25,0
+asystent ai dla firmy	0	26	30,6
+asystent ai	0	24	23,0
+kalkulator 2026	0	21	48,4
+ksef ocr	0	20	69,9
+crm na zamówienie	0	18	79,3
+n8n cena	0	16	9,8
+crm dla firm leasingowych	0	15	3,9
+ksef błąd 440	0	15	8,3
+n8n ile kosztuje	0	15	9,5
+jak sprawdzić firmę przed przelewem	0	15	11,7
+automatyzacja procesów	0	15	58,3
+"ksef"	0	14	3,7
+"automatyzacja podatków"	0	14	5,4
+automatyzacja biznesu	0	14	54,6
+integracja api	0	14	60,7
+najlepsze firmy do automatyzacji raportowania finansowego?	0	13	5,3
+n8n cennik	0	13	6,2
+jak zautomatyzować raportowanie w firmie	0	13	15,5
+gutschrift co to	0	12	2,2
+asystent na strone ai	0	12	11,4
+asystent ai na stronie	0	12	13,1
+faktury wewnętrzne a ksef	0	11	9,5
+integracje api	0	11	57,0
+ocr a ksef	0	11	70,2
+crm dla firmy meblarskiej	0	10	4,2
+ile kosztuje połączenie crm z erp	0	10	10,0
+pipedrive	0	10	14,2
+automatyzacja scoringu leasingowego	0	10	15,0
+kalkulator jdg	0	10	20,5
+systemy analityczne dla firm leasingowych	0	10	22,6
+kalkulator obciążeń podatkowych	0	10	24,9
+wirtualny asystent ai	0	10	26,6
+automatyzacje dla firm	0	10	47,3
+raportowanie sprzedaży	0	10	80,1
+raportowanie produkcji	0	9	6,7
+sprawdz numer ksef	0	9	7,8
+ile kosztuje integracja erp z crm	0	9	13,7
+asystent ai na stronę	0	9	15,6
+ile kosztuje integracje erp z crm	0	9	16,8
+analiza lokalizacji	0	9	21,1
+jak sprawdzić wypłacalność klienta	0	9	25,2
+automatyzacja ai dla firm	0	9	58,0
+ekstrakcja danych z faktur	0	9	65,8
+ile kosztuje n8n	0	8	9,8
+kalkulator jdg 2026	0	8	17,2
+ocr dla biura rachunkowego	0	8	48,8
+numer ksef faktury	0	8	62,6
+crm z ai	0	8	85,9
+hubspot vs pipedrive	0	7	6,3
+wdrożenia n8n	0	7	9,4
+kto wdraża integrację crm z erp w polsce	0	7	10,6
+ile kosztuje integracje crm z erp	0	7	11,4
+weryfikacja nip	0	7	18,7
+crm dla firm z branży bram	0	7	20,9
+zapier co to	0	7	25,3
+automatyzacja procesów biznesowych koszt	0	7	29,1
+integracja crm z erp	0	7	38,0
+kalkulator stawek ryczałtu 2026	0	7	39,0
+co daje integracja erp z crm	0	7	43,4
+faktura vat rr	0	7	50,3
+scraping danych	0	7	53,7
+poczta firmowa	0	7	88,6
+program komputerowy dla firm leasingowych	0	6	3,0
+duralszen asystent ai	0	6	6,7
+biała lista vat api	0	6	6,8
+ae:pl-45928-68514-chara-16	0	6	7,0
+błąd 440 ksef	0	6	9,0
+automatyzacja raportów i przepływu informacji	0	6	9,5
+pipedrive co to	0	6	9,7
+raportowanie wyników sprzedaży	0	6	10,0
+pipedrive vs hubspot vs monday	0	6	17,8
+automatyzacja zasilania raportów	0	6	20,0
+sprawdzenie nip	0	6	25,8
+automatyzacja obsługi zgłoszeń	0	6	39,5
+zaawansowana symulacja	0	6	49,8
+automatyzacje ai dla firm	0	6	53,2
+automatyzacja e-commerce	0	6	60,5
+crm dla dystrybucji	0	6	65,8
+agencja automatyzacji procesów biznesowych w polsce	0	5	2,0
+automatyczne rozliczenia b2b	0	5	3,6
+koszt konektora erp do crm	0	5	3,8
+lokalizacja biura	0	5	5,4
+pipedrive cennik	0	5	5,8
+
+## cele CTR (filtr query=!…, zakładka Strony, 28 dni): zapytanie	adres	kliknięcia	wyświetlenia	pozycja
+porównanie kosztów automatyzacji vs zatrudniania	https://fluxlab.pl/strefa-wiedzy/automatyzacja-vs-zatrudnienie	0	58	1,6
+automatyzacja podatków (w GSC z cudzysłowem: "automatyzacja podatków", 0/14/poz. 5,4)	https://fluxlab.pl/automatyzacja-raportowania	0	9	4,1
+automatyzacja podatków (w GSC z cudzysłowem: "automatyzacja podatków", 0/14/poz. 5,4)	https://fluxlab.pl/ksef-2027	0	3	6,7
+automatyzacja podatków (w GSC z cudzysłowem: "automatyzacja podatków", 0/14/poz. 5,4)	https://fluxlab.pl/asystent-ai-na-stronie	0	2	9,5
+enova	https://fluxlab.pl/strefa-wiedzy/numeracja-faktur-ksef-2027	0	1	1,0
+faktura wewnętrzna a ksef	https://fluxlab.pl/strefa-wiedzy/faktura-wewnetrzna-ksef	1	24	6,7
+n8n ile kosztuje	https://fluxlab.pl/wdrozenie-n8n-cena	0	8	9,0
+n8n ile kosztuje	https://fluxlab.pl/strefa-wiedzy/n8n-vs-zapier	0	7	10,0
+jak sprawdzić firmę przed przelewem	https://fluxlab.pl/sprawdz-kontrahenta	0	15	11,7

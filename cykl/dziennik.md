@@ -12187,3 +12187,11 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dla Pawła:**
 - Budżet tygodnia „wstrzymaj” trzecią dobę blokuje każdą zmianę treści (5 z 17 zadań 20.11, w planie 21.11 sześć). Jeśli zmiany tytułów z danych GSC mają iść mimo hamulca, wystarczy zdanie w panelu, że plany ruchu mogą robić [T] przy „wstrzymaj” (1 min); inaczej ruszą po resecie około 25.11.
 - Temat artykułu z kalendarza na 23.11 dotyczy CRM, a bramka 11.11 zabrania promocji CRM nowym odbiorcom. Strateg 23.11 weźmie zamiast niego temat KSeF z 30.11, chyba że w panelu będzie inaczej (1 min).
+
+## 2026-11-21 07:03
+**Kanał:** 2 (widoczność, pomiar wyszukiwarek), zadania Z1 i Z2 z planu.
+**Co zrobione:** zapisane zapytania i strony GSC z 28 dni z celami CTR dla 6 zapytań (dane pod Z6, Z8, Z10, Z14) oraz stan Bing i cytowań w Copilocie; nic nie poszło w świat, to pomiar.
+**Ruch:** raport_ruchu: doba 500 odsłon, 264 osoby; źródła b2b-email 280, www.google.com 17, useme.com 16, b2b 15, google-ads 14; uruchomienia narzędzi 0; lejek 7 dni: 10 form_start, 1 wysłane zapytanie. GSC 28 dni (22.10-18.11): 122 klik. / 5,44 tys. wyśw., CTR 2,2%, poz. 15,9; marka 51 klik., widoczne zapytania spoza marki 6, ukryte 65. Bing 7 D: 2 klik. / 70 wyśw.; Copilot 7 D: 14 cytowań (/sprawdzenie-nip 6, /strefa-wiedzy/proforma-ksef 5).
+**Dowód:** cykl/gsc-zapytania-2026-11-21.txt (100 wierszy + „cele CTR”), cykl/gsc-strony-2026-11-21.txt (100 wierszy); fluxlab-strona.timer enabled/active; budżet „wstrzymaj” (57%, prognoza 124%).
+**Dla Pawła:** 
+**Zostało otwarte:** Z3 lista niezindeksowanych i Z4 żądania indeksowania (od 08:40).
