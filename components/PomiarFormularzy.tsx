@@ -36,10 +36,17 @@ export default function PomiarFormularzy() {
       )
         zglosZdarzenie("klik_whatsapp");
     };
+    const naCta = (e: MouseEvent) => {
+      const c = (e.target as HTMLElement | null)?.closest?.("[data-cta]");
+      const nazwa = c?.getAttribute("data-cta");
+      if (nazwa) zglosZdarzenie(`klik_cta_${nazwa}`.slice(0, 40));
+    };
     document.addEventListener("click", naKlik, true);
+    document.addEventListener("click", naCta, true);
     return () => {
       document.removeEventListener("focusin", naFokus);
       document.removeEventListener("click", naKlik, true);
+      document.removeEventListener("click", naCta, true);
     };
   }, []);
 
@@ -49,22 +56,36 @@ export default function PomiarFormularzy() {
     let sekundy = 0;
     const zegar = setInterval(() => {
       if (document.visibilityState !== "visible") return;
-      if (++sekundy < 30) return;
+      sekundy++;
+      if (sekundy === 10) zglosZdarzenie("aktywny_10s", sciezka);
+      if (sekundy < 30) return;
       clearInterval(zegar);
       zglosZdarzenie("aktywny_30s", sciezka);
     }, 1000);
-    return () => clearInterval(zegar);
+    // Czas wyjścia: sekundy aktywne przy schowaniu karty (raz na odsłonę).
+    let wyjscie = false;
+    const naUkrycie = () => {
+      if (document.visibilityState !== "hidden" || wyjscie) return;
+      wyjscie = true;
+      zglosZdarzenie(`wyjscie_${Math.min(sekundy, 999)}s`, sciezka);
+    };
+    document.addEventListener("visibilitychange", naUkrycie);
+    return () => {
+      clearInterval(zegar);
+      document.removeEventListener("visibilitychange", naUkrycie);
+    };
   }, [sciezka]);
 
   useEffect(() => {
-    let polowa = false;
+    const progi = [25, 50, 75];
     const naScroll = () => {
       const d = document.documentElement;
-      if (polowa || d.scrollHeight <= innerHeight) return;
-      if ((scrollY + innerHeight) / d.scrollHeight < 0.5) return;
-      polowa = true;
-      zglosZdarzenie("przewiniecie_50");
-      removeEventListener("scroll", naScroll);
+      if (!progi.length || d.scrollHeight <= innerHeight) return;
+      const udzial = ((scrollY + innerHeight) / d.scrollHeight) * 100;
+      while (progi.length && udzial >= progi[0]) {
+        zglosZdarzenie(`przewiniecie_${progi.shift()}`);
+      }
+      if (!progi.length) removeEventListener("scroll", naScroll);
     };
     addEventListener("scroll", naScroll, { passive: true });
 

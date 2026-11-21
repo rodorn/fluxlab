@@ -21,6 +21,7 @@ const BEZ_PASKA = [
 const LANDINGI_REKLAM = [
   "/ksef-integracja",
   "/ksef-integracja-erp",
+  "/e-doreczenia-wycena",
   "/e-doreczenia-integracja",
   "/wdrozenie-n8n-cena",
   "/automatyzacja-procesow-biznesowych",

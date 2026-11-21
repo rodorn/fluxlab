@@ -19,6 +19,8 @@ export default function FormularzKrotki({
   opisPlaceholder = "Czego potrzebujesz? Jedno zdanie *",
   opisEtykieta = "Czego potrzebujesz (wymagane)",
   przycisk = "Wyślij, bezpłatna wycena",
+  nip = false,
+  samNumer = false,
 }: {
   formId: string;
   /** Strona z reklamy bez zależności od html[data-reklama]: formularz widać zawsze. */
@@ -27,10 +29,33 @@ export default function FormularzKrotki({
   opisPlaceholder?: string;
   opisEtykieta?: string;
   przycisk?: string;
+  /** Opcjonalne pole NIP z podpowiedzią nazwy firmy z białej listy VAT MF. */
+  nip?: boolean;
+  /** Link „zostaw sam numer”: ukrywa opis potrzeby. */
+  samNumer?: boolean;
 }) {
   const router = useRouter();
   const [wysylka, setWysylka] = useState(false);
   const [blad, setBlad] = useState<string | null>(null);
+  const [bladKontakt, setBladKontakt] = useState<string | null>(null);
+  const [bladOpis, setBladOpis] = useState<string | null>(null);
+  const [firma, setFirma] = useState<string>("");
+  const [tylkoNumer, setTylkoNumer] = useState(false);
+
+  async function sprawdzNip(v: string) {
+    const cyfry = v.replace(/\D/g, "");
+    if (cyfry.length !== 10) {
+      setFirma("");
+      return;
+    }
+    try {
+      const r = await fetch(`/api/nip?nip=${cyfry}`);
+      const j = (await r.json()) as { nazwa?: string | null };
+      setFirma(j.nazwa ?? "");
+    } catch {
+      setFirma("");
+    }
+  }
 
   async function wyslij(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -41,33 +66,37 @@ export default function FormularzKrotki({
       ).trim();
     const polaKontakt = f.elements.namedItem("kontakt") as HTMLInputElement;
     const polaOpis = f.elements.namedItem("message") as HTMLInputElement;
+    setBladKontakt(null);
+    setBladOpis(null);
     const kontakt = polaKontakt.value.trim();
     const maEmail = kontakt.includes("@");
     if (!maEmail && kontakt.replace(/\D/g, "").length < 9) {
       polaKontakt.setAttribute("aria-invalid", "true");
       polaKontakt.focus();
-      setBlad("Wpisz telefon albo e-mail, na który odpiszemy.");
+      setBladKontakt("Wpisz telefon albo e-mail, na który odpiszemy.");
       return;
     }
     if (maEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(kontakt)) {
       polaKontakt.setAttribute("aria-invalid", "true");
       polaKontakt.focus();
-      setBlad("Sprawdź adres e-mail, wygląda na niepełny.");
+      setBladKontakt("Sprawdź adres e-mail, wygląda na niepełny.");
       return;
     }
-    if (!polaOpis.value.trim()) {
+    if (!tylkoNumer && !polaOpis.value.trim()) {
       polaOpis.setAttribute("aria-invalid", "true");
       polaOpis.focus();
-      setBlad("Napisz jednym zdaniem, czego potrzebujesz.");
+      setBladOpis("Napisz jednym zdaniem, czego potrzebujesz.");
       return;
     }
     const dane = {
       imie: "",
       email: maEmail ? kontakt : "",
-      company: "",
+      company: firma || (nip ? wartosc("nip") : ""),
       problemType: document.title.split("|")[0].trim() || formId,
       problemScale: "nie-wiemy",
-      message: wartosc("message"),
+      message: tylkoNumer
+        ? "Prośba o oddzwonienie: klient zostawił sam numer."
+        : wartosc("message"),
       contactPref: maEmail ? "email" : "phone",
       phone: maEmail ? "" : kontakt,
       termin: "",
@@ -111,7 +140,12 @@ export default function FormularzKrotki({
       {...(zawsze ? {} : { "data-tylko-reklama": "" })}
       noValidate
       onSubmit={wyslij}
-      onInput={(e) => (e.target as HTMLElement).removeAttribute("aria-invalid")}
+      onInput={(e) => {
+        const t = e.target as HTMLElement;
+        t.removeAttribute("aria-invalid");
+        if ((t as HTMLInputElement).name === "kontakt") setBladKontakt(null);
+        if ((t as HTMLInputElement).name === "message") setBladOpis(null);
+      }}
       className="relative mx-auto mt-6 w-full max-w-xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 text-left shadow-xl shadow-accent/10 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-accent-solid sm:p-5 dark:border-gray-700 dark:bg-gray-800"
     >
       <p className="text-base font-semibold text-gray-900 dark:text-white">
@@ -121,6 +155,7 @@ export default function FormularzKrotki({
         Wolisz rozmowę? Zadzwoń:{" "}
         <a
           href="tel:+48665466565"
+          data-cta="telefon_formularz"
           className="font-semibold text-accent underline underline-offset-2"
         >
           665 466 565
@@ -162,18 +197,65 @@ export default function FormularzKrotki({
           placeholder="Telefon albo e-mail *"
           className={pole}
         />
-        <label className="sr-only" htmlFor={`krotki-msg-${formId}`}>
-          {opisEtykieta}
-        </label>
-        <input
-          id={`krotki-msg-${formId}`}
-          name="message"
-          required
-          maxLength={500}
-          placeholder={opisPlaceholder}
-          className={pole}
-        />
+        {bladKontakt && (
+          <p role="alert" className="-mt-1 text-sm text-red-700 dark:text-red-400">
+            {bladKontakt}
+          </p>
+        )}
+        {!tylkoNumer && (
+          <>
+            <label className="sr-only" htmlFor={`krotki-msg-${formId}`}>
+              {opisEtykieta}
+            </label>
+            <input
+              id={`krotki-msg-${formId}`}
+              name="message"
+              required
+              maxLength={500}
+              placeholder={opisPlaceholder}
+              className={pole}
+            />
+            {bladOpis && (
+              <p role="alert" className="-mt-1 text-sm text-red-700 dark:text-red-400">
+                {bladOpis}
+              </p>
+            )}
+          </>
+        )}
+        {nip && (
+          <>
+            <label className="sr-only" htmlFor={`krotki-nip-${formId}`}>
+              NIP firmy (opcjonalnie)
+            </label>
+            <input
+              id={`krotki-nip-${formId}`}
+              name="nip"
+              inputMode="numeric"
+              maxLength={13}
+              autoComplete="off"
+              placeholder="NIP firmy (opcjonalnie)"
+              onChange={(e) => sprawdzNip(e.target.value)}
+              className={pole}
+            />
+            {firma && (
+              <p className="-mt-1 text-sm text-gray-700 dark:text-gray-300">
+                Firma: <strong>{firma}</strong>
+              </p>
+            )}
+          </>
+        )}
       </div>
+      {samNumer && (
+        <button
+          type="button"
+          onClick={() => setTylkoNumer((v) => !v)}
+          className="mt-2 text-sm text-accent underline underline-offset-2"
+        >
+          {tylkoNumer
+            ? "Wolę opisać potrzebę"
+            : "Zostaw sam numer, oddzwonimy"}
+        </button>
+      )}
       <button
         type="submit"
         disabled={wysylka}
@@ -190,7 +272,7 @@ export default function FormularzKrotki({
         </p>
       )}
       <p className="mt-2 text-center text-sm font-medium text-gray-800 dark:text-gray-200">
-        Odpowiadamy w ciągu 2 godzin, w godz. 11–24.
+        Oddzwonimy w ciągu 2 godzin, w godz. 11–24.
       </p>
       <p className="mt-1 text-center text-xs text-gray-600 dark:text-gray-400">
         Bez newslettera.{" "}

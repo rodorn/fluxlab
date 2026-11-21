@@ -21,6 +21,7 @@ export function zglosZdarzenie(zdarzenie: string, sciezka?: string): void {
     /* brak navigatora: liczymy normalnie */
   }
   try {
+    if (/[?&]utm_source=test_fl\b/.test(location.search)) return;
     if (localStorage.getItem("fl_nie_licz") === "1") return;
   } catch {
     /* zablokowana pamięć: liczymy normalnie */

@@ -34,6 +34,11 @@ function idSesji(): string {
 function sterowanaSkryptem(): boolean {
   try {
     if (navigator.webdriver) return true;
+    // Znacznik testów: utm_source=test_fl nigdy nie trafia do liczb.
+    if (/[?&]utm_source=test_fl\b/.test(location.search)) {
+      localStorage.setItem("fl_nie_licz", "1");
+      return true;
+    }
     return /HeadlessChrome|Puppeteer|Playwright|Lighthouse|InspectionTool|bot|crawler|spider/i.test(
       navigator.userAgent,
     );
