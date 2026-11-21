@@ -120,6 +120,7 @@ export default function KsefIntegracjaErp() {
               Odbierz wycenę
             </a>
           </div>
+          <span id="kontakt" className="block scroll-mt-16" />
           <FormularzKrotki
             nip
             samNumer
@@ -155,7 +156,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section className="container-wide py-8">
+        <section id="systemy" className="container-wide scroll-mt-16 py-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Jakie systemy podłączamy</h2>
             <ul className="mt-4 grid gap-2.5">
@@ -168,7 +169,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section className="container-wide py-8">
+        <section id="kroki" className="container-wide scroll-mt-16 py-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Trzy kroki</h2>
             <ol className="mt-4 grid gap-4">
@@ -230,7 +231,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section className="container-wide py-8">
+        <section id="ceny" className="container-wide scroll-mt-16 py-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Ceny netto</h2>
             <div className="mt-4 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700">
