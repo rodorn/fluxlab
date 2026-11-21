@@ -12266,3 +12266,33 @@ Z10: „automatyzacja podatków” trafia w 9 z 14 wyświetleń na /automatyzacj
 **Dowód:** commit 1d9fac10 (cykl/kalendarz-wpisow.md); grep „ocr” i „ticket” w app/strefa-wiedzy = 0 plików. Daty 14.12 i 21.12 z planu były już zajęte, więc tematy dopisane na końcu listy (18.01, 25.01); strateg może je przesunąć.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 bilans dnia od 22:40, Z17-Z19 od 22.11 02:40; Z4 do ponowienia 22.11.
+
+## 2026-11-21 22:47
+**Kanał:** pomiar (Z16) i usunięcie przeszkody w ruchu z Facebooka.
+**Co zrobione:** bilans dnia policzony, a przy nim znaleziony i naprawiony 404: Facebook sklejał link fluxlab.pl/narzedzia z kolejnym słowem posta, teraz /narzedzia<cokolwiek> przekierowuje na /narzedzia.
+**Ruch:** raport_ruchu doba: 368 odsłon, 169 osób (b2b-email 104, Facebook 59, google-ads 51, Google 27, YouTube 19); lejek 7 dni 1371 sesji → 9 form_start → 1 zapytanie.
+
+Bilans 21.11 (kalendarzowo, do 22:43, po odsiewie, bez /mail/, b2b-email i sesji testowych):
+
+| Kanał | 21.11 | 20.11 (do 22:43) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 53 / 61 | 59 / 74 |
+| www.google.com | 2 (oba /) | 7 |
+| google-ads | 13 (24472439947: /ksef-integracja-erp 8, /ksef-integracja 2, /produkty 1; /ads 2) | 7 |
+| b2b | 1 | 6 |
+| useme.com | 0 | 3 |
+| chatgpt płatne / naturalne | 0 / 0 | 0 / 0 |
+| Facebook / Instagram | 5 (www 4, m 1) / 1 | 0 / 0 |
+| YouTube / Threads | 3 / 2 | 0 / 0 |
+| GitHub | 0 | 0 |
+| Bing / LinkedIn / DuckDuckGo | 0 / 0 / 1 | 1 / 1 / 0 |
+| Bez odsyłacza | 26 | 36 |
+| Uruchomienia narzędzi | 0 | 0 |
+| Pobrania PDF | 6 (arkusz-automatyzacja-czy-etat 2, poradnik-seo-mala-firma 2, schemat-integracji-crm-erp 1, checklista-ksef-2027 1) | 3 |
+| form_start | 1 (/) | 0 |
+| lead_* | 0 | 0 |
+
+Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej google-ads (13, z czego 8 na nowej /ksef-integracja-erp) i social (Facebook 5, YouTube 3, Threads 2, Instagram 1). Uruchomień narzędzi znowu 0. Dodatkowo klik_whatsapp 1 na /. Dwie z pięciu sesji z Facebooka (15:04 i 19:35) trafiły na 404: /narzedziaprzepisanie i /narzedziaspotkań.
+**Dowód:** commit 31808e86 (next.config.ts), produkcja: /narzedziaprzepisanie i /narzedziaspotka%C5%84 → 307 na /narzedzia, /narzedzia 200; wiadomość do FL_rolki 22:46 (spacja po linku, pełny adres narzędzia z utm). Lokalny build niemożliwy (node_modules na /mnt/xpg, pamięć project_lokalny_build_zepsuty), wzorzec sprawdzony path-to-regexp z next i curlem na produkcji; spojnosc.mjs bez nowych rozjazdów.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 od 22.11 02:40, Z18 od 04:40 (w zmianach jest next.config.ts, nie app), Z19 od 06:40; Z4 do ponowienia 22.11.
