@@ -1,7 +1,7 @@
 import { esc, ramkaMaila } from "@/lib/dokumenty-mail";
 import { mapaRownolegla, nipPoprawny } from "@/lib/rejestry-publiczne";
 
-const MF = "https://wl-api.mf.gov.pl/api/search/bank-accounts";
+const MF = "https://wykazpodatnikowvat.mf.gov.pl/api/search/bank-accounts";
 const PACZKA_MF = 30;
 export const MAX_WIERSZY = 500;
 export const PROG_ZL = 15000;

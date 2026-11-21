@@ -3,7 +3,7 @@
  * wykaz podatników VAT (Ministerstwo Finansów) i odpis aktualny z KRS.
  */
 
-const MF = "https://wl-api.mf.gov.pl/api/search/nip";
+const MF = "https://wykazpodatnikowvat.mf.gov.pl/api/search/nip";
 const KRS = "https://api-krs.ms.gov.pl/api/krs/OdpisAktualny/";
 
 export function nipPoprawny(nip: string): boolean {
