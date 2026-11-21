@@ -12172,3 +12172,11 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dowód:** cykl/pomiar-kanalow.py 02:43.
 **Dla Pawła:** 
 **Zostało otwarte:** Z16 IndexNow dnia (od 04:40), Z17 pomiar dla stratega (od 06:40).
+
+## 2026-11-21 04:45
+**Kanał:** 2 (widoczność, zgłoszenie adresów do wyszukiwarek), zadanie Z16 z planu.
+**Co zrobione:** jedyna zmiana w app od 20.11 08:40, /prosba-o-opinie-google (commit 2c02d1fd), zgłoszona przez IndexNow; strona odpowiada 200 z robots index,follow.
+**Ruch:** raport_ruchu: doba 473 odsłony, 240 osób; źródła b2b-email 268, www.google.com 17, useme.com 16, b2b 15, google-ads 14; uruchomienia narzędzi 0; lejek 7 dni: 10 form_start, 1 wysłane zapytanie.
+**Dowód:** IndexNow wspólny 403 (UserForbiddedToAccessSite, jak w poprzednich zgłoszeniach), Yandex 200, Naver 200; sitemap.xml 278 `<loc>`.
+**Dla Pawła:** 
+**Zostało otwarte:** Z17 pomiar dla stratega (nie wcześniej niż 06:40).
