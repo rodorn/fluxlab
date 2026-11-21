@@ -12195,3 +12195,13 @@ Z14: 035-przelew-biala-lista 9.10, 174-biala-lista-status-vat 26.10, 324-biala-l
 **Dowód:** cykl/gsc-zapytania-2026-11-21.txt (100 wierszy + „cele CTR”), cykl/gsc-strony-2026-11-21.txt (100 wierszy); fluxlab-strona.timer enabled/active; budżet „wstrzymaj” (57%, prognoza 124%).
 **Dla Pawła:** 
 **Zostało otwarte:** Z3 lista niezindeksowanych i Z4 żądania indeksowania (od 08:40).
+
+<!-- WYSLANO 2026-11-21 07:03 -->
+
+## 2026-11-21 09:17
+**Kanał:** Google (indeksowanie), plan Z3 i Z4.
+**Co zrobione:** Z3 zrobione: lista niezindeksowanych z GSC w cykl/gsc-niezindeksowane-2026-11-21.txt (10 adresów z sitemap.xml); Z4 [!]: wszystkie 10 próśb o indeksowanie odrzucone przez dzienny limit GSC, także po resecie o 09:00.
+**Ruch:** 229 osób, 426 odsłon w dobie (+25% wobec średniej); źródła: b2b-email 233, google.com 17, useme.com 16, linkedin 13, google-ads 13. Uruchomienia narzędzi 0; lejek 7 dni: 10 form_start, 1 zapytanie.
+**Dowód:** GSC 16.11: „zeskanowana, nie zindeksowana” 147 (2 z mapy witryny, reszta to subdomeny, chunki _next, pliki), „wykryta, nie zindeksowana” 8 (wszystkie z mapy, artykuły strefy wiedzy). Sprawdzenie adresu dziś: 7 z 10 nie ma w Google, 3 (faktury-kosztowe-z-ksef, integracje-api, maly-zus-plus-kiedy-sie-oplaca) już są. Log cykl/z4-indeksowanie-2026-11-21.log; komunikat GSC „Przekroczono limit… Spróbuj ponownie jutro”.
+**Dla Pawła:**
+**Zostało otwarte:** 7 adresów do ponownej prośby 22.11 (lista w Z4); w logach repo brak próśb od 20.11, więc limit zużywa ktoś inny na tej usłudze (do sprawdzenia przez FL_SEO). Następne: Z5 Bing i Z6 od 10:40.

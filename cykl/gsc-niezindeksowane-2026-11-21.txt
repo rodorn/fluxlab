@@ -1,0 +1,14 @@
+# GSC Indeksowanie → Strony, odczyt 2026-11-21 08:50, raport „Ostatnia aktualizacja: 16.11.2026”; tylko adresy z https://fluxlab.pl/sitemap.xml
+# przyczyna | adres | ostatni skan
+# „zeskanowana, nie zindeksowana”: 147 w GSC, 2 w sitemap.xml
+zeskanowana, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca | 17 lis 2026
+zeskanowana, nie zindeksowana | https://fluxlab.pl/integracje-api | 16 lis 2026
+# „wykryta, nie zindeksowana”: 8 w GSC, 8 w sitemap.xml
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/automatyzacja-obslugi-klienta | Nie dotyczy
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/crm-dla-posrednika-kredytowego-jedna-sprawa | Nie dotyczy
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/e-doreczenia-w-firmie | Nie dotyczy
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/kalkulator-oze-formularz-wycena-czy-kalkulator | Nie dotyczy
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/ksef-2027-w-malej-firmie | Nie dotyczy
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/n8n-zapier-czy-wlasny-serwer | Nie dotyczy
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/otwarcie-maila-z-oferta | Nie dotyczy
+wykryta, nie zindeksowana | https://fluxlab.pl/strefa-wiedzy/strona-dla-malej-firmy-wordpress-wix-czy-nextjs | Nie dotyczy
