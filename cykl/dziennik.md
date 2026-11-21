@@ -12250,3 +12250,11 @@ Z10: „automatyzacja podatków” trafia w 9 z 14 wyświetleń na /automatyzacj
 **Dowód:** commit a7a8e14e; produkcja `grep -c biala-lista-vat-nowe-api` = 1 na /strefa-wiedzy/numer-ksef-w-przelewie i 1 na /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef; IndexNow 3 adresów: Yandex 200, Naver 200, wspólny 403 (jak zwykle).
 **Dla Pawła:**
 **Zostało otwarte:** Z13 (dane GSC dla FL_SEO) od 18:40, Z14 od 18:40, Z15 od 20:40, Z16 od 22:40; Z4 do ponowienia 22.11 (7 adresów, limit GSC zużyty 21.11).
+
+## 2026-11-21 18:45
+**Kanał:** Google (CTR), plan Z13 i Z14.
+**Co zrobione:** FL_SEO dostał 10 zapytań z GSC z pozycją do ok. 10 i zerem kliknięć (z adresami stron i oznaczeniem tytułów zmienionych dziś w Z6 i Z8); Z14 [!], bo „enova” ma w 28 dniach 1 wyświetlenie, a 29 to odczyt z października.
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 56 ludzi (bez odsyłacza 34, google-ads 11, Facebook 4, Threads 2, YouTube 2, useme 1, Instagram 1, b2b 1, DuckDuckGo 1); 7 dni 396. raport_ruchu: 323 odsłony, 183 osoby (b2b-email 115, Facebook 34, google-ads 30, YouTube 18, Threads 10); uruchomienia narzędzi 0; lejek 7 dni 8 form_start → 1 zapytanie.
+**Dowód:** `sesja napisz FL_SEO` → „Doręczono do FL_SEO (18:43)”; kandydaci do tytułu z odpowiedzią wprost: „ksef błąd 440” 15 wyśw. poz. 8,3 (/strefa-wiedzy/numeracja-faktur-ksef-2027) i „gutschrift co to” 12 wyśw. poz. 2,2 (/strefa-wiedzy/gutschrift-ksef). Budżet „utrzymaj”.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 kalendarz wpisów od 20:40, Z16 bilans dnia od 22:40.
