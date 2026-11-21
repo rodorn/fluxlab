@@ -71,6 +71,18 @@ export default function Dziekuje() {
                 tym etapie.
               </p>
 
+              <p className="mb-6 text-center text-base text-gray-800 dark:text-gray-200">
+                Wolisz porozmawiać od razu? Zadzwoń:{" "}
+                <a
+                  href="tel:+48665466565"
+                  data-cta="telefon_dziekuje"
+                  className="font-semibold text-accent underline underline-offset-2"
+                >
+                  665 466 565
+                </a>{" "}
+                (11–24).
+              </p>
+
               <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-xl p-5 mb-8">
                 <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                   <strong className="text-gray-900 dark:text-white">

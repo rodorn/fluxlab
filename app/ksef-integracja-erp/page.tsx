@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/Header";
+import HeaderReklamy from "@/components/HeaderReklamy";
 import FormularzKrotki from "@/components/FormularzKrotki";
 import TrybReklamy from "@/components/TrybReklamy";
 import AnkietaWyjscia from "@/components/AnkietaWyjscia";
@@ -94,7 +94,7 @@ export default function KsefIntegracjaErp() {
   return (
     <>
       <TrybReklamy />
-      <Header />
+      <HeaderReklamy />
       <main>
         <section id="wycena" className="container-wide scroll-mt-16 pt-4 pb-10 text-center">
           <h1 className="h1-strony mx-auto max-w-3xl">

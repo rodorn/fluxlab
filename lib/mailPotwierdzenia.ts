@@ -30,7 +30,12 @@ export function esc(s: string): string {
     .replace(/'/g, "&#39;");
 }
 
-export function akapityPotwierdzenia(polecenie: boolean): string[] {
+export function akapityPotwierdzenia(polecenie: boolean, krotki = false): string[] {
+  if (krotki)
+    return [
+      "dzięki za zgłoszenie. Oddzwoni Paweł Iwanek w ciągu 2 godzin, w godz. 11–24.",
+      "Jeśli wolisz zadzwonić sam: 665 466 565.",
+    ];
   return polecenie
     ? [
         `dzięki za polecenie. Odezwiemy się do poleconej osoby ${terminOdpowiedzi()} i powiemy, że kontakt jest od Ciebie.`,
@@ -60,6 +65,7 @@ export function potwierdzenieHtml(
   telefon: string,
   linkKalendarza: string,
   polecenie = false,
+  krotki = false,
 ): string {
   const font = "Arial,Helvetica,sans-serif";
   const p = `margin:0 0 16px 0;font-family:${font};font-size:15px;line-height:24px;color:#1f2937;`;
@@ -100,7 +106,7 @@ ${przycisk}
 <tr><td style="padding:24px 32px;border-top:4px solid ${AKCENT};border-bottom:1px solid #e5e7eb;font-family:${font};font-size:22px;line-height:28px;font-weight:bold;color:#111827;">Flux<span style="color:${AKCENT};">Lab</span></td></tr>
 <tr><td style="padding:28px 32px 12px 32px;">
 <p style="${p}">Cześć,</p>
-${akapityPotwierdzenia(polecenie).map((a) => `<p style="${p}">${esc(a)}</p>`).join("\n")}
+${akapityPotwierdzenia(polecenie, krotki).map((a) => `<p style="${p}">${esc(a)}</p>`).join("\n")}
 ${blok}
 <p style="${p}">Paweł</p>
 </td></tr>

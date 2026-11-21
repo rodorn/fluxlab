@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { readUtm } from "@/lib/zrodlo";
@@ -41,6 +41,29 @@ export default function FormularzKrotki({
   const [bladOpis, setBladOpis] = useState<string | null>(null);
   const [firma, setFirma] = useState<string>("");
   const [tylkoNumer, setTylkoNumer] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const wyslano = useRef(false);
+
+  // Wyjście z poprawnym kontaktem bez wysłania: liczymy porzucenie (sam fakt
+  // i rodzaj kontaktu, bez numeru ani adresu, których nikt nie wysłał).
+  useEffect(() => {
+    let zgloszone = false;
+    const naUkrycie = () => {
+      if (document.visibilityState !== "hidden" || zgloszone || wyslano.current)
+        return;
+      const k = (
+        (formRef.current?.elements.namedItem("kontakt") as HTMLInputElement | null)
+          ?.value ?? ""
+      ).trim();
+      const mail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(k);
+      const tel = !k.includes("@") && k.replace(/\D/g, "").length >= 9;
+      if (!mail && !tel) return;
+      zgloszone = true;
+      zglosZdarzenie(mail ? "form_porzucony_mail" : "form_porzucony_tel");
+    };
+    document.addEventListener("visibilitychange", naUkrycie);
+    return () => document.removeEventListener("visibilitychange", naUkrycie);
+  }, []);
 
   async function sprawdzNip(v: string) {
     const cyfry = v.replace(/\D/g, "");
@@ -101,6 +124,7 @@ export default function FormularzKrotki({
       phone: maEmail ? "" : kontakt,
       termin: "",
       website: wartosc("website"),
+      krotki: true,
       skad: "",
       powod: "",
       ...readUtm(),
@@ -114,6 +138,7 @@ export default function FormularzKrotki({
         body: JSON.stringify(dane),
       });
       if (res.ok) {
+        wyslano.current = true;
         if (!dane.website) zglosZdarzenie("lead_krotki");
         router.push(
           `/dziekuje?${new URLSearchParams({ type: dane.problemType, scale: dane.problemScale })}`,
@@ -136,6 +161,7 @@ export default function FormularzKrotki({
 
   return (
     <form
+      ref={formRef}
       id={`krotki-${formId}`}
       {...(zawsze ? {} : { "data-tylko-reklama": "" })}
       noValidate

@@ -79,11 +79,11 @@ const POLECENIE = "polecenie_crm_posrednik";
 const FROM_PAWEL =
   process.env.RESEND_FROM_PAWEL ?? "Paweł, Fluxlab <pawel@fluxlab.pl>";
 
-function potwierdzenie(pref: string, termin: string, telefon: string, polecenie: boolean) {
+function potwierdzenie(pref: string, termin: string, telefon: string, polecenie: boolean, krotki = false) {
   const kontakt = zdanieKontaktu(pref, termin, telefon);
   return `Cześć,
 
-${akapityPotwierdzenia(polecenie).join("\n\n")}
+${akapityPotwierdzenia(polecenie, krotki).join("\n\n")}
 
 ${kontakt}
 
@@ -379,13 +379,14 @@ export async function POST(req: Request) {
     telefon,
     termin ? linkKalendarza(termin, email, company) : "",
     polecenie,
+    body.krotki === true,
   );
   try {
     const { error: replyError } = await resendKlient().emails.send({
       from: FROM_PAWEL,
       to: email,
       subject: "Dostaliśmy zgłoszenie, Fluxlab",
-      text: potwierdzenie(contactPref, termin, telefon, polecenie),
+      text: potwierdzenie(contactPref, termin, telefon, polecenie, body.krotki === true),
       html: htmlPotwierdzenia,
     });
 
@@ -401,7 +402,7 @@ export async function POST(req: Request) {
       await wyslijPrzezSmtp(
         email,
         "Dostaliśmy zgłoszenie, Fluxlab",
-        potwierdzenie(contactPref, termin, telefon, polecenie),
+        potwierdzenie(contactPref, termin, telefon, polecenie, body.krotki === true),
         htmlPotwierdzenia,
       );
       return NextResponse.json({ ok: true });
