@@ -156,7 +156,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section id="systemy" className="container-wide scroll-mt-16 py-4">
+        <section id="systemy" className="container-wide scroll-mt-16 py-3">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Jakie systemy podłączamy</h2>
             <ul className="mt-4 grid gap-2.5">
@@ -169,7 +169,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section id="kroki" className="container-wide scroll-mt-16 py-4">
+        <section id="kroki" className="container-wide scroll-mt-16 py-3">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Trzy kroki</h2>
             <ol className="mt-3 grid gap-2">
@@ -188,7 +188,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section className="container-wide py-4">
+        <section className="container-wide py-3">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Co dostajesz</h2>
             <div className="mt-3 grid gap-2 sm:grid-cols-2 sm:items-start">
@@ -233,7 +233,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section id="ceny" className="container-wide scroll-mt-16 py-4">
+        <section id="ceny" className="container-wide scroll-mt-16 py-3">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Ceny netto</h2>
             <div className="mt-4 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700">
@@ -270,7 +270,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section className="container-wide py-4">
+        <section className="container-wide py-3">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Sprawdzone na własnej firmie</h2>
             <p className="mt-3 text-gray-700 dark:text-gray-300">
@@ -283,7 +283,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section className="container-wide py-4">
+        <section className="container-wide py-3">
           <div className="mx-auto max-w-3xl">
             <h2 className="h2-sekcji">Pytania</h2>
             <div className="mt-3 grid gap-2">
@@ -300,7 +300,7 @@ export default function KsefIntegracjaErp() {
           </div>
         </section>
 
-        <section className="container-wide py-4">
+        <section className="container-wide py-3">
           <div className="mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
             <p className="font-semibold text-gray-900 dark:text-white">
               Dla kogo to nie jest
