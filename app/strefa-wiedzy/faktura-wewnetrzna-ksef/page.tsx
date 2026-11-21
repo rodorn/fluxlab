@@ -12,11 +12,11 @@ const OPIS =
   "Czy fakturę wewnętrzną wysyła się do KSeF? Nie, od 2014 roku nie jest fakturą w rozumieniu ustawy o VAT, zostaje w ewidencji jako dokument WEW.";
 
 export const metadata: Metadata = {
-  title: "Czy fakturę wewnętrzną wysyła się do KSeF? | Fluxlab",
+  title: "Faktura wewnętrzna a KSeF: nie wysyłaj jej | Fluxlab",
   description:
     "Czy fakturę wewnętrzną wysyła się do KSeF? Nie, od 2014 roku nie jest fakturą w rozumieniu ustawy o VAT, zostaje w ewidencji jako dokument WEW.",
   openGraph: {
-    title: "Czy fakturę wewnętrzną wysyła się do KSeF? | Fluxlab",
+    title: "Faktura wewnętrzna a KSeF: nie wysyłaj jej | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
