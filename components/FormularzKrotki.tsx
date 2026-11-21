@@ -14,8 +14,19 @@ const pole =
  *  zgłoszenia to nazwa strony, jak w components/LandingForm.tsx. */
 export default function FormularzKrotki({
   formId,
+  zawsze = false,
+  naglowek = "Zostaw kontakt, odpiszemy z ceną i terminem w 1 dzień roboczy",
+  opisPlaceholder = "Czego potrzebujesz? Jedno zdanie *",
+  opisEtykieta = "Czego potrzebujesz (wymagane)",
+  przycisk = "Wyślij, bezpłatna wycena",
 }: {
   formId: string;
+  /** Strona z reklamy bez zależności od html[data-reklama]: formularz widać zawsze. */
+  zawsze?: boolean;
+  naglowek?: string;
+  opisPlaceholder?: string;
+  opisEtykieta?: string;
+  przycisk?: string;
 }) {
   const router = useRouter();
   const [wysylka, setWysylka] = useState(false);
@@ -97,14 +108,14 @@ export default function FormularzKrotki({
   return (
     <form
       id={`krotki-${formId}`}
-      data-tylko-reklama=""
+      {...(zawsze ? {} : { "data-tylko-reklama": "" })}
       noValidate
       onSubmit={wyslij}
       onInput={(e) => (e.target as HTMLElement).removeAttribute("aria-invalid")}
       className="relative mx-auto mt-6 w-full max-w-xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 text-left shadow-xl shadow-accent/10 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-accent-solid sm:p-5 dark:border-gray-700 dark:bg-gray-800"
     >
       <p className="text-base font-semibold text-gray-900 dark:text-white">
-        Zostaw kontakt, odpiszemy z ceną i terminem w 1 dzień roboczy
+        {naglowek}
       </p>
       <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
         Wolisz rozmowę? Zadzwoń:{" "}
@@ -152,14 +163,14 @@ export default function FormularzKrotki({
           className={pole}
         />
         <label className="sr-only" htmlFor={`krotki-msg-${formId}`}>
-          Czego potrzebujesz (wymagane)
+          {opisEtykieta}
         </label>
         <input
           id={`krotki-msg-${formId}`}
           name="message"
           required
           maxLength={500}
-          placeholder="Czego potrzebujesz? Jedno zdanie *"
+          placeholder={opisPlaceholder}
           className={pole}
         />
       </div>
@@ -168,7 +179,7 @@ export default function FormularzKrotki({
         disabled={wysylka}
         className="btn-primary btn-lg mt-3 w-full disabled:opacity-60"
       >
-        {wysylka ? "Wysyłanie..." : "Wyślij, bezpłatna wycena"}
+        {wysylka ? "Wysyłanie..." : przycisk}
       </button>
       {blad && (
         <p

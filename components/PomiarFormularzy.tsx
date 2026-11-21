@@ -14,10 +14,13 @@ export default function PomiarFormularzy() {
       const pole = e.target as HTMLElement | null;
       if (!pole?.matches?.("input, textarea, select")) return;
       const form = pole.closest("form");
-      if (!form || form.dataset.pomiar === "wlasny" || zaczete.has(form)) return;
+      if (!form || form.dataset.pomiar === "wlasny" || zaczete.has(form))
+        return;
       zaczete.add(form);
       const id =
-        form.id || form.getAttribute("aria-label") || `formularz${location.pathname}`;
+        form.id ||
+        form.getAttribute("aria-label") ||
+        `formularz${location.pathname}`;
       gaEvent("form_start", { form_id: id });
       zglosZdarzenie("form_start");
     };
@@ -26,7 +29,12 @@ export default function PomiarFormularzy() {
       const a = (e.target as HTMLElement | null)?.closest?.("a");
       const href = a?.getAttribute("href") ?? "";
       if (href.startsWith("tel:")) zglosZdarzenie("klik_telefon");
-      else if (/^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(href)) zglosZdarzenie("klik_whatsapp");
+      else if (
+        /^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(
+          href,
+        )
+      )
+        zglosZdarzenie("klik_whatsapp");
     };
     document.addEventListener("click", naKlik, true);
     return () => {
@@ -60,24 +68,48 @@ export default function PomiarFormularzy() {
     };
     addEventListener("scroll", naScroll, { passive: true });
 
-    let widziany = false;
+    // Formularz liczy się jako zobaczony, gdy co najmniej połowa stoi w oknie
+    // przez sekundę. Samo przecięcie z oknem przy wejściu zawyżało liczbę.
+    const zegary = new Map<Element, ReturnType<typeof setTimeout>>();
+    const policzone = new WeakSet<Element>();
+    let zgloszone = false;
     const obserwator = new IntersectionObserver(
       (wpisy) => {
-        if (widziany || !wpisy.some((w) => w.isIntersecting)) return;
-        widziany = true;
-        zglosZdarzenie("widok_formularza");
-        obserwator.disconnect();
+        for (const w of wpisy) {
+          const f = w.target;
+          if (policzone.has(f)) continue;
+          if (w.isIntersecting && w.intersectionRatio >= 0.5) {
+            if (zegary.has(f)) continue;
+            zegary.set(
+              f,
+              setTimeout(() => {
+                zegary.delete(f);
+                if (zgloszone || document.visibilityState !== "visible") return;
+                zgloszone = true;
+                policzone.add(f);
+                obserwator.disconnect();
+                zglosZdarzenie("widok_formularza");
+              }, 1000),
+            );
+          } else if (zegary.has(f)) {
+            clearTimeout(zegary.get(f));
+            zegary.delete(f);
+          }
+        }
       },
-      { threshold: 0.3 },
+      { threshold: [0, 0.5] },
     );
     const obserwuj = () => {
-      if (!widziany) document.querySelectorAll("form").forEach((f) => obserwator.observe(f));
+      document.querySelectorAll("form").forEach((f) => {
+        if (!policzone.has(f)) obserwator.observe(f);
+      });
     };
     const t1 = setTimeout(obserwuj, 300);
     const t2 = setTimeout(obserwuj, 2500);
     return () => {
       removeEventListener("scroll", naScroll);
       obserwator.disconnect();
+      zegary.forEach((z) => clearTimeout(z));
       clearTimeout(t1);
       clearTimeout(t2);
     };

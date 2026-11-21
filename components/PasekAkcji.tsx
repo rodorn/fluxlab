@@ -20,6 +20,7 @@ const BEZ_PASKA = [
 // Landingi z reklam: pasek z trzema drogami kontaktu zamiast jednego przycisku.
 const LANDINGI_REKLAM = [
   "/ksef-integracja",
+  "/ksef-integracja-erp",
   "/e-doreczenia-integracja",
   "/wdrozenie-n8n-cena",
   "/automatyzacja-procesow-biznesowych",
