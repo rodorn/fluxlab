@@ -37,7 +37,8 @@ export default function VatWJdgArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/vat-w-jdg-kiedy-warto"
+        <Breadcrumbs
+          href="/strefa-wiedzy/vat-w-jdg-kiedy-warto"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "VAT w JDG, kiedy warto" },
@@ -78,9 +79,7 @@ export default function VatWJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="h2-sekcji mb-6">
-                        Zwolnienie podmiotowe
-                      </h2>
+                      <h2 className="h2-sekcji mb-6">Zwolnienie podmiotowe</h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy rocznej sprzedaży netto do 240 000 zł możesz
                         korzystać{" "}
@@ -90,13 +89,13 @@ export default function VatWJdgArticle() {
                         >
                           ze zwolnienia z VAT
                         </Link>
-                        . Nie naliczasz VAT, nie
-                        składasz JPK_V7, ale też nie odliczasz VAT od zakupów.
+                        . Nie naliczasz VAT, nie składasz JPK_V7, ale też nie
+                        odliczasz VAT od zakupów.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zwolnienie działa domyślnie, bez wniosku. Rejestracja
-                        jako czynny VAT wymaga formularza VAT-R. Gdy zaczynasz
-                        w trakcie roku, limit liczy się proporcjonalnie.
+                        jako czynny VAT wymaga formularza VAT-R. Gdy zaczynasz w
+                        trakcie roku, limit liczy się proporcjonalnie.
                       </p>
 
                       <h2 className="h2-sekcji mb-6 mt-12">
@@ -144,13 +143,11 @@ export default function VatWJdgArticle() {
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Sprzęt, oprogramowanie, usługi, samochód: VAT od nich
-                        odliczasz. Przy kosztach 5 000 zł netto miesięcznie to
-                        1 150 zł VAT miesięcznie, czyli 13 800 zł rocznie.
+                        odliczasz. Przy kosztach 5 000 zł netto miesięcznie to 1
+                        150 zł VAT miesięcznie, czyli 13 800 zł rocznie.
                       </p>
 
-                      <h2 className="h2-sekcji mb-6 mt-12">
-                        Kiedy NIE warto
-                      </h2>
+                      <h2 className="h2-sekcji mb-6 mt-12">Kiedy NIE warto</h2>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                         Klienci indywidualni (B2C)
                       </h3>
@@ -185,12 +182,10 @@ export default function VatWJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="h2-sekcji mb-6">
-                        Wpływ VAT na cashflow
-                      </h2>
+                      <h2 className="h2-sekcji mb-6">Wpływ VAT na cashflow</h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Faktura na 10 000 zł netto daje 12 300 zł na koncie,
-                        ale 2 300 zł (minus VAT z zakupów) oddajesz do 25. dnia
+                        Faktura na 10 000 zł netto daje 12 300 zł na koncie, ale
+                        2 300 zł (minus VAT z zakupów) oddajesz do 25. dnia
                         następnego miesiąca albo, przy rozliczeniu kwartalnym,
                         miesiąca po kwartale.
                       </p>
@@ -207,7 +202,7 @@ export default function VatWJdgArticle() {
                         VAT i PIT to osobne decyzje. Czynny VAT połączysz z
                         ryczałtem, liniowym i skalą. Ryczałtowiec nie odlicza
                         kosztów w PIT, ale VAT od zakupów odlicza. Więcej w
-                        artykule 
+                        artykule
                         <Link
                           href="/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026"
                           className="text-accent hover:underline"
@@ -236,9 +231,7 @@ export default function VatWJdgArticle() {
                         do utrzymania.
                       </p>
 
-                      <h2 className="h2-sekcji mb-6 mt-12">
-                        Podsumowanie
-                      </h2>
+                      <h2 className="h2-sekcji mb-6 mt-12">Podsumowanie</h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         B2B i koszty z VAT: rejestracja prawie zawsze się
                         opłaca. B2C i niskie koszty: zwolnienie jest prostsze i
@@ -254,9 +247,7 @@ export default function VatWJdgArticle() {
                 content: (
                   <div className="py-10 lg:py-12">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="h2-sekcji mb-6">
-                        FAQ
-                      </h2>
+                      <h2 className="h2-sekcji mb-6">FAQ</h2>
                       <div className="space-y-4">
                         <details className="group rounded-2xl border border-gray-200 dark:border-gray-700">
                           <summary className="flex cursor-pointer items-center justify-between p-6 text-gray-900 dark:text-white font-medium">
@@ -276,7 +267,9 @@ export default function VatWJdgArticle() {
                             </span>
                           </summary>
                           <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Tak, najwcześniej po roku, jeśli obrót nie przekroczył 240 000 zł. Rezygnację zgłaszasz na VAT-R.
+                            Tak, najwcześniej po roku, jeśli obrót nie
+                            przekroczył 240 000 zł. Rezygnację zgłaszasz na
+                            VAT-R.
                           </p>
                         </details>
 
@@ -320,7 +313,8 @@ export default function VatWJdgArticle() {
                             </span>
                           </summary>
                           <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Często tak, bo płacą cenę brutto, a ta jest niższa bez VAT.
+                            Często tak, bo płacą cenę brutto, a ta jest niższa
+                            bez VAT.
                           </p>
                         </details>
 
@@ -342,7 +336,8 @@ export default function VatWJdgArticle() {
                             </span>
                           </summary>
                           <p className="px-6 pb-6 text-gray-600 dark:text-gray-400">
-                            Co miesiąc. Kwartalna może być tylko część deklaracyjna u małych podatników.
+                            Co miesiąc. Kwartalna może być tylko część
+                            deklaracyjna u małych podatników.
                           </p>
                         </details>
                       </div>
@@ -386,6 +381,14 @@ export default function VatWJdgArticle() {
                               className="text-accent hover:underline"
                             >
                               Ryczałt czy liniowy, co wybrać
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/strefa-wiedzy/ksef-2027-w-malej-firmie"
+                              className="text-accent hover:underline"
+                            >
+                              KSeF 2027 w małej firmie
                             </Link>
                           </li>
                         </ul>

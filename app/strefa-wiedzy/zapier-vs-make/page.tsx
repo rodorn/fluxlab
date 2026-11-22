@@ -60,7 +60,8 @@ export default function ZapierVsMakeArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/zapier-vs-make"
+        <Breadcrumbs
+          href="/strefa-wiedzy/zapier-vs-make"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Zapier vs Make" },
@@ -201,9 +202,7 @@ export default function ZapierVsMakeArticle() {
                 label: "Logika i compliance",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="h2-sekcji mb-6">
-                      Logika i obsługa błędów
-                    </h2>
+                    <h2 className="h2-sekcji mb-6">Logika i obsługa błędów</h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       Make ma natywnie elementy, które w Zapierze wymagają
                       droższych planów albo obejść przez Code step:
@@ -214,9 +213,7 @@ export default function ZapierVsMakeArticle() {
                       <li>obsługa błędów i ponawianie per moduł</li>
                     </ul>
 
-                    <h2 className="h2-sekcji mb-6">
-                      Compliance i RODO
-                    </h2>
+                    <h2 className="h2-sekcji mb-6">Compliance i RODO</h2>
                     <p className="text-gray-600 dark:text-gray-400">
                       Make ma serwery w UE, Zapier działa globalnie z USA. Dla
                       branż regulowanych Make jest zwykle prostszy. Przy danych
@@ -260,7 +257,9 @@ export default function ZapierVsMakeArticle() {
                       <li>potrzebujesz obsługi błędów i danych w UE</li>
                     </ul>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Kiedy żadne z nich: gdy proces powtarza się rzadziej niż raz w tygodniu, gdy gotowy program ma tę funkcję wbudowaną albo gdy reguł jest tyle, że lepszy będzie dedykowany kod.
+                      Kiedy żadne z nich: gdy proces powtarza się rzadziej niż
+                      raz w tygodniu, gdy gotowy program ma tę funkcję wbudowaną
+                      albo gdy reguł jest tyle, że lepszy będzie dedykowany kod.
                     </p>
                     <p className="text-gray-600 dark:text-gray-400 mb-10">
                       Hybryda też ma sens: Zapier do prostych integracji
@@ -280,7 +279,8 @@ export default function ZapierVsMakeArticle() {
                         Nie wiesz, które narzędzie pasuje do Twoich procesów?
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Dobierzemy i wdrożymy platformę bez przepłacania za zbędne funkcje.
+                        Dobierzemy i wdrożymy platformę bez przepłacania za
+                        zbędne funkcje.
                       </p>
                       <Link href="/zapier-make" className="btn-primary">
                         Zobacz usługę Zapier i Make
@@ -293,9 +293,7 @@ export default function ZapierVsMakeArticle() {
                 label: "FAQ",
                 content: (
                   <div className="max-w-3xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
-                    <h2 className="h2-sekcji mb-6">
-                      FAQ
-                    </h2>
+                    <h2 className="h2-sekcji mb-6">FAQ</h2>
                     <div className="space-y-4">
                       {faqItems.map((item, index) => (
                         <details
@@ -359,6 +357,14 @@ export default function ZapierVsMakeArticle() {
               </li>
               <li>
                 <Link
+                  href="/strefa-wiedzy/n8n-zapier-czy-wlasny-serwer"
+                  className="text-accent hover:underline"
+                >
+                  n8n, Zapier czy własny serwer: koszt przy 1–100 tys. operacji
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/strefa-wiedzy/make-vs-n8n"
                   className="text-accent hover:underline"
                 >
@@ -389,7 +395,10 @@ export default function ZapierVsMakeArticle() {
             description:
               "Zapier cennik 2026: Free 100 tasków, Professional od ok. 19,99 USD, Team od 69 USD miesięcznie. Porównanie z Make i koszt przy 100 leadach dziennie.",
             datePublished: "2026-04-19",
-            dateModified: dataZmiany("/strefa-wiedzy/zapier-vs-make", "2026-04-19"),
+            dateModified: dataZmiany(
+              "/strefa-wiedzy/zapier-vs-make",
+              "2026-04-19",
+            ),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

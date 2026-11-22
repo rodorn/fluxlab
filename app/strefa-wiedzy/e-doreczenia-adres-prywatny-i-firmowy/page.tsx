@@ -83,13 +83,21 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
             <section>
               <h2 className="mb-4 h2-sekcji">Dwie osobne skrzynki</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Pisma do firmy urząd wyśle na adres przedsiębiorcy, pisma do
-                ciebie prywatnie na adres prywatny. Każdą skrzynkę trzeba czytać
-                osobno, bo list w jednej nie pojawi się w drugiej.
+                <Link
+                  href="/strefa-wiedzy/e-doreczenia-w-firmie"
+                  className="text-accent hover:underline"
+                >
+                  Pisma do firmy
+                </Link>{" "}
+                urząd wyśle na adres przedsiębiorcy, pisma do ciebie prywatnie
+                na adres prywatny. Każdą skrzynkę trzeba czytać osobno, bo list
+                w jednej nie pojawi się w drugiej.
               </p>
             </section>
             <section>
-              <h2 className="mb-4 h2-sekcji">Jak sprawdzić, co jest założone</h2>
+              <h2 className="mb-4 h2-sekcji">
+                Jak sprawdzić, co jest założone
+              </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Adres firmowy widać w bazie adresów elektronicznych po NIP. Dla
                 spółek z KRS stan adresu sprawdza nasze{" "}
@@ -140,7 +148,10 @@ export default function EDoreczeniaAdresPrywatnyIFirmowyArticle() {
               headline: "e-Doręczenia w JDG: adres prywatny i firmowy",
               description: OPIS,
               datePublished: "2026-10-10",
-              dateModified: dataZmiany("/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy", "2026-10-10"),
+              dateModified: dataZmiany(
+                "/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy",
+                "2026-10-10",
+              ),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",
