@@ -376,7 +376,7 @@ export default function LokalizacjaCheck() {
                 w 1 dzień roboczy.
               </p>
             ) : (
-              <form onSubmit={zamow} className="mt-4">
+              <form data-kontaktowy onSubmit={zamow} className="mt-4">
                 <label
                   htmlFor="lokalizacja-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"

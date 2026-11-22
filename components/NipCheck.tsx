@@ -285,7 +285,7 @@ export default function NipCheck({ dalej = false }: { dalej?: boolean }) {
                 w 1 dzień roboczy.
               </p>
             ) : (
-              <form onSubmit={zamowRaport} className="mt-4">
+              <form data-kontaktowy onSubmit={zamowRaport} className="mt-4">
                 <label
                   htmlFor="nipcheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"

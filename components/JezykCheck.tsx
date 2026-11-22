@@ -299,7 +299,7 @@ export default function JezykCheck() {
                 samego dnia.
               </p>
             ) : (
-              <form onSubmit={zamow} className="mt-4">
+              <form data-kontaktowy onSubmit={zamow} className="mt-4">
                 <label
                   htmlFor="jezykcheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"

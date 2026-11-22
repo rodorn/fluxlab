@@ -286,7 +286,7 @@ export default function AiCheck() {
                 samego dnia.
               </p>
             ) : (
-              <form onSubmit={zamow}>
+              <form data-kontaktowy onSubmit={zamow}>
                 <label
                   htmlFor="ai-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"

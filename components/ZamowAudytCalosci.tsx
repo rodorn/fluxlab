@@ -81,7 +81,7 @@ export default function ZamowAudytCalosci({
             podstronę (do 200): błędy, przekierowania, tytuły, opisy, nagłówki,
             obrazy bez opisu i martwe linki.
           </p>
-          <form onSubmit={zamow} className="mt-4 space-y-3">
+          <form data-kontaktowy onSubmit={zamow} className="mt-4 space-y-3">
             <div
               aria-hidden="true"
               style={{

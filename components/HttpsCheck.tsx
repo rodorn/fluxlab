@@ -374,7 +374,7 @@ export default function HttpsCheck() {
                 {email}, w 1 dzień roboczy.
               </p>
             ) : (
-              <form onSubmit={zamowNaprawe} className="mt-4">
+              <form data-kontaktowy onSubmit={zamowNaprawe} className="mt-4">
                 <label
                   htmlFor="httpscheck-email"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
