@@ -42,7 +42,7 @@ export default function N8nVsZapierArticle() {
     {
       question: "Ile kosztuje n8n?",
       answer:
-        "Community Edition na własnym serwerze: ok. 25 zł/mies. za VPS, bez limitu wykonań. n8n.cloud od ok. 24 EUR/mies. Utrzymanie u wykonawcy zwykle 200-500 zł/mies.",
+        "Community Edition na własnym serwerze: ok. 25 zł/mies. za VPS, bez limitu wykonań. n8n.cloud od ok. 24 EUR/mies. Opieka u nas od 190 zł/mies.",
     },
     {
       question: "Ile kosztuje Zapier?",
@@ -115,7 +115,14 @@ export default function N8nVsZapierArticle() {
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
                           n8n self-hosted: ok. 25 zł/mies. za serwer plus
-                          ewentualnie 200-500 zł utrzymania, bez limitu wykonań
+                          ewentualnie{" "}
+                          <Link
+                            href="/wdrozenie-n8n-cena"
+                            className="text-accent hover:underline"
+                          >
+                            opieka od 190 zł/mies.
+                          </Link>
+                          , bez limitu wykonań
                         </li>
                         <li>n8n.cloud Starter: od ok. 24 EUR/mies., 2 500 wykonań</li>
                         <li>n8n.cloud Pro: od ok. 60 EUR/mies., 10 000 wykonań</li>
