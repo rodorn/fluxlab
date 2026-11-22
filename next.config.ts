@@ -315,6 +315,12 @@ const nextConfig: NextConfig = {
         destination: "/narzedzia",
         permanent: false,
       },
+      // 22.11: /kalkulator-podatkowy„zatwierdź” z www.facebook.com konczyl sie 404.
+      {
+        source: "/kalkulator-podatkowy:reszta([^/?#][^/]*)",
+        destination: "/kalkulator-podatkowy",
+        permanent: true,
+      },
       // Filmy maja teraz pelne artykuly w strefie wiedzy (kategoria Wideo);
       // stare strony z surowa transkrypcja dublowalyby te sama tresc.
       {
