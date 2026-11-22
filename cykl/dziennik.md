@@ -12296,3 +12296,34 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Dowód:** commit 31808e86 (next.config.ts), produkcja: /narzedziaprzepisanie i /narzedziaspotka%C5%84 → 307 na /narzedzia, /narzedzia 200; wiadomość do FL_rolki 22:46 (spacja po linku, pełny adres narzędzia z utm). Lokalny build niemożliwy (node_modules na /mnt/xpg, pamięć project_lokalny_build_zepsuty), wzorzec sprawdzony path-to-regexp z next i curlem na produkcji; spojnosc.mjs bez nowych rozjazdów.
 **Dla Pawła:**
 **Zostało otwarte:** Z17 od 22.11 02:40, Z18 od 04:40 (w zmianach jest next.config.ts, nie app), Z19 od 06:40; Z4 do ponowienia 22.11.
+<!-- WYSLANO 2026-11-22 00:18 -->
+
+## 2026-11-22 00:43
+**Kanał:** brak (czekam na Z17 o 02:40).
+**Co zrobione:** nic, plan 21.11 nie ma dostępnego zadania: Z17 od 02:40, Z18 od 04:40, Z19 od 06:40; Z4 i Z14 zamknięte jako „[!]”.
+**Ruch:** pomiar-kanalow 24 h: ludzie 61 (61 sesji, 77 odsłon); bez odsyłacza 30, google-ads 13, Facebook 8 (www 4, m 2, l 1, utm 1), YouTube 3, Google organiczny 3, Threads 2, DuckDuckGo 2, Instagram 1, b2b 1. Wyjścia do grupy KSeF 24 h: 0. 7 dni: ludzie 398, uruchomiono_numer_ksef 13.
+**Dowód:** brak (wpis oczekiwania).
+**Dla Pawła:**
+**Zostało otwarte:** Z17 od 02:40, Z18 od 04:40, Z19 od 06:40.
+
+## 2026-11-22 02:43
+**Kanał:** Google, pomiar stanu zgłoszonych (Z17).
+**Co zrobione:** sprawdzone w GSC „Sprawdź URL” (bez prośby o indeksowanie) 5 pierwszych adresów z logu Z4: 3 w Google, 2 artykuły Google nadal nie zna.
+**Ruch:** pomiar-kanalow 24 h: ludzie 62 (62 sesje, 78 odsłon); bez odsyłacza 30, google-ads 13, Facebook 9 (www 4, m 2, utm 2, l 1), YouTube 3, Google organiczny 3, Threads 2, DuckDuckGo 2, Instagram 1, b2b 1. Wyjścia do grupy KSeF 24 h: 0. raport_ruchu: doba 448 odsłon, 176 osób (przed odsiewem par i serii).
+**Dowód:** /strefa-wiedzy/e-doreczenia-w-firmie i /strefa-wiedzy/ksef-2027-w-malej-firmie: „Adres URL jest Google nieznany”, skan „Nie dotyczy”, mapy witryn „nie wykryto”, choć oba stoją w sitemap.xml (278 adresów). W Google: /strefa-wiedzy/faktury-kosztowe-z-ksef (skan 16.11 11:35), /integracje-api (18.11 12:32), /strefa-wiedzy/maly-zus-plus-kiedy-sie-oplaca (20.11 12:14). Z4 21.11 nie wysłał żadnej prośby (limit dnia), więc pomiar nie ocenia skuteczności żądań, tylko potwierdza, że te dwa artykuły trzeba zgłosić ręcznie przy najbliższym wolnym limicie.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 od 04:40, Z19 od 06:40; prośba o indeksowanie dwóch artykułów o e-Doręczeniach i KSeF 2027 po resecie limitu GSC (09:00).
+
+## 2026-11-22 04:46
+**Kanał:** widoczność w wyszukiwarkach i asystentach AI (plan stratega, Z18).
+**Co zrobione:** 9 zmienionych od 21.11 06:40 stron (200, index,follow) zgłoszonych przez IndexNow; 3 strony noindex pominięte.
+**Ruch:** lejek 7 dni: 1366 sesji, 10 rozpoczętych formularzy, 1 wysłane zapytanie (raport_ruchu.py); pełna doba w Z19 o 06:40.
+**Dowód:** IndexNow: Yandex 200, Naver 200, wspólny punkt 403 (znany); sitemap.xml 278 adresów.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (pomiar dla stratega) nie wcześniej niż 06:40; czekam na Z19 o 06:40.
+
+## Strategia dobowa 2026-11-22
+**Wynik doby (24 h do 22.11 06:15, po odsiewie):** 52 ludzi (doba wcześniej 69), tydzień 391 (wczoraj 392). google-ads 13 / 69 w tygodniu, Google organiczny 3 / 39, Facebook 9 / 15, YouTube 3 / 7, Threads 2 / 4, Bing 0 / 4, DuckDuckGo 2 / 2 (pierwsze wejścia, dzień po wsadzie 81 adresów do Binga), chatgpt płatne 0 / 22, github 0 / 6, bez odsyłacza 20 / 213. Uruchomienia narzędzi w dobie 1 (tydzień: numer-ksef 13, audyt 3), form_start w tygodniu 10, zapytania 1, lead_* 0. Search Console 3 mies.: 173 kliknięcia, 8,13 tys. wyświetleń, poz. 17,4 (dane do 19.11); zindeksowane 184, niezindeksowane 347 (16.11). Żądania indeksowania 21.11: 0 z 10, „limit dnia” (pula wspólna z FL_SEO). Outreach `wordpress`: 53 doręczone, 0 odpowiedzi po 9 dniach. Plan 21.11: 16 z 19 [x], 2 [!].
+**Plan 22.11:** 19 zadań (cykl/plan-ruchu.md), bez wysyłek. Trzy najważniejsze: nowy tytuł artykułu o odliczaniu VAT z faktur KSeF, który ma 627 wyświetleń na pozycji 4,1 i CTR 1,3% (Z5); żądania indeksowania dla 7 artykułów spoza Google po porannej serii FL_SEO i jedna kolejka zgłoszeń z FL_SEO zamiast dwóch (Z3, Z4); linki z dwóch najczęściej wyświetlanych artykułów do narzędzia /sprawdz-kontrahenta (Z10).
+**Kalendarz wpisów:** temat CRM z 23.11 przeniesiony na 21.12 (bramka CRM 11.11), na 23.11 wchodzi „Przerwa świąteczna bez zgubionych zapytań” z 21.12: opublikowany 4 tygodnie przed świętami zdąży do indeksu. Temat z 30.11 dubluje istniejący artykuł faktura-do-paragonu-ksef, dlatego nie on.
+**Dla Pawła:** brak nowych punktów (budżet „utrzymaj”, zmiany treści idą).
