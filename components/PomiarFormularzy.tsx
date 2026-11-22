@@ -5,6 +5,10 @@ import { usePathname } from "next/navigation";
 import { event as gaEvent } from "@/lib/gtag";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
+// Formularz kontaktowy ma pole-pułapkę „website”; pole bez niej to narzędzie (NIP, numer KSeF, audyt).
+const kontaktowy = (form: Element) =>
+  form.matches("[data-kontaktowy]") || !!form.querySelector("input[name=website]");
+
 export default function PomiarFormularzy() {
   const sciezka = usePathname();
 
@@ -22,13 +26,7 @@ export default function PomiarFormularzy() {
         form.getAttribute("aria-label") ||
         `formularz${location.pathname}`;
       gaEvent("form_start", { form_id: id });
-      // Formularz kontaktowy ma pole-pułapkę „website”; pole bez niej to narzędzie (NIP, numer KSeF, audyt).
-      zglosZdarzenie(
-        form.matches("[data-kontaktowy]") ||
-          form.querySelector("input[name=website]")
-          ? "form_start"
-          : "narzedzie_start",
-      );
+      zglosZdarzenie(kontaktowy(form) ? "form_start" : "narzedzie_start");
     };
     document.addEventListener("focusin", naFokus);
     const naKlik = (e: MouseEvent) => {
@@ -97,9 +95,10 @@ export default function PomiarFormularzy() {
 
     // Formularz liczy się jako zobaczony, gdy co najmniej połowa stoi w oknie
     // przez sekundę. Samo przecięcie z oknem przy wejściu zawyżało liczbę.
+    // Narzędzia (sprawdzarki) dają osobne zdarzenie widok_narzedzia.
     const zegary = new Map<Element, ReturnType<typeof setTimeout>>();
     const policzone = new WeakSet<Element>();
-    let zgloszone = false;
+    const zgloszone = new Set<string>();
     const obserwator = new IntersectionObserver(
       (wpisy) => {
         for (const w of wpisy) {
@@ -111,11 +110,12 @@ export default function PomiarFormularzy() {
               f,
               setTimeout(() => {
                 zegary.delete(f);
-                if (zgloszone || document.visibilityState !== "visible") return;
-                zgloszone = true;
+                if (document.visibilityState !== "visible") return;
+                const nazwa = kontaktowy(f) ? "widok_formularza" : "widok_narzedzia";
                 policzone.add(f);
-                obserwator.disconnect();
-                zglosZdarzenie("widok_formularza");
+                if (zgloszone.has(nazwa)) return;
+                zgloszone.add(nazwa);
+                zglosZdarzenie(nazwa);
               }, 1000),
             );
           } else if (zegary.has(f)) {
