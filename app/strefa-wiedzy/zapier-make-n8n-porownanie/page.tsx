@@ -50,7 +50,8 @@ export default function ZapierMakeN8nPorownanieArticle() {
         "n8n self-hosted: serwer 25-100 zł/mies. plus utrzymanie 200-500 zł/mies. Make to ok. 200-400 USD/mies., Zapier często ponad 600 USD/mies.",
     },
     {
-      question: "Czy możemy zacząć od Zapiera i przejść później na Make lub n8n?",
+      question:
+        "Czy możemy zacząć od Zapiera i przejść później na Make lub n8n?",
       answer:
         "Tak, to częsta ścieżka. Nie ma automatycznego importu, ale scenariusze przenosi się wybiórczo, gdy procesy się ustabilizują i wolumen urośnie.",
     },
@@ -60,7 +61,8 @@ export default function ZapierMakeN8nPorownanieArticle() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/strefa-wiedzy/zapier-make-n8n-porownanie"
+        <Breadcrumbs
+          href="/strefa-wiedzy/zapier-make-n8n-porownanie"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Zapier vs Make vs n8n" },
@@ -99,7 +101,9 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         z formularza do CRM z powiadomieniem, ok. 7 kroków.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>500 leadów miesięcznie (~3 500 operacji):</strong>
+                        <strong>
+                          500 leadów miesięcznie (~3 500 operacji):
+                        </strong>
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>Zapier Professional, ok. 19,99 USD/mies.</li>
@@ -108,7 +112,9 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         <li>n8n self-hosted, ok. 25 zł/mies. za serwer</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>5 000 leadów miesięcznie (~35 000 operacji):</strong>
+                        <strong>
+                          5 000 leadów miesięcznie (~35 000 operacji):
+                        </strong>
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>Zapier Team, ok. 200 USD/mies.</li>
@@ -117,7 +123,9 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         <li>n8n self-hosted, ok. 325 zł z utrzymaniem</li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        <strong>50 000 leadów miesięcznie (~350 000 operacji):</strong>
+                        <strong>
+                          50 000 leadów miesięcznie (~350 000 operacji):
+                        </strong>
                       </p>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>Zapier Company, od ok. 600 USD/mies.</li>
@@ -144,13 +152,11 @@ export default function ZapierMakeN8nPorownanieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="h2-sekcji mb-6">
-                        Integracje
-                      </h2>
+                      <h2 className="h2-sekcji mb-6">Integracje</h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Zapier ma ok. 6 000 integracji, Make ok. 1 800, n8n ponad
-                        500. Popularne systemy (HubSpot, Pipedrive, Slack, Google
-                        Workspace, Shopify) są wszędzie.
+                        Zapier ma ok. 6 000 integracji, Make ok. 1 800, n8n
+                        ponad 500. Popularne systemy (HubSpot, Pipedrive, Slack,
+                        Google Workspace, Shopify) są wszędzie.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Przy niszowych SaaS-ach Zapier zwykle jest pierwszy.
@@ -159,9 +165,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         moduł.
                       </p>
 
-                      <h2 className="h2-sekcji mb-6 mt-12">
-                        Nauka i logika
-                      </h2>
+                      <h2 className="h2-sekcji mb-6 mt-12">Nauka i logika</h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zapier: pierwsza automatyzacja w 15 minut, ale słaba
                         obsługa warunków, pętli i błędów. Make: 30-45 minut na
@@ -171,8 +175,8 @@ export default function ZapierMakeN8nPorownanieArticle() {
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         n8n: 1-2 godziny na start, najwięcej możliwości (kod w
                         JavaScript lub Pythonie, pod-scenariusze). Dla osoby z
-                        biznesu wybierz Zapier lub Make, dla osoby
-                        technicznej n8n.
+                        biznesu wybierz Zapier lub Make, dla osoby technicznej
+                        n8n.
                       </p>
                     </div>
                   </div>
@@ -188,8 +192,8 @@ export default function ZapierMakeN8nPorownanieArticle() {
                       </h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zapier trzyma dane głównie w USA, co bywa problemem w
-                        branżach regulowanych. Make (Czechy) i n8n.cloud (Niemcy)
-                        mają serwery w UE.
+                        branżach regulowanych. Make (Czechy) i n8n.cloud
+                        (Niemcy) mają serwery w UE.
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         n8n self-hosted to jedyna opcja on-premise: dane nie
@@ -197,9 +201,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         zdrowiu.
                       </p>
 
-                      <h2 className="h2-sekcji mb-6 mt-12">
-                        Kto utrzymuje
-                      </h2>
+                      <h2 className="h2-sekcji mb-6 mt-12">Kto utrzymuje</h2>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Zapier, Make i n8n.cloud to SaaS: producent dba o
                         serwery i aktualizacje. Przy n8n self-hosted serwer,
@@ -219,9 +221,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="h2-sekcji mb-6">
-                        Który wybrać
-                      </h2>
+                      <h2 className="h2-sekcji mb-6">Który wybrać</h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400 mb-6">
                         <li>
                           <strong>Zapier:</strong> mały wolumen, buduje osoba z
@@ -239,9 +239,16 @@ export default function ZapierMakeN8nPorownanieArticle() {
                         </li>
                       </ul>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Średnie firmy często łączą dwa narzędzia: Zapier lub Make
-                        do prostych integracji działów, n8n do sprzedaży,
-                        raportowania i integracji z ERP lub CRM.
+                        Średnie firmy często łączą dwa narzędzia: Zapier lub
+                        Make do prostych integracji działów, n8n do sprzedaży,
+                        raportowania i{" "}
+                        <Link
+                          href="/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami"
+                          className="text-accent hover:underline"
+                        >
+                          integracji z ERP lub CRM
+                        </Link>
+                        .
                       </p>
 
                       <div className="bg-accent/5 dark:bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center mt-12">
@@ -249,9 +256,13 @@ export default function ZapierMakeN8nPorownanieArticle() {
                           Chcesz dobrać narzędzie pod swoje procesy?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 mb-4">
-                          Policzymy roczny koszt każdego z trzech narzędzi i zbudujemy pierwsze scenariusze.
+                          Policzymy roczny koszt każdego z trzech narzędzi i
+                          zbudujemy pierwsze scenariusze.
                         </p>
-                        <Link href="/automatyzacja-leadow-crm" className="btn-primary">
+                        <Link
+                          href="/automatyzacja-leadow-crm"
+                          className="btn-primary"
+                        >
                           Zobacz usługę automatyzacji procesów
                         </Link>
                       </div>
@@ -264,9 +275,7 @@ export default function ZapierMakeN8nPorownanieArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto px-6 lg:px-8">
-                      <h2 className="h2-sekcji mb-6">
-                        FAQ
-                      </h2>
+                      <h2 className="h2-sekcji mb-6">FAQ</h2>
                       <div className="space-y-4">
                         {faqItems.map((item, index) => (
                           <details
@@ -360,7 +369,10 @@ export default function ZapierMakeN8nPorownanieArticle() {
             description:
               "Pełne porównanie Zapier, Make i n8n w 2026: pricing, integracje, krzywa nauki, skalowalność, compliance i koszt na różną skalę. Konkretne kryteria wyboru.",
             datePublished: "2026-04-19",
-            dateModified: dataZmiany("/strefa-wiedzy/zapier-make-n8n-porownanie", "2026-04-19"),
+            dateModified: dataZmiany(
+              "/strefa-wiedzy/zapier-make-n8n-porownanie",
+              "2026-04-19",
+            ),
             author: {
               "@type": "Organization",
               name: "Fluxlab",
