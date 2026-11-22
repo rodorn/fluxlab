@@ -57,6 +57,21 @@ export default function PasekAkcji() {
     setNapis(formularz?.dataset.pasek ?? "Bezpłatna wycena");
     const ctaHero = document.getElementById("cta-hero");
     let przyFormularzu = false;
+    // Każdy formularz na stronie (nie tylko pierwszy znaleziony): pasek chowa się przy
+    // którymkolwiek i przy fokusie w polu, żeby nie zasłaniał pól ani przycisku Wyślij.
+    const widoczneFormy = new Set<Element>();
+    const obsFormy = new IntersectionObserver((wpisy) => {
+      for (const w of wpisy) w.isIntersecting ? widoczneFormy.add(w.target) : widoczneFormy.delete(w.target);
+      sprawdz();
+    });
+    document.querySelectorAll("form").forEach((f) => obsFormy.observe(f));
+    let wPolu = false;
+    const naFokus = (e: FocusEvent) => {
+      wPolu = !!(e.target as Element | null)?.matches?.("input, textarea, select");
+      sprawdz();
+    };
+    document.addEventListener("focusin", naFokus);
+    document.addEventListener("focusout", naFokus);
     let ctaWidoczne = !!ctaHero;
     const obsCta = ctaHero
       ? new IntersectionObserver(([w]) => {
@@ -81,7 +96,7 @@ export default function PasekAkcji() {
     document.querySelectorAll("[data-bez-paska]").forEach((el) => obsBez.observe(el));
 
     function sprawdz() {
-      const w = window.scrollY > window.innerHeight * 0.6 && !przyFormularzu && !ctaWidoczne && !bezPaska.size;
+      const w = window.scrollY > window.innerHeight * 0.6 && !przyFormularzu && !widoczneFormy.size && !wPolu && !ctaWidoczne && !bezPaska.size;
       setWidoczny(w);
       document.body.toggleAttribute("data-pasek-akcji", w);
     }
@@ -92,6 +107,9 @@ export default function PasekAkcji() {
       obs?.disconnect();
       obsCta?.disconnect();
       obsBez.disconnect();
+      obsFormy.disconnect();
+      document.removeEventListener("focusin", naFokus);
+      document.removeEventListener("focusout", naFokus);
       document.body.removeAttribute("data-pasek-akcji");
       setWidoczny(false);
     };

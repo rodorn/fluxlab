@@ -206,6 +206,8 @@ export default function FormularzKrotki({
           type="text"
           tabIndex={-1}
           autoComplete="off"
+          readOnly
+          onFocus={(e) => (e.currentTarget.readOnly = false)}
           defaultValue=""
         />
       </div>

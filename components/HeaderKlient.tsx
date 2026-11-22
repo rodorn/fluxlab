@@ -118,6 +118,7 @@ export default function HeaderKlient({
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (document.documentElement.hasAttribute("data-reklama")) return;
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setSzukaj((s) => !s);

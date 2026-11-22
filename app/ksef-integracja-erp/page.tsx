@@ -3,6 +3,7 @@ import Link from "next/link";
 import HeaderReklamy from "@/components/HeaderReklamy";
 import FormularzKrotki from "@/components/FormularzKrotki";
 import TrybReklamy from "@/components/TrybReklamy";
+import H1Wariant from "@/components/H1Wariant";
 import AnkietaWyjscia from "@/components/AnkietaWyjscia";
 
 export const metadata: Metadata = {
@@ -97,11 +98,16 @@ export default function KsefIntegracjaErp() {
       <HeaderReklamy />
       <main>
         <section id="wycena" className="container-wide scroll-mt-16 pt-4 pb-10 text-center">
-          <h1 className="h1-strony mx-auto max-w-3xl">
-            Podłączymy Twój system do KSeF w 5 dni roboczych
-          </h1>
+          <H1Wariant
+            className="h1-strony mx-auto max-w-3xl"
+            warianty={[
+              "Integracja z KSeF w 5 dni roboczych",
+              "Integracja KSeF od 1 900 zł netto, w 5 dni roboczych",
+              "Podłączymy Twój system do KSeF w 5 dni roboczych",
+            ]}
+          />
           <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
-            Od 1 900 zł netto. Termin liczymy od dostępu do API systemu i danych
+            Integracja KSeF od 1 900 zł netto. Termin liczymy od dostępu do API systemu i danych
             testowych, które dostajemy w 1 dzień roboczy.
           </p>
           <div className="mx-auto mt-4 flex max-w-xl flex-col gap-2.5 sm:flex-row sm:justify-center">
