@@ -69,8 +69,7 @@ const pricing = [
   {
     name: "Diagnoza follow-upu",
     price: "0 zł",
-    description:
-      "Analiza obecnych sekwencji i miejsc, gdzie leady się gubią.",
+    description: "Analiza obecnych sekwencji i miejsc, gdzie leady się gubią.",
   },
   {
     name: "Pierwsza sekwencja",
@@ -147,7 +146,10 @@ export default function AutomatyzacjaFollowUp() {
     <>
       <Header />
       <main className="pt-16">
-        <Breadcrumbs href="/automatyzacja-follow-up" items={[{ label: "Automatyzacja follow-upów w CRM" }]} />
+        <Breadcrumbs
+          href="/automatyzacja-follow-up"
+          items={[{ label: "Automatyzacja follow-upów w CRM" }]}
+        />
 
         <section className="pt-16 pb-10 bg-gradient-to-b from-accent/10 to-transparent border-b border-gray-100 dark:border-gray-800">
           <div className="container-wide">
@@ -158,8 +160,8 @@ export default function AutomatyzacjaFollowUp() {
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 Ustawiamy sekwencje przypomnień i eskalacje, które pilnują
-                każdej transakcji zamiast handlowca. Sekwencja sama staje, gdy klient
-                odpowie.
+                każdej transakcji zamiast handlowca. Sekwencja sama staje, gdy
+                klient odpowie.
               </p>
               <div className="mt-8 flex">
                 <TrackedCTA
@@ -176,14 +178,18 @@ export default function AutomatyzacjaFollowUp() {
           </div>
         </section>
 
-        <div id="sekcje" className="scroll-mt-20 container-wide py-16 space-y-16">
+        <div
+          id="sekcje"
+          className="scroll-mt-20 container-wide py-16 space-y-16"
+        >
           <section className="max-w-3xl mx-auto">
             <h2 className="h2-sekcji mb-4">
               Follow-up nie powinien zależeć od pamięci handlowca
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
               W większości firm B2B follow-up to dobra intencja, nie proces.
-              „Odezwę się za tydzień” kończy się po trzech tygodniach albo wcale.
+              „Odezwę się za tydzień” kończy się po trzech tygodniach albo
+              wcale.
             </p>
             <ul className="space-y-3">
               {problemPoints.map((point) => (
@@ -290,9 +296,7 @@ export default function AutomatyzacjaFollowUp() {
           </section>
 
           <section className="max-w-3xl mx-auto">
-            <h2 className="h2-sekcji mb-6">
-              Najczęstsze pytania
-            </h2>
+            <h2 className="h2-sekcji mb-6">Najczęstsze pytania</h2>
             <div className="space-y-4">
               {faq.map((item) => (
                 <details
@@ -328,30 +332,44 @@ export default function AutomatyzacjaFollowUp() {
           </section>
 
           <section className="max-w-3xl mx-auto">
-            <h2 className="h2-sekcji mb-4">
-              Zobacz też
-            </h2>
+            <h2 className="h2-sekcji mb-4">Zobacz też</h2>
             <ul className="space-y-2">
               <li>
-                <Link href="/automatyzacja-leadow-crm" className="text-accent hover:underline">
+                <Link
+                  href="/automatyzacja-leadow-crm"
+                  className="text-accent hover:underline"
+                >
                   Automatyzacja leadów i CRM
                 </Link>
               </li>
               <li>
-                <Link href="/automatyzacja-formularza-do-pipedrive" className="text-accent hover:underline">
+                <Link
+                  href="/automatyzacja-formularza-do-pipedrive"
+                  className="text-accent hover:underline"
+                >
                   Automatyzacja formularza do Pipedrive
                 </Link>
               </li>
               <li>
-                <Link href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac" className="text-accent hover:underline">
+                <Link
+                  href="/strefa-wiedzy/automatyzacja-crm-od-czego-zaczac"
+                  className="text-accent hover:underline"
+                >
                   Automatyzacja CRM, od czego zacząć
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/strefa-wiedzy/klient-nie-odpowiada-na-oferte"
+                  className="text-accent hover:underline"
+                >
+                  Klient nie odpowiada na ofertę: co zrobić
                 </Link>
               </li>
             </ul>
           </section>
         </div>
         <CTA naglowek="Sprawdź, czy Twoje follow-upy mogą wychodzić bez pamiętania o nich" />
-
       </main>
       <Footer />
 
