@@ -78,8 +78,8 @@
       ],
       "linki": [
         {
-          "tekst": "Sprawdź NIP w wykazie podatników VAT za darmo",
-          "href": "/sprawdzenie-nip"
+          "tekst": "Sprawdź NIP i konto kontrahenta w wykazie VAT",
+          "href": "/sprawdz-kontrahenta"
         }
       ]
     },
