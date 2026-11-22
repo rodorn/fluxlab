@@ -10,14 +10,14 @@ import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
-  "Adres firmy znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma, i czego sprawdzić się nie da.";
+  "Swój adres i adres kontrahenta znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma.";
 
-const TYTUL = "Czy firma ma adres do e-Doręczeń? Jak to sprawdzić | Fluxlab";
+const TYTUL = "Jak sprawdzić, czy masz adres do e-Doręczeń | Fluxlab";
 
 export const metadata: Metadata = {
-  title: "Czy firma ma adres do e-Doręczeń? Jak to sprawdzić | Fluxlab",
+  title: "Jak sprawdzić, czy masz adres do e-Doręczeń | Fluxlab",
   description:
-    "Adres firmy znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma, i czego sprawdzić się nie da.",
+    "Swój adres i adres kontrahenta znajdziesz we wpisie w CEIDG albo KRS, urzędu w wyszukiwarce na gov.pl. Co zrobić, gdy adresu nie ma.",
   openGraph: {
     title: TYTUL,
     description: OPIS,
