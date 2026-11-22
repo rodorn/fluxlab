@@ -12368,3 +12368,21 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Dowód:** commit 9bc811a7, produkcja zwraca nowy <title> i description, IndexNow Yandex 200, Naver 200; Bing „URLs submitted today” 100, „Quota left” 0, lista cykl/z7-bing-2026-11-22.txt.
 **Dla Pawła:**
 **Zostało otwarte:** Z8 (tytuł numer-ksef-w-przelewie) i Z9 (pomiar) od 16:40, potem Z10-Z19.
+
+<!-- WYSLANO 2026-11-22 15:18 -->
+
+## 2026-11-22 16:43
+**Kanał:** Google (CTR artykułu KSeF), plan ruchu Z8 i pomiar Z9.
+**Co zrobione:** tytuł /strefa-wiedzy/numer-ksef-w-przelewie zaczyna się od odpowiedzi na „od kiedy”: „Od 1.01.2027 numer KSeF w przelewie | Fluxlab” (ta sama długość, 45 zn.), og:title analogicznie, treść bez zmian.
+**Ruch:** 24 h: 72 osoby po odsiewie; Facebook 31, Google 11, google-ads 9, bez odsyłacza 10, chatgpt.com 3, DuckDuckGo 2, Bing 0. Narzędzia: 1 uruchomienie (/widocznosc-w-ai), form_start 2, lead_* 0.
+**Dowód:** commit 6c14c07b; https://fluxlab.pl/strefa-wiedzy/numer-ksef-w-przelewie ma nowy <title>; IndexNow Yandex 200, Naver 200.
+**Dla Pawła:** 
+**Zostało otwarte:** Z10 (linki do /sprawdz-kontrahenta) od 18:40, potem Z11–Z19.
+
+## 2026-11-22 18:43
+**Kanał:** 3 KSeF jako magnes / dystrybucja narzędzi (plan ruchu Z10, Z11).
+**Co zrobione:** narzędzie /sprawdz-kontrahenta dostało linki z dwóch artykułów, które ściągają ruch z Google (biała lista VAT nowe API, kiedy odliczyć VAT z KSeF), a FL_meta temat posta o narzędziu.
+**Ruch:** ostatnia doba 816 odsłon, 226 osób (+118% wobec średniej 374,6); źródła: www.facebook.com 142, m.facebook.com 110, www.google.com 106, fb-ads 93, google-ads 81; YouTube 1 sesja, LinkedIn 1.
+**Dowód:** commit 6055b81f; produkcja `grep -c href="/sprawdz-kontrahenta"` = 1 na https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api i 1 na https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef; IndexNow 2 adresy (2 z 3 punktów); „Doręczono do FL_meta (18:44)”. Link /sprawdzenie-nip w artykule o białej liście zastąpiony narzędziem, link z odliczenia VAT do artykułu o białej liście zastąpiony narzędziem (artykuł nadal ma link z numer-ksef-w-przelewie).
+**Dla Pawła:**
+**Zostało otwarte:** Z12 (404 z wejść, od 20:40), Z13 (22:40), Z14 bilans dnia (22:40), Z15-Z19 w nocy i rano 23.11.
