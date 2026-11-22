@@ -12360,3 +12360,11 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Dowód:** commit 4b2d38ac, produkcja zwraca nowy <title> i description; IndexNow Yandex 200, Naver 200 (wspólny 403, znany).
 **Dla Pawła:**
 **Zostało otwarte:** Z6 (czy-firma-ma-adres-do-e-doreczen) od 14:40, potem Z7-Z19.
+
+## 2026-11-22 14:50
+**Kanał:** Google (CTR artykułu o e-Doręczeniach), Z6 planu; Bing (wsad adresów), Z7 planu.
+**Co zrobione:** /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen ma tytuł „Jak sprawdzić, czy masz adres do e-Doręczeń | Fluxlab” pod najczęstsze zapytanie z GSC i krótszy opis; Bing dostał wsad 100 adresów (pełny dzienny limit).
+**Ruch:** raport_ruchu doba 560 odsłon, 146 osób; pomiar-kanalow 24 h po odsiewie 58 sesji: google 11, facebook 9 + m.facebook 8 + l.facebook 1 + facebook 2, bez odsyłacza 9, google-ads 8, chatgpt 3, duckduckgo 2, threads, youtube, instagram, linkedin, zleca.pl, useme po 1. Uruchomienia narzędzi w dobie: 1. GSC dla artykułu: 5 klik., 322 wyśw., CTR 1,6%, poz. 6,7; „jak sprawdzić czy mam adres do e doręczeń” 6 wyśw. poz. 8,2, „jak sprawdzic adres do edoreczen” 4 wyśw. poz. 11.
+**Dowód:** commit 9bc811a7, produkcja zwraca nowy <title> i description, IndexNow Yandex 200, Naver 200; Bing „URLs submitted today” 100, „Quota left” 0, lista cykl/z7-bing-2026-11-22.txt.
+**Dla Pawła:**
+**Zostało otwarte:** Z8 (tytuł numer-ksef-w-przelewie) i Z9 (pomiar) od 16:40, potem Z10-Z19.
