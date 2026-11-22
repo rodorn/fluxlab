@@ -69,7 +69,7 @@ const SPOSOBY: Sposob[] = [
     etykieta: "Excel, Word albo papier",
     werdykt: "DO_ZBUDOWANIA",
     odpowiedz:
-      "Przy kilku fakturach miesięcznie nie potrzebujesz wdrożenia, tylko darmowej Aplikacji Podatnika KSeF od Ministerstwa Finansów albo zwykłego programu do fakturowania. Powiemy to wprost, zamiast sprzedawać ci integrację: jeżeli faktur jest mniej niż kilkadziesiąt w miesiącu i nie powstają w żadnym systemie, integracja nie ma czego spinać.",
+      "Przy kilku fakturach miesięcznie nie potrzebujesz wdrożenia, tylko zwykłego programu do fakturowania z wysyłką do KSeF. Powiemy to wprost, zamiast sprzedawać ci integrację: jeżeli faktur jest mniej niż kilkadziesiąt w miesiącu i nie powstają w żadnym systemie, integracja nie ma czego spinać.",
   },
 ];
 

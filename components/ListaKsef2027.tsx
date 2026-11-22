@@ -35,7 +35,7 @@ const PUNKTY: Punkt[] = [
     zmiana:
       "1 stycznia 2027 znika limit 10 tys. zł brutto miesięcznie na faktury wystawiane poza KSeF. Od tego dnia każda faktura dla firmy musi przejść przez system.",
     zrobic:
-      "Jeżeli choć część faktur powstaje w Wordzie, w Excelu albo w programie bez KSeF, przenieś je do programu z KSeF albo do darmowej Aplikacji Podatnika KSeF jeszcze w 2026, kiedy pomyłka nic nie kosztuje.",
+      "Jeżeli choć część faktur powstaje w Wordzie, w Excelu albo w programie bez KSeF, przenieś je do programu do faktur z wysyłką do KSeF jeszcze w 2026, kiedy pomyłka nic nie kosztuje.",
   },
   {
     klucz: "kasa",
@@ -76,7 +76,7 @@ const PUNKTY: Punkt[] = [
     zmiana:
       "Gdy KSeF nie działa albo nie ma internetu, fakturę wystawia się w trybie offline i wysyła do systemu później. Taka faktura przekazana klientowi poza systemem musi mieć dwa kody QR, a drugiego nie da się wygenerować bez certyfikatu KSeF typu 2, ważnego 2 lata.",
     zrobic:
-      "Wygeneruj certyfikat w Aplikacji Podatnika KSeF teraz, a nie w dniu awarii. Ministerstwo Finansów zapowiedziało, że tokeny do logowania zostaną po 31 grudnia 2026 r., ale na 4.10.2026 rozporządzenie nadal wskazuje ten termin, więc certyfikat jest też zapasem na wypadek, gdyby nowelizacja nie zdążyła.",
+      "Wygeneruj certyfikat KSeF teraz, a nie w dniu awarii. Ministerstwo Finansów zapowiedziało, że tokeny do logowania zostaną po 31 grudnia 2026 r., ale na 4.10.2026 rozporządzenie nadal wskazuje ten termin, więc certyfikat jest też zapasem na wypadek, gdyby nowelizacja nie zdążyła.",
   },
   {
     klucz: "numeracja",
