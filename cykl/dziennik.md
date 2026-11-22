@@ -12344,3 +12344,11 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Dowód:** Z1: GSC Mapy witryn przed „przesłano 22 paź, odczyt 20 lis, 278”, po „przesłano 22 lis, odczyt 22 lis, Sukces, 278” (właściwość domenowa przyjmuje tylko pełny adres https://fluxlab.pl/sitemap.xml). Z2: Bing 7 D 4 klik./99 wyśw. (21.11: 2/70); AI Performance 27 cytowań, 8 stron: kiedy-odliczyc-vat-z-faktury-ksef 6, proforma-ksef 5, jak-zautomatyzowac-raportowanie-w-firmie 4 (adres www.), automatyzacja-raportowania 3 (www.), sprawdzenie-nip 3.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 i Z4 (żądania indeksowania GSC, wspólny limit z FL_SEO) od 10:40.
+
+## 2026-11-22 10:47
+**Kanał:** Google (indeksowanie), koordynacja z FL_SEO.
+**Co zrobione:** Z3: prośby o indeksowanie e-doreczenia-w-firmie i ksef-2027-w-malej-firmie dały „limit dnia” (pulę wyczerpało FL_SEO o 09:03-09:05); Z4: 7 adresów przekazanych FL_SEO do ich kolejki 3/dobę, plan ruchu od 23.11 nie zgłasza do GSC.
+**Ruch:** doba 485 odsłon, 152 osoby; 7 dni 2857 odsłon, 1374 osoby. Źródła 7 dni: facebook 80+40 (m.), b2b-email 58, google 55, google-ads 50; YouTube 12 sesji w dobie, Threads 5. Uruchomienia narzędzi w dobie: 1. Lejek 7 dni: 10 form_start, 1 zapytanie.
+**Dowód:** cykl/z3-indeksowanie-2026-11-22.log (2× „limit dnia”), meldunek do FL_SEO 10:46.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (tytuł kiedy-odliczyc-vat-z-faktury-ksef) od 12:40, potem Z6-Z19.
