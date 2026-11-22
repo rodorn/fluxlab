@@ -54,7 +54,7 @@ const FAQ = [
   },
   {
     q: "Czy to dla mnie, gdy wystawiam kilka faktur miesięcznie?",
-    a: "Nie. Wystarczy darmowa Aplikacja Podatnika KSeF od Ministerstwa Finansów. Integracja zaczyna się opłacać, gdy ktoś dziś przenosi faktury ręcznie.",
+    a: "Nie. Przy kilku fakturach w miesiącu wystarczy program do faktur, który ma już wysyłkę do KSeF. Integracja zaczyna się opłacać, gdy ktoś dziś przenosi faktury ręcznie.",
   },
 ];
 
@@ -306,8 +306,8 @@ export default function KsefIntegracjaErp() {
               Dla kogo to nie jest
             </p>
             <p className="mt-1 text-gray-700 dark:text-gray-300">
-              Dla firm wystawiających kilka faktur w miesiącu. Użyj darmowej
-              Aplikacji Podatnika KSeF od Ministerstwa Finansów.
+              Dla firm wystawiających kilka faktur w miesiącu z programu do
+              faktur, który ma już wysyłkę do KSeF.
             </p>
           </div>
         </section>

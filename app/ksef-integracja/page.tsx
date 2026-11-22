@@ -85,7 +85,7 @@ export default function KsefIntegracja() {
         },
         {
           title: "Kiedy to się nie opłaca",
-          desc: "Przy kilku fakturach miesięcznie wystarczy darmowa Aplikacja Podatnika KSeF. Integracja ma sens, gdy ktoś dziś przenosi faktury ręcznie.",
+          desc: "Przy kilku fakturach miesięcznie wystarczy program do faktur, który ma już wysyłkę do KSeF. Integracja ma sens, gdy ktoś dziś przenosi faktury ręcznie.",
         },
       ]}
       pricing={[
