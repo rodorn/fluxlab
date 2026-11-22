@@ -33,7 +33,7 @@ export function esc(s: string): string {
 export function akapityPotwierdzenia(polecenie: boolean, krotki = false): string[] {
   if (krotki)
     return [
-      "dzięki za zgłoszenie. Oddzwoni Paweł Iwanek w ciągu 2 godzin, w godz. 11–24.",
+      "dzięki za zgłoszenie. Oddzwonimy w ciągu 2 godzin, w godz. 11–24.",
       "Jeśli wolisz zadzwonić sam: 665 466 565.",
     ];
   return polecenie

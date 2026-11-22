@@ -138,17 +138,8 @@ export default function KsefIntegracjaErp() {
             przycisk="Odbierz wycenę w 1 dzień roboczy"
           />
           <div className="mx-auto mt-3 flex max-w-xl items-center justify-center gap-3 text-sm text-gray-700 dark:text-gray-300">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/pawel-96.webp"
-              loading="lazy"
-              alt="Paweł Iwanek"
-              width={44}
-              height={44}
-              className="h-11 w-11 rounded-full object-cover"
-            />
             <p className="text-left">
-              Oddzwania Paweł Iwanek.{" "}
+              Oddzwaniamy w ciągu 2 godzin.{" "}
               <a
                 href="https://wa.me/48665466565?text=Dzie%C5%84%20dobry%2C%20chc%C4%99%20wycen%C4%99%20integracji%20systemu%20z%20KSeF."
                 target="_blank"
