@@ -82,7 +82,7 @@ export default function Page() {
       formHeading="Masz więcej niż 50 kontrahentów?"
       formIntro="Napisz, ilu kontrahentów chcesz pilnować. Odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Monitoring kontrahentów na białej liście VAT"
       serviceDesc="Codzienne sprawdzanie statusu VAT i rachunków do 50 kontrahentów w wykazie podatników VAT, z alertem mailem przy zmianie, za 29 zł netto miesięcznie."
       serviceType="Monitoring kontrahentów"

@@ -102,7 +102,7 @@ export default function Page() {
       formHeading="Potrzebujesz własnej domeny i pełnej strony?"
       formIntro="Napisz, czym zajmuje się firma, a odpiszemy z wyceną strony na własnym adresie."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Strona firmy z wizytówki Google"
       serviceDesc="Strona firmy zbudowana z publicznych danych wizytówki Google: opis, godziny, telefon, mapa i opinie, 99 zł netto jednorazowo, utrzymanie 19 zł miesięcznie."
       serviceType="Tworzenie strony internetowej"

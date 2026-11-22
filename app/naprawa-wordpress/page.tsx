@@ -33,7 +33,7 @@ export default function Page() {
       lead="Komunikat „W witrynie wystąpił błąd krytyczny” albo pusta biała strona to zwykle jedna wtyczka, motyw albo wersja PHP. Czytamy log błędów, wskazujemy przyczynę i naprawiamy ją, a płacisz po sprawdzeniu efektu."
       cena="Naprawa 150, 290 albo 490 zł netto"
       ctaLabel="Zgłoś błąd strony"
-      ctaNote="Odpisujemy w 1 dzień roboczy, z ceną i terminem"
+      ctaNote="Odpisujemy w godzinę, z ceną i terminem"
       powiazane={[
         {
           przed:
@@ -75,7 +75,7 @@ export default function Page() {
           price: "150 / 290 / 490 zł",
           desc: "Błąd krytyczny, biały ekran, formularz albo inna jedna usterka.",
           features: [
-            "cena i termin w odpowiedzi, w 1 dzień roboczy",
+            "cena i termin w odpowiedzi, w godzinę",
             "naprawa zwykle ten sam lub następny dzień",
             "płatność przez Useme po sprawdzeniu efektu",
           ],
@@ -105,7 +105,7 @@ export default function Page() {
         },
         {
           q: "Jak szybko naprawicie stronę?",
-          a: "Odpisujemy w 1 dzień roboczy z ceną i terminem. Sama naprawa trwa zwykle ten sam lub następny dzień.",
+          a: "Odpisujemy w godzinę z ceną i terminem. Sama naprawa trwa zwykle ten sam lub następny dzień.",
         },
         {
           q: "Jakie dostępy będą potrzebne?",
@@ -116,7 +116,7 @@ export default function Page() {
       formHeading="Zgłoś błąd strony na WordPressie"
       formIntro="Podaj adres strony i napisz, co widzisz i od kiedy. Jeśli masz treść błędu z maila od WordPressa, wklej ją."
       submitLabel="Zgłoś błąd strony"
-      microCopy="Odpisujemy w 1 dzień roboczy, z ceną i terminem. Dostępy przysyłasz po ustaleniu zakresu."
+      microCopy="Odpisujemy w godzinę, z ceną i terminem. Dostępy przysyłasz po ustaleniu zakresu."
       serviceName="Naprawa WordPress"
       serviceDesc="Naprawa błędu krytycznego i białego ekranu w WordPressie: analiza logu błędów, wskazanie wtyczki, motywu albo wersji PHP i naprawa. Naprawa jednej rzeczy 150, 290 albo 490 zł netto."
       serviceType="Naprawa strony internetowej"

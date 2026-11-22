@@ -373,7 +373,7 @@ export default function LokalizacjaCheck() {
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                 Mamy zgłoszenie razem z tym wynikiem. Odpiszemy na {email}
-                w 1 dzień roboczy.
+                w godzinę.
               </p>
             ) : (
               <form data-kontaktowy onSubmit={zamow} className="mt-4">

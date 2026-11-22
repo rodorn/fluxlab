@@ -94,7 +94,7 @@ export default function Page() {
       formHeading="Więcej niż jeden kanał?"
       formIntro="Napisz, ile kanałów chcesz obsłużyć i w jakim języku są filmy, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Artykuł z filmu YouTube"
       serviceDesc="Każdy nowy film z kanału klienta zamieniony na artykuł na blog z tytułem i opisem do wyszukiwarki, mailem, 99 zł netto miesięcznie."
       serviceType="Treści blogowe z filmów"

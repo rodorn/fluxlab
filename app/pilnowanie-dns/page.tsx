@@ -77,7 +77,7 @@ export default function Page() {
       formHeading="Zapytaj o pilnowanie wielu domen"
       formIntro="Masz więcej niż jedną domenę albo potrzebujesz alertu w Teams lub Slacku? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Pilnowanie rekordów DNS"
       serviceDesc="Codzienne sprawdzanie rekordów DNS domeny i mail o każdej zmianie za 9 zł netto miesięcznie."
       serviceType="Monitoring rekordów DNS"

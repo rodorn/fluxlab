@@ -75,14 +75,14 @@ export default function Page() {
         },
         {
           q: "Czy jest faktura?",
-          a: "Tak, na dane podane przy płatności, w ciągu 1 dnia roboczego.",
+          a: "Tak, na dane podane przy płatności, w 1 dzień roboczy.",
         },
       ]}
       formId="tlumaczenie_strony"
       formHeading="Potrzebujesz więcej podstron albo wersji na stronie?"
       formIntro="Napisz, jak duża jest Twoja strona i na jakim jest silniku. Odpiszemy, jak dodać wersje językowe."
       submitLabel="Napisz w sprawie większej strony"
-      microCopy="Odpisujemy w 1 dzień roboczy."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Tłumaczenie strony na angielski i niemiecki"
       serviceDesc="Teksty strony przetłumaczone na angielski i niemiecki: arkusz Excel i pliki do wklejenia. Do 6 podstron, 199 zł netto."
       serviceType="Tłumaczenie"

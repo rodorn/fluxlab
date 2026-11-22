@@ -77,7 +77,7 @@ export default function Page() {
       formHeading="Zapytaj o pilnowanie wielu domen"
       formIntro="Masz więcej niż 3 domeny albo chcesz, żeby alerty szły do kilku osób? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Pilnowanie certyfikatu i domeny"
       serviceDesc="Darmowe codzienne sprawdzanie certyfikatu HTTPS i ważności domeny z mailem 30, 14 i 3 dni przed końcem."
       serviceType="Monitoring certyfikatu"

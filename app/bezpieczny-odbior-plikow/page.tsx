@@ -84,7 +84,7 @@ export default function Page() {
       formHeading="Zapytaj o większe limity"
       formIntro="Potrzebujesz plików powyżej 100 MB, dłuższego przechowywania albo własnej domeny? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Bezpieczny odbiór plików od klientów"
       serviceDesc="Link do wysyłania plików do 100 MB bez konta, mail przy nowych plikach i automatyczne usuwanie po 30 dniach za 19 zł netto miesięcznie."
       serviceType="Odbiór plików od klientów"

@@ -147,7 +147,7 @@ export default function OznaczeniaJpkKsefArticle() {
         </div>
         <CTA
           naglowek="Sprawdź, czy oznaczenia JPK i numery KSeF mogą trafiać do księgowości same"
-          opis="Sprawdzamy, czy Twój program da się spiąć z KSeF i czy nie wystarczy gotowe narzędzie. Rozpoznanie 0 zł, odpowiedź w 1 dzień roboczy, wdrożenie od 1 900 zł."
+          opis="Sprawdzamy, czy Twój program da się spiąć z KSeF i czy nie wystarczy gotowe narzędzie. Rozpoznanie 0 zł, odpowiedź w godzinę, wdrożenie od 1 900 zł."
           etykieta="Sprawdź za 0 zł"
           href="/ksef-integracja"
         />

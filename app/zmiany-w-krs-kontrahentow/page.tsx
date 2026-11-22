@@ -78,7 +78,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej firm"
       formIntro="Chcesz pilnować więcej niż 20 firm? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Zmiany w KRS kontrahentów"
       serviceDesc="Codzienne czytanie odpisu z KRS do 20 firm i mail przy zmianie zarządu, prokury, adresu albo kapitału, za 29 zł netto miesięcznie."
       serviceType="Monitoring rejestru KRS"

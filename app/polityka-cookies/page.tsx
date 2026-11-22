@@ -84,7 +84,7 @@ export default function Page() {
       formHeading="Zapytaj o baner zgód i audyt prywatności"
       formIntro="Potrzebujesz wdrożenia banera zgód albo przeglądu zgodności całej strony? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Polityka cookies ze skanu strony"
       serviceDesc="Skan strony, lista wykrytych narzędzi i polityka cookies w PDF z podstawą prawną za 49 zł netto."
       serviceType="Dokument polityki cookies"

@@ -79,7 +79,7 @@ export default function Page() {
       formHeading="Zapytaj o pilnowanie wielu formularzy"
       formIntro="Masz kilka formularzy albo formularz z captchą? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Strażnik formularza kontaktowego"
       serviceDesc="Codzienne zgłoszenie testowe przez formularz kontaktowy klienta z alertem mailowym, gdy formularz przestaje przyjmować zgłoszenia, za 19 zł netto miesięcznie."
       serviceType="Monitoring formularza"

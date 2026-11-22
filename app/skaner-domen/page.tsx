@@ -109,7 +109,7 @@ export default function Page() {
       formHeading="Zapytaj o skaner domen"
       formIntro="Napisz, jakich adresów szukasz albo które domeny mamy pilnować. Odpiszemy z wyceną, jeśli potrzebujesz więcej niż pakiet."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Skaner domen"
       serviceDesc="Wyszukiwanie wolnych i wygasających domen pod frazy branży lub nazwę firmy za 29 zł netto oraz codzienne pilnowanie do 20 domen za 9 zł netto miesięcznie."
       serviceType="Wyszukiwanie domen"

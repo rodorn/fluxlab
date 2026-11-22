@@ -1,24 +1,12 @@
 const AKCENT = "#4f46e5";
 
-// Konkretny termin odpowiedzi zamiast ogólnego „tego samego dnia”, liczony
-// w czasie warszawskim: dzień roboczy do 16:00 to dziś do 18:00, później
-// albo w weekend następny dzień roboczy do 12:00.
+// Konkretny termin odpowiedzi, liczony w czasie warszawskim: w godzinach
+// 11–24 w ciągu godziny, w nocy i rano do 12:00 tego samego dnia.
 export function terminOdpowiedzi(teraz: Date = new Date()): string {
-  const czesci = Object.fromEntries(
-    new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Europe/Warsaw",
-      weekday: "short",
-      hour: "2-digit",
-      hourCycle: "h23",
-    })
-      .formatToParts(teraz)
-      .map((c) => [c.type, c.value]),
+  const godzina = Number(
+    new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Warsaw", hour: "2-digit", hourCycle: "h23" }).format(teraz),
   );
-  const dni = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const dzien = dni.indexOf(czesci.weekday);
-  if (dzien < 5 && Number(czesci.hour) < 16) return "dziś do 18:00";
-  if (dzien < 4) return "jutro do 12:00";
-  return "w poniedziałek do 12:00";
+  return godzina >= 11 ? "w ciągu godziny" : "dziś do 12:00";
 }
 
 export function esc(s: string): string {
@@ -55,7 +43,7 @@ export function zdanieKontaktu(
   return pref === "meet" && termin
     ? `Prosisz o spotkanie na Google Meet ${termin}. Zaproszenie z linkiem do rozmowy przyjdzie z adresu pawel@fluxlab.pl, zwykle w kilka minut. Potwierdź je proszę w kalendarzu. Jeśli ta godzina okaże się zajęta, zaproponujemy najbliższą wolną.`
     : pref === "phone" && telefon
-      ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w godzinach pracy, w 1 dzień roboczy.`
+      ? `Prosisz o telefon pod numer ${telefon}. Zadzwonimy w ciągu 2 godzin, w godz. 11–24.`
       : "Pracujemy i ustalamy wszystko mailowo, więc możesz po prostu odpisać na tę wiadomość.";
 }
 

@@ -78,7 +78,7 @@ export default function Page() {
       formHeading="Zapytaj o pilnowanie wielu adresów"
       formIntro="Masz zespół albo kilka domen? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Alert wycieku haseł"
       serviceDesc="Codzienne sprawdzanie adresu e-mail klienta w publicznych bazach wycieków z mailem przy nowym wycieku, za 19 zł netto miesięcznie."
       serviceType="Monitoring wycieków danych"

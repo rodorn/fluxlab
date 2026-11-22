@@ -148,7 +148,7 @@ export default function Ksef2027Page() {
           <LandingForm
             formId="ksef_2027_wycena"
             heading="Chcesz, żebyśmy zrobili to za Ciebie?"
-            intro="Napisz, czego potrzebujesz. Odpiszemy z ceną i terminem, w 1 dzień roboczy."
+            intro="Napisz, czego potrzebujesz. Odpiszemy z ceną i terminem, w godzinę."
             submitLabel="Poproś o wycenę"
           />
         </div>

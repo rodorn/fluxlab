@@ -38,7 +38,7 @@ export default function WlasnyCrm() {
       }
       cena="Wdrożenie 1 zł, abonament od 499 zł miesięcznie, ceny netto"
       krotkiZawsze={{
-        naglowek: "Zostaw kontakt, odpiszemy z wyceną CRM w 1 dzień roboczy",
+        naglowek: "Zostaw kontakt, odpiszemy z wyceną CRM w godzinę",
         opis: "Ilu handlowców i skąd masz leady? *",
         przycisk: "Wyślij, bezpłatna wycena CRM",
       }}

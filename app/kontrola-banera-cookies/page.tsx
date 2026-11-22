@@ -86,7 +86,7 @@ export default function Page() {
       formHeading="Chcesz, żebyśmy poprawili baner?"
       formIntro="Napisz, jakiego narzędzia zgód używasz, a odpiszemy z wyceną poprawek."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Kontrola banera cookies i Consent Mode v2"
       serviceDesc="Jednorazowy raport, czy tagi śledzące czekają na zgodę i czy Consent Mode v2 jest ustawiony poprawnie, za 19 zł netto."
       serviceType="Audyt banera cookies"

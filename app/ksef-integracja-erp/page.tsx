@@ -9,7 +9,7 @@ import AnkietaWyjscia from "@/components/AnkietaWyjscia";
 export const metadata: Metadata = {
   title: "Integracja systemu z KSeF dla firm z własnym ERP | Fluxlab",
   description:
-    "Podłączamy Twój system do faktur, sklep albo ERP do KSeF w 5 dni roboczych. Od 1 900 zł netto, wycena w 1 dzień roboczy, kod i dostępy zostają u Ciebie.",
+    "Podłączamy Twój system do faktur, sklep albo ERP do KSeF w 5 dni roboczych. Od 1 900 zł netto, wycena w godzinę, kod i dostępy zostają u Ciebie.",
   alternates: { canonical: "/ksef-integracja-erp" },
   robots: { index: false, follow: false },
 };
@@ -23,8 +23,8 @@ const SYSTEMY = [
 
 const KROKI = [
   {
-    t: "Rozpoznanie, 0 zł, 1 dzień roboczy",
-    d: "Opisujesz, w czym fakturujesz. W 1 dzień roboczy odpisujemy, czy system da się spiąć, czym i za ile. Gdy wystarczy gotowy program, mówimy to wprost.",
+    t: "Rozpoznanie, 0 zł, odpowiedź w godzinę",
+    d: "Opisujesz, w czym fakturujesz. W godzinę odpisujemy, czy system da się spiąć, czym i za ile. Gdy wystarczy gotowy program, mówimy to wprost.",
   },
   {
     t: "Wdrożenie, do 5 dni roboczych",
@@ -132,10 +132,10 @@ export default function KsefIntegracjaErp() {
             samNumer
             zawsze
             formId="ksef_erp"
-            naglowek="Wycena w 1 dzień roboczy, 0 zł"
+            naglowek="Wycena w godzinę, 0 zł"
             opisPlaceholder="Twój system do faktur *"
             opisEtykieta="Nazwa systemu, w którym wystawiasz faktury (wymagane)"
-            przycisk="Odbierz wycenę w 1 dzień roboczy"
+            przycisk="Odbierz wycenę w godzinę"
           />
           <div className="mx-auto mt-3 flex max-w-xl items-center justify-center gap-3 text-sm text-gray-700 dark:text-gray-300">
             <p className="text-left">

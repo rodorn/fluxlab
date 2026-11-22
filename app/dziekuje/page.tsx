@@ -8,7 +8,7 @@ import Konfetti from "@/components/Konfetti";
 export const metadata: Metadata = {
   title: "Dziękujemy, zgłoszenie odebrane | Fluxlab",
   description:
-    "Twoje zgłoszenie do diagnozy procesu trafiło do nas. Odpowiedź w 1 dzień roboczy.",
+    "Twoje zgłoszenie do diagnozy procesu trafiło do nas. Odpowiedź w godzinę.",
   robots: {
     index: false,
     follow: false,
@@ -38,7 +38,7 @@ export default function Dziekuje() {
               <ol className="flex items-start justify-between gap-2 mb-8 max-w-md mx-auto" aria-label="Co dalej">
                 {[
                   "Dostaliśmy zgłoszenie",
-                  "Odpisujemy w 1 dzień roboczy",
+                  "Odpisujemy w godzinę",
                   "Rozmowa albo Meet",
                 ].map((krok, i) => (
                   <li key={krok} className="relative flex-1 flex flex-col items-center text-center">
@@ -65,7 +65,7 @@ export default function Dziekuje() {
               </ol>
 
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6 text-center">
-                Odezwiemy się z odpowiedzią w 1 dzień roboczy. Jeśli widzimy potencjał na
+                Odezwiemy się z odpowiedzią w godzinę. Jeśli widzimy potencjał na
                 automatyzację, odpiszemy z konkretnym zakresem i wyceną. Jeśli
                 nie, napiszemy wprost, dlaczego nie warto tego automatyzować na
                 tym etapie.

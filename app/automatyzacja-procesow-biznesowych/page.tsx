@@ -90,7 +90,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             </p>
             <div data-poza-reklama="" className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               <a href="#diagnoza" className="btn-primary">
-                Wycena w 1 dzień roboczy, od 900 zł netto
+                Wycena w godzinę, od 900 zł netto
               </a>
               <a href="#branza" className="text-sm font-semibold text-accent hover:underline">
                 Sprawdź, co pochłania czas w Twojej branży

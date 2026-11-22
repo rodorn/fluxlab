@@ -48,7 +48,7 @@ const OFERTA = [
     opis: "Naprawa i poprawki obecnej strony albo nowa: landing, strona z CMS, sklep. Formularz trafia od razu do CRM albo na Twoją skrzynkę.",
     punkty: [
       "naprawa i poprawki: 150 / 290 / 490 zł",
-      "strona w tydzień, do 5 podstron: 2 900 zł",
+      "strona w 3 dni, do 5 podstron: 2 900 zł",
       "strona z CMS: 3 900 albo 5 900 zł, sklep od 9 900 zł",
       "opieka nad stroną: od 300 zł/mies.",
     ],
@@ -87,7 +87,7 @@ const OFERTA = [
 
 const KROKI = [
   ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu albo mail."],
-  ["Dostajesz cenę i termin", "Na spotkaniu albo w mailu, w 1 dzień roboczy."],
+  ["Dostajesz cenę i termin", "Na spotkaniu albo w mailu, w godzinę."],
   [
     "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach",
     "Płacisz za efekt, nie za godziny.",
@@ -123,19 +123,19 @@ const KROKI_KONTAKTU = {
   ],
   phone: [
     ["Zostawiasz numer", "Dwa zdania i numer telefonu."],
-    ["Oddzwaniamy w 1 dzień roboczy", "W rozmowie dostajesz cenę i termin."],
+    ["Oddzwaniamy w 2 godziny", "W rozmowie dostajesz cenę i termin."],
     KROKI[2],
   ],
   email: [
     ["Piszesz, czego potrzebujesz", "Dwa zdania w formularzu."],
-    ["Dostajesz cenę i termin", "W mailu, w 1 dzień roboczy."],
+    ["Dostajesz cenę i termin", "W mailu, w godzinę."],
     KROKI[2],
   ],
 };
 
 const ZASADA = [
   ["Cena z góry", "Znasz kwotę przed startem, bez rozliczania godzin."],
-  ["Termin w ofercie", "Cenę i termin dostajesz w 1 dzień roboczy."],
+  ["Termin w ofercie", "Cenę i termin dostajesz w godzinę."],
   [
     "Odbierasz działające",
     "Strona albo CRM działa po 2\u2060–\u20603\u00a0tygodniach.",
@@ -180,7 +180,7 @@ export default function Home() {
               href="#kontakt"
               className="btn-primary btn-lg w-full sm:w-auto sm:min-w-60"
             >
-              Wycena w 1 dzień roboczy, 0 zł
+              Wycena w godzinę, 0 zł
             </a>
             <a
               href="#handlowiec"
@@ -190,7 +190,7 @@ export default function Home() {
             </a>
           </div>
           <p data-poza-reklama="" className="animate-fade-up-1 mt-3 text-sm text-gray-600 dark:text-white/60">
-            0 zł, cena i termin w 1 dzień roboczy
+            0 zł, cena i termin w godzinę
           </p>
           <FormularzKrotki formId="krotki_home" />
           <HeroNic />
@@ -481,7 +481,7 @@ export default function Home() {
               <LandingForm
                 formId="home"
                 heading="Napisz, czego potrzebujesz"
-                intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
+                intro="Odpiszemy z ceną i terminem, w godzinę."
                 submitLabel="Wyślij i sprawdź cenę"
               />
               <div className="mx-auto mt-5 flex max-w-2xl flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white/70 p-5 text-center sm:flex-row sm:justify-between sm:text-left dark:border-white/10 dark:bg-white/5">

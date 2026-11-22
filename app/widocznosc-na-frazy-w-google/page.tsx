@@ -82,7 +82,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej fraz lub domen"
       formIntro="Potrzebujesz więcej niż 20 fraz albo kilku domen? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Widoczność na frazy w Google"
       serviceDesc="Cotygodniowy pomiar pozycji strony w Google dla do 20 fraz z porównaniem do poprzedniego tygodnia i listą konkurentów, za 39 zł netto miesięcznie."
       serviceType="Monitoring"

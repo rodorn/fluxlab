@@ -79,7 +79,7 @@ export default function Page() {
       formHeading="Zapytaj o politykę bezpieczeństwa"
       formIntro="Potrzebujesz dokumentu dopasowanego do branży albo szkolenia zespołu? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Polityka haseł dla firmy"
       serviceDesc="Gotowa polityka haseł z nazwą firmy w PDF: zasady, menedżer haseł, 2FA i procedura odejścia pracownika za 19 zł netto."
       serviceType="Dokument bezpieczeństwa informacji"

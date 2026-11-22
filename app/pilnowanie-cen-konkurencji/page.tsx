@@ -78,7 +78,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej produktów albo cały sklep"
       formIntro="Chcesz pilnować więcej niż trzech stron? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Pilnowanie cen konkurencji"
       serviceDesc="Codzienne odczytywanie cen z podanych stron produktów konkurencji z mailem przy potwierdzonej zmianie ceny, za 39 zł netto miesięcznie."
       serviceType="Monitoring cen"

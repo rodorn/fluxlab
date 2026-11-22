@@ -84,7 +84,7 @@ export default function Page() {
       formHeading="Masz więcej stron albo branż do porównania?"
       formIntro="Napisz, ile serwisów chcesz porównywać. Odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Porównanie SEO z 3 konkurentami"
       serviceDesc="Raport mailem: podstrony, szybkość, opinie Google i jakość tytułów Twojej strony na tle trzech konkurentów, za 29 zł netto."
       serviceType="Analiza SEO"

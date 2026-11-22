@@ -78,7 +78,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej firm"
       formIntro="Chcesz pilnować więcej niż 20 firm? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Alert MSiG"
       serviceDesc="Codzienne sprawdzanie MSiG dla do 20 firm i mail o nowych obwieszczeniach: upadłość, restrukturyzacja, likwidacja, za 39 zł netto miesięcznie."
       serviceType="Monitoring MSiG"

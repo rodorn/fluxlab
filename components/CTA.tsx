@@ -17,7 +17,7 @@ interface CTAProps {
  */
 export default function CTA({
   naglowek = "Nie wiesz, od czego zacząć?",
-  opis = "Opisujesz proces w krótkim formularzu. Tego samego dnia odpisujemy, co da się zautomatyzować, za ile i w jakim terminie. Bez zobowiązań.",
+  opis = "Opisujesz proces w krótkim formularzu. W godzinę odpisujemy, co da się zautomatyzować, za ile i w jakim terminie. Bez zobowiązań.",
   etykieta = "Bezpłatna diagnoza",
   href = "/kontakt",
 }: CTAProps = {}) {
@@ -50,7 +50,7 @@ function CTAFormularz() {
           formId="kontakt"
           h1
           heading="Napisz, czego potrzebujesz"
-          intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
+          intro="Odpiszemy z ceną i terminem, w godzinę."
         />
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-gray-600 dark:text-gray-400">
           Wolisz zadzwonić? Odbieramy w godzinach pracy:{" "}

@@ -82,7 +82,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej stron"
       formIntro="Chcesz mierzyć kilka stron? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Szybkość strony co miesiąc"
       serviceDesc="Miesięczny pomiar Core Web Vitals z telefonu i komputera z porównaniem do poprzedniego miesiąca, za 19 zł netto miesięcznie."
       serviceType="Audyt strony"

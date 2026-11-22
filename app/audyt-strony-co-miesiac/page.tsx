@@ -78,7 +78,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej stron"
       formIntro="Chcesz badać kilka stron? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Audyt strony co miesiąc"
       serviceDesc="Miesięczny audyt całej strony z porównaniem do poprzedniego i pełnym raportem w załączniku, za 19 zł netto miesięcznie."
       serviceType="Audyt strony"

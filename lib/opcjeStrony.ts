@@ -7,7 +7,7 @@
  *  Opieka jak w cenniku /strony-www: 300, 600 albo 1 280 zł miesięcznie.
  *  Chatbot: tylko opłata miesięczna, bez wdrożenia (decyzja Pawła 25.10.2026).
  *  Dodatki AI do sklepu na wzór Luigi's Box, tylko co miesiąc (Paweł 25.10.2026).
- *  Strona z CMS start 3 900 zł, do 8 podstron, 10 dni (decyzja Pawła 15.11.2026, karta b84231b1). */
+ *  Strona z CMS start 3 900 zł, do 8 podstron, 4 dni (decyzja Pawła 15.11.2026, karta b84231b1). */
 
 export type Rodzaj = {
   id: string;
@@ -27,16 +27,16 @@ export const RODZAJE: Rodzaj[] = [
     opis: "Jedna podstrona, formularz podpięty do CRM, hosting w cenie wdrożenia.",
     cena: 790,
     podstron: 1,
-    dni: 5,
+    dni: 2,
     przyklad: "jedna strona: oferta, argumenty, formularz kontaktowy",
   },
   {
     id: "landing",
-    nazwa: "Strona w tydzień, do 5 podstron",
+    nazwa: "Strona w 3 dni, do 5 podstron",
     opis: "Formularz i kalendarz spotkań.",
     cena: 2900,
     podstron: 5,
-    dni: 7,
+    dni: 3,
     przyklad: "strona główna, oferta, o nas, realizacje, kontakt",
   },
   {
@@ -45,7 +45,7 @@ export const RODZAJE: Rodzaj[] = [
     opis: "Do 8 podstron, panel edycji tekstów. Bez bloga i Profilu Google.",
     cena: 3900,
     podstron: 8,
-    dni: 10,
+    dni: 4,
     przyklad: "do tego osobne podstrony trzech głównych usług",
   },
   {
@@ -54,7 +54,7 @@ export const RODZAJE: Rodzaj[] = [
     opis: "Do 15 podstron, blog, panel edycji, Profil Google.",
     cena: 5900,
     podstron: 15,
-    dni: 12,
+    dni: 5,
     przyklad: "do tego osobna podstrona każdej usługi, cennik, pytania, zespół",
   },
   {
@@ -63,7 +63,7 @@ export const RODZAJE: Rodzaj[] = [
     opis: "Katalog, płatności, kurier i faktury.",
     cena: 9900,
     podstron: 15,
-    dni: 21,
+    dni: 7,
     przyklad: "kategorie, koszyk, konto klienta, regulamin; produkty nie są liczone",
   },
 ];

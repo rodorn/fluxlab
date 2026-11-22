@@ -102,7 +102,7 @@ const OSIE: { os: string; wartosci: string[] }[] = [
 const SLABE = [
   [
     "Jedna osoba, bez dyżuru 24/7",
-    "Odpisujemy w dni robocze. Jeśli proces musi mieć wsparcie w nocy i w weekend, większa firma albo gotowy SaaS z dyżurem będzie lepszy.",
+    "Odpisujemy w godzinę, w godz. 11–24. Jeśli proces musi mieć wsparcie w nocy i w weekend, większa firma albo gotowy SaaS z dyżurem będzie lepszy.",
   ],
   [
     "Nie zastąpimy dużego systemu",

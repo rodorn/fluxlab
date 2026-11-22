@@ -19,7 +19,7 @@ import DlaZakupow from "@/components/DlaZakupow";
 export const metadata: Metadata = {
   title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
   description:
-    "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI. Hosting w cenie wdrożenia. Landing page od 790 zł, strona w tydzień 2 900 zł.",
+    "Nowa strona albo poprawki w obecnej. Szybko, mobilnie, z AI. Hosting w cenie wdrożenia. Landing page od 790 zł, strona w 3 dni 2 900 zł.",
   alternates: { canonical: "/strony-www" },
   openGraph: {
     title: "Tworzenie stron WWW i poprawki w obecnych | Fluxlab",
@@ -42,25 +42,25 @@ const pricing = [
     description: "Jedna rzecz: szybkość, formularz, certyfikat albo błąd. Przez Useme płacisz dopiero po sprawdzeniu efektu.",
   },
   {
-    title: "Strona w tydzień",
+    title: "Strona w 3 dni",
     price: "2 900 zł",
-    description: "Do 5 podstron, formularz, kalendarz spotkań. Gotowa w 7 dni, płatność przez Useme albo fakturą z góry.",
+    description: "Do 5 podstron, formularz, kalendarz spotkań. Gotowa w 3 dni, płatność przez Useme albo fakturą z góry.",
     accent: true,
   },
   {
     title: "Strona z CMS start",
     price: "3 900 zł",
-    description: "Do 8 podstron, formularz, kalendarz spotkań i panel edycji tekstów. Bez bloga i Profilu Google. Gotowa w 10 dni.",
+    description: "Do 8 podstron, formularz, kalendarz spotkań i panel edycji tekstów. Bez bloga i Profilu Google. Gotowa w 4 dni.",
   },
   {
     title: "Strona firmowa z CMS",
     price: "5 900 zł",
-    description: "Do 15 podstron, blog i panel edycji, Profil Google podpięty. Gotowa w 12 dni.",
+    description: "Do 15 podstron, blog i panel edycji, Profil Google podpięty. Gotowa w 5 dni.",
   },
   {
     title: "Sklep z integracją",
     price: "od 9 900 zł",
-    description: "Katalog, płatności, kurier i faktury. Gotowy w 21 dni, cenę ustalamy po rozmowie.",
+    description: "Katalog, płatności, kurier i faktury. Gotowy w 7 dni, cenę ustalamy po rozmowie.",
   },
   {
     title: "Opieka nad stroną",
@@ -78,12 +78,12 @@ const faq = [
   {
     question: "Ile czasu zajmuje wdrożenie?",
     answer:
-      "Naprawa: zwykle ten sam lub następny dzień. Strona w tydzień: 7 dni. Strona z CMS start: 10 dni. Strona firmowa z CMS: 12 dni. Sklep: 21 dni.",
+      "Naprawa: zwykle ten sam lub następny dzień. Strona w 3 dni: 3 dni. Strona z CMS start: 4 dni. Strona firmowa z CMS: 5 dni. Sklep: 7 dni.",
   },
   {
     question: "Czy możemy modyfikować treści samodzielnie?",
     answer:
-      "Tak. Strona z CMS start i strona firmowa dostają prosty CMS, w którym edytujesz teksty jak dokument. Strona w tydzień nie ma panelu, zmiany robimy my.",
+      "Tak. Strona z CMS start i strona firmowa dostają prosty CMS, w którym edytujesz teksty jak dokument. Strona w 3 dni nie ma panelu, zmiany robimy my.",
   },
   {
     question: "Hosting i domena?",
@@ -93,10 +93,10 @@ const faq = [
   {
     question: "Co jest w cenie landing page za 790 zł?",
     answer:
-      "Jedna podstrona z formularzem, który trafia do CRM, hosting w cenie wdrożenia i zakres spisany w punktach. Cena netto. Domenę kupujesz na siebie (50-150 zł/rok), jej konfigurację robimy my. Więcej podstron to strona w tydzień od 2 900 zł.",
+      "Jedna podstrona z formularzem, który trafia do CRM, hosting w cenie wdrożenia i zakres spisany w punktach. Cena netto. Domenę kupujesz na siebie (50-150 zł/rok), jej konfigurację robimy my. Więcej podstron to strona w 3 dni od 2 900 zł.",
   },
   {
-    question: "Co jest w cenie strony w tydzień (2 900 zł)?",
+    question: "Co jest w cenie strony w 3 dni (2 900 zł)?",
     answer:
       "Do 5 podstron, formularz kontaktowy, kalendarz spotkań i hosting w cenie wdrożenia. Domenę kupujesz na siebie (50-150 zł/rok), jej konfigurację robimy my. Płatność przez Useme albo fakturą z góry.",
   },
@@ -140,14 +140,14 @@ export default function StronyWww() {
               </a>
               <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed animate-fade-up-3">
                 Nowa strona od zera albo poprawki w istniejącej. Prosta strona
-                w 7 dni, firmowa w 12 dni, sklep w 21 dni.
+                w 3 dni, firmowa w 5 dni, sklep w 7 dni.
               </p>
               <div data-poza-reklama="" className="animate-fade-up-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a href="#kontakt" className="btn-primary">
                   Napisz do nas
                 </a>
                 <span className="text-sm text-gray-600 dark:text-gray-400">
-                  Odpisujemy w 1 dzień roboczy, z ceną i terminem.
+                  Odpisujemy w godzinę, z ceną i terminem.
                 </span>
               </div>
               <FormularzKrotki formId="krotki_web" />
@@ -228,7 +228,7 @@ export default function StronyWww() {
                       </h3>
                       <dl className="mt-4 divide-y divide-gray-200 text-sm dark:divide-gray-700">
                         {[
-                          ["Zakres i termin", "Spisane w ofercie przed startem: co robimy, w ilu dniach i za ile. Prosta strona 7 dni, firmowa 12, sklep 21."],
+                          ["Zakres i termin", "Spisane w ofercie przed startem: co robimy, w ilu dniach i za ile. Prosta strona 3 dni, firmowa 5, sklep 7."],
                           ["30 dni po odbiorze", "Bez opłat poprawiamy wszystko, co nie działa tak, jak opisaliśmy w ofercie."],
                           ["Hosting", "W cenie wdrożenia. Domena na Ciebie, jej konfigurację robimy my."],
                           ["Po 30 dniach", "Opieka od 300 zł miesięcznie albo pojedyncze poprawki od 150 zł."],
@@ -288,7 +288,7 @@ export default function StronyWww() {
           <LandingForm
             formId="diagnosis_web"
             heading="Napisz, jakiej strony potrzebujesz"
-            intro="Odpiszemy z ceną i terminem, w 1 dzień roboczy."
+            intro="Odpiszemy z ceną i terminem, w godzinę."
             submitLabel="Wyślij i sprawdź cenę"
           />
         </section>
@@ -303,7 +303,7 @@ export default function StronyWww() {
             "@type": "Service",
             name: "Tworzenie stron WWW",
             description:
-              "Tworzenie nowych stron WWW i poprawki w obecnych. Next.js, Tailwind, mobile-first, AI w treści i obrazach. Strona w tydzień za 2 900 zł.",
+              "Tworzenie nowych stron WWW i poprawki w obecnych. Next.js, Tailwind, mobile-first, AI w treści i obrazach. Strona w 3 dni za 2 900 zł.",
             provider: { "@id": "https://fluxlab.pl/#organization" },
             areaServed: { "@type": "Country", name: "Polska" },
             serviceType: "Tworzenie stron internetowych",
@@ -327,11 +327,11 @@ export default function StronyWww() {
               },
               {
                 "@type": "Offer",
-                name: "Strona w tydzień",
+                name: "Strona w 3 dni",
                 price: "2900",
                 priceCurrency: "PLN",
                 description:
-                  "Do 5 podstron, formularz, kalendarz spotkań, gotowa w 7 dni.",
+                  "Do 5 podstron, formularz, kalendarz spotkań, gotowa w 3 dni.",
               },
               {
                 "@type": "Offer",
@@ -339,7 +339,7 @@ export default function StronyWww() {
                 price: "3900",
                 priceCurrency: "PLN",
                 description:
-                  "Do 8 podstron, formularz, kalendarz spotkań, panel edycji tekstów, gotowa w 10 dni.",
+                  "Do 8 podstron, formularz, kalendarz spotkań, panel edycji tekstów, gotowa w 4 dni.",
               },
               {
                 "@type": "Offer",

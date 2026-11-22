@@ -297,7 +297,7 @@ export const MENU: PozycjaMenu[] = [
     ],
     kafel: {
       tytul: "Napisz do nas",
-      opis: "Odpisujemy z ceną i terminem, w 1 dzień roboczy.",
+      opis: "Odpisujemy z ceną i terminem, w godzinę.",
       href: "/kontakt",
       cta: "Kontakt",
     },
@@ -391,5 +391,5 @@ export const OPIS_MENU: Record<string, string> = {
   "/pilotaz": "Pilotaż CRM na start",
   "/jak-zbudowana": "Technologia tej strony",
   "/zmiany": "Co zmieniliśmy ostatnio",
-  "/kontakt": "Odpisujemy w 1 dzień roboczy",
+  "/kontakt": "Odpisujemy w godzinę",
 };

@@ -83,7 +83,7 @@ export default function Page() {
       formHeading="Zapytaj o monitoring wielu stron"
       formIntro="Masz więcej niż jedną stronę, potrzebujesz SMS albo innych odbiorców alertów? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Monitoring dostępności strony"
       serviceDesc="Sprawdzanie strony co 5 minut z alertem mailowym przy awarii, informacją o przestoju i raportem miesięcznym za 19 zł netto miesięcznie."
       serviceType="Monitoring strony"

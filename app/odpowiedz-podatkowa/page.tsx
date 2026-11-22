@@ -70,14 +70,14 @@ export default function Page() {
         },
         {
           q: "Czy jest faktura?",
-          a: "Tak, na dane podane przy płatności, w ciągu 1 dnia roboczego.",
+          a: "Tak, na dane podane przy płatności, w 1 dzień roboczy.",
         },
       ]}
       formId="odpowiedz_podatkowa"
       formHeading="Masz więcej pytań podatkowych?"
       formIntro="Napisz, jakie sprawy podatkowe wracają w Twojej firmie. Odpiszemy, jak to uporządkować."
       submitLabel="Napisz w sprawie większej liczby pytań"
-      microCopy="Odpisujemy w 1 dzień roboczy."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Wstępna odpowiedź podatkowa"
       serviceDesc="Wstępna odpowiedź na pytanie podatkowe z podstawą, krokami i ryzykami. 29 zł netto, wynik po kilku minutach."
       serviceType="Informacja podatkowa"

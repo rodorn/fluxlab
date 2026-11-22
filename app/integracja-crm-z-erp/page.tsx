@@ -42,7 +42,7 @@ export default function IntegracjaCrmZErp() {
         </>
       }
       ctaLabel="Opisz swoje dwa systemy"
-      ctaNote="Odpisujemy w 1 dzień roboczy"
+      ctaNote="Odpisujemy w godzinę"
       powiazane={[
         {
           przed: "Połączenie CRM z ERP to zwykle pierwszy krok szerszej",

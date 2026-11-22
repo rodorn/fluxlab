@@ -78,7 +78,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej stron"
       formIntro="Chcesz pilnować więcej niż trzech stron? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Strażnik konwersji"
       serviceDesc="Sprawdzanie co 6 godzin, czy znaczniki Google i Meta są na stronie, ładują się i nie zniknęły z kontenera Tag Managera, za 29 zł netto miesięcznie."
       serviceType="Monitoring znaczników"

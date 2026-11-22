@@ -77,7 +77,7 @@ export default function Page() {
       formHeading="Zapytaj o skan kilku stron"
       formIntro="Masz więcej niż jedną stronę albo potrzebujesz aktualizacji wtyczek w cenie? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Skan wtyczek WordPressa"
       serviceDesc="Miesięczny raport o nieaktualnych i porzuconych wtyczkach strony na WordPressie za 29 zł netto miesięcznie."
       serviceType="Przegląd wtyczek WordPressa"

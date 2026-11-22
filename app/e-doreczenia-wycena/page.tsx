@@ -8,15 +8,15 @@ import AnkietaWyjscia from "@/components/AnkietaWyjscia";
 export const metadata: Metadata = {
   title: "Integracja z e-Doręczeniami dla firm | Fluxlab",
   description:
-    "Pisma z e-Doręczeń i dowody doręczenia trafiają do Twojego systemu. Od 1 490 zł netto, wycena w 1 dzień roboczy, kod i dostępy zostają u Ciebie.",
+    "Pisma z e-Doręczeń i dowody doręczenia trafiają do Twojego systemu. Od 1 490 zł netto, wycena w godzinę, kod i dostępy zostają u Ciebie.",
   alternates: { canonical: "/e-doreczenia-wycena" },
   robots: { index: false, follow: false },
 };
 
 const KROKI = [
   {
-    t: "Rozpoznanie, 0 zł, 1 dzień roboczy",
-    d: "Opisujesz, gdzie dziś pracujesz z pismami. W 1 dzień roboczy odpisujemy, czy i czym da się spiąć Twój system oraz przy jakiej liczbie pism to się zwraca.",
+    t: "Rozpoznanie, 0 zł, odpowiedź w godzinę",
+    d: "Opisujesz, gdzie dziś pracujesz z pismami. W godzinę odpisujemy, czy i czym da się spiąć Twój system oraz przy jakiej liczbie pism to się zwraca.",
   },
   {
     t: "Wdrożenie",
@@ -107,10 +107,10 @@ export default function EDoreczeniaWycena() {
             samNumer
             zawsze
             formId="edoreczenia_wycena"
-            naglowek="Wycena w 1 dzień roboczy, 0 zł"
+            naglowek="Wycena w godzinę, 0 zł"
             opisPlaceholder="Twój system do pism *"
             opisEtykieta="Nazwa systemu, w którym pracujesz z pismami (wymagane)"
-            przycisk="Odbierz wycenę w 1 dzień roboczy"
+            przycisk="Odbierz wycenę w godzinę"
           />
           <div className="mx-auto mt-3 flex max-w-xl items-center justify-center gap-3 text-sm text-gray-700 dark:text-gray-300">
             <p className="text-left">

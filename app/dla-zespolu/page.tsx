@@ -21,7 +21,7 @@ const OFERTA = [
   ],
   [
     "Strony internetowe",
-    "Naprawa i poprawki 150 / 290 / 490 zł. Strona w tydzień do 5 podstron 2 900 zł, strona z CMS start do 8 podstron 3 900 zł, strona firmowa z CMS 5 900 zł, sklep od 9 900 zł.",
+    "Naprawa i poprawki 150 / 290 / 490 zł. Strona w 3 dni do 5 podstron 2 900 zł, strona z CMS start do 8 podstron 3 900 zł, strona firmowa z CMS 5 900 zł, sklep od 9 900 zł.",
   ],
   [
     "Własny CRM",
@@ -31,7 +31,7 @@ const OFERTA = [
 
 const KROKI = [
   ["Zgłoszenie", "Formularz na fluxlab.pl albo mail na pawel@fluxlab.pl. Wystarczy opis problemu w kilku zdaniach."],
-  ["Wycena", "Cenę i termin dostajesz w 1 dzień roboczy, na piśmie. Wycena jest bezpłatna."],
+  ["Wycena", "Cenę i termin dostajesz w godzinę, na piśmie. Wycena jest bezpłatna."],
   ["Realizacja", "Termin z oferty, postęp co kilka dni. Cena się nie zmienia, nie rozliczamy godzin."],
   ["Odbiór i wsparcie", "Sprawdzasz efekt na swoich danych. Przez 30 dni po odbiorze poprawki są bezpłatne, potem opcjonalny serwis z reakcją w 24 h."],
 ];

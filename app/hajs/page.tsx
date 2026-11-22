@@ -86,7 +86,7 @@ export default function HajsPage() {
       </main>
       <CTA
         naglowek="Opisz, co w warsztacie zabiera Ci najwięcej czasu"
-        opis="Odpisujemy tego samego dnia: co da się zautomatyzować, za ile i w jakim terminie. Bez zobowiązań. Wejście z odcinka pamiętamy, więc nie musisz o nim pisać."
+        opis="Odpisujemy w godzinę: co da się zautomatyzować, za ile i w jakim terminie. Bez zobowiązań. Wejście z odcinka pamiętamy, więc nie musisz o nim pisać."
       />
       <Footer />
     </>

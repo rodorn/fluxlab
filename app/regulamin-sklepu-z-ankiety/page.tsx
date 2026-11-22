@@ -75,14 +75,14 @@ export default function Page() {
         },
         {
           q: "Czy jest faktura?",
-          a: "Tak, na dane podane przy płatności, w ciągu 1 dnia roboczego.",
+          a: "Tak, na dane podane przy płatności, w 1 dzień roboczy.",
         },
       ]}
       formId="regulamin_ankieta"
       formHeading="Potrzebujesz dokumentów dla większego sklepu?"
       formIntro="Napisz, co sprzedajesz i gdzie. Odpiszemy, jak przygotować dokumenty z udziałem prawnika."
       submitLabel="Napisz w sprawie większego sklepu"
-      microCopy="Odpisujemy w 1 dzień roboczy."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Regulamin sklepu i polityka prywatności z ankiety"
       serviceDesc="Regulamin sklepu internetowego i polityka prywatności przygotowane z ankiety 15 pytań, gotowe do wklejenia na stronę. 99 zł netto."
       serviceType="Dokumenty"

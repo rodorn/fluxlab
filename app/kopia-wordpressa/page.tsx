@@ -84,7 +84,7 @@ export default function Page() {
       formHeading="Zapytaj o większą stronę"
       formIntro="Strona powyżej 1 GB, kilka stron albo dłuższe przechowywanie? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Kopia zapasowa WordPressa"
       serviceDesc="Codzienna kopia bazy danych i wp-content strony WordPress na osobnym serwerze, trzy ostatnie kopie do pobrania, 29 zł netto miesięcznie."
       serviceType="Kopia zapasowa strony WordPress"

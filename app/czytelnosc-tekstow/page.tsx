@@ -88,7 +88,7 @@ export default function Page() {
       formHeading="Zapytaj o teksty całej strony"
       formIntro="Masz sklep z setkami podstron albo teksty w kilku językach? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Czytelność i poprawność tekstów strony"
       serviceDesc="Jednorazowy raport literówek, zbyt długich zdań i urzędowych fraz na do 12 podstronach strony, z poprawkami, za 19 zł netto."
       serviceType="Korekta tekstów strony"

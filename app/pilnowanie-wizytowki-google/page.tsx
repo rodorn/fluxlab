@@ -82,7 +82,7 @@ export default function Page() {
       formHeading="Zapytaj o więcej wizytówek"
       formIntro="Masz kilka lokalizacji? Napisz, odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Pilnowanie wizytówki Google"
       serviceDesc="Codzienna kontrola wizytówki firmy w Google z alertem o zmianie nazwy, adresu, godzin, kategorii lub statusu, za 29 zł netto miesięcznie."
       serviceType="Monitoring"

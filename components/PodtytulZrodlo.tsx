@@ -6,7 +6,7 @@ const DOMYSLNY = "Strona, formularze i automatyzacje, które oszczędzają czas.
 
 const WARIANTY: Record<string, string> = {
   linkedin: "Lead B2B trafia od razu do handlowca, bez przepisywania. Cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
-  google: "Strona, z której zapytania trafiają prosto na Twoją skrzynkę. Cena z góry, gotowe w 2\u2060–\u20603\u00a0tygodnie.",
+  google: "Strona, z której zapytania trafiają prosto na Twoją skrzynkę. Cena z góry, gotowa w 3\u2060–\u20607\u00a0dni.",
 };
 
 function zrodlo(): string | null {

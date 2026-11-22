@@ -91,7 +91,7 @@ export default function Page() {
       formHeading="Zapytaj o uwierzytelnianie poczty"
       formIntro="Masz kilka domen albo własny serwer poczty? Napisz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="SPF, DKIM i DMARC z instrukcją"
       serviceDesc="Sprawdzenie SPF, DKIM i DMARC domeny firmowej poczty, gotowe rekordy do DNS i instrukcja dla dostawcy poczty za 19 zł netto."
       serviceType="Konfiguracja uwierzytelniania poczty"

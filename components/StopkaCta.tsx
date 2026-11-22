@@ -16,7 +16,7 @@ export default function StopkaCta() {
           Napisz, czego potrzebujesz
         </p>
         <p className="mx-auto mt-4 max-w-md text-white/85">
-          Odpiszemy z ceną i terminem, w 1 dzień roboczy.
+          Odpiszemy z ceną i terminem, w godzinę.
         </p>
         <Link
           href="/kontakt"

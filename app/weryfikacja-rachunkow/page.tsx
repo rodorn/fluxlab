@@ -86,7 +86,7 @@ export default function Page() {
       formHeading="Masz więcej niż jedną firmę albo wielki plik?"
       formIntro="Napisz, ile przelewów wysyłasz miesięcznie. Odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Weryfikacja rachunku przed przelewem"
       serviceDesc="Sprawdzanie rachunków z paczki przelewów w wykazie podatników VAT, z wynikiem na stronie i mailem, za 29 zł netto miesięcznie."
       serviceType="Weryfikacja rachunków bankowych"

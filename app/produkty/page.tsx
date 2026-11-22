@@ -146,11 +146,11 @@ const PYTANIA_PRODUKTY = [
   },
   {
     q: "Jak zamówić kilka usług naraz?",
-    a: "Dodaj je do koszyka i wyślij jedno zapytanie. Cenę i termin potwierdzamy w 1 dzień roboczy.",
+    a: "Dodaj je do koszyka i wyślij jedno zapytanie. Cenę i termin potwierdzamy w godzinę.",
   },
   {
     q: "Ile trwa realizacja?",
-    a: "Strona do 5 podstron powstaje w tydzień, pierwszy krok automatyzacji w 5 dni, większość wdrożeń kończy się w 2–3 tygodnie. Termin jest w ofercie.",
+    a: "Strona do 5 podstron powstaje w 3 dni, pierwszy krok automatyzacji w 5 dni, większość wdrożeń kończy się w 2–3 tygodnie. Termin jest w ofercie.",
   },
   {
     q: "Jak wygląda płatność?",

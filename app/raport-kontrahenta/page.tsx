@@ -86,7 +86,7 @@ export default function Page() {
       formHeading="Potrzebujesz raportów o wielu firmach?"
       formIntro="Napisz, ile kontrahentów sprawdzasz miesięcznie. Odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Raport o kontrahencie w PDF"
       serviceDesc="Raport z wykazu VAT, KRS i MSiG w pliku PDF wysyłanym mailem, za 19 zł netto."
       serviceType="Weryfikacja kontrahenta"

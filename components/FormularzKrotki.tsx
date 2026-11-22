@@ -15,7 +15,7 @@ const pole =
 export default function FormularzKrotki({
   formId,
   zawsze = false,
-  naglowek = "Zostaw kontakt, odpiszemy z ceną i terminem w 1 dzień roboczy",
+  naglowek = "Zostaw kontakt, odpiszemy z ceną i terminem w godzinę",
   opisPlaceholder = "Czego potrzebujesz? Jedno zdanie *",
   opisEtykieta = "Czego potrzebujesz (wymagane)",
   przycisk = "Wyślij, bezpłatna wycena",

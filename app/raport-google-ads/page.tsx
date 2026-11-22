@@ -91,7 +91,7 @@ export default function Page() {
       formHeading="Kilka kont albo prowadzisz Ads dla klientów?"
       formIntro="Napisz, ile kont reklamowych masz, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Raport Google Ads z alertem przepalania"
       serviceDesc="Tygodniowy raport kampanii Google Ads i alert, gdy fraza wyda budżet bez konwersji. Skrypt tylko czyta dane konta, 49 zł netto miesięcznie."
       serviceType="Raportowanie Google Ads"

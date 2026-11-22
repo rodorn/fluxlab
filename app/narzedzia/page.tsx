@@ -293,7 +293,7 @@ export default function Narzedzia() {
             <LandingForm
               formId="narzedzia_wycena"
               heading="Chcesz, żebyśmy zrobili to za Ciebie?"
-              intro="Napisz, czego potrzebujesz. Odpiszemy z ceną i terminem, w 1 dzień roboczy."
+              intro="Napisz, czego potrzebujesz. Odpiszemy z ceną i terminem, w godzinę."
               submitLabel="Poproś o wycenę"
             />
           </div>

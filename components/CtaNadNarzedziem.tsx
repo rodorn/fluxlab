@@ -10,7 +10,7 @@ export default function CtaNadNarzedziem({ miejsce }: { miejsce: string }) {
       <p className="font-semibold text-gray-900 dark:text-white">
         Chcesz, żebyśmy zrobili to za Ciebie?{" "}
         <span className="font-normal text-gray-600 dark:text-gray-300">
-          Wycena w 1 dzień roboczy, 0 zł
+          Wycena w godzinę, 0 zł
         </span>
       </p>
       <a

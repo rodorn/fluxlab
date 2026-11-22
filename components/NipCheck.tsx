@@ -282,7 +282,7 @@ export default function NipCheck({ dalej = false }: { dalej?: boolean }) {
             {leadStan === "ok" ? (
               <p className="mt-4 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                 Mamy zgłoszenie. Odpiszemy na {email} z pełnym raportem
-                w 1 dzień roboczy.
+                w godzinę.
               </p>
             ) : (
               <form data-kontaktowy onSubmit={zamowRaport} className="mt-4">

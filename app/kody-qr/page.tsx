@@ -95,7 +95,7 @@ export default function Page() {
       formHeading="Masz pytanie o kody QR"
       formIntro="Napisz, na co potrzebujesz kodu, odpowiemy z podpowiedzią, jak go ustawić."
       submitLabel="Wyślij pytanie"
-      microCopy="Odpowiadamy w 1 dzień roboczy."
+      microCopy="Odpowiadamy w godzinę."
       serviceName="Kody QR z licznikiem skanów"
       serviceDesc="Bezpłatne kody QR z licznikiem skanów: obraz do druku i comiesięczny raport skanów na e-mail."
       serviceType="Generator kodów QR"

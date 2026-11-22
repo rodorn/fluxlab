@@ -90,7 +90,7 @@ export default function Page() {
       formHeading="Masz większą listę albo pytanie"
       formIntro="Napisz, ile firm sprawdzasz i do czego potrzebujesz adresów. Odpowiemy, jak to zrobić."
       submitLabel="Wyślij"
-      microCopy="Odpowiadamy w ciągu jednego dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Adresy do e-Doręczeń z listy firm"
       serviceDesc="Darmowe narzędzie: z listy numerów NIP przygotowuje plik z adresami do e-Doręczeń wpisanymi do KRS."
       serviceType="Weryfikacja kontrahentów"

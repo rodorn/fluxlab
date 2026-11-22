@@ -24,7 +24,7 @@ const PODPOWIEDZI = [
 const ZAPEWNIENIA = [
   "Bez zobowiązań",
   "Cena i termin w odpowiedzi",
-  "Odpisujemy w 1 dzień roboczy",
+  "Odpisujemy w godzinę",
 ];
 
 const SZKIC_KLUCZ = "fluxlab_szkic";
@@ -336,7 +336,7 @@ export default function LandingForm({
         )}
 
         <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-          {microCopy ?? "Odpowiadamy w 1 dzień roboczy z ceną."}
+          {microCopy ?? "Odpowiadamy w godzinę z ceną."}
         </p>
         <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-gray-200 pt-5 text-xs text-gray-600 dark:border-gray-700 dark:text-gray-400">
           {ZAPEWNIENIA.map((z) => (

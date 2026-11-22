@@ -75,14 +75,14 @@ export default function Page() {
         },
         {
           q: "Czy jest faktura?",
-          a: "Tak, na dane podane przy płatności, w ciągu 1 dnia roboczego.",
+          a: "Tak, na dane podane przy płatności, w 1 dzień roboczy.",
         },
       ]}
       formId="faktury_pdf_excel"
       formHeading="Masz setki faktur w miesiącu?"
       formIntro="Napisz, ile faktur przychodzi do Ciebie i w jakim programie je księgujesz. Odpiszemy, jak to podłączyć."
       submitLabel="Napisz w sprawie większej liczby faktur"
-      microCopy="Odpisujemy w 1 dzień roboczy."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Faktury PDF do Excela"
       serviceDesc="Wgrywasz faktury w PDF i dostajesz arkusz Excel z numerem, datami, NIP-ami i kwotami. Do 100 faktur w miesiącu, 49 zł netto miesięcznie."
       serviceType="Automatyzacja księgowości"

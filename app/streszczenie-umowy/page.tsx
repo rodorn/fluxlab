@@ -70,14 +70,14 @@ export default function Page() {
         },
         {
           q: "Czy jest faktura?",
-          a: "Tak, na dane podane przy płatności, w ciągu 1 dnia roboczego.",
+          a: "Tak, na dane podane przy płatności, w 1 dzień roboczy.",
         },
       ]}
       formId="streszczenie_umowy"
       formHeading="Masz dużo umów do przejrzenia?"
       formIntro="Napisz, ile umów miesięcznie czytasz i jakiego rodzaju. Odpiszemy, jak to zautomatyzować."
       submitLabel="Napisz w sprawie większej liczby"
-      microCopy="Odpisujemy w 1 dzień roboczy."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Streszczenie umowy i ryzyk z pliku PDF"
       serviceDesc="Automatyczna analiza umowy w PDF: kluczowe zapisy, terminy, kary, ryzyka i punkty do negocjacji. 29 zł netto, wynik po kilku minutach."
       serviceType="Analiza umów"

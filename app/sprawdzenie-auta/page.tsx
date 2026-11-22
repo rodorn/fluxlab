@@ -86,7 +86,7 @@ export default function Page() {
       formHeading="Handlujesz autami i sprawdzasz ich wiele?"
       formIntro="Napisz, ile aut sprawdzasz miesięcznie. Odpiszemy z propozycją."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Sprawdzenie auta przed zakupem"
       serviceDesc="Raport mailem po numerze VIN: poprawność numeru, wycofania marki w UE, link do Historii pojazdu i lista kontrolna, za 19 zł netto."
       serviceType="Weryfikacja pojazdu"

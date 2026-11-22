@@ -91,7 +91,7 @@ export default function Page() {
       formHeading="Kilka usług albo klientów?"
       formIntro="Prowadzisz Analytics dla kilku stron albo klientów? Napisz, ile ich jest, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Raport Google Analytics prostym językiem"
       serviceDesc="Cotygodniowy mail z Google Analytics 4: wejścia, źródła, najczęściej oglądane strony i zmiany opisane zwykłymi zdaniami, 29 zł netto miesięcznie."
       serviceType="Raportowanie Google Analytics"

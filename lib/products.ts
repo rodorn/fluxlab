@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
     category: "www",
     name: "Strony internetowe",
     tagline: "Nowa strona albo poprawki w obecnej",
-    desc: "Strona w tydzień 2 900 zł, strona z CMS 3 900 albo 5 900 zł, opieka od 300 zł/mies. Formularz trafia prosto do CRM albo skrzynki.",
+    desc: "Strona w 3 dni 2 900 zł, strona z CMS 3 900 albo 5 900 zł, opieka od 300 zł/mies. Formularz trafia prosto do CRM albo skrzynki.",
     price: "od 2 900 zł",
     href: "/strony-www",
     grupa: "budowa",

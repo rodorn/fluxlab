@@ -81,7 +81,7 @@ export default function Page() {
       formHeading="Masz większy katalog?"
       formIntro="Napisz, ile produktów masz i w jakim sklepie. Odpiszemy, ile kosztuje opisanie całości."
       submitLabel="Napisz w sprawie katalogu"
-      microCopy="Odpisujemy w 1 dzień roboczy."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Opisy produktów do sklepu z pliku CSV"
       serviceDesc="Darmowe narzędzie: plik z nazwami i cechami produktów zamienia w plik z opisem krótkim, opisem długim, meta title i meta description. Do 25 produktów, bez płatności."
       serviceType="Opisy produktów dla sklepu internetowego"

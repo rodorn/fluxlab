@@ -87,7 +87,7 @@ export default function Page() {
       formHeading="Więcej niż 3 konkurentów?"
       formIntro="Napisz, ilu konkurentów chcesz obserwować i na co zwracasz uwagę, a odpiszemy z wyceną."
       submitLabel="Wyślij zapytanie"
-      microCopy="Odpowiadamy w ciągu 1 dnia roboczego."
+      microCopy="Odpisujemy w godzinę, oddzwaniamy w 2 godziny."
       serviceName="Pilnowanie zmian u konkurentów"
       serviceDesc="Tygodniowy mail ze zmianami na stronach do 3 konkurentów: nowe podstrony, tytuł i nagłówek strony głównej oraz kwoty w cennikach, 29 zł netto miesięcznie."
       serviceType="Monitoring stron konkurencji"
