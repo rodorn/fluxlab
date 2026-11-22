@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import FormularzKrotki from "@/components/FormularzKrotki";
+import OddzwonTelefon from "@/components/OddzwonTelefon";
 import OsCzasuStrony from "@/components/OsCzasuStrony";
 import KonfiguratorStrony from "@/components/KonfiguratorStrony";
 import GeneratorHasla from "@/components/GeneratorHasla";
@@ -128,6 +129,7 @@ export default function StronyWww() {
               >
                 Strony internetowe dla firm
               </h1>
+              <OddzwonTelefon formId="strony_www" />
               <a
                 href="#konfigurator-heading"
                 className="animate-fade-up-2 mb-5 inline-flex flex-wrap items-baseline justify-center gap-x-2 rounded-2xl border border-accent/50 bg-accent/10 px-5 py-3 text-gray-900 dark:text-white"

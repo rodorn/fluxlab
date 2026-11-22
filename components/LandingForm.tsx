@@ -42,6 +42,8 @@ interface Props {
   h1?: boolean;
   /** Dodatkowe, nieobowiązkowe pole tekstowe, wysyłane jako „skala”. */
   pole?: { etykieta: string; placeholder: string };
+  /** Treść pod wstępem, przed formularzem (pole oddzwonienia na telefonie). */
+  poWstepie?: React.ReactNode;
 }
 
 /** Jeden krok, dwa pola obowiązkowe: telefon albo e-mail i czego klient
@@ -54,6 +56,7 @@ export default function LandingForm({
   microCopy,
   h1 = false,
   pole,
+  poWstepie,
 }: Props) {
   const Naglowek = h1 ? "h1" : "h2";
   const router = useRouter();
@@ -220,6 +223,7 @@ export default function LandingForm({
         <p className="text-gray-600 dark:text-gray-400 text-base lg:text-lg leading-relaxed">
           {intro}
         </p>
+        {poWstepie && <div className="mt-5">{poWstepie}</div>}
       </div>
 
       <form
@@ -230,8 +234,15 @@ export default function LandingForm({
         onInput={(e) => {
           (e.target as HTMLElement).removeAttribute("aria-invalid");
           zapiszSzkic();
+          if (e.nativeEvent.isTrusted) handleFormStart();
         }}
-        onFocus={handleFormStart}
+        onPointerDown={(e) => {
+          if (
+            e.nativeEvent.isTrusted &&
+            (e.target as HTMLElement).matches("input, textarea, select")
+          )
+            handleFormStart();
+        }}
         className="relative overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 lg:p-10 shadow-xl shadow-accent/10 text-left space-y-5 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-accent-solid"
       >
         <div

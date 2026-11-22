@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import TrackedCTA from "@/components/TrackedCTA";
 import LandingForm from "@/components/LandingForm";
+import OddzwonTelefon from "@/components/OddzwonTelefon";
 
 interface CTAProps {
   naglowek?: string;
@@ -51,6 +52,7 @@ function CTAFormularz() {
           h1
           heading="Napisz, czego potrzebujesz"
           intro="Odpiszemy z ceną i terminem, w godzinę."
+          poWstepie={<OddzwonTelefon formId="kontakt" />}
         />
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-gray-600 dark:text-gray-400">
           Wolisz zadzwonić? Odbieramy w godzinach pracy:{" "}

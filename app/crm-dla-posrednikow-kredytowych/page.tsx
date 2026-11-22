@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import OddzwonTelefon from "@/components/OddzwonTelefon";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import FormularzPolecenia from "@/components/FormularzPolecenia";
@@ -116,6 +117,7 @@ export default function CrmPosrednicyPage() {
           <div className="container-wide max-w-3xl mx-auto text-center">
             <p className="section-label mb-3">FluxCRM dla pośredników</p>
             <h1 className="h1-strony mb-6">CRM dla pośredników kredytowych</h1>
+            <OddzwonTelefon formId="crm_posrednicy" />
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
               Sprawa kredytowa od zapytania do uruchomienia w jednym miejscu.
               Zobacz to na 30 minutach demo.

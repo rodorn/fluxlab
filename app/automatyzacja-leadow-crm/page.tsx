@@ -11,6 +11,7 @@ import ProductCard from "@/components/ProductCard";
 import { PRODUCTS } from "@/lib/products";
 import DrogaLeada from "@/components/DrogaLeada";
 import FormularzKrotki from "@/components/FormularzKrotki";
+import OddzwonTelefon from "@/components/OddzwonTelefon";
 
 export const metadata: Metadata = {
   title: "Automatyzacja CRM z AI: lead w minutę | Fluxlab",
@@ -145,6 +146,7 @@ export default function AutomatyzacjaLeadowCRM() {
               <h1 className="h1-strony mt-4">
                 Automatyzacja CRM z AI bez pracy ręcznej
               </h1>
+              <div className="mt-6 md:hidden"><OddzwonTelefon formId="leady_crm" /></div>
               <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                 <Link href="/wlasny-crm" className="text-accent hover:underline">
                   Leady same trafiają do CRM

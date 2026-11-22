@@ -13,13 +13,19 @@ export default function PomiarFormularzy() {
   const sciezka = usePathname();
 
   useEffect(() => {
+    // form_start liczy dotyk pola albo wpisany znak. Sam fokus nie: 22.11
+    // form_start z Androida z reklamy przyszedł w sekundzie wejścia, przed
+    // odsłoną, a sesja wyszła po 5 s. Fokus bez dotyku i bez klawisza
+    // zgłaszamy osobno (fokus_bez_dotyku), żeby było widać, jak często.
     const zaczete = new WeakSet<HTMLFormElement>();
-    const naFokus = (e: FocusEvent) => {
-      const pole = e.target as HTMLElement | null;
-      if (!pole?.matches?.("input, textarea, select")) return;
-      const form = pole.closest("form");
-      if (!form || form.dataset.pomiar === "wlasny" || zaczete.has(form))
-        return;
+    let ostatniDotyk = 0;
+    let fokusZgloszony = false;
+    const pole = (e: Event) => {
+      const t = e.target as HTMLElement | null;
+      return t?.matches?.("input, textarea, select") ? t : null;
+    };
+    const start = (form: HTMLFormElement) => {
+      if (form.dataset.pomiar === "wlasny" || zaczete.has(form)) return;
       zaczete.add(form);
       const id =
         form.id ||
@@ -28,6 +34,30 @@ export default function PomiarFormularzy() {
       gaEvent("form_start", { form_id: id });
       zglosZdarzenie(kontaktowy(form) ? "form_start" : "narzedzie_start");
     };
+    const naDotyk = (e: PointerEvent) => {
+      if (!e.isTrusted) return;
+      ostatniDotyk = Date.now();
+      const form = pole(e)?.closest("form");
+      if (form) start(form);
+    };
+    const naKlawisz = (e: KeyboardEvent) => {
+      if (e.isTrusted) ostatniDotyk = Date.now();
+    };
+    const naWpis = (e: Event) => {
+      if (!e.isTrusted) return;
+      const form = pole(e)?.closest("form");
+      if (form) start(form);
+    };
+    const naFokus = (e: FocusEvent) => {
+      const p = pole(e);
+      if (!p?.closest("form") || fokusZgloszony) return;
+      if (Date.now() - ostatniDotyk < 1500) return;
+      fokusZgloszony = true;
+      zglosZdarzenie("fokus_bez_dotyku");
+    };
+    document.addEventListener("pointerdown", naDotyk, true);
+    document.addEventListener("keydown", naKlawisz, true);
+    document.addEventListener("input", naWpis, true);
     document.addEventListener("focusin", naFokus);
     const naKlik = (e: MouseEvent) => {
       const a = (e.target as HTMLElement | null)?.closest?.("a");
@@ -49,6 +79,9 @@ export default function PomiarFormularzy() {
     document.addEventListener("click", naCta, true);
     return () => {
       document.removeEventListener("focusin", naFokus);
+      document.removeEventListener("pointerdown", naDotyk, true);
+      document.removeEventListener("keydown", naKlawisz, true);
+      document.removeEventListener("input", naWpis, true);
       document.removeEventListener("click", naKlik, true);
       document.removeEventListener("click", naCta, true);
     };
