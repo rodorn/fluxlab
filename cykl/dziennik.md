@@ -12352,3 +12352,11 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Dowód:** cykl/z3-indeksowanie-2026-11-22.log (2× „limit dnia”), meldunek do FL_SEO 10:46.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (tytuł kiedy-odliczyc-vat-z-faktury-ksef) od 12:40, potem Z6-Z19.
+
+## 2026-11-22 12:58
+**Kanał:** Google (CTR artykułu KSeF), Z5 planu.
+**Co zrobione:** /strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef ma nowy title „Odliczysz VAT od miesiąca nadania numeru KSeF | Fluxlab” i opis zaczynający się od odpowiedzi; przy poz. 4,3 i 615 wyśw. w 28 dni (CTR 1%) celem jest wyższy CTR.
+**Ruch:** doba 559 odsłon, 152 osoby; źródła doby: facebook 110 + m.facebook 47, google 102, b2b-email 50, google-ads 37; YouTube 11 sesji, Threads 4, LinkedIn 1. Uruchomienia narzędzi: 1. GSC strony 28 dni: 6 klik., 615 wyśw.; widoczne zapytania tylko „nabywca” i „jesteś pewien?” po 1 wyśw., reszta ukryta.
+**Dowód:** commit 4b2d38ac, produkcja zwraca nowy <title> i description; IndexNow Yandex 200, Naver 200 (wspólny 403, znany).
+**Dla Pawła:**
+**Zostało otwarte:** Z6 (czy-firma-ma-adres-do-e-doreczen) od 14:40, potem Z7-Z19.
