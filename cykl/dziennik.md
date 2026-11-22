@@ -12394,3 +12394,30 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Dowód:** cykl/z12-404-2026-11-22.txt: 71 × 200, 307 dla /narzedziaprzepisanie i /narzedziaspotkań (poprawka 31808e86 działa), 302 /grupa-ksef (celowo na grupę FB), 404 /kalkulator-podatkowy„zatwierdź” (1 sesja) i /test-utm (sesja test119x z kampanią test_w, test, nie człowiek).
 **Dla Pawła:**
 **Zostało otwarte:** Z13 od 22:40 (przekierowanie /kalkulator-podatkowy<cokolwiek> → /kalkulator-podatkowy, wzorem /narzedzia), Z14 od 22:40, Z15–Z19 w nocy i rano 23.11.
+
+## 2026-11-22 22:43
+**Kanał:** plan ruchu Z13 (utracone wejścia z Facebooka) i Z14 (bilans dnia).
+**Co zrobione:** wejście z Facebooka na sklejony adres /kalkulator-podatkowy„zatwierdź” (404) przekierowane trwale na /kalkulator-podatkowy; bilans 22.11 policzony.
+**Ruch:** 24 h po odsiewie 144 sesje / 179 odsłon: fb-ads 54, m.facebook.com 28, google-ads 18, bez odsyłacza 13, www.facebook.com 12, www.google.com 9, chatgpt (utm) 5, chatgpt.com 3, duckduckgo 2, pozostałe po 1 (zleca.pl, useme, LinkedIn, Threads, Instagram, Gmail, l.facebook). 7 dni: 487 sesji.
+
+Bilans 22.11 (kalendarzowo, do 22:43, po odsiewie, bez /mail/, b2b-email i sesji testowych):
+
+| Kanał | 22.11 | 21.11 (do 22:43) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 132 / 159 | 53 / 61 |
+| fb-ads | 54 (karuzela-pytania 29, fluxcrm 11, strony-www 8, automatyzacje 6; wejścia /strony-www 16, /crm-dla-posrednikow-kredytowych 8, /kontakt 8, /wlasny-crm 6) | 0 |
+| www.google.com | 9 (/ 5, /kontakt 4) | 2 |
+| google-ads | 18 (/ksef-integracja-erp 10, /e-doreczenia-integracja 4, /strony-www 2) | 13 |
+| chatgpt płatne / naturalne | 0 / 3 (wszystkie /dobor-samochodu) | 0 / 0 |
+| Facebook naturalny / Instagram | 33 (m 21, www 11, facebook 1) / 1 | 5 / 1 |
+| Bing / LinkedIn / DuckDuckGo | 0 / 1 / 1 | 0 / 0 / 1 |
+| Bez odsyłacza | 8 | 26 |
+| Uruchomienia narzędzi | 1 (uruchomiono_skan /e-doreczenia-integracja, google-ads e-doreczenia, 19:51) | 0 |
+| Pobrania PDF | 6 (schemat-integracji-crm-erp 2, checklista-forma-opodatkowania-2027, arkusz-automatyzacja-czy-etat, ebook-ksef-2027-w-firmie, checklista-koniec-roku-jdg) | 6 |
+| form_start | 0 | 1 |
+| lead_* | 0 | 0 |
+
+Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz widziało 24 osoby (widok_formularza: /ksef-integracja-erp 8, /kontakt 7, /strony-www 5, /e-doreczenia-integracja 4), żadna go nie zaczęła. Kliknięcia WhatsApp/telefon: 2 pojedyncze u ludzi (17:28 /crm-dla-posrednikow-kredytowych, 22:07 /strony-www), pozostałe przychodzą w jednej sekundzie po 3-6 naraz (WhatsApp, telefon i CTA razem, 20:55 i 22:05 w parach, 22:07:22 w sesji z fb-ads), co wygląda na skaner przeglądarki Facebooka, nie na człowieka; nie liczyć ich jako kontaktów.
+**Dowód:** commit 5529cbe9 (next.config.ts); produkcja: /kalkulator-podatkowy%E2%80%9Ezatwierd%C5%BA%E2%80%9D → 308, location /kalkulator-podatkowy → 200. /test-utm (drugi 404 z Z12) pominięty, to sesja testowa. Lokalny build niemożliwy (node_modules na /mnt/xpg), spojnosc.mjs bez nowych rozjazdów (wynik identyczny przed i po zmianie).
+**Dla Pawła:**
+**Zostało otwarte:** Z15 (IndexNow dnia) od 23.11 00:40, potem Z16-Z19 rano 23.11. Kliknięcia telefon/WhatsApp z przeglądarki Facebooka w jednej sekundzie warto odsiać w pomiar-kanalow.py (dziś zawyżają klik_* w raportach).
