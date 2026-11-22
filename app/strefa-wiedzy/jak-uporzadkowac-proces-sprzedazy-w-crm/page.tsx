@@ -59,7 +59,8 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
+        <Breadcrumbs
+          href="/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Jak uporządkować proces sprzedaży w CRM" },
@@ -82,13 +83,12 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
         <div className="container-wide pb-20">
           <div className="max-w-3xl mx-auto space-y-10">
             <section>
-              <h2 className="mb-4 h2-sekcji">
-                Etapy z kryteriami przejścia
-              </h2>
+              <h2 className="mb-4 h2-sekcji">Etapy z kryteriami przejścia</h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Lepiej mniej etapów, ale z jasnym warunkiem wejścia, obowiązkowymi
-                danymi, kolejnym ruchem i osobą odpowiedzialną. Jeśli nie wiesz, po
-                czym poznać przejście z etapu A do B, proces jest uznaniowy.
+                Lepiej mniej etapów, ale z jasnym warunkiem wejścia,
+                obowiązkowymi danymi, kolejnym ruchem i osobą odpowiedzialną.
+                Jeśli nie wiesz, po czym poznać przejście z etapu A do B, proces
+                jest uznaniowy.
               </p>
             </section>
             <section>
@@ -97,11 +97,17 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Pola obowiązkowe i proste reguły sprawiają, że{" "}
-                <Link href="/automatyzacja-raportowania" className="text-accent hover:underline">
+                <Link
+                  href="/automatyzacja-raportowania"
+                  className="text-accent hover:underline"
+                >
                   raportowanie
                 </Link>{" "}
                 ma sens. Dopiero wtedy{" "}
-                <Link href="/automatyzacja-leadow-crm" className="text-accent hover:underline">
+                <Link
+                  href="/automatyzacja-leadow-crm"
+                  className="text-accent hover:underline"
+                >
                   automatyzacja CRM
                 </Link>{" "}
                 tworzy zadania, przypomina o follow-upie i pilnuje braków.
@@ -126,10 +132,20 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
               </div>
               <p className="mt-6 text-gray-600 dark:text-gray-400 leading-relaxed">
                 Gdy etapy są opisane, kolejnym krokiem jest zwykle{" "}
-                <Link href="/automatyzacja-follow-up" className="text-accent hover:underline">
+                <Link
+                  href="/automatyzacja-follow-up"
+                  className="text-accent hover:underline"
+                >
                   automatyzacja follow-upu
                 </Link>
-                , czyli sekwencja zadań po wysłaniu oferty.
+                , czyli sekwencja zadań{" "}
+                <Link
+                  href="/strefa-wiedzy/otwarcie-maila-z-oferta"
+                  className="text-accent hover:underline"
+                >
+                  po wysłaniu oferty
+                </Link>
+                .
               </p>
             </section>
           </div>
@@ -170,7 +186,10 @@ export default function JakUporzadkowacProcesSprzedazyArticle() {
             description:
               "Jak uporządkować proces sprzedaży w CRM: etapy, kryteria przejścia, pola obowiązkowe, follow-up i raportowanie.",
             datePublished: "2026-03-30",
-            dateModified: dataZmiany("/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm", "2026-03-30"),
+            dateModified: dataZmiany(
+              "/strefa-wiedzy/jak-uporzadkowac-proces-sprzedazy-w-crm",
+              "2026-03-30",
+            ),
             author: {
               "@type": "Organization",
               name: "Fluxlab",

@@ -58,7 +58,8 @@ export default function IntegracjeApiArticle() {
     <>
       <Header />
       <main className="pt-16 prose-justify">
-        <Breadcrumbs href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
+        <Breadcrumbs
+          href="/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto"
           items={[
             { label: "Strefa wiedzy", href: "/strefa-wiedzy" },
             { label: "Integracje API w firmie, kiedy warto?" },
@@ -74,7 +75,9 @@ export default function IntegracjeApiArticle() {
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               Chodzi o jedno: czy dane między systemami przepływają same, czy
               przenoszą je ludzie. Gdy firma używa kilku narzędzi, które żyją
-              osobno, <HasloSlownika slug="integracja">integracja</HasloSlownika> staje się elementem sprawnej operacji.
+              osobno,{" "}
+              <HasloSlownika slug="integracja">integracja</HasloSlownika> staje
+              się elementem sprawnej operacji.
             </p>
           </div>
         </section>
@@ -115,7 +118,9 @@ export default function IntegracjeApiArticle() {
                           liczy się aktualność: lead od razu w CRM, raport na
                           bieżących danych,
                         </li>
-                        <li>arkusz przestaje wystarczać przy rosnącej skali.</li>
+                        <li>
+                          arkusz przestaje wystarczać przy rosnącej skali.
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -135,7 +140,8 @@ export default function IntegracjeApiArticle() {
                         </li>
                         <li>
                           Proces nie jest uporządkowany. Bez źródła prawdy i
-                          właściciela integracja tylko szybciej przeniesie chaos.
+                          właściciela integracja tylko szybciej przeniesie
+                          chaos.
                         </li>
                         <li>Wystarczy prosty workflow no-code.</li>
                       </ul>
@@ -185,9 +191,7 @@ export default function IntegracjeApiArticle() {
                 content: (
                   <div className="py-6 lg:py-8">
                     <div className="max-w-3xl mx-auto">
-                      <h2 className="mb-6 h2-sekcji">
-                        Najczęstsze błędy
-                      </h2>
+                      <h2 className="mb-6 h2-sekcji">Najczęstsze błędy</h2>
                       <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                         <li>
                           Brak jednego źródła prawdy: ten sam rekord edytowany w
@@ -262,7 +266,10 @@ export default function IntegracjeApiArticle() {
         </section>
 
         {/* Final CTA */}
-        <CTA naglowek="Masz kilka systemów, które powinny działać jak jeden proces?" opis="Bezpłatna diagnoza, bez zobowiązań." />
+        <CTA
+          naglowek="Masz kilka systemów, które powinny działać jak jeden proces?"
+          opis="Bezpłatna diagnoza, bez zobowiązań."
+        />
 
         {/* Related links */}
         <section className="py-12 lg:py-16">
@@ -295,6 +302,14 @@ export default function IntegracjeApiArticle() {
                       className="text-accent hover:underline"
                     >
                       Jak zautomatyzować raportowanie w firmie
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/strefa-wiedzy/automatyzacja-obslugi-klienta"
+                      className="text-accent hover:underline"
+                    >
+                      Automatyzacja obsługi klienta w małej firmie
                     </Link>
                   </li>
                 </ul>
@@ -347,7 +362,10 @@ export default function IntegracjeApiArticle() {
             description:
               "Kiedy integracje API mają sens w firmie, jakie problemy rozwiązują i kiedy lepiej wybrać prostsze podejście. Przykłady, błędy i praktyczne scenariusze.",
             datePublished: "2026-03-30",
-            dateModified: dataZmiany("/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto", "2026-03-30"),
+            dateModified: dataZmiany(
+              "/strefa-wiedzy/integracje-api-w-firmie-kiedy-warto",
+              "2026-03-30",
+            ),
             author: {
               "@type": "Organization",
               name: "Fluxlab",
