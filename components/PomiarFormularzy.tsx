@@ -22,7 +22,13 @@ export default function PomiarFormularzy() {
         form.getAttribute("aria-label") ||
         `formularz${location.pathname}`;
       gaEvent("form_start", { form_id: id });
-      zglosZdarzenie("form_start");
+      // Formularz kontaktowy ma pole-pułapkę „website”; pole bez niej to narzędzie (NIP, numer KSeF, audyt).
+      zglosZdarzenie(
+        form.matches("[data-kontaktowy]") ||
+          form.querySelector("input[name=website]")
+          ? "form_start"
+          : "narzedzie_start",
+      );
     };
     document.addEventListener("focusin", naFokus);
     const naKlik = (e: MouseEvent) => {

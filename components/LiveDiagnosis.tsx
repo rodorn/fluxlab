@@ -416,7 +416,7 @@ export default function LiveDiagnosis() {
                     w 1 dzień roboczy.
                   </p>
                 ) : (
-                  <form onSubmit={zamowDiagnoze} className="mt-6">
+                  <form onSubmit={zamowDiagnoze} data-kontaktowy className="mt-6">
                     <label
                       htmlFor="diagnoza-email"
                       className="block text-sm font-medium text-gray-700 dark:text-gray-300"
