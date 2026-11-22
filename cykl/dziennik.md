@@ -12327,3 +12327,20 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Plan 22.11:** 19 zadań (cykl/plan-ruchu.md), bez wysyłek. Trzy najważniejsze: nowy tytuł artykułu o odliczaniu VAT z faktur KSeF, który ma 627 wyświetleń na pozycji 4,1 i CTR 1,3% (Z5); żądania indeksowania dla 7 artykułów spoza Google po porannej serii FL_SEO i jedna kolejka zgłoszeń z FL_SEO zamiast dwóch (Z3, Z4); linki z dwóch najczęściej wyświetlanych artykułów do narzędzia /sprawdz-kontrahenta (Z10).
 **Kalendarz wpisów:** temat CRM z 23.11 przeniesiony na 21.12 (bramka CRM 11.11), na 23.11 wchodzi „Przerwa świąteczna bez zgubionych zapytań” z 21.12: opublikowany 4 tygodnie przed świętami zdąży do indeksu. Temat z 30.11 dubluje istniejący artykuł faktura-do-paragonu-ksef, dlatego nie on.
 **Dla Pawła:** brak nowych punktów (budżet „utrzymaj”, zmiany treści idą).
+
+## 2026-11-22 06:43
+**Kanał:** brak (plan stratega 22.11, żadne zadanie jeszcze niedostępne).
+**Co zrobione:** czekam na Z1 o 08:40; plan 22.11 (06:21) ma 19 otwartych zadań, najwcześniejsze Z1 i Z2 od 08:40.
+**Ruch:** pomiar-kanalow 24 h: 51 ludzi, 67 odsłon; bez odsyłacza 19, google-ads 13, Facebook 9, YouTube 3, Google organiczny 3, Threads 2, DuckDuckGo 2. 7 dni: 391 ludzi. raport_ruchu.py doba: 406 odsłon, 145 osób (przed odsiewem par i salw). Uruchomienia narzędzi 1, lejek 7 dni: 10 form_start, 1 zapytanie. Resend 24 h: 1 (poza outreachem). Zoho INBOX 6, żadna odpowiedź na outreach, Spam 0.
+**Dowód:** brak (cykl bez zadania).
+**Dla Pawła:**
+**Zostało otwarte:** Z1 (mapa witryny w GSC) i Z2 (Bing) od 08:40.
+<!-- WYSLANO 2026-11-22 07:08 -->
+
+## 2026-11-22 08:58
+**Kanał:** 2 (widoczność w wyszukiwarkach i asystentach AI), plan stratega Z1 i Z2.
+**Co zrobione:** mapa witryny przesłana ponownie w GSC i od razu odczytana przez Google (22.11, 278 adresów); odczyt Binga: cytowania w Copilocie wzrosły z 14 do 27 w 7 dni.
+**Ruch:** raport_ruchu.py doba: 405 odsłon, 144 osoby (przed odsiewem par i salw); najczęściej /, /ksef-integracja-erp 50, /koszt-recznej-obslugi-leadow 15, /sprawdz-kontrahenta 15. Lejek 7 dni: 10 form_start, 1 zapytanie. Pomiar po odsiewie z 06:43: 51 ludzi (bez odsyłacza 19, google-ads 13, Facebook 9).
+**Dowód:** Z1: GSC Mapy witryn przed „przesłano 22 paź, odczyt 20 lis, 278”, po „przesłano 22 lis, odczyt 22 lis, Sukces, 278” (właściwość domenowa przyjmuje tylko pełny adres https://fluxlab.pl/sitemap.xml). Z2: Bing 7 D 4 klik./99 wyśw. (21.11: 2/70); AI Performance 27 cytowań, 8 stron: kiedy-odliczyc-vat-z-faktury-ksef 6, proforma-ksef 5, jak-zautomatyzowac-raportowanie-w-firmie 4 (adres www.), automatyzacja-raportowania 3 (www.), sprawdzenie-nip 3.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 i Z4 (żądania indeksowania GSC, wspólny limit z FL_SEO) od 10:40.
