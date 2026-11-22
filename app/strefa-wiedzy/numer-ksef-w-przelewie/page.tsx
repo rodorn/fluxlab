@@ -13,11 +13,11 @@ const OPIS =
   "Numer KSeF w przelewie od 1 stycznia 2027: płacąc czynnemu podatnikowi VAT za fakturę z KSeF, podajesz go w tytule, także w MPP. Co zmienić w płatnościach.";
 
 export const metadata: Metadata = {
-  title: "Numer KSeF w przelewie od 1.01.2027 | Fluxlab",
+  title: "Od 1.01.2027 numer KSeF w przelewie | Fluxlab",
   description:
     "Numer KSeF w przelewie od 1 stycznia 2027: płacąc czynnemu podatnikowi VAT za fakturę z KSeF, podajesz go w tytule, także w MPP. Co zmienić w płatnościach.",
   openGraph: {
-    title: "Numer KSeF w przelewie od 1 stycznia 2027",
+    title: "Od 1 stycznia 2027 numer KSeF w przelewie",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
