@@ -13,9 +13,9 @@ function zaDniRobocze(od: Date, dni: number): Date {
 }
 
 const ETAPY = [
-  { dni: 1, co: "Odpisujemy z ceną i zakresem" },
-  { dni: 5, co: "Widzisz projekt pierwszych podstron" },
-  { dni: 15, co: "Strona działa pod Twoim adresem" },
+  { dni: 0, co: "Odpisujemy z ceną i zakresem, w godzinę" },
+  { dni: 2, co: "Widzisz projekt pierwszych podstron" },
+  { dni: 5, co: "Strona firmowa działa pod Twoim adresem" },
 ];
 
 /** Oś „jeśli napiszecie dziś”, z datami liczonymi w przeglądarce. */
@@ -34,15 +34,15 @@ export default function OsCzasuStrony() {
         {ETAPY.map((e) => (
           <li key={e.co} className="border-l-2 border-accent pl-3">
             <p className="text-lg font-bold text-gray-900 dark:text-white">
-              {dzis ? fmt(zaDniRobocze(dzis, e.dni)) : `${e.dni} dni roboczych`}
+              {e.dni === 0 ? "Dziś" : dzis ? fmt(zaDniRobocze(dzis, e.dni)) : `${e.dni} dni roboczych`}
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400">{e.co}</p>
           </li>
         ))}
       </ol>
       <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-        Terminy dla landingu albo strony firmowej po akceptacji zakresu.
-        Ostatnią stronę oddaliśmy 12 dni od startu prac.
+        Terminy dla strony firmowej po akceptacji zakresu. Prosta strona jest
+        gotowa w 3 dni, sklep w 7.
       </p>
     </div>
   );
