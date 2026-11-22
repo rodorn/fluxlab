@@ -1,0 +1,76 @@
+/	200	158	(bez odsyłacza), b2b, com.google.android.gm, com.linkedin.android, duckduckgo.com, github.com, google-ads, l.threads.com, m.facebook.com, mokka.corp.google.com, www.bing.com, www.facebook.com, www.goo
+/ksef-integracja	200	35	(bez odsyłacza), chatgpt, google-ads
+/ksef-integracja-erp	200	21	(bez odsyłacza), chatgpt, google-ads
+/strony-www	200	15	(bez odsyłacza), chatgpt, fb-ads, google-ads
+/e-doreczenia-integracja	200	13	chatgpt, chatgpt.com, google-ads
+/kalkulator-klimatyzacji-demo	200	13	(bez odsyłacza)
+/strefa-wiedzy/biala-lista-vat-nowe-api	200	12	(bez odsyłacza), teams.public.onecdn.static.microsoft, www.google.com
+/automatyzacja-procesow-biznesowych	200	8	(bez odsyłacza), chatgpt, google-ads, m.facebook.com
+/asystent-ai-na-stronie	200	8	(bez odsyłacza)
+/wdrozenie-n8n-cena	200	7	(bez odsyłacza), google-ads
+/scraping-danych	200	7	chatgpt, github
+/wlasny-crm	200	6	fb-ads, google-ads, www.google.com
+/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen	200	6	(bez odsyłacza), www.google.com
+/narzedzia	200	6	facebook, instagram, www.facebook.com
+/crm-dla-posrednikow-kredytowych	200	6	fb-ads, youtube
+/kontakt	200	5	(bez odsyłacza), www.google.com
+/realizacje	200	5	(bez odsyłacza), github.com, useme.com
+/kalkulator-podatkowy	200	5	(bez odsyłacza), instagram, www.google.com
+/grupa-ksef	302	5	(bez odsyłacza), facebook
+/rezerwacje-online	200	5	m.facebook.com, www.facebook.com
+/integracje-api	200	4	chatgpt, threads, www.facebook.com
+/automatyzacja-raportowania	200	4	chatgpt, www.facebook.com
+/strefa-wiedzy/oznaczenia-jpk-ksef	200	4	(bez odsyłacza)
+/strefa-wiedzy/ksef-2027-w-malej-firmie	200	4	m.facebook.com, youtube
+/formularz-do-arkusza-i-teams	200	4	m.facebook.com
+/automatyzacja-leadow-crm	200	3	(bez odsyłacza), fb-ads
+/numer-ksef	200	3	www.bing.com, www.google.com
+/audyt-strony	200	3	mail, useme.com
+/kalkulator-zadaszen-demo	200	3	(bez odsyłacza), panel.fluxlab.pl
+/kalkulator-ogrodzen-demo	200	3	(bez odsyłacza)
+/kalkulator-garazy-demo	200	3	(bez odsyłacza)
+/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie	200	3	m.facebook.com, www.facebook.com
+/dobor-samochodu	200	3	chatgpt.com
+/strefa-wiedzy/monitoring-konkurencji-co-sprawdzac	200	3	m.facebook.com
+/widocznosc-w-google	200	2	(bez odsyłacza)
+/jak-zbudowana	200	2	(bez odsyłacza), l.instagram.com
+/strefa-wiedzy/zapier-make-n8n-porownanie	200	2	(bez odsyłacza), m.facebook.com
+/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef	200	2	www.bing.com, www.google.com
+/demo/nu-nrg	200	2	(bez odsyłacza)
+/widocznosc-w-ai	200	2	youtube
+/audyt-kurierski	200	2	(bez odsyłacza)
+/zalaczniki-z-maila-do-folderow	200	2	threads, www.facebook.com
+/zmiany-w-krs-kontrahentow	200	2	www.facebook.com
+/strefa-wiedzy/faktura-do-paragonu-ksef	200	2	m.facebook.com
+/raport-edoreczen	200	2	www.facebook.com
+/strefa-wiedzy/n8n-zapier-czy-wlasny-serwer	200	1	(bez odsyłacza)
+/strefa-wiedzy/crm-dla-firmy-fotowoltaicznej-zeszyt-arkusz-czy-crm	200	1	(bez odsyłacza)
+/automatyzacja-ai	200	1	github
+/strefa-wiedzy/numer-ksef-w-przelewie	200	1	www.google.com
+/strefa-wiedzy/blad-w-fakturze-ksef	200	1	www.google.com
+/cv	200	1	(bez odsyłacza)
+/dla-zespolu	200	1	www.google.com
+/strefa-wiedzy/certyfikat-ksef	200	1	www.facebook.com
+/kalkulator-wyceny	200	1	youtube
+/automatyzacja-dla-biur-rachunkowych	200	1	(bez odsyłacza)
+/kalendarz-terminow	200	1	threads
+/automatyzacja-dla-ecommerce	200	1	(bez odsyłacza)
+/analiza-lokalizacji	200	1	(bez odsyłacza)
+/kalkulator-oze-demo	200	1	(bez odsyłacza)
+/narzedzia/kalkulator-pit	200	1	(bez odsyłacza)
+/test-utm	404	1	facebook
+/strefa-wiedzy/ryczalt-czy-liniowy	200	1	instagram
+/jak-pracuje	200	1	(bez odsyłacza)
+/strefa-wiedzy/proforma-ksef	200	1	www.bing.com
+/slownik	200	1	(bez odsyłacza)
+/faktury-kosztowe-z-ksef-na-mail	200	1	www.google.com
+/ksef-2027	200	1	threads
+/strefa-wiedzy/automatyzacja-obslugi-klienta	200	1	youtube
+/narzedziaprzepisanie	307	1	www.facebook.com
+/koszt-recznej-obslugi-leadow	200	1	www.facebook.com
+/produkty	200	1	google-ads
+/narzedziaspotka%C5%84	307	1	m.facebook.com
+/profil-firmy-google	200	1	(bez odsyłacza)
+/weryfikacja-rachunkow	200	1	www.facebook.com
+/kalkulator-podatkowy%E2%80%9Ezatwierd%C5%BA%E2%80%9D	404	1	www.facebook.com
+/pilnowanie-cen-konkurencji	200	1	www.facebook.com

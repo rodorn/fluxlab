@@ -12386,3 +12386,11 @@ Mniej o 6 sesji: Google organiczny 7 → 2, b2b 6 → 1, useme 3 → 0; więcej 
 **Dowód:** commit 6055b81f; produkcja `grep -c href="/sprawdz-kontrahenta"` = 1 na https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api i 1 na https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef; IndexNow 2 adresy (2 z 3 punktów); „Doręczono do FL_meta (18:44)”. Link /sprawdzenie-nip w artykule o białej liście zastąpiony narzędziem, link z odliczenia VAT do artykułu o białej liście zastąpiony narzędziem (artykuł nadal ma link z numer-ksef-w-przelewie).
 **Dla Pawła:**
 **Zostało otwarte:** Z12 (404 z wejść, od 20:40), Z13 (22:40), Z14 bilans dnia (22:40), Z15-Z19 w nocy i rano 23.11.
+
+## 2026-11-22 20:43
+**Kanał:** Google i social (utracone wejścia); plan 22.11 Z12.
+**Co zrobione:** sprawdzone kody HTTP wszystkich 76 ścieżek wejścia ludzi z 7 dni; jedno realne wejście zgubione na 404: Facebook skleił link /kalkulator-podatkowy ze słowem „zatwierdź” (22.11 18:52, Chrome Windows).
+**Ruch:** ostatnia doba 809 odsłon, 230 osób (+112% wobec średniej 382); źródła: www.facebook.com 145, m.facebook.com 109, www.google.com 106, fb-ads 95, google-ads 62, Threads 4 sesje; uruchomienia narzędzi 2.
+**Dowód:** cykl/z12-404-2026-11-22.txt: 71 × 200, 307 dla /narzedziaprzepisanie i /narzedziaspotkań (poprawka 31808e86 działa), 302 /grupa-ksef (celowo na grupę FB), 404 /kalkulator-podatkowy„zatwierdź” (1 sesja) i /test-utm (sesja test119x z kampanią test_w, test, nie człowiek).
+**Dla Pawła:**
+**Zostało otwarte:** Z13 od 22:40 (przekierowanie /kalkulator-podatkowy<cokolwiek> → /kalkulator-podatkowy, wzorem /narzedzia), Z14 od 22:40, Z15–Z19 w nocy i rano 23.11.
