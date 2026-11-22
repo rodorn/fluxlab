@@ -37,6 +37,11 @@ export default function WlasnyCrm() {
         </>
       }
       cena="Wdrożenie 1 zł, abonament od 499 zł miesięcznie, ceny netto"
+      krotkiZawsze={{
+        naglowek: "Zostaw kontakt, odpiszemy z wyceną CRM w 1 dzień roboczy",
+        opis: "Ilu handlowców i skąd masz leady? *",
+        przycisk: "Wyślij, bezpłatna wycena CRM",
+      }}
       breadcrumb="Własny CRM"
       eyebrow="FluxCRM"
       h1="Własny CRM dla Twojej firmy"

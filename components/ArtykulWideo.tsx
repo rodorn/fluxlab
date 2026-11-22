@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import RamkaOferty from "@/components/RamkaOferty";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrevNextArticle from "@/components/PrevNextArticle";
+import FormularzKrotki from "@/components/FormularzKrotki";
 import { dataZmiany } from "@/lib/data-zmiany";
 
 export type ArtykulWideoDane = {
@@ -64,8 +65,10 @@ export function metadaneArtykuluWideo(d: ArtykulWideoDane): Metadata {
 export default function ArtykulWideo({
   d,
   ramka,
+  formularz,
 }: {
   d: ArtykulWideoDane;
+  formularz?: { formId: string; naglowek: string; opis: string; przycisk: string };
   ramka?: { tytul: string; tekst: string; href: string; przycisk?: string };
 }) {
   const url = `https://fluxlab.pl${adres(d)}`;
@@ -93,6 +96,15 @@ export default function ArtykulWideo({
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               {d.lead}
             </p>
+            {formularz && (
+              <FormularzKrotki
+                formId={`gora_${formularz.formId}`}
+                zawsze
+                naglowek={formularz.naglowek}
+                opisPlaceholder={formularz.opis}
+                przycisk={formularz.przycisk}
+              />
+            )}
           </div>
         </section>
 
@@ -254,6 +266,17 @@ export default function ArtykulWideo({
               <PrevNextArticle currentHref={adres(d)} />
             </div>
           </div>
+        </div>
+        <div className="container-wide pb-12">
+          {formularz && (
+              <FormularzKrotki
+                formId={`dol_${formularz.formId}`}
+                zawsze
+                naglowek={formularz.naglowek}
+                opisPlaceholder={formularz.opis}
+                przycisk={formularz.przycisk}
+              />
+            )}
         </div>
         <CTA
           naglowek={d.cta.naglowek}

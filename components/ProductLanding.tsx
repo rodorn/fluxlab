@@ -34,6 +34,8 @@ export interface Tier {
 }
 
 export interface ProductLandingProps {
+  /** Krótki formularz w hero widoczny dla każdego, nie tylko dla wejść z reklamy. */
+  krotkiZawsze?: { naglowek: string; opis: string; przycisk: string };
   slug: string;
   /** Darmowe narzedzie renderowane tuz pod naglowkiem, przed opisem zakresu.
       Odwiedzajacy dostaje dzialajacy wynik, zanim zacznie czytac oferte. */
@@ -197,7 +199,17 @@ export default function ProductLanding(p: ProductLandingProps) {
               )}
             </div>
             )}
-            <FormularzKrotki formId={`krotki_${p.formId}`} />
+            <FormularzKrotki
+              formId={`krotki_${p.formId}`}
+              {...(p.krotkiZawsze
+                ? {
+                    zawsze: true,
+                    naglowek: p.krotkiZawsze.naglowek,
+                    opisPlaceholder: p.krotkiZawsze.opis,
+                    przycisk: p.krotkiZawsze.przycisk,
+                  }
+                : {})}
+            />
           </div>
 
           {narzedzieNajpierw && narzedzie}
