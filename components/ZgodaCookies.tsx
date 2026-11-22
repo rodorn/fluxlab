@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CLARITY_ID } from "@/lib/clarity";
+import { zglosZdarzenie } from "@/lib/zdarzenie";
 
 /** Okno zgody na Google Analytics, Google Ads i piksel Meta (z reklamami dopasowanymi;
  *  fluxlab_zgoda_rem odróżnia ją od zgód sprzed 14.11.2026, które remarketingu nie obejmowały). Bez zgody oba działają w trybie
@@ -68,6 +69,7 @@ export default function ZgodaCookies() {
       ad_personalization: tak ? "granted" : "denied",
     });
     window.dispatchEvent(new Event("fluxlab-zgoda"));
+    zglosZdarzenie(tak ? "zgoda_tak" : "zgoda_nie");
     setWidoczne(false);
   };
 
