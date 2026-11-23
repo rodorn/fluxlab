@@ -124,7 +124,7 @@ export default function OddzwonTelefon({ formId }: { formId: string }) {
         <button
           type="submit"
           disabled={wysylka}
-          className="btn-primary w-full disabled:opacity-60"
+          className="btn-primary w-full whitespace-nowrap px-3 disabled:opacity-60"
         >
           {wysylka ? "Wysyłanie..." : "Oddzwońcie do mnie"}
         </button>
@@ -133,7 +133,7 @@ export default function OddzwonTelefon({ formId }: { formId: string }) {
           target="_blank"
           rel="noopener"
           data-cta="whatsapp_hero"
-          className="btn-secondary"
+          className="btn-secondary px-4"
         >
           WhatsApp
         </a>
