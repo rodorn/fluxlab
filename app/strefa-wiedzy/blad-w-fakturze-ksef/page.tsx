@@ -90,7 +90,13 @@ export default function BladWFakturzeKsefArticle() {
                   na właściwy. Błędna zostaje widoczna dla firmy o tamtym NIP.
                 </li>
                 <li>
-                  Plik odrzucony przez KSeF: faktura nie powstała, więc
+                  <Link
+                    href="/strefa-wiedzy/numeracja-faktur-ksef-2027"
+                    className="text-accent hover:underline"
+                  >
+                    Plik odrzucony przez KSeF
+                  </Link>
+                  : faktura nie powstała, więc
                   wysyłasz nowy, poprawny plik zamiast korekty.
                 </li>
               </ul>
