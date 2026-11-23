@@ -16,7 +16,7 @@ Zasady dla każdego wpisu:
 - [x] 02.11 | KSeF | Faktury kosztowe z KSeF prosto do programu księgowego: jak to zautomatyzować i ile pracy zdejmuje. Link: /ksef-integracja. => 2.11 https://fluxlab.pl/strefa-wiedzy/faktury-kosztowe-z-ksef
 - [x] 09.11 | e-Doręczenia | Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń (BAE) i co, gdy go nie ma. Link: /e-doreczenia-integracja, /slownik#bae. => 9.11 https://fluxlab.pl/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen
 - [x] 16.11 | leady | Black Friday i weekendowe zgłoszenia: kto odpowiada na leada w sobotę i jak to ustawić automatem. Link: /czas-reakcji-na-leada. => 16.11 https://fluxlab.pl/strefa-wiedzy/lead-w-weekend-black-friday
-- [ ] 23.11 | automatyzacja | Przerwa świąteczna bez zgubionych zapytań: autoodpowiedź, dyżur, przypomnienie po powrocie. Link: /automatyzacja-follow-up.
+- [x] 23.11 | automatyzacja | Przerwa świąteczna bez zgubionych zapytań: autoodpowiedź, dyżur, przypomnienie po powrocie. Link: /automatyzacja-follow-up. => 23.11 https://fluxlab.pl/strefa-wiedzy/przerwa-swiateczna-w-firmie
   (zamiana z 21.12, strateg 22.11: bramka CRM 11.11 blokuje temat CRM; temat świąteczny opublikowany 4 tygodnie wcześniej zdąży do indeksu przed świętami)
 - [ ] 30.11 | KSeF | Kasa fiskalna i KSeF od 1 stycznia 2027: faktura do paragonu po końcu przepisów przejściowych. Link: /ksef-2027.
 - [ ] 07.12 | KSeF | Numer KSeF w przelewie od 2027: kiedy trzeba go podać i jak program bankowy ma go wziąć sam. Link: /numer-ksef.

@@ -12453,3 +12453,21 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Plan 23.11:** 19 zadań (cykl/plan-ruchu.md), bez wysyłek, budżet „zwolnij”, więc 3 zmiany tytułów i 1 artykuł. Trzy najważniejsze: artykuł z kalendarza „Przerwa świąteczna bez zgubionych zapytań” z indeksowaniem w GSC i Bingu (Z2-Z4); tytuł /strefa-wiedzy/proforma-ksef, która ma 112 wyświetleń na pozycji 6,4 i 0 kliknięć, a Copilot cytuje ją 5 razy w tygodniu (Z5); lejek 99 sesji fb-ads bez żadnego leada rozbity na kampanie i przekazany FL_adsMeta (Z6).
 **Ocena kanałów:** Google organiczny 7 h cyklu → 8 ludzi w dobie, zostaje (efekt tytułów z 21-22.11 widoczny ok. 26.11). Bing 1,5 h → 1 osoba z DuckDuckGo, cytowania Copilota rosną, zostaje 1 h. github 0 przez 4 doby, wyłączony. Outreach 0 odpowiedzi, wyłączony decyzją 19.11. Największa luka nie leży w ruchu, tylko w konwersji: 1639 sesji w tygodniu i 1 zapytanie.
 **Dla Pawła:** brak nowych punktów.
+
+## 2026-11-23 06:43
+**Kanał:** brak (plan stratega 23.11, żadne zadanie jeszcze niedostępne).
+**Co zrobione:** czekam na Z1 o 08:40; plan 23.11 (06:19) ma 19 otwartych zadań, najwcześniejsze Z1 i Z2 od 08:40.
+**Ruch:** pomiar-kanalow 24 h: 200 ludzi, 230 odsłon; fb-ads 101, m.facebook.com 31, bez odsyłacza 20, google-ads 20, www.facebook.com 12, Google organiczny 8, chatgpt (kampania) 5, chatgpt.com 3, instagram 2, po 1: zleca.pl, LinkedIn, useme.com, Gmail, DuckDuckGo, Threads, b2b. 7 dni: 521 ludzi. raport_ruchu.py doba: 1252 odsłony, 442 osoby (przed odsiewem par i salw). Uruchomienia narzędzi 2, lejek 7 dni: 1645 sesji, 9 form_start, 1 zapytanie. Resend 24 h: 3 (poza outreachem). Zoho INBOX 0, Spam 0.
+**Dowód:** brak (cykl bez zadania).
+**Dla Pawła:**
+**Zostało otwarte:** Z1 (Bing, cytowania i kliknięcia) i Z2 (artykuł z kalendarza) od 08:40.
+
+<!-- WYSLANO 2026-11-23 07:08 -->
+
+## 2026-11-23 09:12
+**Kanał:** Google i Bing (artykuł z kalendarza), pomiar Bing.
+**Co zrobione:** Z1 pomiar Bing; Z2 opublikowany artykuł „Przerwa świąteczna w firmie bez zgubionych zapytań” (autoodpowiedź z datą 7.01, dyżur na pilne, lista do oddzwonienia), z linkiem z lead-w-weekend-black-friday.
+**Ruch:** raport_ruchu: w 7 dni 1664 sesji, 10 rozpoczętych formularzy, 1 wysłane zapytanie; Bing 7 D (15-21.11) 4 klik./104 wyśw. (22.11: 4/99), Copilot 27 cytowań bez zmian (dane do 21.11).
+**Dowód:** https://fluxlab.pl/strefa-wiedzy/przerwa-swiateczna-w-firmie (200, title, sitemap), commit 4400e8c9, IndexNow 2 z 3; AI Performance: kiedy-odliczyc-vat-z-faktury-ksef 6, proforma-ksef 5, jak-zautomatyzowac-raportowanie-w-firmie 4.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 (żądanie indeksowania nowego artykułu w GSC) od 10:40. Lokalny build nadal pada (node_modules na /mnt/xpg), sprawdzenie zastąpione tsc i spojnosc.
