@@ -176,8 +176,14 @@ export default function AutomatyzacjaRaportowaniaArticle() {
                       Dashboard przed definicjami
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Firma chce mieć raport, a później okazuje się, że nikt nie
-                      uzgodnił, jak liczyć najważniejsze wskaźniki.
+                      Firma chce mieć raport, a później okazuje się, że{" "}
+                      <Link
+                        href="/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy"
+                        className="text-accent hover:underline"
+                      >
+                        nikt nie uzgodnił, jak liczyć najważniejsze wskaźniki
+                      </Link>
+                      .
                     </p>
 
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">

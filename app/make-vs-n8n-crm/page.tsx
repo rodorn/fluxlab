@@ -481,6 +481,14 @@ export default function MakeVsN8nCrm() {
                             Zapier i Make
                           </Link>
                         </li>
+                        <li>
+                          <Link
+                            href="/strefa-wiedzy/zapier-vs-make"
+                            className="text-accent hover:underline"
+                          >
+                            Cennik Zapiera
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   </div>
