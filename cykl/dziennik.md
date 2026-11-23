@@ -12421,3 +12421,21 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** commit 5529cbe9 (next.config.ts); produkcja: /kalkulator-podatkowy%E2%80%9Ezatwierd%C5%BA%E2%80%9D → 308, location /kalkulator-podatkowy → 200. /test-utm (drugi 404 z Z12) pominięty, to sesja testowa. Lokalny build niemożliwy (node_modules na /mnt/xpg), spojnosc.mjs bez nowych rozjazdów (wynik identyczny przed i po zmianie).
 **Dla Pawła:**
 **Zostało otwarte:** Z15 (IndexNow dnia) od 23.11 00:40, potem Z16-Z19 rano 23.11. Kliknięcia telefon/WhatsApp z przeglądarki Facebooka w jednej sekundzie warto odsiać w pomiar-kanalow.py (dziś zawyżają klik_* w raportach).
+
+<!-- WYSLANO 2026-11-22 23:19 -->
+
+## 2026-11-23 00:43
+**Kanał:** plan ruchu Z15 (IndexNow dnia, Bing/Yandex).
+**Co zrobione:** 91 stron zmienionych 22.11 (telefon i WhatsApp pod h1, terminy, linki do /sprawdz-kontrahenta, tytuły Z5-Z8) zgłoszone do IndexNow.
+**Ruch:** raport_ruchu, ostatnia doba: 1187 odsłon, 415 osób; najczęściej /crm-dla-posrednikow-kredytowych 118, /strony-www 110, /ksef-integracja-erp 104, / 93, /automatyzacja-leadow-crm 92. Źródła (7 dni): fb-ads 352, www.facebook.com 195, m.facebook.com 188, www.google.com 76, google-ads 72; Threads 4 sesje w dobie, LinkedIn 1. Uruchomienia narzędzi w dobie: 1. Lejek 7 dni: 1638 sesji → 10 form_start → 1 zapytanie.
+**Dowód:** `node scripts/indexnow.mjs` z 91 adresami: Yandex 200, Naver 200, wspólny IndexNow 403 UserForbiddedToAccessSite (znany stan, do Binga dochodzi mimo 403). Pominięte: /dziekuje, /e-doreczenia-wycena, /ksef-integracja-erp (noindex), /hajs (307). sitemap.xml 278 adresów, bez zmian wobec 22.11. Bez commita (zmiana tylko w cykl/).
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (stan zgłoszonych w GSC) od 02:40, Z17 i Z18 od 04:40, Z19 od 06:40.
+
+## 2026-11-23 02:43
+**Kanał:** plan ruchu Z16 (Google, stan zgłoszonych w GSC).
+**Co zrobione:** sprawdzenie adresu w GSC bez prośby o indeksowanie dla dwóch artykułów z Z3: mapa witryny dotarła tylko do jednego z nich.
+**Ruch:** raport_ruchu, ostatnia doba: 1201 odsłon, 422 osoby; najczęściej /crm-dla-posrednikow-kredytowych 120, /strony-www 119, /ksef-integracja-erp 104, /automatyzacja-leadow-crm 97, / 91. Threads 4 sesje w dobie, LinkedIn 1, YouTube 0, X 0. Uruchomienia narzędzi w dobie: 1. Lejek 7 dni: 1637 sesji → 10 form_start → 1 zapytanie.
+**Dowód:** e-doreczenia-w-firmie: „Strona wykryta – obecnie niezindeksowana”, mapa https://fluxlab.pl/sitemap.xml widoczna jako odsyłająca (przed Z1 „nie wykryto”), bez skanu. ksef-2027-w-malej-firmie: „Adres URL jest Google nieznany”, mapy nie wykryto, bez skanu, choć adres jest w sitemap.xml (lastmod 22.11 21:04). Przegląd GSC: 184 zindeksowane, 347 niezindeksowanych. Szczegóły w planie przy Z16.
+**Dla Pawła:**
+**Zostało otwarte:** Z17 i Z18 od 04:40, Z19 od 06:40. ksef-2027-w-malej-firmie warto ponowić prośbą o indeksowanie po resecie limitu (Z3 dał limit 22.11).
