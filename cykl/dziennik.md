@@ -12471,3 +12471,11 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** https://fluxlab.pl/strefa-wiedzy/przerwa-swiateczna-w-firmie (200, title, sitemap), commit 4400e8c9, IndexNow 2 z 3; AI Performance: kiedy-odliczyc-vat-z-faktury-ksef 6, proforma-ksef 5, jak-zautomatyzowac-raportowanie-w-firmie 4.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (żądanie indeksowania nowego artykułu w GSC) od 10:40. Lokalny build nadal pada (node_modules na /mnt/xpg), sprawdzenie zastąpione tsc i spojnosc.
+
+## 2026-11-23 10:48
+**Kanał:** Google i Bing (zgłaszanie adresów), plan ruchu Z3 i Z4.
+**Co zrobione:** Z3: prośba o indeksowanie przerwa-swiateczna-w-firmie w GSC odbiła się od limitu dnia, adres przekazany do puli FL_SEO; Z4: 100 adresów zgłoszonych w Bing Webmaster (nowy artykuł, 4 strony zmienione 22.11, 95 adresów mapy spoza wsadów 21-22.11).
+**Ruch:** raport_ruchu, ostatnia doba: 1516 odsłon, 550 osób; źródła fb-ads 390, www.facebook.com 203, m.facebook.com 195, b2b-email 187 (piksel, nie ludzie), google-ads 96; 7 dni: 1701 sesji, 9 rozpoczętych formularzy, 1 wysłane zapytanie.
+**Dowód:** cykl/z3-indeksowanie-2026-11-23.log („limit dnia”), sesja napisz FL_SEO „Doręczono do FL_SEO (10:44)”; Bing „URLs submitted today 100”, „Quota left 0”, lista cykl/z4-bing-2026-11-23.txt.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (proforma-ksef, CTR 0% przy poz. 6,4) i Z6 (lejek fb-ads) od 12:40; z mapy zostały 4 adresy niezgłoszone w Bingu.
