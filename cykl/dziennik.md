@@ -12519,3 +12519,31 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** cykl/z12-404-2026-11-23.txt (0 linii z 404), plan-ruchu.md Z13 [x].
 **Dla Pawła:** 
 **Zostało otwarte:** Z14 od 22:40 (bilans dnia), Z15-Z19 po północy. Budżet „zwolnij” (87% tygodnia, hamulec alarm), więc bez pracy poza planem w tym cyklu.
+
+## 2026-11-23 22:43
+**Kanał:** plan ruchu Z14 (pomiar, bilans dnia).
+**Co zrobione:** bilans 23.11 policzony kalendarzowo w układzie bilansu 22.11; nic nie poszło w świat (zadanie pomiarowe).
+**Ruch:** pomiar-kanalow 24 h: ludzie 207 (fb-ads 71, bez odsyłacza 46, google-ads 23, m.facebook.com 22, www.facebook.com 21, b2b 13, www.google.com 7, chatgpt 4, youtube 4, instagram 3, LinkedIn 1). raport_ruchu, ostatnia doba: 1604 odsłony, 544 osoby; najczęściej / 250, /strony-www 127, /tansze-automatyzacje 92, /ksef-integracja-erp 86, /automatyzacja-leadow-crm 79. Uruchomienia narzędzi w dobie: 2. Lejek 7 dni: 1839 sesji → 12 form_start → 0 zapytań.
+
+Bilans 23.11 (kalendarzowo, do 22:43, po odsiewie, bez /mail/, b2b-email, /grupa-ksef i sesji testowych; źródło sesji z pierwszej odsłony; 22.11 przeliczone tą samą metodą daje 137/164 zamiast 132/159 z wczorajszego wpisu):
+
+| Kanał | 23.11 | 22.11 (do 22:43) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 193 / 234 | 137 / 164 |
+| fb-ads | 61 (automatyzacje 19, fluxcrm 17, strony-www 14, automatyzacje-lead 11; wejścia /tansze-automatyzacje 19, /crm-dla-posrednikow-kredytowych 17, /strony-www 14, /automatyzacja-leadow-crm 11) | 54 (karuzela-pytania 29) |
+| www.google.com | 7 (/ 4, /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen, /pilotaz, /realizacje) | 9 |
+| google-ads | 23 (fluxcrm 8 → /wlasny-crm, e-doreczenia 6, strony-www 5, 24472439947 4 → /ksef-integracja-erp) | 18 |
+| chatgpt płatne / naturalne | 4 (ksef-test2 → /ksef-integracja-erp) / 0 | 5 / 3 |
+| Facebook naturalny / Instagram | 41 (m 20, www 20, facebook.com 1) / 3 | 33 / 1 |
+| Bing / LinkedIn / DuckDuckGo | 0 / 1 / 0 | 0 / 1 / 1 |
+| YouTube / b2b (b2b-firmy) | 4 / 13 (wszystkie na /) | 0 / 0 |
+| Bez odsyłacza | 36 | 8 |
+| Uruchomienia narzędzi | 2 (kalkulator-podatkowy 06:27 z Instagrama, 12:07 bez odsyłacza) | 1 |
+| Pobrania PDF | 1 (schemat-integracji-crm-erp) | 6 |
+| form_start | 8 (/tansze-automatyzacje 4, /strony-www 2, /automatyzacja-leadow-crm 1, /e-doreczenia-integracja 1; 7 z reklam) | 0 |
+| lead_* | 0 | 0 |
+
+Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automatyzacje-lead zamiast karuzeli), Facebooka naturalnego, b2b-firmy i wejść bez odsyłacza. Formularz widziały 62 odsłony (/strony-www 13, /tansze-automatyzacje 11, /automatyzacja-leadow-crm 8, /wlasny-crm 8, /ksef-integracja-erp 7), 8 osób go zaczęło, żadna nie wysłała; najwięcej porzuceń na /tansze-automatyzacje (4 z 11 widoków). Kliknięć WhatsApp/telefon u ludzi 0.
+**Dowód:** obliczenie z `wiersze()` i `odsiew()` z cykl/pomiar-kanalow.py (6422 wiersze 14 dni, 472 pary, 39 serii testowych odrzucone). Bez commita.
+**Dla Pawła:** 8 rozpoczętych formularzy i 0 wysłanych w jedną dobę, połowa na /tansze-automatyzacje z fb-ads: formularz tej strony gubi ludzi między startem a wysyłką, warto, żeby strateg 24.11 dał zadanie na sprawdzenie go na telefonie.
+**Zostało otwarte:** Z15 (IndexNow dnia) od 24.11 00:40, Z16 od 02:40, Z17 i Z18 od 04:40, Z19 od 06:40.
