@@ -12487,3 +12487,11 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** commit 5f06057a, `<title>Proforma nie trafia do KSeF: to nie faktura | Fluxlab` na produkcji, IndexNow Yandex 200 i Naver 200; cykl/z6-fbads-2026-11-23.txt, „Doręczono do FL_adsMeta (12:46)”.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (oznaczenia-jpk-ksef, tytuł) od 14:40, Z8 (efekt linków do narzędzi) po Z7.
+
+## 2026-11-23 15:01
+**Kanał:** plan ruchu 23.11, Z7 (Google, CTR) i Z8 (pomiar narzędzi).
+**Co zrobione:** /strefa-wiedzy/oznaczenia-jpk-ksef dostała tytuł i opis zaczynające się od odpowiedzi na najczęstsze zapytanie „bfk ksef” (0 klik. przy 62 wyśw., poz. 8,8 w 28 dni).
+**Ruch:** raport_ruchu, ostatnia doba: 1844 odsłony, 638 osób; źródła: fb-ads 403, b2b-email 313, www.facebook.com 225, m.facebook.com 200, google-ads 125. Lejek 7 dni: 1775 sesji, 9 form_start, 0 zapytań.
+**Dowód:** commit 87b8521e; `<title>BFK to faktura spoza KSeF, a kiedy OFF i DI? | Fluxlab` na produkcji; IndexNow Yandex 200, Naver 200. GSC zapytania strony: bfk ksef 3, co oznacza symbol off 2, faktura do paragonu jakie oznaczenie ksef 2, cztery po 1. Z8: od 22.11 19:00 biala-lista-vat-nowe-api 1 sesja, kiedy-odliczyc-vat-z-faktury-ksef 0, przejść do /sprawdz-kontrahenta 0, uruchomień 0.
+**Dla Pawła:**
+**Zostało otwarte:** Z9 (tytuł kalkulatora podatkowego) i Z10 (pomiar popołudnia) od 16:40.
