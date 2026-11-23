@@ -1,0 +1,56 @@
+/	200	57	(bez odsyłacza), b2b, com.google.android.gm, com.linkedin.android, duckduckgo.com, l.threads.com, www.google.com, zleca.pl
+/strony-www	200	39	fb-ads, google-ads, m.facebook.com
+/ksef-integracja-erp	200	27	(bez odsyłacza), chatgpt, fb-ads, google-ads
+/crm-dla-posrednikow-kredytowych	200	27	fb-ads
+/automatyzacja-leadow-crm	200	17	fb-ads
+/kontakt	200	16	fb-ads, m.facebook.com, www.google.com
+/wlasny-crm	200	15	fb-ads, google-ads
+/tansze-automatyzacje	200	15	fb-ads
+/e-doreczenia-integracja	200	11	(bez odsyłacza), google-ads
+/narzedzia	200	10	facebook, instagram, m.facebook.com
+/strefa-wiedzy/faktura-dla-kontrahenta-zagranicznego-ksef	200	6	m.facebook.com
+/rezerwacje-online	200	5	m.facebook.com, www.facebook.com
+/kontrola-paliwa	200	5	(bez odsyłacza)
+/strefa-wiedzy/ksef-2027-w-malej-firmie	200	4	m.facebook.com, youtube
+/formularz-do-arkusza-i-teams	200	4	m.facebook.com
+/kalkulator-wyceny	200	4	m.facebook.com
+/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie	200	3	m.facebook.com, www.facebook.com
+/automatyzacja-procesow-biznesowych	200	3	fb-ads, m.facebook.com
+/dobor-samochodu	200	3	chatgpt.com
+/strefa-wiedzy/monitoring-konkurencji-co-sprawdzac	200	3	m.facebook.com
+/integracje-api	200	3	fb-ads
+/strefa-wiedzy/crm-dla-malej-firmy-excel-gotowy-czy-wlasny	200	3	www.facebook.com
+/paczka-miesieczna-dla-biura	200	3	m.facebook.com, www.facebook.com
+/monitoring-kontrahentow	200	3	www.facebook.com
+/jak-zbudowana	200	2	(bez odsyłacza)
+/zmiany-w-krs-kontrahentow	200	2	www.facebook.com
+/strefa-wiedzy/faktura-do-paragonu-ksef	200	2	m.facebook.com
+/raport-edoreczen	200	2	www.facebook.com
+/transkrypcja-nagran	200	2	m.facebook.com
+/kalkulator-podatkowy	200	2	(bez odsyłacza), instagram
+/pilnowanie-wizytowki-google	200	2	www.facebook.com
+/straznik-formularza	200	2	m.facebook.com, www.facebook.com
+/prosba-o-opinie-google	200	2	www.facebook.com
+/produkty	200	1	google-ads
+/narzedziaspotka%C5%84	307	1	m.facebook.com
+/ksef-integracja	200	1	google-ads
+/strefa-wiedzy/zapier-make-n8n-porownanie	200	1	m.facebook.com
+/audyt-kurierski	200	1	(bez odsyłacza)
+/profil-firmy-google	200	1	(bez odsyłacza)
+/weryfikacja-rachunkow	200	1	www.facebook.com
+/realizacje	200	1	useme.com
+/automatyzacja-raportowania	200	1	www.facebook.com
+/wdrozenie-n8n-cena	200	1	google-ads
+/kalkulator-podatkowy%E2%80%9Ezatwierd%C5%BA%E2%80%9D	308	1	www.facebook.com
+/pilnowanie-cen-konkurencji	200	1	www.facebook.com
+/strefa-wiedzy/kategoria/wideo	200	1	(bez odsyłacza)
+/kontrola-faktur-kosztowych	200	1	www.facebook.com
+/paragon-do-arkusza	200	1	m.facebook.com
+/kalkulator-klimatyzacji-demo	200	1	(bez odsyłacza)
+/naleznosci-i-przeterminowane-faktury	200	1	www.facebook.com
+/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen	200	1	www.google.com
+/strefa-wiedzy/crm-dla-jednoosobowej-firmy	200	1	m.facebook.com
+/strefa-wiedzy/biala-lista-vat-nowe-api	200	1	(bez odsyłacza)
+/narzedzia/kalkulator-pit	200	1	www.facebook.com
+/pilotaz	200	1	www.google.com
+/raport-kontrahenta	200	1	www.facebook.com

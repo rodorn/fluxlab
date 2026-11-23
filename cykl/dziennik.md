@@ -12503,3 +12503,11 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** cykl/z9-gsc-kalkulator-2026-11-23.txt (GSC 28 dni, strona 11 klik./274 wyśw., poz. 14,3; 10 zapytań, wszystkie 0 klik.); linie Z9 i Z10 w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z11 (temat posta dla FL_meta) i Z12 (404) od 18:40, potem Z13–Z19.
+
+## 2026-11-23 18:46
+**Kanał:** plan ruchu Z11 (FL_meta, temat posta) i Z12 (utracone wejścia).
+**Co zrobione:** temat posta o przerwie świątecznej (artykuł z Z2 z utm_source=facebook&utm_campaign=przerwa-swiateczna) przekazany FL_meta; sprawdzone kody 56 ścieżek wejścia ludzi z 48 h, żadnego 404.
+**Ruch:** ostatnia doba 1726 odsłon, 580 osób (+275% wobec średniej 461); źródła: fb-ads 328, b2b-email 326, www.facebook.com 180, m.facebook.com 153, b2b 106; Threads 1 sesja, YouTube 8; uruchomienia narzędzi 3; lejek 7 dni: 1786 sesji, 10 form_start, 0 wysłanych.
+**Dowód:** `sesja napisz FL_meta`: „w skrzynce (Paweł tam pisze), dojdzie po turze”; w fluxlab-meta nie było posta o przerwie (trafienia grep to godziny świąteczne w Business Profile i przerwy MF w KSeF). cykl/z12-404-2026-11-23.txt: 54 × 200, /narzedziaspotkań 307 → /narzedzia 200, /kalkulator-podatkowy„zatwierdź” 308 → /kalkulator-podatkowy 200.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 od 20:40 (przy braku 404: „=> brak 404”), Z14 od 22:40, Z15–Z19 w nocy i rano 24.11.
