@@ -9,14 +9,14 @@ import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
-  "Oznaczenia w JPK_VAT od lutego 2026: numer KSeF albo OFF przy awarii KSeF, BFK dla faktury spoza KSeF, DI dla paragonu i faktury offline bez numeru.";
+  "BFK w JPK_VAT to faktura spoza KSeF, np. zagraniczna lub papierowa. OFF to faktura z awarii bez numeru, DI paragon i faktura offline bez numeru.";
 
 export const metadata: Metadata = {
-  title: "BFK, OFF czy DI w JPK_VAT? Które oznaczenie kiedy | Fluxlab",
+  title: "BFK to faktura spoza KSeF, a kiedy OFF i DI? | Fluxlab",
   description:
-    "Oznaczenia w JPK_VAT od lutego 2026: numer KSeF albo OFF przy awarii KSeF, BFK dla faktury spoza KSeF, DI dla paragonu i faktury offline bez numeru.",
+    "BFK w JPK_VAT to faktura spoza KSeF, np. zagraniczna lub papierowa. OFF to faktura z awarii bez numeru, DI paragon i faktura offline bez numeru.",
   openGraph: {
-    title: "BFK, OFF czy DI w JPK_VAT? Które oznaczenie kiedy | Fluxlab",
+    title: "BFK to faktura spoza KSeF, a kiedy OFF i DI? | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
