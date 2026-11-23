@@ -12511,3 +12511,11 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** `sesja napisz FL_meta`: „w skrzynce (Paweł tam pisze), dojdzie po turze”; w fluxlab-meta nie było posta o przerwie (trafienia grep to godziny świąteczne w Business Profile i przerwy MF w KSeF). cykl/z12-404-2026-11-23.txt: 54 × 200, /narzedziaspotkań 307 → /narzedzia 200, /kalkulator-podatkowy„zatwierdź” 308 → /kalkulator-podatkowy 200.
 **Dla Pawła:**
 **Zostało otwarte:** Z13 od 20:40 (przy braku 404: „=> brak 404”), Z14 od 22:40, Z15–Z19 w nocy i rano 24.11.
+
+## 2026-11-23 20:45
+**Kanał:** plan ruchu Z13 (przekierowania 404).
+**Co zrobione:** Z13 zamknięte bez zmian: w ścieżkach wejścia ludzi z 48 h (Z12) nie ma żadnego 404, dwie zniekształcone ścieżki z Facebooka już przekierowują (307/308 → 200).
+**Ruch:** raport_ruchu: ostatnia doba 1795 odsłon, 606 osób; źródła fb-ads 343, b2b-email 327, www.facebook.com 170, m.facebook.com 169, b2b 106; YouTube 14 sesji; uruchomienia narzędzi 2; lejek 7 dni: 11 form_start, 0 wysłanych zapytań.
+**Dowód:** cykl/z12-404-2026-11-23.txt (0 linii z 404), plan-ruchu.md Z13 [x].
+**Dla Pawła:** 
+**Zostało otwarte:** Z14 od 22:40 (bilans dnia), Z15-Z19 po północy. Budżet „zwolnij” (87% tygodnia, hamulec alarm), więc bez pracy poza planem w tym cyklu.
