@@ -115,7 +115,14 @@ export default function LeadWWeekendBlackFriday() {
                 >
                   Reszta czeka
                 </Link>{" "}
-                w <HasloSlownika slug="crm">CRM</HasloSlownika> z terminem.
+                w <HasloSlownika slug="crm">CRM</HasloSlownika>{" "}
+                <Link
+                  href="/strefa-wiedzy/przerwa-swiateczna-w-firmie"
+                  className="text-accent hover:underline"
+                >
+                  z terminem
+                </Link>
+                .
               </p>
             </section>
             <section>

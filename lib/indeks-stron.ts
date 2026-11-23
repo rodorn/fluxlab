@@ -788,6 +788,11 @@ export const INDEKS_STRON: WpisIndeksu[] = [
     "opis": "Black Friday 2026 wypada 27.11, a leady przyjdą też w sobotę. Kto ma je odebrać, ile kosztuje dyżur handlowca w domu i co może zrobić automat."
   },
   {
+    "url": "/strefa-wiedzy/przerwa-swiateczna-w-firmie",
+    "tytul": "Przerwa świąteczna w firmie bez zgubionych zapytań",
+    "opis": "Firma zamknięta od 24.12 do 6.01? Autoodpowiedź z datą powrotu, jedna osoba na pilne sprawy i lista zapytań do oddzwonienia 7 stycznia."
+  },
+  {
     "url": "/strefa-wiedzy/wygasajace-domeny-jak-znalezc",
     "tytul": "Wygasające domeny: jak znaleźć dobrą i nie przepłacić",
     "opis": "Wygasające domeny .pl to tani sposób na dobry adres, ale nie każda jest warta zachodu. Jak je znaleźć, co sprawdzić w historii i kiedy lepiej wybrać wolną."

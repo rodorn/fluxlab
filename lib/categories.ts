@@ -103,6 +103,13 @@ export const categories: Category[] = [
           "Dyżur handlowca w domu, odpoczynek i które leady mają kogoś budzić.",
         bezOkladki: true,
       },
+      {
+        href: "/strefa-wiedzy/przerwa-swiateczna-w-firmie",
+        title: "Przerwa świąteczna w firmie",
+        description:
+          "Autoodpowiedź z datą powrotu, dyżur na pilne sprawy i lista zapytań na 7 stycznia.",
+        bezOkladki: true,
+      },
     ],
   },
   {

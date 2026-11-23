@@ -304,6 +304,7 @@ export const SEKCJE: Sekcja[] = [
           s("/strefa-wiedzy/e-doreczenia-adres-prywatny-i-firmowy", "e-Doręczenia: adres prywatny i firmowy"),
           s("/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen", "Czy firma ma adres do e-Doręczeń"),
           s("/strefa-wiedzy/lead-w-weekend-black-friday", "Lead w weekend po Black Friday"),
+          s("/strefa-wiedzy/przerwa-swiateczna-w-firmie", "Przerwa świąteczna w firmie"),
           s("/strefa-wiedzy/wygasajace-domeny-jak-znalezc", "Wygasające domeny: jak znaleźć dobrą"),
           s("/strefa-wiedzy/monitoring-konkurencji-co-sprawdzac", "Monitoring konkurencji: co sprawdzać"),
           s("/strefa-wiedzy/faktury-z-ksef-po-zmianie-biura", "Faktury z KSeF po zmianie biura"),
