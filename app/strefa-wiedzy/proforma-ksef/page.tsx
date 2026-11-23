@@ -9,14 +9,14 @@ import { zLinkami, type LinkWTekscie } from "@/lib/zLinkami";
 import { dataZmiany } from "@/lib/data-zmiany";
 
 const OPIS =
-  "Proforma nie idzie do KSeF, także po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.";
+  "Proforma nie trafia do KSeF ani po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.";
 
 export const metadata: Metadata = {
-  title: "Czy proforma idzie do KSeF? Nie, oto dlaczego | Fluxlab",
+  title: "Proforma nie trafia do KSeF: to nie faktura | Fluxlab",
   description:
-    "Proforma nie idzie do KSeF, także po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.",
+    "Proforma nie trafia do KSeF ani po 2027 roku, bo nie jest fakturą. Wysyłasz ją PDF-em, a w KSeF wystawiasz fakturę po zapłacie.",
   openGraph: {
-    title: "Czy proforma idzie do KSeF? Nie, oto dlaczego | Fluxlab",
+    title: "Proforma nie trafia do KSeF: to nie faktura | Fluxlab",
     description: OPIS,
     locale: "pl_PL",
     type: "article",
