@@ -7,6 +7,7 @@ import CTA from "@/components/CTA";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LandingForm from "@/components/LandingForm";
 import FormularzKrotki from "@/components/FormularzKrotki";
+import OddzwonTelefon from "@/components/OddzwonTelefon";
 import Tabs from "@/components/Tabs";
 import WybierzBranze from "@/components/WybierzBranze";
 import SkladajAutomatyzacje from "@/components/SkladajAutomatyzacje";
@@ -79,6 +80,7 @@ export default function AutomatyzacjaProcesowBiznesowych() {
             <h1 className="h1-strony mb-6">
               Automatyzacja procesów biznesowych
             </h1>
+            <OddzwonTelefon formId="procesy" />
             <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300">
               Automatyzacja firmy zaczyna się od jednego procesu.
               Zastępujemy ręczną, powtarzalną pracę{" "}

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { readUtm } from "@/lib/zrodlo";
 import { zglosZdarzenie } from "@/lib/zdarzenie";
 
-/** Pierwszy ekran na telefonie: jedno pole na numer, „Oddzwonimy w 2 godziny”
+/** Pierwszy ekran na telefonie: jedno pole na numer, „Oddzwońcie do mnie”
  *  i WhatsApp. Na komputerze ukryte, tam hero ma pełny formularz. */
 export default function OddzwonTelefon({ formId }: { formId: string }) {
   const router = useRouter();
@@ -126,7 +126,7 @@ export default function OddzwonTelefon({ formId }: { formId: string }) {
           disabled={wysylka}
           className="btn-primary w-full disabled:opacity-60"
         >
-          {wysylka ? "Wysyłanie..." : "Oddzwonimy w 2 godziny"}
+          {wysylka ? "Wysyłanie..." : "Oddzwońcie do mnie"}
         </button>
         <a
           href="https://wa.me/48665466565"
@@ -138,8 +138,8 @@ export default function OddzwonTelefon({ formId }: { formId: string }) {
           WhatsApp
         </a>
       </div>
-      <p className="mt-1.5 text-center text-xs text-gray-600 dark:text-gray-400">
-        W godz. 11–24. Bez newslettera.{" "}
+      <p className="mt-1.5 text-center text-sm text-gray-700 dark:text-gray-300">
+        Oddzwaniamy w 2 godziny, 11–24.{" "}
         <Link
           href="/polityka-prywatnosci"
           className="underline hover:text-accent"
