@@ -12439,3 +12439,11 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** e-doreczenia-w-firmie: „Strona wykryta – obecnie niezindeksowana”, mapa https://fluxlab.pl/sitemap.xml widoczna jako odsyłająca (przed Z1 „nie wykryto”), bez skanu. ksef-2027-w-malej-firmie: „Adres URL jest Google nieznany”, mapy nie wykryto, bez skanu, choć adres jest w sitemap.xml (lastmod 22.11 21:04). Przegląd GSC: 184 zindeksowane, 347 niezindeksowanych. Szczegóły w planie przy Z16.
 **Dla Pawła:**
 **Zostało otwarte:** Z17 i Z18 od 04:40, Z19 od 06:40. ksef-2027-w-malej-firmie warto ponowić prośbą o indeksowanie po resecie limitu (Z3 dał limit 22.11).
+
+## 2026-11-23 04:58
+**Kanał:** 2 (widoczność, pomiar wyszukiwarek), zadania Z17 i Z18 z planu.
+**Co zrobione:** zapisane strony GSC z 28 dni i stan indeksu Binga dla 3 artykułów z wsadu 21.11; nic nie poszło w świat, to pomiar dla stratega.
+**Ruch:** raport_ruchu: doba 1213 odsłon, 430 osób (+207% wobec średniej); źródła fb-ads 373, www.facebook.com 195, m.facebook.com 188, www.google.com 76, google-ads 72; uruchomienia narzędzi 1; lejek 7 dni: 1642 sesje, 11 form_start, 1 wysłane zapytanie. GSC 28 dni (24.10-20.11): 128 klik. / 5,5 tys. wyśw., CTR 2,3%, poz. 15,2 (21.11: 122 / 5,44 tys., 2,2%, 15,9). Wiersze: automatyzacja-vs-zatrudnienie 0/65, poz. 2,2 (bez zmian); faktura-wewnetrzna-ksef 1/193, poz. 5,5 (było 1/199); kiedy-odliczyc-vat-z-faktury-ksef 6/615, poz. 4,3 (było 8/627, 4,1). Bing: maly-zus-plus-kiedy-sie-oplaca i automatyzacja-obslugi-klienta „Indexed successfully”, crm-dla-posrednika-kredytowego-jedna-sprawa „Discovered but not crawled”.
+**Dowód:** cykl/gsc-strony-2026-11-23.txt (100 z 161 wierszy); linie Z17 i Z18 w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** Z19 (pomiar dla stratega) od 06:40.
