@@ -1,0 +1,12 @@
+GSC 28 dni (25.10-21.11), strona https://fluxlab.pl/kalkulator-podatkowy, suma 11 klik. / 274 wyśw., CTR 4%, poz. 14,3
+zapytanie | klik. | wyśw. | CTR | poz.
+kalkulator 2026 | 0 | 17 | 0% | 43,8
+kalkulator obciążeń podatkowych | 0 | 10 | 0% | 24,9
+kalkulator jdg 2026 | 0 | 8 | 0% | 17,3
+kalkulator jdg | 0 | 8 | 0% | 19,0
+kalkulator stawek ryczałtu 2026 | 0 | 7 | 0% | 39,0
+stawka ryczałtu kalkulator | 0 | 4 | 0% | 20,8
+kalkulator ryczałtu | 0 | 4 | 0% | 25,8
+kalkulator działalności gospodarczej polski ład | 0 | 2 | 0% | 7,5
+kalkulator działalności gospodarczej polski ład 2022 | 0 | 2 | 0% | 8,0
+podatkiwtf | 0 | 2 | 0% | 8,5

@@ -12495,3 +12495,11 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** commit 87b8521e; `<title>BFK to faktura spoza KSeF, a kiedy OFF i DI? | Fluxlab` na produkcji; IndexNow Yandex 200, Naver 200. GSC zapytania strony: bfk ksef 3, co oznacza symbol off 2, faktura do paragonu jakie oznaczenie ksef 2, cztery po 1. Z8: od 22.11 19:00 biala-lista-vat-nowe-api 1 sesja, kiedy-odliczyc-vat-z-faktury-ksef 0, przejść do /sprawdz-kontrahenta 0, uruchomień 0.
 **Dla Pawła:**
 **Zostało otwarte:** Z9 (tytuł kalkulatora podatkowego) i Z10 (pomiar popołudnia) od 16:40.
+
+## 2026-11-23 16:52
+**Kanał:** plan ruchu 23.11, Z9 (Google, tytuł kalkulatora) i Z10 (pomiar popołudnia).
+**Co zrobione:** Z9 pominięte bez zmiany treści, bo najczęstsze zapytanie kalkulatora z ≥10 wyśw. („kalkulator 2026”, 17 wyśw., poz. 43,8) ma oba słowa w obecnym tytule; Z10 zmierzone.
+**Ruch:** raport_ruchu, ostatnia doba: 1805 odsłon, 626 osób; źródła: fb-ads 417, b2b-email 326, www.facebook.com 205, m.facebook.com 159, google-ads 116. Po odsiewie (pomiar-kanalow, 24 h): 246 ludzi; fb-ads 112, google-ads 31, Facebook naturalny 52, b2b 12, chatgpt płatne 6 / naturalne 0, Google 3, Instagram 3, DuckDuckGo 1, Threads 1, Bing 0, bez odsyłacza 40. Uruchomienia 3 (kalkulator-podatkowy 2, skan 1), form_start 4, lead_* 0. Lejek 7 dni: 1784 sesje, 9 form_start, 0 zapytań.
+**Dowód:** cykl/z9-gsc-kalkulator-2026-11-23.txt (GSC 28 dni, strona 11 klik./274 wyśw., poz. 14,3; 10 zapytań, wszystkie 0 klik.); linie Z9 i Z10 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z11 (temat posta dla FL_meta) i Z12 (404) od 18:40, potem Z13–Z19.
