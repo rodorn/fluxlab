@@ -12467,7 +12467,7 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 ## 2026-11-23 09:12
 **Kanał:** Google i Bing (artykuł z kalendarza), pomiar Bing.
 **Co zrobione:** Z1 pomiar Bing; Z2 opublikowany artykuł „Przerwa świąteczna w firmie bez zgubionych zapytań” (autoodpowiedź z datą 7.01, dyżur na pilne, lista do oddzwonienia), z linkiem z lead-w-weekend-black-friday.
-**Ruch:** raport_ruchu: w 7 dni 1664 sesji, 10 rozpoczętych formularzy, 1 wysłane zapytanie; Bing 7 D (15-21.11) 4 klik./104 wyśw. (22.11: 4/99), Copilot 27 cytowań bez zmian (dane do 21.11).
+**Ruch:** raport_ruchu: ostatnia doba 1370 odsłon, 477 osób; źródła fb-ads 386, www.facebook.com 193, m.facebook.com 182, b2b-email 96 (piksel, nie ludzie), google-ads 89. W 7 dni 1664 sesji, 10 rozpoczętych formularzy, 1 wysłane zapytanie; Bing 7 D (15-21.11) 4 klik./104 wyśw. (22.11: 4/99), Copilot 27 cytowań bez zmian (dane do 21.11).
 **Dowód:** https://fluxlab.pl/strefa-wiedzy/przerwa-swiateczna-w-firmie (200, title, sitemap), commit 4400e8c9, IndexNow 2 z 3; AI Performance: kiedy-odliczyc-vat-z-faktury-ksef 6, proforma-ksef 5, jak-zautomatyzowac-raportowanie-w-firmie 4.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 (żądanie indeksowania nowego artykułu w GSC) od 10:40. Lokalny build nadal pada (node_modules na /mnt/xpg), sprawdzenie zastąpione tsc i spojnosc.
