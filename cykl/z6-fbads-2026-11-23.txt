@@ -1,0 +1,16 @@
+Z6 23.11: sesje ludzi z utm_source=fb-ads od 22.11 00:00 do 23.11 12:46 (po odsiewie: boty, salwy, pary, serie testowe)
+
+kampania | sesje | wyjscie_0s | wyjscie_1s | aktywny_10s | przewiniecie_50 | widok_formularza | form_start | lead_* | >1 odsłona | telefon/komputer
+karuzela-pytania | 32 | 6 (18%) | 3 (9%) | 6 (18%) | 10 (31%) | 8 (25%) | 0 (0%) | 0 (0%) | 5 (15%) | 20/12
+fluxcrm | 29 | 3 (10%) | 9 (31%) | 7 (24%) | 1 (3%) | 3 (10%) | 0 (0%) | 0 (0%) | 2 (6%) | 24/5
+strony-www | 19 | 9 (47%) | 2 (10%) | 3 (15%) | 0 (0%) | 5 (26%) | 1 (5%) | 0 (0%) | 1 (5%) | 19/0
+automatyzacje-lead | 15 | 4 (26%) | 3 (20%) | 5 (33%) | 0 (0%) | 10 (66%) | 1 (6%) | 0 (0%) | 0 (0%) | 14/1
+automatyzacje | 9 | 3 (33%) | 2 (22%) | 0 (0%) | 0 (0%) | 5 (55%) | 1 (11%) | 0 (0%) | 0 (0%) | 9/0
+RAZEM | 104 | 25 (24%) | 19 (18%) | 21 (20%) | 11 (10%) | 31 (29%) | 3 (2%) | 0 (0%) | 8 (7%)
+
+Strony wejścia:
+strony-www: /strony-www 19
+fluxcrm: /crm-dla-posrednikow-kredytowych 26, /wlasny-crm 3
+automatyzacje-lead: /automatyzacja-leadow-crm 15
+automatyzacje: /tansze-automatyzacje 9
+karuzela-pytania: /kontakt 11, /strony-www 8, /wlasny-crm 3, /ksef-integracja-erp 3

@@ -12479,3 +12479,11 @@ Ruch 2,5 raza większy, prawie cały z Meta (reklamy 54, posty 33). Formularz wi
 **Dowód:** cykl/z3-indeksowanie-2026-11-23.log („limit dnia”), sesja napisz FL_SEO „Doręczono do FL_SEO (10:44)”; Bing „URLs submitted today 100”, „Quota left 0”, lista cykl/z4-bing-2026-11-23.txt.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (proforma-ksef, CTR 0% przy poz. 6,4) i Z6 (lejek fb-ads) od 12:40; z mapy zostały 4 adresy niezgłoszone w Bingu.
+
+## 2026-11-23 12:47
+**Kanał:** plan ruchu 23.11, Z5 (Google, CTR) i Z6 (pomiar fb-ads).
+**Co zrobione:** /strefa-wiedzy/proforma-ksef dostała tytuł i opis zaczynające się od odpowiedzi na najczęstsze zapytanie „czy proforma trafia do ksef” (0 klik./113 wyśw., poz. 6,4 w 28 dni); lejek fb-ads policzony i przekazany do FL_adsMeta.
+**Ruch:** doba 1636 odsłon, 598 osób (raport_ruchu, przed odsiewem par i serii); źródła: fb-ads 390, b2b-email 258, m.facebook.com 203, www.facebook.com 173, google-ads 110; Threads 2 sesje, YouTube 2; uruchomienia narzędzi 3. fb-ads od 22.11: 104 sesje ludzi, 3 form_start, 0 lead_*.
+**Dowód:** commit 5f06057a, `<title>Proforma nie trafia do KSeF: to nie faktura | Fluxlab` na produkcji, IndexNow Yandex 200 i Naver 200; cykl/z6-fbads-2026-11-23.txt, „Doręczono do FL_adsMeta (12:46)”.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (oznaczenia-jpk-ksef, tytuł) od 14:40, Z8 (efekt linków do narzędzi) po Z7.
