@@ -12547,3 +12547,13 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** obliczenie z `wiersze()` i `odsiew()` z cykl/pomiar-kanalow.py (6422 wiersze 14 dni, 472 pary, 39 serii testowych odrzucone). Bez commita.
 **Dla Pawła:** 8 rozpoczętych formularzy i 0 wysłanych w jedną dobę, połowa na /tansze-automatyzacje z fb-ads: formularz tej strony gubi ludzi między startem a wysyłką, warto, żeby strateg 24.11 dał zadanie na sprawdzenie go na telefonie.
 **Zostało otwarte:** Z15 (IndexNow dnia) od 24.11 00:40, Z16 od 02:40, Z17 i Z18 od 04:40, Z19 od 06:40.
+
+<!-- WYSLANO 2026-11-23 23:21 -->
+
+## 2026-11-24 00:45
+**Kanał:** widoczność (wyszukiwarki, IndexNow), zadanie Z15 z planu 23.11.
+**Co zrobione:** zgłoszono przez IndexNow 5 stron zmienionych od 23.11 08:40 (wszystkie 200, bez noindex); mapa witryny ma 279 adresów, zgodnie z oczekiwaniem po Z2.
+**Ruch:** doba 1401 odsłon, 441 osób; źródła: b2b-email 330, www.facebook.com 132, fb-ads 118, b2b 106, www.google.com 106; YouTube 18 sesji, LinkedIn 1; uruchomienia narzędzi 2; lejek 7 dni: 1840 sesji, 13 form_start, 0 zapytań.
+**Dowód:** IndexNow Yandex 200, Naver 200, wspólny 403 (znane, zgłoszenia dochodzą do Binga); adresy: /automatyzacja-procesow-biznesowych, /strefa-wiedzy/lead-w-weekend-black-friday, /strefa-wiedzy/oznaczenia-jpk-ksef, /strefa-wiedzy/proforma-ksef, /strefa-wiedzy/przerwa-swiateczna-w-firmie.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 (GSC stan zgłoszonych, od 02:40), Z17 (zapytania 28 dni, od 04:40), Z18 (Bing URL Inspection, od 04:40), Z19 (pomiar dla stratega, od 06:40).
