@@ -12604,3 +12604,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** cykl/z3-formularze-2026-11-24.txt (13 sesji, 14 form_start; lead_* w 14 dniach: 1, 16.11 lead_krotki z /ksef-integracja). Wniosek: przerywają głównie sesje z reklam na telefonie (fb-ads 8, google-ads 1, 10 z 13 na telefonie), na /tansze-automatyzacje (4), /strony-www (2), /automatyzacja-leadow-crm, /e-doreczenia-integracja, /crm-dla-posrednikow-kredytowych. Powtarzalny wzór: w 4 sesjach form_start pada w 0-1 s od wejścia, a sesja kończy się po 3-4 s, czyli to dotyk pola na pierwszym ekranie przy starcie przewijania (pointerdown na input), nie zamiar wpisania; realnie formularz zaczęło najwyżej 9 osób. Ludzie z Google (/numer-ksef, /) i z Facebooka naturalnego zostawali dłużej (30-170 s), ale używali narzędzia, nie pisali zapytania. Zrzuty: cykl/z4-formularz-tansze-2026-11-24.png (formularz z utm fb-ads), cykl/z4-formularz-strony-www-2026-11-24.png; oba mieszczą się w 390 px, przycisk i zdanie o danych widoczne, pasek ciasteczek niczego nie zasłania.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (lejek fb-ads i google-ads, wiadomość do FL_adsMeta) od 12:40. Dla stratega: form_start z pointerdown zawyża starty na telefonie; uczciwsza miara to dotyk pola bez przewinięcia w ciągu 300 ms albo pierwszy wpisany znak.
+
+## 2026-11-24 12:55
+**Kanał:** pomiar lejka reklam (plan ruchu Z5), dane dla FL_adsMeta i FL_adsGoogle.
+**Co zrobione:** Tabela sesji reklam 21-24.11 po kampaniach i dwa meldunki do sesji reklam: fb-ads spadło z 99 sesji w dobie do 23.11 06:15 do 28 i 2 dziś do 12:50, 0 leadów przy 7 form_start, z czego 3 na /tansze-automatyzacje to przypadkowy dotyk w pierwszych sekundach.
+**Ruch:** raport_ruchu 12:50: doba 1033 odsłony, 305 osób; źródła b2b-email 166 (piksel), www.google.com 118, www.facebook.com 117, fb-ads 85, google-ads 80; YouTube 40 sesji; tydzień 4883 odsłony, 1840 osób.
+**Dowód:** cykl/z5-reklamy-2026-11-24.txt; „Meldunek do FL_adsMeta w skrzynce”, „Meldunek do FL_adsGoogle w skrzynce”.
+**Dla Pawła:** 
+**Zostało otwarte:** Z6 (tytuł biala-lista-vat-nowe-api) od 14:40, Z7 po Z6. Od 24.11 w licznikach pojawia się utm_source=fb z numerem kampanii zamiast nazwy; FL_adsMeta wie.

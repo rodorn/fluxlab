@@ -1,0 +1,26 @@
+Sesje ludzi z reklam 21-24.11 (24.11 do 12:44), po odsiewie jak w pomiar-kanalow.py
+źródło / kampania                                11-21         11-22         11-23         11-24   razem
+                                         sesje/fs/lead sesje/fs/lead sesje/fs/lead sesje/fs/lead
+fb-ads/automatyzacje                             0/0/0         4/0/0        22/4/0         3/0/0   29/4/0   strony: /tansze-automatyzacje
+fb-ads/automatyzacje-lead                        0/0/0         4/0/0        11/1/0         0/0/0   15/1/0   strony: /automatyzacja-leadow-crm
+fb-ads/fluxcrm                                   0/0/0        13/0/0        17/0/0         0/0/0   30/0/0   strony: /crm-dla-posrednikow-kredytowych, /strefa-wiedzy/kategoria/narzedzia, /wlasny-crm
+fb-ads/karuzela-pytania                          0/0/0        32/0/0         0/0/0         0/0/0   32/0/0   strony: /, /automatyzacja-leadow-crm, /automatyzacja-procesow-biznesowych, /integracje-api, /konta
+fb-ads/strony-www                                0/0/0        10/0/0        14/2/0         0/0/0   24/2/0   strony: /realizacje, /strony-www
+fb-ads razem                                         0            63            64             3
+google-ads/razem                                13/0/0        18/0/0        23/1/0         7/1/0   61/2/0   strony: /, /e-doreczenia-integracja, /ksef-integracja, /ksef-integracja-erp, /produkty, /strony-ww
+google-ads razem                                    13            18            23             7
+
+fb-ads, sesje ludzi w blokach 6 h (start bloku)
+  22.11 12:00 12 {'strony-www': 3, 'fluxcrm': 8, 'automatyzacje-lead': 1}
+  22.11 18:00 51 {'strony-www': 7, 'automatyzacje': 4, 'fluxcrm': 5, 'automatyzacje-lead': 3, 'karuzela-pytania': 32}
+  23.11 00:00 36 {'automatyzacje-lead': 10, 'strony-www': 8, 'fluxcrm': 15, 'automatyzacje': 3}
+  23.11 06:00 5 {'strony-www': 1, 'automatyzacje': 2, 'automatyzacje-lead': 1, 'fluxcrm': 1}
+  23.11 12:00 9 {'strony-www': 3, 'automatyzacje': 5, 'fluxcrm': 1}
+  23.11 18:00 13 {'automatyzacje': 11, 'strony-www': 2}
+  24.11 00:00 2 {'fb:500178': 1, 'automatyzacje': 1}
+  24.11 06:00 2 {'automatyzacje': 2}
+  24.11 12:00 1 {'fb:330178': 1}
+doba 2026-11-22 06:15 → 2026-11-23 06:15: fb-ads 99, google-ads 20
+doba 2026-11-23 06:15 → 2026-11-24 06:15: fb-ads 28, google-ads 21
+doba 2026-11-24 06:15 → 2026-11-24 12:50: fb-ads 2, google-ads 7
+ostatnia sesja fb-ads: 24.11 09:50
