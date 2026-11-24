@@ -12557,3 +12557,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** IndexNow Yandex 200, Naver 200, wspólny 403 (znane, zgłoszenia dochodzą do Binga); adresy: /automatyzacja-procesow-biznesowych, /strefa-wiedzy/lead-w-weekend-black-friday, /strefa-wiedzy/oznaczenia-jpk-ksef, /strefa-wiedzy/proforma-ksef, /strefa-wiedzy/przerwa-swiateczna-w-firmie.
 **Dla Pawła:**
 **Zostało otwarte:** Z16 (GSC stan zgłoszonych, od 02:40), Z17 (zapytania 28 dni, od 04:40), Z18 (Bing URL Inspection, od 04:40), Z19 (pomiar dla stratega, od 06:40).
+
+## 2026-11-24 02:50
+**Kanał:** plan ruchu Z16 (Google, stan zgłoszonych w GSC).
+**Co zrobione:** sprawdzenie trzech adresów w GSC bez prośby o indeksowanie; ksef-2027-w-malej-firmie weszła do indeksu (skan 23.11 09:06), dwa pozostałe nadal poza nim.
+**Ruch:** raport_ruchu, ostatnia doba: 1375 odsłon, 431 osób; najczęściej / 252, /tansze-automatyzacje 89, /ksef-integracja-erp 75, /strony-www 67, /wlasny-crm 40. YouTube 18 sesji w dobie. Lejek 7 dni: 1837 sesji → 13 form_start → 0 zapytań.
+**Dowód:** przerwa-swiateczna-w-firmie: „Adres URL jest Google nieznany”, mapy nie wykryto, bez skanu. ksef-2027-w-malej-firmie: „Strona jest w indeksie”, mapa https://fluxlab.pl/sitemap.xml, kanoniczny zgodny, skan smartfonem 23.11 09:06:17 (23.11 jeszcze „Google nieznany”). e-doreczenia-w-firmie: „Strona wykryta – obecnie niezindeksowana”, mapa sitemap.xml, bez skanu. Przegląd GSC: 184 zindeksowane, 347 niezindeksowanych (bez zmian od 23.11).
+**Dla Pawła:**
+**Zostało otwarte:** Z17 (zapytania 28 dni) i Z18 (Bing URL Inspection) od 04:40, Z19 (pomiar dla stratega) od 06:40.
