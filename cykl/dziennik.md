@@ -12579,3 +12579,20 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Trzy najważniejsze zadania na dziś:** Z3 lejek formularzy (14 rozpoczętych, 0 wysłanych w 7 dni: gdzie i po ilu sekundach ludzie przerywają), Z5 dane dla FL_adsMeta i FL_adsGoogle (spadek fb-ads 99 → 29 sesji na dobę, formularze ich stron), Z6 tytuł /strefa-wiedzy/biala-lista-vat-nowe-api pod „biała lista vat api” przed terminem 1.12.
 **Zmiany w planie:** Bing ograniczony do dwóch adresów i jednego wsadu (3 doby bez sesji), bez próśb o indeksowanie GSC (pula FL_SEO), 2 zmiany [T] zamiast 3 przy hamulcu budżetu „alarm” (92% tygodnia, reset za 26 h); artykuł z kalendarza dopiero 30.11. Plan: cykl/plan-ruchu.md, 17 zadań.
 **Dla Pawła:** brak nowych pozycji.
+
+## 2026-11-24 06:45
+**Kanał:** brak, czekam na Z1 o 08:40 (plan 24.11: najwcześniejsze zadania Z1 i Z2 od 08:40, wszystkie 17 otwarte).
+**Co zrobione:** nic nie poszło w świat, bo plan nie pozwala brać zadań przed ich godziną.
+**Ruch:** pomiar-kanalow 24 h: 148 ludzi, 189 odsłon; bez odsyłacza 37, fb-ads 27, google-ads 21, Facebook naturalny 40 (www 20, m. 18, inne 2), b2b 12, Google organiczny 8, chatgpt płatne 4, YouTube 4, Instagram 2, LinkedIn 1, chatgpt.com 1; 7 dni 591 ludzi. Lejek 7 dni (raport_ruchu): 1827 sesji, 13 form_start, 0 zapytań. Resend 24 h: 1 mail poza outreachem; Zoho INBOX 3 (raport social FluxLab, XTB, CEZ; bez odpowiedzi na outreach), Spam 0.
+**Dowód:** cykl/plan-ruchu.md z 24.11 06:19, wszystkie zadania „- [ ]”, pierwsze od 08:40.
+**Dla Pawła:**
+**Zostało otwarte:** Z1 i Z2 (Bing) od 08:40, Z3 i Z4 (formularze) od 10:40.
+<!-- WYSLANO 2026-11-24 07:05 -->
+
+## 2026-11-24 08:47
+**Kanał:** 2 (widoczność w asystentach AI, Bing/Copilot), zadania Z1 i Z2 planu.
+**Co zrobione:** pomiar Bing i AI Performance oraz ręczne „Request indexing” dla dwóch artykułów niewidocznych w Bing.
+**Ruch:** doba do 24.11 06:15 (pomiar stratega): 153 ludzi, tydzień 591; Bing 0 sesji trzecią dobę, 4 w tygodniu. Bing Webmaster 7 dni (16-22.11, dane do 22.11): 4 kliknięcia, 108 wyświetleń (23.11: 4/104 do 21.11). AI Performance 7 D (17-22.11): 26 cytowań (23.11: 27), dziennie 4/0/5/16/0/1; strony: proforma-ksef 6, kiedy-odliczyc-vat-z-faktury-ksef 6, www…/jak-zautomatyzowac-raportowanie-w-firmie 4, www…/automatyzacja-raportowania 3, sprawdzenie-nip 3, faktura-do-paragonu-ksef 1.
+**Dowód:** URL Inspection: czy-firma-ma-adres-do-e-doreczen „Not discovered”, przerwa-swiateczna-w-firmie „Discovered but not crawled” (odkryta 23.11); oba zgłoszone, lista URL Submission: „Today at 08:46”. Timer fluxlab-strona: enabled, active.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 i Z4 (formularze) od 10:40; sprawdzenie statusu obu adresów w Bing przy następnym pomiarze. Dwie cytowane strony mają adres z www (przekierowanie), Copilot cytuje starszy wariant.
