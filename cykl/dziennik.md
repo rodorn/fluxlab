@@ -12612,3 +12612,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** cykl/z5-reklamy-2026-11-24.txt; „Meldunek do FL_adsMeta w skrzynce”, „Meldunek do FL_adsGoogle w skrzynce”.
 **Dla Pawła:** 
 **Zostało otwarte:** Z6 (tytuł biala-lista-vat-nowe-api) od 14:40, Z7 po Z6. Od 24.11 w licznikach pojawia się utm_source=fb z numerem kampanii zamiast nazwy; FL_adsMeta wie.
+
+## 2026-11-24 14:45
+**Kanał:** Google (plan ruchu Z6/Z7).
+**Co zrobione:** nic nie poszło w świat: Z6 (tytuł i opis /strefa-wiedzy/biala-lista-vat-nowe-api pod „biała lista vat api”) oznaczone [!], bo budżet ma rytm „wstrzymaj” (99% tygodnia, prognoza 116%, hamulec alarm, reset za 17 h), a plan przy „wstrzymaj” zabrania zmian [T]; Z7 pominięte, brak zmiany. Timer fluxlab-strona enabled.
+**Ruch:** raport_ruchu, doba: 978 odsłon, 284 osoby (google.com 134, b2b-email 118, google-ads 99, fb-ads 81, youtube 56). Po odsiewie (pomiar-kanalow 24 h): 135 ludzi, bez odsyłacza 32, fb-ads 27, google-ads 21, Google 14, Facebook naturalny 17, chatgpt płatne 9 i chatgpt.com 4, YouTube 8, Bing 1; 7 dni 626. Uruchomienia narzędzi w dobie 1.
+**Dowód:** cykl/plan-ruchu.md, linie Z6 [!] i Z7 [x].
+**Dla Pawła:**
+**Zostało otwarte:** Z6 do powtórzenia po resecie budżetu (25.11 ok. 08:00, termin API 1.12); następne zadanie planu Z8 o 16:40 (też [T], bramka budżetu), Z9 pomiar o 16:40.
