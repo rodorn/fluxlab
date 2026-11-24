@@ -308,6 +308,12 @@ const nextConfig: NextConfig = {
           "/hajs?utm_source=hajsmetrics&utm_medium=youtube&utm_campaign=partner",
         permanent: false,
       },
+      // 24.11: reklama Meta KSeF kierowala na /ksef (404); query z utm zostaje.
+      {
+        source: "/ksef",
+        destination: "/ksef-integracja",
+        permanent: false,
+      },
       // Facebook skleja link z kolejnym slowem posta (21.11: /narzedziaprzepisanie
       // i /narzedziaspotkań z m.facebook.com konczyly sie 404).
       {
