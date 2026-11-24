@@ -12596,3 +12596,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** URL Inspection: czy-firma-ma-adres-do-e-doreczen „Not discovered”, przerwa-swiateczna-w-firmie „Discovered but not crawled” (odkryta 23.11); oba zgłoszone, lista URL Submission: „Today at 08:46”. Timer fluxlab-strona: enabled, active.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 i Z4 (formularze) od 10:40; sprawdzenie statusu obu adresów w Bing przy następnym pomiarze. Dwie cytowane strony mają adres z www (przekierowanie), Copilot cytuje starszy wariant.
+
+## 2026-11-24 10:55
+**Kanał:** pomiar lejka formularzy, zadania Z3 i Z4 planu.
+**Co zrobione:** rozpisane wszystkie sesje z form_start z 7 dni i zrzuty obu formularzy reklamowych na telefonie; nic nie poszło w świat, to pomiar.
+**Ruch:** raport_ruchu, doba do 24.11 10:43: 1137 odsłon, 342 osoby; źródła: b2b-email 228, google 106, facebook 103, fb-ads 85, b2b 81, YouTube 38 sesji; uruchomienia narzędzi 1. Lejek 7 dni: 1843 sesje, 13 rozpoczęło formularz, 0 wysłało.
+**Dowód:** cykl/z3-formularze-2026-11-24.txt (13 sesji, 14 form_start; lead_* w 14 dniach: 1, 16.11 lead_krotki z /ksef-integracja). Wniosek: przerywają głównie sesje z reklam na telefonie (fb-ads 8, google-ads 1, 10 z 13 na telefonie), na /tansze-automatyzacje (4), /strony-www (2), /automatyzacja-leadow-crm, /e-doreczenia-integracja, /crm-dla-posrednikow-kredytowych. Powtarzalny wzór: w 4 sesjach form_start pada w 0-1 s od wejścia, a sesja kończy się po 3-4 s, czyli to dotyk pola na pierwszym ekranie przy starcie przewijania (pointerdown na input), nie zamiar wpisania; realnie formularz zaczęło najwyżej 9 osób. Ludzie z Google (/numer-ksef, /) i z Facebooka naturalnego zostawali dłużej (30-170 s), ale używali narzędzia, nie pisali zapytania. Zrzuty: cykl/z4-formularz-tansze-2026-11-24.png (formularz z utm fb-ads), cykl/z4-formularz-strony-www-2026-11-24.png; oba mieszczą się w 390 px, przycisk i zdanie o danych widoczne, pasek ciasteczek niczego nie zasłania.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (lejek fb-ads i google-ads, wiadomość do FL_adsMeta) od 12:40. Dla stratega: form_start z pointerdown zawyża starty na telefonie; uczciwsza miara to dotyk pola bez przewinięcia w ciągu 300 ms albo pierwszy wpisany znak.
