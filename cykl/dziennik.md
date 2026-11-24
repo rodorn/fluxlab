@@ -12565,3 +12565,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** przerwa-swiateczna-w-firmie: „Adres URL jest Google nieznany”, mapy nie wykryto, bez skanu. ksef-2027-w-malej-firmie: „Strona jest w indeksie”, mapa https://fluxlab.pl/sitemap.xml, kanoniczny zgodny, skan smartfonem 23.11 09:06:17 (23.11 jeszcze „Google nieznany”). e-doreczenia-w-firmie: „Strona wykryta – obecnie niezindeksowana”, mapa sitemap.xml, bez skanu. Przegląd GSC: 184 zindeksowane, 347 niezindeksowanych (bez zmian od 23.11).
 **Dla Pawła:**
 **Zostało otwarte:** Z17 (zapytania 28 dni) i Z18 (Bing URL Inspection) od 04:40, Z19 (pomiar dla stratega) od 06:40.
+
+## 2026-11-24 04:48
+**Kanał:** 2 (widoczność, pomiar wyszukiwarek), zadania Z17 i Z18 z planu.
+**Co zrobione:** zapisane 100 zapytań GSC z 28 dni z listą 15 kandydatów na tytuły dla stratega oraz statusy Bing dla 3 adresów z wsadów; nic nie poszło w świat, to pomiar.
+**Ruch:** raport_ruchu: doba 1364 odsłony, 424 osoby; źródła b2b-email 334, www.facebook.com 132, b2b 106, www.google.com 106, fb-ads 97; YouTube 18 sesji, LinkedIn 1; uruchomienia narzędzi 2; lejek 7 dni: 1830 sesji, 13 form_start, 0 zapytań. GSC 28 dni (25.10-21.11): 129 klik. / 5,51 tys. wyśw., CTR 2,3%, poz. 15,1 (21.11: 122 / 5,44 tys., poz. 15,9); marka 55 klik.
+**Dowód:** cykl/gsc-zapytania-2026-11-24.txt (100 z 471 wierszy + 15 kandydatów: ≥10 wyśw., poz. ≤10, 0 klik.; na czele „porównanie kosztów automatyzacji vs zatrudniania” 58 wyśw., poz. 1,6, „crm dla firm leasingowych” 15/4,3, trzy warianty „n8n cena/cennik/ile kosztuje” 39 wyśw., poz. 6-10). Bing URL Inspection: kiedy-odliczyc-vat-z-faktury-ksef i crm-dla-posrednika-kredytowego-jedna-sprawa „Indexed successfully” (ta druga 23.11 jeszcze „Discovered but not crawled”), czy-firma-ma-adres-do-e-doreczen „Not discovered” mimo wsadu 22.11 (strona 200, w mapie). W z7-bing-2026-11-22.txt są tylko 2 artykuły, więc statusy 3, nie 4.
+**Dla Pawła:**
+**Zostało otwarte:** Z19 (pomiar dla stratega) od 06:40. Do decyzji stratega: czy-firma-ma-adres-do-e-doreczen nieodkryta w Bing po 2 dobach, kandydat na ręczne „Request indexing”.

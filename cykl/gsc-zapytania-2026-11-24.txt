@@ -1,0 +1,118 @@
+# GSC fluxlab.pl, zakładka Zapytania, stan 24.11.2026 04:45, okres 25.10-21.11 (28 dni): suma 129 klik. / 5,51 tys. wyśw., CTR 2,3%, poz. 15,1: zapytanie	kliknięcia	wyświetlenia	pozycja (471 wierszy w tabeli, zapisane pierwsze 100)
+fluxlab	47	77	1,1
+flux lab	7	9	1,0
+wdrożenie n8n wrocław	3	4	9,3
+faktura wewnętrzna a ksef	1	26	6,7
+czy to dobra firma?	1	1	2,0
+fluxlab.io	1	1	3,0
+numer ksef w tytule przelewu od kiedy	1	1	10,0
+porównanie kosztów automatyzacji vs zatrudniania	0	58	1,6
+automatyzacja raportowania	0	55	14,7
+automatyzacja procesów biznesowych firmy	0	43	68,3
+ocr dla biur rachunkowych	0	39	45,1
+automatyzacja crm ai	0	38	32,4
+automatyzacja crm	0	37	28,9
+integracja crm	0	35	63,2
+system ticketowy dla e-commerce	0	30	69,0
+asystent ai dla firmy	0	28	31,2
+asystent ai	0	27	24,1
+wdrożenie n8n	0	26	29,0
+ksef ocr	0	23	68,1
+kalkulator 2026	0	21	48,4
+jak sprawdzić firmę przed przelewem	0	16	11,3
+crm dla firm leasingowych	0	15	4,3
+zaawansowana symulacja	0	15	68,7
+crm na zamówienie	0	15	77,9
+n8n cena	0	14	9,8
+ocr a ksef	0	14	69,4
+najlepsze firmy do automatyzacji raportowania finansowego?	0	13	5,3
+n8n cennik	0	13	6,2
+gutschrift co to	0	12	2,3
+"automatyzacja podatków"	0	12	5,3
+jakie narzędzie do automatyzacji rozliczeń polecasz i dlaczego?	0	12	6,3
+biała lista vat api	0	12	6,5
+faktury wewnętrzne a ksef	0	12	8,3
+ksef błąd 440	0	12	8,3
+n8n ile kosztuje	0	12	8,8
+jak zautomatyzować raportowanie w firmie	0	12	16,8
+ekstrakcja danych z faktur	0	12	65,1
+ocr dla biura rachunkowego	0	11	46,5
+integracja api	0	11	61,3
+"ksef"	0	10	3,5
+crm dla firmy meblarskiej	0	10	4,2
+ile kosztuje połączenie crm z erp	0	10	10,0
+automatyzacja scoringu leasingowego	0	10	12,8
+asystent na strone ai	0	10	13,2
+pipedrive	0	10	14,2
+kalkulator obciążeń podatkowych	0	10	24,9
+numer ksef faktury	0	10	66,0
+raportowanie sprzedaży	0	10	80,1
+raportowanie produkcji	0	9	6,7
+pipedrive co to	0	9	9,2
+asystent ai na stronie	0	9	11,8
+ile kosztuje integracja erp z crm	0	9	13,7
+ile kosztuje integracje erp z crm	0	9	16,8
+systemy analityczne dla firm leasingowych	0	9	16,8
+weryfikacja nip	0	9	18,6
+jak sprawdzić wypłacalność klienta	0	9	25,2
+wirtualny asystent ai	0	9	25,9
+crm dla pośrednika kredytowego	0	9	40,7
+automatyzacja ai dla firm	0	9	63,3
+automatyczne rozliczenia b2b	0	8	3,3
+sprawdz numer ksef	0	8	7,4
+raportowanie wyników sprzedaży	0	8	8,8
+kalkulator jdg 2026	0	8	17,3
+kalkulator jdg	0	8	19,0
+faktura vat rr	0	8	47,0
+automatyzacje dla firm	0	8	50,4
+automatyzacja e-commerce	0	8	61,9
+crm z ai	0	8	85,9
+hubspot vs pipedrive	0	7	6,3
+ae:pl-45928-68514-chara-16	0	7	7,1
+jak sprawdzić czy mam adres do e doręczeń	0	7	8,1
+wdrożenia n8n	0	7	9,4
+ile kosztuje n8n	0	7	9,9
+ile kosztuje integracje crm z erp	0	7	11,4
+analiza lokalizacji	0	7	20,1
+crm dla firm z branży bram	0	7	20,9
+automatyzacja procesów biznesowych koszt	0	7	29,1
+kalkulator stawek ryczałtu 2026	0	7	39,0
+co daje integracja erp z crm	0	7	43,4
+automatyzacja procesów usługi biznesowe	0	7	44,1
+integracje api	0	7	57,0
+program komputerowy dla firm leasingowych	0	6	3,0
+duralszen asystent ai	0	6	6,7
+automatyzacja raportów i przepływu informacji	0	6	9,5
+kto wdraża integrację crm z erp w polsce	0	6	10,5
+pipedrive vs hubspot vs monday	0	6	17,8
+sprawdzenie nip	0	6	25,8
+leasing crm	0	6	28,8
+automatyzacja obsługi zgłoszeń	0	6	39,5
+integracja crm z erp	0	6	43,0
+automatyzacja biznesu	0	6	48,5
+crm dla dystrybucji	0	6	65,8
+agencja automatyzacji procesów biznesowych w polsce	0	5	2,0
+procesowanie leadów	0	5	3,2
+koszt konektora erp do crm	0	5	3,8
+systemy bilingowe	0	5	4,6
+lokalizacja biura	0	5	5,4
+pipedrive cennik	0	5	5,8
+automatyzacja raportów regulacyjnych	0	5	6,8
+otomotoolx	0	5	7,2
+
+# Kandydaci na tytuły (≥10 wyśw., poz. ≤10, 0 klik., z całej tabeli 471 wierszy): 15
+porównanie kosztów automatyzacji vs zatrudniania	0	58	1,6
+crm dla firm leasingowych	0	15	4,3
+n8n cena	0	14	9,8
+najlepsze firmy do automatyzacji raportowania finansowego?	0	13	5,3
+n8n cennik	0	13	6,2
+gutschrift co to	0	12	2,3
+"automatyzacja podatków"	0	12	5,3
+jakie narzędzie do automatyzacji rozliczeń polecasz i dlaczego?	0	12	6,3
+biała lista vat api	0	12	6,5
+faktury wewnętrzne a ksef	0	12	8,3
+ksef błąd 440	0	12	8,3
+n8n ile kosztuje	0	12	8,8
+"ksef"	0	10	3,5
+crm dla firmy meblarskiej	0	10	4,2
+ile kosztuje połączenie crm z erp	0	10	10,0
