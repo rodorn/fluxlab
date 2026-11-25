@@ -12642,3 +12642,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** `curl` na https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api: `<title>Biała lista VAT: nowy adres API do 1 grudnia 2026 | Fluxlab`. GSC 28 dni dla strony: 10 klik./297 wyśw., CTR 3,4%, poz. 4,6; „biała lista vat api” 0/15 poz. 6,6, „wykaz podatników vat api” 0/3, „api mf” 0/3, „api wykazu podatników vat” 0/2 poz. 9,5.
 **Dla Pawła:** 
 **Zostało otwarte:** Z5 (tytuł strony dla pytań o automatyzację rozliczeń) i Z6 od 12:40, Z7-Z8 od 14:40.
+
+## 2026-11-25 12:56
+**Kanał:** 2 (pytania w stylu asystentów AI, Google), plan ruchu Z5 i Z6.
+**Co zrobione:** nic nie poszło w świat: Z5 pominięte, bo zapytania o automatyzację rozliczeń i podatków najwięcej wyświetleń dają stronie reklam /automatyzacja-raportowania (lista „Czego nie robić”, formularz FL_marketing, nie FL_adsMeta/FL_adsGoogle, więc bez wiadomości); Z6 pominięte (brak zmiany).
+**Ruch:** raport_ruchu, doba: 1676 odsłon, 565 osób. Po odsiewie (pomiar-kanalow 24 h): 166 ludzi (7 dni 718); bez odsyłacza 63, fb-ads 28, google-ads 20, Facebook naturalny 26 (www 17, m. 9), Google organiczny 13, chatgpt płatne 10, chatgpt.com 3, useme 2, facebook 2, fb 1, Threads 1, zleca 1, b2b 1, Instagram 1.
+**Dowód:** GSC 28 dni (dane do 23.11), filtr „zawiera” (dokładny „!” dla dwóch pierwszych fraz dał „Brak danych”): „automatyzacji rozlicze” → /strefa-wiedzy/kategoria/narzedzia 14 wyśw., poz. 6,3; „automatyzacja podatk” → /automatyzacja-raportowania 9, poz. 4,1, /asystent-ai-na-stronie 2, poz. 9,5; „automatyczne rozliczenia b2b” → /strefa-wiedzy 10, poz. 4,6, /automatyzacja-raportowania 6, poz. 2,5. 0 kliknięć. Żaden artykuł /strefa-wiedzy/… nie dostaje tych zapytań. cykl/plan-ruchu.md, Z5 i Z6 [x].
+**Dla Pawła:** 
+**Zostało otwarte:** Z7 (kalkulator formy opodatkowania) i Z8 (Copilot, adresy z www) od 14:40, Z9-Z10 od 16:40.
