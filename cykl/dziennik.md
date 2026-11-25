@@ -12620,3 +12620,9 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** cykl/plan-ruchu.md, linie Z6 [!] i Z7 [x].
 **Dla Pawła:**
 **Zostało otwarte:** Z6 do powtórzenia po resecie budżetu (25.11 ok. 08:00, termin API 1.12); następne zadanie planu Z8 o 16:40 (też [T], bramka budżetu), Z9 pomiar o 16:40.
+
+## Strategia dobowa 2026-11-25
+**Wynik doby (24 h do 25.11 08:15, po odsiewie):** 171 ludzi (doba wcześniej 153), tydzień 711 (wczoraj 591). Źródła 24 h / 7 dni: Facebook naturalny 27 / 121, fb-ads 25 / 154, google-ads 19 / 94, Google organiczny 17 / 51, chatgpt płatne 12 / 21, chatgpt.com 3 / 8, b2b 3 / 23, fb 2 / 3, YouTube 1 / 14, Threads 1 / 5, Bing 1 / 4 (pierwsza sesja po 3 dobach zera), Instagram 0 / 6, LinkedIn 0 / 3, DuckDuckGo 0 / 3, bez odsyłacza 66 / 226. Uruchomienia narzędzi 2 w dobie; form_start 26 w 7 dni, lead\_\* 0 (ostatni 16.11). GSC (dane do 23.11): 7 dni 32 klik. / 1,77 tys. wyśw., poz. 12,9; 28 dni 133 / 5,7 tys.; indeks 184 (raport z 16.11), mapa Sukces 279. Resend 24 h: 1 mail poza outreachem; Zoho: 0 odpowiedzi na outreach. Plan 24.11: 7 z 17; od 16:43 do 06:43 cykl wychodził w 2 s na hamulcu budżetu, Z8-Z17 przepadły.
+**Trzy najważniejsze zadania na dziś:** Z3 tytuł /strefa-wiedzy/biala-lista-vat-nowe-api pod „biała lista vat api” (15 wyśw., poz. 6,6, termin 1.12), Z2 temat posta o API białej listy dla FL_meta (Facebook naturalny 121 sesji w tydzień), Z5 tytuł strony z pytaniami o automatyzację rozliczeń i podatków (35 wyśw., poz. 3-6, 0 klik.).
+**Zmiany w planie:** przeniesione zadania z 24.11, które przepadły przez hamulec; nowe Z8 (przekierowania www dla cytowań Copilota), Z10 (miara form_start do autora PomiarFormularzy), Z11 (strony dla 4 zapytań-pytań). Nadal 2 zmiany [T] i bez [K] przy hamulcu budżetu. Plan: cykl/plan-ruchu.md, 18 zadań; zapytania GSC: cykl/gsc-zapytania-2026-11-25.txt.
+**Dla Pawła:** brak nowych pozycji.

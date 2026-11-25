@@ -1,0 +1,151 @@
+# GSC fluxlab.pl, zakładka Zapytania, stan 25.11.2026 08:20, 28 dni (dane do 23.11): suma 133 klik. / 5,7 tys. wyśw., CTR 2,3%, poz. 14,9: zapytanie	kliknięcia	wyświetlenia	CTR	pozycja (471 wierszy)
+fluxlab	49	81	60,5%	1,1
+flux lab	7	9	77,8%	1,0
+wdrożenie n8n wrocław	3	4	75%	9,3
+faktura wewnętrzna a ksef	1	27	3,7%	6,8
+czy to dobra firma?	1	1	100%	2,0
+fluxlab.io	1	1	100%	3,0
+numer ksef w tytule przelewu od kiedy	1	1	100%	10,0
+automatyzacja raportowania	0	59	0%	15,2
+porównanie kosztów automatyzacji vs zatrudniania	0	58	0%	1,7
+automatyzacja procesów biznesowych firmy	0	43	0%	65,5
+ocr dla biur rachunkowych	0	42	0%	45,0
+automatyzacja crm	0	40	0%	30,4
+automatyzacja crm ai	0	38	0%	33,2
+integracja crm	0	35	0%	65,4
+asystent ai dla firmy	0	33	0%	34,2
+system ticketowy dla e-commerce	0	30	0%	67,2
+asystent ai	0	27	0%	24,1
+wdrożenie n8n	0	27	0%	32,6
+ksef ocr	0	25	0%	66,2
+kalkulator 2026	0	21	0%	48,4
+zaawansowana symulacja	0	21	0%	72,2
+gutschrift co to	0	18	0%	4,3
+jak sprawdzić firmę przed przelewem	0	18	0%	11,9
+crm dla firm leasingowych	0	16	0%	5,3
+ocr a ksef	0	16	0%	69,7
+biała lista vat api	0	15	0%	6,6
+crm na zamówienie	0	15	0%	77,9
+jakie narzędzie do automatyzacji rozliczeń polecasz i dlaczego?	0	14	0%	6,3
+ekstrakcja danych z faktur	0	14	0%	65,1
+najlepsze firmy do automatyzacji raportowania finansowego?	0	13	0%	5,3
+n8n cennik	0	13	0%	6,2
+ocr dla biura rachunkowego	0	13	0%	46,5
+jak sprawdzić czy mam adres do e doręczeń	0	12	0%	8,3
+ksef błąd 440	0	12	0%	8,6
+crm dla pośrednika kredytowego	0	12	0%	39,2
+"automatyzacja podatków"	0	11	0%	5,1
+faktury wewnętrzne a ksef	0	11	0%	8,2
+pipedrive co to	0	11	0%	9,4
+n8n cena	0	11	0%	10,3
+jak zautomatyzować raportowanie w firmie	0	11	0%	18,2
+automatyzacja e-commerce	0	11	0%	58,5
+numer ksef faktury	0	11	0%	67,3
+automatyczne rozliczenia b2b	0	10	0%	3,1
+crm dla firmy meblarskiej	0	10	0%	4,2
+raportowanie wyników sprzedaży	0	10	0%	7,9
+ile kosztuje połączenie crm z erp	0	10	0%	10,0
+automatyzacja scoringu leasingowego	0	10	0%	12,8
+pipedrive	0	10	0%	14,2
+weryfikacja nip	0	10	0%	18,6
+jak sprawdzić wypłacalność klienta	0	10	0%	23,5
+kalkulator obciążeń podatkowych	0	10	0%	24,9
+raportowanie sprzedaży	0	10	0%	80,1
+raportowanie produkcji	0	9	0%	6,7
+ae:pl-45928-68514-chara-16	0	9	0%	7,3
+n8n ile kosztuje	0	9	0%	8,9
+ile kosztuje integracja erp z crm	0	9	0%	13,7
+ile kosztuje integracje erp z crm	0	9	0%	16,8
+systemy analityczne dla firm leasingowych	0	9	0%	16,8
+faktura vat rr	0	9	0%	43,9
+automatyzacja procesów usługi biznesowe	0	9	0%	48,1
+automatyzacja ai dla firm	0	9	0%	63,3
+asystent na strone ai	0	8	0%	12,4
+kalkulator jdg 2026	0	8	0%	17,3
+kalkulator jdg	0	8	0%	19,0
+automatyzacje dla firm	0	8	0%	50,4
+crm z ai	0	8	0%	85,9
+systemy bilingowe	0	7	0%	4,7
+hubspot vs pipedrive	0	7	0%	6,3
+sprawdz numer ksef	0	7	0%	6,9
+ile kosztuje n8n	0	7	0%	10,1
+asystent ai na stronie	0	7	0%	10,3
+wykrywanie upustów	0	7	0%	14,9
+analiza lokalizacji	0	7	0%	20,1
+crm dla firm z branży bram	0	7	0%	20,9
+wirtualny asystent ai	0	7	0%	24,7
+automatyzacja procesów biznesowych koszt	0	7	0%	29,1
+ksef technologie dla firm	0	7	0%	42,6
+co daje integracja erp z crm	0	7	0%	43,4
+integracja api	0	7	0%	63,4
+program komputerowy dla firm leasingowych	0	6	0%	3,0
+automatyczne przypisywanie wpłat	0	6	0%	3,3
+procesowanie leadów	0	6	0%	3,5
+duralszen asystent ai	0	6	0%	6,7
+ile kosztuje integracje crm z erp	0	6	0%	8,7
+wdrożenia n8n	0	6	0%	9,3
+automatyzacja raportów i przepływu informacji	0	6	0%	9,5
+kto wdraża integrację crm z erp w polsce	0	6	0%	10,5
+automatyzacja zasilania raportów	0	6	0%	17,2
+pipedrive vs hubspot vs monday	0	6	0%	17,8
+automatyzacja ofert	0	6	0%	20,2
+sprawdzenie nip	0	6	0%	25,8
+leasing crm	0	6	0%	28,8
+kalkulator stawek ryczałtu 2026	0	6	0%	32,8
+automatyzacja obsługi zgłoszeń	0	6	0%	39,5
+integracja crm z erp	0	6	0%	43,0
+faktura rr	0	6	0%	45,5
+crm dla dystrybucji	0	6	0%	65,8
+skanowanie faktur do programu księgowego	0	6	0%	81,0
+agencja automatyzacji procesów biznesowych w polsce	0	5	0%	2,0
+koszt konektora erp do crm	0	5	0%	3,8
+lokalizacja biura	0	5	0%	5,4
+pipedrive cennik	0	5	0%	5,8
+automatyzacja raportów regulacyjnych	0	5	0%	6,8
+otomotoolx	0	5	0%	7,2
+ksef a faktury elektroniczne w gw-max	0	5	0%	10,4
+asystent ai na stronę	0	5	0%	18,6
+automatyzacja obsługi klienta b2b producenci	0	5	0%	20,4
+wycena integracji erp z crm	0	5	0%	23,4
+sprawdzenie nipu	0	5	0%	28,4
+system raportowania w firmie	0	5	0%	38,8
+automatyzacja raportów	0	5	0%	40,8
+crm dla b2b	0	5	0%	55,8
+integracje api	0	5	0%	56,4
+raportowanie zleceń serwisowych	0	5	0%	66,6
+program do faktur w euro	0	4	0%	2,3
+automatyzacja procesów firmy	0	4	0%	5,3
+koszt integracji crm z erp	0	4	0%	6,8
+które firmy pomogą zautomatyzować procesy księgowe?	0	4	0%	7,3
+zapier cennik	0	4	0%	7,3
+gutschrift	0	4	0%	7,5
+crm faktury	0	4	0%	8,0
+wykonawca integracji erp z crm	0	4	0%	8,0
+jak sprawdzić czy spółka ma adres do e doręczeń	0	4	0%	8,3
+jak sprawdzic adres do edoreczen	0	4	0%	11,0
+analiza procesów wrocław	0	4	0%	13,8
+sprawdzenie kontrahenta online	0	4	0%	14,5
+numer ksef w przelewie od kiedy	0	4	0%	15,5
+automatyzacja biznesowa bydgoszcz	0	4	0%	18,0
+cena integracji crm z erp	0	4	0%	18,8
+integracje erp z crm cena	0	4	0%	19,3
+stawka ryczałtu kalkulator	0	4	0%	20,8
+program do wystawiania faktur zagranicznych	0	4	0%	22,5
+zapier co to	0	4	0%	24,8
+kalkulator ryczałtu	0	4	0%	25,8
+samofakturowanie na czym polega	0	4	0%	26,0
+najlepsza firma do integracji erp crm	0	4	0%	27,5
+integracja crm erp koszt	0	4	0%	28,8
+crm dla hurtowni	0	4	0%	30,0
+ksef data wystawienia faktury	0	4	0%	34,0
+sprawdzanie nipu	0	4	0%	39,3
+asystent ai dla firm	0	4	0%	45,5
+crm i erp integracja	0	4	0%	46,5
+automatyzacja biznesu	0	4	0%	52,5
+weryfikacja faktury ksef	0	4	0%	70,0
+symulacja procesu	0	4	0%	87,3
+aplikacja dla przedstawicieli leasingu	0	3	0%	1,0
+ile trwa integracja erp z crm?	0	3	0%	1,0
+flux crm	0	3	0%	1,7
+kto wdraża integrację crm z erp	0	3	0%	2,7
+"wdrożenie" "erp"	0	3	0%	3,0
