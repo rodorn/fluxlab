@@ -1,0 +1,14 @@
+Z11 25.11 18:50, GSC Skuteczność, 28 dni (27.10-23.11), filtr zapytania dokładny (query=!), zakładka Strony. Bez zmian treści.
+zapytanie | strona | wyświetlenia | pozycja | kliknięcia | ostatnia zmiana strony (git log -1) | tytuł na produkcji
+najlepsze firmy do automatyzacji raportowania finansowego? (łącznie 13 wyśw., 0 klik.) | /automatyzacja-raportowania | 9 | 5,6 | 0 | c49c8b85 2026-11-15 krótki formularz z reklam | Automatyzacja raportowania i danych w firmie | Fluxlab
+najlepsze firmy do automatyzacji raportowania finansowego? | /automatyzacja-procesow-biznesowych | 3 | 3,0 | 0 | 08f9cbfe 2026-11-23 przycisk Oddzwoń | Automatyzacja procesów biznesowych dla firm | Fluxlab
+najlepsze firmy do automatyzacji raportowania finansowego? | /spis-stron | 1 | 10,0 | 0 | 3ee728c3 2026-10-18 okruszki | -
+raportowanie wyników sprzedaży (10 wyśw.) | /strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy | 10 | 7,9 | 0 | e33bb2b1 2026-11-19 dateModified | Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab
+pipedrive co to (11 wyśw.) | /strefa-wiedzy/hubspot-vs-pipedrive | 11 | 9,4 | 0 | e33bb2b1 2026-11-19 dateModified | HubSpot vs Pipedrive, który CRM dla małej firmy | Fluxlab
+n8n cennik (13 wyśw.) | /wdrozenie-n8n-cena | 13 | 6,2 | 0 | 9589998e 2026-11-22 terminy i czas odpowiedzi | Wdrożenie n8n: ile kosztuje? Od 790 zł, licencja 0 zł
+
+Wniosek dla stratega (kandydaci [T] 26.11):
+- „pipedrive co to”: jedyna strona to porównanie HubSpot vs Pipedrive na poz. 9,4; tytuł nie odpowiada na pytanie „co to”, brak strony definicyjnej o Pipedrive.
+- „n8n cennik”: strona usługi wdrożenia (cena naszej usługi), a pytanie dotyczy cennika samego n8n; tytuł mówi „licencja 0 zł”, co częściowo odpowiada.
+- „najlepsze firmy do automatyzacji raportowania finansowego?”: 2/3 wyświetleń na /automatyzacja-raportowania (poz. 5,6), słowa „finansowe” brak w tytule.
+- „raportowanie wyników sprzedaży”: artykuł o błędach na poz. 7,9, temat zbieżny, tytuł o błędach, nie o samym raportowaniu.

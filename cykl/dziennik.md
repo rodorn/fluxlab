@@ -12666,3 +12666,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** zgłoszenie 25.11 16:33: /wlasny-crm, google-ads fluxcrm, fraza „program do obsługi klientów”, iPhone, 73 s od form_start do wysłania, potem /dziekuje; mail „[Reklama Google] Nowa diagnoza: Własny CRM dla firmy…” jest na Gmailu Pawła (16:33, kopia skiwojtner). Z10: „Doręczono do FL_strona (16:45)”. Linie Z9 i Z10 w cykl/plan-ruchu.md.
 **Dla Pawła:** odpowiedź na zgłoszenie z /wlasny-crm (michal.fidurski@gmail.com, opis „Norvit”, skala „Nie wiemy”, preferuje e-mail); raport_ruchu pokazuje je jako bez odpowiedzi. Mail jest na Gmailu, temat „[Reklama Google] Nowa diagnoza: Własny CRM dla firmy, pierwsza wersja w 3 tygodnie”.
 **Zostało otwarte:** FL_strona wdrożyła zmianę w d9f09fb3 (form_start po dotyku bez przesunięcia ≤10 px albo wpisie, dotyk jako dotyk_pola), od teraz lejek liczony po nowemu; Z11 od 18:40, Z12 od 20:40, Z13 od 22:40, Z14–Z18 w nocy i rano 26.11.
+
+## 2026-11-25 18:52
+**Kanał:** plan ruchu 25.11, Z11 (Google, strony dla zapytań-pytań). Pomiar, bez zmian treści.
+**Co zrobione:** dla czterech zapytań z GSC (28 dni, dane 27.10-23.11) ustalone strony, które Google pokazuje, z pozycją i datą ostatniej zmiany; plik dla stratega z kandydatami [T] na 26.11.
+**Ruch:** raport_ruchu, ostatnia doba: 1282 odsłony, 459 osób (+61% wobec średniej 796). Źródła: b2b-email 310, www.facebook.com 166, www.google.com 121, google-ads 102, fb-ads 87; YouTube 13 sesji. Lejek 7 dni: 2175 sesji → 28 form_start → 1 wysłane; czas pierwszej odpowiedzi na zgłoszenie z 16:33: 44 min.
+**Dowód:** cykl/z11-zapytania-strony-2026-11-25.txt. „najlepsze firmy do automatyzacji raportowania finansowego?” → /automatyzacja-raportowania 9 wyśw. poz. 5,6, /automatyzacja-procesow-biznesowych 3/3,0, /spis-stron 1/10,0; „raportowanie wyników sprzedaży” → najczestsze-bledy-w-raportowaniu-sprzedazy 10/7,9; „pipedrive co to” → hubspot-vs-pipedrive 11/9,4 (brak strony definicyjnej); „n8n cennik” → /wdrozenie-n8n-cena 13/6,2 (cena naszej usługi, nie cennik n8n). Wszędzie 0 kliknięć.
+**Dla Pawła:** 
+**Zostało otwarte:** Z12 od 20:40 (URL Inspection nowych adresów), Z13 od 22:40 (bilans dnia), Z14–Z18 w nocy i rano 26.11.
