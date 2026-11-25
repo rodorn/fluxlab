@@ -13,7 +13,7 @@ export default function PomiarFormularzy() {
   const sciezka = usePathname();
 
   useEffect(() => {
-    // form_start liczy dotyk pola albo wpisany znak. Sam fokus nie: 22.11
+    // form_start liczy dotknięcie pola bez przesunięcia albo wpisany znak. Sam fokus nie: 22.11
     // form_start z Androida z reklamy przyszedł w sekundzie wejścia, przed
     // odsłoną, a sesja wyszła po 5 s. Fokus bez dotyku i bez klawisza
     // zgłaszamy osobno (fokus_bez_dotyku), żeby było widać, jak często.
@@ -34,11 +34,34 @@ export default function PomiarFormularzy() {
       gaEvent("form_start", { form_id: id });
       zglosZdarzenie(kontaktowy(form) ? "form_start" : "narzedzie_start");
     };
+    // 25.11: pointerdown na polu przy starcie przewijania dawał form_start
+    // 0-1 s od wejścia (4 z 13 sesji). Sam dotyk to dotyk_pola; form_start
+    // dopiero po puszczeniu palca w promieniu 10 px (przewijanie kończy się
+    // pointercancel) albo po wpisanym znaku.
+    let dotykForm: HTMLFormElement | null = null;
+    let dotykX = 0;
+    let dotykY = 0;
+    let dotykZgloszony = false;
     const naDotyk = (e: PointerEvent) => {
       if (!e.isTrusted) return;
       ostatniDotyk = Date.now();
-      const form = pole(e)?.closest("form");
-      if (form) start(form);
+      const form = pole(e)?.closest("form") ?? null;
+      dotykForm = form;
+      dotykX = e.clientX;
+      dotykY = e.clientY;
+      if (form && !dotykZgloszony) {
+        dotykZgloszony = true;
+        zglosZdarzenie("dotyk_pola");
+      }
+    };
+    const naPuszczenie = (e: PointerEvent) => {
+      if (!e.isTrusted || !dotykForm) return;
+      const form = dotykForm;
+      dotykForm = null;
+      if (Math.hypot(e.clientX - dotykX, e.clientY - dotykY) <= 10) start(form);
+    };
+    const naAnulowanie = () => {
+      dotykForm = null;
     };
     const naKlawisz = (e: KeyboardEvent) => {
       if (e.isTrusted) ostatniDotyk = Date.now();
@@ -56,6 +79,8 @@ export default function PomiarFormularzy() {
       zglosZdarzenie("fokus_bez_dotyku");
     };
     document.addEventListener("pointerdown", naDotyk, true);
+    document.addEventListener("pointerup", naPuszczenie, true);
+    document.addEventListener("pointercancel", naAnulowanie, true);
     document.addEventListener("keydown", naKlawisz, true);
     document.addEventListener("input", naWpis, true);
     document.addEventListener("focusin", naFokus);
@@ -80,6 +105,8 @@ export default function PomiarFormularzy() {
     return () => {
       document.removeEventListener("focusin", naFokus);
       document.removeEventListener("pointerdown", naDotyk, true);
+      document.removeEventListener("pointerup", naPuszczenie, true);
+      document.removeEventListener("pointercancel", naAnulowanie, true);
       document.removeEventListener("keydown", naKlawisz, true);
       document.removeEventListener("input", naWpis, true);
       document.removeEventListener("click", naKlik, true);
