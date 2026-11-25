@@ -12712,3 +12712,11 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** cykl/pomiar-kanalow.py 22:43; bilans z wiersze()+odsiew() kalendarzowo.
 **Dla Pawła:**
 **Zostało otwarte:** Z14 (IndexNow dnia) od 26.11 00:40, Z15 od 02:40, Z16 i Z17 od 04:40, Z18 od 06:40.
+
+## 2026-11-26 00:45
+**Kanał:** Z14 planu (IndexNow dnia, pomiar).
+**Co zrobione:** sprawdzone zmiany w app od 25.11 08:40: brak, więc nic do zgłoszenia w IndexNow; mapa witryny ma 279 adresów, jak 25.11.
+**Ruch:** raport_ruchu.py: ostatnia doba 1045 odsłon, 346 osób; źródła b2b-email 224, www.facebook.com 173, www.google.com 104, google-ads 82, m.facebook.com 68; YouTube 23 sesje, Threads 2, LinkedIn 0; uruchomienia narzędzi 2.
+**Dowód:** `git log --since='2026-11-25 08:40' -- app next.config.ts` pusty; `curl https://fluxlab.pl/sitemap.xml | grep -c <loc>` = 279.
+**Dla Pawła:**
+**Zostało otwarte:** czekam na Z15 o 02:40; Z16 i Z17 od 04:40, Z18 od 06:40.
