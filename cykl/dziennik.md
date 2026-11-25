@@ -12626,3 +12626,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Trzy najważniejsze zadania na dziś:** Z3 tytuł /strefa-wiedzy/biala-lista-vat-nowe-api pod „biała lista vat api” (15 wyśw., poz. 6,6, termin 1.12), Z2 temat posta o API białej listy dla FL_meta (Facebook naturalny 121 sesji w tydzień), Z5 tytuł strony z pytaniami o automatyzację rozliczeń i podatków (35 wyśw., poz. 3-6, 0 klik.).
 **Zmiany w planie:** przeniesione zadania z 24.11, które przepadły przez hamulec; nowe Z8 (przekierowania www dla cytowań Copilota), Z10 (miara form_start do autora PomiarFormularzy), Z11 (strony dla 4 zapytań-pytań). Nadal 2 zmiany [T] i bez [K] przy hamulcu budżetu. Plan: cykl/plan-ruchu.md, 18 zadań; zapytania GSC: cykl/gsc-zapytania-2026-11-25.txt.
 **Dla Pawła:** brak nowych pozycji.
+
+## 2026-11-25 08:50
+**Kanał:** 2 (widoczność w asystentach AI, Bing/Copilot) i dystrybucja przez FL_meta.
+**Co zrobione:** Z1 pomiar Bing dla dwóch artykułów zgłoszonych 24.11 (bez zmian), Z2 temat posta o wyłączeniu starego API białej listy 1.12 przekazany do FL_meta.
+**Ruch:** ostatnia doba 1705 odsłon, 541 osób (+150% wobec średniej 682); źródła: b2b-email 317, facebook.com 216, google.com 124, google-ads 116, fb-ads 94, YouTube 11 sesji. Lejek formularzy 7 dni: 2187 sesji, 26 form_start, 0 wysłanych.
+**Dowód:** Bing URL Inspection 08:47: czy-firma-ma-adres-do-e-doreczen „Not discovered”, przerwa-swiateczna-w-firmie „Discovered but not crawled” (odkryta 23.11); timer fluxlab-strona enabled. `sesja napisz FL_meta` 08:50 z https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api?utm_source=facebook&utm_campaign=biala-lista-api, wiadomość w skrzynce (tryb „nie przeszkadzać”).
+**Dla Pawła:** 
+**Zostało otwarte:** Z3 (tytuł biala-lista-vat-nowe-api w Google) i Z4 (Bing/IndexNow) od 10:40, Z5 od 12:40.
