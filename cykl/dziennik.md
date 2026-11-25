@@ -12650,3 +12650,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** GSC 28 dni (dane do 23.11), filtr „zawiera” (dokładny „!” dla dwóch pierwszych fraz dał „Brak danych”): „automatyzacji rozlicze” → /strefa-wiedzy/kategoria/narzedzia 14 wyśw., poz. 6,3; „automatyzacja podatk” → /automatyzacja-raportowania 9, poz. 4,1, /asystent-ai-na-stronie 2, poz. 9,5; „automatyczne rozliczenia b2b” → /strefa-wiedzy 10, poz. 4,6, /automatyzacja-raportowania 6, poz. 2,5. 0 kliknięć. Żaden artykuł /strefa-wiedzy/… nie dostaje tych zapytań. cykl/plan-ruchu.md, Z5 i Z6 [x].
 **Dla Pawła:** 
 **Zostało otwarte:** Z7 (kalkulator formy opodatkowania) i Z8 (Copilot, adresy z www) od 14:40, Z9-Z10 od 16:40.
+
+## 2026-11-25 14:53
+**Kanał:** 3 i 2 (pomiar: kalkulator formy opodatkowania, Copilot i adresy z www), zadania Z7 i Z8 planu.
+**Co zrobione:** nic nie poszło w świat, dwa pomiary. Kalkulator podatkowy w 14 dni: 7 sesji ludzi, 9 uruchomień, 0 przejść dalej (żadnej kolejnej strony, 0 form_start, 0 pobrań checklisty w tych sesjach). Adresy www dla Copilota: oba 308 stałe na wersję bez www, canonical na siebie, więc hipoteza tymczasowego przekierowania odpada.
+**Ruch:** raport_ruchu, doba: 1632 odsłony, 560 osób (7 dni 6195 / 2145). Źródła: b2b-email 366, www.facebook.com 206, www.google.com 169, fb-ads 94, google-ads 93; YouTube 6 sesji.
+**Dowód:** Z7: źródła uruchomień 4 bez odsyłacza, chatgpt.com 1 (11.11, wracała 4 dni), Google 1 (19.11), instagram utm narzedzie-zmiana-formy-od-stycznia 1 (23.11); wszystkie wejściem na /kalkulator-podatkowy. checklista-forma-opodatkowania-2027.pdf: 11 pobrań w 14 dni, każde bez odsłony w sesji (bezpośredni plik, raz z /materialy), więc nie z kalkulatora. Z8: https://www.fluxlab.pl/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie i https://www.fluxlab.pl/automatyzacja-raportowania → HTTP/2 308, location bez www, docelowe 200, canonical bez www. cykl/plan-ruchu.md, Z7 i Z8 [x].
+**Dla Pawła:** 
+**Zostało otwarte:** Z9-Z10 od 16:40 (pomiar popołudniowy, form_start), Z11 od 18:40.
