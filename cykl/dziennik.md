@@ -12634,3 +12634,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** Bing URL Inspection 08:47: czy-firma-ma-adres-do-e-doreczen „Not discovered”, przerwa-swiateczna-w-firmie „Discovered but not crawled” (odkryta 23.11); timer fluxlab-strona enabled. `sesja napisz FL_meta` 08:50 z https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api?utm_source=facebook&utm_campaign=biala-lista-api, wiadomość w skrzynce (tryb „nie przeszkadzać”).
 **Dla Pawła:** 
 **Zostało otwarte:** Z3 (tytuł biala-lista-vat-nowe-api w Google) i Z4 (Bing/IndexNow) od 10:40, Z5 od 12:40.
+
+## 2026-11-25 10:47
+**Kanał:** 3 (KSeF i obowiązki firmowe jako magnes, Google), plan ruchu Z3 i Z4.
+**Co zrobione:** Z3 pominięte, bo tytuł artykułu o API białej listy na produkcji ma już „API” i termin 1 grudnia 2026, a opis podaje, co przestaje działać; Z4 pominięte (brak zmiany). Zapytania strony zapisane do planu.
+**Ruch:** po odsiewie 24 h 172 ludzi (7 dni 717); źródła 24 h: bez odsyłacza 67, fb-ads 28, google-ads 19, Facebook naturalny 26 (www 17, m. 9), Google organiczny 15, chatgpt płatne 11, chatgpt.com 3, useme 2, fb 2, b2b 1, Threads 1, zleca 1.
+**Dowód:** `curl` na https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api: `<title>Biała lista VAT: nowy adres API do 1 grudnia 2026 | Fluxlab`. GSC 28 dni dla strony: 10 klik./297 wyśw., CTR 3,4%, poz. 4,6; „biała lista vat api” 0/15 poz. 6,6, „wykaz podatników vat api” 0/3, „api mf” 0/3, „api wykazu podatników vat” 0/2 poz. 9,5.
+**Dla Pawła:** 
+**Zostało otwarte:** Z5 (tytuł strony dla pytań o automatyzację rozliczeń) i Z6 od 12:40, Z7-Z8 od 14:40.
