@@ -12674,3 +12674,11 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** cykl/z11-zapytania-strony-2026-11-25.txt. „najlepsze firmy do automatyzacji raportowania finansowego?” → /automatyzacja-raportowania 9 wyśw. poz. 5,6, /automatyzacja-procesow-biznesowych 3/3,0, /spis-stron 1/10,0; „raportowanie wyników sprzedaży” → najczestsze-bledy-w-raportowaniu-sprzedazy 10/7,9; „pipedrive co to” → hubspot-vs-pipedrive 11/9,4 (brak strony definicyjnej); „n8n cennik” → /wdrozenie-n8n-cena 13/6,2 (cena naszej usługi, nie cennik n8n). Wszędzie 0 kliknięć.
 **Dla Pawła:** 
 **Zostało otwarte:** Z12 od 20:40 (URL Inspection nowych adresów), Z13 od 22:40 (bilans dnia), Z14–Z18 w nocy i rano 26.11.
+
+## 2026-11-25 20:52
+**Kanał:** plan ruchu 25.11, Z12 (Google, stan nowych adresów). Pomiar, bez zmian treści.
+**Co zrobione:** GSC „Sprawdź dowolny URL” bez prośby o indeksowanie: wszystkie trzy nowe adresy są w indeksie Google, więc wiadomość do FL_SEO nie była potrzebna.
+**Ruch:** raport_ruchu, ostatnia doba: 1209 odsłon, 423 osoby (+45% wobec średniej 833). Źródła: b2b-email 267, www.facebook.com 136, www.google.com 115, fb-ads 92, google-ads 82; YouTube 17 sesji, Threads 2, LinkedIn 0, X 0. Uruchomienia narzędzi 2. Lejek 7 dni: 2209 sesji → 29 form_start → 1 wysłane.
+**Dowód:** „Adres URL znajduje się w Google”: /strefa-wiedzy/przerwa-swiateczna-w-firmie (ostatnie skanowanie 24.11 07:07), /strefa-wiedzy/e-doreczenia-w-firmie (25.11 07:07), /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen (15.11 17:37). Linia Z12 w cykl/plan-ruchu.md.
+**Dla Pawła:** 
+**Zostało otwarte:** Z13 od 22:40 (bilans dnia), Z14–Z18 w nocy i rano 26.11.
