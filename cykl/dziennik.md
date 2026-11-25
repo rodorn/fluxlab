@@ -12682,3 +12682,33 @@ Ruch +41% wobec 22.11, przyrost z fb-ads (nowe kampanie automatyzacje i automaty
 **Dowód:** „Adres URL znajduje się w Google”: /strefa-wiedzy/przerwa-swiateczna-w-firmie (ostatnie skanowanie 24.11 07:07), /strefa-wiedzy/e-doreczenia-w-firmie (25.11 07:07), /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen (15.11 17:37). Linia Z12 w cykl/plan-ruchu.md.
 **Dla Pawła:** 
 **Zostało otwarte:** Z13 od 22:40 (bilans dnia), Z14–Z18 w nocy i rano 26.11.
+
+## 2026-11-25 22:50
+**Kanał:** plan ruchu Z13 (pomiar, bilans dnia).
+**Co zrobione:** bilans 25.11 policzony kalendarzowo w układzie bilansu 23.11; nic nie poszło w świat (zadanie pomiarowe).
+**Ruch:** pomiar-kanalow 24 h: ludzie 100 (fb-ads 21, google-ads 20, www.facebook.com 15, bez odsyłacza 13, m.facebook.com 8, www.google.com 5, youtube 5, b2b 4, useme 3). raport_ruchu, ostatnia doba: 1107 odsłon, 378 osób; źródła b2b-email 236, www.facebook.com 178, www.google.com 115, m.facebook.com 83, google-ads 82; uruchomienia narzędzi 2; lejek 7 dni: 2234 sesji → 29 form_start → 1 zapytanie.
+
+Bilans 25.11 (kalendarzowo, do 22:43, po odsiewie, bez /mail/, b2b-email, /grupa-ksef, par i serii testowych; źródło z pierwszej odsłony):
+
+| Kanał | 25.11 | 24.11 (do 22:43) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 92 / 121 | 166 / 206 |
+| fb-ads | 18 (automatyzacje 16 → /tansze-automatyzacje, strony-www 2) | 21 |
+| fb (kampanie z id) | 1 | 2 |
+| www.google.com | 3 (/ 2, /numer-ksef 1) | 15 |
+| google-ads | 20 (e-doreczenia 8 → /e-doreczenia-integracja, fluxcrm 5 → /wlasny-crm, 24472439947 3 i 24471841621 1 → /ksef-integracja-erp, n8n-procesy 2 → /wdrozenie-n8n-cena, strony-www 1) | 19 |
+| chatgpt płatne / naturalne | 0 / 1 (/kalkulator-podatkowy) | 12 (ksef-test2 11) / 4 |
+| Facebook naturalny / Instagram | 19 (www 14, m 5) / 2 (bio, rolka-dluznik-znika-z-krs) | 22 (www 15, m 5, profil 2) / 0 |
+| YouTube / Threads / LinkedIn | 5 / 2 / 0 | 4 / 1 / 0 |
+| Bing / DuckDuckGo | 0 / 0 | 1 / 0 |
+| b2b (b2b-firmy) / useme / zleca | 4 / 3 / 1 | 3 / 1 / 0 |
+| Bez odsyłacza | 13 | 61 |
+| Uruchomienia narzędzi | 4 (skan /e-doreczenia-integracja 10:30 z google-ads, /numer-ksef 11:22 z Google, kalkulator-podatkowy 20:01 z chatgpt.com, /czat-ai-na-strone 20:02 bez odsyłacza) | 6 |
+| Pobrania PDF | 11 surowo, z tego 7 w jednej sekundzie 02:31 z /materialy (skaner); realnie 4 bez sesji (schemat-integracji-crm-erp 2, checklista-forma-opodatkowania-2027 1, checklista-koniec-roku-jdg 1) | 1 |
+| form_start | 5 (/ksef-integracja fb 06:50, /e-doreczenia-integracja google-ads 10:30, /tansze-automatyzacje fb-ads 14:51, /wlasny-crm google-ads 16:32, /kontakt bez odsyłacza 20:06) | 12 (stara miara) |
+| lead_* | 1 (lead_krotki 16:33 /wlasny-crm, google-ads fluxcrm) | 0 |
+
+Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacza (13 wobec 61), z Google naturalnego (3 wobec 15) i z płatnego chatgpt (kampania ksef-test2 0 wobec 11). Płatne kanały stoją: google-ads 20, fb-ads 18. form_start od d9f09fb3 liczony po nowemu (dotyk bez przesunięcia albo wpis), więc 5 nie porównuje się z 12 z 24.11. Formularz widziało 49 odsłon. Jedno zgłoszenie dnia z reklamy Google fluxcrm. Sesja 20:05 bez odsyłacza kliknęła telefon i WhatsApp na / i zaczęła formularz na /kontakt, bez wysyłki.
+**Dowód:** cykl/pomiar-kanalow.py 22:43; bilans z wiersze()+odsiew() kalendarzowo.
+**Dla Pawła:**
+**Zostało otwarte:** Z14 (IndexNow dnia) od 26.11 00:40, Z15 od 02:40, Z16 i Z17 od 04:40, Z18 od 06:40.
