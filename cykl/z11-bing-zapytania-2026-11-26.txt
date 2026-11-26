@@ -1,0 +1,76 @@
+Bing Webmaster, Search Performance, 30 D (27.10-24.11.2026, dane do 24.11), odczyt 26.11.2026 18:5x
+Suma 30 D: 16 kliknięć, 2,1 tys. wyświetleń, CTR 0,75% (suma obejmuje też Chat i inne pionowe; Keywords/Pages tylko Web)
+
+## Keywords (50 z 166, sortowane po wyświetleniach malejąco): zapytanie, wyśw., klik., CTR, śr. pozycja
+czyj to nip	18	0	0.00%	6.22
+sprawdź nip	11	0	0.00%	9.45
+fluxlab	5	1	20.00%	6.00
+sprawdź numer ksef	4	1	25.00%	8.75
+flux lab paweł iwanek	4	1	25.00%	1.50
+audyt faktur kurierskich polska narzędzie odzyskiwanie nadpłat za przesyłki billing audit	4	0	0.00%	2.00
+sprawdzenie czy nip jest czynny	3	0	0.00%	8.67
+ksef błąd 440	3	0	0.00%	9.67
+ub00101406	3	0	0.00%	8.00
+wg jakiej daty odliczyć vat z faktury nksef	3	0	0.00%	10.00
+nip 8761349335	3	0	0.00%	10.00
+sprawdź status nip	3	0	0.00%	10.00
+przychód 200000 z jdg porównaj podatek skala, liniowy oraz ryczałt 14%. brak kosztów	3	0	0.00%	10.00
+czy faktury rr poza ksef?	2	0	0.00%	10.00
+opinie firmy fluxlab.pl	2	0	0.00%	1.50
+nip5252843309	2	1	50.00%	2.00
+status nip czy czynny	2	0	0.00%	9.00
+zakład w płocku (nazwa firmy niepodana w tekście) nip	2	0	0.00%	6.00
+mercedes e 220 d 2017 ile moye kosztowac przebieg 235000	2	0	0.00%	2.00
+audyt faktur transportowych polska firma odzyskuje nadpłaty kurier prowizja success fee	2	0	0.00%	8.00
+nip 774 330 85 78	2	1	50.00%	6.00
+sprawadzam nip	2	0	0.00%	9.00
+czy faktura w ksef może mieć oznaczenie bfk	2	0	0.00%	10.00
+kogo nip	2	0	0.00%	10.00
+sprawdź nip czy jest czynny	2	0	0.00%	10.00
+nip 6782631521 czy firma jest podatnikiem	2	0	0.00%	10.00
+nip 5782553559	2	0	0.00%	10.00
+kiedy odliczenie vat z faktury z ksef gdzie odbiór towaru w następnym miesiącu	2	0	0.00%	10.00
+skłądka zdrowotna w jdg jak liczyć	2	0	0.00%	5.00
+nip 5321664982	2	0	0.00%	7.00
+nip 7722423423 czy punkt działa	2	0	0.00%	10.00
+sprawdzenie faktury ksef numer	2	0	0.00%	9.00
+https://fornivo.pl/ nip firmy jaki jest	2	0	0.00%	8.00
+tomasz bobreniuk nip	2	0	0.00%	10.00
+prawo do odliczenia vat z faktury z ksef, w którym miesiącu jest dostarczenie faktury?	2	0	0.00%	10.00
+numer nip pl9930672307	2	0	0.00%	10.00
+sprawdzenie faktury w ksef po numerze	2	0	0.00%	10.00
+testowanie s.a. nr nip poznań 8592265855	2	0	0.00%	9.00
+fluxlab analiza lokalizacji źródła danych konkurencja gus	2	0	0.00%	1.50
+jak spółka złoży zaw-fa to co potem?	1	0	0.00%	1.00
+kalkulator jdg ryczałt ws ipbox	1	1	100.00%	2.00
+nip 8882494837	1	0	0.00%	7.00
+polska jdg pit liniowy ryczałt składki zus prostota	1	0	0.00%	4.00
+texture nip podatkowa firma	1	0	0.00%	7.00
+poland ryczałt 12% samochód firmowy koszty vat 2026	1	0	0.00%	2.00
+5631815783 nip	1	1	100.00%	10.00
+medik8 nip polska	1	0	0.00%	5.00
+porównanie kosztów utrzymania bmw e91 320d m47 vs seat leon mk2 1.6 mpi	1	0	0.00%	8.00
+2027 faktury do paragonu wysylamy do ksef.	1	0	0.00%	4.00
+nip 9840180405	1	0	0.00%	10.00
+
+## Pages (20 z 26): adres, wyśw., klik., CTR, śr. pozycja
+https://fluxlab.pl/sprawdzenie-nip	1.8K	10	0.55%	7.62
+https://fluxlab.pl/numer-ksef	105	1	0.95%	6.92
+https://fluxlab.pl/kalkulator-podatkowy	35	1	2.86%	6.26
+https://fluxlab.pl/strefa-wiedzy/proforma-ksef	15	0	0.00%	6.93
+https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef	14	1	7.14%	9.07
+https://fluxlab.pl/kalkulator-kosztow	11	0	0.00%	60.55
+https://fluxlab.pl/strefa-wiedzy/oznaczenia-jpk-ksef	9	0	0.00%	8.00
+https://fluxlab.pl/audyt-kurierski	6	0	0.00%	4.00
+https://fluxlab.pl/strefa-wiedzy/faktura-wewnetrzna-ksef	6	0	0.00%	3.50
+https://fluxlab.pl/	4	2	50.00%	2.75
+https://fluxlab.pl/strefa-wiedzy/numeracja-faktur-ksef-2027	3	0	0.00%	9.67
+https://fluxlab.pl/dobor-samochodu	2	0	0.00%	4.00
+https://fluxlab.pl/strefa-wiedzy/jak-liczyc-zdrowotna-jdg	2	0	0.00%	5.00
+https://fluxlab.pl/strefa-wiedzy/samofakturowanie-ksef	2	0	0.00%	6.00
+https://fluxlab.pl/dane-z-badan	1	0	0.00%	2.00
+https://fluxlab.pl/analiza-lokalizacji	1	0	0.00%	1.00
+https://fluxlab.pl/strefa-wiedzy/faktura-do-paragonu-ksef	1	0	0.00%	4.00
+https://fluxlab.pl/automatyzacja-crm-leasing	1	0	0.00%	2.00
+https://fluxlab.pl/strefa-wiedzy/skala-czy-liniowy-jdg	1	0	0.00%	2.00
+https://fluxlab.pl/strefa-wiedzy/ryczalt-czy-liniowy	1	0	0.00%	7.00

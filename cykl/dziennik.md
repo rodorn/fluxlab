@@ -12794,3 +12794,11 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** Bing „URLs submitted today” 2 → 3 dla https://fluxlab.pl/sprawdz-kontrahenta.
 **Dla Pawła:**
 **Zostało otwarte:** Z11-Z12 od 18:40, Z13 od 22:40, Z14-Z18 w nocy.
+
+## 2026-11-26 18:56
+**Kanał:** Bing i narzędzie NIP (plan ruchu Z11, Z12, pomiary).
+**Co zrobione:** Z11: zapytania i strony, na które Bing pokazuje fluxlab.pl w 30 dniach, zapisane do pliku; Z12: linia bazowa narzędzia NIP przed efektem linku z artykułu o białej liście.
+**Ruch:** raport_ruchu, ostatnia doba: 982 odsłony, 306 osób (+8% wobec średniej 907); źródła b2b-email 229, www.facebook.com 164, google-ads 96, b2b 47, m.facebook.com 41; YouTube 26 sesji.
+**Dowód:** cykl/z11-bing-zapytania-2026-11-26.txt (dane 27.10-24.11: 16 klik., 2,1 tys. wyśw., 166 zapytań); /sprawdzenie-nip 1,8 tys. wyśw., 10 klik., poz. 7,6; zapytania o NIP to 71 ze 128 wyśw. w top 50 („czyj to nip” 18, poz. 6,2; „sprawdź nip” 11, poz. 9,5); /numer-ksef 105 wyśw., /kalkulator-podatkowy 35. Z12: 14 dni 3 sesje na /sprawdzenie-nip (Threads 2, bez odsyłacza 1), 0 uruchomień skanu, 0 kliknięć po wyniku; po Z2 0 wejść z utm_content=biala-lista-vat-nowe-api (artykuł 2 sesje z Google).
+**Dla Pawła:**
+**Zostało otwarte:** Z13 bilans dnia od 22:40; Z14-Z18 w nocy i rano 27.11. Dla stratega: Bing daje /sprawdzenie-nip ponad 1,8 tys. wyświetleń przy CTR 0,55%, a narzędzie ma 0 uruchomień w 14 dniach, więc tytuł i opis /sprawdzenie-nip pod „czyj to nip” i „sprawdź nip” to kandydat [T] na 27.11.
