@@ -12720,3 +12720,11 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** `git log --since='2026-11-25 08:40' -- app next.config.ts` pusty; `curl https://fluxlab.pl/sitemap.xml | grep -c <loc>` = 279.
 **Dla Pawła:**
 **Zostało otwarte:** czekam na Z15 o 02:40; Z16 i Z17 od 04:40, Z18 od 06:40.
+
+## 2026-11-26 02:47
+**Kanał:** Z15 planu (Google, efekt tytułów z 21-22.11, pomiar).
+**Co zrobione:** sprawdzone w Search Console, że dane sięgają tylko do 23.11, więc po zmianach tytułów z 21.11 są 2 dni, a po 22.11 jeden; porównanie za wcześnie, do przeniesienia na plan 27.11.
+**Ruch:** pomiar-kanalow 24 h po odsiewie: 90 ludzi (google-ads 20, fb-ads 16, Facebook naturalny 19, bez odsyłacza 13, YouTube 5, b2b 4, Google 4, useme 3, Instagram 2, Threads 2, chatgpt.com 1); 7 dni 763. raport_ruchu: doba 1028 odsłon, 339 osób; źródła b2b-email 218, www.facebook.com 173, www.google.com 104, google-ads 82, m.facebook.com 68; uruchomienia narzędzi 2.
+**Dowód:** GSC filtr page=!…/automatyzacja-vs-zatrudnienie, 28 dni, zakładka „Dni”: ostatni dzień 23 lis 2026 (1 wyśw., poz. 2,0); 21.11 3 wyśw. poz. 2,3, 22.11 2 wyśw. poz. 3,0, 0 kliknięć od 12.11.
+**Dla Pawła:**
+**Zostało otwarte:** czekam na Z16 i Z17 o 04:40, Z18 o 06:40; porównanie Z15 dla stratega 27.11.
