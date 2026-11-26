@@ -8,15 +8,15 @@ import NazwaNarzedzia from "@/components/NazwaNarzedzia";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sprawdź kontrahenta przed przelewem, za darmo | Fluxlab",
+  title: "Jak sprawdzić firmę przed przelewem? Za darmo | Fluxlab",
   description:
-    "Zanim wyślesz zaliczkę, sprawdź firmę. Werdykt z wykazu VAT, KRS i danych domeny, w tym test, czy numer konta figuruje w wykazie. Za darmo.",
+    "Sprawdź status VAT, odpis KRS i czy konto jest na białej liście. Przelew ponad 15 tys. zł na konto spoza wykazu to ryzyko. Wpisz NIP, werdykt za darmo.",
   alternates: { canonical: "/sprawdz-kontrahenta" },
   openGraph: {
     title:
-      "Sprawdź kontrahenta przed przelewem, raport ryzyka za darmo | Fluxlab",
+      "Jak sprawdzić firmę przed przelewem? Za darmo | Fluxlab",
     description:
-      "Werdykt o firmie z wykazu VAT, KRS i danych domeny. Sprawdzamy też, czy konto do przelewu należy do tej firmy.",
+      "Sprawdź status VAT, odpis KRS i czy konto jest na białej liście. Przelew ponad 15 tys. zł na konto spoza wykazu to ryzyko. Wpisz NIP, werdykt za darmo.",
     locale: "pl_PL",
     type: "website",
     images: [
