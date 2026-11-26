@@ -10,8 +10,9 @@ export default function StopkaCta() {
   const sciezka = usePathname();
   if (BEZ.has(sciezka)) return null;
   return (
-    <section aria-label="Kontakt" className="mb-10 bg-accent-solid py-16 text-white lg:py-24">
-      <div className="container-wide text-center">
+    <section aria-label="Kontakt" className="stopka-cta relative isolate mb-10 overflow-hidden py-16 text-white lg:py-24">
+      <div aria-hidden="true" className="stopka-cta-swiatlo" />
+      <div className="container-wide relative text-center">
         <p className="mx-auto max-w-2xl text-balance text-3xl font-bold leading-tight tracking-tighter lg:text-5xl">
           Napisz, czego potrzebujesz
         </p>

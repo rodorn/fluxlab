@@ -1955,3 +1955,41 @@ form[data-obszyta] .btn-primary::after {
     display: none;
   }
 }
+
+/* Pas CTA nad stopką: gradient, miękkie światła i siatka zamiast płaskiego koloru. */
+.stopka-cta {
+  background:
+    radial-gradient(60% 90% at 12% 0%, rgba(167, 139, 250, 0.55), transparent 60%),
+    radial-gradient(55% 90% at 92% 100%, rgba(56, 189, 248, 0.38), transparent 60%),
+    linear-gradient(135deg, #4338ca 0%, #4f46e5 45%, #6d28d9 100%);
+}
+.stopka-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(70% 100% at 50% 50%, #000 20%, transparent 100%);
+  mask-image: radial-gradient(70% 100% at 50% 50%, #000 20%, transparent 100%);
+}
+.stopka-cta-swiatlo {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: -40%;
+  width: 70%;
+  height: 120%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.22), transparent);
+  animation: stopka-cta-dryf 14s ease-in-out infinite alternate;
+}
+@keyframes stopka-cta-dryf {
+  from { transform: translateX(-62%); opacity: 0.7; }
+  to { transform: translateX(-38%); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stopka-cta-swiatlo { animation: none; }
+}
