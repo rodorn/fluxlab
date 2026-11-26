@@ -213,12 +213,8 @@ const nextConfig: NextConfig = {
   // Binarka Chromium jest czytana z dysku, a nie importowana, więc trzeba ją
   // dołączyć do funkcji wprost.
   outputFileTracingIncludes: {
-    "/api/wcag-raport/automat": [
-      "./node_modules/@sparticuz/chromium/bin/**",
-    ],
-    "/api/firma-raport/automat": [
-      "./node_modules/@sparticuz/chromium/bin/**",
-    ],
+    "/api/wcag-raport/automat": ["./node_modules/@sparticuz/chromium/bin/**"],
+    "/api/firma-raport/automat": ["./node_modules/@sparticuz/chromium/bin/**"],
     "/api/audyt-www": [
       "./node_modules/@sparticuz/chromium/bin/**",
       // Lighthouse czyta tłumaczenia, dane o skryptach zewnętrznych i
@@ -325,6 +321,12 @@ const nextConfig: NextConfig = {
       {
         source: "/kalkulator-podatkowy:reszta([^/?#][^/]*)",
         destination: "/kalkulator-podatkowy",
+        permanent: true,
+      },
+      // 24.11 /sprawdzenie-nipmniej, 26.11 /sprawdzenie-nipdokumentów z Facebooka: 404.
+      {
+        source: "/sprawdzenie-nip:reszta([^/?#][^/]*)",
+        destination: "/sprawdzenie-nip",
         permanent: true,
       },
       // Filmy maja teraz pelne artykuly w strefie wiedzy (kategoria Wideo);
