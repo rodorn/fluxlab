@@ -12742,3 +12742,21 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Trzy najważniejsze zadania na dziś:** Z2 link z artykułu o API białej listy (9 sesji z Google w tydzień, termin 1.12) do /sprawdzenie-nip, które ma 0 uruchomień w 7 dni; Z1 pomiar, które strony dostają 6 zapytań z wyświetleniami bez kliknięć, i na jego podstawie zmiany tytułów Z6 i Z8; Z4 tytuł artykułu o raportowaniu sprzedaży pod „raportowanie wyników sprzedaży” (10 wyśw., poz. 7,9).
 **Zmiany w planie:** hamulec budżetu zdjęty (26.11 „utrzymaj”, 9% tygodnia), więc 4 zmiany [T] zamiast 2; zmiany wybiera pomiar Z1, bo 25.11 dwie zgadnięte strony okazały się stroną reklam albo już poprawione. Nowe pomiary: Z11 zapytania Binga (135 wyśw. w tydzień bez wiedzy, na co), Z12 linia bazowa narzędzia NIP przed i po Z2. Temat FL_meta z artykułów cytowanych przez Copilota (Z7). Bez [K] (kalendarz 30.11), bez [O] (outreach zatrzymany 19.11). Plan: cykl/plan-ruchu.md, 18 zadań.
 **Dla Pawła:** brak nowych pozycji.
+
+## 2026-11-26 06:45
+**Kanał:** brak, czekam na Z1 o 08:40 (plan 26.11: najwcześniejsze zadania Z1 i Z2 od 08:40, Z15-Z18 z 27.11).
+**Co zrobione:** nic nie poszło w świat, bo plan nie pozwala brać zadań przed ich godziną.
+**Ruch:** pomiar-kanalow 24 h: 88 ludzi, 117 odsłon; google-ads 19, fb-ads 15, Facebook naturalny 19 (www 14, m. 5), bez odsyłacza 13, YouTube 5, b2b 4, Google organiczny 4, useme 3, Instagram 2, Threads 2, zleca.pl 1, chatgpt.com 1; 7 dni 761 ludzi. Lejek 7 dni (raport_ruchu): 2223 sesji, 29 form_start, 1 zapytanie.
+**Dowód:** cykl/plan-ruchu.md z 26.11 06:21, wszystkie zadania „- [ ]”, pierwsze od 08:40.
+**Dla Pawła:**
+**Zostało otwarte:** Z1 i Z2 od 08:40, kolejne od 10:40.
+
+<!-- WYSLANO 2026-11-26 07:10 -->
+
+## 2026-11-26 08:58
+**Kanał:** 3 i 2 (Google → narzędzie NIP), plan ruchu Z1 i Z2.
+**Co zrobione:** artykuł /strefa-wiedzy/biala-lista-vat-nowe-api (poz. 4,6, 9 sesji z Google w 7 dni) linkuje teraz pod pierwszą sekcją do /sprawdzenie-nip z utm_content=biala-lista-vat-nowe-api; Z1 wskazało /sprawdz-kontrahenta jako stronę dla Z6, dla Z8 brak drugiej kwalifikującej się strony.
+**Ruch:** raport_ruchu, doba: 1038 odsłon, 344 osoby (7 dni 6707 / 2260). Źródła: b2b-email 235 (piksel, nie ludzie), www.facebook.com 173, www.google.com 107, google-ads 84, m.facebook.com 68; YouTube 22 sesje, Threads 3. Uruchomienia narzędzi w dobie: 2.
+**Dowód:** commit ff3992c3, na produkcji 1 link `sprawdzenie-nip?utm_source=fluxlab`, zrzut telefon-test 390 px z linkiem pod sekcją, IndexNow Yandex i Naver 200. Plik cykl/z1-zapytania-strony-2026-11-26.txt: „jak sprawdzić firmę przed przelewem” → /sprawdz-kontrahenta 18 wyśw. poz. 11,9; „raportowanie produkcji” 9 i „automatyzacja raportów i przepływu informacji” 6 → /automatyzacja-raportowania (reklamy); „systemy bilingowe” 8 i „automatyczne przypisywanie wpłat” 6 → indeks /strefa-wiedzy; „wykrywanie upustów” 7 → /analiza-lokalizacji (temat nie pasuje). Timer fluxlab-strona enabled.
+**Dla Pawła:** 
+**Zostało otwarte:** Z3 (Bing dla Z2) i Z4 od 10:40, Z5-Z6 od 12:40.
