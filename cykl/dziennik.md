@@ -12760,3 +12760,11 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** commit ff3992c3, na produkcji 1 link `sprawdzenie-nip?utm_source=fluxlab`, zrzut telefon-test 390 px z linkiem pod sekcją, IndexNow Yandex i Naver 200. Plik cykl/z1-zapytania-strony-2026-11-26.txt: „jak sprawdzić firmę przed przelewem” → /sprawdz-kontrahenta 18 wyśw. poz. 11,9; „raportowanie produkcji” 9 i „automatyzacja raportów i przepływu informacji” 6 → /automatyzacja-raportowania (reklamy); „systemy bilingowe” 8 i „automatyczne przypisywanie wpłat” 6 → indeks /strefa-wiedzy; „wykrywanie upustów” 7 → /analiza-lokalizacji (temat nie pasuje). Timer fluxlab-strona enabled.
 **Dla Pawła:** 
 **Zostało otwarte:** Z3 (Bing dla Z2) i Z4 od 10:40, Z5-Z6 od 12:40.
+
+## 2026-11-26 10:46
+**Kanał:** 2/Google i Bing (plan ruchu Z3, Z4).
+**Co zrobione:** artykuł o białej liście zgłoszony w Bing; artykuł o błędach w raportowaniu sprzedaży dostał tytuł i opis pod zapytania, na które Google go już pokazuje („raportowanie wyników sprzedaży” 11 wyśw., „raportowanie sprzedaży” 10).
+**Ruch:** raport_ruchu doba: 1033 odsłony, 331 „osób”; źródła b2b-email 210, www.facebook.com 182, www.google.com 107, google-ads 88, m.facebook.com 68; YouTube 23 sesje, Threads 3; uruchomienia narzędzi 1.
+**Dowód:** Bing „URLs submitted today” 0 → 1 (https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api); commit 42dd6d9e, https://fluxlab.pl/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy z <title> „Raportowanie wyników sprzedaży: 4 najczęstsze błędy” i nowym opisem na produkcji, IndexNow Yandex 200, Naver 200. Lokalny build niemożliwy (node_modules na /mnt/xpg), Vercel zbudował.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 (Bing dla Z4) i Z6 (/sprawdz-kontrahenta) od 12:40.
