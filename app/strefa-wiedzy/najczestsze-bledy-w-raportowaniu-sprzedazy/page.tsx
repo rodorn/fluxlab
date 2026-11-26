@@ -8,13 +8,13 @@ import PrevNextArticle from "@/components/PrevNextArticle";
 import { dataZmiany } from "@/lib/data-zmiany";
 
 export const metadata: Metadata = {
-  title: "Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab",
+  title: "Raportowanie wyników sprzedaży: 4 najczęstsze błędy",
   description:
-    "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+    "Największy błąd w raportowaniu wyników sprzedaży to brak wspólnej definicji leada. Ustal ją, uporządkuj dane w CRM, a dopiero potem automatyzuj raport.",
   openGraph: {
-    title: "Najczęstsze błędy w raportowaniu sprzedaży | Fluxlab",
+    title: "Raportowanie wyników sprzedaży: 4 najczęstsze błędy",
     description:
-      "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+      "Największy błąd w raportowaniu wyników sprzedaży to brak wspólnej definicji leada. Ustal ją, uporządkuj dane w CRM, a dopiero potem automatyzuj raport.",
     locale: "pl_PL",
     type: "article",
     images: [
@@ -114,9 +114,9 @@ export default function BledyRaportowanieArticle() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Najczęstsze błędy w raportowaniu sprzedaży",
+            headline: "Raportowanie wyników sprzedaży: 4 najczęstsze błędy",
             description:
-              "Sprawdź najczęstsze błędy w raportowaniu sprzedaży: złe definicje, rozjazd danych, vanity metrics i ręczne arkusze, które fałszują obraz biznesu.",
+              "Największy błąd w raportowaniu wyników sprzedaży to brak wspólnej definicji leada. Ustal ją, uporządkuj dane w CRM, a dopiero potem automatyzuj raport.",
             datePublished: "2026-03-30",
             dateModified: dataZmiany("/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy", "2026-03-30"),
             author: {
