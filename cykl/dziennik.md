@@ -12768,3 +12768,11 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** Bing „URLs submitted today” 0 → 1 (https://fluxlab.pl/strefa-wiedzy/biala-lista-vat-nowe-api); commit 42dd6d9e, https://fluxlab.pl/strefa-wiedzy/najczestsze-bledy-w-raportowaniu-sprzedazy z <title> „Raportowanie wyników sprzedaży: 4 najczęstsze błędy” i nowym opisem na produkcji, IndexNow Yandex 200, Naver 200. Lokalny build niemożliwy (node_modules na /mnt/xpg), Vercel zbudował.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 (Bing dla Z4) i Z6 (/sprawdz-kontrahenta) od 12:40.
+
+## 2026-11-26 12:49
+**Kanał:** wyszukiwarki (plan ruchu 26.11, Z5 i Z6).
+**Co zrobione:** Z5: artykuł o raportowaniu sprzedaży zgłoszony w Bing; Z6: /sprawdz-kontrahenta ma tytuł zaczynający się od zapytania z GSC „jak sprawdzić firmę przed przelewem” (18 wyśw., poz. 11,9, 0 klik.) i opis z odpowiedzią wprost.
+**Ruch:** ostatnia doba 1056 odsłon, 316 osób (+21% wobec średniej 7 okresów); źródła: b2b-email 230, www.facebook.com 188, www.google.com 106, google-ads 83, m.facebook.com 57; YouTube 23 sesje, Threads 3; uruchomienia narzędzi 1.
+**Dowód:** commit fce3cc39; produkcja `<title>` „Jak sprawdzić firmę przed przelewem? Za darmo | Fluxlab”; IndexNow Yandex 200, Naver 200; Bing „URLs submitted today” 1 → 2.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (FL_meta) i Z8 od 14:40; Z8 według pliku Z1 bez drugiej kwalifikującej się strony (pominięcie); Z9 od 16:40 zgłasza w Bing /sprawdz-kontrahenta.
