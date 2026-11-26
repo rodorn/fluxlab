@@ -12784,3 +12784,13 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** `sesja napisz FL_meta` → „Doręczono do FL_meta (14:45)”; https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef?utm_source=facebook&utm_campaign=kiedy-odliczyc-vat-z-faktury-ksef ; Z8: cykl/z1-zapytania-strony-2026-11-26.txt (/automatyzacja-raportowania na liście reklam, /strefa-wiedzy indeks, /analiza-lokalizacji temat nie pasuje).
 **Dla Pawła:**
 **Zostało otwarte:** Z9 (Bing dla Z6, tylko /sprawdz-kontrahenta) i Z10 od 16:40, Z11-Z12 od 18:40, Z13 22:40, Z14-Z18 w nocy.
+
+<!-- WYSLANO 2026-11-26 15:12 -->
+
+## 2026-11-26 16:50
+**Kanał:** Google i Bing (plan ruchu Z9, Z10).
+**Co zrobione:** Z9: /sprawdz-kontrahenta z nowym tytułem z Z6 zgłoszona w Bing; Z10: pomiar popołudniowy.
+**Ruch:** pomiar-kanalow 24 h: 90 ludzi, 107 odsłon; google-ads 23, bez odsyłacza 20, Facebook naturalny 12 (www 7, m. 5), YouTube 7, b2b 7, fb-ads 6, useme 5, Google organiczny 5, Threads 3, Instagram 2, chatgpt.com 1, chatgpt płatne 0, Bing 0, DuckDuckGo 0. Narzędzia 2 uruchomienia (kalkulator-podatkowy 1, uruchomiono_skan na /wlasny-crm 1, /sprawdzenie-nip 0); form_start 4 (/kontakt 2, / 1, /e-doreczenia-integracja z google-ads 1); lead\_\* 0. 7 dni: 779 ludzi.
+**Dowód:** Bing „URLs submitted today” 2 → 3 dla https://fluxlab.pl/sprawdz-kontrahenta.
+**Dla Pawła:**
+**Zostało otwarte:** Z11-Z12 od 18:40, Z13 od 22:40, Z14-Z18 w nocy.
