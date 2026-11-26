@@ -12776,3 +12776,11 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** commit fce3cc39; produkcja `<title>` „Jak sprawdzić firmę przed przelewem? Za darmo | Fluxlab”; IndexNow Yandex 200, Naver 200; Bing „URLs submitted today” 1 → 2.
 **Dla Pawła:**
 **Zostało otwarte:** Z7 (FL_meta) i Z8 od 14:40; Z8 według pliku Z1 bez drugiej kwalifikującej się strony (pominięcie); Z9 od 16:40 zgłasza w Bing /sprawdz-kontrahenta.
+
+## 2026-11-26 14:46
+**Kanał:** 2 (asystenci AI → Facebook przez FL_meta), plan ruchu Z7 i Z8.
+**Co zrobione:** Z7: temat posta o odliczeniu VAT z faktury KSeF (artykuł cytowany 6 razy w tydzień przez Copilota, bez posta w 30 dniach) poszedł do FL_meta z adresem z utm; Z8 pominięte, bo Z1 nie dał drugiej kwalifikującej się strony.
+**Ruch:** raport_ruchu, ostatnia doba: 977 odsłon, 307 osób; źródła: b2b-email 219 (piksel), www.facebook.com 188, google-ads 104, m.facebook.com 57, fb-ads 36; YouTube 25 sesji.
+**Dowód:** `sesja napisz FL_meta` → „Doręczono do FL_meta (14:45)”; https://fluxlab.pl/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef?utm_source=facebook&utm_campaign=kiedy-odliczyc-vat-z-faktury-ksef ; Z8: cykl/z1-zapytania-strony-2026-11-26.txt (/automatyzacja-raportowania na liście reklam, /strefa-wiedzy indeks, /analiza-lokalizacji temat nie pasuje).
+**Dla Pawła:**
+**Zostało otwarte:** Z9 (Bing dla Z6, tylko /sprawdz-kontrahenta) i Z10 od 16:40, Z11-Z12 od 18:40, Z13 22:40, Z14-Z18 w nocy.
