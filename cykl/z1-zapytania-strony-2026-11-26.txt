@@ -1,0 +1,13 @@
+Z1 26.11 08:50, GSC Skuteczność, 28 dni (dane do 23.11), filtr zapytania dokładny (query=!), zakładka Strony. Bez zmian treści.
+zapytanie | strona | wyświetlenia | pozycja | kliknięcia | ostatnia zmiana strony (git log -1) | tytuł na produkcji | na liście „Czego nie robić”
+jak sprawdzić firmę przed przelewem | /sprawdz-kontrahenta | 18 | 11,9 | 0 | 9589998e 2026-11-22 terminy i czas odpowiedzi (hurtowa) | Sprawdź kontrahenta przed przelewem, za darmo | Fluxlab | nie (strona narzędzia, hurtowa zmiana nie blokuje)
+raportowanie produkcji | /automatyzacja-raportowania | 9 | 6,7 | 0 | c49c8b85 2026-11-15 krótki formularz z reklam | Automatyzacja raportowania i danych w firmie | Fluxlab | TAK (strona reklam)
+systemy bilingowe | /strefa-wiedzy | 8 | 4,6 | 0 | 72544721 2026-11-19 dostępność i sprzedaż | Automatyzacja CRM i procesów: strefa wiedzy | Fluxlab | nie, ale to indeks strefy wiedzy, nie artykuł ani narzędzie
+wykrywanie upustów | /analiza-lokalizacji | 7 | 14,9 | 0 | 9cd606e6 2026-10-29 analiza lokalizacji | Analiza lokalizacji pod lokal, od 190 zł | Fluxlab | nie, ale zapytanie (upusty w sieci wodnej/gazowej) nie pasuje do strony
+automatyczne przypisywanie wpłat | /strefa-wiedzy | 6 | 3,3 | 0 | 72544721 2026-11-19 dostępność i sprzedaż | Automatyzacja CRM i procesów: strefa wiedzy | Fluxlab | nie, indeks strefy wiedzy
+automatyzacja raportów i przepływu informacji | /automatyzacja-raportowania | 6 | 9,5 | 0 | c49c8b85 2026-11-15 krótki formularz z reklam | Automatyzacja raportowania i danych w firmie | Fluxlab | TAK (strona reklam)
+
+Suma wyświetleń na stronę: /automatyzacja-raportowania 15 (wykluczona), /sprawdz-kontrahenta 18, /strefa-wiedzy 14, /analiza-lokalizacji 7.
+Wniosek dla Z6 i Z8 (artykuł /strefa-wiedzy/… albo strona narzędzia):
+- Z6: /sprawdz-kontrahenta, 18 wyśw. na poz. 11,9 dla „jak sprawdzić firmę przed przelewem”; tytuł zawiera „przed przelewem”, ale nie zaczyna się od pytania. Strona narzędzia, nie w wykluczeniach.
+- Z8: brak drugiej kwalifikującej się strony. /strefa-wiedzy to indeks (nie artykuł ani narzędzie), /analiza-lokalizacji nie pasuje tematem do „wykrywanie upustów”, /automatyzacja-raportowania na liście reklam.

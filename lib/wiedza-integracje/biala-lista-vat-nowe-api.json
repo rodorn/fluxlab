@@ -17,6 +17,12 @@
         "15 października 2026 usługa API pod adresem wl-api.mf.gov.pl została przeniesiona do nowej witryny wykazpodatnikowvat.mf.gov.pl/api. Razem z adresem zmienił się certyfikat bezpieczeństwa witryny.",
         "Stary adres będzie obsługiwany do 1 grudnia 2026. Krajowa Administracja Skarbowa prosi, żeby do tego dnia zaktualizować zakładki i zapisane odnośniki. Źródło: komunikat „API Wykazu podatników VAT” na gov.pl/web/kas/api-wykazu-podatnikow-vat.",
         "Zmienia się tylko adres serwera. Metody i ścieżki zapytań są takie same, więc w większości systemów wystarczy podmienić początek adresu."
+      ],
+      "linki": [
+        {
+          "tekst": "Sprawdź NIP na białej liście: status VAT w 10 s",
+          "href": "/sprawdzenie-nip?utm_source=fluxlab&utm_medium=artykul&utm_content=biala-lista-vat-nowe-api"
+        }
       ]
     },
     {
