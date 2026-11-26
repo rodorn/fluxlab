@@ -12728,3 +12728,11 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** GSC filtr page=!…/automatyzacja-vs-zatrudnienie, 28 dni, zakładka „Dni”: ostatni dzień 23 lis 2026 (1 wyśw., poz. 2,0); 21.11 3 wyśw. poz. 2,3, 22.11 2 wyśw. poz. 3,0, 0 kliknięć od 12.11.
 **Dla Pawła:**
 **Zostało otwarte:** czekam na Z16 i Z17 o 04:40, Z18 o 06:40; porównanie Z15 dla stratega 27.11.
+
+## 2026-11-26 04:56
+**Kanał:** 2 (widoczność w Google, Bing i Copilocie), pomiar Z16 i Z17 z planu 25.11.
+**Co zrobione:** odczyt indeksu i mapy w GSC oraz Search Performance i AI Performance w Bing Webmaster; bez publikacji, zadania są pomiarem.
+**Ruch:** ostatnia doba 1019 odsłon, 334 osoby; źródła: b2b-email 215, www.facebook.com 173, www.google.com 104, google-ads 82, m.facebook.com 68; YouTube 23 sesje, Threads 2, LinkedIn 0, X 0.
+**Dowód:** GSC: 184 zindeksowane / 347 niezindeksowane, raport nadal z 16.11; mapa sitemap.xml Sukces, 279 wykrytych, odczyt 24.11 (bez zmian od 25.11). Bing 7 dni 17-23.11: 4 kliknięcia, 135 wyświetleń (24.11: 4/108). Copilot 7 D do 23.11: 30 cytowań (24.11: 26), dziennie 5/16/0/1/8; strony: proforma-ksef 6, gutschrift-ksef 6, kiedy-odliczyc-vat-z-faktury-ksef 6, jak-zautomatyzowac-raportowanie-w-firmie 4, automatyzacja-raportowania 3, faktura-zaliczkowa-ksef 2.
+**Dla Pawła:**
+**Zostało otwarte:** Z18 (pomiar dla stratega) nie wcześniej niż 26.11 06:40.
