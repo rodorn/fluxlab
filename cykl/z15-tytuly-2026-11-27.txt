@@ -21,3 +21,23 @@ Okno po: od pierwszej pełnej doby po zmianie do 24.11; okno przed: tyle samo dn
   po    23.11-24.11: klik 0, wyśw. 117, CTR 0.0%, poz. 2.3
   dni: 20.11 0/17/5.6; 21.11 0/6/5.7; 22.11 0/10/4.3; 23.11 0/66/2.3; 24.11 0/51/2.3
 
+
+Odczyt 27.11 16:55 (Z10), GSC Skuteczność, filtr page=!, zakładka Dni. Dane sięgają do 25.11. Okna jak wyżej.
+/strefa-wiedzy/automatyzacja-vs-zatrudnienie (zmiana 21.11); 4 dni, ostatni dzień danych 25.11
+  przed 17.11-20.11: klik 0, wyśw. 7, CTR 0.0%, poz. 2.6
+  po    22.11-25.11: klik 0, wyśw. 7, CTR 0.0%, poz. 1.9
+  dni: 17.11 0/2/2.5; 18.11 0/1/3.0; 19.11 0/2/2.0; 20.11 0/2/3.0; 21.11 0/3/2.3; 22.11 0/2/3.0; 23.11 0/1/2.0; 24.11 0/2/1.5; 25.11 0/2/1.0
+/strefa-wiedzy/faktura-wewnetrzna-ksef (zmiana 21.11); 4 dni, ostatni dzień danych 25.11
+  przed 17.11-20.11: klik 0, wyśw. 35, CTR 0.0%, poz. 6.2
+  po    22.11-25.11: klik 0, wyśw. 34, CTR 0.0%, poz. 6.6
+  dni: 17.11 0/8/4.4; 18.11 0/8/8.1; 19.11 0/9/5.7; 20.11 0/10/6.4; 21.11 0/2/5.5; 22.11 0/4/5.3; 23.11 0/8/9.0; 24.11 0/15/6.9; 25.11 0/7/4.1
+/strefa-wiedzy/gutschrift-ksef (zmiana 21.11); 4 dni, ostatni dzień danych 25.11
+  przed 17.11-20.11: klik 0, wyśw. 7, CTR 0.0%, poz. 2.9
+  po    22.11-25.11: klik 0, wyśw. 38, CTR 0.0%, poz. 10.2
+  dni: 17.11 0/0/—; 18.11 0/1/1.0; 19.11 0/4/2.5; 20.11 0/2/4.5; 21.11 0/0/—; 22.11 0/3/7.0; 23.11 0/9/9.1; 24.11 0/10/10.1; 25.11 0/16/11.4
+/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef (zmiana 22.11); 3 dni, ostatni dzień danych 25.11
+  przed 19.11-21.11: klik 0, wyśw. 49, CTR 0.0%, poz. 5.6
+  po    23.11-25.11: klik 0, wyśw. 177, CTR 0.0%, poz. 2.6
+  dni: 19.11 0/26/5.6; 20.11 0/17/5.6; 21.11 0/6/5.7; 22.11 0/10/4.3; 23.11 0/66/2.3; 24.11 0/51/2.3; 25.11 0/60/3.1
+Razem cztery strony: przed klik 0 / wyśw. 98, po klik 0 / wyśw. 256.
+Wniosek: CTR po zmianie RÓWNY (0% przed i po, 0 kliknięć na wszystkich czterech stronach). Wyświetlenia 98 → 256, prawie cały przyrost to kiedy-odliczyc-vat-z-faktury-ksef (49 → 177 przy poz. 5,6 → 2,6, bez kliknięcia) i gutschrift-ksef (7 → 38, ale poz. 2,9 → 10,2). Nowe tytuły dały zasięg, nie kliknięcia; przy 177 wyświetleniach na poz. 2,6 brak kliknięć wskazuje na fragment w wynikach albo odpowiedź AI nad wynikami, nie na tytuł.
