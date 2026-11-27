@@ -12974,3 +12974,11 @@ Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 
 **Dowód:** linia Z15 w cykl/plan-ruchu.md; liczby z /tmp/bil27/b.py (import pomiar-kanalow.py, okno 27.11 00:00-23:59 czasu PL).
 **Dla Pawła:** zgłoszenie z /kontakt z 11:48 (finanseibitcoin@gmail.com, Ryszard Zalski, miniatury, Useme; w Zoho INBOX::494 prośba o próbkę) nadal bez odpowiedzi w folderze Wysłane (sprawdzone 22:56); https://mail.zoho.eu, 2 min.
 **Zostało otwarte:** Z16 (IndexNow dnia) od 28.11 00:40, Z17 od 04:40, Z18 od 06:40; fb-ads drugi dzień 0 sesji (kampanie prowadzi FL_adsMeta); post 592 nie przekazuje utm_campaign do licznika.
+
+## 2026-11-28 00:45
+**Kanał:** widoczność w wyszukiwarkach (Z16 planu, pomiar i zgłoszenie adresów).
+**Co zrobione:** Z16 zamknięte bez wysyłki IndexNow, bo od 27.11 08:40 nie zmieniła się żadna strona (9 commitów doby dotyczy tylko cykl/). Z10 zrobiono 27.11, więc powtórki nie było. Z17 jest dopiero od 04:40.
+**Ruch:** raport_ruchu, ostatnia doba: 1157 odsłon, 475 osób (+16% wobec średniej 997). Źródła: b2b-email 452, b2b 92, m.facebook.com 69, google-ads 59, chatgpt 56. YouTube 25 sesji, Threads 2, LinkedIn 0, X 0, uruchomienia narzędzi 1. pomiar-kanalow 24 h: 107 ludzi, 117 odsłon (bez odsyłacza 30, b2b 23, chatgpt 18, google-ads 15, Facebook naturalny 14, Google 6).
+**Dowód:** linia Z16 w cykl/plan-ruchu.md; `git log origin/main --since='2026-11-27 08:40' -- app lib/wiedza-integracje next.config.ts` pusty; https://fluxlab.pl/sitemap.xml ma 279 `<loc>`; timer fluxlab-strona enabled.
+**Dla Pawła:** zgłoszenie z /kontakt z 27.11 11:48 (finanseibitcoin@gmail.com, miniatury, Useme) dalej bez odpowiedzi; w Wysłanych jest tylko alert z 12:04 (sprawdzone 00:45). https://mail.zoho.eu
+**Zostało otwarte:** Z17 (Bing i Copilot) od 04:40, Z18 (pomiar dla stratega) od 06:40.
