@@ -3,7 +3,7 @@ Mapa https://fluxlab.pl/sitemap.xml pobrana raz: 279 <loc>.
 „Strona zeskanowana, ale jeszcze nie zindeksowana” 167: w mapie 13, warianty 133 (parametry, /_next/, www, opengraph-image), przekierowania z next.config 1, poza mapą bez parametru 20.
 „Strona wykryta – obecnie niezindeksowana” 82: w mapie 82, warianty 0, poza mapą 0 (data skanu „Nie dotyczy”, Google ich nie pobrał).
 Razem z mapy poza indeksem: 95 (artykuły KSeF/VAT/e-Doręczenia 2, narzędzia 15, reszta 78).
-Uwaga dla stratega: 12 adresów z mta-sts.fluxlab.pl (subdomena polityki MTA-STS serwuje kopię całej strony, np. /integracje-api, /strefa-wiedzy/...), 3 strony główne subdomen georgika/ekumena/emporion; reszta poza mapą to pliki (/szablony/*.md, /fonts, /photos).
+Uwaga dla stratega: 12 adresów z mta-sts.fluxlab.pl (skany 19.10-18.11; 27.11 subdomena odpowiada 301 na fluxlab.pl), 3 strony główne subdomen georgika/ekumena/emporion; reszta poza mapą to pliki (/szablony/*.md, /fonts, /photos).
 Bez próśb o indeksowanie.
 
 ## 1. /strefa-wiedzy/ KSeF, VAT, e-Doręczenia (2)
