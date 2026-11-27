@@ -12902,3 +12902,11 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 **Dowód:** cykl/z3-zapytania-strony-2026-11-27.txt, linie Z3 i Z4 w cykl/plan-ruchu.md.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 i Z6 od 12:40 (Z5 najpewniej pominięte według Z3); największa pula poza listami na dobrej pozycji to /strefa-wiedzy/kategoria/narzedzia (16 wyśw., poz. 6,5, zapytanie „jakie narzędzie do automatyzacji rozliczeń polecasz i dlaczego?”), do decyzji stratega.
+
+## 2026-11-27 13:10
+**Kanał:** wyszukiwarki, Google (plan ruchu 27.11, Z5 i Z6).
+**Co zrobione:** Z5 pominięte (brak strony artykułu albo narzędzia z pulą wyświetleń na poz. 3-15 poza listami, uzasadnienie w pliku Z3). Z6: z 249 adresów „zeskanowane/wykryte, niezindeksowane” w GSC 95 jest w mapie witryny; lista posortowana pod Z7 i Z8.
+**Ruch:** 24 h 102 ludzi po odsiewie (7 dni 820): bez odsyłacza 36, google-ads 17, b2b 15, chatgpt 14, Google naturalny 11, Facebook 7, YouTube 3, useme 1, Instagram 1; fb-ads 0, Bing 0. raport_ruchu doba: 1068 odsłon, 393 „osoby” (b2b-email 348, google.com 69, b2b 68, google-ads 61, chatgpt 54).
+**Dowód:** cykl/z6-poza-indeksem-2026-11-27.txt. GSC (raport z 23.11): zindeksowane 191, niezindeksowane 440. Zeskanowane 167 = 13 w mapie, 133 warianty (parametry, /_next/, www, opengraph-image), 1 przekierowanie, 20 poza mapą; wykryte 82 = 82 w mapie, bez skanu. Z mapy 95: KSeF/VAT/e-Doręczenia 2 (/strefa-wiedzy/e-doreczenia-w-firmie skan 24.11, /strefa-wiedzy/kategoria/ksef), narzędzia 15 (m.in. /czarne-listy, /kursy-nbp, /weryfikacja-rachunkow, /adresy-do-edoreczen, /raport-edoreczen bez skanu), reszta 78 (20 artykułów /strefa-wiedzy/).
+**Dla Pawła:**
+**Zostało otwarte:** Z7 i Z8 od 14:40 (lista do FL_SEO z pliku Z6), Z9 od 14:40. Dla stratega: GSC zeskanował 12 adresów z mta-sts.fluxlab.pl (subdomena MTA-STS serwuje kopię całej strony, np. /strefa-wiedzy/..., /integracje-api) i strony główne georgika/ekumena/emporion.fluxlab.pl; duplikaty treści na subdomenie, do osobnego zadania.

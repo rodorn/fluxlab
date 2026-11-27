@@ -1,0 +1,131 @@
+Z6 2026-11-27 13:05, GSC „Indeksowanie stron” (ostatnia aktualizacja raportu 23.11.2026): zindeksowano 191, nie zindeksowano 440.
+Mapa https://fluxlab.pl/sitemap.xml pobrana raz: 279 <loc>.
+„Strona zeskanowana, ale jeszcze nie zindeksowana” 167: w mapie 13, warianty 133 (parametry, /_next/, www, opengraph-image), przekierowania z next.config 1, poza mapą bez parametru 20.
+„Strona wykryta – obecnie niezindeksowana” 82: w mapie 82, warianty 0, poza mapą 0 (data skanu „Nie dotyczy”, Google ich nie pobrał).
+Razem z mapy poza indeksem: 95 (artykuły KSeF/VAT/e-Doręczenia 2, narzędzia 15, reszta 78).
+Uwaga dla stratega: 12 adresów z mta-sts.fluxlab.pl (subdomena polityki MTA-STS serwuje kopię całej strony, np. /integracje-api, /strefa-wiedzy/...), 3 strony główne subdomen georgika/ekumena/emporion; reszta poza mapą to pliki (/szablony/*.md, /fonts, /photos).
+Bez próśb o indeksowanie.
+
+## 1. /strefa-wiedzy/ KSeF, VAT, e-Doręczenia (2)
+https://fluxlab.pl/strefa-wiedzy/e-doreczenia-w-firmie | zeskanowana | skan: 24 lis 2026
+https://fluxlab.pl/strefa-wiedzy/kategoria/ksef | wykryta | skan: Nie dotyczy
+
+## 2. Narzędzia (lib/narzedzia.ts) (15)
+https://fluxlab.pl/audyt-crm | zeskanowana | skan: 21 paź 2026
+https://fluxlab.pl/adresy-do-edoreczen | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/czarne-listy | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/czytelnosc-tekstow | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kalendarz-terminow | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kursy-nbp | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/monitoring-dostepnosci | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/monitoring-kontrahentow | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/opisy-produktow-z-csv | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/pilnowanie-certyfikatu | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/raport-edoreczen | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/raport-kontrahenta | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/sprawdzenie-auta | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/straznik-formularza | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/weryfikacja-rachunkow | wykryta | skan: Nie dotyczy
+
+## 3. Reszta (78)
+https://fluxlab.pl/strefa-wiedzy/ai-w-automatyzacji-firm | zeskanowana | skan: 10 lis 2026
+https://fluxlab.pl/strefa-wiedzy/jak-polaczyc-crm-z-innymi-systemami | zeskanowana | skan: 15 lis 2026
+https://fluxlab.pl/strefa-wiedzy/jak-policzyc-roi-z-automatyzacji | zeskanowana | skan: 19 paź 2026
+https://fluxlab.pl/strefa-wiedzy/jak-zautomatyzowac-raportowanie-w-firmie | zeskanowana | skan: 6 lis 2026
+https://fluxlab.pl/strefa-wiedzy/jaka-forma-opodatkowania-jdg-2026 | zeskanowana | skan: 14 lis 2026
+https://fluxlab.pl/strefa-wiedzy/klient-nie-odpowiada-na-oferte | zeskanowana | skan: 11 lis 2026
+https://fluxlab.pl/strefa-wiedzy/panel-do-sesji-ai | zeskanowana | skan: 30 paź 2026
+https://fluxlab.pl/strefa-wiedzy/przerwa-swiateczna-w-firmie | zeskanowana | skan: 24 lis 2026
+https://fluxlab.pl/strefa-wiedzy/salesforce-dla-malej-firmy | zeskanowana | skan: 29 wrz 2026
+https://fluxlab.pl/strefa-wiedzy/zapier-make-n8n-porownanie | zeskanowana | skan: 19 paź 2026
+https://fluxlab.pl/strefa-wiedzy/automatyzacja-obslugi-klienta | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strefa-wiedzy/crm-dla-posrednika-kredytowego-jedna-sprawa | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strefa-wiedzy/kalkulator-oze-formularz-wycena-czy-kalkulator | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strefa-wiedzy/monitoring-konkurencji-co-sprawdzac | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strefa-wiedzy/otwarcie-maila-z-oferta | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strefa-wiedzy/strona-dla-malej-firmy-wordpress-wix-czy-nextjs | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strefa-wiedzy/wizytowka-google-i-google-ads | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strefa-wiedzy/wygasajace-domeny-jak-znalezc | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/automatyzacja-pipedrive | zeskanowana | skan: 12 lis 2026
+https://fluxlab.pl/alert-msig | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/alert-nowych-ogloszen-auta | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/alert-stop-procentowych | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/alert-wycieku-hasel | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/artykul-z-filmu-youtube | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/audyt-strony-co-miesiac | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/bezpieczny-odbior-plikow | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/faktury-kosztowe-z-ksef-na-mail | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/faktury-pdf-do-excela | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/faktury-z-excela-do-ksef | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/faktury-z-maila-na-dysk | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/formularz-do-arkusza-i-teams | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kalkulator-klimatyzacji-demo | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kalkulator-pv-z-magazynem | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kalkulator-raty-komis | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kalkulator-zdolnosci-kredytowej | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kontrola-banera-cookies | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kontrola-faktur-kosztowych | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/kopia-wordpressa | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/landing-z-formularza | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/nabory-dotacji-oze | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/naleznosci-i-przeterminowane-faktury | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/newsletter-z-bloga | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/nowe-spolki-w-branzy-i-regionie | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/odpowiedz-podatkowa | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/omnibus-w-sklepie | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/paczka-miesieczna-dla-biura | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/paliwa-dla-floty | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/paragon-do-arkusza | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/pilnowanie-cen-konkurencji | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/pilnowanie-dns | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/pilnowanie-konkurentow | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/pilnowanie-wizytowki-google | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/polityka-cookies | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/polityka-hasel | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/porownanie-seo | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/porownanie-umow | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/posty-z-artykulow-bloga | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/protokol-ze-spotkania | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/przypomnienia-o-platnosciach | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/raport-dostepnosci-wcag | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/raport-google-ads | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/raport-google-analytics | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/raport-o-firmie-w-internecie | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/regulamin-sklepu-z-ankiety | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/skan-wtyczek-wordpress | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/spf-dkim-dmarc | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/sprzedaz-stripe-codziennie | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/straznik-konwersji | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/streszczenie-umowy | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/strona-wizytowka | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/szybkosc-strony-co-miesiac | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/tlumaczenie-strony-en-de | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/transkrypcja-nagran | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/widocznosc-na-frazy-w-google | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/wycena-auta-z-ogloszen | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/wzmianki-o-firmie-w-sieci | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/zalaczniki-z-maila-do-folderow | wykryta | skan: Nie dotyczy
+https://fluxlab.pl/zmiany-w-krs-kontrahentow | wykryta | skan: Nie dotyczy
+
+## Poza mapą (zeskanowane, bez parametru)
+https://georgika.fluxlab.pl/ | skan: 19 lis 2026
+https://mta-sts.fluxlab.pl/integracje-api | skan: 18 lis 2026
+https://ekumena.fluxlab.pl/ | skan: 17 lis 2026
+https://emporion.fluxlab.pl/ | skan: 17 lis 2026
+https://mta-sts.fluxlab.pl/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef | skan: 30 paź 2026
+https://mta-sts.fluxlab.pl/widocznosc-w-ai | skan: 29 paź 2026
+https://fluxlab.pl/fonts/fraunces-hero.woff2 | skan: 29 paź 2026
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-polaczenie.csv | skan: 27 paź 2026
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-tresc.csv | skan: 25 paź 2026
+https://mta-sts.fluxlab.pl/szablony/brief-strony-internetowej.md | skan: 24 paź 2026
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-braki.csv | skan: 24 paź 2026
+https://mta-sts.fluxlab.pl/szablony/checklista-przed-startem-strony.md | skan: 23 paź 2026
+https://mta-sts.fluxlab.pl/dane/widocznosc-ai-dostepnosc.csv | skan: 23 paź 2026
+https://fluxlab.pl/szablony/checklista-przed-startem-strony.md | skan: 22 paź 2026
+https://mta-sts.fluxlab.pl/szablony/checklista-ksef-dla-malej-firmy.md | skan: 22 paź 2026
+https://mta-sts.fluxlab.pl/strefa-wiedzy/kiedy-ai-ma-sens-a-kiedy-nie | skan: 21 paź 2026
+https://fluxlab.pl/szablony/brief-strony-internetowej.md | skan: 21 paź 2026
+https://fluxlab.pl/szablony/checklista-ksef-dla-malej-firmy.md | skan: 21 paź 2026
+https://mta-sts.fluxlab.pl/strefa-wiedzy/skala-czy-liniowy-jdg | skan: 19 paź 2026
+https://fluxlab.pl/photos/Factory.avif | skan: 3 paź 2026
+https://fluxlab.pl/kalkulator-leadow | skan: 20 sie 2026
