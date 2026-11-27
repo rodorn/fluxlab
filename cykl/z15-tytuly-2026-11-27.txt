@@ -1,0 +1,23 @@
+Z15 27.11 02:50, GSC Skuteczność, filtr page=!, zakładka Dni. Dane sięgają do 24.11 (próg zadania: 25.11), więc wynik WSTĘPNY.
+Okno po: od pierwszej pełnej doby po zmianie do 24.11; okno przed: tyle samo dni bezpośrednio przed dniem zmiany. Pozycja ważona wyświetleniami.
+
+/strefa-wiedzy/automatyzacja-vs-zatrudnienie (zmiana 21.11 10:46, d9f98aaf); 3 dni
+  przed 18.11-20.11: klik 0, wyśw. 5, CTR 0.0%, poz. 2.6
+  po    22.11-24.11: klik 0, wyśw. 5, CTR 0.0%, poz. 2.2
+  dni: 18.11 0/1/3.0; 19.11 0/2/2.0; 20.11 0/2/3.0; 21.11 0/3/2.3; 22.11 0/2/3.0; 23.11 0/1/2.0; 24.11 0/2/1.5
+
+/strefa-wiedzy/faktura-wewnetrzna-ksef (zmiana 21.11 12:45, a5ecef77); 3 dni
+  przed 18.11-20.11: klik 0, wyśw. 27, CTR 0.0%, poz. 6.7
+  po    22.11-24.11: klik 0, wyśw. 27, CTR 0.0%, poz. 7.3
+  dni: 18.11 0/8/8.1; 19.11 0/9/5.7; 20.11 0/10/6.4; 21.11 0/2/5.5; 22.11 0/4/5.3; 23.11 0/8/9.0; 24.11 0/15/6.9
+
+/strefa-wiedzy/gutschrift-ksef (zmiana 21.11 18:46, df885056); 3 dni
+  przed 18.11-20.11: klik 0, wyśw. 7, CTR 0.0%, poz. 2.9
+  po    22.11-24.11: klik 0, wyśw. 22, CTR 0.0%, poz. 9.3
+  dni: 18.11 0/1/1.0; 19.11 0/4/2.5; 20.11 0/2/4.5; 21.11 0/0/—; 22.11 0/3/7.0; 23.11 0/9/9.1; 24.11 0/10/10.1
+
+/strefa-wiedzy/kiedy-odliczyc-vat-z-faktury-ksef (zmiana 22.11 12:44, 4b2d38ac); 2 dni
+  przed 20.11-21.11: klik 0, wyśw. 23, CTR 0.0%, poz. 5.6
+  po    23.11-24.11: klik 0, wyśw. 117, CTR 0.0%, poz. 2.3
+  dni: 20.11 0/17/5.6; 21.11 0/6/5.7; 22.11 0/10/4.3; 23.11 0/66/2.3; 24.11 0/51/2.3
+

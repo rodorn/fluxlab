@@ -12802,3 +12802,60 @@ Ruch o 45% niższy niż 24.11, spadek prawie w całości z wejść bez odsyłacz
 **Dowód:** cykl/z11-bing-zapytania-2026-11-26.txt (dane 27.10-24.11: 16 klik., 2,1 tys. wyśw., 166 zapytań); /sprawdzenie-nip 1,8 tys. wyśw., 10 klik., poz. 7,6; zapytania o NIP to 71 ze 128 wyśw. w top 50 („czyj to nip” 18, poz. 6,2; „sprawdź nip” 11, poz. 9,5); /numer-ksef 105 wyśw., /kalkulator-podatkowy 35. Z12: 14 dni 3 sesje na /sprawdzenie-nip (Threads 2, bez odsyłacza 1), 0 uruchomień skanu, 0 kliknięć po wyniku; po Z2 0 wejść z utm_content=biala-lista-vat-nowe-api (artykuł 2 sesje z Google).
 **Dla Pawła:**
 **Zostało otwarte:** Z13 bilans dnia od 22:40; Z14-Z18 w nocy i rano 27.11. Dla stratega: Bing daje /sprawdzenie-nip ponad 1,8 tys. wyświetleń przy CTR 0,55%, a narzędzie ma 0 uruchomień w 14 dniach, więc tytuł i opis /sprawdzenie-nip pod „czyj to nip” i „sprawdź nip” to kandydat [T] na 27.11.
+
+## 2026-11-26 20:45
+**Kanał:** brak, czekam na Z13 o 22:40 (plan ruchu 26.11: wszystkie otwarte zadania Z13-Z18 mają bramkę od 22:40, plan zabrania brać je wcześniej).
+**Co zrobione:** nic poza pomiarem, zgodnie z regułą planu „czekam na Zn o HH:MM”.
+**Ruch:** pomiar-kanalow 24 h: 75 ludzi, 83 odsłony; bez odsyłacza 21, google-ads 21, b2b 8, YouTube 6, useme 5, Facebook naturalny 7 (m. 5, www 2), Google organiczny 5, Instagram 2, Threads 1; fb-ads 0, chatgpt 0, Bing 0. 7 dni: 784 ludzi. raport_ruchu, ostatnia doba: 827 odsłon, 276 osób (−11% wobec średniej 934).
+**Dowód:** brak, przebieg bez zmian.
+**Dla Pawła:**
+**Zostało otwarte:** Z13 bilans dnia od 22:40; Z14-Z18 w nocy i rano 27.11.
+
+## 2026-11-26 22:50
+**Kanał:** plan ruchu Z13 (pomiar, bilans dnia) oraz usunięcie przeszkody: 404 z Facebooka.
+**Co zrobione:** bilans 26.11 policzony kalendarzowo w układzie bilansu 25.11; przy okazji wyszło, że 3 sesje z Facebooka (24.11 /sprawdzenie-nipmniej, 26.11 dwa razy /sprawdzenie-nipdokumentów) trafiły na 404, więc dodane przekierowanie 308 /sprawdzenie-nip<sklejony tekst> na /sprawdzenie-nip, tym samym wzorcem co /narzedzia i /kalkulator-podatkowy.
+**Ruch:** raport_ruchu.py, ostatnia doba: 766 odsłon, 250 osób (−19% wobec średniej 947); źródła b2b-email 232, google-ads 90, b2b 45, www.facebook.com 40, www.google.com 34; uruchomienia narzędzi 1; lejek 7 dni: 2257 sesji → 32 form_start → 2 zapytania. pomiar-kanalow 24 h: ludzie 72.
+
+Bilans 26.11 (kalendarzowo, do 22:43, po odsiewie, bez /mail/, b2b-email, /grupa-ksef, par i serii testowych; źródło z pierwszej odsłony; bez sesji testowej FL_adsChatGPT z 22:27):
+
+| Kanał | 26.11 | 25.11 (do 22:43) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 71 / 80 | 92 / 121 |
+| fb-ads | 0 | 18 (automatyzacje 16, strony-www 2) |
+| fb (kampanie z id) | 0 | 1 |
+| www.google.com | 7 (/strefa-wiedzy/biala-lista-vat-nowe-api 2, / 2, /wlasny-crm 1, /numer-ksef 1, /dziekuje 1) | 3 |
+| google-ads | 21 (e-doreczenia 7 → /e-doreczenia-integracja, 24472439947 7, 24456876167 1 i ksef 1 → /ksef-integracja-erp, n8n-procesy 2 → /wdrozenie-n8n-cena, fluxcrm 2 → /wlasny-crm, strony-www 1) | 20 |
+| chatgpt płatne / naturalne | 0 / 0 (jedyna sesja utm_source=chatgpt, 22:27 Chrome Linux, to test FL_adsChatGPT: zgłoszenia 47 i 48, test-adschatgpt@fluxlab.com.pl) | 0 / 1 |
+| Facebook naturalny / Instagram | 4 (www 2, m 2; z tego 2 na 404 /sprawdzenie-nipdokumentów) / 1 (porada-wspolna-skrzynka → /wlasny-crm) | 19 / 2 |
+| YouTube / Threads / LinkedIn | 4 / 1 / 0 | 5 / 2 / 0 |
+| Bing / DuckDuckGo | 0 / 0 | 0 / 0 |
+| b2b (b2b-firmy) / useme / zleca | 8 / 4 / 0 | 4 / 3 / 1 |
+| Bez odsyłacza | 21 (/ 16) | 13 |
+| Uruchomienia narzędzi | 2 (skan /wlasny-crm 15:02 z Instagrama, narzedzie_start / 08:10 z b2b) | 4 |
+| Pobrania PDF | 4 bez sesji (checklista-forma-opodatkowania-2027 2, ebook-ksef-2027-w-firmie 1, poradnik-seo-mala-firma 1) | 4 |
+| form_start | 3 (/ b2b 08:10, /e-doreczenia-integracja google-ads 14:20, /kontakt bez odsyłacza 15:23) | 5 |
+| lead_* | 0 (2 testowe FL_adsChatGPT 22:27 nie liczone) | 1 |
+| Facebook na adres z Z7 (kiedy-odliczyc-vat-z-faktury-ksef) | 0, post 562 czeka w kolejce FL_meta, nieopublikowany | – |
+
+Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18 (kampania automatyzacje → /tansze-automatyzacje nie dała dziś ani jednej sesji) i Facebook naturalny 4 wobec 19. Google naturalne wzrosło do 7, z tego 2 na artykuł o białej liście (Z2), bez przejścia do narzędzia. google-ads stoi na 21. Zero zgłoszeń od ludzi.
+**Dowód:** commit 2d6a8f1a (next.config.ts), na produkcji 22:48: /sprawdzenie-nipdokument%C3%B3w i /sprawdzenie-nipmniej → 308 na /sprawdzenie-nip (200); bilans z wiersze()+odsiew() kalendarzowo; zgłoszenia 47-48 w tabeli zgloszenia na VPS z opisem „TEST FL_adsChatGPT”.
+**Dla Pawła:** w Zoho INBOX::488 (17:30) „Meta Platforms” z adresu rctcoasters1@gmail.com o rzekomym naruszeniu w reklamach: to phishing, nie klikać.
+**Zostało otwarte:** Z14 (IndexNow dnia) od 27.11 00:40, Z15 od 02:40, Z16 i Z17 od 04:40, Z18 od 06:40; sprawdzenie, czemu fb-ads dało 0 sesji 26.11.
+
+<!-- WYSLANO 2026-11-26 23:10 -->
+
+## 2026-11-27 00:47
+**Kanał:** pomiar i zgłaszanie adresów (plan ruchu 26.11, Z14).
+**Co zrobione:** Z14 zamknięte bez wysyłki IndexNow: wszystkie strony treści zmienione od 26.11 08:40 (biała lista VAT, raportowanie sprzedaży, sprawdź kontrahenta) dostały IndexNow w Z2, Z4, Z6, a globals.css i next.config.ts nie zmieniają treści żadnego adresu; mapa 279 `<loc>`. Ustalone, że fb-ads urwało się 25.11 20:30 (22.11: 95 sesji, 23.11: 66, 24.11: 24, 25.11: 18, 26.11: 0), zgłoszone do FL_meta, właściciela promocji.
+**Ruch:** raport_ruchu ostatnia doba: 779 odsłon, 252 osoby (−18% wobec średniej 946); źródła: b2b-email 229, google-ads 90, b2b 45, www.facebook.com 40, www.google.com 34; YouTube 18 sesji, Threads 1, LinkedIn 0, X 0; uruchomienia narzędzi 1; lejek 7 dni: 2261 sesji → 32 form_start → 2 zapytania.
+**Dowód:** linia Z14 w cykl/plan-ruchu.md; https://fluxlab.pl/sitemap.xml 279 `<loc>`; `sesja napisz FL_meta` doręczono 00:44.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 od 02:40 (GSC efekt tytułów), Z16 i Z17 od 04:40 (indeks, Bing/Copilot), Z18 od 06:40 (pomiar dla stratega); odpowiedź FL_meta w sprawie fb-ads.
+
+## 2026-11-27 02:52
+**Kanał:** pomiar Google (plan ruchu 26.11, Z15).
+**Co zrobione:** Z15 zamknięte jako „za wcześnie”: dane GSC sięgają do 24.11, próg zadania to 25.11; mimo to zapisane wstępne porównanie dobowe czterech stron po zmianie tytułów 21-22.11. Wszędzie 0 kliknięć przed i po. Największy ruch ma kiedy-odliczyc-vat-z-faktury-ksef: 23 → 117 wyświetleń (2 dni wobec 2 dni), pozycja 5,6 → 2,3, nadal CTR 0%. Gutschrift-ksef ma więcej wyświetleń, ale spadł na niższą pozycję: 7 → 22 wyśw., poz. 2,9 → 9,3 (nowe, dalsze zapytania). Faktura-wewnetrzna-ksef stoi w miejscu: 27 → 27, poz. 6,7 → 7,3. Automatyzacja-vs-zatrudnienie bez zmian: 5 → 5, poz. 2,6 → 2,2.
+**Ruch:** raport_ruchu ostatnia doba: 778 odsłon, 251 osób (−18% wobec średniej 946); źródła: b2b-email 229, google-ads 90, b2b 45, www.facebook.com 40, www.google.com 34; YouTube 18 sesji, Threads 1, LinkedIn 0, X 0; uruchomienia narzędzi 1; lejek 7 dni: 2260 sesji → 32 form_start → 2 zapytania.
+**Dowód:** cykl/z15-tytuly-2026-11-27.txt; linia Z15 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z16 i Z17 od 04:40 (indeks i mapa, Bing/Copilot), Z18 od 06:40; powtórzenie Z15, gdy GSC pokaże 25.11 i później (do planu stratega 27.11): 117 wyświetleń na poz. 2,3 bez kliknięcia przy kiedy-odliczyc to najmocniejszy sygnał, że problemem jest fragment w wynikach, nie pozycja.
