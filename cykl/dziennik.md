@@ -12884,3 +12884,13 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 **Dowód:** cykl/plan-ruchu.md z 27.11 06:22, wszystkie zadania „- [ ]”, pierwsze od 08:40.
 **Dla Pawła:**
 **Zostało otwarte:** Z1 i Z2 od 08:40, Z3 i Z4 od 10:40.
+
+<!-- WYSLANO 2026-11-27 07:05 -->
+
+## 2026-11-27 08:59
+**Kanał:** wyszukiwarki, Bing i narzędzie NIP (plan ruchu 27.11, Z1 i Z2).
+**Co zrobione:** Z1 rozstrzygnęło, że /sprawdzenie-nip stracił wejścia z Binga przez spadek widoczności, nie tytuł: wyświetlenia 1815 → 67 przy tej samej pozycji 8,1, więc Z2 pominięte bez zmiany treści; Bing ma stronę w indeksie, skan 26.11 16:33.
+**Ruch:** raport_ruchu doba: 831 odsłon, 276 „osób” (b2b-email 222, google-ads 83, google.com 53, b2b 43, facebook.com 43); 1 uruchomienie narzędzia.
+**Dowód:** cykl/z1-bing-nip-2026-11-27.txt. Bing (filtr strony, API panelu): 20.10-5.11 1815 wyśw., 11 klik., CTR 0,61%, poz. 8,1, 1573 zapytań; 6.11-25.11 67 wyśw., 0 klik., poz. 8,1, 58 zapytań. Skoki 30.10 (543) i 2.11 (680) na długim ogonie zapytań z numerami NIP. Licznik zgodny z Bingiem (8 sesji bing + 4 ddg w 29.10-5.11, od 6.11 0), więc to nie błąd pomiaru.
+**Dla Pawła:**
+**Zostało otwarte:** Z3 i Z4 (Z4: „pominięte, brak zmiany”) od 10:40, Z5-Z6 od 12:40.

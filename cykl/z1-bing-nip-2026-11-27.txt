@@ -1,0 +1,110 @@
+Z1 27.11.2026 08:5x: dlaczego /sprawdzenie-nip przestał dawać wejścia z Binga po 5.11
+Źródło: Bing Webmaster Search Performance, filtr strony https://fluxlab.pl/sprawdzenie-nip (API panelu searchperf/stats, stats/dated, keyword/stats; dane do 25.11).
+3 M (27.08-25.11): 1941 wyśw., 13 klik., CTR 0,67%, śr. poz. 8,07, 1684 różnych zapytań.
+
+## Okres A 20.10-5.11 (17 dni): 1815 wyśw. (106.8/dzień), 11 klik., CTR 0.61%, śr. poz. 8.11, 1573 różnych zapytań
+dzień	wyśw.	klik.	poz.
+2026-10-20	9	0	8.44
+2026-10-21	8	0	7.50
+2026-10-22	7	1	8.29
+2026-10-23	3	0	7.67
+2026-10-24	1	0	6.00
+2026-10-25	3	0	8.33
+2026-10-26	36	0	7.94
+2026-10-27	13	0	8.85
+2026-10-28	13	0	7.92
+2026-10-29	79	1	7.71
+2026-10-30	543	2	7.18
+2026-10-31	97	1	7.90
+2026-11-01	60	0	7.93
+2026-11-02	680	3	7.73
+2026-11-03	168	2	7.68
+2026-11-04	63	0	8.16
+2026-11-05	32	1	8.28
+Zapytania (top 30 po wyświetleniach): zapytanie	wyśw.	klik.	poz.
+czyj to nip	8	0	5.12
+sprawdź nip	7	0	9.29
+cansu nip	6	0	9.50
+nip 8133485845	5	0	9.00
+548240496 czyj to nip	3	0	7.00
+nip 5481688052	3	0	10.00
+nip 8761349335	3	0	10.00
+nip 6571416369 czy jest prywatna	3	0	5.00
+sprawdzenie czy nip jest czynny	3	0	8.67
+sprawdź status nip	3	0	10.00
+5263753449 czyj to nip	3	0	7.00
+znaj osobę po nip	2	0	7.00
+kogo nip	2	0	10.00
+sprawdzenie nip	2	0	6.50
+https://fornivo.pl/ nip firmy jaki jest	2	0	8.00
+8481894540 jaki to nip	2	0	7.00
+nip 9452248565	2	0	4.50
+nip 8831010821	2	0	10.00
+firma rubyverse nip	2	0	7.00
+testowanie s.a. nr nip poznań 8592265855	2	0	9.00
+sprawadzam nip	2	0	9.00
+nip 774 330 85 78	2	1	6.00
+nip 5321664982	2	0	7.00
+nip 125-177-58-45	2	0	10.00
+6252234456 nip co to za firma	2	0	9.50
+numer nip pl9930672307	2	0	10.00
+nip 5771880496	2	0	9.50
+status nip czynny	2	0	9.00
+nip7342719407	2	0	9.00
+nip 6921448537 czy świadczy działalność leczniczą	2	0	10.00
+
+## Okres B 6.11-25.11 (20 dni, dane do 25.11): 67 wyśw. (3.4/dzień), 0 klik., CTR 0.0%, śr. poz. 8.07, 58 różnych zapytań
+dzień	wyśw.	klik.	poz.
+2026-11-06	23	0	7.48
+2026-11-07	4	0	8.25
+2026-11-08	1	0	9.00
+2026-11-09	4	0	7.50
+2026-11-10	2	0	6.00
+2026-11-12	4	0	9.25
+2026-11-13	4	0	9.50
+2026-11-15	2	0	9.00
+2026-11-16	2	0	8.50
+2026-11-17	1	0	10.00
+2026-11-18	4	0	8.75
+2026-11-22	3	0	9.67
+2026-11-23	6	0	6.50
+2026-11-24	3	0	9.33
+2026-11-25	4	0	7.50
+Zapytania (top 30 po wyświetleniach): zapytanie	wyśw.	klik.	poz.
+czyj to nip	10	0	6.40
+ub00101406	3	0	8.00
+sprawdź nip	2	0	10.00
+sprawdź nip czy jest czynny	2	0	10.00
+nip 6782631521 czy firma jest podatnikiem	2	0	10.00
+status nip czy czynny	2	0	9.00
+to co za firma	1	0	7.00
+wolters kluwer czyja to firma	1	0	9.00
+7773450861 nip czyj to jest	1	0	9.00
+sprawdzenie czyj to nr nip	1	0	8.00
+co to jest za klient czy się zajmuje nip 8951617721	1	0	8.00
+sprawdzenie czy nip jest czynny	1	0	10.00
+949-160-35-10 czyj to nip	1	0	10.00
+525-157-05-88 czyj to nip	1	0	9.00
+data  - #TAB#nip/mid/nazwa	1	0	8.00
+co to za firma    nazwa przy płatności 1000327	1	0	10.00
+czyh=j to nip 5291836874	1	0	10.00
+nip sprawdzenie cx czynny	1	0	9.00
+nip-8o to jest staf-f	1	0	9.00
+nip firmy hacketts print	1	0	10.00
+sprawedz nip czy czynny	1	0	10.00
+c10182040	1	0	10.00
+i mam usztye to w polsce nazwacfirmy	1	0	9.00
+co to za firma no36	1	0	9.00
+sprawdź czyj to nip	1	0	10.00
+nip6762465568 co to za działanoś	1	0	10.00
+nip czy czynny	1	0	8.00
+śląsknorenhouse czyja to firma	1	0	8.00
+sczyj to nip	1	0	7.00
+
+## Licznik fluxlab.pl (wiersze() + odsiew(), 28.10-27.11): sesje na /sprawdzenie-nip
+2026-10-29 bing 1 | 10-30 bing 2 | 10-31 bing 1 | 11-02 bing 2, ddg 4 | 11-03 bing 1 | 11-05 bing 1 | od 6.11: 0 (Bing i DDG).
+Zgodność z Bingiem: kliknięcia Binga 29.10-5.11 = 1,2,1,0,3,2,0,1 (10), licznik 8 sesji z bing.com. Licznik widzi kliknięcia; po 6.11 Bing nie dał żadnego.
+Reszta strony z Binga po 6.11: 17-20.11 po 1 sesji, 24.11 1 (inne strony).
+
+## Wniosek: (b) ranking/widoczność, nie tytuł.
+Wyświetlenia spadły 27 razy (1815 -> 67; 107 -> 3,4 dziennie) przy tej samej średniej pozycji (8,1 -> 8,1) i liczba zapytań, na które Bing pokazuje stronę, spadła z 1573 do 58. Okres A to w 67% dwa skoki 30.10 (543) i 2.11 (680) na długim ogonie zapytań z konkretnymi numerami NIP; Bing przestał pokazywać stronę na te zapytania, a CTR przy 1815 wyśw. był 0,61%, więc sam tytuł nie przywróci wejść. Zbieżność: tytuł zmieniony 2.11 (b1568e75), spadek od 4.11.
