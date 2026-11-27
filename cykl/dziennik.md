@@ -12894,3 +12894,11 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 **Dowód:** cykl/z1-bing-nip-2026-11-27.txt. Bing (filtr strony, API panelu): 20.10-5.11 1815 wyśw., 11 klik., CTR 0,61%, poz. 8,1, 1573 zapytań; 6.11-25.11 67 wyśw., 0 klik., poz. 8,1, 58 zapytań. Skoki 30.10 (543) i 2.11 (680) na długim ogonie zapytań z numerami NIP. Licznik zgodny z Bingiem (8 sesji bing + 4 ddg w 29.10-5.11, od 6.11 0), więc to nie błąd pomiaru.
 **Dla Pawła:**
 **Zostało otwarte:** Z3 i Z4 (Z4: „pominięte, brak zmiany”) od 10:40, Z5-Z6 od 12:40.
+
+## 2026-11-27 10:55
+**Kanał:** 2 i wyszukiwarki (pomiar Google i Bing z planu ruchu, Z3 i Z4).
+**Co zrobione:** Z3: 6 zapytań z wyświetleniami bez kliknięć rozpisanych na strony (GSC 28 dni, dane do 24.11); jedyna strona dopuszczalna dla Z5 to /narzedzia/kalkulator-zus (7 wyśw., poz. 45, tytuł już z frazą), więc Z5 ma podstawę do pominięcia. Z4 pominięte, bo Z2 nie zmieniło tytułu /sprawdzenie-nip.
+**Ruch:** 24 h 90 ludzi po odsiewie (7 dni 800): bez odsyłacza 37, google-ads 17, b2b 11, Google naturalny 11, chatgpt 6, Facebook 5, YouTube 3, useme 2, Instagram 1; fb-ads 0, Bing 0.
+**Dowód:** cykl/z3-zapytania-strony-2026-11-27.txt, linie Z3 i Z4 w cykl/plan-ruchu.md.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 i Z6 od 12:40 (Z5 najpewniej pominięte według Z3); największa pula poza listami na dobrej pozycji to /strefa-wiedzy/kategoria/narzedzia (16 wyśw., poz. 6,5, zapytanie „jakie narzędzie do automatyzacji rozliczeń polecasz i dlaczego?”), do decyzji stratega.
