@@ -12910,3 +12910,11 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 **Dowód:** cykl/z6-poza-indeksem-2026-11-27.txt. GSC (raport z 23.11): zindeksowane 191, niezindeksowane 440. Zeskanowane 167 = 13 w mapie, 133 warianty (parametry, /_next/, www, opengraph-image), 1 przekierowanie, 20 poza mapą; wykryte 82 = 82 w mapie, bez skanu. Z mapy 95: KSeF/VAT/e-Doręczenia 2 (/strefa-wiedzy/e-doreczenia-w-firmie skan 24.11, /strefa-wiedzy/kategoria/ksef), narzędzia 15 (m.in. /czarne-listy, /kursy-nbp, /weryfikacja-rachunkow, /adresy-do-edoreczen, /raport-edoreczen bez skanu), reszta 78 (20 artykułów /strefa-wiedzy/).
 **Dla Pawła:**
 **Zostało otwarte:** Z7 i Z8 od 14:40 (lista do FL_SEO z pliku Z6), Z9 od 14:40. Dla stratega: 12 adresów z mta-sts.fluxlab.pl w GSC to stare skany (19.10-18.11); dziś subdomena odpowiada 301 na fluxlab.pl (sprawdzone /integracje-api), więc to nie duplikat i nie wymaga zadania.
+
+## 2026-11-27 14:43
+**Kanał:** 2 (widoczność w asystentach AI) i dystrybucja przez sesje (plan ruchu Z7-Z9).
+**Co zrobione:** Z7: lista 95 adresów z mapy poza indeksem Google (10 pierwszych o e-Doręczeniach, KSeF i kontrahentach) przekazana do puli indeksowania FL_SEO; Z8 pominięte, bo jedyny artykuł KSeF/VAT/e-Doręczenia z listy (e-doreczenia-w-firmie) jest w Google od 25.11; Z9: FL_meta dostał temat posta o Gutschrift i KSeF (artykuł cytowany 10 razy przez Copilota w 7 dniach, dotąd bez posta).
+**Ruch:** ostatnia doba 1092 odsłony, 408 osób (+13% wobec średniej 964,7). Źródła: b2b-email 366, b2b 81, chatgpt 59, google-ads 53, www.google.com 51; YouTube 25 sesji. Uruchomienia narzędzi 2. Lejek 7 dni: 2408 sesji, 35 form_start, 3 wysłane zapytania.
+**Dowód:** `sesja napisz FL_SEO` 14:44 (meldunek w skrzynce), `sesja napisz FL_meta` „Doręczono do FL_meta (14:44)”, adres posta https://fluxlab.pl/strefa-wiedzy/gutschrift-ksef?utm_source=facebook&utm_campaign=gutschrift-ksef. Bez commitu strony (Z8 bez zmiany).
+**Dla Pawła:**
+**Zostało otwarte:** Z10 i Z11 od 16:40, Z12 i Z13 od 18:40, Z14 od 20:40, Z15 od 22:40, Z16-Z18 w nocy 28.11. Z12 (Bing dla Z5 i Z8): Z8 bez zmiany, więc tylko adresy z Z5 (Z5 też pominięte, prawdopodobnie „pominięte, brak zmiany”).
