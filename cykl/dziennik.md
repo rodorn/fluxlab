@@ -12926,3 +12926,11 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 **Dowód:** cykl/z15-tytuly-2026-11-27.txt (sekcja „Odczyt 27.11 16:55”); linie Z10 i Z11 w cykl/plan-ruchu.md.
 **Dla Pawła:** zgłoszenie z /kontakt z 11:48 (finanseibitcoin@gmail.com, „miniatury, kontaktowaliśmy się na Useme”, w Zoho „Re: Dostaliśmy zgłoszenie, Fluxlab” z 11:50 z prośbą o próbkę) nie ma odpowiedzi w folderze Wysłane; https://mail.zoho.eu, 2 min.
 **Zostało otwarte:** Z12 i Z13 od 18:40, Z14 od 20:40, Z15 od 22:40, Z16-Z18 w nocy 28.11. Do planu 28.11: tytuły z 21-22.11 nie podniosły CTR, więc kolejne zmiany tytułów bez zmiany opisu i pierwszego akapitu prawdopodobnie też nie dadzą kliknięć.
+
+## 2026-11-27 18:46
+**Kanał:** wyszukiwarki i dystrybucja (plan ruchu 27.11, Z12 i Z13, pomiar).
+**Co zrobione:** Z12 pominięte (Z5 i Z8 nic nie zmieniły, 0 adresów do Bing); Z13 rozliczyło linki i posty z 25-26.11: post 562 (kiedy-odliczyc-vat-z-faktury-ksef) 0 sesji z kampanii, link z /strefa-wiedzy/biala-lista-vat-nowe-api 0 przejść na /sprawdzenie-nip, nowe tytuły z 26.11 (najczestsze-bledy-w-raportowaniu-sprzedazy, sprawdz-kontrahenta) 0 wejść z Google.
+**Ruch:** raport_ruchu, ostatnia doba: 1127 odsłon, 445 osób (średnia 982,7); źródła b2b-email 407, b2b 88, chatgpt 73, m.facebook.com 69, www.google.com 51; uruchomienia narzędzi 1.
+**Dowód:** linie Z12 i Z13 w cykl/plan-ruchu.md; od 25.11 artykuł biala-lista-vat-nowe-api 6 sesji (Google 4, Facebook 1, bez odsyłacza 1), /sprawdzenie-nip 1 sesja (Threads, 0 uruchomień); błędny adres z Facebooka /sprawdzenie-nipdokumentów (2 sesje) daje 308 na /sprawdzenie-nip, przekierowanie z 26.11 działa.
+**Dla Pawła:** zgłoszenie z /kontakt z 11:48 (finanseibitcoin@gmail.com, miniatury, Useme) nadal bez odpowiedzi w Zoho Wysłane (sprawdzone 18:46); https://mail.zoho.eu, 2 min.
+**Zostało otwarte:** Z14 od 20:40, Z15 od 22:40, Z16-Z18 w nocy 28.11. Licznik nie zapisuje utm_content, więc linki wewnętrzne z utm_content da się mierzyć tylko przejściem w obrębie sesji; do planu 28.11.
