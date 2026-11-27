@@ -12942,3 +12942,35 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 **Dowód:** cykl/plan-ruchu.md Z14.
 **Dla Pawła:**
 **Zostało otwarte:** Z15 od 22:40 (bilans 27.11), Z16 od 28.11 00:40, Z17 od 04:40, Z18 od 06:40.
+<!-- WYSLANO 2026-11-27 20:52 -->
+
+## 2026-11-27 22:58
+**Kanał:** plan ruchu Z15 (pomiar, bilans dnia).
+**Co zrobione:** bilans 27.11 policzony kalendarzowo (00:00 do 22:55) tą samą metodą co 26.11 (wiersze() + odsiew() z pomiar-kanalow.py, bez /mail/, b2b-email, /grupa-ksef, par i serii; źródło z pierwszej odsłony).
+
+Bilans 27.11:
+
+| Kanał | 27.11 | 26.11 (do 22:43) |
+|---|---|---|
+| Ludzie (sesje / odsłony) | 107 / 117 | 71 / 80 |
+| fb-ads | 0 | 0 |
+| fb (kampanie z id) | 1 (120249855259330178 → /strony-www, form_start 11:58) | 0 |
+| www.google.com | 6 (/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen 2, /strefa-wiedzy/biala-lista-vat-nowe-api 2, /strefa-wiedzy/gutschrift-ksef 1, / 1 → /kontakt → zgłoszenie) | 7 |
+| google-ads | 15 (24472439947 9 i 24471841621 1 → /ksef-integracja-erp, n8n-procesy 3 → /wdrozenie-n8n-cena 2 i /automatyzacja-procesow-biznesowych 1, e-doreczenia 1, fluxcrm 1) | 21 |
+| chatgpt płatne / naturalne | 18 (crm-firma 11 → /wlasny-crm, n8n-firma 7 → /n8n; 9 z 18 z telefonu) / 1 (chatgpt.com → /sprawdz-auto) | 0 / 0 |
+| Facebook naturalny / Instagram | 14 (www 7, m 7; /narzedzia 5, /sprawdz-kontrahenta 3 w minutę 21:46-21:47, artykuły 3) / 0 | 4 / 1 |
+| YouTube / Threads / LinkedIn | 1 / 0 / 0 | 4 / 1 / 0 |
+| Bing / DuckDuckGo | 0 / 0 | 0 / 0 |
+| b2b (b2b-firmy) / useme / zleca | 23 / 1 / 0 | 8 / 4 / 0 |
+| Bez odsyłacza | 27 (/ 20) | 21 |
+| Uruchomienia narzędzi | 1 (uruchomiono_skan /wlasny-crm 11:19, chatgpt crm-firma) | 2 |
+| Pobrania PDF | 0 | 4 |
+| form_start | 4 (/kontakt Google 11:47, / m.facebook 11:52, /strony-www fb 11:58, /sprawdz-auto 20:06 sesja bez odsłony) | 3 |
+| lead_* | 1 (lead_landing 11:48, Google organiczny / → /kontakt, finanseibitcoin@gmail.com, miniatury, Useme) | 0 |
+| Facebook na adres z Z9 (gutschrift-ksef) | 1 (www.facebook.com 17:05 → /strefa-wiedzy/gutschrift-ksef, 48 min po publikacji posta 592 o 16:17, przewinięcie do 50%; bez utm_campaign w liczniku) | – |
+
+Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 wobec 0, pierwszy dzień kampanii crm-firma i n8n-firma, ale 6 z 18 wyszło po 0-1 s, jeden skan), b2b 23 wobec 8 i Facebook naturalny 14 wobec 4. Google naturalne bez zmian (6), google-ads spadło do 15, fb-ads drugi dzień z rzędu 0. Jedyne zgłoszenie dnia przyszło z Google naturalnego.
+**Ruch:** raport_ruchu ostatnia doba: 1154 odsłony, 468 osób (+16% wobec średniej 995); źródła: b2b-email 433, b2b 92, m.facebook.com 84, google-ads 59, chatgpt 57; YouTube 25 sesji, Threads 2, LinkedIn 0, X 0; uruchomienia narzędzi 1; lejek 7 dni: 2495 sesji → 36 form_start → 3 zapytania. pomiar-kanalow 24 h: 107 ludzi, 117 odsłon.
+**Dowód:** linia Z15 w cykl/plan-ruchu.md; liczby z /tmp/bil27/b.py (import pomiar-kanalow.py, okno 27.11 00:00-23:59 czasu PL).
+**Dla Pawła:** zgłoszenie z /kontakt z 11:48 (finanseibitcoin@gmail.com, Ryszard Zalski, miniatury, Useme; w Zoho INBOX::494 prośba o próbkę) nadal bez odpowiedzi w folderze Wysłane (sprawdzone 22:56); https://mail.zoho.eu, 2 min.
+**Zostało otwarte:** Z16 (IndexNow dnia) od 28.11 00:40, Z17 od 04:40, Z18 od 06:40; fb-ads drugi dzień 0 sesji (kampanie prowadzi FL_adsMeta); post 592 nie przekazuje utm_campaign do licznika.
