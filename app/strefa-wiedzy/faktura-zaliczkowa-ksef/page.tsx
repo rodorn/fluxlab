@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Do kiedy wystawić fakturę zaliczkową?",
-    a: "Do 15. dnia miesiąca po miesiącu, w którym przyszła zaliczka. Najwcześniej 30 dni przed jej otrzymaniem.",
+    a: "Do 15. dnia miesiąca po miesiącu, w którym przyszła zaliczka. Najwcześniej 60 dni przed jej otrzymaniem (art. 106i ust. 7 ustawy o VAT).",
   },
   {
     q: "Zaliczka i dostawa w tym samym miesiącu?",

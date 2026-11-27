@@ -84,7 +84,7 @@ const PUNKTY: Punkt[] = [
     pytanie:
       "Czy numer faktury wystawionej w styczniu 2027 nie powtórzy żadnego numeru z 2026?",
     zmiana:
-      "KSeF odrzuca fakturę z kodem błędu 440 „Duplikat faktury”, jeśli ten sam NIP sprzedawcy wysłał już fakturę tego samego rodzaju z identycznym numerem, a sprawdza to 10 lat wstecz. Kto w 2026 wystawiał faktury w KSeF, zeruje numerację co roku i nie ma roku w numerze (FV 1, FV 2…), dostanie odrzucenie już pierwszej faktury w styczniu 2027, bo „FV 1” przeszła przez KSeF rok wcześniej.",
+      "KSeF odrzuca fakturę z kodem błędu 440 „Duplikat faktury”, jeśli ten sam NIP sprzedawcy wysłał już fakturę tego samego rodzaju z identycznym numerem. Porównuje z fakturami już przyjętymi w KSeF. Kto w 2026 wystawiał faktury w KSeF, zeruje numerację co roku i nie ma roku w numerze (FV 1, FV 2…), dostanie odrzucenie już pierwszej faktury w styczniu 2027, bo „FV 1” przeszła przez KSeF rok wcześniej.",
     zrobic:
       "Sprawdź wzór numeru w programie do faktur. Jeżeli nie ma w nim roku, dopisz go przed pierwszą fakturą w 2027, np. 1/01/2027. To samo przy zmianie programu: nowa seria nie może powtarzać numerów wysłanych ze starego.",
   },

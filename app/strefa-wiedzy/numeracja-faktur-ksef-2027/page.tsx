@@ -41,7 +41,7 @@ const faq = [
   },
   {
     q: "Jak długo KSeF pamięta numery?",
-    a: "Sprawdza duplikaty 10 lat wstecz, dla tego samego NIP sprzedawcy i tego samego rodzaju faktury.",
+    a: "Sprawdza duplikaty wśród faktur już przyjętych w KSeF, dla tego samego NIP sprzedawcy i tego samego rodzaju faktury.",
   },
   {
     q: "Zmieniamy program do faktur. Czy można zacząć numerację od 1?",
@@ -86,7 +86,7 @@ export default function NumeracjaFakturKsef2027Article() {
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 KSeF odrzuca fakturę z kodem 440 „Duplikat faktury”, gdy ten sam
                 NIP sprzedawcy wysłał już fakturę tego samego rodzaju z
-                identycznym numerem. Sprawdza to 10 lat wstecz.
+                identycznym numerem. Porównuje z fakturami już przyjętymi w KSeF.
               </p>
             </section>
             <section>

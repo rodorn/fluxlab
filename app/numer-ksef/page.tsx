@@ -47,7 +47,7 @@ const czesci: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
 const faq: { q: string; a: string; linki?: LinkWTekscie[] }[] = [
   {
     q: "Czy numer KSeF trzeba podawać w przelewie?",
-    a: "Od 1 stycznia 2027 tak, przy zapłacie za fakturę z KSeF między czynnymi podatnikami VAT, także w przelewie MPP. Nie dotyczy karty, BLIK-a ani gotówki.",
+    a: "Od 1 stycznia 2027 tak, przy zapłacie za fakturę z KSeF między czynnymi podatnikami VAT, także w przelewie MPP. Nie dotyczy karty, BLIK-a ani gotówki. Podstawa: art. 108g ustawy o VAT.",
     linki: [{ fraza: "między czynnymi podatnikami VAT", href: "/strefa-wiedzy/faktura-dla-osoby-prywatnej-ksef" }],
   },
   {
@@ -83,7 +83,7 @@ export default function NumerKsefPage() {
               Sprawdzenie numeru KSeF przed przelewem
             </h1>
             <p className="mt-5 text-lg text-gray-600 dark:text-gray-300">
-              Od 1 stycznia 2027 numer KSeF trafia do tytułu przelewu. Wklej
+              Od 1 stycznia 2027 numer KSeF trafia do tytułu przelewu (art. 108g ustawy o VAT). Wklej
               numery, a sprawdzimy, czy nie ma w nich literówki.
             </p>
           </div>
