@@ -12934,3 +12934,11 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 **Dowód:** linie Z12 i Z13 w cykl/plan-ruchu.md; od 25.11 artykuł biala-lista-vat-nowe-api 6 sesji (Google 4, Facebook 1, bez odsyłacza 1), /sprawdzenie-nip 1 sesja (Threads, 0 uruchomień); błędny adres z Facebooka /sprawdzenie-nipdokumentów (2 sesje) daje 308 na /sprawdzenie-nip, przekierowanie z 26.11 działa.
 **Dla Pawła:** zgłoszenie z /kontakt z 11:48 (finanseibitcoin@gmail.com, miniatury, Useme) nadal bez odpowiedzi w Zoho Wysłane (sprawdzone 18:46); https://mail.zoho.eu, 2 min.
 **Zostało otwarte:** Z14 od 20:40, Z15 od 22:40, Z16-Z18 w nocy 28.11. Licznik nie zapisuje utm_content, więc linki wewnętrzne z utm_content da się mierzyć tylko przejściem w obrębie sesji; do planu 28.11.
+
+## 2026-11-27 20:44
+**Kanał:** Google, pomiar (Z14).
+**Co zrobione:** GSC „Sprawdź URL” (bez prośby o indeksowanie) dla trzech stron z tytułami zmienionymi 26.11: wszystkie w Google, ale ostatni skan jest sprzed zmian (biala-lista-vat-nowe-api 25.11 04:22, najczestsze-bledy-w-raportowaniu-sprzedazy 10.11 15:35, sprawdz-kontrahenta 16.11 16:31), więc Google pokazuje jeszcze stare tytuły i efekt zmian 26.11 liczy się od kolejnego skanu.
+**Ruch:** raport_ruchu doba: 1176 odsłon, 466 osób; źródła: b2b-email 429, b2b 96, chatgpt 73, m.facebook.com 69, google-ads 59; uruchomienia narzędzi 1.
+**Dowód:** cykl/plan-ruchu.md Z14.
+**Dla Pawła:**
+**Zostało otwarte:** Z15 od 22:40 (bilans 27.11), Z16 od 28.11 00:40, Z17 od 04:40, Z18 od 06:40.
