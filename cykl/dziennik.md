@@ -12876,3 +12876,11 @@ Ruch o 23% niższy niż 25.11. Spadek to w całości Facebook: fb-ads 0 wobec 18
 - Zoho, folder Spam: „Zapytanie o wycenę dedykowanego systemu CRM dla firmy handlowej B2B” (nadawca z gmail.com, 26/27.11). Może być zapytaniem od klienta, może być spamem; cykl nie odpowiada przez bramkę CRM. https://mail.zoho.eu, 2 min.
 - Zoho INBOX: Dewelopuj odpisało w wątku „Współpraca reklamowa: FluxLab x dewelopuj”. Twój wątek, 3 min.
 - Karta bdb474cd „Czy kończymy outreach mailowy do firm z WordPressem” ma nadal status „do zrobienia”, choć plan od 19.11 traktuje outreach jako zatrzymany. Zamknięcie karty na https://biuro.fluxlab.pl/decyzje/, 1 min.
+
+## 2026-11-27 06:45
+**Kanał:** brak, czekam na Z1 o 08:40 (plan 27.11: najwcześniejsze zadania Z1 i Z2 od 08:40, Z16-Z18 z 28.11).
+**Co zrobione:** nic nie poszło w świat, bo plan nie pozwala brać zadań przed ich godziną.
+**Ruch:** pomiar-kanalow 24 h: 77 ludzi, 90 odsłon; bez odsyłacza 26, google-ads 21, Google organiczny 9, b2b 8, YouTube 4, useme 4, Facebook naturalny 4 (www 2, m. 2), Threads 1, Instagram 1, chatgpt 1; fb-ads 0. 7 dni 791 ludzi. raport_ruchu: 793 odsłony, 255 „osób”, 1 uruchomienie narzędzia w dobie; lejek 7 dni 2259 sesji, 32 form_start, 2 zapytania.
+**Dowód:** cykl/plan-ruchu.md z 27.11 06:22, wszystkie zadania „- [ ]”, pierwsze od 08:40.
+**Dla Pawła:**
+**Zostało otwarte:** Z1 i Z2 od 08:40, Z3 i Z4 od 10:40.
