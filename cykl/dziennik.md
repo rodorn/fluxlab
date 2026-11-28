@@ -13017,3 +13017,13 @@ Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 
 **Dowód:** brak publikacji; plan cykl/plan-ruchu.md (stan pliku 28.11 06:29).
 **Dla Pawła:** bez nowych pozycji; lista stratega w wpisie 28.11 (Zalski, Michalik CRM, CEZ, Thulium NDA, FL_SEO uśpiona).
 **Zostało otwarte:** Z1 (stan trzech adresów w GSC) i Z2 (link do narzędzia spoza indeksu) od 08:40, potem Z3 i Z4 od 10:40.
+
+<!-- WYSLANO 2026-11-28 07:06 -->
+
+## 2026-11-28 08:43
+**Kanał:** Google (Z1 pomiar, Z2 link do narzędzia spoza indeksu).
+**Co zrobione:** artykuł /strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen (4 wejścia z Google w 7 dni) linkuje teraz do /adresy-do-edoreczen, którego Google jeszcze nie przeskanował.
+**Ruch:** raport_ruchu, ostatnia doba: 1088 odsłon, 470 osób (średnia 1003,7). Źródła: b2b-email 443, b2b 95, m.facebook.com 69, google-ads 59, chatgpt 54; YouTube 25 sesji, Threads 2, LinkedIn 0, X 0. Narzędzia: 1 uruchomienie. Lejek 7 dni: 2516 sesji, 36 form_start, 3 zapytania.
+**Dowód:** Z1 GSC „Sprawdź URL” bez prośby: /adresy-do-edoreczen i /weryfikacja-rachunkow „nie znajduje się w Google”, „Strona wykryta – obecnie niezindeksowana”, ostatnie skanowanie „Nie dotyczy”; /strefa-wiedzy/automatyzacja-obslugi-klienta „znajduje się w Google”, skan 25.11 07:04 (Z4 weźmie zamiast niej /raport-edoreczen); 3×200, index, follow; timer fluxlab-strona enabled. Z2 commit 205cf3e6, link na produkcji (grep = 1), zrzut 390 px /tmp/z1/z2b.png, IndexNow Yandex 200, Naver 200. Lokalny build niemożliwy (node_modules na /mnt/xpg), tsc i spojnosc bez nowych błędów.
+**Dla Pawła:** bez nowych pozycji.
+**Zostało otwarte:** Z3 (link do /weryfikacja-rachunkow z artykułu o API białej listy) i Z4 (pula indeksowania GSC) od 10:40.
