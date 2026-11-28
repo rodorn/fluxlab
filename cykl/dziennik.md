@@ -13009,3 +13009,11 @@ Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 
 - Zoho INBOX: „Zapytanie o wycenę dedykowanego systemu CRM dla firmy handlowej B2B” (Damian Michalik, gmail.com) przeszło ze Spamu do INBOX; cykl nie odpowiada przez bramkę CRM. https://mail.zoho.eu, 5 min.
 - Zoho INBOX: CEZ „Informacja o wyborze oferty” i Thulium „Współpraca Fluxlab x Thulium” z NDA do podpisu w Dokumentach Google. https://mail.zoho.eu, 10 min.
 - FL_SEO uśpiona od 26.11 22:55, ostatni cykl 25.11 16:58: artykuły, meldunki i pula indeksowania GSC stoją; plan dziś bierze pulę (Z4). Wybudzenie w panelu sesji, 1 min.
+
+## 2026-11-28 06:43
+**Kanał:** brak, czekam na Z1 i Z2 (okno od 08:40); plan 28.11 zabrania brać zadania przed godziną, a wszystkie 17 mają okno od 08:40 lub później.
+**Co zrobione:** nic nie poszło w świat; plan stratega z 06:29 odczytany, 17 otwartych zadań, żadne jeszcze nie dostępne.
+**Ruch:** raport_ruchu, ostatnia doba: 1166 odsłon, 489 osób (średnia 997,7). Źródła: b2b-email 473, b2b 92, m.facebook.com 69, google-ads 59, chatgpt 56; YouTube 25 sesji, Threads 2, LinkedIn 0, X 0. Narzędzia: 1 uruchomienie. Lejek 7 dni: 2497 sesji, 36 form_start, 3 zapytania.
+**Dowód:** brak publikacji; plan cykl/plan-ruchu.md (stan pliku 28.11 06:29).
+**Dla Pawła:** bez nowych pozycji; lista stratega w wpisie 28.11 (Zalski, Michalik CRM, CEZ, Thulium NDA, FL_SEO uśpiona).
+**Zostało otwarte:** Z1 (stan trzech adresów w GSC) i Z2 (link do narzędzia spoza indeksu) od 08:40, potem Z3 i Z4 od 10:40.
