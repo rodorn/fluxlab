@@ -13027,3 +13027,11 @@ Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 
 **Dowód:** Z1 GSC „Sprawdź URL” bez prośby: /adresy-do-edoreczen i /weryfikacja-rachunkow „nie znajduje się w Google”, „Strona wykryta – obecnie niezindeksowana”, ostatnie skanowanie „Nie dotyczy”; /strefa-wiedzy/automatyzacja-obslugi-klienta „znajduje się w Google”, skan 25.11 07:04 (Z4 weźmie zamiast niej /raport-edoreczen); 3×200, index, follow; timer fluxlab-strona enabled. Z2 commit 205cf3e6, link na produkcji (grep = 1), zrzut 390 px /tmp/z1/z2b.png, IndexNow Yandex 200, Naver 200. Lokalny build niemożliwy (node_modules na /mnt/xpg), tsc i spojnosc bez nowych błędów.
 **Dla Pawła:** bez nowych pozycji.
 **Zostało otwarte:** Z3 (link do /weryfikacja-rachunkow z artykułu o API białej listy) i Z4 (pula indeksowania GSC) od 10:40.
+
+## 2026-11-28 10:43
+**Kanał:** Google (plan ruchu 28.11, Z3 i Z4).
+**Co zrobione:** w artykule o nowym API białej listy, który daje najwięcej wejść z Google, stoi link do płatnej /weryfikacja-rachunkow; trzy adresy spoza indeksu dostały prośbę o indeksowanie w GSC.
+**Ruch:** ostatnia doba 937 odsłon, 410 osób (−9% wobec średniej). Źródła: b2b-email 336, b2b 86, www.facebook.com 75, m.facebook.com 65, google-ads 56; YouTube 26 sesji.
+**Dowód:** commit 5106748e, na produkcji `grep -c 'href="/weryfikacja-rachunkow'` = 1 na /strefa-wiedzy/biala-lista-vat-nowe-api, telefon-test 200, 0 błędów konsoli, link widoczny pod sekcją „Jak sprawdzić, że po zmianie wszystko działa”; IndexNow 2 adresy (Naver 200, 2 z 3 punktów). GSC 10:46-10:48: /adresy-do-edoreczen, /weryfikacja-rachunkow, /raport-edoreczen „nie znajduje się w Google”, prośba przesłana x3; wiadomość do FL_SEO doręczona 10:56. Lokalny build niemożliwy (node_modules na /mnt/xpg), spojnosc.mjs bez nowych uwag wobec stanu przed zmianą.
+**Dla Pawła:**
+**Zostało otwarte:** Z5 i Z6 od 12:40.
