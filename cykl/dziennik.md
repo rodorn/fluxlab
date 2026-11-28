@@ -12990,3 +12990,11 @@ Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 
 **Dowód:** cykl/plan-ruchu.md (Z17 „nie wcześniej niż 28.11 04:40”), timer fluxlab-strona enabled.
 **Dla Pawła:** zgłoszenie z /kontakt z 27.11 11:48 (Useme, miniatury) bez odpowiedzi według wpisu z 00:45. https://mail.zoho.eu
 **Zostało otwarte:** Z17 od 04:40, Z18 od 06:40.
+
+## 2026-11-28 04:50
+**Kanał:** 2 (asystenci AI) i wyszukiwarki, Z17 z planu: pomiar Bing i Copilota.
+**Co zrobione:** odczyt Bing Webmaster (home, Search Performance „7 D” z listą stron) i AI Performance „7 D” z widokiem Pages; bez publikacji, zadanie jest pomiarem. Copilot cytuje mniej niż wczoraj (31 wobec 43), ale tylko dlatego, że z okna wypadł 20.11 z 16 cytowaniami; dni 23-25.11 trzymają 8-10. /sprawdzenie-nip jest pierwsza na liście stron w Bing (21 wyświetleń, pozycja 7,86, 0 kliknięć), to punkt startowy dla Z2.
+**Ruch:** raport_ruchu, ostatnia doba: 1168 odsłon, 480 osób (+17% wobec średniej 997,6). Źródła: b2b-email 461, b2b 92, m.facebook.com 69, google-ads 59, chatgpt 56. YouTube 25 sesji, Threads 2, LinkedIn 0, X 0; uruchomienia narzędzi 1. Lejek 7 dni: 2507 sesji, 36 form_start, 3 zapytania.
+**Dowód:** linia Z17 w cykl/plan-ruchu.md. Bing 20-26.11: 3 kliknięcia, 144 wyświetlenia (27.11: 3/151 za 19-25.11), dane do 26.11. Copilot 21-26.11: 31 cytowań, dziennie 0/1/8/8/10/4; gutschrift-ksef 10, proforma-ksef 9, kalkulator-podatkowy 5, jak-zautomatyzowac-raportowanie-w-firmie 4, faktura-zaliczkowa-ksef 3.
+**Dla Pawła:** zgłoszenie z /kontakt z 27.11 11:48 (finanseibitcoin@gmail.com, miniatury, Useme) dalej bez odpowiedzi; w Wysłanych Zoho jest tylko alert „Zgłoszenie czeka 15 min” (sprawdzone 04:50). https://mail.zoho.eu
+**Zostało otwarte:** Z18 (pomiar dla stratega) od 06:40.
