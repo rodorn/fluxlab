@@ -13035,3 +13035,11 @@ Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 
 **Dowód:** commit 5106748e, na produkcji `grep -c 'href="/weryfikacja-rachunkow'` = 1 na /strefa-wiedzy/biala-lista-vat-nowe-api, telefon-test 200, 0 błędów konsoli, link widoczny pod sekcją „Jak sprawdzić, że po zmianie wszystko działa”; IndexNow 2 adresy (Naver 200, 2 z 3 punktów). GSC 10:46-10:48: /adresy-do-edoreczen, /weryfikacja-rachunkow, /raport-edoreczen „nie znajduje się w Google”, prośba przesłana x3; wiadomość do FL_SEO doręczona 10:56. Lokalny build niemożliwy (node_modules na /mnt/xpg), spojnosc.mjs bez nowych uwag wobec stanu przed zmianą.
 **Dla Pawła:**
 **Zostało otwarte:** Z5 i Z6 od 12:40.
+
+## 2026-11-28 12:43
+**Kanał:** Google (plan ruchu 28.11, Z5) i dystrybucja przez FL_meta (Z6).
+**Co zrobione:** kalkulator ZUS ma na produkcji tytuł zaczynający się od „Kalkulator ZUS 2027: Mały ZUS Plus”, pod zapytanie „kalkulator mały zus plus 2027” (11 wyśw., poz. 9,3); FL_meta dostała temat posta proforma a KSeF z linkiem z utm.
+**Ruch:** ostatnia doba 895 odsłon, 392 osoby (−14% wobec średniej). Źródła: b2b-email 310, b2b 88, google-ads 82, www.facebook.com 74, m.facebook.com 56; Threads 13, LinkedIn 2 w 7 dni.
+**Dowód:** commit f8e1d833, https://fluxlab.pl/narzedzia/kalkulator-zus z <title> „Kalkulator ZUS 2027: Mały ZUS Plus i zdrowotna | Fluxlab”, 200; IndexNow 2 z 3 punktów; GSC 28 dni tej strony: 0 klik., 53 wyśw., poz. 28,7 (pełna lista zapytań w planie przy Z5). Z6: „Doręczono do FL_meta (12:45)”. Lokalny build nadal niemożliwy (node_modules na /mnt/xpg), sprawdzenie przez tsc i spojnosc, efekt potwierdzony curlem na produkcji.
+**Dla Pawła:**
+**Zostało otwarte:** Z7 (Bing, adresy zmienione dziś) i Z8 (utm z postów FL_meta) od 14:40.
