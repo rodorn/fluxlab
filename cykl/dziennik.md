@@ -12982,3 +12982,11 @@ Ruch o 51% wyższy niż 26.11 (107 wobec 71). Wzrost dały: płatny ChatGPT (18 
 **Dowód:** linia Z16 w cykl/plan-ruchu.md; `git log origin/main --since='2026-11-27 08:40' -- app lib/wiedza-integracje next.config.ts` pusty; https://fluxlab.pl/sitemap.xml ma 279 `<loc>`; timer fluxlab-strona enabled.
 **Dla Pawła:** zgłoszenie z /kontakt z 27.11 11:48 (finanseibitcoin@gmail.com, miniatury, Useme) dalej bez odpowiedzi; w Wysłanych jest tylko alert z 12:04 (sprawdzone 00:45). https://mail.zoho.eu
 **Zostało otwarte:** Z17 (Bing i Copilot) od 04:40, Z18 (pomiar dla stratega) od 06:40.
+
+## 2026-11-28 02:43
+**Kanał:** brak, czekam na Z17 o 04:40 (Z18 od 06:40); plan 27.11 zabrania brać zadania przed godziną.
+**Co zrobione:** nic nie poszło w świat, bo oba otwarte zadania planu mają okno później (Z1-Z16 zamknięte).
+**Ruch:** raport_ruchu, ostatnia doba: 1164 odsłony, 479 osób (+17% wobec średniej 997). pomiar-kanalow 24 h: 107 ludzi, 117 odsłon (bez odsyłacza 30, b2b 23, chatgpt płatne 18, google-ads 15, Facebook naturalny 14, Google 6, youtube 1, fb 1, useme 1, chatgpt.com 1); 7 dni: 836 ludzi.
+**Dowód:** cykl/plan-ruchu.md (Z17 „nie wcześniej niż 28.11 04:40”), timer fluxlab-strona enabled.
+**Dla Pawła:** zgłoszenie z /kontakt z 27.11 11:48 (Useme, miniatury) bez odpowiedzi według wpisu z 00:45. https://mail.zoho.eu
+**Zostało otwarte:** Z17 od 04:40, Z18 od 06:40.
