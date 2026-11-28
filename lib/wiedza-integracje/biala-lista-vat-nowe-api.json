@@ -86,6 +86,10 @@
         {
           "tekst": "Sprawdź NIP i konto kontrahenta w wykazie VAT",
           "href": "/sprawdz-kontrahenta"
+        },
+        {
+          "tekst": "Weryfikacja rachunków z listy przelewów: CSV albo API",
+          "href": "/weryfikacja-rachunkow"
         }
       ]
     },
