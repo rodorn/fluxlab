@@ -9,14 +9,14 @@ import KalkulatorZus from "@/components/KalkulatorZus";
 const HREF = "/narzedzia/kalkulator-zus";
 
 export const metadata: Metadata = {
-  title: "Kalkulator ZUS 2026 i 2027: składki i zdrowotna | Fluxlab",
+  title: "Kalkulator ZUS 2027: Mały ZUS Plus i zdrowotna | Fluxlab",
   description:
-    "Składki ZUS na 2026 i 2027: duży, preferencyjny, Mały ZUS Plus, ulga na start i zdrowotna dla skali, liniowego, ryczałtu. Stawki z linkiem do aktu.",
+    "Składki ZUS na 2027 i 2026: duży, preferencyjny, Mały ZUS Plus, ulga na start i zdrowotna dla skali, liniowego, ryczałtu. Stawki z linkiem do aktu.",
   alternates: { canonical: HREF },
   openGraph: {
-    title: "Kalkulator ZUS 2026 i 2027: składki i zdrowotna | Fluxlab",
+    title: "Kalkulator ZUS 2027: Mały ZUS Plus i zdrowotna | Fluxlab",
     description:
-      "Składki ZUS na 2026 i 2027: duży, preferencyjny, Mały ZUS Plus, ulga na start i zdrowotna dla skali, liniowego, ryczałtu. Stawki z linkiem do aktu.",
+      "Składki ZUS na 2027 i 2026: duży, preferencyjny, Mały ZUS Plus, ulga na start i zdrowotna dla skali, liniowego, ryczałtu. Stawki z linkiem do aktu.",
     locale: "pl_PL",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Fluxlab, kalkulator ZUS" }],
@@ -94,7 +94,7 @@ export default function KalkulatorZusPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "Kalkulator ZUS 2026 i 2027",
+            name: "Kalkulator ZUS 2027: Mały ZUS Plus i zdrowotna",
             url: `https://fluxlab.pl${HREF}`,
             applicationCategory: "FinanceApplication",
             operatingSystem: "Dowolna przeglądarka",
