@@ -113,7 +113,14 @@ export default function CzyFirmaMaAdresArticle() {
                 </Link>
                 , więc wystarczy wyszukiwarka firm na Biznes.gov.pl. W samej
                 skrzynce do e-Doręczeń wyszukasz adres w BAE, ale tylko
-                pojedynczo.
+                pojedynczo. Masz listę kontrahentów?{" "}
+                <Link
+                  href="/adresy-do-edoreczen"
+                  className="text-accent hover:underline"
+                >
+                  Adresy do e-Doręczeń z listy NIP
+                </Link>{" "}
+                sprawdzisz za darmo, do 50 firm naraz.
               </p>
             </section>
             <section>
@@ -181,7 +188,10 @@ export default function CzyFirmaMaAdresArticle() {
                 "Jak sprawdzić, czy kontrahent albo urząd ma adres do e-Doręczeń",
               description: OPIS,
               datePublished: "2026-11-09",
-              dateModified: dataZmiany("/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen", "2026-11-09"),
+              dateModified: dataZmiany(
+                "/strefa-wiedzy/czy-firma-ma-adres-do-e-doreczen",
+                "2026-11-09",
+              ),
               author: {
                 "@type": "Organization",
                 name: "Fluxlab",
